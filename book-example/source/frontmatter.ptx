@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter.  Fill in and comment/uncomment to see how this -->
+<!-- works.                                                        -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+  <titlepage>
+    <author>
+      <personname>Shaun D. Ramsey, PhD and Emilee Daniel</personname>
+      <department>Department of Mathematics and Computer Science</department>
+      <institution>Washington College</institution>
+    </author>
+    <date><today/></date>
+  </titlepage>
+
+  <colophon>
+    <website>
+      <name><c>shaunramsey.com</c></name>
+      <address>http://shaunramsey.com</address>
+    </website>
+
+    <copyright>
+      <!-- In addition to specifying the copyright holder, you should  -->
+      <!-- include a license, such as the cc-by-sa license shown below -->
+      <!-- so people reading your book know how they can use it.       -->
+      <year>2021<ndash/>2022</year>
+      <holder>Shaun D. Ramsey, PhD and Emilee Daniel</holder>
+      <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
+      <shortlicense>
+        <!-- <image source="../images/by-sa.png" width="15%"/>  -->
+        This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</url>
+      </shortlicense>
+
+    </copyright>
+
+  </colophon>
+
+  <dedication>
+    <p>
+      For ...
+    </p>
+  </dedication>
+
+  <acknowledgement>
+    <p>
+      We would like to thank Washington College and the Douglass Cater Society of Junior Fellows for supporting this work.
+    </p>
+
+  </acknowledgement>
+
+  <preface xml:id="preface">
+    <!-- You should be a little careful about what you put here -->
+    <!-- Avoid elements that should have a number, for example  -->
+    <p>
+      About this book:
+    </p>
+
+  </preface>
+
+  <!-- You can have more than one preface. -->
+</frontmatter>
+
