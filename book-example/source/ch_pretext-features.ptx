@@ -46,6 +46,33 @@
         description.</description>
       </image>
     </figure>
+
+
+   <figure xml:id="figure-tikz-example-diagram2">
+      <caption>The graph <m>C_5</m> made by EVAN USING TikZ</caption>
+      <image xml:id="tikz-example-diagram2" width="20%">
+        <description>A FA</description>
+        <latex-image>
+
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (52.6,-18.1) circle (3);
+\draw (52.6,-18.1) node {$ASD$};
+\draw [black] (38.7,-16.4) circle (3);
+\draw (38.7,-16.4) node {$\beta$};
+\draw [black] (38.7,-40.9) circle (3);
+\draw (38.7,-40.9) node {$ASDF$};
+\draw [black] (54.254,-20.596) arc (27.4543:-90.19137:14.121);
+\fill [black] (54.25,-20.6) -- (54.18,-21.54) -- (55.07,-21.08);
+\draw (54.42,-35.73) node [right] {$334$};
+\draw [black] (37.463,-43.62) arc (3.28941:-284.71059:2.25);
+\draw (32.92,-46.61) node [left] {$d$};
+\fill [black] (35.79,-41.57) -- (34.96,-41.12) -- (35.02,-42.12);
+\end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+    
     <figure xml:id="figure-tikz-example-diagram">
       <caption>The graph <m>C_5</m> made by TikZ</caption>
       <image xml:id="tikz-example-diagram" width="20%">
