@@ -2,10 +2,10 @@
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <book xml:id="my-great-book">
+  <book xml:id="theory-of-computation">
     <!-- The book needs a title and can have a subtitle  -->
-    <title>My Great Book</title>
-    <subtitle>Subset Preview</subtitle>
+    <title>Theory of Computation</title>
+    <subtitle>an undergraduate introduction</subtitle>
 
     <!-- edit href to desired section below -->
     <chapter>

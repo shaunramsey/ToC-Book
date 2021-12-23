@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<chapter xml:id="ch-dfas" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Determinsitic Finite Automata</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> The definition of determinism </li>
+       <li> finite automata (FA) </li>
+       <li> deterministic finite automata (DFA) </li>
+       <li> strategies for understanding deterministic finite automata </li>
+       <li> strategies for drawing deterministic finite automata </li>
+     </ol>
+  </objectives>
+  <introduction>
+    <p>What will we learn in this chapter?</p>
+    <p> Refer to the <xref ref="glossary" text="title"/> for a reminder of terms and abbreviations.</p>
+  </introduction>
+
+   <section>
+      <title> Determinism </title>
+   </section>
+   <section>
+         <title>Finite Automata (FA)</title>
+   </section>
+   <section>
+         <title>Deterministic Finite Automata (DFA)</title>
+          
+   </section>
+   <section>
+         <title> Strategies for Understanding DFAs</title>
+   </section>
+   <section>
+         <title> Strategies for Drawing DFAs </title>
+   </section>
+
+<exercises xml:id="ch-dfas-exercises">
+<exercise>
+  <statement>
+    <p>
+      The <c>statement</c> is mandatory.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      Optional.
+      Just an suggestion of what to try.
+    </p>
+  </hint>
+  <answer>
+    <p>
+      Optional.
+      Just the <q>final answer</q>.
+    </p>
+  </answer>
+  <solution>
+    <p>
+      Optional.
+      All the gory details.
+    </p>
+  </solution>
+</exercise>
+</exercises>
+
+    <!--
+  <xi:include href=".sec-emp-intro.ptx" />
+  <xi:include href=".sec-emp-next.ptx" />
+  <xi:include href=".sec-emp-conc.ptx" /> 
+  -->
+
+</chapter>

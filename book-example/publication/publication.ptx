@@ -15,7 +15,9 @@
   <source webwork-problems="../generated-assets/webwork/webwork-representations.ptx">
     <directories external="../assets" generated="../generated-assets"/>
   </source>
-
+  <common>
+    <tableofcontents level="2"/>
+  </common>
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
     <!-- @part-structure should be "decorative" or "structural",      -->
@@ -27,6 +29,8 @@
       <!-- For use with a book organized by parts
     <divisions part-structure="decorative" chapter-start="1" level="3"/>
       -->
+    
+    <divisions part-structure="decorative" level="3" /> 
     <!-- The next elements say how the levels deep to break up the    -->
     <!-- numbering of the respective elements. Can't be more than the -->
     <!-- @level on divisions above.                                   -->
