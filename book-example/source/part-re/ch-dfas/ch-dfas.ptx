@@ -23,13 +23,13 @@
       <subsection>
         <title>Set Review</title>
         <p>The <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
-        Characters in the Alphabet can be appended together to create strings. These strings can be used in a set of recognizable
+        Characters in the alphabet can be appended together to create strings. These strings can be used in a set of recognizable
         strings, also known as a <term>language(<em><m>L</m></em>)</term>.
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
         <me>\Sigma_{A} = \{a, b, c\}</me>
-        and those characters can be used to create strings such as <m>S</m> and <m>Q</m>
+        Alphabets can include the empty set <m>\emptyset</m> and all characters in the alphabet can be used to create strings such as <m>S</m> and <m>Q</m>
         <me>S = baba</me>
         <me>Q = aaaaa</me>
         these example strings may be included in language <m>A</m>
@@ -48,34 +48,93 @@
    </section>
    <section>
          <title>Finite Automata (FA)</title>
-         <p><term>Finite Automata (FA) </term> are machines <em>(M)</em> that describe a language. They have no memory storage,
+         <p><term>Finite Automata (FA) </term> are machines <m>(M)</m> that describe a language. They have no memory storage,
          but they utilize <term>states</term> to determine if a given string exists in the language of the machine. States are 
          represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
-         a beginning state. This arrow points to the start state which is where the machine diagram begins.
+         a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
+         these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
          </p>
-     <figure xml:id="figure-tikz-example-Diagram">
-      <caption>The graph <m>C_5</m> made by TikZ</caption>
-      <image xml:id="tikz-example-Diagram" width="20%">
+     <figure xml:id="FAMachineOgExample ">
+      <caption>Machine <m> M_1 </m> made using MADE BY EVAN TikZ</caption>
+      <image xml:id="FAMachineOgExample" width="50%">
         <description>A 5-cycle</description>
         <latex-image>
-          \begin{tikzpicture}
-            \coordinate (A) at (90+360/5:1);
-            \coordinate (B) at (90+2*360/5:1);
-            \coordinate (C) at (90+3*360/5:1);
-            \coordinate (D) at (90+4*360/5:1);
-            \coordinate (E) at (90:1);
-
-            \draw (A) -- (B) -- (C) -- (D) -- (E) -- (A);
-            \foreach \x in {(A), (B), (C), (D), (E)}{
-              \fill \x circle (2pt);
-            }
-          \end{tikzpicture}
+             \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (25.4,-24.8) circle (3);
+            \draw (25.4,-24.8) node {$A$};
+            \draw [black] (45.1,-24.8) circle (3);
+            \draw (45.1,-24.8) node {$B$};
+            \draw [black] (45.1,-24.8) circle (2.4);
+            \draw [black] (22.869,-26.388) arc (-30.16412:-318.16412:2.25);
+            \draw (18.04,-25.58) node [left] {$0$};
+            \fill [black] (22.6,-23.76) -- (22.16,-22.92) -- (21.66,-23.79);
+            \draw [black] (47.78,-23.477) arc (144:-144:2.25);
+            \draw (52.35,-24.8) node [right] {$0$};
+            \fill [black] (47.78,-26.12) -- (48.13,-27) -- (48.72,-26.19);
+            \draw [black] (27.601,-22.771) arc (126.05696:53.94304:12.996);
+            \fill [black] (42.9,-22.77) -- (42.55,-21.9) -- (41.96,-22.7);
+            \draw (35.25,-19.78) node [above] {$1$};
+            \draw [black] (42.843,-26.767) arc (-55.36807:-124.63193:13.361);
+            \fill [black] (27.66,-26.77) -- (28.03,-27.63) -- (28.6,-26.81);
+            \draw (35.25,-29.63) node [below] {$1$};
+            \draw [black] (21.8,-18.6) -- (23.89,-22.21);
+            \fill [black] (23.89,-22.21) -- (23.92,-21.26) -- (23.06,-21.76);
+            \end{tikzpicture}
         </latex-image>
       </image>
     </figure>
-         <!-- todo:I tried to get Evan's FA drawer to work, but I don't know if it will for me. I tried in Firefox and Safari to get it
-         to curve arrows or delete things and it wouldn't. Also, should we keep our drawings in separate files and just include them?
-         Also, are we planning on being Kindle compatable? Should I add PNGs to the images folder? https://pretextbook.org/doc/guide/html/basics-s-image.html-->
+        <!--TODO: I would like to try and make animations to show this next part instead of writing it out.-->
+         <p>
+         Say there in a string <m>S = 110</m>. After following the arrows to parce through <m>S</m>,
+         it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>L(M_1)\in S</m>,
+         but what is <m>L(M_1)</m>?
+         </p>
+         <p>
+         Lanugages can be defined using plain language, expressions, or FAs. The following all represent the same language.
+         <ol>
+         <li><me>L_2 = \mbox{any string that ends with 01}</me></li>
+         <li><me>L_2 = {s01 | \mbox{where s is a string made of only 0s and 1s}}</me></li>
+         <li><figure xml:id="FAMachineFullLangEx ">
+         <caption>Machine for <m> L_2 </m> made using MADE BY EVAN TikZ</caption>
+         <image xml:id="FAMachineFullLangEx" width="50%">
+         <description>A 5-cycle</description>
+         <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (25.4,-24.8) circle (3);
+          \draw (25.4,-24.8) node {$A$};
+          \draw [black] (45.1,-24.8) circle (3);
+          \draw (45.1,-24.8) node {$B$};
+          \draw [black] (45.1,-24.8) circle (2.4);
+          \draw [black] (22.869,-26.388) arc (-30.16412:-318.16412:2.25);
+          \draw (18.04,-25.58) node [left] {$0$};
+          \fill [black] (22.6,-23.76) -- (22.16,-22.92) -- (21.66,-23.79);
+          \draw [black] (47.78,-23.477) arc (144:-144:2.25);
+          \draw (52.35,-24.8) node [right] {$0$};
+          \fill [black] (47.78,-26.12) -- (48.13,-27) -- (48.72,-26.19);
+          \draw [black] (27.601,-22.771) arc (126.05696:53.94304:12.996);
+          \fill [black] (42.9,-22.77) -- (42.55,-21.9) -- (41.96,-22.7);
+          \draw (35.25,-19.78) node [above] {$1$};
+          \draw [black] (42.843,-26.767) arc (-55.36807:-124.63193:13.361);
+          \fill [black] (27.66,-26.77) -- (28.03,-27.63) -- (28.6,-26.81);
+          \draw (35.25,-29.63) node [below] {$1$};
+          \draw [black] (21.8,-18.6) -- (23.89,-22.21);
+          \fill [black] (23.89,-22.21) -- (23.92,-21.26) -- (23.06,-21.76);
+          \end{tikzpicture}
+         </latex-image>
+      </image>
+    </figure>
+    </li>
+    </ol>
+    </p>
+    <p>
+        The language of a FA can be determined by creating test strings from characters in the given alphabet and
+         checking them using a given machine. For <m>M_2</m>, test strings could include 000, 01, 11011, and 100001. By 
+         tracing through <m>M_2</m>, it can be seen that it would only accept on the second and fourth strings, the only
+         ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine 
+         the languages of other machines.
+      </p>
    </section>
    <section>
          <title>Deterministic Finite Automata (DFA)</title>

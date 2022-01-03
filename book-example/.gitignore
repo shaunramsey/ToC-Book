@@ -3,6 +3,7 @@ output
 
 # assets generated from source
 generated-assets
+images
 
 # error logs
 .error_schema.log
