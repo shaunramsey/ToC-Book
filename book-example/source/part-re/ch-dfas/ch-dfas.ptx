@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 
+
 <chapter xml:id="ch-dfas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Determinsitic Finite Automata</title>
   <objectives>
@@ -19,9 +20,62 @@
 
    <section>
       <title> Determinism </title>
+      <subsection>
+        <title>Set Review</title>
+        <p>The <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
+        Characters in the Alphabet can be appended together to create strings. These strings can be used in a set of recognizable
+        strings, also known as a <term>language(<em><m>L</m></em>)</term>.
+        </p>
+        <p>
+        For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
+        <me>\Sigma_{A} = \{a, b, c\}</me>
+        and those characters can be used to create strings such as <m>S</m> and <m>Q</m>
+        <me>S = baba</me>
+        <me>Q = aaaaa</me>
+        these example strings may be included in language <m>A</m>
+        <me>L_{A}\in(S, Q)</me>
+        </p>
+      </subsection>
+      <subsection>
+      <!-- todo: Should determinism come before finite automata and the explinantion of states? I feel like 
+      explaining vocabularly, examples of languages in CS terms students would know at this point, and 
+      some sort of example of how to think about these concepts could be useful to provide background
+      before going into states and automata and determinism. I am also a little confused as to how to explain
+      determinism at this point. -->
+        <title>Deterministic</title> 
+        <term>Determinisim</term> means that all transitions of state are unique and completly defined.
+      </subsection>
    </section>
    <section>
          <title>Finite Automata (FA)</title>
+         <p><term>Finite Automata (FA) </term> are machines <em>(M)</em> that describe a language. They have no memory storage,
+         but they utilize <term>states</term> to determine if a given string exists in the language of the machine. States are 
+         represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
+         a beginning state. This arrow points to the start state which is where the machine diagram begins.
+         </p>
+     <figure xml:id="figure-tikz-example-Diagram">
+      <caption>The graph <m>C_5</m> made by TikZ</caption>
+      <image xml:id="tikz-example-Diagram" width="20%">
+        <description>A 5-cycle</description>
+        <latex-image>
+          \begin{tikzpicture}
+            \coordinate (A) at (90+360/5:1);
+            \coordinate (B) at (90+2*360/5:1);
+            \coordinate (C) at (90+3*360/5:1);
+            \coordinate (D) at (90+4*360/5:1);
+            \coordinate (E) at (90:1);
+
+            \draw (A) -- (B) -- (C) -- (D) -- (E) -- (A);
+            \foreach \x in {(A), (B), (C), (D), (E)}{
+              \fill \x circle (2pt);
+            }
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+         <!-- todo:I tried to get Evan's FA drawer to work, but I don't know if it will for me. I tried in Firefox and Safari to get it
+         to curve arrows or delete things and it wouldn't. Also, should we keep our drawings in separate files and just include them?
+         Also, are we planning on being Kindle compatable? Should I add PNGs to the images folder? https://pretextbook.org/doc/guide/html/basics-s-image.html-->
    </section>
    <section>
          <title>Deterministic Finite Automata (DFA)</title>
