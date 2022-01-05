@@ -29,11 +29,11 @@
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
         <me>\Sigma_{A} = \{a, b, c\}</me>
-        Alphabets can include the empty set <m>\emptyset</m> and all characters in the alphabet can be used to create strings such as <m>S</m> and <m>Q</m>
+        Alphabets can include the empty string <m>\epsilon</m> and all characters in the alphabet can be used to create strings such as <m>S</m> and <m>Q</m>
         <me>S = baba</me>
-        <me>Q = aaaaa</me>
+        <me>T = aaaaa</me>
         these example strings may be included in language <m>A</m>
-        <me>L_{A}\in(S, Q)</me>
+        <me>L_{A}\in(S, T)</me>
         </p>
       </subsection>
       <subsection>
@@ -51,7 +51,7 @@
    <section>
       <title>Finite Automata (FA)</title>
         <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>state machines (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
-          but they utilize <idx>states</idx> <term>states</term> to determine if a given string exists in the language of the machine. States are 
+          but they utilize <idx>states (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States are 
           represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
           a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
           these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
@@ -61,9 +61,9 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (27,-15.7) circle (3);
-            \draw (27,-15.7) node {$A$};
+            \draw (27,-15.7) node {$Q_0$};
             \draw [black] (47.5,-15.7) circle (3);
-            \draw (47.5,-15.7) node {$B$};
+            \draw (47.5,-15.7) node {$Q_1$};
             \draw [black] (47.5,-15.7) circle (2.4);
             \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
             \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
@@ -99,11 +99,11 @@
                   \begin{tikzpicture}[scale=0.2]
                   \tikzstyle{every node}+=[inner sep=0pt]
                   \draw [black] (27.2,-18.1) circle (3);
-                  \draw (27.2,-18.1) node {$A$};
+                  \draw (27.2,-18.1) node {$Q_0$};
                   \draw [black] (41.9,-17.4) circle (3);
-                  \draw (41.9,-17.4) node {$B$};
+                  \draw (41.9,-17.4) node {$Q_1$};
                   \draw [black] (60.2,-17.4) circle (3);
-                  \draw (60.2,-17.4) node {$C$};
+                  \draw (60.2,-17.4) node {$Q_2$};
                   \draw [black] (60.2,-17.4) circle (2.4);
                   \draw [black] (20.3,-12.5) -- (24.87,-16.21);
                   \draw (19.74,-11.07) node [left] {$M_2$};
@@ -160,12 +160,12 @@
           at each state, the FA is deterministic.
         </p>
         <sidebyside>
-          <table>
+          <table xml:id="DFADeterminismTable">
             <title>Determinism Chart for <m>M_1</m></title>
             <tabular>
-              <row header="yes"><cell right="medium" bottom ="minor">States</cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
-              <row header="no"><cell right="medium"><m>A</m></cell><cell><m>A</m></cell><cell><m>B</m></cell></row>
-              <row header="no"><cell right="medium"><m>B</m></cell><cell><m>B</m></cell><cell><m>A</m></cell></row>
+              <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
+              <row header="no"><cell right="medium"><m>Q_0</m></cell><cell><m>Q_0</m></cell><cell><m>Q_1</m></cell></row>
+              <row header="no"><cell right="medium"><m>Q_1</m></cell><cell><m>Q_1</m></cell><cell><m>Q_0</m></cell></row>
             </tabular>
           </table>
         </sidebyside>
@@ -188,12 +188,12 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (27,-14.6) circle (3);
-            \draw (27,-14.6) node {$A$};
+            \draw (27,-14.6) node {$Q_0$};
             \draw [black] (27,-14.6) circle (2.4);
             \draw [black] (46.6,-14.6) circle (3);
-            \draw (46.6,-14.6) node {$B$};
+            \draw (46.6,-14.6) node {$Q_1$};
             \draw [black] (40.9,-27.4) circle (3);
-            \draw (40.9,-27.4) node {$C$};
+            \draw (40.9,-27.4) node {$Q_2$};
             \draw [black] (25.635,-17.258) arc (0.54272:-287.45728:2.25);
             \draw (21,-20.01) node [left] {$0$};
             \fill [black] (24.06,-15.13) -- (23.25,-14.64) -- (23.26,-15.64);
@@ -219,18 +219,72 @@
           </latex-image>
         </image>
       </statement>
+      <!--TODO: I choose to include the extra example and such here as it was included in the notes, we may want to shift
+      its placement around at some point. I think it has real value as a chapter example or as a challenge problem.-->
       <hint>
         <p>
-          Come up with a few test strings. See any patterns? Just focus on the plain language description.
+          Come up with ten strings in the language of <m>M_3</m>. 
+          <table>
+            <tabular>
+              <row><cell right="minor">1</cell><cell>0</cell></row>
+              <row><cell right="minor">2</cell><cell>101101</cell></row>
+              <row><cell right="minor">3</cell><cell><m>\epsilon</m></cell></row>
+              <row><cell right="minor">4</cell><cell>010101</cell></row>
+              <row><cell right="minor">5</cell><cell>0000</cell></row>
+              <row><cell right="minor">6</cell><cell>011</cell></row>
+              <row><cell right="minor">7</cell><cell>10010</cell></row>
+              <row><cell right="minor">8</cell><cell>111001</cell></row>
+              <row><cell right="minor">9</cell><cell>1001</cell></row>
+              <row><cell right="minor">10</cell><cell>0110</cell></row>
+            </tabular>
+          </table>
+        </p>
+        <p>
+          Come up with ten strings NOT in the language of <m>M_3</m>. 
+          <table>
+            <tabular>
+              <row><cell right="minor">1</cell><cell>1</cell></row>
+              <row><cell right="minor">2</cell><cell>100</cell></row>
+              <row><cell right="minor">3</cell><cell>10</cell></row>
+              <row><cell right="minor">4</cell><cell>10001</cell></row>
+              <row><cell right="minor">5</cell><cell>1011</cell></row>
+              <row><cell right="minor">6</cell><cell>11111</cell></row>
+              <row><cell right="minor">7</cell><cell>101</cell></row>
+              <row><cell right="minor">8</cell><cell>1101</cell></row>
+              <row><cell right="minor">9</cell><cell>10110</cell></row>
+              <row><cell right="minor">10</cell><cell>001</cell></row>
+            </tabular>
+          </table>
+        </p>
+        <p>
+          Do you see any patterns?
         </p>
       </hint>
       <answer>
         <p>
-          <!--TODO: REMEMBER TO ADD IN AN ACTUAL ANSWER HERE-->
           <me>L(M_3) = \mbox{the empty string and all binary strings divisible by 3}</me>
         </p>
       </answer>
       <solution>
+        <p>
+          It is helpful to look at patterns beyond those that are obvious and to consider ones that require 
+          a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal
+          number is included.
+          <table>
+            <tabular>
+              <row><cell>1</cell><cell>0</cell><cell>(0)</cell></row>
+              <row><cell>2</cell><cell>101101</cell><cell>(45)</cell></row>
+              <row><cell>3</cell><cell><m>\epsilon</m></cell><cell>_</cell></row>
+              <row><cell>4</cell><cell>010101</cell><cell>(21)</cell></row>
+              <row><cell>5</cell><cell>0000</cell><cell>(0)</cell></row>
+              <row><cell>6</cell><cell>011</cell><cell>(3)</cell></row>
+              <row><cell>7</cell><cell>10010</cell><cell>(18)</cell></row>
+              <row><cell>8</cell><cell>111001</cell><cell>(57)</cell></row>
+              <row><cell>9</cell><cell>1001</cell><cell>(9)</cell></row>
+              <row><cell>10</cell><cell>0110</cell><cell>(6)</cell></row>
+            </tabular>
+          </table>
+        </p>
       </solution>
     </exercise>
     <exercise>
@@ -243,11 +297,11 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (19.4,-13.7) circle (3);
-            \draw (19.4,-13.7) node {$A$};
+            \draw (19.4,-13.7) node {$Q_0$};
             \draw [black] (37.4,-12.6) circle (3);
-            \draw (37.4,-12.6) node {$B$};
+            \draw (37.4,-12.6) node {$Q_1$};
             \draw [black] (30.2,-24.6) circle (3);
-            \draw (30.2,-24.6) node {$C$};
+            \draw (30.2,-24.6) node {$Q_2$};
             \draw [black] (30.2,-24.6) circle (2.4);
             \draw [black] (11.8,-9.4) -- (16.79,-12.22);
             \draw (11.14,-8.18) node [left] {$M_4$};
@@ -307,11 +361,11 @@
               \begin{tikzpicture}[scale=0.2]
               \tikzstyle{every node}+=[inner sep=0pt]
               \draw [black] (19.4,-13.7) circle (3);
-              \draw (19.4,-13.7) node {$A$};
+              \draw (19.4,-13.7) node {$Q_0$};
               \draw [black] (37.1,-14.7) circle (3);
-              \draw (37.1,-14.7) node {$B$};
+              \draw (37.1,-14.7) node {$Q_1$};
               \draw [black] (51.9,-15.4) circle (3);
-              \draw (51.9,-15.4) node {$C$};
+              \draw (51.9,-15.4) node {$Q_2$};
               \draw [black] (51.9,-15.4) circle (2.4);
               \draw [black] (37.8,-31.7) circle (3);
               \draw (37.8,-31.7) node {$\emptyset$};
@@ -354,11 +408,11 @@
           \begin{tikzpicture}[scale=0.2]
           \tikzstyle{every node}+=[inner sep=0pt]
           \draw [black] (18.9,-17.8) circle (3);
-          \draw (18.9,-17.8) node {$A$};
+          \draw (18.9,-17.8) node {$Q_0$};
           \draw [black] (37.1,-14.7) circle (3);
-          \draw (37.1,-14.7) node {$B$};
+          \draw (37.1,-14.7) node {$Q_1$};
           \draw [black] (52.9,-20.2) circle (3);
-          \draw (52.9,-20.2) node {$C$};
+          \draw (52.9,-20.2) node {$Q_2$};
           \draw [black] (52.9,-20.2) circle (2.4);
           \draw [black] (37.8,-31.7) circle (3);
           \draw (37.8,-31.7) node {$\emptyset$};
@@ -383,7 +437,7 @@
           \draw [black] (40.762,-31.303) arc (125.36378:-162.63622:2.25);
           \draw (44.96,-34.57) node [right] {$a,b$};
           \fill [black] (39.92,-33.81) -- (39.97,-34.75) -- (40.79,-34.17);
-\end{tikzpicture}
+          \end{tikzpicture}
         </latex-image>
         </image>
       </statement>
