@@ -16,5 +16,5 @@
 <li>trap reject, null, drop state </li>
 <li>how to put boxes around figures? mess with sizes?</li>
 <li>figure out terms for glossary and index (state machines for machines and explain)</li>
-
+<li>put idx tag around a term to go in the index! This won't show in the build but will link to it in the index! exciting stuff! BUT must be viewed as part of server, not just refereshed HTML page</li>
 </ul>

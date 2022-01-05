@@ -2,9 +2,64 @@
 
 <chapter xml:id="ch-nfas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Non-determinsitic Finite Automata</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> The definition of determinism </li>
+       <li> finite automata (FA) </li>
+       <li> deterministic finite automata (DFA) </li>
+       <li> strategies for understanding deterministic finite automata </li>
+       <li> strategies for drawing deterministic finite automata </li>
+     </ol>
+  </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
   </introduction>
+  <section>
+      <title>Non-Deterministic Finite Automata (NFA)</title>
+        <p><idx>Non-Deterministic Finitie Automata (NFA)</idx> <term> Non-Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
+          of state is not necessarilyd efined. This means that the state can drop off of the machine if a path is not definied. 
+        <exploration>
+          <p>
+            Consider <m>M_8</m>. <m>\Sigma(M_8)=\{x, y\}</m>
+            </p>
+            <p>
+            <image xml:id="FAExM8" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (23.9,-16.4) circle (3);
+              \draw (23.9,-16.4) node {$A$};
+              \draw [black] (37.8,-16.4) circle (3);
+              \draw (37.8,-16.4) node {$B$};
+              \draw [black] (52.1,-16.4) circle (3);
+              \draw (52.1,-16.4) node {$C$};
+              \draw [black] (52.1,-16.4) circle (2.4);
+              \draw [black] (26.872,-15.994) arc (95.654:84.346:40.38);
+              \fill [black] (34.83,-15.99) -- (34.08,-15.42) -- (33.98,-16.41);
+              \draw (30.85,-15.3) node [above] {$x$};
+              \draw [black] (40.772,-15.997) arc (95.68502:84.31498:42.175);
+              \fill [black] (49.13,-16) -- (48.38,-15.42) -- (48.28,-16.42);
+              \draw (44.95,-15.29) node [above] {$x$};
+              \draw [black] (53.854,-13.981) arc (171.78229:-116.21771:2.25);
+              \draw (58.75,-12.1) node [right] {$x$};
+              \fill [black] (55.09,-16.32) -- (55.81,-16.93) -- (55.95,-15.94);
+              \draw [black] (17.4,-11.2) -- (21.56,-14.53);
+              \draw (16.84,-9.78) node [left] {$M_8$};
+              \fill [black] (21.56,-14.53) -- (21.25,-13.64) -- (20.62,-14.42);
+              \end{tikzpicture}
+            </latex-image>
+            </image>
+            What is the language of <m>M_8</m> (<m>L(M_8)</m>)?
+            <answer>
+              <p>
+                <m>L(M_8) =</m> any string with two or more <m>x</m>s and no <m>y</m>s.
+              </p>
+            </answer>
+          </p>
+        </exploration>
+       </p>
+   </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

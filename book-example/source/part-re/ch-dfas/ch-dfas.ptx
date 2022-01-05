@@ -22,9 +22,9 @@
       <title> Determinism </title>
       <subsection>
         <title>Set Review</title>
-        <p>The <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
+        <p>The <idx>alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
         Characters in the alphabet can be appended together to create strings. These strings can be used in a set of recognizable
-        strings, also known as a <term>language(<em><m>L</m></em>)</term>.
+        strings, also known as a <idx>language(<em><m>L</m></em>)</idx> <term>language(<em><m>L</m></em>)</term>.
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
@@ -43,13 +43,15 @@
       before going into states and automata and determinism. I am also a little confused as to how to explain
       determinism at this point. -->
         <title>Deterministic</title> 
-        <term>Determinisim</term> means that all transitions of state are unique and completly defined.
+        <p>
+        <idx>Determinisim</idx> <term>Determinisim</term> means that all transitions of state are unique and completly defined.
+        </p>
       </subsection>
    </section>
    <section>
       <title>Finite Automata (FA)</title>
-        <p><term>Finite Automata (FA) </term> are machines <m>(M)</m> that describe a language. They have no memory storage,
-          but they utilize <term>states</term> to determine if a given string exists in the language of the machine. States are 
+        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>state machines (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
+          but they utilize <idx>states</idx> <term>states</term> to determine if a given string exists in the language of the machine. States are 
           represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
           a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
           these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
@@ -140,11 +142,11 @@
     </section>
    <section>
       <title>Deterministic Finite Automata (DFA)</title>
-        <p> <term> Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
+        <p><idx>Deterministic Finitie Automata (DFA)</idx> <term> Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
           of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are
           accounted for at each state. We can look again at <m>M_1</m>
        </p>
-        <image source="images/FAExM1.svg" width="50%">
+        <image source="../generated/latex-image/FAExM1.svg" width="50%">
         </image>
           <!--TODO: again I would like to figure out how to make animations for this next part-->
         <p>
