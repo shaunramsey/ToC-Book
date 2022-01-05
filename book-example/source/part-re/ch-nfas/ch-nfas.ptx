@@ -128,7 +128,7 @@
         There are two strategies for tracking which states you are in. The first is quite simple, track them with your fingers. The second,
         is to create a determinism table similar to that in <xref ref="DFADeterminismTable"></xref>.
       </p>
-        <table xml:id="DFADeterminismTable">
+        <table xml:id="NFADeterminismTable">
           <title>Determinism Chart for <m>M_1</m></title>
             <tabular>
               <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
