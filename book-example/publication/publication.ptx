@@ -17,6 +17,7 @@
   </source>
   <common>
     <tableofcontents level="2"/>
+    <chunks level="1"/>
   </common>
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
@@ -35,7 +36,7 @@
     <!-- numbering of the respective elements. Can't be more than the -->
     <!-- @level on divisions above.                                   -->
     <blocks level="2"/>
-    <projects level="0"/>
+    <projects level="1"/>
     <equations level="1"/>
     <footnotes level="0"/>
   </numbering>

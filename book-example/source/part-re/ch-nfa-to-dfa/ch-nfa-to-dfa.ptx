@@ -2,9 +2,121 @@
 
 <chapter xml:id="ch-nfa-to-dfa" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>NFA and DFA relationships</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Non-Deterministic Finite Automata (NFA) </li>
+       <li> Parallelism </li>
+       <li> The Power Set </li>
+       <li> Strengths of NFAs </li>
+     </ol>
+  </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
   </introduction>
+  <section xml:id="sec-FiniteNumberofStates">
+    <title>Finite Number of States</title>
+      <p>
+        As introduced in <xref ref="PowerSet"/>, there is a limit to the amount of states that a NFA can have.
+        This means that all NFAs can become DFAs as the transitions on each character can be determined for each state.
+        The length of the power set is also the most amount of states that a DFA made from a NFA can have.
+      </p>
+      <problem xml:id="assemblage-NFADFAConversion">
+        <title>Getting from a NFA to a DFA</title>
+        <p>
+          For this, consider <m>M_{12}</m>.
+        </p>
+        <image xml:id="FAEXM12" width="50%">
+          <latex-image>
+            \begin{tikzpicture} [scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (17.5,-20.5) circle (3);
+              \draw (17.5,-20.5) node {$Q_0$};
+              \draw [black] (29.7,-13) circle (3);
+              \draw (29.7,-13) node {$Q_1$};
+              \draw [black] (44.7,-13) circle (3);
+              \draw (44.7,-13) node {$Q_2$};
+              \draw [black] (44.7,-13) circle (2.4);
+              \draw [black] (29.7,-27.8) circle (3);
+              \draw (29.7,-27.8) node {$Q_3$};
+              \draw [black] (44.7,-27.8) circle (3);
+              \draw (44.7,-27.8) node {$Q_4$};
+              \draw [black] (44.7,-27.8) circle (2.4);
+              \draw [black] (10.3,-14.2) -- (15.24,-18.52);
+              \draw (9.76,-12.75) node [left] {$M_{12}$};
+              \fill [black] (15.24,-18.52) -- (14.97,-17.62) -- (14.31,-18.37);
+              \draw [black] (20.06,-18.93) -- (27.14,-14.57);
+              \fill [black] (27.14,-14.57) -- (26.2,-14.56) -- (26.72,-15.42);
+              \draw (24.6,-17.25) node [below] {$1$};
+              \draw [black] (32.7,-13) -- (41.7,-13);
+              \fill [black] (41.7,-13) -- (40.9,-12.5) -- (40.9,-13.5);
+              \draw (37.2,-13.5) node [below] {$0$};
+              \draw [black] (27.116,-11.499) arc (267.57486:-20.42514:2.25);
+              \draw (24.97,-6.88) node [above] {$1$};
+              \fill [black] (29.32,-10.04) -- (29.85,-9.26) -- (28.85,-9.22);
+              \draw [black] (20.07,-22.04) -- (27.13,-26.26);
+              \fill [black] (27.13,-26.26) -- (26.7,-25.42) -- (26.18,-26.28);
+              \draw (22.6,-24.65) node [below] {$1$};
+              \draw [black] (32.7,-27.8) -- (41.7,-27.8);
+              \fill [black] (41.7,-27.8) -- (40.9,-27.3) -- (40.9,-28.3);
+              \draw (37.2,-28.3) node [below] {$1$};
+              \draw [black] (32.2,-29.436) arc (84.52971:-203.47029:2.25);
+              \draw (34.13,-34.11) node [below] {$0$};
+              \fill [black] (29.92,-30.78) -- (29.35,-31.53) -- (30.34,-31.62);
+              \draw [black] (47.509,-26.781) arc (137.65981:-150.34019:2.25);
+              \draw (52.06,-28.65) node [right] {$0,1$};
+              \fill [black] (47.22,-29.41) -- (47.47,-30.32) -- (48.15,-29.58);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+        <p>
+          <m>M_{12}</m> is an NFA. An <m>1</m> at <m>Q_0</m> will lead to both <m>Q_1</m> and <m>Q_3</m>. 
+          This is an example of parallelism. 
+        </p>
+        <task>
+          <p>
+            What is the maximum number of states a DFA created from <m>M_{12}</m> could have?
+          </p>
+        </task>
+        <answer>
+          <p>
+            <m>32</m>. A DFA made from <m>M_{12}</m> can have up to <m>32</m> states as <m>M_{12}</m> has <m>5</m> 
+            states and <m>2^5 = 32</m>.
+          </p>
+        </answer>
+        <p>
+          How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character 
+          from each state. In <m>M_{12}</m>, a <m>1</m> at <m>Q_0</m> could go to <m>Q_1</m> or <m>Q_3</m>. A <m>0</m>
+          at <m>Q_0</m> would go to an <m>\emptyset</m> state. 
+        </p>
+        <image xml:id="FAEXM12_1" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (23.3,-15.9) circle (3);
+            \draw (23.3,-15.9) node {$\{Q_0\}$};
+            \draw [black] (40,-15.6) circle (4);
+            \draw (40,-15.6) node {$\{Q_1,Q_3\}$};
+            \draw [black] (33.6,-25.8) circle (3);
+            \draw (33.6,-25.8) node {$\emptyset$};
+            \draw [black] (26.108,-14.854) arc (106.02809:76.16129:19.494);
+            \fill [black] (36.15,-14.66) -- (35.5,-13.98) -- (35.26,-14.96);
+            \draw (31.11,-13.58) node [above] {$1$};
+            \draw [black] (16.4,-10.7) -- (20.9,-14.09);
+            \fill [black] (20.9,-14.09) -- (20.57,-13.21) -- (19.96,-14.01);
+            \draw [black] (30.879,-24.546) arc (-119.63763:-148.09353:17.545);
+            \fill [black] (30.88,-24.55) -- (30.43,-23.72) -- (29.94,-24.59);
+            \draw (26.38,-22.43) node [below] {$0$};
+            \draw [black] (35.345,-28.226) arc (63.46232:-224.53768:2.25);
+            \draw (35.48,-33.12) node [below] {$0,1$};
+            \fill [black] (32.74,-28.66) -- (31.93,-29.15) -- (32.83,-29.6);         
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+      </problem>
+    
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

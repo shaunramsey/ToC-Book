@@ -1,1 +1,5 @@
+if [ ! -d "output/html/images" ]
+then
+  mkdir output/html/images
+fi
 cp generated-assets/latex-image/* output/html/images/

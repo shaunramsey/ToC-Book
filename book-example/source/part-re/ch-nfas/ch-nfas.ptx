@@ -5,17 +5,16 @@
   <objectives>
     In this chapter you will learn:
      <ol>
-       <li> The definition of determinism </li>
-       <li> finite automata (FA) </li>
-       <li> deterministic finite automata (DFA) </li>
-       <li> strategies for understanding deterministic finite automata </li>
-       <li> strategies for drawing deterministic finite automata </li>
+       <li> Non-Deterministic Finite Automata (NFA) </li>
+       <li> Parallelism </li>
+       <li> The Power Set </li>
+       <li> Strengths of NFAs </li>
      </ol>
   </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
   </introduction>
-  <section>
+  <section xml:id="NFAs">
       <title>Non-Deterministic Finite Automata (NFA)</title>
         <p><idx>Non-Deterministic Finitie Automata (NFA)</idx> <term> Non-Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
           of state is not necessarily defined. Therefore, the state can drop off of the machine if a path is not specified. 
@@ -69,7 +68,7 @@
        </p>
    </section>
    
-   <section>
+   <section xml:id="Parallelism">
     <title>Parallelism</title>
       <p>
         NFAs make it possible to exists in two states at once. This is called <idx>parallelism</idx> <term>parallelism</term>.
@@ -196,7 +195,7 @@
         </latex-image>
       </image>
    </section>
-   <section>
+   <section xml:id="PowerSet">
     <title>The Power Set</title>
       <p>
         The <idx>Power Set (P)</idx> <term>power set (P)</term> is the set of all subsets of the given states. It also includes <m>\emptyset</m>. 
@@ -205,9 +204,22 @@
         The power set will have as many sets in it as <m>2^n</m> with <m>n</m> being the number of states in the machine. The power set for a generic 
         machice with states <m>Q_0</m>, <m>Q_1</m>, and <m>Q_2</m>. Would look like this:
       </p>
-    <!--TODO: sorry, trying to put a matrix in here, am struggling.-->
+      <image xml:id="PowerSetMatx" width="50%">
+        <latex-image>
+          \begin{tikzpicture}
+            \begin{equation*}
+              \begin{Bmatrix}
+                \emptyset \amp \{Q_0,Q_1,Q_2\}\\
+                \{Q_0\}\amp\{Q_0,Q_1\}\\
+                \{Q_1\}\amp\{Q_0,Q_2\}\\
+                \{Q_2\}\amp\{Q_1,Q_2\}
+              \end{Bmatrix}
+              \end{equation*}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
    </section>
-   <section>
+   <section xml:id="StrengthsofNFAs">
     <title>Strengths of NFAs</title>
     <p>
       NFAs are ideal for languages that include a certain set of characters. Such as:
@@ -275,6 +287,31 @@
         <p>
           There are two choices with each state, wether to be in it or to not be in it. This means that there 
           are two options for each state, making the maximum size of the power set <m>2^n</m>. 
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Create a power set for a FA with the following states: <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <image xml:id="PowerSetMatx2" width="50%">
+            <latex-image>
+              \begin{tikzpicture}
+                \begin{equation*}
+                  \begin{Bmatrix}
+                    \{A\}\amp\{A,B\}\amp\{A,C\}\amp\{A,D\}\\
+                    \{B\}\amp\{B,C\}\amp\{B,D\}\amp\{A,B,C\}\\
+                    \{C\}\amp\{C,D\}\amp\{A,B,D\}\amp\{A,C,D\}\\
+                    \{D\}\amp\{B,C,D\}\amp\{A,B,C,D\}\amp\emptyset
+                  \end{Bmatrix}
+                  \end{equation*}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
         </p>
       </answer>
     </exercise>

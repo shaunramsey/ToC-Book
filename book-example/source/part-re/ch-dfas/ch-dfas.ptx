@@ -18,7 +18,7 @@
     <p> Refer to the <xref ref="glossary" text="title"/> for a reminder of terms and abbreviations.</p>
   </introduction>
 
-   <section>
+   <section xml:id="Determinism">
       <title> Determinism </title>
       <subsection>
         <title>Set Review</title>
@@ -48,7 +48,7 @@
         </p>
       </subsection>
    </section>
-   <section>
+   <section xml:id="FiniteAutomata">
       <title>Finite Automata (FA)</title>
         <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>state machines (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
           but they utilize <idx>states (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States are 
@@ -140,7 +140,7 @@
           the languages of other machines.
         </p>
     </section>
-   <section>
+   <section xml:id="DFAs">
       <title>Deterministic Finite Automata (DFA)</title>
         <p><idx>Deterministic Finitie Automata (DFA)</idx> <term> Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
           of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are
