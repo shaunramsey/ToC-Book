@@ -17,7 +17,7 @@
   </source>
   <common>
     <tableofcontents level="2"/>
-    <chunking level="1"/>
+    <chunking level="2"/>
   </common>
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
