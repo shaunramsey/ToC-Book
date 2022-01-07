@@ -61,9 +61,9 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (27,-15.7) circle (3);
-            \draw (27,-15.7) node {$Q_0$};
+            \draw (27,-15.7) node {$A$};
             \draw [black] (47.5,-15.7) circle (3);
-            \draw (47.5,-15.7) node {$Q_1$};
+            \draw (47.5,-15.7) node {$B$};
             \draw [black] (47.5,-15.7) circle (2.4);
             \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
             \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
@@ -99,11 +99,11 @@
                   \begin{tikzpicture}[scale=0.2]
                   \tikzstyle{every node}+=[inner sep=0pt]
                   \draw [black] (27.2,-18.1) circle (3);
-                  \draw (27.2,-18.1) node {$Q_0$};
+                  \draw (27.2,-18.1) node {$A$};
                   \draw [black] (41.9,-17.4) circle (3);
-                  \draw (41.9,-17.4) node {$Q_1$};
+                  \draw (41.9,-17.4) node {$B$};
                   \draw [black] (60.2,-17.4) circle (3);
-                  \draw (60.2,-17.4) node {$Q_2$};
+                  \draw (60.2,-17.4) node {$C$};
                   \draw [black] (60.2,-17.4) circle (2.4);
                   \draw [black] (20.3,-12.5) -- (24.87,-16.21);
                   \draw (19.74,-11.07) node [left] {$M_2$};
@@ -164,8 +164,8 @@
             <title>Determinism Chart for <m>M_1</m></title>
             <tabular>
               <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
-              <row header="no"><cell right="medium"><m>Q_0</m></cell><cell><m>Q_0</m></cell><cell><m>Q_1</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_1</m></cell><cell><m>Q_1</m></cell><cell><m>Q_0</m></cell></row>
+              <row header="no"><cell right="medium"><m>A</m></cell><cell><m>A</m></cell><cell><m>B</m></cell></row>
+              <row header="no"><cell right="medium"><m>B</m></cell><cell><m>B</m></cell><cell><m>A</m></cell></row>
             </tabular>
           </table>
         </sidebyside>
@@ -188,12 +188,12 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (27,-14.6) circle (3);
-            \draw (27,-14.6) node {$Q_0$};
+            \draw (27,-14.6) node {$A$};
             \draw [black] (27,-14.6) circle (2.4);
             \draw [black] (46.6,-14.6) circle (3);
-            \draw (46.6,-14.6) node {$Q_1$};
+            \draw (46.6,-14.6) node {$B$};
             \draw [black] (40.9,-27.4) circle (3);
-            \draw (40.9,-27.4) node {$Q_2$};
+            \draw (40.9,-27.4) node {$C$};
             \draw [black] (25.635,-17.258) arc (0.54272:-287.45728:2.25);
             \draw (21,-20.01) node [left] {$0$};
             \fill [black] (24.06,-15.13) -- (23.25,-14.64) -- (23.26,-15.64);
@@ -297,11 +297,11 @@
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (19.4,-13.7) circle (3);
-            \draw (19.4,-13.7) node {$Q_0$};
+            \draw (19.4,-13.7) node {$A$};
             \draw [black] (37.4,-12.6) circle (3);
-            \draw (37.4,-12.6) node {$Q_1$};
+            \draw (37.4,-12.6) node {$B$};
             \draw [black] (30.2,-24.6) circle (3);
-            \draw (30.2,-24.6) node {$Q_2$};
+            \draw (30.2,-24.6) node {$C$};
             \draw [black] (30.2,-24.6) circle (2.4);
             \draw [black] (11.8,-9.4) -- (16.79,-12.22);
             \draw (11.14,-8.18) node [left] {$M_4$};
@@ -361,11 +361,11 @@
               \begin{tikzpicture}[scale=0.2]
               \tikzstyle{every node}+=[inner sep=0pt]
               \draw [black] (19.4,-13.7) circle (3);
-              \draw (19.4,-13.7) node {$Q_0$};
+              \draw (19.4,-13.7) node {$A$};
               \draw [black] (37.1,-14.7) circle (3);
-              \draw (37.1,-14.7) node {$Q_1$};
+              \draw (37.1,-14.7) node {$B$};
               \draw [black] (51.9,-15.4) circle (3);
-              \draw (51.9,-15.4) node {$Q_2$};
+              \draw (51.9,-15.4) node {$C$};
               \draw [black] (51.9,-15.4) circle (2.4);
               \draw [black] (37.8,-31.7) circle (3);
               \draw (37.8,-31.7) node {$\emptyset$};
@@ -408,11 +408,11 @@
           \begin{tikzpicture}[scale=0.2]
           \tikzstyle{every node}+=[inner sep=0pt]
           \draw [black] (18.9,-17.8) circle (3);
-          \draw (18.9,-17.8) node {$Q_0$};
+          \draw (18.9,-17.8) node {$A$};
           \draw [black] (37.1,-14.7) circle (3);
-          \draw (37.1,-14.7) node {$Q_1$};
+          \draw (37.1,-14.7) node {$B$};
           \draw [black] (52.9,-20.2) circle (3);
-          \draw (52.9,-20.2) node {$Q_2$};
+          \draw (52.9,-20.2) node {$C$};
           \draw [black] (52.9,-20.2) circle (2.4);
           \draw [black] (37.8,-31.7) circle (3);
           \draw (37.8,-31.7) node {$\emptyset$};

@@ -28,11 +28,11 @@
               \begin{tikzpicture}[scale=0.2]
               \tikzstyle{every node}+=[inner sep=0pt]
               \draw [black] (23.9,-16.4) circle (3);
-              \draw (23.9,-16.4) node {$Q_0$};
+              \draw (23.9,-16.4) node {$A$};
               \draw [black] (37.8,-16.4) circle (3);
-              \draw (37.8,-16.4) node {$Q_1$};
+              \draw (37.8,-16.4) node {$B$};
               \draw [black] (52.1,-16.4) circle (3);
-              \draw (52.1,-16.4) node {$Q_2$};
+              \draw (52.1,-16.4) node {$C$};
               \draw [black] (52.1,-16.4) circle (2.4);
               \draw [black] (26.872,-15.994) arc (95.654:84.346:40.38);
               \fill [black] (34.83,-15.99) -- (34.08,-15.42) -- (33.98,-16.41);
@@ -77,24 +77,24 @@
         <!--TODO: need some help with the wording in the last sentence.-->
       </p>
       <p>
-        <m>M_9</m> is an example of parallelism caused by a character having two defined paths from the same state. Both states <m>Q_1</m> and 
-        <m>Q_3</m> would be active if the first character of the given string was 1. 
+        <m>M_9</m> is an example of parallelism caused by a character having two defined paths from the same state. Both states <m>B</m> and 
+        <m>D</m> would be active if the first character of the given string was 1. 
       </p>
       <image xml:id="FAExM9" width="50%">
         <latex-image>
           \begin{tikzpicture}[scale=0.2]
           \tikzstyle{every node}+=[inner sep=0pt]
           \draw [black] (20.8,-18.9) circle (3);
-          \draw (20.8,-18.9) node {$Q_0$};
+          \draw (20.8,-18.9) node {$A$};
           \draw [black] (31.2,-13.9) circle (3);
-          \draw (31.2,-13.9) node {$Q_1$};
+          \draw (31.2,-13.9) node {$B$};
           \draw [black] (30,-26.2) circle (3);
-          \draw (30,-26.2) node {Q_3$};
+          \draw (30,-26.2) node {$D$};
           \draw [black] (45.2,-13.9) circle (3);
-          \draw (45.2,-13.9) node {$Q_2$};
+          \draw (45.2,-13.9) node {$C$};
           \draw [black] (45.2,-13.9) circle (2.4);
           \draw [black] (45.2,-26.2) circle (3);
-          \draw (45.2,-26.2) node {$Q_4$};
+          \draw (45.2,-26.2) node {$E$};
           \draw [black] (45.2,-26.2) circle (2.4);
           \draw [black] (14.5,-11.5) -- (18.86,-16.62);
           \draw (12.68,-11.01) node [above] {$M_9$};
@@ -131,15 +131,15 @@
           <title>Determinism Chart for <m>M_1</m></title>
             <tabular>
               <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
-              <row header="no"><cell right="medium"><m>Q_0</m></cell><cell><m>\{Q_1,Q_3\}</m></cell><cell><m>\emptyset</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_1</m></cell><cell><m>\{Q_1\}</m></cell><cell><m>\{Q_2\}</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_2</m></cell><cell><m>\emptyset</m></cell><cell><m>\emptyset</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_3</m></cell><cell><m>\{Q_4\}</m></cell><cell><m>\{Q_3\}</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_4</m></cell><cell><m>\{Q_4\}</m></cell><cell><m>\{Q_4\}</m></cell></row>
+              <row header="no"><cell right="medium"><m>A</m></cell><cell><m>\{B,D\}</m></cell><cell><m>\emptyset</m></cell></row>
+              <row header="no"><cell right="medium"><m>B</m></cell><cell><m>\{B\}</m></cell><cell><m>\{C\}</m></cell></row>
+              <row header="no"><cell right="medium"><m>C</m></cell><cell><m>\emptyset</m></cell><cell><m>\emptyset</m></cell></row>
+              <row header="no"><cell right="medium"><m>D</m></cell><cell><m>\{E\}</m></cell><cell><m>\{D\}</m></cell></row>
+              <row header="no"><cell right="medium"><m>E</m></cell><cell><m>\{E\}</m></cell><cell><m>\{E\}</m></cell></row>
             </tabular>
         </table>
       <p>
-        <m>M_{10}</m> is an example of parallelism caused by an empty string transition. All states <m>Q_0</m>, <m>Q_1</m>, and <m>Q_6</m> 
+        <m>M_{10}</m> is an example of parallelism caused by an empty string transition. All states <m>A</m>, <m>B</m>, and <m>G</m> 
         exist at the start.
       </p>
       <image xml:id="FAExM10" width="50%">
@@ -147,22 +147,22 @@
           \begin{tikzpicture}[scale=0.2]
           \tikzstyle{every node}+=[inner sep=0pt]
           \draw [black] (16.2,-19.1) circle (3);
-          \draw (16.2,-19.1) node {$Q_0$};
+          \draw (16.2,-19.1) node {$A$};
           \draw [black] (27.5,-13.2) circle (3);
-          \draw (27.5,-13.2) node {$Q_1$};
+          \draw (27.5,-13.2) node {$B$};
           \draw [black] (27.5,-25.9) circle (3);
-          \draw (27.5,-25.9) node {$Q_6$};
+          \draw (27.5,-25.9) node {$G$};
           \draw [black] (37.6,-13.2) circle (3);
-          \draw (37.6,-13.2) node {$Q_3$};
+          \draw (37.6,-13.2) node {$D$};
           \draw [black] (37.6,-25.9) circle (3);
-          \draw (37.6,-25.9) node {$Q_7$};
+          \draw (37.6,-25.9) node {$H$};
           \draw [black] (47.6,-13.2) circle (3);
-          \draw (47.6,-13.2) node {$Q_4$};
+          \draw (47.6,-13.2) node {$E$};
           \draw [black] (57.9,-13.2) circle (3);
-          \draw (57.9,-13.2) node {$Q_5$};
+          \draw (57.9,-13.2) node {$F$};
           \draw [black] (57.9,-13.2) circle (2.4);
           \draw [black] (47.6,-25.9) circle (3);
-          \draw (47.6,-25.9) node {$Q_8$};
+          \draw (47.6,-25.9) node {$I$};
           \draw [black] (47.6,-25.9) circle (2.4);
           \draw [black] (9.9,-11.7) -- (14.26,-16.82);
           \draw (6.34,-11.21) node [above] {$M_{10}$};
@@ -202,17 +202,17 @@
       </p>
       <p>
         The power set will have as many sets in it as <m>2^n</m> with <m>n</m> being the number of states in the machine. The power set for a generic 
-        machice with states <m>Q_0</m>, <m>Q_1</m>, and <m>Q_2</m>. Would look like this:
+        machice with states <m>A</m>, <m>B</m>, and <m>C</m>. Would look like this:
       </p>
       <image xml:id="PowerSetMatx" width="50%">
         <latex-image>
           \begin{tikzpicture}
             \begin{equation*}
               \begin{Bmatrix}
-                \emptyset \amp \{Q_0,Q_1,Q_2\}\\
-                \{Q_0\}\amp\{Q_0,Q_1\}\\
-                \{Q_1\}\amp\{Q_0,Q_2\}\\
-                \{Q_2\}\amp\{Q_1,Q_2\}
+                \emptyset \amp \{A,B,C\}\\
+                \{A\}\amp\{A,B\}\\
+                \{B\}\amp\{A,C\}\\
+                \{C\}\amp\{B,C\}
               \end{Bmatrix}
               \end{equation*}
           \end{tikzpicture}

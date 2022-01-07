@@ -21,7 +21,7 @@
         This means that all NFAs can become DFAs as the transitions on each character can be determined for each state.
         The length of the power set is also the most amount of states that a DFA made from a NFA can have.
       </p>
-      <problem xml:id="assemblage-NFADFAConversion">
+      <exploration xml:id="assemblage-NFADFAConversion">
         <title>Getting from a NFA to a DFA</title>
         <p>
           For this, consider <m>M_{12}</m>.
@@ -31,16 +31,16 @@
             \begin{tikzpicture} [scale=0.2]
               \tikzstyle{every node}+=[inner sep=0pt]
               \draw [black] (17.5,-20.5) circle (3);
-              \draw (17.5,-20.5) node {$Q_0$};
+              \draw (17.5,-20.5) node {$A$};
               \draw [black] (29.7,-13) circle (3);
-              \draw (29.7,-13) node {$Q_1$};
+              \draw (29.7,-13) node {$B$};
               \draw [black] (44.7,-13) circle (3);
-              \draw (44.7,-13) node {$Q_2$};
+              \draw (44.7,-13) node {$C$};
               \draw [black] (44.7,-13) circle (2.4);
               \draw [black] (29.7,-27.8) circle (3);
-              \draw (29.7,-27.8) node {$Q_3$};
+              \draw (29.7,-27.8) node {$D$};
               \draw [black] (44.7,-27.8) circle (3);
-              \draw (44.7,-27.8) node {$Q_4$};
+              \draw (44.7,-27.8) node {$E$};
               \draw [black] (44.7,-27.8) circle (2.4);
               \draw [black] (10.3,-14.2) -- (15.24,-18.52);
               \draw (9.76,-12.75) node [left] {$M_{12}$};
@@ -70,14 +70,10 @@
           </latex-image>
         </image>
         <p>
-          <m>M_{12}</m> is an NFA. An <m>1</m> at <m>Q_0</m> will lead to both <m>Q_1</m> and <m>Q_3</m>. 
+          <m>M_{12}</m> is an NFA. An <m>1</m> at <m>A</m> will lead to both <m>B</m> and <m>D</m>. 
           This is an example of parallelism. 
-        </p>
-        <task>
-          <p>
             What is the maximum number of states a DFA created from <m>M_{12}</m> could have?
           </p>
-        </task>
         <answer>
           <p>
             <m>32</m>. A DFA made from <m>M_{12}</m> can have up to <m>32</m> states as <m>M_{12}</m> has <m>5</m> 
@@ -86,17 +82,17 @@
         </answer>
         <p>
           How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character 
-          from each state. In <m>M_{12}</m>, a <m>1</m> at <m>Q_0</m> could go to <m>Q_1</m> or <m>Q_3</m>. A <m>0</m>
-          at <m>Q_0</m> would go to an <m>\emptyset</m> state. 
+          from each state. In <m>M_{12}</m>, a <m>1</m> at <m>A</m> could go to <m>B</m> or <m>D</m>. A <m>0</m>
+          at <m>A</m> would go to an <m>\emptyset</m> state. 
         </p>
         <image xml:id="FAEXM12_1" width="50%">
           <latex-image>
             \begin{tikzpicture}[scale=0.2]
             \tikzstyle{every node}+=[inner sep=0pt]
             \draw [black] (23.3,-15.9) circle (3);
-            \draw (23.3,-15.9) node {$\{Q_0\}$};
+            \draw (23.3,-15.9) node {$\{A\}$};
             \draw [black] (40,-15.6) circle (4);
-            \draw (40,-15.6) node {$\{Q_1,Q_3\}$};
+            \draw (40,-15.6) node {$\{B,D\}$};
             \draw [black] (33.6,-25.8) circle (3);
             \draw (33.6,-25.8) node {$\emptyset$};
             \draw [black] (26.108,-14.854) arc (106.02809:76.16129:19.494);
@@ -113,8 +109,54 @@
             \end{tikzpicture}
           </latex-image>
         </image>
-
-      </problem>
+        <p>
+          Try to create the states that <m>{B,D}</m> would lead to. There is a posibility that each state in a set 
+          is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept 
+          state.
+        </p>
+        <answer>
+          <p>
+            <image xml:id="FAEXM12_2" width="50%">
+              <latex-image>
+                \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (18.9,-15.6) circle (3);
+                \draw (18.9,-15.6) node {$\{A\}$};
+                \draw [black] (34,-14) circle (4);
+                \draw (34,-14) node {$\{B,D\}$};
+                \draw [black] (28.8,-23.8) circle (3);
+                \draw (28.8,-23.8) node {$\emptyset$};
+                \draw [black] (52.5,-13.4) circle (5);
+                \draw (52.5,-13.4) node {$\{C,D\}$};
+                \draw [black] (52.5,-13.4) circle (4.4);
+                \draw [black] (47.9,-25.3) circle (5);
+                \draw (47.9,-25.3) node {$\{B,E\}$};
+                \draw [black] (47.9,-25.3) circle (4.4);
+                \draw [black] (21.561,-14.225) arc (111.97602:80.9719:16.073);
+                \fill [black] (30.1,-13.26) -- (29.39,-12.64) -- (29.23,-13.62);
+                \draw (25.53,-12.57) node [above] {$1$};
+                \draw [black] (12,-10.4) -- (16.5,-13.79);
+                \fill [black] (16.5,-13.79) -- (16.17,-12.91) -- (15.56,-13.71);
+                \draw [black] (25.969,-22.824) arc (-115.00348:-144.26526:14.35);
+                \fill [black] (25.97,-22.82) -- (25.46,-22.03) -- (25.03,-22.94);
+                \draw (21.87,-21.36) node [below] {$0$};
+                \draw [black] (30.545,-26.226) arc (63.46232:-224.53768:2.25);
+                \draw (30.68,-31.12) node [below] {$0,1$};
+                \fill [black] (27.94,-26.66) -- (27.13,-27.15) -- (28.03,-27.6);
+                \draw [black] (37.862,-13.107) arc (104.21895:83.70837:27.625);
+                \fill [black] (47.6,-12.5) -- (46.66,-12.1) -- (46.61,-12.8);
+                \draw (41.68,-11.74) node [above] {$0$};
+                \draw [black] (43.345,-23.729) arc (-123.60577:-138.82894:37.411);
+                \fill [black] (43.34,-23.73) -- (42.96,-22.87) -- (42.4,-23.7);
+                \draw (37.86,-20.8) node [below] {$1$};
+                  
+                \end{tikzpicture}
+              </latex-image>
+              <!--TODO: Im sorry, i got frustrated with this and will return to it later.-->
+            </image>
+          </p>
+        </answer>
+      </exploration>
     
   </section>
     <!--
