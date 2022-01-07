@@ -5,10 +5,8 @@
   <objectives>
     In this chapter you will learn:
      <ol>
-       <li> Non-Deterministic Finite Automata (NFA) </li>
-       <li> Parallelism </li>
-       <li> The Power Set </li>
-       <li> Strengths of NFAs </li>
+       <li> Regular Expressions </li>
+       <li> Regular Expressions in NFAs </li>
      </ol>
   </objectives>
   <introduction>
@@ -65,9 +63,9 @@
       </exploration>
   </section>
   <section xml:id="sec-REsInNFAs">
-    <title>Regular Expressinos in NFAs</title>
+    <title>Regular Expressions in NFAs</title>
       <p>
-        NFAs can be used to easily represent REs. The best way to approach this is to go ome chacter or character grouping 
+        NFAs can be used to easily represent REs. The best way to approach this is to go one chacter or character grouping 
         at a time.
       </p>
       <tabular>
@@ -175,6 +173,82 @@
       </row>
       </tabular>
   </section>
+  <exercises xml:id="exercises-REX">
+    <exercise>
+      <statement>
+        <p>
+          Given <m>\Sigma=\{0,1,@,.\}</m>, make a regular expression for any binary string, followed by an <m>@</m>,
+          followed by one or more binary strings, and separated by <m>.</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          An example string is <m>01@01.01.1</m>
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>REX_1=(0+1)(0+1)^*@(0+1)(0+1)^*(.(0+1)(0+1)^*)^*</m>
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Given <m>\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}</m>, create a regular expression that recognizes phone numbers of
+          the form: <m>[555]555-5555</m>. As a shortcut you may write <m>0->2</m> to mean <m>0+1+2...</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>REX_2=[(0->9)(0->9)(0->9)](0->9)(0->9)(0->9)-(0->9)(0->9)(0->9)(0->9)</m>
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          What is the language of this regular expression?
+          <me>
+            REX_3 = 0+1(0+1)^*
+          </me>
+          Your answer does not need to be in mathematical notation.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>L(REX_3)=\mbox{either 0 or any binary string that begins with 1}</m>
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          What is the language of this regular expression?
+          <me>
+            REX_4 = (\_+a+b+c+...+Y+Z)(\_+a+b+c+...+Y+Z+0+1+...+8+9)^*
+          </me>
+          Your answer does not need to be in mathematical notation.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Some example strings inlcude: 
+          <ul>
+            <li><m>al</m></li>
+            <li><m>abba\_1</m></li>
+            <li><m>\_012</m></li>
+            <li><m>int</m></li>
+          </ul>
+        </p>
+      </hint>
+      <answer>
+        <p>
+          <m>L(REX_4)=\mbox{underscore or any alphabetic character followed by any number of underscores or any alphanumeric characters}</m>
+        </p>
+      </answer>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

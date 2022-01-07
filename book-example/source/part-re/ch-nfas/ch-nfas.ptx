@@ -236,7 +236,7 @@
       <statement>
         <p>
           Build a NFA for the following language where <m>\Sigma(L_{11}) = \{0, 1\}</m>:
-          <me>L_{11} = \mbox{any string that contains } 01</me>
+          <me>L_{11} = \mbox{any string that contains 01}</me>
         </p>
       </statement>
       <answer>

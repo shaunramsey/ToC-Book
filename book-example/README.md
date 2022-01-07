@@ -18,4 +18,5 @@
 <li>figure out terms for glossary and index (state machines for machines and explain)</li>
 <li>put idx tag around a term to go in the index! This won't show in the build but will link to it in the index! exciting stuff! BUT must be viewed as part of server, not just refereshed HTML page</li>
 <li>With Evan's nodes that may need to be moved bc of size, change circle size and x axis and node x axis.</li>
+<li> Can the REX and REX to NFA chapters be combined?</li>
 </ul>
