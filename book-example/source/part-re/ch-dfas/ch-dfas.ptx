@@ -22,9 +22,9 @@
       <title> Determinism </title>
       <subsection>
         <title>Set Review</title>
-        <p>The <idx>alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
+        <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
         Characters in the alphabet can be appended together to create strings. These strings can be used in a set of recognizable
-        strings, also known as a <idx>language(<em><m>L</m></em>)</idx> <term>language(<em><m>L</m></em>)</term>.
+        strings, also known as a <idx>Language(<em><m>L</m></em>)</idx> <term>language(<em><m>L</m></em>)</term>.
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
@@ -50,8 +50,8 @@
    </section>
    <section xml:id="FiniteAutomata">
       <title>Finite Automata (FA)</title>
-        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>state machines (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
-          but they utilize <idx>states (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States are 
+        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
+          but they utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States are 
           represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
           a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
           these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.

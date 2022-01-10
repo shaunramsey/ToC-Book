@@ -156,9 +156,264 @@
             </image>
           </p>
         </answer>
+        <p>
+          When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would a 
+          a go after <m>C</m>?, where would an 1 go after <m>D</m>?, and where would a 0 go after <m>E</m>. Try to complete the next step of the diagram.
+        </p>
+        <answer>
+          <image xml:id="FAExM12_3" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (13.3,-13.9) circle (3);
+              \draw (13.3,-13.9) node {${A}$};
+              \draw [black] (27.2,-13.9) circle (3);
+              \draw (27.2,-13.9) node {${B,D}$};
+              \draw [black] (42.3,-13.9) circle (3);
+              \draw (42.3,-13.9) node {${C,D}$};
+              \draw [black] (42.3,-13.9) circle (2.4);
+              \draw [black] (59.3,-13.9) circle (3);
+              \draw (59.3,-13.9) node {${D}$};
+              \draw [black] (20.8,-23.8) circle (3);
+              \draw (20.8,-23.8) node {$\emptyset$};
+              \draw [black] (32,-27.3) circle (3);
+              \draw (32,-27.3) node {${BE}$};
+              \draw [black] (32,-27.3) circle (2.4);
+              \draw [black] (44.7,-38.9) circle (3);
+              \draw (44.7,-38.9) node {${C,E}$};
+              \draw [black] (44.7,-38.9) circle (2.4);
+              \draw [black] (57.1,-28.5) circle (3);
+              \draw (57.1,-28.5) node {${E}$};
+              \draw [black] (57.1,-28.5) circle (2.4);
+              \draw [black] (16.147,-12.964) arc (103.35475:76.64525:17.765);
+              \fill [black] (24.35,-12.96) -- (23.69,-12.29) -- (23.46,-13.27);
+              \draw (20.25,-11.98) node [above] {$1$};
+              \draw [black] (30.055,-12.987) arc (103.47231:76.52769:20.153);
+              \fill [black] (39.45,-12.99) -- (38.78,-12.31) -- (38.55,-13.29);
+              \draw (34.75,-11.93) node [above] {$0$};
+              \draw [black] (45.156,-12.988) arc (104.01509:75.98491:23.305);
+              \fill [black] (56.44,-12.99) -- (55.79,-12.31) -- (55.55,-13.28);
+              \draw (50.8,-11.79) node [above] {$0$};
+              \draw [black] (54.416,-27.162) arc (-119.46755:-149.75293:28.882);
+              \fill [black] (54.42,-27.16) -- (53.97,-26.33) -- (53.47,-27.2);
+              \draw (47.32,-23.06) node [below] {$1$};
+              \draw [black] (34.567,-28.85) arc (56.52112:38.66262:36.459);
+              \fill [black] (42.92,-36.48) -- (42.81,-35.55) -- (42.03,-36.17);
+              \draw (40.06,-31.85) node [above] {$0$};
+              \draw [black] (34.115,-25.189) arc (162.67625:-125.32375:2.25);
+              \draw (39.16,-24.42) node [right] {$1$};
+              \fill [black] (34.96,-27.69) -- (35.58,-28.41) -- (35.87,-27.46);
+              \draw [black] (28.773,-16.453) arc (28.50621:10.90974:27.35);
+              \fill [black] (31.59,-24.33) -- (31.93,-23.45) -- (30.95,-23.64);
+              \draw (31.25,-19.51) node [right] {$1$};
+              \draw [black] (18.108,-22.498) arc (-123.73941:-161.96722:10.831);
+              \fill [black] (18.11,-22.5) -- (17.72,-21.64) -- (17.16,-22.47);
+              \draw (14.92,-21.43) node [left] {$0$};
+              \draw [black] (22.123,-26.48) arc (54:-234:2.25);
+              \draw (20.8,-31.05) node [below] {$0,1$};
+              \fill [black] (19.48,-26.48) -- (18.6,-26.83) -- (19.41,-27.42);
+              \draw [black] (6.3,-7.9) -- (11.02,-11.95);
+              \fill [black] (11.02,-11.95) -- (10.74,-11.05) -- (10.09,-11.81);
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
+        <p>
+          It is important to note, that if the outcoming state set of a chaacter already exists that state sholuld be linked to instead of another created. 
+          Try creating the final FA with this in mind.
+        </p>
+        <answer>
+          <image xml:id="FAExM12_4" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.3]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (13.3,-13.9) circle (3);
+              \draw (13.3,-13.9) node {$\{A\}$};
+              \draw [black] (27.2,-13.9) circle (3);
+              \draw (27.2,-13.9) node {$\{B,D\}$};
+              \draw [black] (42.3,-13.9) circle (3);
+              \draw (42.3,-13.9) node {$\{C,D\}$};
+              \draw [black] (42.3,-13.9) circle (2.4);
+              \draw [black] (59.3,-13.9) circle (3);
+              \draw (59.3,-13.9) node {$\{D\}$};
+              \draw [black] (20.8,-23.8) circle (3);
+              \draw (20.8,-23.8) node {$\emptyset$};
+              \draw [black] (32,-27.3) circle (3);
+              \draw (32,-27.3) node {$\{B,E\}$};
+              \draw [black] (32,-27.3) circle (2.4);
+              \draw [black] (44.7,-38.9) circle (3);
+              \draw (44.7,-38.9) node {$\{C,E\}$};
+              \draw [black] (44.7,-38.9) circle (2.4);
+              \draw [black] (57.1,-28.5) circle (3);
+              \draw (57.1,-28.5) node {$\{E\}$};
+              \draw [black] (57.1,-28.5) circle (2.4);
+              \draw [black] (16.147,-12.964) arc (103.35475:76.64525:17.765);
+              \fill [black] (24.35,-12.96) -- (23.69,-12.29) -- (23.46,-13.27);
+              \draw (20.25,-11.98) node [above] {$1$};
+              \draw [black] (30.055,-12.987) arc (103.47231:76.52769:20.153);
+              \fill [black] (39.45,-12.99) -- (38.78,-12.31) -- (38.55,-13.29);
+              \draw (34.75,-11.93) node [above] {$0$};
+              \draw [black] (45.156,-12.988) arc (104.01509:75.98491:23.305);
+              \fill [black] (56.44,-12.99) -- (55.79,-12.31) -- (55.55,-13.28);
+              \draw (50.8,-11.79) node [above] {$0$};
+              \draw [black] (57.945,-16.564) arc (0.77246:-287.22754:2.25);
+              \draw (53.31,-19.34) node [left] {$0$};
+              \fill [black] (56.36,-14.44) -- (55.56,-13.96) -- (55.57,-14.96);
+              \draw [black] (60.046,-16.801) arc (8.85408:-25.99236:15.446);
+              \fill [black] (58.67,-25.95) -- (59.47,-25.45) -- (58.57,-25.01);
+              \draw (60.75,-21.67) node [right] {$1$};
+              \draw [black] (58.769,-30.979) arc (61.67854:-226.32146:2.25);
+              \draw (58.55,-35.85) node [below] {$0,1$};
+              \fill [black] (56.15,-31.33) -- (55.33,-31.8) -- (56.21,-32.27);
+              \draw [black] (54.416,-27.162) arc (-119.46755:-149.75293:28.882);
+              \fill [black] (54.42,-27.16) -- (53.97,-26.33) -- (53.47,-27.2);
+              \draw (47.32,-23.06) node [below] {$1$};
+              \draw [black] (46.4,-36.43) arc (142.01316:117.96061:24.968);
+              \fill [black] (54.37,-29.74) -- (53.43,-29.68) -- (53.9,-30.56);
+              \draw (48.28,-32.17) node [above] {$0,1$};
+              \draw [black] (34.567,-28.85) arc (56.52112:38.66262:36.459);
+              \fill [black] (42.92,-36.48) -- (42.81,-35.55) -- (42.03,-36.17);
+              \draw (40.06,-31.85) node [above] {$0$};
+              \draw [black] (34.115,-25.189) arc (162.67625:-125.32375:2.25);
+              \draw (39.16,-24.42) node [right] {$1$};
+              \fill [black] (34.96,-27.69) -- (35.58,-28.41) -- (35.87,-27.46);
+              \draw [black] (28.773,-16.453) arc (28.50621:10.90974:27.35);
+              \fill [black] (31.59,-24.33) -- (31.93,-23.45) -- (30.95,-23.64);
+              \draw (31.25,-19.51) node [right] {$1$};
+              \draw [black] (18.108,-22.498) arc (-123.73941:-161.96722:10.831);
+              \fill [black] (18.11,-22.5) -- (17.72,-21.64) -- (17.16,-22.47);
+              \draw (14.92,-21.43) node [left] {$0$};
+              \draw [black] (22.123,-26.48) arc (54:-234:2.25);
+              \draw (20.8,-31.05) node [below] {$0,1$};
+              \fill [black] (19.48,-26.48) -- (18.6,-26.83) -- (19.41,-27.42);
+              \draw [black] (6.3,-7.9) -- (11.02,-11.95);
+              \fill [black] (11.02,-11.95) -- (10.74,-11.05) -- (10.09,-11.81);
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
       </exploration>
-    
   </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <image xml:id="FAExM19" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (16.5,-14.7) circle (3);
+            \draw (16.5,-14.7) node {$A$};
+            \draw [black] (30.5,-14.7) circle (3);
+            \draw (30.5,-14.7) node {$B$};
+            \draw [black] (30.5,-14.7) circle (2.4);
+            \draw [black] (44.9,-14.7) circle (3);
+            \draw (44.9,-14.7) node {$C$};
+            \draw [black] (59.1,-14.7) circle (3);
+            \draw (59.1,-14.7) node {$D$};
+            \draw [black] (30.5,-28.5) circle (3);
+            \draw (30.5,-28.5) node {$E$};
+            \draw [black] (30.5,-28.5) circle (2.4);
+            \draw [black] (45.8,-28.5) circle (3);
+            \draw (45.8,-28.5) node {$F$};
+            \draw [black] (10.4,-9.2) -- (14.27,-12.69);
+            \draw (9.86,-7.74) node [left] {$M_{13}$};
+            \fill [black] (14.27,-12.69) -- (14.01,-11.78) -- (13.34,-12.53);
+            \draw [black] (19.354,-13.786) arc (103.06661:76.93339:18.339);
+            \fill [black] (27.65,-13.79) -- (26.98,-13.12) -- (26.75,-14.09);
+            \draw (23.5,-12.81) node [above] {$a$};
+            \draw [black] (33.369,-13.833) arc (102.51882:77.48118:19.981);
+            \fill [black] (42.03,-13.83) -- (41.36,-13.17) -- (41.14,-14.15);
+            \draw (37.7,-12.86) node [above] {$a$};
+            \draw [black] (47.774,-13.851) arc (102.17447:77.82553:20.037);
+            \fill [black] (56.23,-13.85) -- (55.55,-13.19) -- (55.34,-14.17);
+            \draw (52,-12.9) node [above] {$b$};
+            \draw [black] (56.915,-16.751) arc (-51.26082:-128.73918:19.359);
+            \fill [black] (32.69,-16.75) -- (33,-17.64) -- (33.62,-16.86);
+            \draw (44.8,-21.51) node [below] {$\epsilon$};
+            \draw [black] (27.942,-26.934) arc (-123.81274:-145.36288:36.95);
+            \fill [black] (27.94,-26.93) -- (27.56,-26.07) -- (27,-26.9);
+            \draw (21.6,-23.03) node [below] {$a$};
+            \draw [black] (33.349,-27.57) arc (103.79878:76.20122:20.127);
+            \fill [black] (42.95,-27.57) -- (42.29,-26.89) -- (42.05,-27.87);
+            \draw (38.15,-26.49) node [above] {$a,b$};
+            \draw [black] (43.25,-30.065) arc (-65.46001:-114.53999:12.278);
+            \fill [black] (33.05,-30.07) -- (33.57,-30.85) -- (33.99,-29.94);
+            \draw (38.15,-31.67) node [below] {$\epsilon$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+        <p>
+          What is the maximum number of states in a DFA made from <m>M_{13}</m>?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>64.</m>
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Create a DFA from based on <m>M_{13}</m>.
+        </p>
+      </statement>
+      <answer>
+        <image xml:id="FAExM19a" width="100%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.4]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (13.7,-12.3) circle (3);
+            \draw (13.7,-12.3) node {$\{A\}$};
+            \draw [black] (27.9,-12.3) circle (3);
+            \draw (27.9,-12.3) node {$\{B,E\}$};
+            \draw [black] (27.9,-12.3) circle (2.4);
+            \draw [black] (41.9,-12.3) circle (3);
+            \draw (41.9,-12.3) node {$\{C,E,F\}$};
+            \draw [black] (41.9,-12.3) circle (2.4);
+            \draw [black] (56.7,-12.9) circle (3);
+            \draw (56.7,-12.9) node {$\{B,D,E,F\}$};
+            \draw [black] (56.7,-12.9) circle (2.4);
+            \draw [black] (36.6,-31.9) circle (3);
+            \draw (36.6,-31.9) node {$\{E,F\}$};
+            \draw [black] (36.6,-31.9) circle (2.4);
+            \draw [black] (18.8,-28.2) circle (3);
+            \draw (18.8,-28.2) node {$\emptyset$};
+            \draw [black] (7.6,-6) -- (11.61,-10.14);
+            \fill [black] (11.61,-10.14) -- (11.42,-9.22) -- (10.7,-9.92);
+            \draw [black] (16.606,-11.563) arc (100.4924:79.5076:23.031);
+            \fill [black] (24.99,-11.56) -- (24.3,-10.93) -- (24.12,-11.91);
+            \draw (20.8,-10.68) node [above] {$a$};
+            \draw [black] (30.823,-11.634) arc (99.39227:80.60773:24.981);
+            \fill [black] (38.98,-11.63) -- (38.27,-11.01) -- (38.11,-12);
+            \draw (34.9,-10.8) node [above] {$a$};
+            \draw [black] (44.72,-11.289) arc (104.38404:70.9729:16.105);
+            \fill [black] (53.97,-11.66) -- (53.38,-10.93) -- (53.05,-11.88);
+            \draw (49.41,-10.26) node [above] {$a$};
+            \draw [black] (53.82,-13.729) arc (-78.44974:-106.19332:19.029);
+            \fill [black] (44.7,-13.36) -- (45.33,-14.06) -- (45.61,-13.1);
+            \draw (49.21,-14.64) node [below] {$b$};
+            \draw [black] (36.717,-28.903) arc (175.56156:154.1757:38.958);
+            \fill [black] (36.72,-28.9) -- (37.28,-28.14) -- (36.28,-28.07);
+            \draw (37.19,-21.23) node [left] {$a$};
+            \draw [black] (54.799,-15.221) arc (-40.20506:-53.0179:97.273);
+            \fill [black] (39.02,-30.13) -- (39.96,-30.05) -- (39.36,-29.25);
+            \draw (48.35,-23.6) node [below] {$b$};
+            \draw [black] (34.505,-29.755) arc (-138.87469:-173.25459:26.77);
+            \fill [black] (34.5,-29.76) -- (34.35,-28.82) -- (33.6,-29.48);
+            \draw (29.48,-24) node [left] {$b$};
+            \draw [black] (16.924,-25.863) arc (-145.66214:-178.77009:19.48);
+            \fill [black] (16.92,-25.86) -- (16.89,-24.92) -- (16.06,-25.48);
+            \draw (13.69,-21.49) node [left] {$b$};
+            \draw [black] (18.032,-25.312) arc (222.61907:-65.38093:2.25);
+            \draw (21.09,-20.93) node [above] {$a,b$};
+            \fill [black] (20.63,-25.83) -- (21.55,-25.66) -- (20.88,-24.92);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </answer>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

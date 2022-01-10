@@ -2,9 +2,261 @@
 
 <chapter xml:id="ch-fa-to-rex" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Using Rips to Convert FAs to REX</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Steps to rip </li>
+     </ol>
+  </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
   </introduction>
+  <section xml:id="sec-howtorip">
+    <title>Rips</title>
+    <p>
+      <idx>Rip</idx> <term>Ripping</term> is the process to removing states from an FA to determine the RE of the machine. 
+    </p>
+    <p>
+      How to rip: 
+      <ol>
+        <li>
+          <p>
+            Add a new start state with an empty string transition to the old start state.
+          </p>
+        </li>
+        <li>
+          <p>
+            Add a new accept state with empty string transition(s) from the old accept state(s).
+          </p>
+        </li>
+        <li>
+          <p>
+            Begin ripping states by considering one at a time: 
+
+            <ol>
+              <li>
+                <p>
+                  Consider all states with a transition to or away from the ripped state.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For every pair of those states, you must update the REX on those tranitions.
+                </p>
+                <image xml:id="FAExM21" width="50%">
+                  <latex-image>
+                    \begin{tikzpicture}[scale=0.25]
+                    \tikzstyle{every node}+=[inner sep=0pt]
+                    \draw [black] (25.6,-14.5) circle (3);
+                    \draw (25.6,-14.5) node {$R_i$};
+                    \draw [black] (44.6,-14.5) circle (3);
+                    \draw (44.6,-14.5) node {$R_j$};
+                    \draw [black] (34.9,-26.7) circle (3);
+                    \draw (34.9,-26.7) node {$Ripped$};
+                    \draw [black] (32.159,-25.496) arc (-120.21332:-165.15049:13.217);
+                    \fill [black] (32.16,-25.5) -- (31.72,-24.66) -- (31.22,-25.53);
+                    \draw (27.73,-23.49) node [left] {$R_{start}$};
+                    \draw [black] (44.099,-17.452) arc (-15.99351:-60.98164:13.516);
+                    \fill [black] (44.1,-17.45) -- (43.4,-18.08) -- (44.36,-18.36);
+                    \draw (42.25,-23.56) node [right] {$R_{end}$};
+                    \draw [black] (28.052,-12.78) arc (119.11258:60.88742:14.487);
+                    \fill [black] (42.15,-12.78) -- (41.69,-11.95) -- (41.21,-12.83);
+                    \draw (35.1,-10.45) node [above] {$R_{old\mbox{ }path}$};
+                    \draw [black] (37.513,-28.15) arc (88.69515:-199.30485:2.25);
+                    \draw (43.15,-32.75) node [below] {$R_{loop}$};
+                    \fill [black] (35.34,-29.66) -- (34.82,-30.44) -- (35.82,-30.47);
+                    \end{tikzpicture}
+                  </latex-image>
+                </image>
+              </li>
+              <li>
+                <p>
+                  With <m>Ripped</m> removed, we have: 
+                  <image xml:id="FAExM21a" width="50%">
+                    <latex-image>
+                      \begin{tikzpicture}[scale=0.2]
+                      \tikzstyle{every node}+=[inner sep=0pt]
+                      \draw [black] (25.6,-14.5) circle (3);
+                      \draw (25.6,-14.5) node {$R_i$};
+                      \draw [black] (62.2,-14.5) circle (3);
+                      \draw (62.2,-14.5) node {$R_j$};
+                      \draw [black] (28.556,-13.991) arc (98.90576:81.09424:99.113);
+                      \fill [black] (59.24,-13.99) -- (58.53,-13.37) -- (58.38,-14.36);
+                      \draw (43.9,-12.3) node [above] {$(R_{old})+(R_{start})(R_{loop})^*(R_{end})$};
+                      \end{tikzpicture}
+                    </latex-image>
+                </image>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>R_i</m> and <m>R_j</m> may be the same state, this will especially occur when ripping the last state.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+        <li>
+            <p>
+              Repeat the process until all states besides the start and accept states have been ripped.
+            </p>
+          </li>
+      </ol>
+    </p>
+    <exploration>
+    <p>
+      Consider <m>M_{14}</m>: 
+      <image xml:id="FAExM20" width="50%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (21.4,-19.5) circle (3);
+          \draw (21.4,-19.5) node {$A$};
+          \draw [black] (21.4,-19.5) circle (2.4);
+          \draw [black] (44.3,-19.5) circle (3);
+          \draw (44.3,-19.5) node {$B$};
+          \draw [black] (13.7,-13.6) -- (19.02,-17.68);
+          \draw (13.13,-12.19) node [left] {$M_{14}$};
+          \fill [black] (19.02,-17.68) -- (18.69,-16.79) -- (18.08,-17.59);
+          \draw [black] (24.238,-18.53) arc (106.10939:73.89061:31.039);
+          \fill [black] (41.46,-18.53) -- (40.83,-17.83) -- (40.56,-18.79);
+          \draw (32.85,-16.81) node [above] {$1$};
+          \draw [black] (41.48,-20.519) arc (-73.04374:-106.95626:29.59);
+          \fill [black] (24.22,-20.52) -- (24.84,-21.23) -- (25.13,-20.27);
+          \draw (32.85,-22.31) node [below] {$1$};
+          \draw [black] (46.33,-17.307) arc (164.93489:-123.06511:2.25);
+          \draw (51.36,-16.25) node [right] {$0$};
+          \fill [black] (47.28,-19.78) -- (47.92,-20.47) -- (48.18,-19.5);
+          \draw [black] (19.343,-21.668) arc (-15.77079:-303.77079:2.25);
+          \draw (14.31,-22.64) node [left] {$0$};
+          \fill [black] (18.43,-19.19) -- (17.79,-18.49) -- (17.52,-19.45);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+      <ol>
+        <li>
+          <p>
+            Add a new start state with an empty string transition to the old start state.
+          </p>
+            <image xml:id="FAExM20a" width="50%">
+              <latex-image>
+                \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (32.9,-18) circle (3);
+                \draw (32.9,-18) node {$A$};
+                \draw [black] (32.9,-18) circle (2.4);
+                \draw [black] (52.6,-18) circle (3);
+                \draw (52.6,-18) node {$B$};
+                \draw [black] (20,-16.4) circle (3);
+                \draw (20,-16.4) node {$S$};
+                \draw [black] (35.692,-16.908) arc (107.65967:72.34033:23.266);
+                \fill [black] (49.81,-16.91) -- (49.2,-16.19) -- (48.89,-17.14);
+                \draw (42.75,-15.31) node [above] {$1$};
+                \draw [black] (49.83,-19.146) arc (-71.40123:-108.59877:22.198);
+                \fill [black] (35.67,-19.15) -- (36.27,-19.87) -- (36.59,-18.93);
+                \draw (42.75,-20.81) node [below] {$1$};
+                \draw [black] (54.63,-15.807) arc (164.93489:-123.06511:2.25);
+                \draw (59.66,-14.75) node [right] {$0$};
+                \fill [black] (55.58,-18.28) -- (56.22,-18.97) -- (56.48,-18);
+                \draw [black] (30.843,-20.168) arc (-15.77079:-303.77079:2.25);
+                \draw (25.81,-21.14) node [left] {$0$};
+                \fill [black] (29.93,-17.69) -- (29.29,-16.99) -- (29.02,-17.95);
+                \draw [black] (22.871,-15.554) arc (99.78272:66.07659:12.949);
+                \fill [black] (30.32,-16.48) -- (29.79,-15.7) -- (29.39,-16.61);
+                \draw (26.92,-14.88) node [above] {$\epsilon$};
+                \draw [black] (15,-10.2) -- (18.12,-14.06);
+                \fill [black] (18.12,-14.06) -- (18,-13.13) -- (17.23,-13.76);
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+        </li>
+        <li>
+          <p>
+            Add a new accept state with empty string transition(s) from the old accept state(s)
+          </p>
+          <image xml:id="FAExM20b" width="50%">
+              <latex-image>
+                \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (32.9,-18) circle (3);
+                \draw (32.9,-18) node {$A$};
+                \draw [black] (51.8,-18) circle (3);
+                \draw (51.8,-18) node {$B$};
+                \draw [black] (20,-16.4) circle (3);
+                \draw (20,-16.4) node {$S$};
+                \draw [black] (43.5,-9) circle (3);
+                \draw (43.5,-9) node {$E$};
+                \draw [black] (43.5,-9) circle (2.4);
+                \draw [black] (35.678,-16.874) arc (108.07526:71.92474:21.504);
+                \fill [black] (49.02,-16.87) -- (48.42,-16.15) -- (48.11,-17.1);
+                \draw (42.35,-15.31) node [above] {$1$};
+                \draw [black] (49.046,-19.182) arc (-70.95947:-109.04053:20.524);
+                \fill [black] (35.65,-19.18) -- (36.25,-19.92) -- (36.57,-18.97);
+                \draw (42.35,-20.81) node [below] {$1$};
+                \draw [black] (53.83,-15.807) arc (164.93489:-123.06511:2.25);
+                \draw (58.86,-14.75) node [right] {$0$};
+                \fill [black] (54.78,-18.28) -- (55.42,-18.97) -- (55.68,-18);
+                \draw [black] (30.843,-20.168) arc (-15.77079:-303.77079:2.25);
+                \draw (25.81,-21.14) node [left] {$0$};
+                \fill [black] (29.93,-17.69) -- (29.29,-16.99) -- (29.02,-17.95);
+                \draw [black] (22.871,-15.554) arc (99.78272:66.07659:12.949);
+                \fill [black] (30.32,-16.48) -- (29.79,-15.7) -- (29.39,-16.61);
+                \draw (26.92,-14.88) node [above] {$\epsilon$};
+                \draw [black] (15,-10.2) -- (18.12,-14.06);
+                \fill [black] (18.12,-14.06) -- (18,-13.13) -- (17.23,-13.76);
+                \draw [black] (33.725,-15.127) arc (155.71999:104.94629:10.412);
+                \fill [black] (40.53,-9.35) -- (39.63,-9.07) -- (39.89,-10.04);
+                \draw (35.52,-10.98) node [above] {$\epsilon$};
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+        </li>
+        <li>
+          <p>
+            Begin ripping states. 
+          </p>
+          <image xml:id="FAExM20c" width="50%">
+              <latex-image>
+                \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (32.9,-18) circle (3);
+                \draw (32.9,-18) node {$A$};
+                \draw [black] (51.8,-18) circle (3);
+                \draw (51.8,-18) node {$B$};
+                \draw [black] (20,-16.4) circle (3);
+                \draw (20,-16.4) node {$S$};
+                \draw [black] (43.5,-9) circle (3);
+                \draw (43.5,-9) node {$E$};
+                \draw [black] (43.5,-9) circle (2.4);
+                \draw [black] (35.678,-16.874) arc (108.07526:71.92474:21.504);
+                \fill [black] (49.02,-16.87) -- (48.42,-16.15) -- (48.11,-17.1);
+                \draw (42.35,-15.31) node [above] {$1$};
+                \draw [black] (49.046,-19.182) arc (-70.95947:-109.04053:20.524);
+                \fill [black] (35.65,-19.18) -- (36.25,-19.92) -- (36.57,-18.97);
+                \draw (42.35,-20.81) node [below] {$1$};
+                \draw [black] (53.83,-15.807) arc (164.93489:-123.06511:2.25);
+                \draw (58.86,-14.75) node [right] {$0$};
+                \fill [black] (54.78,-18.28) -- (55.42,-18.97) -- (55.68,-18);
+                \draw [black] (30.843,-20.168) arc (-15.77079:-303.77079:2.25);
+                \draw (25.81,-21.14) node [left] {$0$};
+                \fill [black] (29.93,-17.69) -- (29.29,-16.99) -- (29.02,-17.95);
+                \draw [black] (22.871,-15.554) arc (99.78272:66.07659:12.949);
+                \fill [black] (30.32,-16.48) -- (29.79,-15.7) -- (29.39,-16.61);
+                \draw (26.92,-14.88) node [above] {$\epsilon$};
+                \draw [black] (15,-10.2) -- (18.12,-14.06);
+                \fill [black] (18.12,-14.06) -- (18,-13.13) -- (17.23,-13.76);
+                \draw [black] (33.725,-15.127) arc (155.71999:104.94629:10.412);
+                \fill [black] (40.53,-9.35) -- (39.63,-9.07) -- (39.89,-10.04);
+                \draw (35.52,-10.98) node [above] {$\epsilon$};
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+        </li>
+      </ol>
+      </p>
+    </exploration>
+    
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

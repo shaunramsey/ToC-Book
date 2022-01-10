@@ -71,8 +71,8 @@
    <section xml:id="Parallelism">
     <title>Parallelism</title>
       <p>
-        NFAs make it possible to exists in two states at once. This is called <idx>parallelism</idx> <term>parallelism</term>.
-        Parallelism can occur becuase a state has multiple paths for the same character or through an <idx>empty string transition</idx>
+        NFAs make it possible to exists in two states at once. This is called <idx>Parallelism</idx> <term>parallelism</term>.
+        Parallelism can occur becuase a state has multiple paths for the same character or through an <idx>Empty String Transition</idx>
         <term>empty string transition</term>. When an empty string transition occurs, all applicable states exist at once. 
         <!--TODO: need some help with the wording in the last sentence.-->
       </p>
