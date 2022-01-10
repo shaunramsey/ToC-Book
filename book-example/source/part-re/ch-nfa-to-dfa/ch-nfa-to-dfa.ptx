@@ -355,11 +355,11 @@
     <exercise>
       <statement>
         <p>
-          Create a DFA from based on <m>M_{13}</m>.
+          Create a DFA based on <m>M_{13}</m>.
         </p>
       </statement>
       <answer>
-        <image xml:id="FAExM19a" width="100%">
+        <image xml:id="FAExM19a" width="25%">
           <latex-image>
             \begin{tikzpicture}[scale=0.4]
             \tikzstyle{every node}+=[inner sep=0pt]
