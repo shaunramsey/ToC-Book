@@ -2,42 +2,428 @@
 
 <chapter xml:id="ch-fa-closure" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Closure and Regular Languages</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Discrete Math Review</li>
+       <li> Closure </li>
+     </ol>
+  </objectives>
   <introduction>
-    <p>What will we learn in this chapter?HI</p>
-    <remark> <p> REMARK </p> </remark>
-    <convention> <p> CONVENTION </p> </convention>
-    <note><p> NOTE </p></note>
-    <observation><p> OBSERVATION </p></observation> 
-    <warning><p> WARNING </p></warning>
-    <insight><p> IINSIGHT</p></insight>
-    <objectives><p>Obj</p></objectives>
-    <outcomes><p>OUTCOMES</p></outcomes>
-    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
-    <assemblage><p>ASSEMBLAGE</p></assemblage>
-    <pre>PRE</pre>
-    <project><p>PRE</p></project>
-    <activity><p>PRE</p></activity>
-    <exploration><p>PRE</p></exploration>
-    <investigation><p>PRE</p></investigation>
-    <listing><p>PRE</p></listing>
-    <list><p>PRE</p></list>
-    <theorem><p>PRE</p></theorem>
-    <corollary><p>PRE</p></corollary>
-    <lemma><p>PRE</p></lemma>
-    <algorithm><p>PRE</p></algorithm>
-    <proposition><p>PRE</p></proposition>
-    <claim><p>PRE</p></claim>
-    <fact><p>PRE</p></fact>
-    <identity><p>IDENTITY</p></identity>
-    <axiom><p>PRE</p></axiom>
-    <conjecture><p>PRE</p></conjecture>
-    <principle><p>PRE</p></principle>
-    <heuristic><p>PRE</p></heuristic>
-    <hypothesis><p>PRE</p></hypothesis>
-    <assumption><p>PRE</p></assumption>
-    <computation><p>PRE</p></computation>
-    <technology><p>PRE</p></technology>
+    <p>What will we learn in this chapter?</p>
   </introduction>
+  <section xml:id="sec-closureintro">
+    <title>Closure</title>
+    <p>
+      <idx>Closure</idx> A set is <term>closed</term> under an operation when any application of that operation on an element (or elements) in that set always 
+      results in an element in the set.
+    </p>
+    <exploration>
+    <image xml:id="FAPicSet" width="50%">
+      <latex-image>
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+        %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
+        %Shape: Ellipse [id:dp25437200797046866] 
+        \draw   (73,112.68) .. controls (73,104.4) and (79.72,97.68) .. (88,97.68) .. controls (96.28,97.68) and (103,104.4) .. (103,112.68) .. controls (103,120.97) and (96.28,127.68) .. (88,127.68) .. controls (79.72,127.68) and (73,120.97) .. (73,112.68) -- cycle ;
+        %Shape: Ellipse [id:dp5568412108656232] 
+        \draw   (113,112.68) .. controls (113,104.4) and (119.72,97.68) .. (128,97.68) .. controls (136.28,97.68) and (143,104.4) .. (143,112.68) .. controls (143,120.97) and (136.28,127.68) .. (128,127.68) .. controls (119.72,127.68) and (113,120.97) .. (113,112.68) -- cycle ;
+        %Shape: Ellipse [id:dp35140761143630017] 
+        \draw   (153,112.54) .. controls (153.08,104.25) and (159.86,97.6) .. (168.15,97.68) .. controls (176.43,97.77) and (183.08,104.55) .. (183,112.83) .. controls (182.92,121.11) and (176.14,127.76) .. (167.85,127.68) .. controls (159.57,127.6) and (152.92,120.82) .. (153,112.54) -- cycle ;
+        %Shape: Ellipse [id:dp9385085810890557] 
+        \draw   (194,112.68) .. controls (194,104.4) and (200.72,97.68) .. (209,97.68) .. controls (217.28,97.68) and (224,104.4) .. (224,112.68) .. controls (224,120.97) and (217.28,127.68) .. (209,127.68) .. controls (200.72,127.68) and (194,120.97) .. (194,112.68) -- cycle ;
+        %Shape: Ellipse [id:dp8866710417787822] 
+        \draw   (234,112.68) .. controls (234,104.4) and (240.72,97.68) .. (249,97.68) .. controls (257.28,97.68) and (264,104.4) .. (264,112.68) .. controls (264,120.97) and (257.28,127.68) .. (249,127.68) .. controls (240.72,127.68) and (234,120.97) .. (234,112.68) -- cycle ;
+        %Shape: Ellipse [id:dp5908076123970869] 
+        \draw   (274,112.54) .. controls (274.08,104.25) and (280.86,97.6) .. (289.15,97.68) .. controls (297.43,97.77) and (304.08,104.55) .. (304,112.83) .. controls (303.92,121.11) and (297.14,127.76) .. (288.85,127.68) .. controls (280.57,127.6) and (273.92,120.82) .. (274,112.54) -- cycle ;
+        %Shape: Rectangle [id:dp7217370390265165] 
+        \draw   (74,139) -- (102,139) -- (102,167.65) -- (74,167.65) -- cycle ;
+        %Shape: Rectangle [id:dp6663110650574392] 
+        \draw   (114,139) -- (142,139) -- (142,167.65) -- (114,167.65) -- cycle ;
+        %Shape: Rectangle [id:dp8007509166794461] 
+        \draw   (114,179) -- (142,179) -- (142,207.65) -- (114,207.65) -- cycle ;
+        %Shape: Rectangle [id:dp8965938236054767] 
+        \draw   (154,179) -- (182,179) -- (182,207.65) -- (154,207.65) -- cycle ;
+        %Shape: Rectangle [id:dp6228146700367563] 
+        \draw   (275,179) -- (303,179) -- (303,207.65) -- (275,207.65) -- cycle ;
+        %Shape: Ellipse [id:dp622432118527935] 
+        \draw   (234,152.68) .. controls (234,144.4) and (240.72,137.68) .. (249,137.68) .. controls (257.28,137.68) and (264,144.4) .. (264,152.68) .. controls (264,160.97) and (257.28,167.68) .. (249,167.68) .. controls (240.72,167.68) and (234,160.97) .. (234,152.68) -- cycle ;
+        %Shape: Ellipse [id:dp12250322488631715] 
+        \draw   (274,153.68) .. controls (274,145.4) and (280.72,138.68) .. (289,138.68) .. controls (297.28,138.68) and (304,145.4) .. (304,153.68) .. controls (304,161.97) and (297.28,168.68) .. (289,168.68) .. controls (280.72,168.68) and (274,161.97) .. (274,153.68) -- cycle ;
+        %Shape: Triangle [id:dp6834852574206973] 
+        \draw   (248.5,179) -- (263,207.45) -- (234,207.45) -- cycle ;
+        %Shape: Triangle [id:dp01818063531334324] 
+        \draw   (208.5,139) -- (223,167.45) -- (194,167.45) -- cycle ;
+        %Shape: Triangle [id:dp4803555798728466] 
+        \draw   (208.5,179) -- (223,207.45) -- (194,207.45) -- cycle ;
+        %Shape: Triangle [id:dp24608341883721052] 
+        \draw   (167.5,139) -- (182,167.45) -- (153,167.45) -- cycle ;
+        %Shape: Triangle [id:dp10741523502361949] 
+        \draw   (88.5,179) -- (103,207.45) -- (74,207.45) -- cycle ;
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+      
+    </exploration>
+    
+  </section>
+  <section xml:id="sec-constructionproofs">
+    <title>Closure Proven through Construction</title>
+    <p>
+      Regular Languages are closed under many operations. Closure can be proven using the construction proof technique.
+    </p>
+    <proof>
+      <title>RLs Closed under Union</title>
+      <p>
+        <idx>Union</idx> RL closure under <term>union</term> follows the basic progression: if <m>L_1</m> is a RL and <m>L_2</m> 
+        is a RL, then <m>L_1\cup L_2</m> is a RL.
+      </p>
+      <p>
+        If <m>L_1</m> is a RL, some DFA describes it. It has a start state and a set of accept states.
+      </p>
+      <me>
+        L(M_1) = L_1
+      </me>
+      
+      <image xml:id="FAEXP1" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.9]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw (0.,0.) rectangle (6.,3.5)  ; 
+          \draw (1.,1.) circle (0.4cm) ;
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm);
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm);
+          \draw (4.570204291495152,2.0) circle (0.4cm);
+          \draw (4.570204291495152,2.0) circle (0.25cm);
+          \draw [-stealth] (-1.3537407194466937,1.9720396361358064) -- (0.7256973408087151,1.2235615973595062);
+          \draw (-4,2.5) node[anchor=north west] {To the start of $M_1$};
+          \draw (6.95,1.0) circle (0.25cm);
+          \draw (6.95,1.0) circle (0.4cm);
+          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
+          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$};
+          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
+          \draw (5.5,1.4) node[anchor=north west] {$\epsilon$};
+          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$};  
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+      <me>
+        L(M_2) = L_2
+      </me>
+      <me>
+        L(M_3) = L_1 \cup L_2
+      </me>
+      <image xml:id="FAEXP1a" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.9]
+        \tikzstyle{every node}+=[inner sep=0pt]
+          \draw (0.,0.) rectangle (6.,3.5)  ; 
+          \draw (1.,1.) circle (0.4cm) ;
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
+          \draw (4.570204291495152,2.0) circle (0.4cm) ;
+          \draw (4.570204291495152,2.0) circle (0.25cm)  ;
+          \draw [-stealth] (.2,1.9) -- (0.7,1.3);
+          \draw (6.95,1.0) circle (0.25cm)  ;
+          \draw (6.95,1.0) circle (0.4cm);
+          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
+          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$}  ;
+          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
+          \draw (5.5,1.2) node[anchor=north west] {$\epsilon$} ;
+          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$} ;
+          
+          
+          
+       
+          \draw (0.,-1.) rectangle (6.,-4.5)  ; 
+          \draw (1.,-3.5) circle (0.4cm) ;
+          \draw (3.9836750824910085,-3.7) circle (0.4cm)  ;
+          \draw (3.9836750824910085,-3.7) circle (0.25cm)  ;
+          \draw (4.570204291495152,-2.5) circle (0.4cm) ;
+          \draw (4.570204291495152,-2.5) circle (0.25cm)  ;
+          \draw [-stealth] (.2,-2.6) -- (0.7,-3.18);
+          \draw (6.95,-3.5) circle (0.25cm)  ;
+          \draw (6.95,-3.5) circle (0.4cm);
+          \draw [-stealth] (4.902570843264166,-2.65) -- (6.58395457574271,-3.3);
+          \draw (5.7,-2.9) node[anchor=south east] {$\epsilon$}  ;
+          \draw [-stealth] (4.3746945551604375,-3.8) -- (6.58395457574271,-3.5);
+          \draw (5.5,-3.4) node[anchor=north west] {$\epsilon$} ;
+          \draw (1.3442936419723646,-1.5) node[anchor=north west] {\Large $M_2$} ;
+
+
+          \draw (-7.,-5.) rectangle (8.,4.);
+          \draw (-5.,-1.) circle (0.4cm);
+          \draw [-stealth] (-4.72,-1.2) -- (0.7,-3.28);
+          \draw (-3,-2.6) node[anchor=north west] {$\epsilon$} ;
+          \draw [-stealth] (-4.72,-0.79) -- (0.65,1.0);
+          \draw (-3,0.4) node[anchor=north west] {$\epsilon$} ;
+          \draw [-stealth] (-6.5,0.4) -- (-5.2,-0.65);
+          \draw (-6,3) node[anchor=north west] {\Large $M_3$} ;
+          
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </proof>
+    <image xml:id="FAEXP1b" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.9]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw (-7.,0.) rectangle (-1,3.5)  ; 
+          \draw (2.,1.) circle (0.4cm) ;
+          \draw (4.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
+          \draw (4.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
+          \draw (5.570204291495152,2.0) circle (0.4cm) ;
+          \draw (5.570204291495152,2.0) circle (0.25cm)  ;
+          \draw [-stealth] (1.2,1.9) -- (1.7,1.3);
+          \draw (7.95,1.0) circle (0.25cm)  ;
+          \draw (7.95,1.0) circle (0.4cm);
+          \draw [-stealth] (5.902570843264166,1.8528447212882431) -- (7.58395457574271,1.0743039381270345);
+          \draw (6.7,1.6) node[anchor=south east] {$\epsilon$}  ;
+          \draw [-stealth] (5.3746945551604375,0.7050587054574438) -- (7.58395457574271,1.);
+          \draw (6.5,1.2) node[anchor=north west] {$\epsilon$} ;
+          \draw (2.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_2$} ;
+          
+          
+          
+       
+          \draw (1.,0.) rectangle (7.,3.5)  ; 
+          \draw (-6.,1) circle (0.4cm) ;
+          \draw (-2.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
+          \draw (-2.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
+          \draw (-2.3,2.0) circle (0.4cm) ;
+          \draw (-2.3,2.0) circle (0.25cm)  ;
+          \draw [-stealth] (-1.9,2.0) -- (-.4,1.);
+          \draw (0.,1.0) circle (0.25cm)  ;
+          \draw (0.,1.0) circle (0.4cm);
+          \draw [-stealth] (-6.7,1.8) -- (-6.2,1.38);
+          \draw (-1.3,1.8) node[anchor=south east] {$\epsilon$}  ;
+          \draw [-stealth] (-2.6,0.8) -- (-.35,0.9);
+          \draw (-1.7,1.2) node[anchor=north west] {$\epsilon$} ;
+          \draw (-6,3.1) node[anchor=north west] {\Large $M_1$} ;
+          
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP1c" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.9]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw (0.,0.) rectangle (6.,3.5)  ; 
+          \draw (1.,1.) circle (0.4cm) ;
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm);
+          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm);
+          \draw (4.570204291495152,2.0) circle (0.4cm);
+          \draw (4.570204291495152,2.0) circle (0.25cm);
+          \draw [-stealth] (0.3,1.9720396361358064) -- (0.7256973408087151,1.3);
+          \draw (6.95,1.0) circle (0.25cm);
+          \draw (6.95,1.0) circle (0.4cm);
+          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
+          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$};
+          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
+          \draw (5.5,1.4) node[anchor=north west] {$\epsilon$};
+          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$};  
+          \draw[stealth-] (1.,.6) arc (10:170:-3);
+          \draw (3.5,-1.4) node[anchor=north west] {$\epsilon$};
+          \draw [-stealth] (7.5,2.3) -- (7,1.4);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (23,-22.6) circle (3);
+          \draw (23,-22.6) node {$A_1$};
+          \draw [black] (41.8,-22.6) circle (3);
+          \draw (41.8,-22.6) node {$B_1$};
+          \draw [black] (41.8,-22.6) circle (2.4);
+          \draw [black] (18,-17.8) -- (20.84,-20.52);
+          \draw (17.47,-16.33) node [left] {$M_3$};
+          \fill [black] (20.84,-20.52) -- (20.6,-19.61) -- (19.91,-20.33);
+          \draw [black] (25.801,-21.532) arc (107.04916:72.95084:22.507);
+          \fill [black] (39,-21.53) -- (38.38,-20.82) -- (38.09,-21.78);
+          \draw (32.4,-20.04) node [above] {$1$};
+          \draw [black] (42.845,-19.8) arc (187.2643:-100.7357:2.25);
+          \draw (47.25,-16.51) node [right] {$1$};
+          \fill [black] (44.66,-21.73) -- (45.51,-22.12) -- (45.39,-21.13);
+          \draw [black] (39.049,-23.789) arc (-70.87084:-109.12916:20.289);
+          \fill [black] (25.75,-23.79) -- (26.34,-24.52) -- (26.67,-23.58);
+          \draw (32.4,-25.41) node [below] {$0$};
+          \draw [black] (21.39,-25.118) arc (-4.85993:-292.85993:2.25);
+          \draw (16.58,-27.36) node [left] {$0$};
+          \fill [black] (20.02,-22.85) -- (19.27,-22.29) -- (19.18,-23.28);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2a" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (23,-22.6) circle (3);
+          \draw (23,-22.6) node {$A_2$};
+          \draw [black] (23,-22.6) circle (2.4);
+          \draw [black] (41.8,-22.6) circle (3);
+          \draw (41.8,-22.6) node {$B_2$};
+          \draw [black] (18,-17.8) -- (20.84,-20.52);
+          \draw (17.47,-16.33) node [left] {$M_4$};
+          \fill [black] (20.84,-20.52) -- (20.6,-19.61) -- (19.91,-20.33);
+          \draw [black] (25.801,-21.532) arc (107.04916:72.95084:22.507);
+          \fill [black] (39,-21.53) -- (38.38,-20.82) -- (38.09,-21.78);
+          \draw (32.4,-20.04) node [above] {$0,1$};
+          \draw [black] (39.049,-23.789) arc (-70.87084:-109.12916:20.289);
+          \fill [black] (25.75,-23.79) -- (26.34,-24.52) -- (26.67,-23.58);
+          \draw (32.4,-25.41) node [below] {$0,1$};
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2b" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (20.9,-21.8) circle (3);
+          \draw (20.9,-21.8) node {$(A_1,A_2)$};
+          \draw [black] (38.5,-21.8) circle (3);
+          \draw (38.5,-21.8) node {$(A_1,B_2)$};
+          \draw [black] (20.9,-39.1) circle (3);
+          \draw (20.9,-39.1) node {$(B_1,B_2)$};
+          \draw [black] (38.5,-39.1) circle (3);
+          \draw (38.5,-39.1) node {$(B_1,A_2)$};
+          \draw [black] (38.5,-39.1) circle (2.4);
+          \draw [black] (23.708,-20.75) arc (106.43811:73.56189:21.176);
+          \fill [black] (35.69,-20.75) -- (35.07,-20.04) -- (34.78,-21);
+          \draw (29.7,-19.38) node [above] {$0$};
+          \draw [black] (35.731,-22.947) arc (-71.91927:-108.08073:19.433);
+          \fill [black] (23.67,-22.95) -- (24.27,-23.67) -- (24.58,-22.72);
+          \draw (29.7,-24.41) node [below] {$0$};
+          \draw [black] (39.642,-24.571) arc (17.91335:-17.91335:19.115);
+          \fill [black] (39.64,-36.33) -- (40.36,-35.72) -- (39.41,-35.41);
+          \draw (41.07,-30.45) node [right] {$1$};
+          \draw [black] (23.351,-23.53) arc (53.50897:37.47603:67.254);
+          \fill [black] (23.35,-23.53) -- (23.7,-24.41) -- (24.29,-23.6);
+          \draw (31.52,-29.16) node [above] {$0$};
+          \draw [black] (35.674,-40.101) arc (-74.37327:-105.62673:22.179);
+          \fill [black] (23.73,-40.1) -- (24.36,-40.8) -- (24.63,-39.83);
+          \draw (29.7,-41.42) node [below] {$1$};
+          \draw [black] (23.668,-37.951) arc (108.11297:71.88703:19.402);
+          \fill [black] (35.73,-37.95) -- (35.13,-37.23) -- (34.82,-38.18);
+          \draw (29.7,-36.49) node [above] {$1$};
+          \draw [black] (21.925,-24.617) arc (15.95433:-15.95433:21.222);
+          \fill [black] (21.93,-24.62) -- (21.66,-25.52) -- (22.63,-25.25);
+          \draw (23.24,-30.45) node [right] {$0$};
+          \draw [black] (19.844,-36.295) arc (-163.5403:-196.4597:20.628);
+          \fill [black] (19.84,-36.29) -- (20.1,-35.39) -- (19.14,-35.67);
+          \draw (18.5,-30.45) node [left] {$1$};
+          \draw [black] (15.7,-16.2) -- (18.86,-19.6);
+          \fill [black] (18.86,-19.6) -- (18.68,-18.68) -- (17.95,-19.36);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2c" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (20.6,-17.5) circle (3);
+          \draw [black] (35.5,-17.5) circle (3);
+          \draw [black] (49.4,-17.5) circle (3);
+          \draw [black] (49.4,-17.5) circle (2.4);
+          \draw [black] (30.9,-29.4) circle (3);
+          \draw (30.9,-29.4) node {$\emptyset$};
+          \draw [black] (48.246,-20.256) arc (5.01122:-282.98878:2.25);
+          \draw (43.76,-23.38) node [left] {$0,1$};
+          \fill [black] (46.51,-18.26) -- (45.67,-17.83) -- (45.76,-18.83);
+          \draw [black] (38.366,-16.623) arc (102.47747:77.52253:18.905);
+          \fill [black] (46.53,-16.62) -- (45.86,-15.96) -- (45.65,-16.94);
+          \draw (42.45,-15.68) node [above] {$1$};
+          \draw [black] (23.395,-16.421) arc (106.02057:73.97943:16.867);
+          \fill [black] (32.71,-16.42) -- (32.07,-15.72) -- (31.8,-16.68);
+          \draw (28.05,-15.27) node [above] {$0$};
+          \draw [black] (33.58,-28.077) arc (144:-144:2.25);
+          \draw (38.15,-29.4) node [right] {$0,1$};
+          \fill [black] (33.58,-30.72) -- (33.93,-31.6) -- (34.52,-30.79);
+          \draw [black] (31.011,-26.407) arc (-187.73735:-214.53113:15.31);
+          \fill [black] (31.01,-26.41) -- (31.61,-25.68) -- (30.62,-25.55);
+          \draw (31.15,-22.1) node [left] {$0$};
+          \draw [black] (28.431,-27.698) arc (-127.93647:-150.30813:25.604);
+          \fill [black] (28.43,-27.7) -- (28.11,-26.81) -- (27.49,-27.6);
+          \draw (24.27,-25.71) node [left] {$1$};
+          \draw [black] (14.3,-10.1) -- (18.66,-15.22);
+          \fill [black] (18.66,-15.22) -- (18.52,-14.28) -- (17.76,-14.93);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2d" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (21.3,-21.1) circle (3);
+          \draw [black] (21.3,-21.1) circle (2.4);
+          \draw [black] (37.9,-21.1) circle (3);
+          \draw [black] (16.8,-15.9) -- (19.34,-18.83);
+          \fill [black] (19.34,-18.83) -- (19.19,-17.9) -- (18.44,-18.55);
+          \draw [black] (40.509,-22.557) arc (88.55501:-199.44499:2.25);
+          \draw (42.73,-27.16) node [below] {$1$};
+          \fill [black] (38.33,-24.06) -- (37.81,-24.84) -- (38.81,-24.87);
+          \draw [black] (24.108,-20.052) arc (106.11728:73.88272:19.783);
+          \fill [black] (35.09,-20.05) -- (34.46,-19.35) -- (34.18,-20.31);
+          \draw (29.6,-18.77) node [above] {$0$};
+          \draw [black] (35.076,-22.104) arc (-74.60003:-105.39997:20.62);
+          \fill [black] (24.12,-22.1) -- (24.76,-22.8) -- (25.03,-21.83);
+          \draw (29.6,-23.34) node [below] {$0$};
+          \draw [black] (21.005,-24.074) arc (22.07264:-265.92736:2.25);
+          \draw (16.73,-27.33) node [below] {$1$};
+          \fill [black] (18.76,-22.67) -- (17.83,-22.51) -- (18.21,-23.44);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+    <image xml:id="FAEXP2e" width="70%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (17.2,-21.2) circle (3);
+          \draw (17.2,-21.2) node {$(A_1,A_2)$};
+          \draw [black] (30.8,-21.2) circle (3);
+          \draw (30.8,-21.2) node {$(B_1,B_2)$};
+          \draw [black] (44.7,-21.2) circle (3);
+          \draw (44.7,-21.2) node {$(C,B_2)$};
+          \draw [black] (37.8,-32.3) circle (3);
+          \draw (37.8,-32.3) node {$(C,A_2)$};
+          \draw [black] (37.8,-32.3) circle (2.4);
+          \draw [black] (22.1,-32.3) circle (3);
+          \draw (22.1,-32.3) node {$\emptyset$};
+          \draw [black] (18.41,-23.94) -- (20.89,-29.56);
+          \fill [black] (20.89,-29.56) -- (21.02,-28.62) -- (20.11,-29.03);
+          \draw (18.92,-27.73) node [left] {$1$};
+          \draw [black] (20.103,-20.454) arc (100.42814:79.57186:21.529);
+          \fill [black] (27.9,-20.45) -- (27.2,-19.82) -- (27.02,-20.8);
+          \draw (24,-19.6) node [above] {$0$};
+          \draw [black] (33.669,-20.334) arc (102.30037:77.69963:19.155);
+          \fill [black] (41.83,-20.33) -- (41.16,-19.68) -- (40.94,-20.65);
+          \draw (37.75,-19.39) node [above] {$1$};
+          \draw [black] (46.387,-18.734) arc (173.35775:-114.64225:2.25);
+          \draw (51.25,-16.68) node [right] {$1$};
+          \fill [black] (47.68,-21.04) -- (48.42,-21.63) -- (48.54,-20.63);
+          \draw [black] (44.553,-24.187) arc (-10.72998:-53.00198:10.872);
+          \fill [black] (40.41,-30.85) -- (41.35,-30.76) -- (40.75,-29.97);
+          \draw (43.74,-29.19) node [right] {$0$};
+          \draw [black] (38.605,-29.414) arc (159.69841:136.56963:18.249);
+          \fill [black] (42.47,-23.2) -- (41.56,-23.44) -- (42.28,-24.12);
+          \draw (39.59,-24.82) node [left] {$0$};
+          \draw [black] (40.759,-31.884) arc (125.7422:-162.2578:2.25);
+          \draw (44.98,-35.11) node [right] {$1$};
+          \fill [black] (39.93,-34.4) -- (39.99,-35.34) -- (40.8,-34.75);
+          \draw [black] (28.95,-23.56) -- (23.95,-29.94);
+          \fill [black] (23.95,-29.94) -- (24.84,-29.62) -- (24.05,-29);
+          \draw (25.88,-25.33) node [left] {$0$};
+          \draw [black] (25.048,-31.809) arc (127.19354:-160.80646:2.25);
+          \draw (29.33,-34.86) node [right] {$0,1$};
+          \fill [black] (24.28,-34.34) -- (24.37,-35.28) -- (25.16,-34.68);
+          \draw [black] (12,-15.8) -- (15.12,-19.04);
+          \fill [black] (15.12,-19.04) -- (14.92,-18.12) -- (14.2,-18.81);
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+  </section>
+  
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
