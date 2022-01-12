@@ -14,7 +14,7 @@
   <section xml:id="sec-howtorip">
     <title>Rips</title>
     <p>
-      <idx>Rip</idx> <term>Ripping</term> is the process to removing states from an FA to determine the RE of the machine. 
+      <idx>Rip</idx> <term>Ripping</term> is the process to removing states from an FA to determine the REX of the machine. 
       The outcome of this process is a <idx>Generalized Non-Finite Automata (GNFA)</idx> <term>Generalized Non-Finite Automata (GNFA)</term>.
     </p>
     <p>

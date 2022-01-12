@@ -201,11 +201,11 @@
     <exploration>
       <title>RLs Closed under Concatenation</title>
       <p>
-        If <m>L_1</m> is a RL and <m>L_2</m> is a RL, then <m>L_1 ++ L_2</m> is a RL. This means all strings
+        If <m>L_1</m> is a RL and <m>L_2</m> is a RL, then <m>L_1 \cdot L_2</m> is a RL. This means all strings
         created by first choosing a string in <m>L_1</m> and then choosing a string in <m>L_2</m>. So, 
       </p>
       <me>
-        L_1 ++ L_2 = \{{xy \| x\in L_1, y\in L_2}\}
+        L_1 \cdot L_2 = \{{xy \| x\in L_1, y\in L_2}\}
       </me>
       <hint>
         <p>

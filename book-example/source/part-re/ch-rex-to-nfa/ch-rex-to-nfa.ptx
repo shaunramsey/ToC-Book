@@ -410,7 +410,7 @@
        </latex-image>
     </image>
     <p>
-      Finally, two more empty string transitions must be added at the entire RE is repeatable. It also moves the accept state to the first one in the machine.
+      Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.
     </p>
     <image xml:id="FAExM14" width="50%">
        <latex-image>
@@ -462,7 +462,7 @@
     <exercise>
       <statement>
         <p>
-          Convert the following RE into a FA, using the construciton method shown in <xref ref="sec-makingNFAs"/>
+          Convert the following REX into a FA, using the construciton method shown in <xref ref="sec-makingNFAs"/>
           <me>
             REX_7 = (01^*0+10^*1)
           </me>
@@ -536,7 +536,7 @@
     <exercise>
       <statement>
         <p>
-          Convert the following RE into a FA, using the construciton method.
+          Convert the following REX into a FA, using the construciton method.
           <me>
             REX_8 = 0(0+1)^*0
           </me>

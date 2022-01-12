@@ -15,7 +15,7 @@
   <section xml:id="sec-RegularExpressions">
     <title>Regular Expressions</title>
       <p>
-        <idx>Regular Expressions (RE)</idx><term>Regular Expressions (RE)</term> are often used in a variety of computational areas
+        <idx>Regular Expressions (REX)</idx><term>Regular Expressions (REX)</term> are often used in a variety of computational areas
         including: searching, verficiation, and grabbing lexical pieces in a programming language. In this book, they will be used 
         to describe languages as introduced in <xref ref="Determinism"/>.
       </p>
