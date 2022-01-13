@@ -21,51 +21,386 @@
     <exploration>
     <image xml:id="FAPicSet" width="50%">
       <latex-image>
-        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-        %uncomment if require: \path (0,302); %set diagram left start at 0, and has height of 302
-        %Shape: Ellipse [id:dp25437200797046866] 
-        \draw   (73,112.68) .. controls (73,104.4) and (79.72,97.68) .. (88,97.68) .. controls (96.28,97.68) and (103,104.4) .. (103,112.68) .. controls (103,120.97) and (96.28,127.68) .. (88,127.68) .. controls (79.72,127.68) and (73,120.97) .. (73,112.68) -- cycle ;
-        %Shape: Ellipse [id:dp5568412108656232] 
-        \draw   (113,112.68) .. controls (113,104.4) and (119.72,97.68) .. (128,97.68) .. controls (136.28,97.68) and (143,104.4) .. (143,112.68) .. controls (143,120.97) and (136.28,127.68) .. (128,127.68) .. controls (119.72,127.68) and (113,120.97) .. (113,112.68) -- cycle ;
-        %Shape: Ellipse [id:dp35140761143630017] 
-        \draw   (153,112.54) .. controls (153.08,104.25) and (159.86,97.6) .. (168.15,97.68) .. controls (176.43,97.77) and (183.08,104.55) .. (183,112.83) .. controls (182.92,121.11) and (176.14,127.76) .. (167.85,127.68) .. controls (159.57,127.6) and (152.92,120.82) .. (153,112.54) -- cycle ;
-        %Shape: Ellipse [id:dp9385085810890557] 
-        \draw   (194,112.68) .. controls (194,104.4) and (200.72,97.68) .. (209,97.68) .. controls (217.28,97.68) and (224,104.4) .. (224,112.68) .. controls (224,120.97) and (217.28,127.68) .. (209,127.68) .. controls (200.72,127.68) and (194,120.97) .. (194,112.68) -- cycle ;
-        %Shape: Ellipse [id:dp8866710417787822] 
-        \draw   (234,112.68) .. controls (234,104.4) and (240.72,97.68) .. (249,97.68) .. controls (257.28,97.68) and (264,104.4) .. (264,112.68) .. controls (264,120.97) and (257.28,127.68) .. (249,127.68) .. controls (240.72,127.68) and (234,120.97) .. (234,112.68) -- cycle ;
-        %Shape: Ellipse [id:dp5908076123970869] 
-        \draw   (274,112.54) .. controls (274.08,104.25) and (280.86,97.6) .. (289.15,97.68) .. controls (297.43,97.77) and (304.08,104.55) .. (304,112.83) .. controls (303.92,121.11) and (297.14,127.76) .. (288.85,127.68) .. controls (280.57,127.6) and (273.92,120.82) .. (274,112.54) -- cycle ;
-        %Shape: Rectangle [id:dp7217370390265165] 
-        \draw   (74,139) -- (102,139) -- (102,167.65) -- (74,167.65) -- cycle ;
-        %Shape: Rectangle [id:dp6663110650574392] 
-        \draw   (114,139) -- (142,139) -- (142,167.65) -- (114,167.65) -- cycle ;
-        %Shape: Rectangle [id:dp8007509166794461] 
-        \draw   (114,179) -- (142,179) -- (142,207.65) -- (114,207.65) -- cycle ;
-        %Shape: Rectangle [id:dp8965938236054767] 
-        \draw   (154,179) -- (182,179) -- (182,207.65) -- (154,207.65) -- cycle ;
-        %Shape: Rectangle [id:dp6228146700367563] 
-        \draw   (275,179) -- (303,179) -- (303,207.65) -- (275,207.65) -- cycle ;
-        %Shape: Ellipse [id:dp622432118527935] 
-        \draw   (234,152.68) .. controls (234,144.4) and (240.72,137.68) .. (249,137.68) .. controls (257.28,137.68) and (264,144.4) .. (264,152.68) .. controls (264,160.97) and (257.28,167.68) .. (249,167.68) .. controls (240.72,167.68) and (234,160.97) .. (234,152.68) -- cycle ;
-        %Shape: Ellipse [id:dp12250322488631715] 
-        \draw   (274,153.68) .. controls (274,145.4) and (280.72,138.68) .. (289,138.68) .. controls (297.28,138.68) and (304,145.4) .. (304,153.68) .. controls (304,161.97) and (297.28,168.68) .. (289,168.68) .. controls (280.72,168.68) and (274,161.97) .. (274,153.68) -- cycle ;
-        %Shape: Triangle [id:dp6834852574206973] 
-        \draw   (248.5,179) -- (263,207.45) -- (234,207.45) -- cycle ;
-        %Shape: Triangle [id:dp01818063531334324] 
-        \draw   (208.5,139) -- (223,167.45) -- (194,167.45) -- cycle ;
-        %Shape: Triangle [id:dp4803555798728466] 
-        \draw   (208.5,179) -- (223,207.45) -- (194,207.45) -- cycle ;
-        %Shape: Triangle [id:dp24608341883721052] 
-        \draw   (167.5,139) -- (182,167.45) -- (153,167.45) -- cycle ;
-        %Shape: Triangle [id:dp10741523502361949] 
-        \draw   (88.5,179) -- (103,207.45) -- (74,207.45) -- cycle ;
+        \begin{tikzpicture}
+            \begin{Bmatrix}
+              \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \\
+              \square \amp \square \amp \triangle \amp \triangle \amp \bigcirc \amp \bigcirc \\
+              \triangle , \amp \square , \amp \square , \amp \triangle , \amp \triangle , \amp \square \\
+              \end{Bmatrix}
         \end{tikzpicture}
       </latex-image>
     </image>
-      
+    <p>
+      Each column is an element of the set. 
+      <ol>
+        <li>
+          <p>
+            If I take an element and swap its top character with the top character of another 
+            element, do I stay in the set?
+          </p>
+        </li>
+        <li>
+          <p>
+            How about swapping bottom characters?
+          </p>
+        </li>
+        <li>
+          <p>
+            What if I change the bottom character to a <m>\triangle</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            How about swapping <m>\square</m>s and <m>\bigcirc</m>s?
+          </p>
+        </li>
+        <li>
+          <p>
+            How about swapping middle characters to <m>\triangle</m>s, <m>\square</m>s, or <m>\bigcirc</m>s?
+          </p>
+        </li>
+      </ol>
+    </p>
     </exploration>
-    
+    <exploration>
+      <title>Closure in Natural Numbers</title>
+      <p>
+        Consider a few simple operations applied to the natural numbers.
+      </p>
+      <me>
+        \N = \{1,2,3,4,5,6,7,8...\}
+      </me>
+      <p>
+        <ul>
+          <li>
+            <p>
+              Addition - take any two <m>\N</m> and add them. Is the result always in <m>\N</m>?
+              <ul>
+                <li>
+                  <p>
+                    If yes, <m>\N</m> are closed under addition
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If no, <m>\N</m> are not closed under addition and a counter-example needs to be provided
+                  </p>
+                </li>
+              </ul>
+            </p>
+            <answer>
+              <p>
+                Yes.
+              </p>
+            </answer>
+          </li>
+          <li>
+            <p>
+              Subtraction - take any two <m>\N</m> and subtract one from the other. Is the result always in <m>\N</m>?
+              <ul>
+                <li>
+                  <p>
+                    If yes, <m>\N</m> are closed under subtraction
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If no, <m>\N</m> are not closed under subtraction and a counter-example needs to be provided
+                  </p>
+                </li>
+              </ul>
+            </p>
+            <answer>
+              <p>
+                No. Negative numbers are not included in the <m>\N</m>. 
+                <me>
+                  1,2 \in \N
+                </me>
+                <me>
+                  2-1=-1
+                </me>
+                <me>
+                  -1 \notin \N
+                </me>
+              </p>
+            </answer>
+          </li>
+          <li>
+            <p>
+              Multiplication - take any two <m>\N</m> and multiply them. Is the result always in <m>\N</m>?
+              <ul>
+                <li>
+                  <p>
+                    If yes, <m>\N</m> are closed under multiplication
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If no, <m>\N</m> are not closed under multiplication and a counter-example needs to be provided
+                  </p>
+                </li>
+              </ul>
+            </p>
+            <answer>
+              <p>
+                Yes.
+              </p>
+            </answer>
+          </li>
+          <li>
+            <p>
+              Division - take any two <m>\N</m> and divide them. Is the result always in <m>\N</m>?
+              <ul>
+                <li>
+                  <p>
+                    If yes, <m>\N</m> are closed under division
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If no, <m>\N</m> are not closed under division and a counter-example needs to be provided
+                  </p>
+                </li>
+              </ul>
+            </p>
+            <answer>
+              <p>
+                No. 
+                <me>
+                  1,2 \in \N
+                </me>
+                <me>
+                  1/2 = 0.5
+                </me>
+                <me>
+                  0.5 \notin \N
+                </me>
+              </p>
+            </answer>
+          </li>
+          <li>
+            <p>
+              Negation - take any <m>\N</m> and make it negative. Is the result always in <m>\N</m>?
+              <ul>
+                <li>
+                  <p>
+                    If yes, <m>\N</m> are closed under negation
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If no, <m>\N</m> are not closed under negation and a counter-example needs to be provided
+                  </p>
+                </li>
+              </ul>
+            </p>
+            <answer>
+              <p>
+                No.
+                <me>
+                  1 \in \N
+                </me>
+                <me>
+                  1 * -1 = -1
+                </me>
+                <me>
+                  -1 \notin \N
+                </me>
+                
+              </p>
+            </answer>
+          </li>
+        </ul>
+        Some additional operations could be: reciprocals, modulus, exponentiation, and factorial.
+      </p>
+    </exploration>
+    <p>
+      If a set it closed under certain operations is helpful to know for type safety as a developer and in proofs.
+    </p>
+    <exploration>
+      <title>Implications</title>
+      <p>
+        We know <m>\N</m> are closed under addition. This means we know that if <m>x \in \N</m> and <m>y \in \N</m>
+        then <m>x+y \in \N</m>. 
+      </p>
+      <p>
+        This is an example of an <idx>Implication</idx> <term>implication</term>. 
+        <me>
+          \mbox{ if A then B} A \longrightarrow B \mbox{ or if A is true, then B is true}
+        </me>
+        <me>
+          or
+        </me>
+        <me>
+          A \longrightarrow B \mbox{ or if A is true, then B is true}
+        </me>
+        <me>
+          or
+        </me>
+        <me>
+          \mbox{ if A is true, then B is true}
+        </me>
+        </p>
+        <table>
+        <tabular>
+          <row header="no">
+            <cell bottom="medium">A</cell><cell bottom="medium" right="medium">B</cell><cell bottom="medium" right="medium"><m>A \longrightarrow B</m></cell><cell bottom="medium"><m>\bar{A} + B</m></cell>
+          </row>
+          <row header="no">
+            <cell>1</cell><cell right="medium">1</cell><cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell>
+          </row>
+          <row header="no">
+            <cell>1</cell><cell right="medium">0</cell><cell right="medium"><m>0</m></cell><cell right="medium"><m>0</m></cell>
+          </row>
+          <row header="no">
+            <cell>0</cell><cell right="medium">1</cell><cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell>
+          </row>
+          <row header="no">
+            <cell>0</cell><cell right="medium">0</cell><cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell>
+          </row>
+          </tabular>
+        </table>
+    </exploration>
+    <exploration>
+      <title>Logic in Closure</title>
+      <p>
+          Here is another binary operator: 
+          <me>
+            \mbox{if A and B then C}
+          </me>
+        </p>
+        <table>
+          <tabular>
+            <row>
+              <cell bottom="medium">A</cell><cell bottom="medium">B</cell><cell bottom="medium" right="medium">C</cell><cell bottom="medium" right="medium">AB</cell>
+              <cell bottom="medium" right="medium"><m>AB \longrightarrow C</m></cell><cell bottom="medium" right="medium"><m>\bar{AB} + C</m></cell>
+              <cell bottom="medium"><m>\bar{A} + \bar{B} + C</m></cell>
+            </row>
+            <row>
+              <cell>0</cell><cell>0</cell><cell right="medium">0</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>0</cell><cell>0</cell><cell right="medium">1</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>0</cell><cell>1</cell><cell right="medium">0</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>0</cell><cell>1</cell><cell right="medium">1</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>1</cell><cell>0</cell><cell right="medium">0</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>1</cell><cell>0</cell><cell right="medium">1</cell><cell right="medium">0</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+            <row>
+              <cell>1</cell><cell>1</cell><cell right="medium">0</cell><cell right="medium">1</cell>
+              <cell right="medium"><m>0</m></cell><cell right="medium"><m>0</m></cell><cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell>1</cell><cell>1</cell><cell right="medium">1</cell><cell right="medium">1</cell>
+              <cell right="medium"><m>1</m></cell><cell right="medium"><m>1</m></cell><cell><m>1</m></cell>
+            </row>
+          </tabular>
+        </table>
+        <p>
+          Given the above logic table, we now know that 
+          <m>\mbox{if A and B then C} </m> is logically equivalent to <m>\bar{A} + \bar{B} + C</m>. 
+        </p>
+        <p>
+          Let us say we know <m>C</m> is not true and <m>B</m> is true. What must <m>A</m> be?
+        </p>
+        <answer>
+          <p>
+            Not true.
+          </p>
+        </answer>
+        <p>
+          That is a form of the contrapositive. 
+          <me>
+            A \longrightarrow B \mbox{ means } \bar{A}+B
+          </me>
+          <me>
+            \bar{B} \longrightarrow \bar{A} \mbox{ means } \bar{A}+B
+          </me>
+          For this situation, <m>AB\longrightarrow C</m> means <m>\bar{AB} + C = \bar{A}+\bar{B}+C</m> and 
+          <m>\bar{C} \longrightarrow \bar{AB}</m> means <m>C+\bar{AB} = \bar{A}+\bar{B}+C</m>.
+          So, these statements are the same, but if we know <m>\bar{C}</m>, then either A or B is untrue.
+        </p>
+        <p>
+          This is telling us that given <m>x + y = z</m>, the boolean <m>\bar{A}+\bar{B}+C</m> must be true. So,
+        <me>
+          x \notin \N
+          </me>
+          <me>
+            or
+          </me>
+          <me>
+            y \notin \N
+          </me>
+          <me>
+            or
+          </me>
+          <me>
+            x + y \in \N
+          </me>
+          These conclusions are very important for understanding closure.
+        </p>
+    </exploration>
+  </section>
+  <section xml:id="sec-howtoRLClosureProof">
+    <title>How to Write a Closure Proof</title>
+    <p>
+      These three posibilities are the most important things when writing closure proofs: 
+      <me>
+          x \notin \N
+          </me>
+          <me>
+            or
+          </me>
+          <me>
+            y \notin \N
+          </me>
+          <me>
+            or
+          </me>
+          <me>
+            x + y \in \N
+          </me>
+      Let us say we are given <m>x+y\in \R</m>, <m>x+y \notin \N</m>, and <m>y \in \N</m>.
+      <ul>
+        <li>
+          <p>
+            What do we know about <m>x</m>?
+          </p>
+        </li>
+      </ul>
+      What if we know <m>x+y \in \N</m> and <m>x \in \N</m>?
+      <ul>
+        <li>
+          <p>
+            What do we know about <m>y</m>?
+          </p>
+        </li>
+      </ul>
+      What if we know <m>x+y \in \R</m> and <m>x \in \N</m>?
+      <ul>
+        <li>
+          <p>
+            What do we know about <m>y</m>?
+          </p>
+        </li>
+      </ul>
+      Within all of the scenarios, the arguments must follow the important possibilities.
+    </p>
+
   </section>
   <section xml:id="sec-constructionproofs">
     <title>Closure Proven through Construction</title>
@@ -590,11 +925,12 @@
           </me>
         </statement>
       </exercise>
+      
     </exercises>
     
     
     
-    
+    <!--TODO: trying to figure out exercisegroups, is not going well https://pretextbook.org/doc/guide/html/basics-s-sample-exercises.html-->
     
   </section>
   

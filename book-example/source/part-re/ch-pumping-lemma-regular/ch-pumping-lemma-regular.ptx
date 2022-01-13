@@ -5,15 +5,17 @@
   <objectives>
     In this chapter you will learn:
      <ol>
-       <li> Discrete Math Review</li>
-       <li> Closure </li>
+       <li> Introduction to the Pumping Lemma for Regular Languages</li>
+       <li> Spotting Loops and Repetition in FAs </li>
+       <li> The Pumping Lemma for Regular Languages </li>
+       <li> Additional Non-Regular Languages for Proving </li>
      </ol>
   </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
   </introduction>
   <section xml:id="sec-pumpinglemaintro">
-    <title>Introduciton to the Pumping Lemma for Regular Language</title>
+    <title>Introduciton to the Pumping Lemma for Regular Languages</title>
     <exploration>
       <title>Revisiting the Properties of DFAs</title>
       <p>
@@ -58,6 +60,7 @@
           \end{tikzpicture}
        </latex-image>
       </image>
+     
       <p>
         How many states are in this machine?
       </p>
@@ -388,19 +391,209 @@
   <section xml:id="sec-RLpumpinglemma">
     <title>The Pumping Lemma for Regular Languages</title>
     <p>
-      The pumping lemma can be used to prove that languages are regular. It follows the general form outlined below.
+      <idx>Pumping Lemma for Regular Languages</idx> The <term>Pumping Lemma for Regular Languages</term> can be used to prove that languages are regular. It follows the general form outlined below.
     </p>
-    <theorem xml:id="thm-plRL">
-      <statement>
         <p>
           If <m>L</m> is regular, then it has a pumping length <m>p</m>. Every string in <m>L</m> of length at least <m>p</m>
           will be pumpable. 
         </p>
+        <p>
+          Given this string, call it <m>s</m> (<m>S^{(1)}</m>). It has three parts:
+          <ul>
+            <li>
+              <p>
+                A beginning that can be <m>\epsilon</m> - call it <m>x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                A pumpable part that cannot be <m>\epsilon</m> - call it <m>y</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                An end that can be <m>\epsilon</m> - call it <m>z</m>
+              </p>
+            </li>
+          </ul>
+          The key here is that we can make new strings in the language by removing <m>y(s^{(1)})</m> or adding 
+          <m>y</m> as many times as we'd like. Such as: <m>s^{(2)}</m>, <m>s^{(3)}</m>, <m>s^{(4)}</m>, etc.
+        </p>
+        <p>
+          This works for any string that is long enough, and it happens within the first <m>p</m> symbols of the input
+          string.
+        </p>
+    <p>
+      In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. 
+      This also means that there is some non-empty <m>y</m> loop, but this will typically be written more formally and closer to:
+      <ol>
+        <li>
+          <p>
+            If a language is a regular language then
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\exists p \geq 1</m> such that <m>\forall x \in L</m> with <m>|s|\geq p</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            then <m>s^{(1)} = xyz</m> where: 
+            <me>
+              |y| > 0
+            </me>
+            <me>
+              |xy| \leq p \mbox{, and }
+            </me>
+            <me>
+              \forall i \geq 0, xy^iz\in L
+            </me>
+            <me>
+              (\mbox{also known as: }) s^{(i)}\in L
+            </me>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <theorem xml:id="thm-plRL">
+      <statement>
+        <p>
+          Take a languge we want to prove is not regular.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Assume it is regular.
+            </p>
+          </li>
+          <li>
+            <p>
+            
+              Pick a string that is at least of length <m>p</m> in the language
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that every possible choice for <m>y</m> cannot work
+            </p>
+          </li>
+          <li>
+            <p>
+              Thus the assumption is wrong and by contradition, the language is not regular.
+            </p>
+          </li>
+        </ol>
       </statement>
     </theorem>
     
-    
+    <exploration>
+      <title>Pumping Lemma for Regular Languages without a Machine</title>
+      <p>
+        Say <m>L_1</m>: has a number of 0s divisible by 3 and an even number of 1s. 
+        <ul>
+          <li>
+            <p>
+              <m>L_1</m> is a regular language. 
+            </p>
+          </li>
+        </ul>
+        Let's say we dont know <m>p</m>, just that it exists. Let's pick a string that's <m>p</m> long. 
+        <ul>
+          <li>
+            <p>
+              This staisfies <m>s\in L</m> and <m>|s|\geq p</m>
+            </p>
+          </li>
+        </ul>
+        <me>s^{(1)} = (00011)^p</me> 
+        Some piece of <m>s^{(1)}</m> in the first <m>p</m> symbols is pumpable.
+        <ul>
+          <li>
+            <p>
+              There is some <m>y</m> that we can extract or insert as many times as we want
+            </p>
+          </li>
+        </ul>
+      </p>
+      
+    </exploration>
+    <!--TODO: would like to write something here to break up the explorations-->
+    <exploration>
+      <title>Pumping Lemma for Regular Languges with Defined Language</title>
+      <p>
+        Consider <m>L_{01}=\{0^n1^n|n\leq 0 \}</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Assume <m>L_{01}</m> is regular thus obeying the Pumping Lemma for Regular Languages.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let us choose <m>s^{(1)} = 0^p1^p</m> since <m>L_{01}</m> is a Regular Language, any string that is long 
+            enough should be pumpable.
+          </p>
+        </li>
+        <li>
+          <p>
+            A pumpable part (<m>y</m>) must occur in the first <m>p</m> symbols. So, <m>y</m> must contain one or more 0s 
+            and no 1s sine the first <m>p</m> symbols are 0s.
+          </p>
+          <p>
+            If we pump down to <m>s^{(0)}</m>, we will thus remove some 0x without removing any 1s. <m>s^{(0)}</m> cannot
+            possibly be in <m>L_{01}</m>, no matter the choice for <m>y</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Thus the assumption is wrong and by contradiction, the language is not regular. 
+          </p>
+        </li>
+      </ol>
+    </exploration>
   </section>
+  <section xml:id="sec-PLRLFunLangs">
+    <title>Additional Non-Regular Languages for Proving</title>
+    <p>
+      Here are some additional, fun, non-regular languages to try to prove (in increasing complexity): 
+      <ul>
+        <li>
+          <m>\{0^i1^j|i>j\}</m>
+        </li>
+        <li>
+          <m>\{0^i1^j|i\geq j\}</m>
+        </li>
+        <li>
+          <m>\{0^i1^j|i \lt j\}</m>
+        </li>
+       <li>
+          <m>\{0^i1^j|i \leq j\}</m>
+        </li>
+        <li>
+          <m>\{0^n1^m0^n\}</m>
+        </li>
+        <li>
+          <m>\{a^ib^jc^k|i=j \mbox{ when } k=1\}</m>
+        </li>
+        <li>
+          <m>\{ww^R|w \mbox{ is a binary string}\}</m>
+        </li>
+        <li>
+          <m>\{w|w \mbox{ is a palindrome}\}</m>
+        </li>
+        <li>
+          <m>\{ab^nc^n\}</m>
+        </li>
+        <li>
+          <m>\{a^ib^jc^k| j = k \mbox{ when } i = 1 \}</m>
+        </li>
+      </ul>
+      Unless stated otherwise, <m>i,j,k,m,n \geq 0</m>. You can try <m>>0</m> or <m>>2</m> for additional practice.
+    </p>
+  </section>
+
   <exercises>
     <exercise>
       <statement>
@@ -586,7 +779,7 @@
       </hint>
       <answer>
         <p>
-          Character repetitions can exist in these two places: 
+          Character repetitions can exist in these two places:
           <ul>
             <li>
               <m>10(00)^*111</m>
@@ -598,6 +791,45 @@
           They can also be combined.
         </p>
       </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <m>L_{xx}</m> is regular or not.
+        </p>
+        <me>
+          L_{xx}=\{w\#w | w \mbox{ is any binary string}\}
+        </me>
+        <me>
+          \Sigma = \{0,1,\#\}
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <m>L_{ab}</m> is regular or not.
+        </p>
+        <me>
+          L_{ab}=\{(ab)^n|n \geq 100\}
+        </me>
+        <me>
+          \Sigma = \{a,b\}
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <m>L_{a}</m> is regular or not.
+        </p>
+        <me>
+          L_{a}=\{a^{2^n}|n \geq 0\}
+        </me>
+        <me>
+          \Sigma = \{a\}
+        </me>
+      </statement>
     </exercise>
   </exercises>
     <!--
