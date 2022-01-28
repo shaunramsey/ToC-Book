@@ -9,5 +9,8 @@
 
 <xi:include href="./ch-cfgs/ch-cfgs.ptx" />
 <xi:include href="./ch-pdas/ch-pdas.ptx" />
+<xi:include href="./ch-cnf/ch-cnf.ptx" />
+<xi:include href="./ch-cfl/ch-cfl.ptx" />
+<xi:include href="./ch-pumping-lemma-context-free/ch-pumping-lemma-context-free.ptx" />
 
 </part>

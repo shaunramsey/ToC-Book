@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<chapter xml:id="ch-diagonalization" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Diagonalization</title>
+  
+  <introduction>
+    <p>What will we learn in this chapter?HI</p>
+    <remark> <p> REMARK </p> </remark>
+    <convention> <p> CONVENTION </p> </convention>
+    <note><p> NOTE </p></note>
+    <observation><p> OBSERVATION </p></observation> 
+    <warning><p> WARNING </p></warning>
+    <insight><p> IINSIGHT</p></insight>
+    <objectives><p>Obj</p></objectives>
+    <outcomes><p>OUTCOMES</p></outcomes>
+    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
+    <assemblage><p>ASSEMBLAGE</p></assemblage>
+    <pre>PRE</pre>
+    <project><p>PRE</p></project>
+    <activity><p>PRE</p></activity>
+    <exploration><p>PRE</p></exploration>
+    <investigation><p>PRE</p></investigation>
+    <listing><p>PRE</p></listing>
+    <list><p>PRE</p></list>
+    <theorem><p>PRE</p></theorem>
+    <corollary><p>PRE</p></corollary>
+    <lemma><p>PRE</p></lemma>
+    <algorithm><p>PRE</p></algorithm>
+    <proposition><p>PRE</p></proposition>
+    <claim><p>PRE</p></claim>
+    <fact><p>PRE</p></fact>
+    <identity><p>IDENTITY</p></identity>
+    <axiom><p>PRE</p></axiom>
+    <conjecture><p>PRE</p></conjecture>
+    <principle><p>PRE</p></principle>
+    <heuristic><p>PRE</p></heuristic>
+    <hypothesis><p>PRE</p></hypothesis>
+    <assumption><p>PRE</p></assumption>
+    <computation><p>PRE</p></computation>
+    <technology><p>PRE</p></technology>
+  </introduction>
+    <!--
+  <xi:include href=".sec-emp-intro.ptx" />
+  <xi:include href=".sec-emp-next.ptx" />
+  <xi:include href=".sec-emp-conc.ptx" /> 
+  -->
+
+</chapter>

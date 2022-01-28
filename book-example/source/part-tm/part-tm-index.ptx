@@ -8,6 +8,9 @@
   </introduction>
 
   <xi:include href="./ch-tms/ch-tms.ptx" /> 
+  <xi:include href="./ch-tm-classifications/ch-tm-classifications.ptx" />
+  <xi:include href="./ch-diagonalization/ch-diagonalization.ptx" />
+  <xi:include href="./ch-reducibility/ch-reducibility.ptx" />
 
 
 </part>

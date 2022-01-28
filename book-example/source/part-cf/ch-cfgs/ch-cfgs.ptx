@@ -1,10 +1,357 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <chapter xml:id="ch-cfgs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Context Free Grammars</title>
+<title>Context Free Grammars (CFGs)</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Context Free Grammar </li>
+       <li> Terminals </li>
+       <li> Parse Trees </li>
+       <li> Ambiguous and Inherently Ambiguous </li>
+     </ol>
+  </objectives>
   <introduction>
     <p>What will we learn in this chapter?</p>
+    <p> Refer to the <xref ref="glossary" text="title"/> for a reminder of terms and abbreviations.</p>
   </introduction>
+
+   <section xml:id="CFGs">
+      <title> Context Free Grammars (CFGs) </title>
+      <subsection xml:id="subsec-RLReview">
+        <title>Regular Languages Review</title>
+          <p>
+            To best understand CFGs, we must understand how they differ from Regular Languages. Regular Languages: 
+            <ul>
+              <li>
+                <p>
+                  have no memory - as they use states
+                </p>
+              </li>
+              <li>
+                <p>
+                  have modular looping - as they use state transitions
+                </p>
+              </li>
+              <li>
+                <p>
+                  can be expressed in Regular Expressions, Deterministic Finite Automata, and Non-Deterministic Finite Automata
+                </p>
+              </li>
+            </ul>
+            In order to build upon Regular Languages, we move to forms that allow some limited forms of matching.
+            Context Free Languages come about when Regular Languages have access to stack memory, and they are expressed through
+            Context Free Grammars.
+          </p>
+      </subsection>
+      <subsection xml:id="subsec-CFGintro">
+        <title>Basics of Context Free Grammars</title>
+        <p>
+          <idx><h>Context Free Grammars (CFGs)</h></idx> <term>Context Free Grammars (CFGs)</term> consist of a series of rules or 
+          productions. 
+          <tabular>
+            <row>
+              <cell><m>CFG_1:</m></cell> <cell></cell> 
+            </row>
+            <row>
+              <cell></cell> <cell><m>S \rightarrow aSb|T</m></cell> 
+            </row>
+            <row>
+              <cell></cell> <cell><m>T \rightarrow cTd|cd</m></cell> 
+            </row>
+          </tabular>
+        </p>
+      </subsection>
+      <p>
+        Each line of a CFG is called a <idx><h>Rule</h></idx> <term>rule</term>. The left hand side of a rule is always a 
+        <idx><h>Variable (in CFGs)</h></idx> <term>variable</term>. Variables are denoted by uppercase letters. The right 
+        hand side of a rule is some combination terminals and variables. <idx><h>Terminal</h></idx> <term>Terminals</term> 
+        can be elements of the alphabet of the Context Free Language or the empty string (<m>\epsilon</m>). They are denoted
+        by lower case letters.
+      </p>
+      <p>
+        CFGs have a start variable, it usually on the left hand side of the first rule and is denoted with <m>S</m>. To produce 
+        strings, variables are replaced by one of the production's right hand side. In a production rule, <m>|</m> is used to mean
+        OR. The left hand side can be replaced by one of the right hand side. 
+      </p>
+      <p>
+        Here is a sample derivation from <m>CFG_1</m>: 
+        <tabular>
+          <row>
+            <cell halign='center'><m>S \rightarrow aSb</m></cell><cell><m>S</m> is replaced by <m>aSb</m></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>aSb \rightarrow aTb</m></cell><cell>The <m>S</m> in <m>aSb</m> is relapced with <m>T</m></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>aTb \rightarrow acTdb</m></cell><cell>The <m>T</m> in <m>aTb</m> is replaced with <m>aTd</m></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>acTdb \rightarrow accddb</m></cell><cell><m>T</m> in <m>acTdb</m> is replaced by <m>cd</m></cell>
+          </row>
+        </tabular>
+        This makes the final string: <m>accddb</m>.
+      </p>
+      <exploration>
+      <p>
+        Consider the following grammar:
+        <tabular>
+          <row>
+            <cell><m>CFG_2</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aS | \epsilon</m></cell>
+          </row>
+        </tabular>
+        What strings can we make from it?
+        <tabular>
+          <row>
+            <cell><m>\epsilon</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow \epsilon</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell><m>a</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow aS</m></cell><cell><m>S</m> is replaced by <m>aS</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>aS \rightarrow a\epsilon</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+          <row>
+            <cell><m>aa</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow aS</m></cell><cell><m>S</m> is replaced by <m>aS</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>aS \rightarrow aaS</m></cell><cell><m>S</m> is replaced by <m>aS</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>aaS \rightarrow aa</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+        </tabular>
+        And many more strings can be made! But, what languge is this?
+      </p>
+      <p>
+        The language of this grammar is any amount of <m>a</m>s concatenated. 
+      </p>
+      </exploration>
+      <exploration>
+        <p>
+        Consider the following grammar:
+        <tabular>
+          <row>
+            <cell><m>CFG_3</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow 0S1 | \epsilon</m></cell>
+          </row>
+        </tabular>
+        What strings can we make from it?
+        <tabular>
+          <row>
+            <cell><m>\epsilon</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow \epsilon</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell><m>01</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow 0S1</m></cell><cell><m>S</m> is replaced by <m>0S1</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>0S1 \rightarrow 0\epsilon 1</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+          <row>
+            <cell><m>0011</m>:</cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell halign='center'><m>S \rightarrow 0S1</m></cell><cell><m>S</m> is replaced by <m>0S1</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>0S1 \rightarrow 00S11</m></cell><cell><m>S</m> is replaced by <m>0S1</m></cell>
+          </row>
+          <row>
+              <cell></cell><cell halign='center'><m>00S11 \rightarrow 00\epsilon 11</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+          </row>
+        </tabular>
+        And many more strings can be made! But, what languge is this?
+      </p>
+      <p>
+        The language of this grammar is any amount of 0s followed by the same amount of 1s.
+      </p>
+      </exploration>
+      <exploration>
+        <p>
+          Let us consider a grammar with multiple variables. 
+          <tabular>
+            <row>
+              <cell><m>CFG_4</m>:</cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>S \rightarrow aS | T | \epsilon</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>T \rightarrow bT | \epsilon</m></cell>
+            </row>
+          </tabular>
+          </p>
+          <p>
+          Can we generate only <m>a</m>s?
+          <tabular>
+            <row>
+              <cell><m>S \rightarrow aS</m></cell><cell><m>S</m> is replaced by <m>aS</m></cell>
+            </row>
+            <row>
+              <cell><m>aS \rightarrow aaS</m></cell><cell><m>S</m> is replaced by <m>aS</m></cell>
+            </row>
+            <row>
+              <cell><m>aaS \rightarrow aa\epsilon</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
+            </row>
+          </tabular>
+          The resulting string is <m>aa</m>. Therefore, <m>CFG_4</m> can generate only <m>a</m>s.
+        </p>
+        <p>
+          Can we generate only <m>b</m>s?
+          <tabular>
+            <row>
+              <cell><m>S \rightarrow T</m></cell><cell><m>S</m> is replaced by <m>T</m></cell>
+            </row>
+            <row>
+              <cell><m>T \rightarrow bT</m></cell><cell><m>T</m> is replaced by <m>T</m></cell>
+            </row>
+            <row>
+              <cell><m>bT \rightarrow bbT</m></cell><cell><m>T</m> is replaced by <m>bT</m></cell>
+            </row>
+            <row>
+              <cell><m>bbT \rightarrow bb\epsilon</m></cell><cell><m>T</m> is replaced by <m>\epsilon</m></cell>
+            </row>
+          </tabular>
+          The resulting string is <m>bb</m>. Therefore, <m>CFG_4</m> can generate only <m>b</m>s.
+        </p>
+        <p>
+          What are some other strings that we can generate using <m>CFG_4</m>?
+          <ul>
+            <li>
+              <p>
+                <m>ab</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>aaabb</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>abbbbbb</m>
+              </p>
+            </li>
+          </ul>
+          The language of this grammar is the empty string or any amount of <m>a</m>s followed by any amount of <m>b</m>s.
+        </p>
+      </exploration>
+      <subsection xml:id="subsec-parsetrees">
+        <title>Parse Trees</title>
+          <p>
+            Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <m>CFG_1</m> for this example.
+            <tabular>
+            <row>
+              <cell><m>CFG_1:</m></cell> <cell></cell> 
+            </row>
+            <row>
+              <cell></cell> <cell><m>S \rightarrow aSb|T</m></cell> 
+            </row>
+            <row>
+              <cell></cell> <cell><m>T \rightarrow cTd|cd</m></cell> 
+            </row>
+          </tabular>
+          We list the string at the bottom of the tree with the starting variable at the top. For the first example we will follow the derrivation that creates 
+          <m>accddb</m>. It is repeated below and has been numbers for convinence: 
+          <tabular>
+          <row>
+            <cell halign='center'><m>S \rightarrow aSb</m></cell><cell><m>S</m> is replaced by <m>aSb</m></cell>
+          </row>
+          <row>
+            <cell halign='center'>
+            <image xml:id="CFExT1a">
+            <latex-image>
+              \begin{forest}
+                [S[S[a, tier=word][b, tier=word] ]]
+              \end{forest}
+            </latex-image>
+            </image>
+            </cell><cell></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>aSb \rightarrow aTb</m></cell><cell>The <m>S</m> in <m>aSb</m> is relapced with <m>T</m></cell>
+          </row>
+          <row>
+            <cell halign='center'>
+            <image xml:id="CFExT1b">
+            <latex-image>
+              \begin{forest}
+                [S[S[a, tier=word][T][b, tier=word] ]]
+              \end{forest}
+            </latex-image>
+            </image>
+            </cell><cell></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>aTb \rightarrow acTdb</m></cell><cell>The <m>T</m> in <m>aTb</m> is replaced with <m>aTd</m></cell>
+          </row>
+          <row>
+            <cell halign='center'>
+            <image xml:id="CFExT1c">
+            <latex-image>
+              \begin{forest}
+                [S[S[a, tier=word][T[c, tier=word] [T] [d, tier=word]][b, tier=word] ]]
+              \end{forest}
+            </latex-image>
+            </image>
+            </cell><cell></cell>
+          </row>
+          <row>
+            <cell halign='center'><m>acTdb \rightarrow accddb</m></cell><cell><m>T</m> in <m>acTdb</m> is replaced by <m>cd</m></cell>
+          </row>
+          <row>
+            <cell halign='center'>
+            <image xml:id="CFExT1d">
+            <latex-image>
+              \begin{forest}
+                [S[S[a, tier=word][T[c, tier=word] [T [c, tier=word][d, tier=word]] [d, tier=word]][b, tier=word] ]]
+              \end{forest}
+            </latex-image>
+            </image>
+            </cell><cell></cell>
+          </row>
+        </tabular>
+
+          </p>
+      </subsection>
+    </section>
+    <exercises xml:id="exercises-cfgs">
+      <exercise>
+        <statement>
+          
+        </statement>
+        <answer>
+          
+        </answer>
+        
+      </exercise>
+    </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
