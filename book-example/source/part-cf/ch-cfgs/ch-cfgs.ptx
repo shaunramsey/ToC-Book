@@ -262,7 +262,34 @@
           The language of this grammar is the empty string or any amount of <m>a</m>s followed by any amount of <m>b</m>s.
         </p>
       </exploration>
-      <subsection xml:id="subsec-parsetrees">
+      <subsection xml:id="subsec-rexToCFG">
+        <title>Creating CFGs from Regular Expressions</title>
+        <p>
+          Any Regular Expression is a Context Free Language and easily implemented into a CFG using the bellow framework: 
+          <ul>
+            <li>
+              <p>
+                union is an <m>|</m>, another rule
+              </p>
+            </li>
+            <li>
+              <p>
+                concatenation is a <m>V \rightarrow V_1v_2</m> rule
+              </p>
+            </li>
+            <li>
+              <p>
+                * is a <m>S \rightarrow stringS | \epsilon</m> rule
+              </p>
+            </li>
+          </ul>
+          
+        </p>
+        
+      </subsection>
+      </section>
+
+      <section xml:id="subsec-parsetrees">
         <title>Parse Trees</title>
           <p>
             Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <m>CFG_1</m> for this example.
@@ -280,78 +307,364 @@
           We list the string at the bottom of the tree with the starting variable at the top. For the first example we will follow the derrivation that creates 
           <m>accddb</m>. It is repeated below and has been numbers for convinence: 
           <tabular>
+            <row>
+              <cell halign='center'>1) <m>S \rightarrow aSb</m></cell>
+              <cell halign='center'>2) <m>aSb \rightarrow aTb</m></cell>
+            </row>
+            <row>
+              <cell halign='center'><m>S</m> is replaced by <m>aSb</m></cell>
+              <cell halign='center'>The <m>S</m> in <m>aSb</m> is relapced with <m>T</m></cell>
+            </row>
+            <row>
+              <cell halign='left'>
+                <image xml:id="CFExT1a" width='20%'>
+                  <latex-image>
+                    \begin{forest}
+                      [S[S[a, tier=word][b, tier=word] ]]
+                    \end{forest}
+                  </latex-image>
+                </image>
+              </cell>
+              <cell halign='left'>
+                <image xml:id="CFExT1b" width='50%'>
+                  <latex-image>
+                    \begin{forest}
+                      [S[S[a, tier=word][T][b, tier=word] ]]
+                    \end{forest}
+                  </latex-image>
+                </image>
+              </cell>
+            </row>
+            <row>
+              <cell halign='center'>3) <m>aTb \rightarrow acTdb</m></cell>
+              <cell halign='center'>4) <m>acTdb \rightarrow accddb</m></cell>
+            </row>
+            <row>
+              <cell halign='center'>The <m>T</m> in <m>aTb</m> is replaced with <m>aTd</m></cell>
+              <cell halign='center'><m>T</m> in <m>acTdb</m> is replaced by <m>cd</m></cell>
+            </row>
+            <row>
+              <cell halign='center'>
+                <image xml:id="CFExT1c" width='60%'>
+                  <latex-image>
+                    \begin{forest}
+                      [S[S[a, tier=word][T[c, tier=word] [T] [d, tier=word]][b, tier=word] ]]
+                    \end{forest}
+                  </latex-image>
+                </image>
+              </cell>
+              <cell halign='center'>
+                <image xml:id="CFExT1d" width='60%'>
+                  <latex-image>
+                    \begin{forest}
+                      [S[S[a, tier=word][T[c, tier=word] [T [c, tier=word][d, tier=word]] [d, tier=word]][b, tier=word] ]]
+                    \end{forest}
+                  </latex-image>
+                </image>
+              </cell>
+            </row>
+          </tabular>
+          </p>
+          <p>
+            Here, you can see the <m>c</m> and <m>d</m> matching and the <m>a</m> and <m>b</m> matching a little more clearly.
+          </p>
+          <exploration xml:id="exp-AmbIntro">
+            <statement>
+            <p>
+              Let's work through another example from <m>CFG_5</m>: 
+              <tabular>
+                <row>
+                  <cell><m>CFG_5:</m></cell><cell></cell>
+                </row>
+                <row>
+                  <cell></cell><cell><m>E \rightarrow E+E | E*E | 0 | 1</m></cell>
+                </row>
+              </tabular>
+            </p>
+              <p>
+                We will create the parse tree for the string <m>1+1*0</m>. 
+              </p>
+            
+            <p>
+              <tabular>
+                <row>
+                  <cell>First, we will need <m>E + E</m> to give us <m>1 + E</m></cell>
+                  <cell halign='center'>
+                    <image xml:id="CFExT2a" width='50%'>
+                      <latex-image>
+                        \begin{forest}
+                          [E[E[1, tier=word]][+, tier=word][E, tier=word]]
+                        \end{forest}
+                      </latex-image>
+                    </image>
+                  </cell>
+                </row>
+                <row>
+                  <cell>Second, we will need <m>E</m> to give us <m>E * E</m></cell>
+                  <cell halign='center'>
+                    <image xml:id="CFExT2b">
+                      <latex-image>
+                        \begin{forest}
+                          [E[E[1, tier=word]][+, tier=word][E[E][*,tier=word][E]]]
+                        \end{forest}
+                      </latex-image>
+                    </image>
+                  </cell>
+                </row>
+                <row>
+                  <cell>Third, we will need <m>E</m> to give us <m>1</m></cell>
+                  <cell halign='center'>
+                    <image xml:id="CFExT2c">
+                      <latex-image>
+                        \begin{forest}
+                          [E[E[1, tier=word]][+, tier=word][E[1,tier=word][*,tier=word][E]]]
+                        \end{forest}
+                      </latex-image>
+                    </image>
+                  </cell>
+                </row>
+                <row>
+                  <cell>Finally, we will need <m>E</m> to give us <m>0</m></cell>
+                  <cell halign='center'>
+                    <image xml:id="CFExT2d">
+                      <latex-image>
+                        \begin{forest}
+                          [E[E[1, tier=word]][+, tier=word][E[1,tier=word][*,tier=word][0, tier=word]]]
+                        \end{forest}
+                      </latex-image>
+                    </image>
+                  </cell>
+                </row>
+              </tabular>
+            </p>
+            <p>
+              But, there is another way to arrive at this string using <m>CFG_5</m>. Try drawing the parse tree for it.
+            </p>
+            </statement>
+            <answer>
+              <p>
+                <image xml:id="CFExT2e" width='20%'>
+                  <latex-image>
+                    \begin{forest}
+                      [E[E[E[1, tier=word]][+,tier=word][E[1,tier=word]]][*,tier=word][E[0,tier=word]]]
+                    \end{forest}
+                  </latex-image>
+                </image>
+              </p>
+            </answer>   
+          </exploration>
+    </section>
+    <section xml:id="sec-Ambiguity">
+      <title>Ambiguity</title>
+      <p>
+        <idx>Ambiguous</idx> <term>Abmibuous</term> grammars can generate some string in two or more different ways. The grammar as shown in the exploration above is 
+        ambiguous are there is more than one way to generate the string, but the language this grammar represents does have a grammar that is not ambiguous. 
+      </p>
+      <p>
+        If we want to force some mathcing to have precedence, you simply push the items with higher precedence to be matched by rules further down the grammar. 
+        Consider <m>CFG_5</m> once again. 
+        <tabular>
           <row>
-            <cell halign='center'><m>S \rightarrow aSb</m></cell><cell><m>S</m> is replaced by <m>aSb</m></cell>
+            <cell><m>CFG_5:</m></cell><cell></cell>
           </row>
           <row>
-            <cell halign='center'>
-            <image xml:id="CFExT1a">
-            <latex-image>
-              \begin{forest}
-                [S[S[a, tier=word][b, tier=word] ]]
-              \end{forest}
-            </latex-image>
-            </image>
-            </cell><cell></cell>
-          </row>
-          <row>
-            <cell halign='center'><m>aSb \rightarrow aTb</m></cell><cell>The <m>S</m> in <m>aSb</m> is relapced with <m>T</m></cell>
-          </row>
-          <row>
-            <cell halign='center'>
-            <image xml:id="CFExT1b">
-            <latex-image>
-              \begin{forest}
-                [S[S[a, tier=word][T][b, tier=word] ]]
-              \end{forest}
-            </latex-image>
-            </image>
-            </cell><cell></cell>
-          </row>
-          <row>
-            <cell halign='center'><m>aTb \rightarrow acTdb</m></cell><cell>The <m>T</m> in <m>aTb</m> is replaced with <m>aTd</m></cell>
-          </row>
-          <row>
-            <cell halign='center'>
-            <image xml:id="CFExT1c">
-            <latex-image>
-              \begin{forest}
-                [S[S[a, tier=word][T[c, tier=word] [T] [d, tier=word]][b, tier=word] ]]
-              \end{forest}
-            </latex-image>
-            </image>
-            </cell><cell></cell>
-          </row>
-          <row>
-            <cell halign='center'><m>acTdb \rightarrow accddb</m></cell><cell><m>T</m> in <m>acTdb</m> is replaced by <m>cd</m></cell>
-          </row>
-          <row>
-            <cell halign='center'>
-            <image xml:id="CFExT1d">
-            <latex-image>
-              \begin{forest}
-                [S[S[a, tier=word][T[c, tier=word] [T [c, tier=word][d, tier=word]] [d, tier=word]][b, tier=word] ]]
-              \end{forest}
-            </latex-image>
-            </image>
-            </cell><cell></cell>
+            <cell></cell><cell><m>E \rightarrow E+E | E*E | 0 | 1</m></cell>
           </row>
         </tabular>
-
-          </p>
-      </subsection>
+        Here, <m>E*E</m> is of lower precedence than <m>E+E</m>, so it can be moved down.
+        <tabular>
+          <row>
+            <cell><m>CFG_{5a}:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>E \rightarrow E+E | T | 0 | 1</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow E*E</m></cell>
+          </row>
+        </tabular>
+        The <m>0 | 1</m> also has lower precedence than <m>E+E</m> and <m>E*E</m>, but there needs to be a way to generate those. They can also be given their own
+        variable. 
+        <tabular>
+          <row>
+            <cell><m>CFG_{5b}:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>E \rightarrow E+E | T</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow E*E | N</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>N \rightarrow 0 | 1</m></cell>
+          </row>
+        </tabular>
+        Using the above grammar, there is now only one way to create the string <m>1+1*0</m>. This is the parse tree: 
+        <image xml:id="CFExT3" width='20%'>
+          <latex-image>
+            \begin{forest}
+              [E[E[T[N[1,tier=word]]]][+,tier=word][E[T[T[N[1,tier=word]]][*,tier=word][T[N[0,tier=word]]]]]]
+            \end{forest}
+          </latex-image>
+        </image>
+        This is the only possible way to create the parse tree that generates <m>1+1*0</m> from <m>CFG_{5b}</m> because the "+" must be matched first. 
+       </p>
+       <p>
+         Some languages have only ambiguous grammars. These languages are called <idx>Inherently Ambiguous</idx><term>interherently ambiguous</term>. 
+         The language below is an example of an inherently ambiguous language: 
+         <me>
+           L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
+         </me>
+         <m>CFG_6</m> is one possible grammar for <m>L_6</m>: 
+      <tabular>
+        <row>
+          <cell><m>CFG_6:</m></cell><cell></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>S \rightarrow AU_1 | U_2G</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>A \rightarrow aAb | \epsilon</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>U_1 \rightarrow cU_1 | \epsilon</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>U_2 \rightarrow aU_2 | \epsilon</m></cell>
+        </row><row>
+          <cell></cell><cell><m>G \rightarrow bGc | \epsilon</m></cell>
+        </row>
+      </tabular>
+      Try to make a parse tree for the string <m>abc</m> as generated by <m>CFG_6</m>. Below are some examples.
+      </p>
+      <sidebyside width='20%'>
+        <image xml:id="CFGExT4a">
+          <latex-image>
+            \begin{forest}
+              [S[$U_2$[a,tier=word]][G[b,tier=word][c,tier=word]]]
+            \end{forest}
+          </latex-image>
+        </image>
+        <image xml:id="CFGExT4b">
+          <latex-image>
+            \begin{forest}
+              [S[A[a,tier=word][b,tier=word]][$U_1$[c,tier=word]]]
+            \end{forest}
+          </latex-image>
+        </image>
+      </sidebyside>
     </section>
-    <exercises xml:id="exercises-cfgs">
+    <exercises xml:id="ch-cfgs-exercises">
       <exercise>
         <statement>
-          
+        <p>
+          Write a CFG for <m>L_1 = (1+01)^*</m>
+        </p>
+        </statement>
+        <hint>
+        <p>
+          Consider the OR first. Then consider how to generate the reptition. There are multiple options for a grammar of this language.
+        </p>
+        </hint>
+        <answer>
+          <p>
+            <tabular>
+              <row>
+                <cell><m>CFG_1:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow SS | 1 |01 | \epsilon</m></cell>
+              </row>
+            </tabular>
+            OR
+            <tabular>
+              <row>
+                <cell><m>CFG_1:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow 1S | 01S | \epsilon</m></cell>
+              </row>
+            </tabular>
+            OR
+            <tabular>
+              <row>
+                <cell><m>CFG_1:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S_1 \rightarrow U_1S_1 | U_2S_1 | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>U_1 \rightarrow 1</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>U_2 \rightarrow 01</m></cell>
+              </row>
+            </tabular>
+            Are all grammars that can represent <m>L_1</m>.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a CFG for <m>L_2 = (1^*01^*01^*)^*</m>
+          </p>
         </statement>
         <answer>
-          
+          <p>
+            <tabular>
+              <row>
+                <cell><m>CFG_2:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S_2 \rightarrow T0T0T0TS_2 | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow 1T | \epsilon</m></cell>
+              </row>
+            </tabular>    
+            OR  
+            <tabular>
+              <row>
+                <cell><m>CFG_2:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S_2 \rightarrow S_2S_2 | T0T0T | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow 1T | \epsilon</m></cell>
+              </row>
+            </tabular>   
+            Both grammars can represent <m>L_2</m>.    
+          </p>
         </answer>
-        
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write a CFG for <m>L_1L_2 = (1+01)^*(1^*01^*01^*)^*</m>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Lean on past exercises.
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <tabular>
+              <row>
+                <cell><m>CFG_3:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S_3 \rightarrow S_1S_2</m></cell>
+              </row>
+            </tabular>            
+          </p>
+        </answer>
       </exercise>
     </exercises>
+    
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
