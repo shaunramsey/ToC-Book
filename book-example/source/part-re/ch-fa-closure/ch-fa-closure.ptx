@@ -9,9 +9,7 @@
        <li> Closure </li>
      </ol>
   </objectives>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
+
   <section xml:id="sec-closureintro">
     <title>Closure</title>
     <p>
@@ -19,17 +17,8 @@
       results in an element in the set.
     </p>
     <exploration>
-    <image xml:id="FAPicSet" width="50%">
-      <latex-image>
-        \begin{tikzpicture}
-            \begin{Bmatrix}
-              \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \\
-              \square \amp \square \amp \triangle \amp \triangle \amp \bigcirc \amp \bigcirc \\
-              \triangle , \amp \square , \amp \square , \amp \triangle , \amp \triangle , \amp \square \\
-              \end{Bmatrix}
-        \end{tikzpicture}
-      </latex-image>
-    </image>
+    <image source="../generated/latex-image/FAPicSet.svg" width="50%">
+      </image>
     <p>
       Each column is an element of the set. 
       <ol>
@@ -215,7 +204,7 @@
       </p>
     </exploration>
     <p>
-      If a set it closed under certain operations is helpful to know for type safety as a developer and in proofs.
+      If a set is closed under certain operations is helpful to know for type safety as a developer and in proofs.
     </p>
     <exploration>
       <title>Implications</title>
@@ -421,56 +410,16 @@
         L(M_1) = L_1
       </me>
       
-      <image xml:id="FAEXP1" width="70%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.9]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw (0.,0.) rectangle (6.,3.5)  ; 
-          \draw (1.,1.) circle (0.4cm) ;
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm);
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm);
-          \draw (4.570204291495152,2.0) circle (0.4cm);
-          \draw (4.570204291495152,2.0) circle (0.25cm);
-          \draw [-stealth] (-1.3537407194466937,1.9720396361358064) -- (0.7256973408087151,1.2235615973595062);
-          \draw (-4,2.5) node[anchor=north west] {To the start of $M_1$};
-          \draw (6.95,1.0) circle (0.25cm);
-          \draw (6.95,1.0) circle (0.4cm);
-          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
-          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$};
-          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
-          \draw (5.5,1.4) node[anchor=north west] {$\epsilon$};
-          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$};  
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP1.svg" width="50%">
+        </image>
       <p>
         This is the same for <m>L_2</m>.
       </p>
       <me>
         L(M_2) = L_2
       </me>
-      <image xml:id="FAEXP1d" width="70%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.9]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw (0.,0.) rectangle (6.,3.5)  ; 
-          \draw (1.,1.) circle (0.4cm) ;
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm);
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm);
-          \draw (4.570204291495152,2.0) circle (0.4cm);
-          \draw (4.570204291495152,2.0) circle (0.25cm);
-          \draw [-stealth] (-1.3537407194466937,1.9720396361358064) -- (0.7256973408087151,1.2235615973595062);
-          \draw (-4,2.5) node[anchor=north west] {To the start of $M_2$};
-          \draw (6.95,1.0) circle (0.25cm);
-          \draw (6.95,1.0) circle (0.4cm);
-          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
-          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$};
-          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
-          \draw (5.5,1.4) node[anchor=north west] {$\epsilon$};
-          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_2$};  
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP1d.svg" width="50%">
+        </image>
       <p>
         Using these two machines, we can create the union machine by making a new start state with empty string 
         transitions to the start states for <m>M_1</m> and <m>M_2</m>.
@@ -478,59 +427,10 @@
       <me>
         L(M_3) = L_1 \cup L_2
       </me>
-      <image xml:id="FAEXP1a" width="70%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.9]
-        \tikzstyle{every node}+=[inner sep=0pt]
-          \draw (0.,0.) rectangle (6.,3.5)  ; 
-          \draw (1.,1.) circle (0.4cm) ;
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
-          \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
-          \draw (4.570204291495152,2.0) circle (0.4cm) ;
-          \draw (4.570204291495152,2.0) circle (0.25cm)  ;
-          \draw [-stealth] (.2,1.9) -- (0.7,1.3);
-          \draw (6.95,1.0) circle (0.25cm)  ;
-          \draw (6.95,1.0) circle (0.4cm);
-          \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
-          \draw (5.7,1.6) node[anchor=south east] {$\epsilon$}  ;
-          \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
-          \draw (5.5,1.2) node[anchor=north west] {$\epsilon$} ;
-          \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$} ;
-          
-          
-          
-       
-          \draw (0.,-1.) rectangle (6.,-4.5)  ; 
-          \draw (1.,-3.5) circle (0.4cm) ;
-          \draw (3.9836750824910085,-3.7) circle (0.4cm)  ;
-          \draw (3.9836750824910085,-3.7) circle (0.25cm)  ;
-          \draw (4.570204291495152,-2.5) circle (0.4cm) ;
-          \draw (4.570204291495152,-2.5) circle (0.25cm)  ;
-          \draw [-stealth] (.2,-2.6) -- (0.7,-3.18);
-          \draw (6.95,-3.5) circle (0.25cm)  ;
-          \draw (6.95,-3.5) circle (0.4cm);
-          \draw [-stealth] (4.902570843264166,-2.65) -- (6.58395457574271,-3.3);
-          \draw (5.7,-2.9) node[anchor=south east] {$\epsilon$}  ;
-          \draw [-stealth] (4.3746945551604375,-3.8) -- (6.58395457574271,-3.5);
-          \draw (5.5,-3.4) node[anchor=north west] {$\epsilon$} ;
-          \draw (1.3442936419723646,-1.5) node[anchor=north west] {\Large $M_2$} ;
-
-
-          \draw (-7.,-5.) rectangle (8.,4.);
-          \draw (-5.,-1.) circle (0.4cm);
-          \draw [-stealth] (-4.72,-1.2) -- (0.7,-3.28);
-          \draw (-3,-2.6) node[anchor=north west] {$\epsilon$} ;
-          \draw [-stealth] (-4.72,-0.79) -- (0.65,1.0);
-          \draw (-3,0.4) node[anchor=north west] {$\epsilon$} ;
-          \draw [-stealth] (-6.5,0.4) -- (-5.2,-0.65);
-          \draw (-6,3) node[anchor=north west] {\Large $M_3$} ;
-          
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP1a.svg" width="70%">
+        </image>
       <p>
         Since this union machine is an NFA, it describes a RL. 
-        <!--need to add in proving that this is the union-->
       </p>
     </proof>
     <exploration>
@@ -546,45 +446,7 @@
         <p>
           A good way to approach this is to start where we did last time, by drawing out machines for each language.
         </p>
-        <image xml:id="FAEXP1b" width="70%">
-          <latex-image>
-              \begin{tikzpicture}[scale=0.9]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw (-7.,0.) rectangle (-1,3.5)  ; 
-              \draw (2.,1.) circle (0.4cm) ;
-              \draw (4.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
-              \draw (4.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
-              \draw (5.570204291495152,2.0) circle (0.4cm) ;
-              \draw (5.570204291495152,2.0) circle (0.25cm)  ;
-              \draw [-stealth] (1.2,1.9) -- (1.7,1.3);
-              \draw (7.95,1.0) circle (0.25cm)  ;
-              \draw (7.95,1.0) circle (0.4cm);
-              \draw [-stealth] (5.902570843264166,1.8528447212882431) -- (7.58395457574271,1.0743039381270345);
-              \draw (6.7,1.6) node[anchor=south east] {$\epsilon$}  ;
-              \draw [-stealth] (5.3746945551604375,0.7050587054574438) -- (7.58395457574271,1.);
-              \draw (6.5,1.2) node[anchor=north west] {$\epsilon$} ;
-              \draw (2.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_2$} ;
-              
-              
-              
-          
-              \draw (1.,0.) rectangle (7.,3.5)  ; 
-              \draw (-6.,1) circle (0.4cm) ;
-              \draw (-2.9836750824910085,0.8149580698133893) circle (0.4cm)  ;
-              \draw (-2.9836750824910085,0.8149580698133893) circle (0.25cm)  ;
-              \draw (-2.3,2.0) circle (0.4cm) ;
-              \draw (-2.3,2.0) circle (0.25cm)  ;
-              \draw [-stealth] (-1.9,2.0) -- (-.4,1.);
-              \draw (0.,1.0) circle (0.25cm)  ;
-              \draw (0.,1.0) circle (0.4cm);
-              \draw [-stealth] (-6.7,1.8) -- (-6.2,1.38);
-              \draw (-1.3,1.8) node[anchor=south east] {$\epsilon$}  ;
-              \draw [-stealth] (-2.6,0.8) -- (-.35,0.9);
-              \draw (-1.7,1.2) node[anchor=north west] {$\epsilon$} ;
-              \draw (-6,3.1) node[anchor=north west] {\Large $M_1$} ;
-              
-              \end{tikzpicture}
-            </latex-image>
+        <image source="../generated/latex-image/FAEXP1b.svg" width="70%">
         </image>
       </hint>
     </exploration>
@@ -601,29 +463,7 @@
         </p>
       </hint>
       <answer>
-        <image xml:id="FAEXP1c" width="70%">
-          <latex-image>
-            \begin{tikzpicture}[scale=0.9]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw (0.,0.) rectangle (6.,3.5)  ; 
-            \draw (1.,1.) circle (0.4cm) ;
-            \draw (3.9836750824910085,0.8149580698133893) circle (0.4cm);
-            \draw (3.9836750824910085,0.8149580698133893) circle (0.25cm);
-            \draw (4.570204291495152,2.0) circle (0.4cm);
-            \draw (4.570204291495152,2.0) circle (0.25cm);
-            \draw [-stealth] (0.3,1.9720396361358064) -- (0.7256973408087151,1.3);
-            \draw (6.95,1.0) circle (0.25cm);
-            \draw (6.95,1.0) circle (0.4cm);
-            \draw [-stealth] (4.902570843264166,1.8528447212882431) -- (6.58395457574271,1.0743039381270345);
-            \draw (5.7,1.6) node[anchor=south east] {$\epsilon$};
-            \draw [-stealth] (4.3746945551604375,0.7050587054574438) -- (6.58395457574271,1.);
-            \draw (5.5,1.4) node[anchor=north west] {$\epsilon$};
-            \draw (1.3442936419723646,3.169020566814169) node[anchor=north west] {\Large $M_1$};  
-            \draw[stealth-] (1.,.6) arc (10:170:-3);
-            \draw (3.5,-1.4) node[anchor=north west] {$\epsilon$};
-            \draw [-stealth] (7.5,2.3) -- (7,1.4);
-            \end{tikzpicture}
-          </latex-image>
+        <image source="../generated/latex-image/FAEXP1c.svg" width="70%">
         </image>
       </answer>
     </exploration>
@@ -643,63 +483,19 @@
       <me>
         L_1(M_1) = \{\mbox{all strings that end with a 1}\}
       </me>
-      <image xml:id="FAEXP2" width="70%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.2]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (23,-22.6) circle (3);
-          \draw (23,-22.6) node {$A_1$};
-          \draw [black] (41.8,-22.6) circle (3);
-          \draw (41.8,-22.6) node {$B_1$};
-          \draw [black] (41.8,-22.6) circle (2.4);
-          \draw [black] (18,-17.8) -- (20.84,-20.52);
-          \draw (17.47,-16.33) node [left] {$M_1$};
-          \fill [black] (20.84,-20.52) -- (20.6,-19.61) -- (19.91,-20.33);
-          \draw [black] (25.801,-21.532) arc (107.04916:72.95084:22.507);
-          \fill [black] (39,-21.53) -- (38.38,-20.82) -- (38.09,-21.78);
-          \draw (32.4,-20.04) node [above] {$1$};
-          \draw [black] (42.845,-19.8) arc (187.2643:-100.7357:2.25);
-          \draw (47.25,-16.51) node [right] {$1$};
-          \fill [black] (44.66,-21.73) -- (45.51,-22.12) -- (45.39,-21.13);
-          \draw [black] (39.049,-23.789) arc (-70.87084:-109.12916:20.289);
-          \fill [black] (25.75,-23.79) -- (26.34,-24.52) -- (26.67,-23.58);
-          \draw (32.4,-25.41) node [below] {$0$};
-          \draw [black] (21.39,-25.118) arc (-4.85993:-292.85993:2.25);
-          \draw (16.58,-27.36) node [left] {$0$};
-          \fill [black] (20.02,-22.85) -- (19.27,-22.29) -- (19.18,-23.28);
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP2.svg" width="70%">
+        </image>
       <me>
         L_2(M_2) = \{\mbox{all strings with an even number of symbols}\}
       </me>
-      <image xml:id="FAEXP2a" width="70%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.2]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (23,-22.6) circle (3);
-          \draw (23,-22.6) node {$A_2$};
-          \draw [black] (23,-22.6) circle (2.4);
-          \draw [black] (41.8,-22.6) circle (3);
-          \draw (41.8,-22.6) node {$B_2$};
-          \draw [black] (18,-17.8) -- (20.84,-20.52);
-          \draw (17.47,-16.33) node [left] {$M_2$};
-          \fill [black] (20.84,-20.52) -- (20.6,-19.61) -- (19.91,-20.33);
-          \draw [black] (25.801,-21.532) arc (107.04916:72.95084:22.507);
-          \fill [black] (39,-21.53) -- (38.38,-20.82) -- (38.09,-21.78);
-          \draw (32.4,-20.04) node [above] {$0,1$};
-          \draw [black] (39.049,-23.789) arc (-70.87084:-109.12916:20.289);
-          \fill [black] (25.75,-23.79) -- (26.34,-24.52) -- (26.67,-23.58);
-          \draw (32.4,-25.41) node [below] {$0,1$};
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP2a.svg" width="70%">
+        </image>
       <me>
         L_1\cup L_2 = \{\mbox{is any string that ends in a 1 and that has an even number of symbols.}\}
       </me>
       <p>
-        Try traceing the path through both machnies and only accept if both accept. In a more systematic way, consider
-        the states <m>Q_1\times Q_2</m> and create that machines.
+        Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider
+        the states <m>Q_1\times Q_2</m> and create those machines.
       </p>
       <hint>
         <p>
@@ -728,48 +524,8 @@
           </li>
         </ul>
       </hint>
-      <image xml:id="FAEXP2b" width="50%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.4]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (20.9,-21.8) circle (3);
-          \draw (20.9,-21.8) node {$(A_1,A_2)$};
-          \draw [black] (38.5,-21.8) circle (3);
-          \draw (38.5,-21.8) node {$(A_1,B_2)$};
-          \draw [black] (20.9,-39.1) circle (3);
-          \draw (20.9,-39.1) node {$(B_1,B_2)$};
-          \draw [black] (38.5,-39.1) circle (3);
-          \draw (38.5,-39.1) node {$(B_1,A_2)$};
-          \draw [black] (38.5,-39.1) circle (2.4);
-          \draw [black] (23.708,-20.75) arc (106.43811:73.56189:21.176);
-          \fill [black] (35.69,-20.75) -- (35.07,-20.04) -- (34.78,-21);
-          \draw (29.7,-19.38) node [above] {$0$};
-          \draw [black] (35.731,-22.947) arc (-71.91927:-108.08073:19.433);
-          \fill [black] (23.67,-22.95) -- (24.27,-23.67) -- (24.58,-22.72);
-          \draw (29.7,-24.41) node [below] {$0$};
-          \draw [black] (39.642,-24.571) arc (17.91335:-17.91335:19.115);
-          \fill [black] (39.64,-36.33) -- (40.36,-35.72) -- (39.41,-35.41);
-          \draw (41.07,-30.45) node [right] {$1$};
-          \draw [black] (23.351,-23.53) arc (53.50897:37.47603:67.254);
-          \fill [black] (23.35,-23.53) -- (23.7,-24.41) -- (24.29,-23.6);
-          \draw (31.52,-29.16) node [above] {$0$};
-          \draw [black] (35.674,-40.101) arc (-74.37327:-105.62673:22.179);
-          \fill [black] (23.73,-40.1) -- (24.36,-40.8) -- (24.63,-39.83);
-          \draw (29.7,-41.42) node [below] {$1$};
-          \draw [black] (23.668,-37.951) arc (108.11297:71.88703:19.402);
-          \fill [black] (35.73,-37.95) -- (35.13,-37.23) -- (34.82,-38.18);
-          \draw (29.7,-36.49) node [above] {$1$};
-          \draw [black] (21.925,-24.617) arc (15.95433:-15.95433:21.222);
-          \fill [black] (21.93,-24.62) -- (21.66,-25.52) -- (22.63,-25.25);
-          \draw (23.24,-30.45) node [right] {$0$};
-          \draw [black] (19.844,-36.295) arc (-163.5403:-196.4597:20.628);
-          \fill [black] (19.84,-36.29) -- (20.1,-35.39) -- (19.14,-35.67);
-          \draw (18.5,-30.45) node [left] {$1$};
-          \draw [black] (15.7,-16.2) -- (18.86,-19.6);
-          \fill [black] (18.86,-19.6) -- (18.68,-18.68) -- (17.95,-19.36);
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXP2b.svg" width="50%">
+        </image>
       <p>
         So, it turns out we can use this to build DFAs of challenging languages!
       </p>
@@ -795,117 +551,21 @@
           <p>
             Machine for <m>L_1:</m>
           </p>
-          <image xml:id="FAEXP2c" width="70%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (20.6,-17.5) circle (3);
-              \draw [black] (35.5,-17.5) circle (3);
-              \draw [black] (49.4,-17.5) circle (3);
-              \draw [black] (49.4,-17.5) circle (2.4);
-              \draw [black] (30.9,-29.4) circle (3);
-              \draw (30.9,-29.4) node {$\emptyset$};
-              \draw [black] (48.246,-20.256) arc (5.01122:-282.98878:2.25);
-              \draw (43.76,-23.38) node [left] {$0,1$};
-              \fill [black] (46.51,-18.26) -- (45.67,-17.83) -- (45.76,-18.83);
-              \draw [black] (38.366,-16.623) arc (102.47747:77.52253:18.905);
-              \fill [black] (46.53,-16.62) -- (45.86,-15.96) -- (45.65,-16.94);
-              \draw (42.45,-15.68) node [above] {$1$};
-              \draw [black] (23.395,-16.421) arc (106.02057:73.97943:16.867);
-              \fill [black] (32.71,-16.42) -- (32.07,-15.72) -- (31.8,-16.68);
-              \draw (28.05,-15.27) node [above] {$0$};
-              \draw [black] (33.58,-28.077) arc (144:-144:2.25);
-              \draw (38.15,-29.4) node [right] {$0,1$};
-              \fill [black] (33.58,-30.72) -- (33.93,-31.6) -- (34.52,-30.79);
-              \draw [black] (31.011,-26.407) arc (-187.73735:-214.53113:15.31);
-              \fill [black] (31.01,-26.41) -- (31.61,-25.68) -- (30.62,-25.55);
-              \draw (31.15,-22.1) node [left] {$0$};
-              \draw [black] (28.431,-27.698) arc (-127.93647:-150.30813:25.604);
-              \fill [black] (28.43,-27.7) -- (28.11,-26.81) -- (27.49,-27.6);
-              \draw (24.27,-25.71) node [left] {$1$};
-              \draw [black] (14.3,-10.1) -- (18.66,-15.22);
-              \fill [black] (18.66,-15.22) -- (18.52,-14.28) -- (17.76,-14.93);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXP2c.svg" width="70%">
+        </image>
         </hint>
         <hint>
         <p>
             Machine for <m>L_2:</m>
           </p>
-          <image xml:id="FAEXP2d" width="70%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (21.3,-21.1) circle (3);
-              \draw [black] (21.3,-21.1) circle (2.4);
-              \draw [black] (37.9,-21.1) circle (3);
-              \draw [black] (16.8,-15.9) -- (19.34,-18.83);
-              \fill [black] (19.34,-18.83) -- (19.19,-17.9) -- (18.44,-18.55);
-              \draw [black] (40.509,-22.557) arc (88.55501:-199.44499:2.25);
-              \draw (42.73,-27.16) node [below] {$1$};
-              \fill [black] (38.33,-24.06) -- (37.81,-24.84) -- (38.81,-24.87);
-              \draw [black] (24.108,-20.052) arc (106.11728:73.88272:19.783);
-              \fill [black] (35.09,-20.05) -- (34.46,-19.35) -- (34.18,-20.31);
-              \draw (29.6,-18.77) node [above] {$0$};
-              \draw [black] (35.076,-22.104) arc (-74.60003:-105.39997:20.62);
-              \fill [black] (24.12,-22.1) -- (24.76,-22.8) -- (25.03,-21.83);
-              \draw (29.6,-23.34) node [below] {$0$};
-              \draw [black] (21.005,-24.074) arc (22.07264:-265.92736:2.25);
-              \draw (16.73,-27.33) node [below] {$1$};
-              \fill [black] (18.76,-22.67) -- (17.83,-22.51) -- (18.21,-23.44);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXP2d.svg" width="50%">
+        </image>
+
         </hint>
         <answer>
-          <image xml:id="FAEXP2e" width="50%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.4]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (17.2,-21.2) circle (3);
-              \draw (17.2,-21.2) node {$(A_1,A_2)$};
-              \draw [black] (30.8,-21.2) circle (3);
-              \draw (30.8,-21.2) node {$(B_1,B_2)$};
-              \draw [black] (44.7,-21.2) circle (3);
-              \draw (44.7,-21.2) node {$(C,B_2)$};
-              \draw [black] (37.8,-32.3) circle (3);
-              \draw (37.8,-32.3) node {$(C,A_2)$};
-              \draw [black] (37.8,-32.3) circle (2.4);
-              \draw [black] (22.1,-32.3) circle (3);
-              \draw (22.1,-32.3) node {$\emptyset$};
-              \draw [black] (18.41,-23.94) -- (20.89,-29.56);
-              \fill [black] (20.89,-29.56) -- (21.02,-28.62) -- (20.11,-29.03);
-              \draw (18.92,-27.73) node [left] {$1$};
-              \draw [black] (20.103,-20.454) arc (100.42814:79.57186:21.529);
-              \fill [black] (27.9,-20.45) -- (27.2,-19.82) -- (27.02,-20.8);
-              \draw (24,-19.6) node [above] {$0$};
-              \draw [black] (33.669,-20.334) arc (102.30037:77.69963:19.155);
-              \fill [black] (41.83,-20.33) -- (41.16,-19.68) -- (40.94,-20.65);
-              \draw (37.75,-19.39) node [above] {$1$};
-              \draw [black] (46.387,-18.734) arc (173.35775:-114.64225:2.25);
-              \draw (51.25,-16.68) node [right] {$1$};
-              \fill [black] (47.68,-21.04) -- (48.42,-21.63) -- (48.54,-20.63);
-              \draw [black] (44.553,-24.187) arc (-10.72998:-53.00198:10.872);
-              \fill [black] (40.41,-30.85) -- (41.35,-30.76) -- (40.75,-29.97);
-              \draw (43.74,-29.19) node [right] {$0$};
-              \draw [black] (38.605,-29.414) arc (159.69841:136.56963:18.249);
-              \fill [black] (42.47,-23.2) -- (41.56,-23.44) -- (42.28,-24.12);
-              \draw (39.59,-24.82) node [left] {$0$};
-              \draw [black] (40.759,-31.884) arc (125.7422:-162.2578:2.25);
-              \draw (44.98,-35.11) node [right] {$1$};
-              \fill [black] (39.93,-34.4) -- (39.99,-35.34) -- (40.8,-34.75);
-              \draw [black] (28.95,-23.56) -- (23.95,-29.94);
-              \fill [black] (23.95,-29.94) -- (24.84,-29.62) -- (24.05,-29);
-              \draw (25.88,-25.33) node [left] {$0$};
-              \draw [black] (25.048,-31.809) arc (127.19354:-160.80646:2.25);
-              \draw (29.33,-34.86) node [right] {$0,1$};
-              \fill [black] (24.28,-34.34) -- (24.37,-35.28) -- (25.16,-34.68);
-              \draw [black] (12,-15.8) -- (15.12,-19.04);
-              \fill [black] (15.12,-19.04) -- (14.92,-18.12) -- (14.2,-18.81);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXP2e.svg" width="50%">
+        </image>
+
           <p>
             The <m>\emptyset</m> state can be used as a shortcut since we'll never leave it, we do not have to trace what happens
             if either path leads to it.

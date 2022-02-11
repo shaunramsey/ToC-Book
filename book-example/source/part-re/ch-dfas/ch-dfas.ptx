@@ -7,16 +7,13 @@
     In this chapter you will learn:
      <ol>
        <li> The definition of determinism </li>
-       <li> finite automata (FA) </li>
-       <li> deterministic finite automata (DFA) </li>
-       <li> strategies for understanding deterministic finite automata </li>
-       <li> strategies for drawing deterministic finite automata </li>
+       <li> Finite automata (FA) </li>
+       <li> Deterministic Finite Automata (DFA) </li>
+       <li> Strategies for understanding Deterministic Finite Automata </li>
+       <li> Strategies for drawing Deterministic Finite Automata </li>
      </ol>
   </objectives>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-    <p> Refer to the <xref ref="glossary" text="title"/> for a reminder of terms and abbreviations.</p>
-  </introduction>
+
 
    <section xml:id="Determinism">
       <title> Determinism </title>
@@ -56,36 +53,11 @@
           a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
           these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
          </p>
-      <image xml:id="FAExM1" width="50%">
-        <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (27,-15.7) circle (3);
-            \draw (27,-15.7) node {$A$};
-            \draw [black] (47.5,-15.7) circle (3);
-            \draw (47.5,-15.7) node {$B$};
-            \draw [black] (47.5,-15.7) circle (2.4);
-            \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
-            \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
-            \draw (37.25,-12.89) node [above] {$1$};
-            \draw [black] (44.703,-16.781) arc (-72.36319:-107.63681:24.6);
-            \fill [black] (29.8,-16.78) -- (30.41,-17.5) -- (30.71,-16.55);
-            \draw (37.25,-18.44) node [below] {$1$};
-            \draw [black] (49.03,-13.133) arc (176.937:-111.063:2.25);
-            \draw (53.78,-10.71) node [right] {$0$};
-            \fill [black] (50.47,-15.35) -- (51.24,-15.89) -- (51.29,-14.9);
-            \draw [black] (24.885,-17.811) arc (-17.31033:-305.31033:2.25);
-            \draw (19.84,-18.58) node [left] {$0$};
-            \fill [black] (24.04,-15.31) -- (23.42,-14.59) -- (23.13,-15.55);
-            \draw [black] (22.2,-9.2) -- (25.22,-13.29);
-            \draw (20.39,-8.7) node [above] {$M_1$};
-            \fill [black] (25.22,-13.29) -- (25.14,-12.35) -- (24.34,-12.94);
-            \end{tikzpicture}
-        </latex-image>
+      <image source="../generated/latex-image/FAExM1.svg" width="50%">
         </image>
         <!--TODO: I would like to try and make animations to show this next part instead of writing it out.-->
          <p>
-          Say there in a string <m>S = 110</m>. After following the arrows to parce through <m>S</m>,
+          Say there is a string <m>S = 110</m>. After following the arrows to parce through <m>S</m>,
           it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>L(M_1)\in S</m>,
           but what is <m>L(M_1)</m>?
          </p>
@@ -94,40 +66,7 @@
          <ul>
             <li><me>L_2 = \mbox{any string that ends with 01}</me></li>
             <li><me>L_2 = {s01 | \mbox{where s is a string made of only 0s and 1s}}</me></li>
-            <li><image xml:id="FAExM2" width="50%">
-                <latex-image>
-                  \begin{tikzpicture}[scale=0.2]
-                  \tikzstyle{every node}+=[inner sep=0pt]
-                  \draw [black] (27.2,-18.1) circle (3);
-                  \draw (27.2,-18.1) node {$A$};
-                  \draw [black] (41.9,-17.4) circle (3);
-                  \draw (41.9,-17.4) node {$B$};
-                  \draw [black] (60.2,-17.4) circle (3);
-                  \draw (60.2,-17.4) node {$C$};
-                  \draw [black] (60.2,-17.4) circle (2.4);
-                  \draw [black] (20.3,-12.5) -- (24.87,-16.21);
-                  \draw (19.74,-11.07) node [left] {$M_2$};
-                  \fill [black] (24.87,-16.21) -- (24.56,-15.32) -- (23.93,-16.09);
-                  \draw [black] (26.814,-21.063) arc (20.30993:-267.69007:2.25);
-                  \draw (22.45,-24.22) node [below] {$1$};
-                  \fill [black] (24.61,-19.6) -- (23.69,-19.4) -- (24.04,-20.34);
-                  \draw [black] (30.013,-17.067) arc (105.83131:79.62131:19.842);
-                  \fill [black] (39,-16.64) -- (38.3,-16) -- (38.12,-16.99);
-                  \draw (34.44,-15.79) node [above] {$0$};
-                  \draw [black] (42.045,-14.415) arc (204.9454:-83.0546:2.25);
-                  \draw (46.18,-11) node [above] {$0$};
-                  \fill [black] (44.36,-15.7) -- (45.29,-15.82) -- (44.87,-14.91);
-                  \draw [black] (44.75,-16.468) arc (104.65773:75.34227:24.898);
-                  \fill [black] (57.35,-16.47) -- (56.7,-15.78) -- (56.45,-16.75);
-                  \draw (51.05,-15.16) node [above] {$1$};
-                  \draw [black] (57.4,-18.47) arc (-73.03897:-106.96103:21.767);
-                  \fill [black] (44.7,-18.47) -- (45.32,-19.18) -- (45.61,-18.22);
-                  \draw (51.05,-19.92) node [below] {$0$};
-                  \draw [black] (58.416,-19.808) arc (-40.88746:-136.68218:19.77);
-                  \fill [black] (29.08,-20.43) -- (29.27,-21.36) -- (30,-20.67);
-                  \draw (43.9,-27.15) node [below] {$1$};
-                  \end{tikzpicture}
-                </latex-image>
+            <li><image source="../generated/latex-image/FAExM2.svg" width="50%">
                 </image>
               </li>
             </ul>
@@ -183,40 +122,7 @@
         <p>
           What is the language of <m>M_3</m>?
         </p>
-         <image xml:id="FAExM3" width="50%">
-         <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (27,-14.6) circle (3);
-            \draw (27,-14.6) node {$A$};
-            \draw [black] (27,-14.6) circle (2.4);
-            \draw [black] (46.6,-14.6) circle (3);
-            \draw (46.6,-14.6) node {$B$};
-            \draw [black] (40.9,-27.4) circle (3);
-            \draw (40.9,-27.4) node {$C$};
-            \draw [black] (25.635,-17.258) arc (0.54272:-287.45728:2.25);
-            \draw (21,-20.01) node [left] {$0$};
-            \fill [black] (24.06,-15.13) -- (23.25,-14.64) -- (23.26,-15.64);
-            \draw [black] (20.1,-7.8) -- (24.86,-12.49);
-            \draw (19.57,-6.33) node [left] {$M_3$};
-            \fill [black] (24.86,-12.49) -- (24.64,-11.58) -- (23.94,-12.29);
-            \draw [black] (29.685,-13.269) arc (111.87259:68.12741:19.098);
-            \fill [black] (43.91,-13.27) -- (43.36,-12.51) -- (42.99,-13.43);
-            \draw (36.8,-11.39) node [above] {$1$};
-            \draw [black] (43.752,-15.538) arc (-74.9727:-105.0273:26.813);
-            \fill [black] (29.85,-15.54) -- (30.49,-16.23) -- (30.75,-15.26);
-            \draw (36.8,-16.96) node [below] {$1$};
-            \draw [black] (46.987,-17.566) arc (-0.3161:-47.69191:11.087);
-            \fill [black] (43.36,-25.7) -- (44.29,-25.53) -- (43.62,-24.8);
-            \draw (46.75,-23.01) node [right] {$0$};
-            \draw [black] (40.8,-24.408) arc (-184.6807:-223.32731:13.036);
-            \fill [black] (44.31,-16.53) -- (43.4,-16.77) -- (44.12,-17.45);
-            \draw (41.16,-19.18) node [left] {$0$};
-            \draw [black] (38.018,-28.19) arc (313.05731:25.05731:2.25);
-            \draw (33.54,-25.82) node [left] {$1$};
-            \fill [black] (38.52,-25.59) -- (38.34,-24.67) -- (37.61,-25.35);
-            \end{tikzpicture}
-          </latex-image>
+         <image source="../generated/latex-image/FAExM3.svg" width="50%">
         </image>
       </statement>
       <!--TODO: I choose to include the extra example and such here as it was included in the notes, we may want to shift
@@ -292,38 +198,8 @@
         <p>
           What is the language of <m>M_4</m>?
         </p>
-         <image xml:id="FAExM4" width="50%">
-         <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (19.4,-13.7) circle (3);
-            \draw (19.4,-13.7) node {$A$};
-            \draw [black] (37.4,-12.6) circle (3);
-            \draw (37.4,-12.6) node {$B$};
-            \draw [black] (30.2,-24.6) circle (3);
-            \draw (30.2,-24.6) node {$C$};
-            \draw [black] (30.2,-24.6) circle (2.4);
-            \draw [black] (11.8,-9.4) -- (16.79,-12.22);
-            \draw (11.14,-8.18) node [left] {$M_4$};
-            \fill [black] (16.79,-12.22) -- (16.34,-11.39) -- (15.85,-12.26);
-            \draw [black] (22.099,-12.398) arc (111.50072:75.4934:20.198);
-            \fill [black] (34.56,-11.64) -- (33.91,-10.95) -- (33.66,-11.92);
-            \draw (28.2,-10.47) node [above] {$0$};
-            \draw [black] (36.561,-15.478) arc (-20.17317:-41.75434:21.888);
-            \fill [black] (32.34,-22.51) -- (33.25,-22.24) -- (32.5,-21.58);
-            \draw (35.43,-20.45) node [right] {$1$};
-            \draw [black] (27.759,-26.323) arc (-27.05079:-315.05079:2.25);
-            \draw (22.83,-25.86) node [left] {$0,\mbox{ }1$};
-            \fill [black] (27.35,-23.71) -- (26.86,-22.9) -- (26.41,-23.79);
-            \draw [black] (18.372,-16.506) arc (7.6156:-280.3844:2.25);
-            \draw (13.98,-19.83) node [left] {$1$};
-            \fill [black] (16.55,-14.59) -- (15.69,-14.2) -- (15.82,-15.19);
-            \draw [black] (40.35,-12.124) arc (126.89727:-161.10273:2.25);
-            \draw (44.62,-15.21) node [right] {$0$};
-            \fill [black] (39.57,-14.65) -- (39.65,-15.59) -- (40.45,-14.99);
-            \end{tikzpicture}
-          </latex-image>
-         </image>
+         <image source="../generated/latex-image/FAExM4.svg" width="50%">
+        </image>
       </statement>
       <hint>
         <p>
@@ -339,7 +215,7 @@
         <p>
           <ul>
             <li>A great first step is to walk through the shortest path to the accept state. This would be 01.</li>
-            <li>It is also helpufl to thing about the longest possible path to the accept state or the longest string that would still be accepted. 
+            <li>It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. 
                 For <m>M_5</m>, that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have 
                 any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for <m>M_5</m> to accept.</li>
             <li>Another note, the string <q>01</q> must be included as a 1 must come after a 0 to get to the accept state <m>C</m>.</li>
@@ -356,46 +232,8 @@
         </p>
       </statement>
       <answer>
-          <image xml:id="FAExM5" width="50%">
-          <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (19.4,-13.7) circle (3);
-              \draw (19.4,-13.7) node {$A$};
-              \draw [black] (37.1,-14.7) circle (3);
-              \draw (37.1,-14.7) node {$B$};
-              \draw [black] (51.9,-15.4) circle (3);
-              \draw (51.9,-15.4) node {$C$};
-              \draw [black] (51.9,-15.4) circle (2.4);
-              \draw [black] (37.8,-31.7) circle (3);
-              \draw (37.8,-31.7) node {$\emptyset$};
-              \draw [black] (11.8,-9.4) -- (16.79,-12.22);
-              \draw (11.14,-8.18) node [left] {$M_5$};
-              \fill [black] (16.79,-12.22) -- (16.34,-11.39) -- (15.85,-12.26);
-              \draw [black] (22.228,-12.708) arc (104.92986:68.60291:19.557);
-              \fill [black] (34.4,-13.4) -- (33.84,-12.64) -- (33.47,-13.57);
-              \draw (28.43,-11.53) node [above] {$0$};
-              \draw [black] (39.909,-13.661) arc (104.75319:69.83097:15.501);
-              \fill [black] (49.2,-14.1) -- (48.62,-13.36) -- (48.28,-14.29);
-              \draw (44.63,-12.62) node [above] {$1$};
-              \draw [black] (36.771,-28.884) arc (-163.60427:-191.67992:23.3);
-              \fill [black] (36.77,-28.88) -- (37.02,-27.98) -- (36.07,-28.26);
-              \draw (35.28,-23.28) node [left] {$0$};
-              \draw [black] (35.256,-30.11) arc (-123.6229:-145.11791:53.303);
-              \fill [black] (35.26,-30.11) -- (34.87,-29.25) -- (34.31,-30.08);
-              \draw (26.48,-24.31) node [below] {$1$};
-              \draw [black] (40.762,-31.303) arc (125.36378:-162.63622:2.25);
-              \draw (44.96,-34.57) node [right] {$0,1$};
-              \fill [black] (39.92,-33.81) -- (39.97,-34.75) -- (40.79,-34.17);
-              \draw [black] (49.128,-16.532) arc (-73.74384:-111.672:14.439);
-              \fill [black] (39.75,-16.09) -- (40.31,-16.85) -- (40.68,-15.92);
-              \draw (44.36,-17.64) node [below] {$0$};
-              \draw [black] (50.819,-18.197) arc (-24.21765:-57.50397:27.771);
-              \fill [black] (40.41,-30.23) -- (41.36,-30.22) -- (40.82,-29.38);
-              \draw (47.04,-26.42) node [right] {$1$};
-              \end{tikzpicture}
-           </latex-image>
-         </image>
+          <image source="../generated/latex-image/FAExM5.svg" width="50%">
+        </image>
        </answer>
       </exercise>
     <exercise>
@@ -403,42 +241,7 @@
       <p>
         What is the language of <m>M_6</m>?
       </p>
-        <image xml:id="FAExM6" width="50%">
-        <latex-image>  
-          \begin{tikzpicture}[scale=0.2]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (18.9,-17.8) circle (3);
-          \draw (18.9,-17.8) node {$A$};
-          \draw [black] (37.1,-14.7) circle (3);
-          \draw (37.1,-14.7) node {$B$};
-          \draw [black] (52.9,-20.2) circle (3);
-          \draw (52.9,-20.2) node {$C$};
-          \draw [black] (52.9,-20.2) circle (2.4);
-          \draw [black] (37.8,-31.7) circle (3);
-          \draw (37.8,-31.7) node {$\emptyset$};
-          \draw [black] (11.3,-13.5) -- (16.29,-16.32);
-          \draw (10.64,-12.28) node [left] {$M_6$};
-          \fill [black] (16.29,-16.32) -- (15.84,-15.49) -- (15.35,-16.36);
-          \draw [black] (21.605,-16.507) arc (112.53683:86.79597:28.494);
-          \fill [black] (34.12,-14.38) -- (33.35,-13.83) -- (33.29,-14.83);
-          \draw (27.29,-14.14) node [above] {$b$};
-          \draw [black] (40.096,-14.606) arc (87.3936:54.22026:19.501);
-          \fill [black] (50.61,-18.27) -- (50.25,-17.39) -- (49.67,-18.2);
-          \draw (46.48,-15.14) node [above] {$a$};
-          \draw [black] (55.58,-18.877) arc (144:-144:2.25);
-          \draw (60.15,-20.2) node [right] {$a,b$};
-          \fill [black] (55.58,-21.52) -- (55.93,-22.4) -- (56.52,-21.59);
-          \draw [black] (36.771,-28.884) arc (-163.60427:-191.67992:23.3);
-          \fill [black] (36.77,-28.88) -- (37.02,-27.98) -- (36.07,-28.26);
-          \draw (35.28,-23.28) node [left] {$b$};
-          \draw [black] (35.038,-30.53) arc (-114.88949:-137.77574:44.419);
-          \fill [black] (35.04,-30.53) -- (34.52,-29.74) -- (34.1,-30.65);
-          \draw (26.47,-26.52) node [below] {$a$};
-          \draw [black] (40.762,-31.303) arc (125.36378:-162.63622:2.25);
-          \draw (44.96,-34.57) node [right] {$a,b$};
-          \fill [black] (39.92,-33.81) -- (39.97,-34.75) -- (40.79,-34.17);
-          \end{tikzpicture}
-        </latex-image>
+        <image source="../generated/latex-image/FAExM6.svg" width="50%">
         </image>
       </statement>
       <hint>

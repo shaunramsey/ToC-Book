@@ -11,9 +11,6 @@
        <li> Additional Non-Regular Languages for Proving </li>
      </ol>
   </objectives>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
   <section xml:id="sec-pumpinglemaintro">
     <title>Introduciton to the Pumping Lemma for Regular Languages</title>
     <exploration>
@@ -21,45 +18,8 @@
       <p>
         Consider <m>M_1</m> below.
       </p>
-      <image xml:id="FAEXM25" with="50%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.2]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (22.7,-18.4) circle (3);
-          \draw (22.7,-18.4) node {$A$};
-          \draw [black] (36.6,-18.4) circle (3);
-          \draw (36.6,-18.4) node {$B$};
-          \draw [black] (50.2,-18.4) circle (3);
-          \draw (50.2,-18.4) node {$C$};
-          \draw [black] (41.5,-30.8) circle (3);
-          \draw (41.5,-30.8) node {$D$};
-          \draw [black] (41.5,-30.8) circle (2.4);
-          \draw [black] (17.5,-12.7) -- (20.68,-16.18);
-          \fill [black] (20.68,-16.18) -- (20.51,-15.26) -- (19.77,-15.93);
-          \draw [black] (25.429,-17.168) arc (108.00575:71.99425:13.656);
-          \fill [black] (33.87,-17.17) -- (33.27,-16.45) -- (32.96,-17.4);
-          \draw (29.65,-16) node [above] {$0$};
-          \draw [black] (39.314,-17.138) arc (108.31818:71.68182:12.999);
-          \fill [black] (47.49,-17.14) -- (46.88,-16.41) -- (46.57,-17.36);
-          \draw (43.4,-15.98) node [above] {$1$};
-          \draw [black] (47.378,-19.405) arc (-75.73246:-104.26754:16.14);
-          \fill [black] (39.42,-19.4) -- (40.07,-20.09) -- (40.32,-19.12);
-          \draw (43.4,-20.4) node [below] {$0$};
-          \draw [black] (49.305,-21.261) arc (-21.60532:-48.50267:20.287);
-          \fill [black] (43.89,-28.99) -- (44.82,-28.83) -- (44.15,-28.08);
-          \draw (47.65,-26.81) node [right] {$1$};
-          \draw [black] (39.623,-28.465) arc (-146.05091:-170.82506:17.736);
-          \fill [black] (36.83,-21.39) -- (36.46,-22.26) -- (37.45,-22.1);
-          \draw (37.09,-25.95) node [left] {$1$};
-          \draw [black] (38.539,-30.329) arc (-102.62204:-144.19361:24.035);
-          \fill [black] (24.3,-20.94) -- (24.36,-21.88) -- (25.17,-21.29);
-          \draw (29.56,-27.44) node [below] {$0$};
-          \draw [black] (22.37,-21.37) arc (21.38897:-266.61103:2.25);
-          \draw (18.06,-24.59) node [below] {$1$};
-          \fill [black] (20.14,-19.94) -- (19.21,-19.77) -- (19.58,-20.7);
-          \end{tikzpicture}
-       </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXM25.svg" width="50%">
+	    </image>
      
       <p>
         How many states are in this machine?
@@ -201,7 +161,7 @@
           with <m>n</m> symbols needs <m>n+1</m> states if it does not want to revisit a state.
         </p>
         <p>
-          Writing out these tables can make looping patterns more apparent. In <m>M_1</m>, the transition amoung <m>B</m> to <m>C</m> and 
+          Writing out these tables can make looping patterns more apparent. In <m>M_1</m>, the transition among <m>B</m> to <m>C</m> and 
           <m>C</m> to <m>B</m> could be repeated by a string. Another loop that can be repeated is <m>A</m> to <m>A</m>.
           Loops can be removed and still have a string in the language.
         </p>
@@ -219,14 +179,14 @@
           <me>
             s^{(1)''} = 011111
           </me>
-          This string is also in the languge.
+          This string is also in the language.
         </p>
         <p>
           Try a couple more strings to identify patterns. Are there any similarly deduced strings that you
            can find?
         </p>
         <p>
-          Looks can be taken out, or they can be taken many times.
+          Loops can be taken out, or they can be taken many times.
         </p>
     </exploration>
     <p>
@@ -246,42 +206,8 @@
     <me>
       \Sigma = {0,1}
     </me>
-    <image xml:id="FAEXM26a" with="20%">
-      <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (21.5,-18.4) circle (3);
-        \draw (21.5,-18.4) node {$A$};
-        \draw [black] (35.3,-18.4) circle (3);
-        \draw (35.3,-18.4) node {$B$};
-        \draw [black] (48.2,-18.4) circle (3);
-        \draw (48.2,-18.4) node {$C$};
-        \draw [black] (48.2,-18.4) circle (2.4);
-        \draw [black] (30.3,-28.8) circle (3);
-        \draw (30.3,-28.8) node {$\emptyset$};
-        \draw [black] (15.3,-12) -- (19.41,-16.25);
-        \fill [black] (19.41,-16.25) -- (19.22,-15.32) -- (18.5,-16.02);
-        \draw [black] (24.262,-17.242) arc (106.76292:73.23708:14.349);
-        \fill [black] (32.54,-17.24) -- (31.92,-16.53) -- (31.63,-17.49);
-        \draw (28.4,-16.13) node [above] {$0$};
-        \draw [black] (38.07,-17.263) arc (105.91066:74.08934:13.425);
-        \fill [black] (45.43,-17.26) -- (44.8,-16.56) -- (44.52,-17.52);
-        \draw (41.75,-16.25) node [above] {$1$};
-        \draw [black] (47.183,-21.21) arc (7.83937:-280.16063:2.25);
-        \draw (42.8,-24.55) node [left] {$0,1$};
-        \fill [black] (45.35,-19.3) -- (44.49,-18.92) -- (44.63,-19.91);
-        \draw [black] (30.287,-25.811) arc (-188.14949:-223.20414:10.232);
-        \fill [black] (30.29,-25.81) -- (30.9,-25.09) -- (29.91,-24.95);
-        \draw (30.49,-21.76) node [left] {$0$};
-        \draw [black] (27.618,-27.469) arc (-122.62442:-156.90286:13.788);
-        \fill [black] (27.62,-27.47) -- (27.21,-26.62) -- (26.67,-27.46);
-        \draw (23.98,-26.2) node [left] {$1$};
-        \draw [black] (32.98,-27.477) arc (144:-144:2.25);
-        \draw (37.55,-28.8) node [right] {$0,1$};
-        \fill [black] (32.98,-30.12) -- (33.33,-31) -- (33.92,-30.19);
-        \end{tikzpicture}
-      </latex-image>
-    </image>
+    <image source="../generated/latex-image/FAEXM26a.svg" width="50%">
+	  </image>
     <p>
       Consider the following strings as given to <m>M_2</m>. 
       <ul>
@@ -429,7 +355,7 @@
       <ol>
         <li>
           <p>
-            If a language is a regular language then
+            If a language is a Regular Language then
           </p>
         </li>
         <li>
@@ -439,7 +365,7 @@
         </li>
         <li>
           <p>
-            then <m>s^{(1)} = xyz</m> where: 
+            Then <m>s^{(1)} = xyz</m> where: 
             <me>
               |y| > 0
             </me>
@@ -494,11 +420,11 @@
         <ul>
           <li>
             <p>
-              <m>L_1</m> is a regular language. 
+              <m>L_1</m> is a Regular Language. 
             </p>
           </li>
         </ul>
-        Let's say we dont know <m>p</m>, just that it exists. Let's pick a string that's <m>p</m> long. 
+        Let's say we don't know <m>p</m>, just that it exists. Let's pick a string that's <m>p</m> long. 
         <ul>
           <li>
             <p>
@@ -539,10 +465,10 @@
         <li>
           <p>
             A pumpable part (<m>y</m>) must occur in the first <m>p</m> symbols. So, <m>y</m> must contain one or more 0s 
-            and no 1s sine the first <m>p</m> symbols are 0s.
+            and no 1s since the first <m>p</m> symbols are 0s.
           </p>
           <p>
-            If we pump down to <m>s^{(0)}</m>, we will thus remove some 0x without removing any 1s. <m>s^{(0)}</m> cannot
+            If we pump down to <m>s^{(0)}</m>, we will thus remove some 0s without removing any 1s. <m>s^{(0)}</m> cannot
             possibly be in <m>L_{01}</m>, no matter the choice for <m>y</m>.
           </p>
         </li>
@@ -601,45 +527,8 @@
           Consider the machine below. What is the language of the machine? What are some state loops present within it?
         </p>
       </statement>
-      <image xml:id="FAEXM26b" with="50%">
-        <latex-image>
-          \begin{tikzpicture}[scale=0.2]
-          \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (21.5,-18.4) circle (3);
-          \draw (21.5,-18.4) node {$A$};
-          \draw [black] (35.3,-18.4) circle (3);
-          \draw (35.3,-18.4) node {$B$};
-          \draw [black] (48.2,-18.4) circle (3);
-          \draw (48.2,-18.4) node {$C$};
-          \draw [black] (48.2,-18.4) circle (2.4);
-          \draw [black] (30.3,-28.8) circle (3);
-          \draw (30.3,-28.8) node {$\emptyset$};
-          \draw [black] (15.3,-12) -- (19.41,-16.25);
-          \fill [black] (19.41,-16.25) -- (19.22,-15.32) -- (18.5,-16.02);
-          \draw [black] (24.262,-17.242) arc (106.76292:73.23708:14.349);
-          \fill [black] (32.54,-17.24) -- (31.92,-16.53) -- (31.63,-17.49);
-          \draw (28.4,-16.13) node [above] {$0$};
-          \draw [black] (38.07,-17.263) arc (105.91066:74.08934:13.425);
-          \fill [black] (45.43,-17.26) -- (44.8,-16.56) -- (44.52,-17.52);
-          \draw (41.75,-16.25) node [above] {$1$};
-          \draw [black] (47.183,-21.21) arc (7.83937:-280.16063:2.25);
-          \draw (42.8,-24.55) node [left] {$1$};
-          \fill [black] (45.35,-19.3) -- (44.49,-18.92) -- (44.63,-19.91);
-          \draw [black] (30.287,-25.811) arc (-188.14949:-223.20414:10.232);
-          \fill [black] (30.29,-25.81) -- (30.9,-25.09) -- (29.91,-24.95);
-          \draw (30.49,-21.76) node [left] {$0$};
-          \draw [black] (27.618,-27.469) arc (-122.62442:-156.90286:13.788);
-          \fill [black] (27.62,-27.47) -- (27.21,-26.62) -- (26.67,-27.46);
-          \draw (23.98,-26.2) node [left] {$1$};
-          \draw [black] (32.98,-27.477) arc (144:-144:2.25);
-          \draw (37.55,-28.8) node [right] {$0,1$};
-          \fill [black] (32.98,-30.12) -- (33.33,-31) -- (33.92,-30.19);
-          \draw [black] (23.579,-16.242) arc (131.0604:48.9396:17.159);
-          \fill [black] (23.58,-16.24) -- (24.51,-16.09) -- (23.85,-15.34);
-          \draw (34.85,-11.52) node [above] {$0$};
-          \end{tikzpicture}
-        </latex-image>
-      </image>
+      <image source="../generated/latex-image/FAEXM26b.svg" width="50%">
+	    </image>
       <hint>
         <p>
           Come up with some test strings and their parce paths. Are there any patterns of repetition?
@@ -748,7 +637,7 @@
       </hint>
       <answer>
         <p>
-          A patter of state repition is: <m>A</m> to <m>B</m> to <m>C</m>.
+          A pattern of state repition is: <m>A</m> to <m>B</m> to <m>C</m>.
         </p>
       </answer>
     </exercise>

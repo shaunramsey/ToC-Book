@@ -42,6 +42,7 @@
     <xi:include href="./part-tm/part-tm-index.ptx" />
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
+    <!-- <xi:include href="./generated-images.ptx" />  -->
     <xi:include href="./backmatter.ptx" />
   </book>
 </pretext>

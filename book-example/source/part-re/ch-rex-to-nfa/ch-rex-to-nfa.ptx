@@ -9,9 +9,6 @@
        <li> Regular Expressions in NFAs </li>
      </ol>
   </objectives>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
   <section xml:id="sec-ConvREsToNFAs">
     <title>Converting Regular Expressions to NFAs</title>
     <p>
@@ -23,127 +20,33 @@
         <p>
           Terminals: <m>a</m>
         </p>
-        <image xml:id="FAEXMterm" width="50%">
-          <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (25.6,-20.6) circle (3);
-            \draw (25.6,-20.6) node {$A$};
-            \draw [black] (38.6,-20.6) circle (3);
-            \draw (38.6,-20.6) node {$B$};
-            \draw [black] (38.6,-20.6) circle (2.4);
-            \draw [black] (18.6,-16.1) -- (23.08,-18.98);
-            \fill [black] (23.08,-18.98) -- (22.67,-18.12) -- (22.13,-18.97);
-            \draw [black] (28.542,-20.024) arc (97.80392:82.19608:26.2);
-            \fill [black] (35.66,-20.02) -- (34.93,-19.42) -- (34.8,-20.41);
-            \draw (32.1,-19.28) node [above] {$a$};
-            \end{tikzpicture}
-          </latex-image>
-        </image>
+        <image source="../generated/latex-image/FAEXMterm.svg" width="50%">
+	      </image>
       </li>
       <li>
         <p>
           Concatenation: <m>aa</m>
         </p>
-        <image xml:id="FAEXMconcat" width="50%">
-          <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (25.6,-20.6) circle (3);
-            \draw (25.6,-20.6) node {$A$};
-            \draw [black] (38.6,-20.6) circle (3);
-            \draw (38.6,-20.6) node {$B$};
-            \draw [black] (52.4,-20.6) circle (3);
-            \draw (52.4,-20.6) node {$C$};
-            \draw [black] (52.4,-20.6) circle (2.4);
-            \draw [black] (18.6,-16.1) -- (23.08,-18.98);
-            \fill [black] (23.08,-18.98) -- (22.67,-18.12) -- (22.13,-18.97);
-            \draw [black] (28.542,-20.024) arc (97.80392:82.19608:26.2);
-            \fill [black] (35.66,-20.02) -- (34.93,-19.42) -- (34.8,-20.41);
-            \draw (32.1,-19.28) node [above] {$a$};
-            \draw [black] (41.519,-19.917) arc (99.58124:80.41876:23.917);
-            \fill [black] (49.48,-19.92) -- (48.78,-19.29) -- (48.61,-20.28);
-            \draw (45.5,-19.08) node [above] {$a$};  
-            \end{tikzpicture}
-          </latex-image>
-        </image>
+        <image source="../generated/latex-image/FAEXMconcat.svg" width="50%">
+	      </image>
       </li>
       <li>
         <p>
           Or: <m>aa + bb</m>
         </p>
-        <image xml:id="FAEXMor" width="50%">
-          <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (16.5,-24.4) circle (3);
-            \draw (16.5,-24.4) node {$A$};
-            \draw [black] (30.1,-18.8) circle (3);
-            \draw (30.1,-18.8) node {$B$};
-            \draw [black] (42.6,-18.8) circle (3);
-            \draw (42.6,-18.8) node {$C$};
-            \draw [black] (55.2,-18.8) circle (3);
-            \draw (55.2,-18.8) node {$D$};
-            \draw [black] (55.2,-18.8) circle (2.4);
-            \draw [black] (29.3,-33.2) circle (3);
-            \draw (29.3,-33.2) node {$E$};
-            \draw [black] (42.6,-33.2) circle (3);
-            \draw (42.6,-33.2) node {$F$};
-            \draw [black] (55.2,-33.2) circle (3);
-            \draw (55.2,-33.2) node {$G$};
-            \draw [black] (55.2,-33.2) circle (2.4);
-            \draw [black] (10.2,-18.8) -- (14.26,-22.41);
-            \fill [black] (14.26,-22.41) -- (13.99,-21.5) -- (13.33,-22.25);
-            \draw [black] (18.543,-22.21) arc (131.04474:93.71553:14.471);
-            \fill [black] (27.11,-18.68) -- (26.28,-18.24) -- (26.34,-19.23);
-            \draw (21.63,-19.23) node [above] {$\epsilon$};
-            \draw [black] (26.417,-32.382) arc (-110.16662:-138.85043:19.891);
-            \fill [black] (26.42,-32.38) -- (25.84,-31.64) -- (25.49,-32.58);
-            \draw (21.06,-30.6) node [below] {$\epsilon$};
-            \draw [black] (32.925,-17.806) arc (103.52031:76.47969:14.65);
-            \fill [black] (39.78,-17.81) -- (39.11,-17.13) -- (38.88,-18.11);
-            \draw (36.35,-16.9) node [above] {$a$};
-            \draw [black] (45.51,-18.084) arc (99.59957:80.40043:20.326);
-            \fill [black] (52.29,-18.08) -- (51.58,-17.46) -- (51.42,-18.44);
-            \draw (48.9,-17.3) node [above] {$a$};
-            \draw [black] (32.21,-32.479) arc (99.94275:80.05725:21.662);
-            \fill [black] (39.69,-32.48) -- (38.99,-31.85) -- (38.82,-32.83);
-            \draw (35.95,-31.65) node [above] {$b$};
-            \draw [black] (45.468,-32.334) arc (101.71336:78.28664:16.904);
-            \fill [black] (52.33,-32.33) -- (51.65,-31.68) -- (51.45,-32.66);
-            \draw (48.9,-31.48) node [above] {$b$};
-            \end{tikzpicture}
-          </latex-image>
-        </image>
+        <image source="../generated/latex-image/FAEXMor.svg" width="50%">
+	      </image>
       </li>
       <li>
         <p>
           Repeats: <m>10^*</m>
         </p>
-        <image xml:id="FAEXMrep" width="50%">
-          <latex-image>
-            \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (29,-21.8) circle (3);
-            \draw (29,-21.8) node {$A$};
-            \draw [black] (44.4,-21.8) circle (3);
-            \draw (44.4,-21.8) node {$B$};
-            \draw [black] (44.4,-21.8) circle (2.4);
-            \draw [black] (31.957,-21.301) arc (97.285:82.715:37.401);
-            \fill [black] (41.44,-21.3) -- (40.71,-20.7) -- (40.59,-21.7);
-            \draw (36.7,-20.5) node [above] {$1$};
-            \draw [black] (46.167,-19.39) arc (171.47443:-116.52557:2.25);
-            \draw (51.07,-17.54) node [right] {$0$};
-            \fill [black] (47.39,-21.74) -- (48.1,-22.35) -- (48.25,-21.36);
-            \draw [black] (21.9,-16.2) -- (26.64,-19.94);
-            \fill [black] (26.64,-19.94) -- (26.33,-19.05) -- (25.71,-19.84);
-            \end{tikzpicture}
-          </latex-image>
-        </image>
+        <image source="../generated/latex-image/FAEXMrep.svg" width="50%">
+	      </image>
       </li>
     </ul>
    <p>
-      Ultimately, most REs will feautre mulitple of the structures above, so they will need to be combined. 
+      Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined. 
    </p>
   </section>
   <section xml:id="sec-makingNFAs">
@@ -159,127 +62,25 @@
      </me>
      First, we will focus on the <m>aa</m>. This can be accomplished using the structure for concatantaion.
     </p>
-     <image xml:id="FAExM13a" width="50%">
-       <latex-image>
-         \begin{tikzpicture}[scale=0.2]
-            \tikzstyle{every node}+=[inner sep=0pt]
-            \draw [black] (25.6,-20.6) circle (3);
-            \draw [black] (38.6,-20.6) circle (3);
-            \draw [black] (52.4,-20.6) circle (3);
-            \draw [black] (52.4,-20.6) circle (2.4);
-            \draw [black] (18.6,-16.1) -- (23.08,-18.98);
-            \fill [black] (23.08,-18.98) -- (22.67,-18.12) -- (22.13,-18.97);
-            \draw [black] (28.542,-20.024) arc (97.80392:82.19608:26.2);
-            \fill [black] (35.66,-20.02) -- (34.93,-19.42) -- (34.8,-20.41);
-            \draw (32.1,-19.28) node [above] {$a$};
-            \draw [black] (41.519,-19.917) arc (99.58124:80.41876:23.917);
-            \fill [black] (49.48,-19.92) -- (48.78,-19.29) -- (48.61,-20.28);
-            \draw (45.5,-19.08) node [above] {$a$};
-         \end{tikzpicture}
-       </latex-image>
-     </image>
+     <image source="../generated/latex-image/FAExM13a.svg" width="50%">
+	    </image>
      <p>
-       Second, we will add in the repeating element of <m>(aa)^*</m>. As a way to accound for multiple characters repeating, we can lean on NFA's paralleism
+       Second, we will add in the repeating element of <m>(aa)^*</m>. As a way to account for multiple characters repeating, we can lean on NFA's paralleism
        to add an empty string transition.
      </p>
-     <image xml:id="FAExM13b" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (22.5,-21.9) circle (3);
-        \draw [black] (22.5,-21.9) circle (2.4);
-        \draw [black] (36.8,-21.9) circle (3);
-        \draw [black] (51.8,-21.9) circle (3);
-        \draw [black] (25.452,-21.373) arc (97.46645:82.53355:32.304);
-        \fill [black] (33.85,-21.37) -- (33.12,-20.77) -- (32.99,-21.76);
-        \draw (29.65,-20.6) node [above] {$a$};
-        \draw [black] (15.4,-16.3) -- (20.14,-20.04);
-        \fill [black] (20.14,-20.04) -- (19.83,-19.15) -- (19.21,-19.94);
-        \draw [black] (39.744,-21.329) arc (98.26323:81.73677:31.7);
-        \fill [black] (48.86,-21.33) -- (48.14,-20.72) -- (47.99,-21.71);
-        \draw (44.3,-20.5) node [above] {$a$};
-        \draw [black] (24.401,-19.584) arc (135.78906:44.21094:17.786);
-        \fill [black] (24.4,-19.58) -- (25.32,-19.36) -- (24.6,-18.66);
-        \draw (37.15,-13.7) node [above] {$\epsilon$};
-        \end{tikzpicture}
-       </latex-image>
-      </image>
+     <image source="../generated/latex-image/FAExM13b.svg" width="50%">
+	    </image>
       <p>
         Now that the <m>(aa)^*</m> term has been taken care of, the <m>+</m> needs to be considered. We will introduce another empty string 
       transition as shown above.
       </p>
-      <image xml:id="FAExM13c" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (30.3,-16.4) circle (3);
-        \draw [black] (30.3,-16.4) circle (2.4);
-        \draw [black] (44.2,-16.4) circle (3);
-        \draw [black] (57.9,-16.4) circle (3);
-        \draw [black] (18,-22.8) circle (3);
-        \draw [black] (30,-29.8) circle (3);
-        \draw [black] (33.25,-15.862) arc (97.52468:82.47532:30.544);
-        \fill [black] (41.25,-15.86) -- (40.52,-15.26) -- (40.39,-16.25);
-        \draw (37.25,-15.1) node [above] {$a$};
-        \draw [black] (47.136,-15.79) arc (98.48818:81.51182:26.518);
-        \fill [black] (54.96,-15.79) -- (54.25,-15.18) -- (54.1,-16.17);
-        \draw (51.05,-15) node [above] {$a$};
-        \draw [black] (32.102,-14.007) arc (137.72118:42.27882:16.216);
-        \fill [black] (32.1,-14.01) -- (33.01,-13.75) -- (32.27,-13.08);
-        \draw (44.1,-8.2) node [above] {$\epsilon$};
-        \draw [black] (20.053,-20.618) arc (131.6337:103.3445:16.796);
-        \fill [black] (27.33,-16.83) -- (26.44,-16.53) -- (26.67,-17.5);
-        \draw (22.52,-17.77) node [above] {$\epsilon$};
-        \draw [black] (27.023,-29.485) arc (-102.31605:-138.19682:13.686);
-        \fill [black] (27.02,-29.49) -- (26.35,-28.83) -- (26.13,-29.8);
-        \draw (22.1,-28.44) node [below] {$\epsilon$};
-        \draw [black] (11.6,-16.8) -- (15.81,-20.75);
-        \fill [black] (15.81,-20.75) -- (15.57,-19.84) -- (14.89,-20.57);
-        \end{tikzpicture}
-      </latex-image>
-    </image>
+      <image source="../generated/latex-image/FAExM13c.svg" width="50%">
+	    </image>
     <p>
       The final part of <m>REX_5</m> is <m>bb</m>, this is just another instance of concatenation! Which makes this the final NFA for <m>REX_5</m>.
     </p>
-    <image xml:id="FAExM13" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (16.5,-24.4) circle (3);
-        \draw [black] (30.1,-18.8) circle (3);
-        \draw [black] (30.1,-18.8) circle (2.4);
-        \draw [black] (42.6,-18.8) circle (3);
-        \draw [black] (55.2,-18.8) circle (3);
-        \draw [black] (29.3,-33.2) circle (3);
-        \draw [black] (42.6,-33.2) circle (3);
-        \draw [black] (55.2,-33.2) circle (3);
-        \draw [black] (55.2,-33.2) circle (2.4);
-        \draw [black] (10.2,-18.8) -- (14.26,-22.41);
-        \fill [black] (14.26,-22.41) -- (13.99,-21.5) -- (13.33,-22.25);
-        \draw [black] (18.543,-22.21) arc (131.04474:93.71553:14.471);
-        \fill [black] (27.11,-18.68) -- (26.28,-18.24) -- (26.34,-19.23);
-        \draw (21.63,-19.23) node [above] {$\epsilon$};
-        \draw [black] (26.417,-32.382) arc (-110.16662:-138.85043:19.891);
-        \fill [black] (26.42,-32.38) -- (25.84,-31.64) -- (25.49,-32.58);
-        \draw (21.06,-30.6) node [below] {$\epsilon$};
-        \draw [black] (32.925,-17.806) arc (103.52031:76.47969:14.65);
-        \fill [black] (39.78,-17.81) -- (39.11,-17.13) -- (38.88,-18.11);
-        \draw (36.35,-16.9) node [above] {$a$};
-        \draw [black] (45.51,-18.084) arc (99.59957:80.40043:20.326);
-        \fill [black] (52.29,-18.08) -- (51.58,-17.46) -- (51.42,-18.44);
-        \draw (48.9,-17.3) node [above] {$a$};
-        \draw [black] (32.005,-16.489) arc (134.80698:45.19302:15.105);
-        \fill [black] (32.01,-16.49) -- (32.93,-16.28) -- (32.22,-15.57);
-        \draw (42.65,-11.6) node [above] {$\epsilon$};
-        \draw [black] (32.21,-32.479) arc (99.94275:80.05725:21.662);
-        \fill [black] (39.69,-32.48) -- (38.99,-31.85) -- (38.82,-32.83);
-        \draw (35.95,-31.65) node [above] {$b$};
-        \draw [black] (45.468,-32.334) arc (101.71336:78.28664:16.904);
-        \fill [black] (52.33,-32.33) -- (51.65,-31.68) -- (51.45,-32.66);
-        \draw (48.9,-31.48) node [above] {$b$};
-        \end{tikzpicture}
-       </latex-image>
-    </image>
+    <image source="../generated/latex-image/FAExM13.svg" width="50%">
+	  </image>
    </exploration>
    <exploration>
     <p>
@@ -288,174 +89,29 @@
      </me>
      First, we look at <m>0</m>. This is a terminal structure.
     </p>
-     <image xml:id="FAExM14a" width="50%">
-       <latex-image>
-         \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (27.3,-19.5) circle (3);
-        \draw [black] (44.7,-19.2) circle (3);
-        \draw [black] (44.7,-19.2) circle (2.4);
-        \draw [black] (21,-13.8) -- (25.08,-17.49);
-        \fill [black] (25.08,-17.49) -- (24.82,-16.58) -- (24.15,-17.32);
-        \draw [black] (30.186,-18.687) arc (102.71959:79.25593:28.532);
-        \fill [black] (41.79,-18.49) -- (41.09,-17.85) -- (40.91,-18.83);
-        \draw (35.97,-17.47) node [above] {$0$};
-        \end{tikzpicture}
-       </latex-image>
-     </image>
+     <image source="../generated/latex-image/FAExM14a.svg" width="50%">
+	    </image>
      <p>
-       Second, we will add in the or element.
+       Second, we will add in the OR element.
      </p>
-     <image xml:id="FAExM14b" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (27.3,-19.5) circle (3);
-        \draw [black] (44.7,-19.2) circle (3);
-        \draw [black] (44.7,-19.2) circle (2.4);
-        \draw [black] (14.9,-27.5) circle (3);
-        \draw [black] (27.6,-35.9) circle (3);
-        \draw [black] (30.186,-18.687) arc (102.71959:79.25593:28.532);
-        \fill [black] (41.79,-18.49) -- (41.09,-17.85) -- (40.91,-18.83);
-        \draw (35.97,-17.47) node [above] {$0$};
-        \draw [black] (16.939,-25.302) arc (133.57112:112.08596:24);
-        \fill [black] (24.46,-20.45) -- (23.53,-20.29) -- (23.9,-21.22);
-        \draw (19.53,-22.02) node [above] {$\epsilon$};
-        \draw [black] (24.721,-35.067) arc (-110.27274:-136.68994:20.797);
-        \fill [black] (24.72,-35.07) -- (24.14,-34.32) -- (23.8,-35.26);
-        \draw (19.51,-33.4) node [below] {$\epsilon$};
-        \draw [black] (7.6,-22.2) -- (12.47,-25.74);
-        \fill [black] (12.47,-25.74) -- (12.12,-24.86) -- (11.53,-25.67);
-        \end{tikzpicture}
-       </latex-image>
-      </image>
+     <image source="../generated/latex-image/FAExM14b.svg" width="50%">
+	    </image>
       <p>
         We now need to turn our attention to the <m>10^*</m>, which is a terminal followed by a repeating structure.
       </p>
-      <image xml:id="FAExM14c" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (27.3,-19.5) circle (3);
-        \draw [black] (42.7,-19.5) circle (3);
-        \draw [black] (42.7,-19.5) circle (2.4);
-        \draw [black] (14.9,-27.5) circle (3);
-        \draw [black] (27.6,-35.9) circle (3);
-        \draw [black] (42.7,-35.9) circle (3);
-        \draw [black] (58.2,-35.9) circle (3);
-        \draw [black] (30.179,-18.664) arc (102.37832:77.62168:22.491);
-        \fill [black] (39.82,-18.66) -- (39.15,-18) -- (38.93,-18.98);
-        \draw (35,-17.64) node [above] {$0$};
-        \draw [black] (16.939,-25.302) arc (133.57112:112.08596:24);
-        \fill [black] (24.46,-20.45) -- (23.53,-20.29) -- (23.9,-21.22);
-        \draw (19.53,-22.02) node [above] {$\epsilon$};
-        \draw [black] (24.721,-35.067) arc (-110.27274:-136.68994:20.797);
-        \fill [black] (24.72,-35.07) -- (24.14,-34.32) -- (23.8,-35.26);
-        \draw (19.51,-33.4) node [below] {$\epsilon$};
-        \draw [black] (7.6,-22.2) -- (12.47,-25.74);
-        \fill [black] (12.47,-25.74) -- (12.12,-24.86) -- (11.53,-25.67);
-        \draw [black] (30.511,-35.183) arc (100.46181:79.53819:25.546);
-        \fill [black] (39.79,-35.18) -- (39.09,-34.55) -- (38.91,-35.53);
-        \draw (35.15,-34.26) node [above] {$1$};
-        \draw [black] (45.59,-35.102) arc (101.81176:78.18824:23.743);
-        \fill [black] (55.31,-35.1) -- (54.63,-34.45) -- (54.42,-35.43);
-        \draw (50.45,-34.1) node [above] {$0$};
-        \draw [black] (43.711,-33.095) arc (149.22903:30.77097:7.844);
-        \fill [black] (43.71,-33.09) -- (44.55,-32.66) -- (43.69,-32.15);
-        \draw (50.45,-28.76) node [above] {$\epsilon$};
-        \end{tikzpicture}
-      </latex-image>
-    </image>
+      <image source="../generated/latex-image/FAExM14c.svg" width="50%">
+	    </image>
     <p>
       There is a 1 that follows the <m>10^*</m>. Since there is an empty string transition, it's terminal structure can be added to the state between
       1 and 0.
     </p>
-    <image xml:id="FAExM14d" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (30.3,-16.4) circle (3);
-        \draw [black] (30.3,-16.4) circle (2.4);
-        \draw [black] (44.2,-16.4) circle (3);
-        \draw [black] (57.9,-16.4) circle (3);
-        \draw [black] (18,-22.8) circle (3);
-        \draw [black] (30,-29.8) circle (3);
-        \draw [black] (44.2,-29.8) circle (3);
-        \draw [black] (57.9,-29.8) circle (3);
-        \draw [black] (57.9,-29.8) circle (2.4);
-        \draw [black] (33.25,-15.862) arc (97.52468:82.47532:30.544);
-        \fill [black] (41.25,-15.86) -- (40.52,-15.26) -- (40.39,-16.25);
-        \draw (37.25,-15.1) node [above] {$a$};
-        \draw [black] (47.136,-15.79) arc (98.48818:81.51182:26.518);
-        \fill [black] (54.96,-15.79) -- (54.25,-15.18) -- (54.1,-16.17);
-        \draw (51.05,-15) node [above] {$a$};
-        \draw [black] (32.102,-14.007) arc (137.72118:42.27882:16.216);
-        \fill [black] (32.1,-14.01) -- (33.01,-13.75) -- (32.27,-13.08);
-        \draw (44.1,-8.2) node [above] {$\epsilon$};
-        \draw [black] (20.053,-20.618) arc (131.6337:103.3445:16.796);
-        \fill [black] (27.33,-16.83) -- (26.44,-16.53) -- (26.67,-17.5);
-        \draw (22.52,-17.77) node [above] {$\epsilon$};
-        \draw [black] (27.023,-29.485) arc (-102.31605:-138.19682:13.686);
-        \fill [black] (27.02,-29.49) -- (26.35,-28.83) -- (26.13,-29.8);
-        \draw (22.1,-28.44) node [below] {$\epsilon$};
-        \draw [black] (11.6,-16.8) -- (15.81,-20.75);
-        \fill [black] (15.81,-20.75) -- (15.57,-19.84) -- (14.89,-20.57);
-        \draw [black] (32.962,-29.33) arc (96.61705:83.38295:35.909);
-        \fill [black] (41.24,-29.33) -- (40.5,-28.74) -- (40.39,-29.73);
-        \draw (37.1,-28.59) node [above] {$b$};
-        \draw [black] (47.134,-29.183) arc (98.58999:81.41001:26.216);
-        \fill [black] (54.97,-29.18) -- (54.25,-28.57) -- (54.1,-29.56);
-        \draw (51.05,-28.39) node [above] {$b$};
-        \end{tikzpicture}
-       </latex-image>
-    </image>
+    <image source="../generated/latex-image/FAExM14d.svg" width="50%">
+	  </image>
     <p>
       Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.
     </p>
-    <image xml:id="FAExM14" width="50%">
-       <latex-image>
-        \begin{tikzpicture}[scale=0.2]
-        \tikzstyle{every node}+=[inner sep=0pt]
-        \draw [black] (27.3,-19.5) circle (3);
-        \draw [black] (42.7,-19.5) circle (3);
-        \draw [black] (14.9,-27.5) circle (3);
-        \draw [black] (14.9,-27.5) circle (2.4);
-        \draw [black] (27.6,-35.9) circle (3);
-        \draw [black] (42.7,-35.9) circle (3);
-        \draw [black] (58.2,-35.9) circle (3);
-        \draw [black] (52.2,-44.3) circle (3);
-        \draw [black] (30.179,-18.664) arc (102.37832:77.62168:22.491);
-        \fill [black] (39.82,-18.66) -- (39.15,-18) -- (38.93,-18.98);
-        \draw (35,-17.64) node [above] {$0$};
-        \draw [black] (16.939,-25.302) arc (133.57112:112.08596:24);
-        \fill [black] (24.46,-20.45) -- (23.53,-20.29) -- (23.9,-21.22);
-        \draw (19.53,-22.02) node [above] {$\epsilon$};
-        \draw [black] (24.721,-35.067) arc (-110.27274:-136.68994:20.797);
-        \fill [black] (24.72,-35.07) -- (24.14,-34.32) -- (23.8,-35.26);
-        \draw (19.51,-33.4) node [below] {$\epsilon$};
-        \draw [black] (7.6,-22.2) -- (12.47,-25.74);
-        \fill [black] (12.47,-25.74) -- (12.12,-24.86) -- (11.53,-25.67);
-        \draw [black] (30.511,-35.183) arc (100.46181:79.53819:25.546);
-        \fill [black] (39.79,-35.18) -- (39.09,-34.55) -- (38.91,-35.53);
-        \draw (35.15,-34.26) node [above] {$1$};
-        \draw [black] (45.59,-35.102) arc (101.81176:78.18824:23.743);
-        \fill [black] (55.31,-35.1) -- (54.63,-34.45) -- (54.42,-35.43);
-        \draw (50.45,-34.1) node [above] {$0$};
-        \draw [black] (43.711,-33.095) arc (149.22903:30.77097:7.844);
-        \fill [black] (43.71,-33.09) -- (44.55,-32.66) -- (43.69,-32.15);
-        \draw (50.45,-28.76) node [above] {$\epsilon$};
-        \draw [black] (49.258,-43.777) arc (-108.82351:-154.1434:9.837);
-        \fill [black] (49.26,-43.78) -- (48.66,-43.05) -- (48.34,-43.99);
-        \draw (44.9,-42.32) node [below] {$1$};
-        \draw [black] (15.172,-24.517) arc (-190.93085:-316.96071:15.013);
-        \fill [black] (15.17,-24.52) -- (15.81,-23.83) -- (14.83,-23.64);
-        \draw (24.99,-12.39) node [above] {$\epsilon$};
-        \draw [black] (49.587,-45.77) arc (-64.16932:-164.32449:24.352);
-        \fill [black] (15.53,-30.43) -- (15.27,-31.34) -- (16.23,-31.07);
-        \draw (28.05,-46.56) node [below] {$\epsilon$};
-        \end{tikzpicture}
-       </latex-image>
-    </image>
+    <image source="../generated/latex-image/FAExM14.svg" width="50%">
+	  </image>
    </exploration>
   </section>
   <exercises>
@@ -470,66 +126,8 @@
       </statement>
       <answer>
         <p>
-          <image xml:id="FAEXM15" width="50%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (24.4,-19.9) circle (3);
-              \draw (24.4,-19.9) node {$B$};
-              \draw [black] (54.8,-19.9) circle (3);
-              \draw (54.8,-19.9) node {$D$};
-              \draw [black] (38.9,-19.9) circle (3);
-              \draw (38.9,-19.9) node {$C$};
-              \draw [black] (48.4,-9.1) circle (3);
-              \draw (48.4,-9.1) node {$E$};
-              \draw [black] (48.4,-9.1) circle (2.4);
-              \draw [black] (25.1,-37.6) circle (3);
-              \draw (25.1,-37.6) node {$F$};
-              \draw [black] (38.9,-37.6) circle (3);
-              \draw (38.9,-37.6) node {$G$};
-              \draw [black] (54.8,-38.2) circle (3);
-              \draw (54.8,-38.2) node {$H$};
-              \draw [black] (47.6,-48.2) circle (3);
-              \draw (47.6,-48.2) node {$I$};
-              \draw [black] (47.6,-48.2) circle (2.4);
-              \draw [black] (12.8,-28.4) circle (3);
-              \draw (12.8,-28.4) node {$A$};
-              \draw [black] (27.299,-19.136) arc (101.00348:78.99652:22.797);
-              \fill [black] (36,-19.14) -- (35.31,-18.49) -- (35.12,-19.47);
-              \draw (31.65,-18.22) node [above] {$0$};
-              \draw [black] (41.771,-19.037) arc (102.93367:77.06633:22.692);
-              \fill [black] (51.93,-19.04) -- (51.26,-18.37) -- (51.04,-19.35);
-              \draw (46.85,-17.96) node [above] {$1$};
-              \draw [black] (53.031,-22.306) arc (-45.98566:-134.01434:8.896);
-              \fill [black] (40.67,-22.31) -- (40.9,-23.22) -- (41.59,-22.5);
-              \draw (46.85,-25.3) node [below] {$\epsilon$};
-              \draw [black] (40.02,-17.121) arc (153.12773:124.20064:17.478);
-              \fill [black] (45.79,-10.57) -- (44.84,-10.6) -- (45.41,-11.43);
-              \draw (41.95,-12.03) node [left] {$0$};
-              \draw [black] (28.01,-36.879) arc (100.12269:79.87731:22.702);
-              \fill [black] (35.99,-36.88) -- (35.29,-36.25) -- (35.11,-37.23);
-              \draw (32,-36.03) node [above] {$1$};
-              \draw [black] (41.835,-36.986) arc (98.62775:77.05009:26.957);
-              \fill [black] (51.92,-37.37) -- (51.25,-36.7) -- (51.03,-37.67);
-              \draw (46.92,-36.16) node [above] {$0$};
-              \draw [black] (40.313,-34.972) arc (141.34109:34.33675:8.264);
-              \fill [black] (40.31,-34.97) -- (41.2,-34.66) -- (40.42,-34.03);
-              \draw (47.11,-31.34) node [above] {$\epsilon$};
-              \draw [black] (41.482,-39.118) arc (54.13453:24.62067:15.879);
-              \fill [black] (46.61,-45.37) -- (46.74,-44.44) -- (45.83,-44.85);
-              \draw (45.01,-40.48) node [right] {$1$};
-              \draw [black] (14.489,-25.925) arc (140.74512:111.71972:17.419);
-              \fill [black] (21.53,-20.77) -- (20.6,-20.6) -- (20.97,-21.53);
-              \draw (16.73,-22.4) node [above] {$\epsilon$};
-              \draw [black] (22.16,-37.028) arc (-106.88694:-146.70365:14.635);
-              \fill [black] (22.16,-37.03) -- (21.54,-36.32) -- (21.25,-37.27);
-              \draw (16.7,-35.24) node [below] {$\epsilon$};
-              \draw [black] (5,-22.2) -- (10.45,-26.53);
-              \draw (4.44,-20.78) node [left] {$M_{15}$};
-              \fill [black] (10.45,-26.53) -- (10.14,-25.64) -- (9.51,-26.43);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXM15.svg" width="50%">
+	        </image>
         </p>
       </answer>
     </exercise>
@@ -544,47 +142,15 @@
       </statement>
       <answer>
         <p>
-          <image xml:id="FAEXM16" width="50%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (18.5,-25.4) circle (3);
-              \draw [black] (32.7,-25.4) circle (3);
-              \draw [black] (41.5,-11.3) circle (3);
-              \draw [black] (48.8,-26.8) circle (3);
-              \draw [black] (39.6,-37.8) circle (3);
-              \draw [black] (39.6,-37.8) circle (2.4);
-              \draw [black] (21.324,-24.398) arc (104.50519:75.49481:17.074);
-              \fill [black] (29.88,-24.4) -- (29.23,-23.71) -- (28.98,-24.68);
-              \draw (25.6,-23.35) node [above] {$0$};
-              \draw [black] (40.753,-14.203) arc (-18.18836:-45.74932:22.887);
-              \fill [black] (40.75,-14.2) -- (40.03,-14.81) -- (40.98,-15.12);
-              \draw (39.06,-20.47) node [right] {$0$};
-              \draw [black] (35.648,-24.855) arc (97.03749:73.02303:24.95);
-              \fill [black] (45.99,-25.75) -- (45.37,-25.04) -- (45.08,-26);
-              \draw (41.01,-24.19) node [above] {$1$};
-              \draw [black] (32.591,-22.409) arc (-184.67165:-239.26604:12.714);
-              \fill [black] (32.59,-22.41) -- (33.15,-21.65) -- (32.16,-21.57);
-              \draw (33.85,-15.42) node [left] {$\epsilon$};
-              \draw [black] (46.203,-28.286) arc (-67.31748:-122.622:12.113);
-              \fill [black] (35,-27.31) -- (35.41,-28.16) -- (35.95,-27.32);
-              \draw (40.34,-29.75) node [below] {$\epsilon$};
-              \draw [black] (37.504,-35.657) arc (-139.64038:-162.17198:21.516);
-              \fill [black] (37.5,-35.66) -- (37.37,-34.72) -- (36.61,-35.37);
-              \draw (34.43,-33.39) node [left] {$0$};
-              \draw [black] (10.8,-19.1) -- (16.18,-23.5);
-              \draw (10.24,-17.67) node [left] {$M_{16}$};
-              \fill [black] (16.18,-23.5) -- (15.88,-22.61) -- (15.24,-23.38);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXM16.svg" width="50%">
+	        </image>
         </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Create an FA for the following regular expression.
+          Create an FA for the following Regular Expression.
           <me>
             REX_9 = (www.\lambda\lambda^*.edu)(//\lambda\lambda^*)^*
           </me>
@@ -597,53 +163,8 @@
       <answer>
         <p>
         There would typically by states between each character, but in the interest of space, the FA has been compressed.
-          <image xml:id="FAExM17" width="80%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (15,-25.2) circle (3);
-              \draw (15,-25.2) node {$A$};
-              \draw [black] (28.3,-25.2) circle (3);
-              \draw (28.3,-25.2) node {$B$};
-              \draw [black] (39.9,-25.2) circle (3);
-              \draw (39.9,-25.2) node {$C$};
-              \draw [black] (39.9,-37.7) circle (3);
-              \draw (39.9,-37.7) node {$D$};
-              \draw [black] (39.9,-37.7) circle (2.4);
-              \draw [black] (56.4,-37.7) circle (3);
-              \draw (56.4,-37.7) node {$E$};
-              \draw [black] (69.2,-37.7) circle (3);
-              \draw (69.2,-37.7) node {$F$};
-              \draw [black] (18,-25.2) -- (25.3,-25.2);
-              \fill [black] (25.3,-25.2) -- (24.5,-24.7) -- (24.5,-25.7);
-              \draw (21.65,-25.7) node [below] {$(www.\lambda$};
-              \draw [black] (7.8,-18) -- (12.88,-23.08);
-              \draw (3.93,-17.52) node [above] {$M_{17}$};
-              \fill [black] (12.88,-23.08) -- (12.67,-22.16) -- (11.96,-22.87);
-              \draw [black] (31.3,-25.2) -- (36.9,-25.2);
-              \fill [black] (36.9,-25.2) -- (36.1,-24.7) -- (36.1,-25.7);
-              \draw (34.1,-24.7) node [above] {$\lambda$};
-              \draw [black] (29.931,-22.717) arc (132.71557:47.28443:6.146);
-              \fill [black] (29.93,-22.72) -- (30.86,-22.54) -- (30.18,-21.81);
-              \draw (34.1,-20.59) node [above] {$\epsilon$};
-              \draw [black] (39.9,-28.2) -- (39.9,-34.7);
-              \fill [black] (39.9,-34.7) -- (40.4,-33.9) -- (39.4,-33.9);
-              \draw (39.4,-31.45) node [left] {$.edu)$};
-              \draw [black] (42.9,-37.7) -- (53.4,-37.7);
-              \fill [black] (53.4,-37.7) -- (52.6,-37.2) -- (52.6,-38.2);
-              \draw (48.15,-38.2) node [below] {$(/\lambda$};
-              \draw [black] (59.4,-37.7) -- (66.2,-37.7);
-              \fill [black] (66.2,-37.7) -- (65.4,-37.2) -- (65.4,-38.2);
-              \draw (62.8,-37.2) node [above] {$\lambda$};
-              \draw [black] (58.155,-35.295) arc (131.58967:48.41033:6.997);
-              \fill [black] (58.16,-35.3) -- (59.09,-35.14) -- (58.42,-34.39);
-              \draw (62.8,-33.03) node [above] {$\epsilon$};
-              \draw [black] (41.043,-34.932) arc (151.94378:28.05622:15.305);
-              \fill [black] (41.04,-34.93) -- (41.86,-34.46) -- (40.98,-33.99);
-              \draw (54.55,-26.33) node [above] {$\epsilon$};
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAExM17.svg" width="80%">
+	        </image>
         </p>
       </answer>
     </exercise>
@@ -662,55 +183,9 @@
       </statement>
       <answer>
         <p>
-        There would typically by states between each character, but in the interest of space, the FA has been compressed.
-          <image xml:id="FAExM18" width="80%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (18.7,-23.9) circle (3);
-              \draw (18.7,-23.9) node {$A$};
-              \draw [black] (32.8,-23.9) circle (3);
-              \draw (32.8,-23.9) node {$B$};
-              \draw [black] (41.3,-15.7) circle (3);
-              \draw (41.3,-15.7) node {$C$};
-              \draw [black] (41.3,-31.9) circle (3);
-              \draw (41.3,-31.9) node {$F$};
-              \draw [black] (52.5,-15.7) circle (3);
-              \draw (52.5,-15.7) node {$D$};
-              \draw [black] (63.9,-15.7) circle (3);
-              \draw (63.9,-15.7) node {$E$};
-              \draw [black] (63.9,-15.7) circle (2.4);
-              \draw [black] (52.5,-31.9) circle (3);
-              \draw (52.5,-31.9) node {$G$};
-              \draw [black] (63.9,-31.9) circle (3);
-              \draw (63.9,-31.9) node {$H$};
-              \draw [black] (63.9,-31.9) circle (2.4);
-              \draw [black] (21.7,-23.9) -- (29.8,-23.9);
-              \fill [black] (29.8,-23.9) -- (29,-23.4) -- (29,-24.4);
-              \draw (25.75,-24.4) node [below] {$dd/dd/$};
-              \draw [black] (34.96,-21.82) -- (39.14,-17.78);
-              \fill [black] (39.14,-17.78) -- (38.22,-17.98) -- (38.91,-18.7);
-              \draw (38.01,-20.28) node [below] {$\epsilon$};
-              \draw [black] (34.98,-25.96) -- (39.12,-29.84);
-              \fill [black] (39.12,-29.84) -- (38.88,-28.93) -- (38.19,-29.66);
-              \draw (36.09,-28.38) node [below] {$\epsilon$};
-              \draw [black] (44.3,-15.7) -- (49.5,-15.7);
-              \fill [black] (49.5,-15.7) -- (48.7,-15.2) -- (48.7,-16.2);
-              \draw (46.9,-16.2) node [below] {$201$};
-              \draw [black] (55.5,-15.7) -- (60.9,-15.7);
-              \fill [black] (60.9,-15.7) -- (60.1,-15.2) -- (60.1,-16.2);
-              \draw (58.2,-16.2) node [below] {$d$};
-              \draw [black] (44.3,-31.9) -- (49.5,-31.9);
-              \fill [black] (49.5,-31.9) -- (48.7,-31.4) -- (48.7,-32.4);
-              \draw (46.9,-32.4) node [below] {$202$};
-              \draw [black] (55.5,-31.9) -- (60.9,-31.9);
-              \fill [black] (60.9,-31.9) -- (60.1,-31.4) -- (60.1,-32.4);
-              \draw (58.2,-32.4) node [below] {$d$};
-              \draw [black] (11.7,-17.9) -- (16.42,-21.95);
-              \fill [black] (16.42,-21.95) -- (16.14,-21.05) -- (15.49,-21.81);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+        There would typically be states between each character, but in the interest of space, the FA has been compressed.
+          <image source="../generated/latex-image/FAExM18.svg" width="80%">
+	        </image>
         </p>
       </answer>
     </exercise>

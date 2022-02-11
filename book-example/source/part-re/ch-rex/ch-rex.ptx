@@ -9,9 +9,6 @@
        <li> Regular Expressions in NFAs </li>
      </ol>
   </objectives>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
   <section xml:id="sec-RegularExpressions">
     <title>Regular Expressions</title>
       <p>
@@ -77,61 +74,12 @@
       </row>
       <row>
         <cell right="medium" halign="center">
-          <image xml:id="FAEXMa" width="80%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (23.9,-21.2) circle (3);
-              \draw (23.9,-21.2) node {$A$};
-              \draw [black] (37.1,-21.2) circle (3);
-              \draw (37.1,-21.2) node {$B$};
-              \draw [black] (50.2,-21.2) circle (3);
-              \draw (50.2,-21.2) node {$C$};
-              \draw [black] (50.2,-21.2) circle (2.4);
-              \draw [black] (26.844,-20.633) arc (97.73403:82.26597:27.164);
-              \fill [black] (34.16,-20.63) -- (33.43,-20.03) -- (33.3,-21.02);
-              \draw (30.5,-19.89) node [above] {$0$};
-              \draw [black] (39.992,-20.412) arc (100.82266:79.17734:19.483);
-              \fill [black] (47.31,-20.41) -- (46.62,-19.77) -- (46.43,-20.75);
-              \draw (43.65,-19.57) node [above] {$1$};
-              \draw [black] (50.523,-18.229) arc (201.52881:-86.47119:2.25);
-              \draw (55.57,-15.01) node [above] {$0,1$};
-              \fill [black] (52.75,-19.65) -- (53.68,-19.82) -- (53.32,-18.89);
-              \draw [black] (17.6,-15.1) -- (21.74,-19.11);
-              \fill [black] (21.74,-19.11) -- (21.52,-18.2) -- (20.82,-18.92);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXMa.svg" width="80%">
+	        </image>
         </cell>
         <cell  halign="center">
-          <image xml:id="FAEXMb" width="80%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (24.9,-21.5) circle (3);
-              \draw (24.9,-21.5) node {$A$};
-              \draw [black] (37.1,-21.5) circle (3);
-              \draw (37.1,-21.5) node {$B$};
-              \draw [black] (49.8,-21.5) circle (3);
-              \draw (49.8,-21.5) node {$C$};
-              \draw [black] (49.8,-21.5) circle (2.4);
-              \draw [black] (27.718,-20.487) arc (103.60854:76.39146:13.95);
-              \fill [black] (34.28,-20.49) -- (33.62,-19.81) -- (33.39,-20.78);
-              \draw (31,-19.6) node [above] {$0$};
-              \draw [black] (39.901,-20.441) arc (104.60316:75.39684:14.077);
-              \fill [black] (47,-20.44) -- (46.35,-19.76) -- (46.1,-20.72);
-              \draw (43.45,-19.49) node [above] {$1$};
-              \draw [black] (50.882,-18.714) arc (186.51045:-101.48955:2.25);
-              \draw (55.31,-15.48) node [right] {$0,1$};
-              \fill [black] (52.67,-20.66) -- (53.52,-21.07) -- (53.41,-20.08);
-              \draw [black] (23.934,-24.328) arc (8.87415:-279.12585:2.25);
-              \draw (19.59,-27.74) node [left] {$0,1$};
-              \fill [black] (22.07,-22.45) -- (21.2,-22.08) -- (21.35,-23.07);
-              \draw [black] (18.7,-16.1) -- (22.64,-19.53);
-              \fill [black] (22.64,-19.53) -- (22.36,-18.63) -- (21.71,-19.38);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXMb.svg" width="80%">
+	        </image>
         </cell>
       </row>
       </tabular>
@@ -144,31 +92,8 @@
       </row>
       <row>
         <cell halign="center">
-          <image xml:id="FAEXMc" width="80%">
-            <latex-image>
-              \begin{tikzpicture}[scale=0.2]
-              \tikzstyle{every node}+=[inner sep=0pt]
-              \draw [black] (23.1,-25.9) circle (3);
-              \draw (23.1,-25.9) node {$A$};
-              \draw [black] (36.8,-25.9) circle (3);
-              \draw (36.8,-25.9) node {$B$};
-              \draw [black] (51.7,-25.9) circle (3);
-              \draw (51.7,-25.9) node {$C$};
-              \draw [black] (51.7,-25.9) circle (2.4);
-              \draw [black] (25.958,-25) arc (102.73749:77.26251:18.105);
-              \fill [black] (33.94,-25) -- (33.27,-24.34) -- (33.05,-25.31);
-              \draw (29.95,-24.05) node [above] {$0$};
-              \draw [black] (39.58,-24.783) arc (106.62116:73.37884:16.327);
-              \fill [black] (48.92,-24.78) -- (48.3,-24.08) -- (48.01,-25.03);
-              \draw (44.25,-23.6) node [above] {$1$};
-              \draw [black] (25.585,-27.56) arc (83.99536:-204.00464:2.25);
-              \draw (28.22,-32.25) node [below] {$0,1$};
-              \fill [black] (23.29,-28.88) -- (22.71,-29.63) -- (23.71,-29.73);
-              \draw [black] (16.7,-20.9) -- (20.74,-24.05);
-              \fill [black] (20.74,-24.05) -- (20.41,-23.17) -- (19.8,-23.95);
-              \end{tikzpicture}
-            </latex-image>
-          </image>
+          <image source="../generated/latex-image/FAEXMb.svg" width="80%">
+	        </image>
         </cell>
       </row>
       </tabular>
@@ -177,7 +102,7 @@
     <exercise>
       <statement>
         <p>
-          Given <m>\Sigma=\{0,1,@,.\}</m>, make a regular expression for any binary string, followed by an <m>@</m>,
+          Given <m>\Sigma=\{0,1,@,.\}</m>, make a Regular Expression for any binary string, followed by an <m>@</m>,
           followed by one or more binary strings, and separated by <m>.</m>.
         </p>
       </statement>
@@ -195,7 +120,7 @@
     <exercise>
       <statement>
         <p>
-          Given <m>\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}</m>, create a regular expression that recognizes phone numbers of
+          Given <m>\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}</m>, create a Regular Expression that recognizes phone numbers of
           the form: <m>[555]555-5555</m>. As a shortcut you may write <m>0->2</m> to mean <m>0+1+2...</m>.
         </p>
       </statement>
@@ -208,7 +133,7 @@
     <exercise>
       <statement>
         <p>
-          What is the language of this regular expression?
+          What is the language of this Regular Expression?
           <me>
             REX_3 = 0+1(0+1)^*
           </me>
@@ -224,7 +149,7 @@
     <exercise>
       <statement>
         <p>
-          What is the language of this regular expression?
+          What is the language of this Regular Expression?
           <me>
             REX_4 = (\_+a+b+c+...+Y+Z)(\_+a+b+c+...+Y+Z+0+1+...+8+9)^*
           </me>
