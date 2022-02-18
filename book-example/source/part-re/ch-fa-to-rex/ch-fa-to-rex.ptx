@@ -76,7 +76,7 @@
           <p>
             Add a new start state with an empty string transition to the old start state.
           </p>
-            <image source="../generated/latex-image/AExM20a.svg" width="50%">
+            <image source="../generated/latex-image/FAExM20a.svg" width="50%">
             </image>
         </li>
         <li>

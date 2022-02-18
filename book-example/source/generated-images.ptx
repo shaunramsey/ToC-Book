@@ -2781,4 +2781,128 @@
           </latex-image>
         </image>
 
-</chapter>
+      <!-- TODO: ch-pdas-->
+        <image xml:id="CFGEXP1" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (25.6,-12.1) circle (3);
+              \draw [black] (25.6,-24.6) circle (3);
+              \draw [black] (39.8,-24.6) circle (3);
+              \draw [black] (39.8,-24.6) circle (2.4);
+              \draw [black] (22.9,-4.6) -- (24.58,-9.28);
+              \fill [black] (24.58,-9.28) -- (24.78,-8.36) -- (23.84,-8.69);
+              \draw [black] (23.203,-13.884) arc (-25.61686:-313.61686:2.25);
+              \draw (18.24,-13.59) node [left] {$0\epsilon0$};
+              \fill [black] (22.73,-11.28) -- (22.22,-10.49) -- (21.79,-11.39);
+              \draw [black] (25.6,-15.1) -- (25.6,-21.6);
+              \fill [black] (25.6,-21.6) -- (26.1,-20.8) -- (25.1,-20.8);
+              \draw (25.1,-18.35) node [left] {$10\epsilon$};
+              \draw [black] (22.92,-25.923) arc (-36:-324:2.25);
+              \draw (18.35,-24.6) node [left] {$10\epsilon$};
+              \fill [black] (22.92,-23.28) -- (22.57,-22.4) -- (21.98,-23.21);
+              \draw [black] (28.6,-24.6) -- (36.8,-24.6);
+              \fill [black] (36.8,-24.6) -- (36,-24.1) -- (36,-25.1);
+              \draw (32.7,-25.1) node [below] {$\Delta\Delta\epsilon$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="CFGExP2" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (25.6,-12.1) circle (3);
+              \draw [black] (25.6,-24.6) circle (3);
+              \draw [black] (40.9,-24.6) circle (3);
+              \draw [black] (56.4,-24.6) circle (3);
+              \draw [black] (40.9,-37.5) circle (3);
+              \draw [black] (40.9,-37.5) circle (2.4);
+              \draw [black] (22.9,-4.6) -- (24.58,-9.28);
+              \fill [black] (24.58,-9.28) -- (24.78,-8.36) -- (23.84,-8.69);
+              \draw [black] (25.6,-15.1) -- (25.6,-21.6);
+              \fill [black] (25.6,-21.6) -- (26.1,-20.8) -- (25.1,-20.8);
+              \draw (25.1,-18.35) node [left] {$b\epsilon\epsilon$};
+              \draw [black] (28.6,-24.6) -- (37.9,-24.6);
+              \fill [black] (37.9,-24.6) -- (37.1,-24.1) -- (37.1,-25.1);
+              \draw (33.25,-24.1) node [above] {$cx\epsilon$};
+              \draw [black] (22.92,-13.423) arc (-36:-324:2.25);
+              \draw (18.35,-12.1) node [left] {$a\epsilonx$};
+              \fill [black] (22.92,-10.78) -- (22.57,-9.9) -- (21.98,-10.71);
+              \draw [black] (53.793,-26.071) arc (-67.07887:-112.92113:13.205);
+              \fill [black] (53.79,-26.07) -- (52.86,-25.92) -- (53.25,-26.84);
+              \draw (48.65,-27.61) node [below] {$b\epsilon\epsilon$};
+              \draw [black] (43.531,-23.171) arc (112.17673:67.82327:13.562);
+              \fill [black] (43.53,-23.17) -- (44.46,-23.33) -- (44.08,-22.41);
+              \draw (48.65,-21.67) node [above] {$cx\epsilon$};
+              \draw [black] (40.9,-27.6) -- (40.9,-34.5);
+              \fill [black] (40.9,-34.5) -- (41.4,-33.7) -- (40.4,-33.7);
+              \draw (40.4,-31.05) node [left] {$\Delta\Delta\epsilon$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="CFGExP3" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (24.9,-13.9) circle (3);
+              \draw [black] (24.9,-28.9) circle (3);
+              \draw [black] (41.2,-28.9) circle (3);
+              \draw [black] (41.2,-28.9) circle (2.4);
+              \draw [black] (23.3,-6) -- (24.3,-10.96);
+              \fill [black] (24.3,-10.96) -- (24.64,-10.08) -- (23.66,-10.27);
+              \draw [black] (22.549,-15.745) arc (-24.15178:-312.15178:2.25);
+              \draw (17.55,-15.63) node [left] {$0\epsilonx$};
+              \fill [black] (22.01,-13.16) -- (21.48,-12.37) -- (21.07,-13.28);
+              \draw (17.99,-17.6) node [left] {$1\epsilony$};
+              \draw [black] (24.9,-16.9) -- (24.9,-25.9);
+              \fill [black] (24.9,-25.9) -- (25.4,-25.1) -- (24.4,-25.1);
+              \draw (24.4,-22.0) node [left] {$\epsilon\epsilon\epsilon$};
+              \draw (23.07,-24.13) node [above] {$0\epsilon\epsilon$};
+              \draw (22.87,-21.02) node [above] {$1\epsilon\epsilon$};
+              \draw [black] (22.461,-30.627) arc (-26.95927:-314.95927:2.25);
+              \draw (17.53,-30.17) node [left] {$0x\epsilon$};
+              \fill [black] (22.05,-28.01) -- (21.56,-27.21) -- (21.11,-28.1);
+              \draw (17.87,-32.22) node [left] {$1y\epsilon$};
+              \draw [black] (27.9,-28.9) -- (38.2,-28.9);
+              \fill [black] (38.2,-28.9) -- (37.4,-28.4) -- (37.4,-29.4);
+              \draw (33.05,-29.4) node [below] {$\Delta\Delta\epsilon$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="CFGExP4" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (24.4,-11.5) circle (3);
+            \draw [black] (24.4,-25.1) circle (3);
+            \draw [black] (38.5,-25.1) circle (3);
+            \draw [black] (52.7,-25.1) circle (3);
+            \draw [black] (52.7,-25.1) circle (2.4);
+            \draw [black] (21.4,-4.8) -- (23.17,-8.76);
+            \fill [black] (23.17,-8.76) -- (23.3,-7.83) -- (22.39,-8.24);
+            \draw [black] (22.298,-13.624) arc (-16.97596:-304.97596:2.25);
+            \draw (17.26,-14.44) node [left] {$0\epsilon x$};
+            \fill [black] (21.44,-11.12) -- (20.82,-10.41) -- (20.52,-11.37);
+            \draw [black] (24.4,-14.5) -- (24.4,-22.1);
+            \fill [black] (24.4,-22.1) -- (24.9,-21.3) -- (23.9,-21.3);
+            \draw (23.9,-18.3) node [left] {$1x\epsilon$};
+            \draw [black] (21.891,-26.723) arc (-29.36145:-317.36145:2.25);
+            \draw (17.03,-26) node [left] {$1x\epsilon$};
+            \fill [black] (21.59,-24.1) -- (21.13,-23.27) -- (20.64,-24.14);
+            \draw [black] (27.4,-25.1) -- (35.5,-25.1);
+            \fill [black] (35.5,-25.1) -- (34.7,-24.6) -- (34.7,-25.6);
+            \draw (31.45,-25.6) node [below] {$1\Delta\epsilon$};
+            \draw [black] (41.5,-25.1) -- (49.7,-25.1);
+            \fill [black] (49.7,-25.1) -- (48.9,-24.6) -- (48.9,-25.6);
+            \draw (45.6,-25.6) node [below] {$\Delta\epsilon\epsilon$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+
+
+
+  </chapter>

@@ -2,9 +2,148 @@
 
 <chapter xml:id="ch-pdas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Pushdown Automata</title>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Introduction to Pushdown Automatas </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-PDAintro">
+    <title>Introduction to Pushdown Automatas</title>
+    <p>
+      <idx>Pushdown Automata (PDA)</idx> The machines associated with CFLs are called <term>Pushdown Automata (PDAs)</term>. They have memory in the form of an 
+      infinite stack. 
+    </p>
+    <p>
+      Pushing is adding a term to the stack while popping is 
+      removing a term from the stack. We use <m>\Delta</m> to indicate the end of input or the result of popping from an empty stack. 
+    </p>
+    <p>
+      To create PDA diagrams, we will lean on skills learned when drawing state machines. Instead of transitioning on a single character or a single character in a list,
+      we will be introducing a notion that details what needs to read, what needs to be popped, and what needs to be pushed. 
+      <tabular>
+        <row>
+          <cell halign='center'>0</cell><cell halign='center'><m>\epsilon</m></cell><cell halign='center'>0</cell>
+        </row>
+        <row>
+          <cell halign='center'><m>\uparrow</m></cell><cell halign='center'><m>\uparrow</m></cell><cell halign='center'><m>\uparrow</m></cell>
+        </row>
+        <row>
+          <cell halign='center'>read</cell><cell halign='center'>pop</cell><cell halign='center'>push</cell>
+        </row>
+      </tabular>
+      We will further explore this notation in the exploration below.
+    </p>
+    <exploration>
+      <p>
+        We will walk through how to create a PDA from a CFL.
+        Consider <m>L_1</m> where <me>
+          L_1 = 0^n1^n
+        </me>
+        The idea here is to push <m>0</m>s onto the stack until there are no more <m>0</m>s. We will then pop one <m>0</m> off of the stack for each <m>1</m>
+        we read.
+      </p>
+      <p>
+        Let's consider this line of thinking in terms of steps and putting those steps into the read-pop-push notation from above.
+        <ol>
+          <li>
+            <p>
+              <m>0\epsilon0</m> - Read 0s, do not pop anything from stack, push a 0 to the stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>10\epsilon</m> - Read first 1, pop top 0 off of stack, do not push anything onto stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>10\epsilon</m> - Read rest of the 1s, pop top 0 off of stack, do not push anything onto stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Delta\Delta\epsilon</m> - Read in a <m>\Delta</m>, pop that <m>\Delta</m> off of stack, do not push anything onto stack
+            </p>
+          </li>
+        </ol>
+        We can then put these steps into a state diagram.
+      </p>
+       <image source="../generated/latex-image/CFGEXP1.svg" width='50%'>
+	      </image>
+    </exploration>
+    <exploration>
+      <p>
+        Now, try to create your own PDA for the following language:
+        <me>
+          L_2 = \{a^i(bc)^i | i \geq 0 \}
+        </me>
+        It is easiest to first write out the necessary steps and then draw the PDA diagram.
+      </p>
+      <p>
+        Here are the necessary steps:
+        <ol>
+          <li>
+            <p>
+              <m>a\epsilon x</m> - Read <m>a</m>s, do not pop anything from stack, push a <m>x</m> to the stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>b\epsilon \epsilon</m> - Read first <m>b</m>, do not pop anything from stack, do not push anything onto stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>cx\epsilon</m> - Read first <m>c</m>, pop first <m>x</m> from stack, do not push anything onto stack
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Delta\Delta\epsilon</m> - Read in a <m>\Delta</m>, pop that <m>\Delta</m> off of stack, do not push anything onto stack
+            </p>
+          </li>
+        </ol>
+        It is important to note that we must loop through checking for both the <m>b</m> and <m>c</m>.
+      </p>
+      <answer>
+       <image source="../generated/latex-image/CFGExP2.svg" width='50%'>
+	      </image>
+        </answer>
+    </exploration>
+  </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Create a PDA for the langugage below:
+          <me>
+            L = \{\mbox{all palindromes with } \Sigma=\{0,1\}\}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          PDAs can consider multiple transitions at once. This allows for varriation. 
+        </p>
+      </hint>
+      <answer>
+        <image source="../generated/latex-image/CFGExP3.svg" width='50%'>
+	      </image>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Create a PDA based on a language that includes any number of <m>0</m>s followed by a number of <m>1</m>s such that there is at least one more 1 than 0s.
+        </p>
+      </statement>
+      <answer>
+       <image source="../generated/latex-image/CFGExP4.svg" width='50%'>
+	      </image>
+      </answer>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

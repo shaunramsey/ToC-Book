@@ -151,6 +151,7 @@
           </row>
         </tabular>
         What strings can we make from it?
+        <answer>
         <tabular>
           <row>
             <cell><m>\epsilon</m>:</cell><cell></cell>
@@ -183,6 +184,7 @@
               <cell></cell><cell halign='center'><m>00S11 \rightarrow 00\epsilon 11</m></cell><cell><m>S</m> is replaced by <m>\epsilon</m></cell>
           </row>
         </tabular>
+        </answer>
         And many more strings can be made! But, what languge is this?
       </p>
       <p>
@@ -220,7 +222,8 @@
           The resulting string is <m>aa</m>. Therefore, <m>CFG_4</m> can generate only <m>a</m>s.
         </p>
         <p>
-          Can we generate only <m>b</m>s?
+          Can we generate only <m>b</m>s? How?
+          <answer>
           <tabular>
             <row>
               <cell><m>S \rightarrow T</m></cell><cell><m>S</m> is replaced by <m>T</m></cell>
@@ -235,6 +238,7 @@
               <cell><m>bbT \rightarrow bb\epsilon</m></cell><cell><m>T</m> is replaced by <m>\epsilon</m></cell>
             </row>
           </tabular>
+          </answer>
           The resulting string is <m>bb</m>. Therefore, <m>CFG_4</m> can generate only <m>b</m>s.
         </p>
         <p>
@@ -280,9 +284,176 @@
               </p>
             </li>
           </ul>
-          
-        </p>
-        
+          Let us look a little ddeper into matching with another exploration.
+          </p>
+          <exploration>
+            <p>
+              Construct a CFG for <m>L_5</m> where <me>
+                L_5 = \{a^i(bc)^i | i \geq 0 \}
+              </me>
+              Before looking at the correct grammar, let's first analyze some common incorrect answers.
+              <m>CFG_5'</m> below demonstrates one common mistake: 
+              <tabular>
+                <row>
+                  <cell><m>CFG_5'</m>:</cell><cell></cell>
+                </row>
+                <row>
+                  <cell></cell><cell><m>S \rightarrow ASB | \epsilon</m></cell>
+                </row>
+                <row>
+                  <cell></cell><cell><m>A \rightarrow aA | \epsilon</m></cell>
+                </row>
+                <row>
+                  <cell></cell><cell><m>B \rightarrow bcB | \epsilon</m></cell>
+                </row>
+              </tabular>
+              But, why is <m>CFG_5'</m> incorrect? Construct some strings using this grammar. 
+              <ul>
+                <li>
+                  <p>
+                    abc
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    aabcbc
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    aabcbc
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    aaaaaaa
+                  </p>
+                </li>
+              </ul>
+              But, how did the string <m>abcbc</m> come about from <m>CFG_5'</m>?
+              <tabular>
+                <row>
+                  <cell><m>S \rightarrow ASB</m></cell><cell><m>S</m> is replaced by <m>ASB</m></cell>
+                </row>
+                <row>
+                  <cell><m>ASB \rightarrow aSB</m></cell><cell>The <m>A</m> is replaced by <m>a</m></cell>
+                </row>
+                <row>
+                  <cell><m>aSB \rightarrow aASBB</m></cell><cell>The <m>S</m> is replaced by <m>ASB</m></cell>
+                </row>
+                <row>
+                  <cell><m>aASBB \rightarrow aaSBB</m></cell><cell>The <m>A</m> is replaced by <m>a</m></cell>
+                </row>
+                <row>
+                  <cell><m>aaSBB \rightarrow aaBB</m></cell><cell>The <m>S</m> is replaced by <m>\epsilon</m></cell>
+                </row>
+                <row>
+                  <cell><m>aaBB \rightarrow aabcB</m></cell><cell>The <m>B</m> is replaced by <m>bc</m></cell>
+                </row>
+                <row>
+                  <cell><m>aabcB \rightarrow aabc</m></cell><cell>The <m>B</m> is replaced by <m>\epsilon</m></cell>
+                </row>
+              </tabular>
+              By not forcing the <m>a</m> and <m>bc</m> to be created at the same time and inculding an epsilon, then 
+              it is possible to a string to be created that is not in the language.
+              </p>
+              <p>
+              Below is the correct grammar for <m>L_5</m>.
+              </p>
+              <answer>
+            <tabular>
+            <row>
+              <cell><m>CFG_5</m>:</cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>S \rightarrow aSbc | \epsilon</m></cell>
+            </row>
+          </tabular>
+          </answer>
+          <p>
+            We can see that matched pairs must be contained in the same rule.
+            </p>
+          </exploration>
+          <p>
+            Following our thinking from the exploration, we can see that interleaved matching does not work within 
+            Context Free Grammars. An example is this would be a a language where <me>
+              L = \{ 0^n1^m0^n1^m\}
+            </me>
+            Matching three groupings also does not work. An example of this would be:
+            <me>
+              L = \{0^n1^n0^n\}
+            </me>
+         </p>
+         <example>
+           <p>
+             Here is an example that is applicable to more general computer science. Imagine parsing a computer program. You have run a REX which returns these terminals:
+             <tabular>
+               <row>
+                 <cell>b</cell><cell>boolean expressions</cell>
+               </row>
+               <row>
+                 <cell>i</cell><cell>an <m>if</m> keyword</cell>
+               </row>
+               <row>
+                 <cell>c</cell><cell>a code statement</cell>
+               </row>
+               <row>
+                 <cell>e</cell><cell>an <m>else</m> keyword</cell>
+               </row>
+               <row>
+                 <cell>f</cell><cell>an <m>elif</m> keyword</cell>
+               </row>
+               <row>
+                 <cell>:</cell><cell>a colon</cell>
+               </row>
+             </tabular>
+             Write the CFG using <m>b</m>,<m>i</m>,<m>c</m>,<m>e</m>,<m>f</m>, and <m>:</m> for Python <m>if</m> statements. You may ignore returns and tabbing.
+           </p>
+           <answer>
+           <tabular>
+            <row>
+              <cell><m>CFG</m>:</cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>S \rightarrow iB:CFE</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>B \rightarrow bB | b</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>C \rightarrow cC | c</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>F \rightarrow fB:C | FF | \epsilon</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>E \rightarrow e:C | \epsilon</m></cell>
+            </row>
+          </tabular>
+          </answer>
+          <p>
+          The CDFG can also be written as seen below.
+          </p>
+          <answer>
+          <tabular>
+            <row>
+              <cell><m>CFG</m>:</cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>S \rightarrow ib:U_1U_2U_3 | \epsilon</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>U_1 \rightarrow cU_1 | c</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>U_2 \rightarrow fB:U_1U_2 | \epsilon</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>U_3 \rightarrow e:U_1 | \epsilon</m></cell>
+            </row>
+          </tabular>
+         </answer>
+         </example>
       </subsection>
       </section>
 
@@ -572,6 +743,18 @@
                 <cell></cell><cell><m>T \rightarrow 1T | \epsilon</m></cell>
               </row>
             </tabular>   
+            OR  
+            <tabular>
+              <row>
+                <cell><m>CFG_2:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S_2 \rightarrow U_30U_30U_3S_2 | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>U_3 \rightarrow 1U_3 | \epsilon</m></cell>
+              </row>
+            </tabular>  
             Both grammars can represent <m>L_2</m>.    
           </p>
         </answer>
@@ -597,6 +780,46 @@
                 <cell></cell><cell><m>S_3 \rightarrow S_1S_2</m></cell>
               </row>
             </tabular>            
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Create a CFG for the language below:
+            <me>
+              L = \{\mbox{all palindromes with } \sigma=\{0,1\}\}
+            </me>
+            (Palindromes are strings that the same no matter if read backwards for forwards. <m>1011101</m> is an example.)
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow 0S0 | 1S1 | 0 | 1 | \epsilon</m></cell>
+              </row>
+            </tabular>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Write the language of matching open and closed brackets such as: (),[], and {}.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Remember to consider that [(){}] can also take place. 
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <m>S \rightarrow (S) | [S] | {S} | \epsilon | SS</m>
           </p>
         </answer>
       </exercise>
