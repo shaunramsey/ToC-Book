@@ -2,9 +2,93 @@
 
 <chapter xml:id="ch-cnl" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Context Free Languages</title>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li>Introduction to Context Free Languages </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-cfls">
+    <title>Introduction to Context Free Languages</title>
+    <p>
+      <idx>Context Free Languages (CFLs)</idx> <term>Context Free Languages (CFLs)</term> are good at unbounded inner to outer matching with some 
+      concatenation. CFLs and PDAs have the ability to recognize the same class of languages. <m>\Omega</m> is all languages.
+    </p>
+    <image source="../generated/latex-image/CFGExLangDiagram.svg" width='50%'>
+	  </image>
+    <p>
+    <ul>
+      <li>
+        <p>
+          RLs can be expressed using Regular Expressions and Finite Automatas. They can be proven to be regular using the Pumping Lemma for Regular Languages.
+        </p>
+      </li>
+      <li>
+        <p>
+          Both RLs and CFLs can be espressed by CFGs and PDAs. They can be proven using the Pumping Lemma for CFLs.
+        </p>
+      </li>
+      <li>
+        <p>
+          CFLs that are not RLs, might not obey the Pumping Lemma for Regular Languages, might be able to use closure properties of RLs to prove it is not 
+          regular, and must have some sort of unbounded matching.
+        </p>
+      </li>
+    </ul>
+    </p>
+    <exploration>
+      <p>
+        Let's look at an example of trying to classify a language as a RL, CFL, or neither. Consider the language below:
+        <me>
+          L_1 = \{a^n \# a^n\}
+        </me>
+        First, write a PDA for the language. Can we do it?
+      </p>
+      <answer>
+        <p>
+          Yes we can!
+          <image source="../generated/latex-image/CFGExP5.svg" width='50%'>
+	        </image>
+        </p>
+      </answer>
+      <p>
+        Second, write a CFG that recognizes <m>L_1</m>. Can we do it?
+      </p>
+      <answer>
+        <p>
+          Yes we can!
+          <tabular>
+            <row>
+              <cell><m>CFG_1</m></cell><cell></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>S \rightarrow aSa | \#</m></cell>
+            </row>
+          </tabular>
+        </p>
+      </answer>
+      <p>
+        So, is <m>L_1</m> a RL, CFL, or both?
+      </p>
+      <answer>
+        <p>
+          Since <m>L_1</m> can be expressed as both a PDA and a CFG, it is both a RL and a CFL. 
+        </p>
+      </answer>
+    </exploration>
+    <exploration>
+      <p>
+        What language does this PDA recognize?
+        <image source="../generated/latex-image/CFGExP6.svg" width='60%'>
+	      </image>
+      </p>
+      <answer>
+        <p>
+          The language is any string with the same number of 0s and 1s. 
+        </p>
+      </answer>
+    </exploration>
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

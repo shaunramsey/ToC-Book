@@ -2,9 +2,329 @@
 
 <chapter xml:id="ch-cnf" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Chomsky Normal Form</title>
-  <introduction>
-    <p>What will we learn in this chapter?</p>
-  </introduction>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Introduction to Chompsky's Normal Form </li>
+       <li> Chompsky Normal Form </li>
+       <li> Rules of Chompsky Normal Form </li>
+       <li> Steps to Putting a CFG in CNF </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-NormalForms">
+    <title>Introduction to Normal Forms</title>
+    <p>
+      Different forms of Context Free Grammars can be useful in different situations. Noam Chompsky invented one such form to force derivations to 
+      have a certain length. It is easy to see how that might be useful in computaitons. 
+    </p>
+    <exploration>
+      <p>
+        To better understand this topic, let's explore the possibilites associated with CFGs. Consider <m>CFG_1</m> below:
+      </p>
+      <tabular>
+        <row>
+          <cell><m>CFG_1:</m></cell><cell></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>S \rightarrow SS | aS | \epsilon</m></cell>
+        </row>
+      </tabular>
+      <p>
+        What different ways are there to produce the string "a" from <m>CFG_1</m>?
+      </p>
+      <answer>
+        <p>
+          Here are two ways to make "a".
+          <ul>
+            <li>
+              <m>
+                S \rightarrow SS \rightarrow aSS \rightarrow aS \rightarrow a
+              </m>
+            </li>
+            <li>
+              <m>
+                S \rightarrow aS \rightarrow a
+              </m>
+            </li>
+          </ul>
+        </p>
+      </answer>
+      <p>
+        But, it is also possible for <m>CFG_1</m> to produce:
+        <me>
+          S \rightarrow SS \rightarrow SSS \rightarrow SSS \rightarrow SSSS \rightarrow ...
+        </me>
+        So, when would a construction like this quit? Could it produce simply an <m>\epsilon</m>?
+      </p>
+      <p>
+        As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and 
+        especially automation.
+      </p>
+    </exploration>
+  </section>
+  <section xml:id="sec-ChompskyNormalForm">
+    <title>Chompsky Normal Form</title>
+    <p>
+      <idx>Chompsky Normal Form (CNF)</idx> <term>Chompsky Normal Form (CNF)</term> is one normal form that can be used to make answering some of the above 
+      questions less complicated. 
+    </p>
+    <exploration>
+      <p>
+        Consider the CFG below. It is <m>CFG_1</m> in Chompsky Normal Form.
+      </p>
+      <tabular>
+        <row>
+          <cell><m>CFG_{1- CNF}</m></cell><cell></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>S_0 \rightarrow SS | AS | a | \epsilon</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>S \rightarrow SS | AS | a</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell><m>A \rightarrow a</m></cell>
+        </row>
+      </tabular>
+      <p>
+        Considering <m>CFG_{1 - CNF}</m>, how many steps are there to produce "a"?
+      </p>
+      <answer>
+        <p>
+          1. 
+          <me>
+            S_0 \rightarrow a
+          </me>
+        </p>
+      </answer>
+      <p>
+        How many steps are there to produce "aa"?
+      </p>
+      <answer>
+        <p>
+          3.
+          <me>
+            S_0 \rightarrow SS \rightarrow aS \rightarrow aa
+          </me>
+          OR
+          <me>
+            S_0 \rightarrow AS \rightarrow aS \rightarrow aa
+          </me>
+          
+        </p>
+      </answer>
+
+    </exploration>
+    <subsection xml:id="subsec-CNFRules">
+      <title>Rules of Chompsky Normal Form</title>
+      <p>
+        These are the rules of CNF:
+        <ul>
+          <li>
+            <p>
+              Only the start state has <m>\epsilon</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              The start state is never on the right hand side of any production
+            </p>
+          </li>
+          <li>
+            <p>
+              All rules either replace a variable with two variables or replace a variable with a terminal
+            </p>
+          </li>
+        </ul>
+        Because of CNF's structure, we can quickly answer some questions related to a grammar while avoiding some pitfalls that can occur in automoation.
+      </p>
+    </subsection>
+    <subsection xml:id="subsec-createCNF">
+      <title>Steps to Putting a CFG in CNF</title>
+      <p>
+        All CFGs can be put into CNF. The steps to do so are outlined below.
+        <ol>
+          <li>
+            <p>
+              Add a new start state that is a clone of the old one. This new start state is typically called <m>S_0</m>, while the original start state remains
+              <m>S</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Remove an <m>\epsilon</m> transition by simulating it. If there are more empty string transitions, repeat this step until no more remain or only the new
+              start state has an empty string rule.
+            </p>
+          </li>
+          <li>
+            <p>
+              Look for <idx>Unit Rule</idx> <term>unit rules</term> and replace them by cloning. A unit rule is when a variable goes to the same variable.
+            </p>
+          </li>
+          <li>
+            <p>
+              Look for rules with terminals that are not alone. Make new rules for those teminals.
+            </p>
+          </li>
+          <li>
+            <p>
+              Look for rules with more than two variables. Make new rules to turn them into two seperate rules.
+            </p>
+          </li>
+        </ol>
+        When you complete this process, every rule will have only two variables on the right hand side or a terminal by itself. The only exception here is the 
+        new start state which can have an empty string transition.
+      </p>
+      <exploration>
+        <p>
+          Let's work an example of putting a CFG into CNF. Consider <m>CFG_2</m> below.
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aSd | T</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow bTc | \epsilon</m></cell>
+          </row>
+        </tabular>
+        <p>
+          The first step is to make a new start state and clone the old one.
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow aSd | T</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aSd | T</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow bTc | \epsilon</m></cell>
+          </row>
+        </tabular>
+        <p>
+          The second step is to simulate <m>T \rightarrow \epsilon</m> to remove the empty string transition.
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow aSd | T | \epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aSd | T | \epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow bTc | bc</m></cell>
+          </row>
+        </tabular>
+        <p>
+          But, now the empty string transition in the original start state must be removed by simulation.
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow aSd | T | \epsilon | ad </m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aSd | T | ad</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow bTc | bc</m></cell>
+          </row>
+        </tabular>
+        <p>
+          Next, we need to clone the unit rules. These are <m>S_0 \rightarrow T</m> and <m>S \rightarrow T</m>
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow aSd | bTc |bc | \epsilon | ad</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow aSd | bTc | bc | ad</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow bTc | bc</m></cell>
+          </row>
+        </tabular>
+        <p>
+          <m>a,b,c,</m> and <m>d</m> now need terminal rules
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow U_1SU_4 | U_2TU_3 |U_2U_3 | U_1U_4 | \epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow U_1SU_4 | U_2TU_3 |U_2U_3 | U_1U_4</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow U_2TU_3 | U_2U_3</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_1 \rightarrow a</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_2 \rightarrow b</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_3 \rightarrow c</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_4 \rightarrow d</m></cell>
+          </row>
+        </tabular>
+        <p>
+          Finally, we need to take care of any rules with a length greater than 2. This is <m>U_1SU_4</m> and <m>U_2TU_3</m>
+        </p>
+        <tabular>
+          <row>
+            <cell><m>CFG_2:</m></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S_0 \rightarrow V_1U_4 | V_2U_3 |U_2U_3 | U_1U_4 | \epsilon</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>S \rightarrow V_1U_4 | V_2U_3 |U_2U_3 | U_1U_4</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>T \rightarrow V_2U_3 | U_2U_3</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_1 \rightarrow a</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_2 \rightarrow b</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_3 \rightarrow c</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>U_4 \rightarrow d</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>V_1 \rightarrow U_1S</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell><m>V_2 \rightarrow U_2T</m></cell>
+          </row>
+        </tabular>
+      </exploration>
+    </subsection>
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

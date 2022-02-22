@@ -2902,7 +2902,119 @@
           </latex-image>
         </image>
 
+    <!--TODO: ch-cfl-->
+        <image xml:id="CFGExLangDiagram">
+          <latex-image>
+            \begin{tikzpicture}
+              \fill (0,-1) circle (2)[fill=blue!50];
+              \fill (0,-1) circle (1) [fill=blue!20];
+              \draw (0,-1) circle (2) (0,0.25)  node [text=black,above] {$CFLs$}
+                    (0,-1) circle (1) (0,-1)  node [text=black,above] {$RLs$}
+                    (-4,-4) rectangle (4,2) node [text=black,above] {$\Omega$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
 
+        <image xml:id="CFGExP5">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (24.4,-11.5) circle (3);
+                \draw [black] (24.4,-25.2) circle (3);
+                \draw [black] (38.7,-25.2) circle (3);
+                \draw [black] (38.7,-25.2) circle (2.4);
+                \draw [black] (20.8,-5) -- (22.95,-8.88);
+                \fill [black] (22.95,-8.88) -- (23,-7.93) -- (22.12,-8.42);
+                \draw [black] (22.121,-13.433) arc (-21.96376:-309.96376:2.25);
+                \draw (17.09,-13.59) node [left] {$a\epsilon x$};
+                \fill [black] (21.48,-10.87) -- (20.92,-10.1) -- (20.55,-11.03);
+                \draw [black] (24.4,-14.5) -- (24.4,-22.2);
+                \fill [black] (24.4,-22.2) -- (24.9,-21.4) -- (23.9,-21.4);
+                \draw (23.9,-18.35) node [left] {$\#\epsilon\epsilon$};
+                \draw [black] (21.919,-26.866) arc (-28.39268:-316.39268:2.25);
+                \draw (17.03,-26.24) node [left] {$ax\epsilon$};
+                \fill [black] (21.57,-24.24) -- (21.1,-23.42) -- (20.63,-24.3);
+                \draw [black] (27.4,-25.2) -- (35.7,-25.2);
+                \fill [black] (35.7,-25.2) -- (34.9,-24.7) -- (34.9,-25.7);
+                \draw (31.55,-25.7) node [below] {$\Delta\Delta\epsilon$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
 
+          <image xml:id="CFGExP6">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (37.6,-13.9) circle (3);
+                \draw [black] (54.9,-19.3) circle (3);
+                \draw [black] (19.3,-19.3) circle (3);
+                \draw [black] (37.8,-37.3) circle (3);
+                \draw [black] (37.8,-37.3) circle (2.4);
+                \draw [black] (35.6,-6.4) -- (36.83,-11);
+                \fill [black] (36.83,-11) -- (37.1,-10.1) -- (36.14,-10.36);
+                \draw [black] (40.46,-14.79) -- (52.04,-18.41);
+                \fill [black] (52.04,-18.41) -- (51.42,-17.69) -- (51.12,-18.65);
+                \draw (48.13,-16) node [above] {$1\epsilon y$};
+                \draw [black] (34.72,-14.75) -- (22.18,-18.45);
+                \fill [black] (22.18,-18.45) -- (23.09,-18.7) -- (22.8,-17.74);
+                \draw (26.64,-15.99) node [above] {$0\epsilon x$};
+                \draw [black] (51.985,-20.009) arc (-77.57614:-102.42386:69.188);
+                \fill [black] (51.99,-20.01) -- (51.1,-19.69) -- (51.31,-20.67);
+                \draw (37.1,-22.13) node [below] {$1\Delta y$};
+                \draw [black] (52.43,-21) arc (-58.39759:-121.60241:29.254);
+                \fill [black] (21.77,-21) -- (22.19,-21.85) -- (22.71,-20.99);
+                \draw (37.1,-25.84) node [below] {$0\Delta x$};
+                \draw [black] (35.164,-35.868) arc (-120.53972:-147.89063:42.375);
+                \fill [black] (35.16,-35.87) -- (34.73,-35.03) -- (34.22,-35.89);
+                \draw (24.74,-30.22) node [below] {$\Delta\Delta\epsilon$};
+                \draw [black] (53.622,-22.013) arc (-27.66965:-59.39275:35.003);
+                \fill [black] (40.44,-35.89) -- (41.39,-35.91) -- (40.88,-35.05);
+                \draw (48.53,-31.34) node [right] {$\Delta\Delta\epsilon$};
+                \draw [black] (55.306,-16.339) arc (199.92852:-88.07148:2.25);
+                \draw (60.63,-13.21) node [above] {$0y\epsilon$};
+                \fill [black] (57.5,-17.82) -- (58.42,-18.02) -- (58.08,-17.08);
+                \draw [black] (16.66,-17.9) arc (269.80282:-18.19718:2.25);
+                \draw (13.15,-13.33) node [above] {$0\epsilon x$};
+                \fill [black] (18.8,-16.35) -- (19.31,-15.55) -- (18.31,-15.55);
+                \draw (61.26,-14.44) node [right] {$1\epsilon y$};
+                \draw (12.75,-14.79) node [left] {$1x\epsilon$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+    <!--TODO: ch-pumping-lemma-context-free-->
+
+          <image xml:id="CFGExT4">
+            <latex-image>
+              \begin{forest}
+                [S[a,tier=word][S[a,tier=word][S[a,tier=word][b,tier=word]]
+                [b,tier=word]][b,tier=word]]
+              \end{forest}
+            </latex-image>
+          </image>
+
+          <image xml:id="CFGExT5">
+            <latex-image>
+              \begin{forest}
+                [$S_0$[N[A[a,tier=word]][S[N[A[a,tier=word]][S[A[a,tier=word]][B[b,tier=word]]]][B[b,tier=word]]]][B[b,tier=word]]]
+              \end{forest}
+            </latex-image>
+          </image>
+
+          <image xml:id="CFGExT6">
+            <latex-image>
+              \begin{forest}
+                  [$S_0$[N[A[a,tier=word]][S[A[a,tier=word]][B[b,tier=word]]]][B[b,tier=word]]]
+              \end{forest}
+            </latex-image>
+          </image>
+
+          <image xml:id="CFGExT7">
+            <latex-image>
+              \begin{forest}
+                  [$S_0$[N[A[a,tier=word]][S[N[A[a,tier=word]][S[N[A[a,tier=word]][S[N[A[a,tier=word]]
+                  [S[A[a,tier=word]][B[b,tier=word]]]][B[b,tier=word]]]][B[b,tier=word]]]][B[b,tier=word]]]][B[b,tier=word]]]
+              \end{forest}
+            </latex-image>
+          </image>
 
   </chapter>

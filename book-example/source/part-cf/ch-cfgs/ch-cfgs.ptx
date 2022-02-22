@@ -507,7 +507,7 @@
                 </image>
               </cell>
               <cell halign='center'>
-                <image source="../generated/latex-image/CFExT1d.svg" width='60%'>
+                <image source="../generated/latex-image/CFExT1d.svg" width='70%'>
 	            </image>
               </cell>
             </row>
