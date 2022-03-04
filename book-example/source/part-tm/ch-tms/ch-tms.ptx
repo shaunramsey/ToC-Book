@@ -2,43 +2,595 @@
 
 <chapter xml:id="ch-tms" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Turing Machine Basics</title>
+  <section xml:id="sec-tm-background">
+    <title>Introduction to Turing Machines</title>
+    <p>
+      As stated in a thesis from Church-Turing, <term>Turing Machines (TMs)</term> are a model for modern computing. They are 
+      a structure for how we can think about algorithms and any other processes that computers undertake. If we can prove some things about TMs, we are proving
+      things about the scope of possibility in computer programs! 
+    </p>
+    <p>
+      There are two different types of languages that can be represented using Turing Machines. They are Turing Recognizable (<m>T_r</m>) and Turing Decidable
+      (<m>T_d</m>) and will be covered later in this chapter. At this time, it is important to know that languages that are <m>T_r</m> are also <m>T_d</m>, CFLs,
+      and RLs. This phenomenon is outlined in the chart below where <m>\Omega</m> represents all languages.
+    </p>
+    <image source="../generated/latex-image/TMVennDiagram.svg" width='50%'>
+	  </image>
+    
+    <p>
+      <idx>Turing Machine (TM)</idx> Turing Machines:
+      <ul>
+        <li>
+          <p>
+            have an infinite memory that is represented as a tape
+          </p>
+        </li>
+        <li>
+          <p>
+            imput begins on the tape
+          </p>
+        </li>
+        <li>
+          <p>
+            head starts at the first symbole of the imput
+          </p>
+        </li>
+        <li>
+          <p>
+            to start, empty (non-input) cells of the tape contain <m>\Delta</m>s
+          </p>
+        </li>
+      </ul>
+      Below is a visual representation of a tape. 
+      <tabular>
+        <row>
+          <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+          <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+          <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+        </row>
+        <row>
+          <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+          <cell right="minor" bottom="minor" halign='center'>0</cell><cell right="minor" bottom="minor">0</cell><cell right="minor" bottom="minor">1</cell><cell right="minor" bottom="minor">1</cell>
+          <cell right="minor" bottom="minor">2</cell><cell right="minor" bottom="minor">2</cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+          <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell bottom="minor"><m>\Delta</m></cell>
+        </row>
+        <row>
+          <cell></cell><cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell>
+          <cell></cell><cell></cell><cell></cell><cell></cell>
+          <cell></cell><cell></cell><cell></cell><cell></cell>
+        </row>
+        <row>
+          <cell></cell><cell></cell><cell></cell><cell halign='center'>head</cell>
+          <cell></cell><cell></cell><cell></cell><cell></cell>
+          <cell></cell><cell></cell><cell></cell><cell></cell>
+        </row>
+      </tabular>
+    </p>
+    <p>
+      The <idx>Head</idx> <term>head</term> is a pointer that keeps track of where we are on the tape. As depictied above, it always starts at the first input. 
+      This input is anything but a <m>\Delta</m>. The head can move in every transition between states. They are able to move left, right, or stay where they are
+      based on input from the tape. 
+    </p>
+    <p>
+      Turing Machines accept languages based on "marking off" or reaching the end of input at an expected time. Heads are used to keep track of relevant inputs, 
+      and how they recieve their instructions is similar to what we have seen before. Think back to the "read pop push" structure that was 
+      introduced for PDAs. Heads move in similar ways on a "read move write" structure. 
+      <tabular>
+        <row>
+          <cell halign='center'>1</cell><cell halign='center'><h>R</h></cell><cell halign='center'><m>\cancel{0}</m></cell>
+        </row>
+        <row>
+          <cell halign='center'><m>\uparrow</m></cell><cell halign='center'><m>\uparrow</m></cell><cell halign='center'><m>\uparrow</m></cell>
+        </row>
+        <row>
+          <cell halign='center'>read</cell><cell halign='center'>move</cell><cell halign='center'>write</cell>
+        </row>
+      </tabular>
+      If a head was given the instruction above, if it read in a 1 then it would move right but write over the 1 with a <m>\cancel{0}</m>. 
+    </p>
+    <exploration>
+      <p>
+        Let's look at an example of a Turing Machine to understand its sturcuture and usefulness. Consider <m>L_1</m> and <m>s \in L_1 </m> below. 
+        <me>
+          L_1 = \{0^n1^n\}
+        </me>
+        <me>
+          s = 0011
+        </me>
+        This string would be represented on a tape as:
+        <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor" halign='center'>0</cell><cell right="minor" bottom="minor">0</cell><cell right="minor" bottom="minor">1</cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell halign='center'>head</cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        In order to check if the language can be represented by a TM, we need to establish a line of thinking. We ultimately need to check if there is a certain number
+        of 0s, followed by the same number of 1s. But how do we check for this when heads of TMs can only move right, left, or stay in place? And how can this be 
+        represented with the "read move write" structure? For this language, a potential strategy follows:
+        <ol>
+          <li>
+            <p>
+              Mark off an unmarked 0
+            </p>
+          </li>
+          <li>
+            <p>
+              Move to the first unmarked 1 and mark it off
+            </p>
+          </li>
+          <li>
+            <p>
+              Repeat steps 1 and 2 until no more 0s are left, also make sure all 1s are marked off too
+            </p>
+          </li>
+        </ol>
+        This process can be represented in a state diagram like the one below. This diagram was created through following the logical progression above as well
+        as leaning on skills created when creating FAs and PDAs. 
+      </p>
+      <image source="../generated/latex-image/TMD1.svg" width='50%'>
+	            </image>
+      But how does this logic and diagram translate to TMs?
+      <ol>
+        <li>
+          <p>
+            The head starts at the first input
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor" halign='center'>0</cell><cell right="minor" bottom="minor">0</cell><cell right="minor" bottom="minor">1</cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell halign='center'>head</cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            A 0 is read, the head moves right and leaves a <m>\cancel{0}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center">0</cell><cell right="minor" bottom="minor">1</cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'>head</cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read through the remaining 0s until a 1 is read
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor">0</cell><cell right="minor" bottom="minor" halign="center">1</cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell halign='center'>head</cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a 1, move left and leave a <m>\cancel{1}</m>
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center">0</cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'>head</cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a 0, move left, leaving behind a 0. 
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center">0</cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell halign='center'>head</cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a <m>\cancel{0}</m>, move right leaving a <m>\cancel{0}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center">0</cell>
+            <cell right="minor" bottom="minor"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell halign='center'>head</cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a 0, move right leaving a <m>\cancel{0}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell halign='center'>head</cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li><li>
+          <p>
+            Read in a <m>\cancel{1}</m>, move right leaving a <m>\cancel{1}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor" halign="center">1</cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a 1, move left and leave a <m>\cancel{1}</m>
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor" haligh="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a <m>\cancel{1}</m>, move left leaving a <m>\cancel{1}</m>
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor" haligh="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a <m>\cancel{0}</m>, move right leaving a <m>\cancel{0}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor" haligh="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a <m>\cancel{1}</m>, move right leaving a <m>\cancel{1}</m> behind
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell><cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            Read in a <m>\Delta</m>, stay leaving a <m>\Delta</m>
+          </p>
+          <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor" halign='center'><m>\cancel{0}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\cancel{0}</m></cell><cell right="minor" bottom="minor" halign="center"><m>\cancel{1}</m></cell><cell right="minor" bottom="minor" haligh="center"><m>\cancel{1}</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        </li>
+        <li>
+          <p>
+            As the head ended on the expected <m>\Delta</m>, even after checking that all inputs were marked off, the string is accepted as a part of <m>L_1</m>.
+          </p>
+        </li>
+      </ol>
+    </exploration>
+  </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Consider <m>L_2</m> and the string, <m>s</m>: 
+          <me>
+            L_2 - \{0^n1^n2^n\}
+          </me>
+          <me>
+            s = 001122
+          </me>
+          Draw the tape that would contain this input, including the head.
+        </p>
+      </statement>
+      <answer>
+        <tabular>
+          <row>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell><cell bottom="minor"></cell>
+            <cell bottom="minor"></cell><cell bottom="minor"></cell>
+          </row>
+          <row>
+            <cell right="minor" bottom="minor"><m>\Delta</m></cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell right="minor" bottom="minor" halign="center">0</cell><cell right="minor" bottom="minor" halign='center'><m>0</m></cell>
+            <cell right="minor" bottom="minor" halign="center"><m>1</m></cell><cell right="minor" bottom="minor" halign="center"><m>1</m></cell><cell right="minor" bottom="minor" haligh="center"><m>2</m></cell>
+            <cell right="minor" bottom="minor" halign="center">2</cell><cell right="minor" bottom="minor"><m>\Delta</m></cell>
+            <cell bottom="minor"><m>\Delta</m></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell halign='center'><m>\uparrow</m></cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell><cell></cell><cell halign='center'>head</cell><cell></cell><cell></cell><cell></cell>
+            <cell></cell><cell></cell><cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the language, <m>L_3</m>: 
+          <me>
+            L_3 = \{b_0 + 1 = b_1 | \mbox{where } b_0 \mbox{ is any binary string and } b_1 \mbox{ is the binary string acquired when treating } b_0 
+            \mbox{ as a number and adding one to it}\}
+          </me>
+          An example string would be <m>10101+1=10110</m>. Create the state diagram that would be use to step through this language and tape's TM.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It is acceptable for a certain value to "fall off" of the state diagram.
+        </p>
+      </hint>
+      <answer>
+        <image source="../generated/latex-image/TMD2.svg" width='50%'>
+	            </image>
+      </answer>
+    </exercise>
+  </exercises>
   
-  <introduction>
-    <p>What will we learn in this chapter?HI</p>
-    <remark> <p> REMARK </p> </remark>
-    <convention> <p> CONVENTION </p> </convention>
-    <note><p> NOTE </p></note>
-    <observation><p> OBSERVATION </p></observation> 
-    <warning><p> WARNING </p></warning>
-    <insight><p> IINSIGHT</p></insight>
-    <objectives><p>Obj</p></objectives>
-    <outcomes><p>OUTCOMES</p></outcomes>
-    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
-    <assemblage><p>ASSEMBLAGE</p></assemblage>
-    <pre>PRE</pre>
-    <project><p>PRE</p></project>
-    <activity><p>PRE</p></activity>
-    <exploration><p>PRE</p></exploration>
-    <investigation><p>PRE</p></investigation>
-    <listing><p>PRE</p></listing>
-    <list><p>PRE</p></list>
-    <theorem><p>PRE</p></theorem>
-    <corollary><p>PRE</p></corollary>
-    <lemma><p>PRE</p></lemma>
-    <algorithm><p>PRE</p></algorithm>
-    <proposition><p>PRE</p></proposition>
-    <claim><p>PRE</p></claim>
-    <fact><p>PRE</p></fact>
-    <identity><p>IDENTITY</p></identity>
-    <axiom><p>PRE</p></axiom>
-    <conjecture><p>PRE</p></conjecture>
-    <principle><p>PRE</p></principle>
-    <heuristic><p>PRE</p></heuristic>
-    <hypothesis><p>PRE</p></hypothesis>
-    <assumption><p>PRE</p></assumption>
-    <computation><p>PRE</p></computation>
-    <technology><p>PRE</p></technology>
-  </introduction>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

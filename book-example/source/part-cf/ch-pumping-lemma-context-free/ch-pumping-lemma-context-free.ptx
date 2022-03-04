@@ -215,7 +215,60 @@
           </ol>
         </p>
       </exploration>
+      <exploration>
+        <p>
+          The most difficult part of proving that any CFL is context free using the Pumping Lemma, is finding the best string to use as your example. 
+          Consider the following language:
+          <me>
+            L_3 = \{a^nb^nc^md^me^m\}
+          </me>
+          What is a string that we can use to prove <m>L</m> is a CFL using the Pumping Lemma?
+        </p> 
+        <answer>
+          <m>s^{(1)} = c^pd^pe^p</m>
+        </answer>
+        <p>
+          Was that string unexpected? Were you expecting something closer to:
+          <me>
+            s^{(1)} = a^pb^pc^pd^pe^p
+          </me>
+          That string will not work for the Pumping Lemma for CFLs.
+        </p>
+        <p>
+          Another example of this phenomrnon occures when trying to choose a string to pump from the following language: 
+          <me>
+            L_4 = \{a^ib^jc^k | i=j \mbox{ and } j\leq k\}
+          </me>
+          The string, <m>s^{(1)}=a^pb^pc^p</m> will not allow us to show that <m>L_4</m> is not CFL as using a singular <m>c</m> as the <m>y</m> portion 
+          of the pumpable string would be able to be pumped and stay in the language.
+        </p>
+      </exploration>
   </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Consider <m>L_5</m>. Is it a CFL? Find a string that can be used to prove or disprove it using the Pumping Lemma for Context Free Languages.
+          <me>
+            L_5 = \{ww | w \mbox{ is any binary string}\}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If you are having trouble picking a useful string, consider using the compliment of <m>L_5</m>. 
+          <me>
+            \overline{L_5} = \{(0+1)^* \mbox{ that isn't "ww"}\}
+          </me>
+        </p>
+      </hint>
+      <answer>
+        <p>
+          A string that could be used is <m>s^{(1)} = 0^p1^p00^p1^p</m>.
+        </p>
+      </answer>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
