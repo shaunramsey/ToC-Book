@@ -1,44 +1,238 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <chapter xml:id="ch-tm-classifications" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Classifications of Turing Machines</title>
-  
-  <introduction>
-    <p>What will we learn in this chapter?HI</p>
-    <remark> <p> REMARK </p> </remark>
-    <convention> <p> CONVENTION </p> </convention>
-    <note><p> NOTE </p></note>
-    <observation><p> OBSERVATION </p></observation> 
-    <warning><p> WARNING </p></warning>
-    <insight><p> IINSIGHT</p></insight>
-    <objectives><p>Obj</p></objectives>
-    <outcomes><p>OUTCOMES</p></outcomes>
-    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
-    <assemblage><p>ASSEMBLAGE</p></assemblage>
-    <pre>PRE</pre>
-    <project><p>PRE</p></project>
-    <activity><p>PRE</p></activity>
-    <exploration><p>PRE</p></exploration>
-    <investigation><p>PRE</p></investigation>
-    <listing><p>PRE</p></listing>
-    <list><p>PRE</p></list>
-    <theorem><p>PRE</p></theorem>
-    <corollary><p>PRE</p></corollary>
-    <lemma><p>PRE</p></lemma>
-    <algorithm><p>PRE</p></algorithm>
-    <proposition><p>PRE</p></proposition>
-    <claim><p>PRE</p></claim>
-    <fact><p>PRE</p></fact>
-    <identity><p>IDENTITY</p></identity>
-    <axiom><p>PRE</p></axiom>
-    <conjecture><p>PRE</p></conjecture>
-    <principle><p>PRE</p></principle>
-    <heuristic><p>PRE</p></heuristic>
-    <hypothesis><p>PRE</p></hypothesis>
-    <assumption><p>PRE</p></assumption>
-    <computation><p>PRE</p></computation>
-    <technology><p>PRE</p></technology>
-  </introduction>
+  <title>Classifications if Turing Machines</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li>Predecessors to Turing Machines </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-earlyTMs">
+    <title>Early Turing Machines</title>
+    <p>
+      Before Turing Machines, there were a few different automatas that existed that laid the ground work for Turing's thesis, but they had differing 
+      amounts of power and capabilities. 
+      <dl>
+        <li>
+          <title><term>Linear Bounded Automata (LBAs)</term></title>
+          <p>
+            <idx>Linear Bounded Automata</idx>A class of context seensitive languages, more powerful than CFLs, but nto as powerful as a TM
+          </p>
+        </li>
+        <li>
+          <title><term>Muti-Tape</term></title>
+          <p>
+            <idx>Muti-Tape</idx>Same power as a TM
+          </p>
+        </li>
+        <li>
+        <title><term>2-Stack PDA</term></title>
+          <p>
+            <idx>2-Stack PDA</idx>Same power as a TM
+          </p>
+        </li>
+        <li>
+          <title><term>Transducer</term></title>
+          <p>
+            <idx>Transducer</idx>A TM who's job is to modify the tape
+          </p>
+        </li>
+        <li>
+          <title><term>Non-Determinism</term></title>
+          <p>
+            <idx>Non-Determinism</idx>Same power as a TM
+          </p>
+        </li>
+        <li>
+          <title><term>Printer TM</term></title>
+          <p>
+            <idx>Printer TM</idx>Ennumerates/ prints all strings in its language
+          </p>
+        </li>
+      </dl>
+    </p>
+    <p>
+      Here is a diagram to help illustrate how LBAs fit into the classification of languages:
+    </p>
+    <image source="../generated/latex-image/TMVennDiagram2.svg" width='50%'>
+	  </image>
+    <p>
+      The most interesting part of TMs happens when we start passing them in as input.
+    </p>
+  </section>
+  <section xml:id="sec-goldbach">
+    <title>Goldbach's Conjecture</title>
+    <p>
+      Before we get to using TMs as input, let's look at Goldbach's Conjecture. 
+    </p>
+    <p>
+      <idx>Goldbach's Conjecture</idx> <term>Goldbach's Conjecture </term> proposes that every even county number <m>n</m>, where <m>n > 2</m>, is
+      equal to the sum of two primes. Here are some examples:
+      <ul>
+        <li>
+          <p>
+            4 = 2 + 2
+          </p>
+        </li>
+        <li>
+          <p>
+            6 = 3 + 3
+          </p>
+        </li>
+        <li>
+          <p>
+            8 = 3 + 5
+          </p>
+        </li>
+        <li>
+          <p>
+            10 = 3 + 7
+          </p>
+        </li>
+        <li>
+          <p>
+            12 = 5 + 7
+          </p>
+        </li>
+        <li>
+          <p>
+            14 = 7 + 7
+          </p>
+        </li>
+        <li>
+          <p>
+            16 = 3 + 13
+          </p>
+        </li>
+        <li>
+          <p>
+            ...
+          </p>
+        </li>
+      </ul>
+      This conjecture has never been proven, but no counter example has ever been found. 
+    </p>
+    <p>
+      Now, think about how you might write a computer program to: 
+      <ol>
+        <li>
+          <p>
+            Exaustively print the answers like we did above
+            <ul>
+              <li>
+                <p>
+                  <m>n > 2</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>primes = [2,3]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>n = n + 2</m>
+                  <ul>
+                    <li>
+                      <p>
+                        Walk through a list of primes up to <m>n</m>. For each, walk through the list again. If their sum is <m>n</m>, print them.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        If it didn't print, then it would have shown a counter-example.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Check if <m>n + 1</m> should be added to primes.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Continue to loop.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            What if we wanted to look for a counter-example?
+            <ul>
+              <li>
+                <p>
+                  If such an example exists, this TM will eventually halt when it finds in.
+                </p>
+              </li>
+              <li>
+                <p>
+                  What happens to this TM if no such counter-example exists? 
+                  <ul>
+                    <li>
+                      <p>
+                        It never halts! It must loop forever, forever hunting.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
+      But why does all of this matter?
+      <ul>
+        <li>
+          <p>
+            If Goldbach's Conjecture is true, then the primter TM algorithm truly prints every string in the conjecture.
+          </p>
+        </li>
+        <li>
+          <p>
+            If it is not true, then that printer will miss some even numbers, or the counter-example hunter will never halt.
+          </p>
+        </li>
+      </ul>
+      The counter-example hunter never halts and we have no way to know if it will. This leads us to an interesting distinguishing characteristic of some TMs.
+    </p>
+  </section>
+  <section xml:id="sec-TMVarieties">
+    <title>Varieties of Turing Machines</title>
+    <p>
+      There are two different categories of languages that TMs can recognize.
+    </p>
+    <subsection xml:id="subsec-TMDecidable">
+      <title>Decideable Turing Machines</title>
+      <p>
+        A TM is <term>decidable</term> <idx>Decidable Turing Machine</idx> if it can halt, either via accept or reject, for any input given to it. These 
+        languages are Turing-decidable.
+      </p>
+    </subsection>
+    <subsubsection xml:id="subsubsec-TMRecognizable">
+      <title>Recognizable Turing Machines</title>
+      <p>
+        A TM is <term>recognizable</term> <idx>Recognizable Turing Machine</idx> if it can accept on its input. It may halt and reject some strongs but it 
+        might loop forever on others. These languages are Turing-recognizable. 
+      </p>
+      <p>
+        Printer TMs fall into this category because we accept by looking to see if the string is printed, but we must wait forever to see if it will 
+        never be printed.
+      </p>
+    </subsubsection>
+    <exploration>
+      <p>
+        This is a thought experiment to look at recognizability and decidablity.
+      </p>
+      <p>
+        Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?
+      </p>
+    </exploration>
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

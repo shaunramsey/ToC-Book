@@ -3148,4 +3148,17 @@
               \end{tikzpicture}
             </latex-image>
           </image>
+      <!--TODO: ch-tm-classifications-->
+          <image xml:id="TMVennDiagram2">
+            <latex-image>
+              \begin{tikzpicture}
+                \draw (0,-1) circle (3.5) (0,1.75) node [text=black,above]{$Tr$}];
+                \draw (0,-1) circle (2.75) (0,1) node [text=black,above]{$Td$}];
+                \draw (0,-1) circle (2) (0,0.25) node [text=black,above] {$LBAs$};
+                \draw (0,-1) circle (1.25)(0,-0.5) node [text=black,above] {$CFLs$};
+                \draw (0,-1) circle (.5) (0,-1) node [text=black] {$RLs$};
+                \draw (-5,-5) rectangle (5,3) node [text=black,above] {$\Omega$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
   </chapter>
