@@ -252,6 +252,16 @@
 	      </image>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Take the mod 3 DFA shown below and find an REX for it by ripping states. Rip in this order: 2, 1, 0. Show your steps.
+          <image source="../generated/latex-image/DFA-M28.svg" width="50%">
+	      </image>
+          
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

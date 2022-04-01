@@ -720,6 +720,107 @@
         </me>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the following language is regular.
+          <me>
+            L = \{(01)^n(01)^n(01)^n|n\geq 0 \}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the pumping lemma for regular languages to prove the following language is not regular.
+          <me>
+            L = \{a^ib^jc^k | i = j + k\}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.
+          <me>
+            \Sigma = \{ (, ), [, ], \{, \} \}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Sample strings include: 
+          <ul>
+            <li>
+              <p>
+                [(){}]
+              </p>
+            </li>
+            <li>
+              <p>
+                [[[()]]]{}{}{{}}
+              </p>
+            </li>
+            <li>
+              <p>
+                {}
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\epsilon</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #,
+          followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)
+        </p>
+        <p>
+          You have been given that: 
+          <me>
+            \{a^n\#a^n | n \geq 0\}
+          </me>
+          is not regular.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Sample strings include:
+          <ul>
+            <li>
+              <p>
+                thethe#thethe
+              </p>
+            </li>
+            <li>
+              <p>
+                same#same
+              </p>
+            </li>
+            <li>
+              <p>
+                atimeto#atimeto
+              </p>
+            </li>
+          </ul>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

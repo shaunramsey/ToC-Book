@@ -268,6 +268,106 @@
         </p>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Come up with a language not covered in our course materials that is context free but not regular. Prove it is context free and then proive it isn't regular.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the following language is not context free using the pumping lemma for context free languages.
+          <me>
+            L_1 = \{ww | w \mbox{ is any binary string}\}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Includes strings: 
+          <ul>
+            <li>
+              <p>
+                00
+              </p>
+            </li>
+            <li>
+              <p>
+                11
+              </p>
+            </li>
+            <li>
+              <p>
+                1010
+              </p>
+            </li>
+            <li>
+              <p>
+                000000
+              </p>
+            </li>
+            <li>
+              <p>
+                110110
+              </p>
+            </li>
+          </ul>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the following language is not context free using the pumping lemma for context free languages. 
+          <me>
+            L_2 = \{w*1000=w000| w \mbox{ is any binary string}\}
+          </me>
+          This language simulates equations that multiply by 8.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Includes strings: 
+          <ul>
+            <li>
+              <p>
+                1*1000=1000
+              </p>
+            </li>
+            <li>
+              <p>
+                1010*1000=1010000
+              </p>
+            </li>
+            <li>
+              <p>
+                1000*1000=1000000
+              </p>
+            </li>
+          </ul>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Stacks tend to be useful in arithmetic. You might still be able to find HP calculators that use a stack based input. Let's prove simply *add 1* can be a 
+          context free language under certain specific configurations. To make this work, the result will be in reverse order. Thus, strings in the language might
+          be: <m>1011+1=0011</m> or even <m>11+1=100</m>.
+        </p>
+        <p>
+          It is helpful to treat the latter as a special case. 
+        </p>
+        <p>
+          Write a CFG and PDA for this language:
+          <me>
+            L = \{w+1=z | w \mbox{ is any binary string and } z \mbox{  is } (w+1) \mbox{ in reverse when } w \mbox{ is treated as a binary number}\}
+          </me>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

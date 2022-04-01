@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <chapter xml:id="ch-tm-classifications" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Classifications if Turing Machines</title>
+  <title>Classifications of Turing Machines</title>
   <objectives>
     In this chapter you will learn:
      <ol>
@@ -206,13 +206,6 @@
     <p>
       There are two different categories of languages that TMs can recognize.
     </p>
-    <subsection xml:id="subsec-TMDecidable">
-      <title>Decideable Turing Machines</title>
-      <p>
-        A TM is <term>decidable</term> <idx>Decidable Turing Machine</idx> if it can halt, either via accept or reject, for any input given to it. These 
-        languages are Turing-decidable.
-      </p>
-    </subsection>
     <subsubsection xml:id="subsubsec-TMRecognizable">
       <title>Recognizable Turing Machines</title>
       <p>
@@ -232,6 +225,13 @@
         Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?
       </p>
     </exploration>
+    <subsection xml:id="subsec-TMDecidable">
+      <title>Decideable Turing Machines</title>
+      <p>
+        A TM is <term>decidable</term> <idx>Decidable Turing Machine</idx> if it can halt, either via accept or reject, for any input given to it. These 
+        languages are Turing-decidable.
+      </p>
+      </subsection>
   </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

@@ -98,6 +98,17 @@
 	      </image>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its 
+          language.
+          <image source="../generated/latex-image/DFA-M27.svg" width="50%">
+	      </image>
+          
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

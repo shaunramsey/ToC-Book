@@ -89,6 +89,33 @@
       </answer>
     </exploration>
   </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          CFLs are not closed under intersection. Provide a counter example that proves this.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give an English description of the following CFL.
+          <tabular>
+            <row>
+              <cell></cell><cell><m>S \rightarrow B | C | \epsilon</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>B \rightarrow aSb</m></cell>
+            </row>
+            <row>
+              <cell></cell><cell><m>C \rightarrow aSc</m></cell>
+            </row>
+          </tabular>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

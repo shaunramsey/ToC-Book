@@ -255,6 +255,15 @@
         </p>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the diagram below to create a DFA that can track mod 7 for any binary number. 
+          <image source="../generated/latex-image/DFA-M26.svg" width="50%">
+        </image>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 
     <!--

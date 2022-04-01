@@ -1,44 +1,262 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <chapter xml:id="ch-diagonalization" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Diagonalization</title>
-  
-  <introduction>
-    <p>What will we learn in this chapter?HI</p>
-    <remark> <p> REMARK </p> </remark>
-    <convention> <p> CONVENTION </p> </convention>
-    <note><p> NOTE </p></note>
-    <observation><p> OBSERVATION </p></observation> 
-    <warning><p> WARNING </p></warning>
-    <insight><p> IINSIGHT</p></insight>
-    <objectives><p>Obj</p></objectives>
-    <outcomes><p>OUTCOMES</p></outcomes>
-    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
-    <assemblage><p>ASSEMBLAGE</p></assemblage>
-    <pre>PRE</pre>
-    <project><p>PRE</p></project>
-    <activity><p>PRE</p></activity>
-    <exploration><p>PRE</p></exploration>
-    <investigation><p>PRE</p></investigation>
-    <listing><p>PRE</p></listing>
-    <list><p>PRE</p></list>
-    <theorem><p>PRE</p></theorem>
-    <corollary><p>PRE</p></corollary>
-    <lemma><p>PRE</p></lemma>
-    <algorithm><p>PRE</p></algorithm>
-    <proposition><p>PRE</p></proposition>
-    <claim><p>PRE</p></claim>
-    <fact><p>PRE</p></fact>
-    <identity><p>IDENTITY</p></identity>
-    <axiom><p>PRE</p></axiom>
-    <conjecture><p>PRE</p></conjecture>
-    <principle><p>PRE</p></principle>
-    <heuristic><p>PRE</p></heuristic>
-    <hypothesis><p>PRE</p></hypothesis>
-    <assumption><p>PRE</p></assumption>
-    <computation><p>PRE</p></computation>
-    <technology><p>PRE</p></technology>
-  </introduction>
+   <title>Diagonalization</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li>Hibert's Hotel </li>
+        <li>Introduction to Diagonalization </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-hiblertshotel">
+    <title>Hilbert's Hotel</title>
+    <p>
+      Diagonalization is a concept best explained through example. For this we will look at Hilbert and his hotel or <idx>Hilbert's Hotel</idx> 
+      <term>Hilbert's Hotel.</term>
+    </p>
+    <p>
+      Consider Hilbert who owns a fancy hotel that can fit an infinite amount of people and the rooms are all occupied. The rooms are numbered starting at 1. 
+    </p>
+    <image source="../generated/latex-image/TM-Hil1.svg" width='50%'>
+	  </image>
+    <p>
+      A vistior comes up to Hiblert and requests to stay for the night.
+    </p>
+     <image source="../generated/latex-image/TM-Hil2.svg" width='50%'>
+	  </image>
+    <p>
+      Another patron comes up to Hilbert and asks to stay, as he has an infinite amount of rooms, he can accomodate this request. 
+    </p>
+    <image source="../generated/latex-image/TM-Hil3.svg" width='50%'>
+	  </image>
+    
+    <p>
+      To add the new patron to his hotel, Hilbert shifts all of his current guests down a room. 
+    </p>
+    <image source="../generated/latex-image/TM-Hil4.svg" width='50%'>
+	  </image>
+    
+    <p>
+      Since Hilbert has an infinite amount of rooms, this process of adding a visitor can occur an infinite amount of times. 
+      But, what happens when a bus with an infinite amount of passengers arrives? To help with the visualization, try numbering the patrons already in rooms.
+    </p>
+    <image source="../generated/latex-image/TM-Hil5.svg" width='50%'>
+	  </image>
+    <p>
+      Consider how the rooms are labeled using the counting numbers:
+      <me>
+        \mbox{Counting Numbers} = \{1,2,3,4,...\}
+      </me>
+      and the patrons currently residing in the rooms correspond to the natural numbers:
+      <me>
+        \mathbb{N} = \{0,1,2,3,...\}
+      </me>
+      What set would this make with the infinite amount of bus patrons joining the hotel? What would this look like in from a "folding" pattern? The bus patrons are numbered -1, -2, and onwards.
+      This is the set of integers.
+      <me>
+        \mathbb{Z} = \{0,-1,1,-2,2,-3,3,...\}
+      </me>
+      There is a one-to-one correspondance among the sets. 
+      <tabular>
+        <row>
+          <cell>Counting: </cell><cell>=</cell><cell>{</cell><cell>1,</cell><cell>2,</cell><cell>3,</cell><cell>4,</cell><cell>5,</cell><cell>...}</cell>
+        </row>
+        <row>
+          <cell></cell><cell></cell><cell></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell></cell>
+        </row>
+        <row>
+          <cell halign='right'><m>\mathbb{N}</m>:</cell><cell>=</cell><cell>{</cell><cell>0,</cell><cell>1,</cell><cell>2,</cell><cell>3,</cell><cell>4,</cell><cell>...}</cell>
+        </row>
+        <row>
+          <cell></cell><cell></cell><cell></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell><m>\downarrow</m></cell><cell></cell>
+        </row>
+        <row>
+          <cell halign='right'><m>\mathbb{Z}</m>:</cell><cell>=</cell><cell>{</cell><cell>0,</cell><cell>-1,</cell><cell>1,</cell><cell>-2,</cell><cell>2,</cell><cell>...}</cell>
+        </row>
+      </tabular>
+      But, how would this look in Hilbert's Hotel?
+    </p>
+    <image source="../generated/latex-image/TM-Hil6.svg" width='60%'>
+	  </image>
+    <p>
+      Could we ever prove that more patrons arrived on the bus than were in the hotel already?
+    </p>
+  </section>
+  <section xml:id="sec-introtodiagonalization">
+    <title>Introduction to Diagonalization</title>
+    <p>
+      Consider what would happen if we tried to represent the entire set of real numbers in Hilbert's Hotel. What would the patrons look like? As a reminder: 
+      <me>
+        \mathbb{R} = \{0,0.1,0.001,0.23, 5.4903,...\}
+      </me>
+      What would happen if was just the set of real numbers between 0 and 1?
+      <me>
+        \mathbb{R} = \{0,0.01,0.001,0.0001,...\}
+      </me>
+      Is there a better was to list the elements of this set out? Consider changing just one element at a times.
+      <tabular>
+        <row>
+          <cell>1:</cell><cell>0.</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>0</cell><cell>...</cell>
+        </row>
+        <row>
+          <cell>2:</cell><cell>0.</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>0</cell><cell>...</cell>
+        </row>
+        <row>
+          <cell>3:</cell><cell>0.</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>0</cell><cell>...</cell>
+        </row>
+        <row>
+          <cell>4:</cell><cell>0.</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>...</cell>
+        </row>
+      </tabular>
+      Considering only one number changed each time, we know that there are each unique elements of the set. This thinking can be referred to as 
+      <idx>Diagonalization</idx> <term>diagonalization</term>, and it can be used not only to build sets but also to ensure that each element
+      is unique.
+    </p>
+    <p>
+      This is particularly relevant in TMs as the process can be used to prove that a new machine that you create accepts a langugae that is different from
+      the languages of all other machines. We will look at another finite example below, but this conecept only truly works when there are an infinite
+      amount of machines. 
+    </p>
+    <p>
+        As mentioned earlier, TMs get more excited when we start passing them as input. Consider the output chart below where an array of TMs <m>[M_i]</m>
+        are passed into eachother and themselves. If it is decidable, then the machine will either Accept (<m>A</m>) or Reject (<m>R</m>).
+      </p>
+      <tabular>
+        <row>
+          <cell bottom="minor"></cell><cell bottom="minor" right="minor"></cell><cell bottom="minor" right="minor"><m>M_1</m></cell>
+          <cell bottom="minor" right="minor"><m>M_2</m></cell><cell bottom="minor" right="minor"><m>M_3</m></cell><cell bottom="minor" ><m>M_4</m></cell>
+          <cell bottom="minor">...</cell>
+        </row>
+        <row>
+          <cell><m>TM</m></cell><cell right="minor"><m>M_1</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell><cell><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_2</m></cell><cell right="minor"><m>R</m></cell>
+          <cell right="minor"><m>R</m></cell><cell right="minor"><m>R</m></cell><cell><m>R</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_3</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>R</m></cell><cell right="minor"><m>A</m></cell><cell><m>R</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_4</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell><cell><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_4</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell><cell><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell bottom="minor"><m></m></cell><cell bottom="minor" right="minor"><m></m></cell><cell bottom="minor" right="minor"><m></m></cell>
+          <cell bottom="minor" right="minor"><m></m></cell><cell bottom="minor" right="minor"><m></m></cell><cell bottom="minor"><m></m></cell>
+          <cell bottom="minor"></cell>
+        </row>
+        <row>
+          <cell></cell><cell right="minor"></cell><cell right="minor"></cell>
+          <cell right="minor"></cell><cell right="minor"></cell><cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell  right="minor"><m>M_?</m></cell><cell right="minor"><m>R</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>R</m></cell><cell><m>R</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell  right="minor"><m>{M_?}_2</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>R</m></cell><cell right="minor"><m>R</m></cell><cell><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+      </tabular>
+  </section>
+  <section xml:id="sec-ExTM">
+    <title>Examples of Turing Machines</title>
+      <subsection xml:id="subsec-ATM">
+        <title>Acceptance Turing Machine</title>
+        <p>
+        There are different types of information that can be dudced from a TM's classification. 
+          <ul>
+            <li>
+              <p>
+                If a language,<m>L</m>, is <m>T_d</m>, then <m>\bar{L}</m> is <m>T_d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If a language,<m>L</m>, is <m>T_r</m> and not <m>T_d</m>, then <m>\bar{L}</m> is not <m>T_r</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If a language,<m>L</m>, is <m>T_r</m> and <m>\bar{L}</m> is <m>T_r</m>, then <m>L</m> and <m>\bar{L}</m> are both <m>T_d</m>. 
+              </p>
+            </li>
+          </ul>
+        </p>
+        <image source="../generated/latex-image/TM-VennDiagram3.svg" width='60%'>
+        </image>
+        <p>
+          Consider is an input <m>w</m> was given to a machine that runs with different machines at the same time. The overall output depends on the final state of the 
+        machine.
+        </p>
+        <p>
+          The Acceptance Turing Machine is a set of pairs of machines and inputs where the machine accepts the input. In other words:
+          <me>
+            A_{TM} = \{ \langle M,w \rangle | M \mbox{ is a TM and } M \mbox{ accepts } w \}
+          </me>
+          Here, you get the input and break it into the machine,<m>M</m>, and the input,<m>w</m>. Then, you simulate <m>M</m> as a TM running on <m>w</m>. 
+          If <m>M</m> accepts, then the <m>A_{TM}</m> accepts. If the <m>M</m> rejects, then the <m>A_{TM}</m> rejects. 
+        </p>
+        <p>
+          The <m>A_{TM}</m> is a Turing decidable.
+        </p>
+      </subsection>
+      <subsection xml:id="subsec-otherTM">
+        <title>Other Turing Machines</title>
+          <p>
+            There are other speciality types of TMs as well. 
+            <ul>
+              <li>
+                <p>
+                  The Regular<m>_{TM}</m> is an undecidable machine that accepts when the language of a input machine is regular. 
+                  <me>
+                    \mbox{Regular}_{TM} = \{\langle M\rangle | L(M) \mbox{ is regular} \}
+                  </me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  The Tape<m>_{TM}</m> is an undecidable machine that writes an "a" to the given tape.
+                  <me>
+                    \mbox{Tape}_{TM} = \{\langle M\rangle | M \mbox{ writes and "a" to the tape}\}
+                  </me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  The S<m>_{TM}</m>. 
+                  <me>
+                    S_{TM} = \{ \langle M \rangle | M \mbox{ does not accept } M \}
+                  </me>
+                </p>
+              </li>
+            </ul>
+          </p>
+      </subsection>
+  </section>
+  <section xml:id="sec-halting">
+    <title>The Halting Problem</title>
+    <p>
+      We cannot tell if a TM will halt on a given input, making Turing Machines not decideable. This is represented by <m>H_{TM}</m>.
+    </p>
+    
+  </section>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

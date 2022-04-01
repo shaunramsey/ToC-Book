@@ -2,43 +2,273 @@
 
 <chapter xml:id="ch-reducibility" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Reducibility</title>
-  
-  <introduction>
-    <p>What will we learn in this chapter?HI</p>
-    <remark> <p> REMARK </p> </remark>
-    <convention> <p> CONVENTION </p> </convention>
-    <note><p> NOTE </p></note>
-    <observation><p> OBSERVATION </p></observation> 
-    <warning><p> WARNING </p></warning>
-    <insight><p> IINSIGHT</p></insight>
-    <objectives><p>Obj</p></objectives>
-    <outcomes><p>OUTCOMES</p></outcomes>
-    <poem><p>es MacBook/ToCBook/ToC-Book/book-example/output/html.</p></poem> 
-    <assemblage><p>ASSEMBLAGE</p></assemblage>
-    <pre>PRE</pre>
-    <project><p>PRE</p></project>
-    <activity><p>PRE</p></activity>
-    <exploration><p>PRE</p></exploration>
-    <investigation><p>PRE</p></investigation>
-    <listing><p>PRE</p></listing>
-    <list><p>PRE</p></list>
-    <theorem><p>PRE</p></theorem>
-    <corollary><p>PRE</p></corollary>
-    <lemma><p>PRE</p></lemma>
-    <algorithm><p>PRE</p></algorithm>
-    <proposition><p>PRE</p></proposition>
-    <claim><p>PRE</p></claim>
-    <fact><p>PRE</p></fact>
-    <identity><p>IDENTITY</p></identity>
-    <axiom><p>PRE</p></axiom>
-    <conjecture><p>PRE</p></conjecture>
-    <principle><p>PRE</p></principle>
-    <heuristic><p>PRE</p></heuristic>
-    <hypothesis><p>PRE</p></hypothesis>
-    <assumption><p>PRE</p></assumption>
-    <computation><p>PRE</p></computation>
-    <technology><p>PRE</p></technology>
-  </introduction>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li>Predecessors to Turing Machines </li>
+     </ol>
+  </objectives>
+  <section xml:id="sec-ReducIntro">
+    <title>Introduction to Reducibility</title>
+    <p>
+      Reducibility is a way to show that two problems or questions are the same with the goal of having one problem be easier than the other. In general,
+      we will take a problem,<m>B</m>, and use it to show a solution to another problem,<m>A</m>. From here on out, we
+      will use <m>!Td</m> to mean that something is not Turing decidable. We will also use <m>!Tr</m> to mean that something is not Turing recognizable. 
+    </p>
+    <exploration>
+    <p>
+      Consider the following problem: Find the areas of a square.
+    </p>
+    <p>
+      What is one way to solve this problem?
+    </p>
+    <answer>
+      <p>
+        Length times width! We could solve the problem by finding the width and squaring it.
+      </p>
+    </answer>
+    <p>
+      What is another way to solve this problem?
+    </p>
+    <hint>
+      <p>
+        Don't put too much thought into this.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        Another option is to find an Oracle! They would be able to tell us the area of the square.
+      </p>
+    </answer>
+      <p>
+        There is obviously one of these solutions that is much easier to reasonably accomplish than the other one. That is our goal, to find an easier way to
+        reduce a given problem to the easiest, quickest problem to solve. 
+      </p>
+    </exploration>
+    <p>
+      If a problem,<m>A</m>, reduces to problem,<m>B</m>, then <m>A</m> is not harder than <m>B</m>, and <m>B</m> is not easier than <m>A</m>. If <m>A \leq m B</m>
+      and <m>A</m> is undecidable then <m>B</m> is undecidable. The symbol <m>\leq m</m> is being used to represent "reduces to". 
+    </p>
+    <exploration>
+      <p>
+        Consider:
+        <me>
+          A_{TM} \leq H_{TM}
+        </me>
+        In other words, does the Acceptance Turing Machine reduce to the Halting Turing Machine?
+      </p>
+      <p>
+        I can "solve" (decide) <m>A_{TM}</m> in the presence of a decider for <m>H_{TM}</m>. 
+        <me>
+          H_{TM} = \{ \langle M,w \rangle | M \mbox{ halts on } w\}
+        </me>
+        <me>
+          A_{TM} = \{\langle M,w \rangle | M \mbox{ accepts } w \}
+        </me>
+        <ol>
+          <li>
+            <p>
+              Assume we have a decider, <m>R</m>, for <m>H_{TM}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Given <m>R</m>, I can decide <m>A_{TM}</m>, which is a contradiction because <m>A_{TM}</m> is undecidable. 
+            </p>
+          </li>
+        </ol>
+        Solving <m>H_{TM}</m> allows us to solve <m>A_{TM}</m>. So, <m>H_{TM}</m> is at least as complex as <m>A_{TM}</m>, because if it were easier, <m>A_{TM}</m>
+        would be too. Thus, <m>H_{TM}</m> is undecidable.
+      </p>
+    </exploration>
+    <p>
+      The above exploration is not how we will do most reductions, but it is a great introduction to the idea.
+    </p>
+  </section>
+  <section xml:id="sec-ProveReduce">
+    <title>Proving Reducibility</title>
+    <p>
+      We will first walk through an example of a reducibility proof.
+    </p>
+    <exploration>
+      <p>
+        Consider: <me>
+          Regular_{TM} = \{ \langle m \rangle | L(m) \mbox{ is a RL}\}
+        </me>
+        We then come up with the diagram below: 
+        Where: 
+        <dl>
+          <li>
+            <title>Q</title>
+            <p>
+              a TM constructed from <m>M</m> and <m>w</m>, and accepts on input of <m>0^n1^n</m>
+            </p>
+          </li>
+          <li>
+            <title>else</title>
+            <p>
+              Run <m>M</m> on <m>w</m>, if <m>M</m> accepts, accept!
+            </p>
+            <image source="../generated/latex-image/TM-Box5.svg" width='90%'>
+	          </image>
+          </li>
+        </dl>
+        This had been a proof sketch. 
+      </p>
+    </exploration>
+    <p>
+      We will now go through a proof outline and a full proof. 
+    </p>
+    <p>
+      Outline:
+      <ul>
+        <li>
+          <p>
+            We want to show <m>Regular_{TM}</m> is undecidable.
+          </p>
+        </li>
+        <li>
+          <p>
+            We know that <m>A_{TM}</m> is undecidable.
+          </p>
+        </li>
+        <li>
+          <p>
+            If we can show that <m>A_{TM}</m> reduces to <m>Regular_{TM}</m>, then we will know that it is undecidable (because if it weren't, the 
+            reduction would allow <m>A_{TM}</m> to be decidable).
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      We will now look at a full example proof. Note that the itallicized language is largely epositiory and set up language. 
+      <ol>
+        <li>
+          <p>
+            Assume <m>Regular_{TM}</m> is decidable and there is some machine <m>R</m> that decides it. <em> <m>R</m>, when handed a TM, will tell us if
+            the TM's langbuage is regular decidably.</em>
+          </p>
+        </li>
+        <li>
+          <p>
+            We show <m>A_{TM}</m> reduces to <m>Regular_{TM}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            We create a machine, <m>Q</m>, using the <m>M</m> and <m>w</m> imputs from <m>A_{TM}</m>. <m>Q</m> takes input <m>x</m>.
+            <ul>
+              <li>
+                <p>
+                  If <m>x</m> is in <m>0^n1^n</m>, <m>Q</m> accepts.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Otherwise, <m>Q</m> runs <m>M</m> on <m>w</m>. If <m>M</m> accepts, <m>Q</m> accepts. 
+                </p>
+                <p>
+                  <em>This machine, Q, is special.</em>
+                  <ul>
+                    <li>
+                      <p>
+                        <em>If M accepts w, Q accepts all inputs x. This is a regular language.</em>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <em>If M does not accept w, Q accepts only inputs that match <m>0^n1^n</m>. This is NOT a regular language.</em>
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            We now take our machine,<m>Q</m>, and pass it over to our decider, <m>R</m>. <m>R</m> will tell us if the language of <m>Q</m> is regular or not. If
+            it is regular, <m>M</m> accepts <m>w</m>. If it is not, then <m>M</m> does not accept. We've built an <m>A_{TM}</m> decider.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>So, we've taken inputs to <m>A_{TM}</m>, crafted a machine, <m>Q</m>, passed it to <m>R</m>, and found that <m>R</m> somehow helps us decide
+            <m>A_{TM}</m>.</em>
+          </p>
+        </li>
+        <li>
+          <p>
+            We know <m>A_{TM}</m> is not decidable, so this is a contradition. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Therefore, our assumption that <m>Regular_{TM}</m> was decidable must have been incorrect. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>E_{TM}</m> is decidable.
+          <me>
+            E_{TM} = \{\langle M \rangle | L(M) \mbox{ is } \emptyset \}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          <m>Q(x): </m>
+          <ul>
+            <li>
+              <p>
+                If <m>x != w</m> then <m>Q</m> rejects
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>M</m> accepts <m>w : Q</m> rejects
+              </p>
+            </li>
+            <li>
+              <p>
+                else <m>Q</m> accepts <m>x</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          <me>
+            L(Q) = \emptyset , Q \in E_{TM} \mbox{ when }M \mbox{ accepts } w
+          </me>
+          <me>
+            L(Q) = \{x\}, Q \notin E_{TM} \mbox{ when }M \mbox{ does not accept }w
+          </me>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>CFL_{TM}</m> is decidable. 
+          <me>
+            CFL_{TM} = \{\langle M \rangle | L(M) \mbox{ is a CFL} \}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          General idea: Build a machine,  <m>Q</m>, such that when we pass it to <m>R</m> (the decider for the language in question), <m>R</m> accepts <m>Q</m> when 
+          <m>M</m> accepts <m>w</m> (and doesn't when it doesn't).
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

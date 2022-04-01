@@ -823,6 +823,81 @@
           </p>
         </answer>
       </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Give a DPA and a CFG for the language of boolean expressions. Terminals, <m>\Sigma</m> will be:
+            <dl>
+              <li>
+                <title>v</title>
+                <p>
+                  a varaible or value in the programming sense
+                </p>
+              </li>
+              <li>
+                <title>e</title>
+                <p>
+                  a comparison like <m>==, >, \geq, \leq, !=</m>
+                </p>
+              </li>
+              <li>
+                <title>b</title>
+                <p>
+                  boolean operators like <m>and</m> and <m>or</m>
+                </p>
+              </li>
+              <li>
+                <title>t</title>
+                <p>
+                  represents true or false
+                </p>
+              </li>
+            </dl>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Sample strings in this language include: 
+            <ul>
+              <li>
+                <p>
+                  vev
+                </p>
+              </li>
+              <li>
+                <p>
+                  vevbvebvev
+                </p>
+              </li>
+              <li>
+                <p>
+                  t
+                </p>
+              </li>
+              <li>
+                <p>
+                  vevbtbvetbtet
+                </p>
+              </li>
+            </ul>
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+          Consider:
+            <me>
+              L_1 = \{ww | w \mbox{ is any binary string}\}
+            </me>
+            It is known that <m>L_1</m> is not a context free language. <m>0^*</m> is a CFL and a RL. Since RLs are closed under intersection, <m>L_1</m> intersected
+            with <m>0^*</m> must not be a RL.
+          </p>
+          <p>
+            Find the error in the proof above and describe it clearly. 
+          </p>
+        </statement>
+      </exercise>
     </exercises>
     
     <!--

@@ -215,6 +215,27 @@
                 \end{tikzpicture}
             </latex-image>
         </image>
+        <image xml:id="DFA-M26" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (15.3,-22.6) circle (3);
+                \draw (15.3,-22.6) node {$0$};
+                \draw [black] (26.4,-12.8) circle (3);
+                \draw (26.4,-12.8) node {$1$};
+                \draw [black] (44.5,-14.4) circle (3);
+                \draw (44.5,-14.4) node {$2$};
+                \draw [black] (35.7,-22.4) circle (3);
+                \draw (35.7,-22.4) node {$4$};
+                \draw [black] (36.2,-31.6) circle (3);
+                \draw (36.2,-31.6) node {$5$};
+                \draw [black] (26.6,-42.2) circle (3);
+                \draw (26.6,-42.2) node {$3$};
+                \draw [black] (50,-42.4) circle (3);
+                \draw (50,-42.4) node {$6$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
 
     <!--TODO: ch-fa-closure -->
     
@@ -1389,6 +1410,41 @@
                 </latex-image>
               </image>
 
+              <image xml:id="DFA-M28" width="50%">
+                <latex-image>
+                  \begin{tikzpicture}[scale=0.2]
+                    \tikzstyle{every node}+=[inner sep=0pt]
+                    \draw [black] (18.8,-21) circle (3);
+                    \draw (18.8,-21) node {$0$};
+                    \draw [black] (18.8,-21) circle (2.4);
+                    \draw [black] (33.9,-21) circle (3);
+                    \draw (33.9,-21) node {$1$};
+                    \draw [black] (50.1,-21) circle (3);
+                    \draw (50.1,-21) node {$2$};
+                    \draw [black] (15.1,-15.1) -- (17.21,-18.46);
+                    \fill [black] (17.21,-18.46) -- (17.2,-17.52) -- (16.36,-18.05);
+                    \draw [black] (17.495,-23.688) arc (1.82866:-286.17134:2.25);
+                    \draw (12.9,-26.55) node [left] {$0$};
+                    \fill [black] (15.87,-21.6) -- (15.06,-21.12) -- (15.09,-22.12);
+                    \draw [black] (21.364,-19.458) arc (114.01034:65.98966:12.253);
+                    \fill [black] (31.34,-19.46) -- (30.81,-18.68) -- (30.4,-19.59);
+                    \draw (26.35,-17.9) node [above] {$1$};
+                    \draw [black] (31.366,-22.592) arc (-65.08032:-114.91968:11.906);
+                    \fill [black] (21.33,-22.59) -- (21.85,-23.38) -- (22.27,-22.48);
+                    \draw (26.35,-24.2) node [below] {$1$};
+                    \draw [black] (36.563,-19.629) arc (111.46048:68.53952:14.862);
+                    \fill [black] (47.44,-19.63) -- (46.88,-18.87) -- (46.51,-19.8);
+                    \draw (42,-18.1) node [above] {$0$};
+                    \draw [black] (47.466,-22.424) arc (-67.60503:-112.39497:14.346);
+                    \fill [black] (36.53,-22.42) -- (37.08,-23.19) -- (37.46,-22.27);
+                    \draw (42,-24.01) node [below] {$0$};
+                    \draw [black] (53.046,-21.499) arc (108.11503:-179.88497:2.25);
+                    \draw (56.16,-26.34) node [right] {$1$};
+                    \fill [black] (51.5,-23.64) -- (51.27,-24.56) -- (52.22,-24.25);
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+
     <!--TODO: ch-nfa-to-dfa -->
         <image xml:id="FAEXM12" width="50%">
           <latex-image>
@@ -1721,6 +1777,39 @@
             \end{tikzpicture}
           </latex-image>
         </image>
+
+        <image xml:id="DFA-M27" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (20.3,-19.8) circle (3);
+                \draw (20.3,-19.8) node {$A$};
+                \draw [black] (38.3,-19.6) circle (3);
+                \draw (38.3,-19.6) node {$B$};
+                \draw [black] (38.3,-19.6) circle (2.4);
+                \draw [black] (28.8,-29.6) circle (3);
+                \draw (28.8,-29.6) node {$C$};
+                \draw [black] (28.8,-29.6) circle (2.4);
+                \draw [black] (14.5,-12.8) -- (18.39,-17.49);
+                \fill [black] (18.39,-17.49) -- (18.26,-16.55) -- (17.49,-17.19);
+                \draw [black] (23.125,-18.796) arc (105.90368:75.36951:23.412);
+                \fill [black] (35.45,-18.66) -- (34.81,-17.97) -- (34.55,-18.94);
+                \draw (29.28,-17.39) node [above] {$0$};
+                \draw [black] (40.579,-17.667) arc (158.03624:-129.96376:2.25);
+                \draw (45.61,-17.51) node [right] {$0$};
+                \fill [black] (41.22,-20.23) -- (41.78,-21) -- (42.15,-20.07);
+                \draw [black] (37.27,-22.411) arc (-26.27469:-60.78771:13.985);
+                \fill [black] (31.55,-28.43) -- (32.5,-28.47) -- (32.01,-27.6);
+                \draw (35.4,-27.32) node [right] {$1,\epsilon$};
+                \draw [black] (29.859,-26.799) arc (153.27467:119.66293:14.306);
+                \fill [black] (35.56,-20.8) -- (34.61,-20.76) -- (35.11,-21.63);
+                \draw (31.74,-21.91) node [left] {$1$};
+                \draw [black] (25.953,-28.689) arc (-116.23406:-161.89267:10.136);
+                \fill [black] (20.8,-22.75) -- (20.57,-23.66) -- (21.52,-23.35);
+                \draw (22.23,-27.69) node [left] {$0$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
 
     <!--TODO: ch-nfas -->
         <image xml:id="PowerSetMatx" width="50%">
@@ -3158,6 +3247,242 @@
                 \draw (0,-1) circle (1.25)(0,-0.5) node [text=black,above] {$CFLs$};
                 \draw (0,-1) circle (.5) (0,-1) node [text=black] {$RLs$};
                 \draw (-5,-5) rectangle (5,3) node [text=black,above] {$\Omega$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+
+      <!--TODO: ch-diagonalization-->
+        <image xml:id="TM-Hil1" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (1.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5,1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.5,0.0) {2};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.5,0.0) {3};
+              
+              \filldraw (4.5,-0.2) circle (2pt);
+              \filldraw (5.0,-0.2) circle (2pt);
+              \filldraw (5.5,-0.2) circle (2pt);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-Hil2" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (1.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5, 1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.5,0.0) {2};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.5,0.0) {3};
+
+              \filldraw (4.5,-0.2) circle (2pt);
+              \filldraw (5.0,-0.2) circle (2pt);
+              \filldraw (5.5,-0.2) circle (2pt);
+              
+              \node[rectangle] (r) at (1.0, -1.8) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.0, -1.8) {0};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-Hil3" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.425cm] (r) at (1.5,0.0) {};
+              \node[anchor=north west] (r) at (1.5,0.0) {};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5, 1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.5,0.0) {2};
+              
+              \filldraw (4.5,-0.2) circle (2pt);
+              \filldraw (5.0,-0.2) circle (2pt);
+              \filldraw (5.5,-0.2) circle (2pt);
+              
+              \node[rectangle] (r) at (1.0, -1.8) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.0, -1.8) {0};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-Hil4" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (1.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.5,0.0) {0};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5, 1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.5,0.0) {2};
+              
+              \filldraw (4.5,-0.2) circle (2pt);
+              \filldraw (5.0,-0.2) circle (2pt);
+              \filldraw (5.5,-0.2) circle (2pt);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-Hil5" width='50%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (1.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.5,0.0) {0};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5, 1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.5,0.0) {2};
+              
+              \filldraw (4.5,-0.2) circle (2pt);
+              \filldraw (5.0,-0.2) circle (2pt);
+              \filldraw (5.5,-0.2) circle (2pt);
+              
+              \node[rectangle] (r) at (1.0, -1.8) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (1.0, -1.8) {-1};
+              
+              \node[rectangle] (r) at (2.0, -1.8) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (2.0, -1.8) {-2};
+              
+              \node[rectangle] (r) at (3.0, -1.8) {\Strichmaxerl[4]};
+              \node[anchor=north west] (r) at (3.0, -1.8) {-3};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-Hil6" width='70%'>
+          <latex-image>
+            \begin{tikzpicture}
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (0.0, 1.15) {Front};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (0.0,0.0) {\Strichmaxerl[4][-30][40]};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (1.5, 1.15) {1};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (1.5,0.0) {\Strichmaxerl[4.5]};
+              \node[anchor=north west] (r) at (1.5,0.0) {0};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (2.5, 1.15) {2};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (2.5,0.0) {\Strichmaxerl[4.5]};
+              \node[anchor=north west] (r) at (2.5,0.0) {-1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (3.5, 1.15) {3};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (3.5,0.0) {\Strichmaxerl[4.5]};
+              \node[anchor=north west] (r) at (3.5,0.0) {1};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (4.5, 1.15) {4};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (4.5,0.0) {\Strichmaxerl[4.5]};
+              \node[anchor=north west] (r) at (4.5,0.0) {-2};
+              
+              \node [rectangle, draw, minimum width = 0.75cm] (r) at (5.5, 1.15) {5};
+              \node[rectangle,draw,minimum width = 0.75cm, 
+              minimum height = 1.25cm] (r) at (5.5,0.0) {\Strichmaxerl[4.5]};
+              \node[anchor=north west] (r) at (5.5,0.0) {2};
+              
+              \filldraw (6.5,-0.2) circle (2pt);
+              \filldraw (7.0,-0.2) circle (2pt);
+              \filldraw (7.5,-0.2) circle (2pt);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <image xml:id="TM-VennDiagram3">
+          <latex-image>
+            \begin{tikzpicture}
+              \draw (0,-1) circle (2.75) (0,1) node [text=black,above]{$\mathbf{Tr}$};
+              \draw (0,-1) circle (1.25)(0,-0.5) node [text=black,above] {$\mathbf{Td}$};
+              \draw (-4.5,-4.5) rectangle (5,3) node [text=black,above] {$\Omega$};
+              \filldraw (-3.0, -4) circle (.05) node [text=black,above] {$\overline{A_{TM}}$};
+              \filldraw (-0.5, -3) circle (.05) node [text=black,above] {${A_{TM}}$};
+              \filldraw (3.3, -2) circle (.05) node [text=black,above] {$\overline{L_1}$};
+              \filldraw (3.0, -3.5) circle (.05) node [text=black,above] {$L_1$};
+            \end{tikzpicture}
+          </latex-image>
+          
+        </image>
+      <!--TODO: Ch: Reducibility-->
+        <image xml:id="TM-Box5" width="60%">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (19.7,-21.4) circle (3);
+                \draw (19.7,-21.4) node {$Q$};
+                \draw (42.1,-16.3) node [right] {$L(Q) = \mbox{ all strings}$};
+                \draw (42.1,-26.7) node [right] {$L(Q) = \{0^n1^n\}$};
+                \draw [black] (10.3,-21.4) -- (16.7,-21.4);
+                \draw (9.8,-21.4) node [left] {$x$};
+                \fill [black] (16.7,-21.4) -- (15.9,-20.9) -- (15.9,-21.9);
+                \draw [black] (22.437,-20.173) arc (112.46387:93.18888:51.044);
+                \fill [black] (39.1,-16.38) -- (38.27,-15.92) -- (38.33,-16.92);
+                \draw (26.98,-16.64) node [above] {$M\mbox{ }accepts\mbox{ }w$};
+                \draw [black] (39.107,-26.883) arc (-88.96053:-117.66303:34.851);
+                \fill [black] (39.11,-26.88) -- (38.3,-26.4) -- (38.32,-27.4);
+                \draw (24.47,-27.11) node [below] {$M\mbox{ }does\mbox{ }not\mbox{ }accept\mbox{ }w$};
               \end{tikzpicture}
             </latex-image>
           </image>
