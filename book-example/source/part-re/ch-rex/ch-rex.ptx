@@ -173,6 +173,50 @@
         </p>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Create an FA from the Regular Expression.
+        </p>
+        <me>
+          REX = (0+10^*1)^*
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the REX below into a FA.
+        </p>
+        <me>
+          REX = (01^*0+10^*1+001)^*
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the REX below into a FA. 
+        </p>
+        <me>
+          REX = (0+1)^*(00+11)^*(101+111)
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a FA that corresponds to this REX with alphabet, <m>\Sigma = \{0,1\}</m>: 
+
+        </p>
+        <me>
+          REX = 1(0+1)^*1(0+1)^*1
+        </me>
+        
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

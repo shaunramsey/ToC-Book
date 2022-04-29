@@ -5,7 +5,10 @@
   <objectives>
     In this chapter you will learn:
      <ol>
-       <li>Predecessors to Turing Machines </li>
+       <li>Reducibility</li>
+       <li>
+         Provung Reducibility
+       </li>
      </ol>
   </objectives>
   <section xml:id="sec-ReducIntro">
@@ -77,6 +80,11 @@
             </p>
           </li>
         </ol>
+    </p>
+    <image source="../generated/latex-image/TM-ATM3.svg" width='70%'>
+	          </image>
+
+    <p>
         Solving <m>H_{TM}</m> allows us to solve <m>A_{TM}</m>. So, <m>H_{TM}</m> is at least as complex as <m>A_{TM}</m>, because if it were easier, <m>A_{TM}</m>
         would be too. Thus, <m>H_{TM}</m> is undecidable.
       </p>
@@ -96,6 +104,12 @@
           Regular_{TM} = \{ \langle m \rangle | L(m) \mbox{ is a RL}\}
         </me>
         We then come up with the diagram below: 
+        </p>
+        <image source="../generated/latex-image/TM_ATM4.svg" width='70%'>
+	          </image>
+
+        
+        <p>
         Where: 
         <dl>
           <li>
@@ -267,6 +281,35 @@
           <m>M</m> accepts <m>w</m> (and doesn't when it doesn't).
         </p>
       </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the following language is undecidable by using reducibility and <m>A_{TM}</m>.
+        </p>
+        <me>
+          L = \{\langle M, w \rangle | M \mbox{ is a Tm that moves the head on input } w\}
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the TM below:
+        </p>
+        <me>
+          CONFIG_{TM} = \mbox{\{This machine, M, is a TM that enters a state with its head over the} 
+        
+        </me>
+        <me>
+            \mbox{same cell AND the whole tape is the same as the last time the TM was in this state.\}}
+        </me>
+        
+        <p>
+          <m>CONFIG_{TM}</m> is undecidable and we can prove this with a reduction. Show that 
+          <m>A_{TM} \leq _m CONFIG_{TM}</m>.
+        </p>
+      </statement>
     </exercise>
   </exercises>
     <!--

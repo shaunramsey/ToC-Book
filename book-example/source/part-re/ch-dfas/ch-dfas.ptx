@@ -264,6 +264,59 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate this FA into a complete English description.
+        </p>
+        <image source="../generated/latex-image/FAExM27.svg" width="50%">
+        </image>
+      </statement>
+      <answer>
+        <p>
+          <m>L = \mbox{\{any string that begins with a } b \mbox{ and is followed by one or more } a \mbox{s and no more } b\mbox{s \}}</m>
+        </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate this FA into a complete English description. 
+        </p>
+        <image source="../generated/latex-image/FAExM29.svg" width="50%">
+        </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate this FA into an English description.
+        </p>
+        <image source="../generated/latex-image/FAExM32.svg" width="50%">
+        </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate this FA into a complete English description. 
+        </p>
+        <image source="../generated/latex-image/FAEx38.svg" width="50%">
+        </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give an English description of the language of the following FA:
+        </p>
+        <image source="../generated/latex-image/FAEx41.svg" width="50%">
+        </image>
+        
+      </statement>
+    </exercise>
   </exercises>
 
     <!--

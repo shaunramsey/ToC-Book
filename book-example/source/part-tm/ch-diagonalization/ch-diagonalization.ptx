@@ -7,6 +7,8 @@
      <ol>
        <li>Hibert's Hotel </li>
         <li>Introduction to Diagonalization </li>
+        <li>Examples of Turing Machines </li>
+        <li>The Halting Problem </li>
      </ol>
   </objectives>
   <section xml:id="sec-hiblertshotel">
@@ -149,7 +151,7 @@
           <cell>...</cell>
         </row>
         <row>
-          <cell><m></m></cell><cell right="minor"><m>M_4</m></cell><cell right="minor"><m>A</m></cell>
+          <cell><m></m></cell><cell right="minor"><m>M_5</m></cell><cell right="minor"><m>A</m></cell>
           <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell><cell><m>A</m></cell>
           <cell>...</cell>
         </row>
@@ -180,24 +182,37 @@
       <subsection xml:id="subsec-ATM">
         <title>Acceptance Turing Machine</title>
         <p>
-        There are different types of information that can be dudced from a TM's classification. 
+        There are different types of information that can be deduced from a TM's classification. 
           <ul>
             <li>
               <p>
                 If a language,<m>L</m>, is <m>T_d</m>, then <m>\bar{L}</m> is <m>T_d</m>.
               </p>
             </li>
+            </ul>
+            </p>
+            <image source="../generated/latex-image/TM-ATM2.svg" width='60%'>
+        </image>
+            <p>
+            <ul>
             <li>
               <p>
                 If a language,<m>L</m>, is <m>T_r</m> and not <m>T_d</m>, then <m>\bar{L}</m> is not <m>T_r</m>.
               </p>
             </li>
+            </ul>
+            <ul>
             <li>
               <p>
                 If a language,<m>L</m>, is <m>T_r</m> and <m>\bar{L}</m> is <m>T_r</m>, then <m>L</m> and <m>\bar{L}</m> are both <m>T_d</m>. 
               </p>
             </li>
           </ul>
+        </p>
+         <image source="../generated/latex-image/TM-ATM1.svg" width='60%'>
+        </image>
+        <p>
+          All of this is to say that there may exist a language where neither it nor its compliment are Turing Reconidable.
         </p>
         <image source="../generated/latex-image/TM-VennDiagram3.svg" width='60%'>
         </image>
@@ -249,6 +264,7 @@
             </ul>
           </p>
       </subsection>
+      
   </section>
   <section xml:id="sec-halting">
     <title>The Halting Problem</title>
@@ -257,6 +273,115 @@
     </p>
     
   </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          The self-denying paradox is an example of a language that is not Tr because of the paradox. The machine built for this
+          language cannot halt when running with itself as input. The complement of this paradox would be th set of machines that 
+          accept themselves as input. To craft this language, we could take our list of TMs and TMs as input and make a TM that 
+          does what that machine does on its own input (making a trace along the diagonal).
+        </p>
+        <p>
+          Would this new machine accept itself when receiving itself as input? Explain. Is it possible for this machine to have 
+          already appeared? Explain.
+        </p>
+        <tabular>
+        <row>
+          <cell bottom="minor"></cell><cell bottom="minor" right="minor"></cell><cell bottom="minor" right="minor"><m>M_1</m></cell>
+          <cell bottom="minor" right="minor"><m>M_2</m></cell><cell bottom="minor" right="minor"><m>M_3</m></cell>
+          <cell bottom="minor">...</cell>
+        </row>
+        <row>
+          <cell><m>TM</m></cell><cell right="minor"><m>M_1</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_2</m></cell><cell right="minor"><m>R</m></cell>
+          <cell right="minor"><m>R</m></cell><cell right="minor"><m>R</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_3</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell ><m>...</m></cell><cell ><m></m></cell>
+          <cell ><m></m></cell><cell ><m></m></cell>
+          <cell></cell>
+        </row>
+        
+        
+      </tabular>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The self-denying paradox is an example of a languge that is not Tr because of the paradox. 
+          The machine built for this language cannot halt when running with itself as input. 
+        </p>
+        <me>
+          L = \{\langle M, w \rangle | M \mbox{ is a Tm that moves the head on input } w\}
+        </me>
+        
+        <p>
+          Assume the language above is decidable and use the chart below. Use diagonalization. 
+          Describe the language of this new machine and it's paradox. 
+        </p>
+        <tabular>
+        <row>
+          <cell bottom="minor"></cell><cell bottom="minor" right="minor"></cell><cell bottom="minor" right="minor"><m>M_1</m></cell>
+          <cell bottom="minor" right="minor"><m>M_2</m></cell><cell bottom="minor" right="minor"><m>M_3</m></cell>
+          <cell bottom="minor">...</cell>
+        </row>
+        <row>
+          <cell><m>TM</m></cell><cell right="minor"><m>M_1</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_2</m></cell><cell right="minor"><m>R</m></cell>
+          <cell right="minor"><m>R</m></cell><cell right="minor"><m>R</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell right="minor"><m>M_3</m></cell><cell right="minor"><m>A</m></cell>
+          <cell right="minor"><m>A</m></cell><cell right="minor"><m>A</m></cell>
+          <cell>...</cell>
+        </row>
+        <row>
+          <cell><m></m></cell><cell ><m>...</m></cell><cell ><m></m></cell>
+          <cell ><m></m></cell><cell ><m></m></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Describe the halting problem. Is it Td, Tr, or neither? 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This designation is important because of its impact on all of computer programming.)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Rice's Theorem applies to program meaning. It is undecidable if a program will ever negate a 
+          variable, for example. But, I could write a print statement around this negation to determine
+          if it runs, why isn't this then a decider?
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

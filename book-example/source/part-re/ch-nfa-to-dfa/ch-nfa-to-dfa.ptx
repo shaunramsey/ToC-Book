@@ -109,6 +109,54 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Convert the below NFA to a DFA using the subset construction.
+        </p>
+        <image source="../generated/latex-image/FAExM30.svg" width="60%">
+	      </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Convert the below NFA into a DFA.
+        </p>
+        <image source="../generated/latex-image/FAExM33.svg" width="60%">
+	      </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Convert the below NFA into a DFA, using our subset construction.
+        </p>
+        <image source="../generated/latex-image/FAExM34.svg" width="60%">
+	      </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Convert the NFA below into a DFA. 
+        </p>
+        <image source="../generated/latex-image/FAExM39.svg" width="60%">
+	      </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Convert the following NFA into a DFA:
+        </p>
+        <image source="../generated/latex-image/FAExM42.svg" width="60%">
+	      </image>
+        
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

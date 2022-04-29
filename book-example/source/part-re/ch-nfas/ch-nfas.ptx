@@ -143,6 +143,57 @@
         </p>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Craft a FA from this English description. 
+        </p>
+        <p>
+          All strings that begin with a 0, end with a 0, and may contain any number of other <m>0</m>s and <m>1</m>s. Assume <m>\Sigma=\{0,1\}</m>.
+        </p>
+      </statement>
+      <answer>
+        <image source="../generated/latex-image/FAExM28.svg" width="50%">
+        </image>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Craft a FA from this English description:
+        </p>
+        <m>L = \mbox{\{The language that begins with either } 001 \mbox{ or } 10 \mbox{. It may contain any other number of } 0\mbox{s and }1\mbox{s.\}}</m>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Construct a FA from this English description. Assume <m>\Sigma=\{0,1\}</m>.
+        </p>
+        <me>
+          L = \mbox{\{The language has an even number of }0\mbox{s and ends in }11\mbox{. It may contain any other number of }0\mbox{s and }1\mbox{s.\}}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The language that consists of all strings that contain 101.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a FA of the following English description of a language with the alphabet, <m>\Sigma = \{1,3,7\}</m>: 
+
+        </p>
+        <p>
+          The language consists of all strings that contain 1337.
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

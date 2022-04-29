@@ -2,6 +2,12 @@
 
 <chapter xml:id="ch-tms" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Turing Machine Basics</title>
+  <objectives>
+    In this chapter you will learn:
+     <ol>
+       <li> Introduction to Turing Machines</li>
+     </ol>
+  </objectives>
   <section xml:id="sec-tm-background">
     <title>Introduction to Turing Machines</title>
     <p>
@@ -588,6 +594,64 @@
         <image source="../generated/latex-image/TMD2.svg" width='50%'>
 	            </image>
       </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the TM into English:
+        </p>
+        <image source="../generated/latex-image/TMD3.svg" width='70%'>
+	            </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a TM diagram for the language with an equal number of a's and b's, in any order.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the below TM into English, with the alphabet, <m>\Sigma = \{a,b,c,d\}</m>
+        </p>
+        <image source="../generated/latex-image/TMD4.svg" width='60%'>
+	            </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a TM diagram for the language:
+        </p>
+        <me>
+          L = \{\alpha ^i \beta^j \gamma ^k | i \> j \> k\}
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the TM below, with the alphabet,<m>\Sigma = \{a,b\}</m>, into English:
+        </p>
+        <image source="../generated/latex-image/TMD5.svg" width='60%'>
+	            </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a TM diagram for the language below. 
+        </p>
+        <me>
+          L = \{\star ^i\triangle^j\square^i | i \ngeq j\}
+        </me>
+        
+      </statement>
     </exercise>
   </exercises>
   

@@ -262,6 +262,62 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the following FA into a REX using rips. 
+        </p>
+        <image source="../generated/latex-image/FAExM31.svg" width="60%">
+	      </image>
+        
+        <p>
+          The recommended order of rips is: <m>\emptyset</m>, A, B, C
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the FA below into a REX using rips.
+        </p>
+        <image source="../generated/latex-image/FAExM33.svg" width="60%">
+	      </image>
+        <p>
+          The recommended order of rips is: D, C, B, A
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the FA below into a REX using rips. 
+        </p>
+        <image source="../generated/latex-image/FAExM34.svg" width="60%">
+	      </image>
+        <p>
+          The recommended order of rips is: D, C, B, A
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the FA below into a REX using rips. 
+        </p>
+        <image source="../generated/latex-image/FAExM39.svg" width="60%">
+	      </image>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use rips to convert the following FA into a REX. Show each step and every rip. 
+        </p>
+        <image source="../generated/latex-image/FAExM42.svg" width="60%">
+	      </image>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

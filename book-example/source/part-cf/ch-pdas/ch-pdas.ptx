@@ -143,6 +143,100 @@
 	      </image>
       </answer>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Create a PDA using the alphabet below for the language with any strings with the form: <m>\square^n \bigcirc ^n \square^k \star^k</m>
+        </p>
+        <me>
+          \Sigma = \{\star, \square, \bigcirc\}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Translate the below PDA into English:
+      </p>
+      <image source="../generated/latex-image/FAExM35.svg" width='60%'>
+	      </image>
+    </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Craft a PDA using the alphabet, <m>\Sigma = \{a,b,c\}</m>, for the language with any strings with the form:
+        </p>
+        <p>
+          The language consists of all strings with either: 
+          <ul>
+            <li>
+              <p>
+                an equal number of a's and b's with no c's, or
+              </p>
+            </li>
+            <li>
+              <p>
+                an equal number of a's and c's with no b's
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the below PDA into English:
+           </p>
+           <image source="../generated/latex-image/FAExM36.svg" width='60%'>
+	      </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Craft a PDA using the alphabet, <m>\Sigma = \{a,b\}</m>, for the languae with any strings with the form: 
+        </p>
+        <p>
+          The language consists of all strings with a's followed by b's where either there are more a's than b's or more b's than
+          a's, but never the same amount.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translate the below PDA into English:
+        </p>
+        <image source="../generated/latex-image/EAExM37.svg" width='60%'>
+	      </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Craft a PDA using the alphabet, <m>\Sigma = \{a,b,c,d\}</m> below for the language with any strings with the form: 
+        </p>
+        <p>
+          The set of all strings that have an equal number of a's and d's, less b's than c's, and 
+          the symbols appear in alphabetical order. 
+        </p>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Translante the PDA below into an English description. It has the alphabet, 
+          <m>\Sigma = \{a,b,c,d\}</m>
+        </p>
+        <image source="../generated/latex-image/FAEx40.svg" width='60%'>
+	      </image>
+       
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

@@ -189,6 +189,16 @@
         </p>
       </answer>
     </exercise>
+     <exercise>
+      <statement>
+        <p>
+          Represent the below REX as a FA. 
+        </p>
+        <me>
+          REX = (0+1)^*(1(01)^*+11)^*
+        </me>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

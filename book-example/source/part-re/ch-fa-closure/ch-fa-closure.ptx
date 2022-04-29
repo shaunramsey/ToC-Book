@@ -585,6 +585,95 @@
           </me>
         </statement>
       </exercise>
+      <exercise>
+        <statement>
+          <p>
+            It is known that the language of all binary strings with an equal number of 0s and 1s is not regular. Prove that the language below is not regular using 
+            closure.
+          </p>
+          <me>
+            L = \{0^i1^j2^k | i=j \mbox{ or } j=k\}
+          </me>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            RLs are closed under intersection. Prove that the language of strings with any number of a's, b's, and c's and with an equal number of d's and e's is not
+            regular. Use the closure fact above and that <m>e^nd^n</m> is not regular to prove this language is not regular.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            RLs are closed under intersection, union, and a variety of other operations. In each of the following situations state 
+            whether <m>\mathcal{L}_3</m> is regular, irregular, or either. Take care to read each carefully as ordering changes. 
+          </p>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3</m>
+                </p>
+                <p>
+                  <m>\mathcal{L}_1</m> is regular and <m>\mathcal{L}_2</m> is regular.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3</m>
+                </p>
+                <p>
+                  <m>\mathcal{L}_1</m> is regular and <m>\mathcal{L}_2</m> is irregular.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2</m>
+                </p>
+                <p>
+                  <m>\mathcal{L}_1</m> is regular and <m>\mathcal{L}_2</m> is regular.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2</m>
+                </p>
+                <p>
+                  <m>\mathcal{L}_1</m> is regular and <m>\mathcal{L}_2</m> is irregular.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Given <m>\mathcal{L}_1</m> is not regular. Given <m>\mathcal{L}_2 \cap 0^*1^*</m> is 
+            <m>\mathcal{L}_1</m>. Use closure to explain what is known about <m>\mathcal{L}_2</m> 
+            and why.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Use closure and the givens to prove that the language, L, with <m>\Sigma = \{(,),[,]\}</m>, is not regular. Be thorough in your
+            explanation. 
+          </p>
+          <me>
+            L = \{(^n)^n[^m]^m | n,m \geq 0\}
+          </me>
+          <p>
+            You've been given the fact that the language, K, is not a regular language. 
+          </p>
+          <me>
+            K= \{]^m[^m)^n(^n\}
+          </me>
+        </statement>
+      </exercise>
     </exercises>
     
     

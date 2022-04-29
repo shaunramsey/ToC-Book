@@ -325,6 +325,101 @@
       </exploration>
     </subsection>
   </section>
+  <exercises>
+     <exercise>
+        <statement>
+          <p>
+            Convert the grammar below into CNF. Show your steps.
+          </p>
+          <p>
+            CFG:
+          </p>
+          <image source="../generated/latex-image/CFGEx8.svg" width="50%">
+	      </image>
+        
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+              <p>
+                While showing your steps, convert this grammar into CNF:
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow aSc | T</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow bT | \epsilon</m></cell>
+              </row>
+            </tabular>
+              </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+            <p>
+                While showing your steps and with the alpahbet,<m>\Sigma=\{a,b,c\} </m>, convert this grammar into CNF:
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow aS | U | T</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow bT | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>U \rightarrow aUc | ac</m></cell>
+              </row>
+            </tabular>
+              </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+            <p>
+                While showing your steps and with the alpahbet,<m>\Sigma=\{a,b\} </m>, convert this grammar into CNF:
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow SS | T</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow aSb | \epsilon</m></cell>
+              </row>
+              
+            </tabular>
+              </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            While showing your steps and with the alphabet,<m>\Sigma = \{a,b,c,d\}</m>, convert the 
+            CFG below into CNF. 
+            <tabular>
+                  <row>
+                    <cell><m>CFG:</m></cell><cell></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>S \rightarrow TT | Tu</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>T \rightarrow aTb | \epsilon</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>U \rightarrow cUd | cd</m></cell>
+                  </row>
+                </tabular>
+          </p>
+        </statement>
+      </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

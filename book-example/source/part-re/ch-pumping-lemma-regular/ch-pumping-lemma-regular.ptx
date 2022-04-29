@@ -821,6 +821,55 @@
         </p>
       </statement>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the language with binary strings that have more 0s than 1s is not regular.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the language with strings with any number of a's, b's, and c's, but with an equal number of d's and e's is not regular.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Apply the pumping lemma for regular languages. Prove the language below is not regular. 
+        </p>
+        <me>
+          L = \{\triangle ^i \square^j | i \ngeq j\}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Using the pumping lemma for regular languages, prove the language below is not regular. 
+        </p>
+        <me>
+          L = \{\star ^i \triangle ^j \square ^i | i \ngeq j\}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the following language, L, with <m>\Sigma =\{a,b,c,d\}</m>is not regular using the pumping lemma for regular languages. 
+        </p>
+        <me>
+          L = \{a^nb^mc^nd^m | n,m \geq 0\}
+        </me>
+        <p>
+          Some sample strings in the language are: <m>ac</m>, <m>bd</m>, <m>abcd</m>, and <m>aabccd</m>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />

@@ -898,6 +898,239 @@
           </p>
         </statement>
       </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Translate the below CFG into English:
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow bGdE</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>G \rightarrow bGd | \epsilon</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>E \rightarrow eE | \epsilon</m></cell>
+              </row>
+            </tabular>
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Give a CFG for the language: 
+            <me>
+              L = \{w\#w^R | w \mbox{ is a binary string}\}
+            </me>
+            <m>w^R</m> consists of <m>w</m> in reverse. So, if <m>w = 001</m>, then <m>w^R = 100</m>. Thus <m>001\#100</m> is a string in this language.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Given the grammar below, show the parse tree for the string: <m>bbdd</m>
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow BSD | BD</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>B \rightarrow b | Bc</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>D \rightarrow d | Dc</m></cell>
+              </row>
+            </tabular>
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Translate the grammar below into English:
+            
+          </p>
+          <p>
+            CFG:
+          </p>
+          <image source="../generated/latex-image/CFGEx8.svg" width="50%">
+	      </image>
+        
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Create a CFG from the English description of the language below:
+          </p>
+          <me>
+            L = \mbox{\{This language consists of strings that have the form of a palindrome using this special alphabet.\}}
+          </me>
+          <me>
+            \Sigma = \{\triangle, \square, \bigcirc\}
+          </me>
+        </statement>
+      </exercise>
+       <exercise>
+        <statement>
+          <p>
+            Given the grammar below, show the parse tree for the string: 
+          </p>
+          <me>
+            \triangle \triangle \triangle \bigcirc \square \triangle
+          </me>
+          
+          <p>
+            CFG:
+          </p>
+          <image source="../generated/latex-image/CFGEx8.svg" width="50%">
+	      </image>
+        
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+          <ol>
+            <li>
+              <p>
+                Translate the below CFG into English:
+            <tabular>
+              <row>
+                <cell><m>CFG:</m></cell><cell></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>S \rightarrow aSc | T</m></cell>
+              </row>
+              <row>
+                <cell></cell><cell><m>T \rightarrow bT | \epsilon</m></cell>
+              </row>
+            </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Given that same grammar, show a parse tree for the string: <m>abbc</m>
+              </p>
+            </li>
+          </ol>
+            
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            The language consists of all strings with either: 
+            <ul>
+              <li>
+                <p>
+                  an equal number of a's and b's with no c's, or
+                </p>
+              </li>
+              <li>
+                <p>
+                  an equal number of a's and c's with no b's
+                </p>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Where, <m>\Sigma = \{a,b,c\}</m>
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <ol>
+            <li>
+              <p>
+                Translate the below CFG into English:
+                <tabular>
+                  <row>
+                    <cell><m>CFG:</m></cell><cell></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>S \rightarrow SS | T</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>T \rightarrow aSb | \epsilon</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Also generate a parse tree, using the grammar above, for the string: aabbab
+              </p>
+            </li>
+          </ol>
+          
+            
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            The set of all strings that have an equal number of a's and d's, less b's than c's, 
+            and the symbols appear in alphabetical order. 
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <ol>
+            <li>
+              <p>
+                Translate the below CFG into English:
+                <tabular>
+                  <row>
+                    <cell><m>CFG:</m></cell><cell></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>S \rightarrow TT | Tu</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>T \rightarrow aTb | \epsilon</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell><m>U \rightarrow cUd | cd</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Also generate a parse tree, using the grammar above, for the string: aabbab
+              </p>
+            </li>
+          </ol>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Give a CFG that consists of strings taht either a list of a's followed by b's in equal 
+            number or a list of b's followed by c's in equal number or a list of c's followed by 
+            d's in equal number. the alphabet of this langage is: <m>\Sigma = \{a,b,c,d\}</m>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Some accepted strings: <m>aabb</m>, <m>bbcc</m>, <m>ccdd</m>, and <m>ccccdddd</m>.
+          </p>
+          <p>
+            Some regjected strings:  <m>ac</m>, <m>abc</m>, <m>bd</m>, and <m>cb</m>.
+          </p>
+        </hint>
+      </exercise>
     </exercises>
     
     <!--

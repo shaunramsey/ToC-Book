@@ -6,6 +6,8 @@
     In this chapter you will learn:
      <ol>
        <li>Predecessors to Turing Machines </li>
+       <li>Goldbach's Conjecture </li>
+       <li>Varieties of Turing Machines</li>
      </ol>
   </objectives>
   <section xml:id="sec-earlyTMs">
@@ -233,6 +235,63 @@
       </p>
       </subsection>
   </section>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          <m>L(TM)</m> is the language of the diagram of the TM below. The diagram in the TM shows a recognizer of <m>L(TM)</m>. 
+          What does this mean about the classification of <m>L(TM)</m>? 
+        </p>
+        <p>
+          Be sure to discuss: Td, Tr, both, neither. What about the classification of the complement of the <m>L(TM)</m>?
+        </p>
+        <image source="../generated/latex-image/TMD4.svg" width='60%'>
+	            </image>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Explain and describe in detail the error in the following proof. 
+        </p>
+        <p>
+          <m>A_{TM}</m> is Tr but its complement is not. 
+          <ul>
+            <li>
+              <p>
+                This means Tr are not closed under complementation.
+              </p>
+            </li>
+            <li>
+              <p>
+                Recognizing a language like <m>\{d^*o^*n^*e^*\}</m> is Tr.
+              </p>
+            </li>
+            <li>
+              <p>
+                Thus, its complement must not be Tr.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Given a program's source code \(use your favorite language\), give a decidable
+          alogrithm that determines if that code contains a control statement (like if, 
+          for, while, ...). 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Rice's Theorem states the fact that checking if that program actually runs that code is 
+          undecidable.
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
     <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />

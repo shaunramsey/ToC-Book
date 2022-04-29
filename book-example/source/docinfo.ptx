@@ -30,6 +30,7 @@
   \usetikzlibrary{decorations.markings} 
   \usepackage{cancel}
   \usepackage{tikzsymbols}
+  \usepackage{mathtools}
 </latex-image-preamble>
 
 <!-- It is possible to rename elements using the tags below -->

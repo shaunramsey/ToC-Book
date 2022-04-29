@@ -366,6 +366,101 @@
             L = \{w+1=z | w \mbox{ is any binary string and } z \mbox{  is } (w+1) \mbox{ in reverse when } w \mbox{ is treated as a binary number}\}
           </me>
         </p>
+        <tabular>
+          <row>
+            <cell right="minor">
+              <tabular>
+                <row>
+                  <cell>1</cell><cell>0</cell><cell>1</cell><cell>1</cell>
+                </row>
+                <row>
+                  <cell bottom="minor" >+</cell><cell bottom="minor"> </cell><cell bottom="minor"> </cell><cell bottom="minor" >1</cell>
+                </row>
+                <row>
+                  <cell >1</cell><cell>1</cell><cell>0</cell><cell>0</cell>
+                </row>
+              </tabular>
+            </cell>
+            <cell right="minor">
+              <tabular>
+                <row>
+                  <cell></cell><cell>1</cell><cell>1</cell>
+                </row>
+                <row>
+                  <cell bottom="minor"></cell><cell bottom="minor">+</cell><cell bottom="minor" >1</cell>
+                </row>
+                <row>
+                  <cell>1</cell><cell>0</cell><cell>0</cell>
+                </row>
+              </tabular>
+            </cell>
+            <cell>
+              <tabular>
+                <row>
+                  <cell>1</cell><cell>0</cell><cell>1</cell><cell>0</cell>
+                </row>
+                <row>
+                  <cell bottom="minor" >+</cell><cell bottom="minor"> </cell><cell bottom="minor"> </cell><cell bottom="minor" >1</cell>
+                </row>
+                <row>
+                  <cell >1</cell><cell>0</cell><cell>1</cell><cell>1</cell>
+                </row>
+              </tabular>
+            </cell>
+          </row>
+          <row>
+            <cell right="minor"><image source="../generated/latex-image/EQ1.svg" width='70%'>
+	            </image></cell>
+            <cell right="minor"><image source="../generated/latex-image/EQ2.svg" width='70%'>
+	            </image></cell>
+            <cell><image source="../generated/latex-image/EQ3.svg" width='70%'>
+	            </image></cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the PL for CFLs to prove the following language is not a Context Free Language: 
+        </p>
+        <me>
+          L = \{\star^n \bigcirc ^k \star^n \bigcirc^k\}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the pumping lemma for CFLs to prove the following language is not a CFL:
+        </p>
+        <me>
+          L = \{a^*b^nc^*d^ne^*f^ng^*\}
+        </me>
+        
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the pumping lemma for CFLs to prove the following languge is not a CFL:
+        </p>
+        <me>
+          L = \{\alpha ^i\beta ^i\gamma ^i| i \> j \> k\}
+        </me>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the pummping lemma for CFLs to prove the following language is 
+          not a CFL.
+        </p>
+        <me>
+          L = \{\star ^i\triangle^j\square^i | i \ngeq j\}
+        </me>
+        
       </statement>
     </exercise>
   </exercises>
