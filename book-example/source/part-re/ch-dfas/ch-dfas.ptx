@@ -25,30 +25,22 @@
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
-        <me>\Sigma_{A} = \{a, b, c\}</me>
-        Alphabets can include the empty string <m>\epsilon</m> and all characters in the alphabet can be used to create strings such as <m>S</m> and <m>Q</m>
+        <me>A = \Sigma = \{a, b, c\}</me>
+        A language will consist of strings created from this alphabet. Order matters. For example <m>S</m> and <m>Q</m> are strings from alphabet <m>A</m>.
         <me>S = baba</me>
         <me>T = aaaaa</me>
-        these example strings may be included in language <m>A</m>
-        <me>L_{A}\in(S, T)</me>
+        these example strings may be included in language <m>L_1</m>. You might say:
+        <me>S \in L_1</me>
+        <m>L_1</m> might have other strings in it as well. We would normally list those in set notation. If <m>L_1</m> consisted of just the two strings above, we could fully list them like this:
+        <me>L_1 = \{baba, aaaaa\}</me>
         </p>
       </subsection>
-      <subsection>
-      <!-- todo: Should determinism come before finite automata and the explinantion of states? I feel like 
-      explaining vocabularly, examples of languages in CS terms students would know at this point, and 
-      some sort of example of how to think about these concepts could be useful to provide background
-      before going into states and automata and determinism. I am also a little confused as to how to explain
-      determinism at this point. -->
-        <title>Deterministic</title> 
-        <p>
-        <idx>Determinisim</idx> <term>Determinisim</term> means that all transitions of state are unique and completly defined.
-        </p>
-      </subsection>
+
    </section>
    <section xml:id="FiniteAutomata">
       <title>Finite Automata (FA)</title>
         <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
-          but they utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States are 
+          but they utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States do track a kind of finite member by their position. States are 
           represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
           a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
           these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
@@ -57,26 +49,31 @@
         </image>
         <!--TODO: I would like to try and make animations to show this next part instead of writing it out.-->
          <p>
-          Say there is a string <m>S = 110</m>. After following the arrows to parce through <m>S</m>,
-          it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>L(M_1)\in S</m>,
+          Say there is a string <m>S = 110</m>. After following the arrows to parse through <m>S</m>,
+          it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>S \in L(M_1)</m>,
           but what is <m>L(M_1)</m>?
          </p>
          <p>
           Lanugages can be defined using plain language, expressions, or FAs. The following all represent the same language.
          <ul>
             <li><me>L_2 = \mbox{any string that ends with 01}</me></li>
-            <li><me>L_2 = {s01 | \mbox{where s is a string made of only 0s and 1s}}</me></li>
+            <li><me>L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}</me></li>
             <li><image source="../generated/latex-image/FAExM2.svg" width="50%">
                 </image>
               </li>
             </ul>
           </p>
           <p>
-          The language of a FA can be determined by creating test strings from characters in the given alphabet and
+          One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and
           checking them using a given machine. For <m>M_2</m>, test strings could include 000, 01, 11011, and 100001. By 
-          tracing through <m>M_2</m>, it can be seen that it would only accept on the second and fourth strings, the only
+          tracing through <m>M_2</m> with each of these four string separately, we see that it accepts  the second and fourth strings, the only
           ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine 
-          the languages of other machines.
+          the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what 
+          each state is representing. Sometimes it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers 
+          a modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a number divisible by 3". 
+          Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other
+          methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although
+          although those expressions are often more complicated than the machines themselves!
         </p>
     </section>
    <section xml:id="DFAs">
@@ -95,7 +92,7 @@
           at each state, then the FA is deterministic, or a DFA. 
         </p>
         <p>
-          Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential charachter
+          Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character
           at each state, the FA is deterministic.
         </p>
         <sidebyside>
@@ -108,6 +105,18 @@
             </tabular>
           </table>
         </sidebyside>
+
+              <subsection>
+      <!-- todo: Should determinism come before finite automata and the explinantion of states? I feel like 
+      explaining vocabularly, examples of languages in CS terms students would know at this point, and 
+      some sort of example of how to think about these concepts could be useful to provide background
+      before going into states and automata and determinism. I am also a little confused as to how to explain
+      determinism at this point. -->
+        <title>Deterministic</title> 
+        <p>
+        <idx>Determinisim</idx> <term>Determinisim</term> means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.
+        </p>
+      </subsection>
    </section>
    <section>
       <title> Strategies for Understanding DFAs</title>

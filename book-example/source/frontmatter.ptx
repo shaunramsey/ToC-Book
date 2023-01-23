@@ -6,8 +6,13 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>Shaun D. Ramsey, PhD and Emilee Daniel</personname>
+      <personname>Shaun D. Ramsey, PhD</personname>
       <department>Department of Mathematics and Computer Science</department>
+      <institution>Washington College</institution>
+    </author>
+    <author>
+    <personname>Contributing Author(s): Emilee Daniel</personname>
+          <department>Department of Mathematics and Computer Science</department>
       <institution>Washington College</institution>
     </author>
     <date><today/></date>

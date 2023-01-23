@@ -1,0 +1,2 @@
+/Users/ramsey/ToCBook/ToC-Book/new-pretext-project/source/main.ptx:5:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element blockquote, got p
+/Users/ramsey/ToCBook/ToC-Book/new-pretext-project/source/main.ptx:7:0:ERROR:RELAXNGV:RELAXNG_ERR_EXTRACONTENT: Element article has extra content: introduction
