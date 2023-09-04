@@ -15,7 +15,7 @@
   <book xml:id="theory-of-computation">
     <!-- The book needs a title and can have a subtitle  -->
     <title>Theory of Computation</title>
-    <subtitle>an undergraduate introduction</subtitle>
+    <subtitle>an introduction for programmers</subtitle>
 
     <!-- Now we include files containing each main devision.       -->
 

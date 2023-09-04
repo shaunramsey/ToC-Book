@@ -3,11 +3,14 @@
 
 <chapter xml:id="ch-dfas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Determinsitic Finite Automata</title>
+  <introduction>
+      This chapter discusses strategies for understanding finite automata, specifically 
+    those with a halting accept and halting reject state. While this is a unique approach 
+    for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata 
+    in an intuitive way. Specifically in this chapter we will tackle:
+    </introduction>
   <objectives>
-    In this chapter you will learn:
-     <ol>
-       <li> The definition of determinism </li>
-       <li> Finite automata (FA) </li>
+    <ol>
        <li> Deterministic Finite Automata (DFA) </li>
        <li> Strategies for understanding Deterministic Finite Automata </li>
        <li> Strategies for drawing Deterministic Finite Automata </li>
@@ -16,12 +19,25 @@
 
 
    <section xml:id="Determinism">
-      <title> Determinism </title>
+      <title> Sets </title>
       <subsection>
         <title>Set Review</title>
+        <p>
+        Sets are a collection of objects where there is no ordering and elements are not repeated or counted.  Sets can contain other sets or they can be empty. Things get really tricky when you think about a set that contains an empty set, but we will not need to deal with that just yet. Typically we use curly brackets to denote set notation (enumeration notation). Thus <m>\{a,b,c\}</m> is a set that contains elements called <m>a</m>, <m>b</m> and <m>c</m>. That is the same set as <m>\{b,a,c\}</m>. Ordering does not matter. If a <m>d</m> were added to this set, we would have a new set <m>\{a,b,c,d\}</m>. If an <m>a</m> were added to this set, it would not change the set because the set already contained an <m>a</m>. We will use enumeration notation right away to start describing important elements for this book.
+        </p>
+        <p> However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: <m>\{w | w\ \text{is a string that contains an}\ a\}</m>. This should be read as the set of all <m>w</m>'s where <m>w</m> is a string that contains an <m>a</m>. We will see this in again in an example shortly. Importantly here, <m> | </m> is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.
+        </p>
+        <p>The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference.
+        </p>
+      </subsection>
+      <subsection> 
+        <title> Machines </title>
+        <p>
+        To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. These machines operate much like functions. When the machines finish 
+        </p>
         <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
         Characters in the alphabet can be appended together to create strings. These strings can be used in a set of recognizable
-        strings, also known as a <idx>Language(<em><m>L</m></em>)</idx> <term>language(<em><m>L</m></em>)</term>.
+        strings, also known as a <idx>Language (<em><m>L</m></em>)</idx> <term>language (<em><m>L</m></em>)</term>.
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 

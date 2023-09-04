@@ -9,6 +9,7 @@
       <personname>Shaun D. Ramsey, PhD</personname>
       <department>Department of Mathematics and Computer Science</department>
       <institution>Washington College</institution>
+      <email>sramsey2@washcoll.edu</email>
     </author>
     <author>
     <personname>Contributing Author(s): Emilee Daniel</personname>
@@ -20,16 +21,15 @@
 
   <colophon>
     <website>
-      <name><c>shaunramsey.com</c></name>
-      <address>http://shaunramsey.com</address>
+      <url href="http://shaunramsey.com" visual="shaunramsey.com"/>
     </website>
 
     <copyright>
       <!-- In addition to specifying the copyright holder, you should  -->
       <!-- include a license, such as the cc-by-sa license shown below -->
       <!-- so people reading your book know how they can use it.       -->
-      <year>2021<ndash/>2022</year>
-      <holder>Shaun D. Ramsey, PhD and Emilee Daniel</holder>
+      <year>2021<ndash/>2024</year>
+      <holder>Shaun D. Ramsey, PhD</holder>
       <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
       <shortlicense>
         <!-- <image source="../images/by-sa.png" width="15%"/>  -->
