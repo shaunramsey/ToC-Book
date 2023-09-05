@@ -27,39 +27,46 @@
         </p>
         <p> However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: <m>\{w | w\ \text{is a string that contains an}\ a\}</m>. This should be read as the set of all <m>w</m>'s where <m>w</m> is a string that contains an <m>a</m>. We will see this in again in an example shortly. Importantly here, <m> | </m> is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.
         </p>
-        <p>The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference.
+        <p>The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference. Until then, you may keep it handy to remind yourself of these two ways to talk about sets.
         </p>
       </subsection>
       <subsection> 
         <title> Machines </title>
         <p>
-        To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. These machines operate much like functions. When the machines finish 
+        To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.
         </p>
-        <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is the finite set of all possible characters in a language.
-        Characters in the alphabet can be appended together to create strings. These strings can be used in a set of recognizable
-        strings, also known as a <idx>Language (<em><m>L</m></em>)</idx> <term>language (<em><m>L</m></em>)</term>.
+        <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is a finite set of symbols. 
+        Characters in the alphabet can be appended together to create strings. So, a <idx>string</idx> <term>string</term> is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a <idx>Language (<em><m>L</m></em>)</idx> <term>language (<em><m>L</m></em>)</term>.
         </p>
         <p>
         For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
-        <me>A = \Sigma = \{a, b, c\}</me>
+        <me>A = \{a, b, c\}</me>
         A language will consist of strings created from this alphabet. Order matters. For example <m>S</m> and <m>Q</m> are strings from alphabet <m>A</m>.
         <me>S = baba</me>
         <me>T = aaaaa</me>
         these example strings may be included in language <m>L_1</m>. You might say:
         <me>S \in L_1</me>
-        <m>L_1</m> might have other strings in it as well. We would normally list those in set notation. If <m>L_1</m> consisted of just the two strings above, we could fully list them like this:
+        which means <m>S</m> is in the language <m>L_1</m>.
+        <m>L_1</m> might have other strings in it as well. We would normally list those in one form of set notation if required. If <m>L_1</m> consisted of just the two strings above, we could fully list them like this:
         <me>L_1 = \{baba, aaaaa\}</me>
+        A binary string (like <m>1010</m>) would require a binary alphabet (<m>\{0,1\}</m>). A sample binary language might be: 
+        <me>\{w | w\ \text{begins with a}\ 1\}</me>
+        This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more).
+        The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).
+        </p>
+        <p>As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).
         </p>
       </subsection>
 
    </section>
    <section xml:id="FiniteAutomata">
       <title>Finite Automata (FA)</title>
-        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state machines (M)</term> that describe a language. They have no memory storage,
-          but they utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string exists in the language of the machine. States do track a kind of finite member by their position. States are 
-          represented using circles and machines are made up of states and arrows connecting them. There is also one arrow without
-          a beginning state. This arrow points to the start state which is where the machine diagram begins. There are also states with two circles,
-          these are accept states. When a string finishing parsing on an accept state, then it is included in the language of the machine.
+        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state machines (M)</term>. We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are 
+          represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without
+          a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with <m>h_a</m> encased in two circles. A halt and reject state (<m>h_r</m>) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help. 
+          
+          <!-- TODO make an aside here-->
+          Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book. 
          </p>
       <image source="../generated/latex-image/FAExM1.svg" width="50%">
         </image>
@@ -70,7 +77,7 @@
           but what is <m>L(M_1)</m>?
          </p>
          <p>
-          Lanugages can be defined using plain language, expressions, or FAs. The following all represent the same language.
+          Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.
          <ul>
             <li><me>L_2 = \mbox{any string that ends with 01}</me></li>
             <li><me>L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}</me></li>
