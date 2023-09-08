@@ -453,13 +453,13 @@
 
   <image xml:id="FAPicSet" width="50%">
     <latex-image>
-      \begin{tikzpicture}
+      $
       \begin{Bmatrix}
       \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \amp \bigcirc \\
       \square \amp \square \amp \triangle \amp \triangle \amp \bigcirc \amp \bigcirc \\
       \triangle , \amp \square , \amp \square , \amp \triangle , \amp \triangle , \amp \square \\
       \end{Bmatrix}
-      \end{tikzpicture}
+      $
     </latex-image>
   </image>
 
@@ -2237,16 +2237,14 @@
   ch-nfas -->
   <image xml:id="PowerSetMatx" width="50%">
     <latex-image>
-      \begin{tikzpicture}
-      \begin{equation*}
+      $
       \begin{Bmatrix}
       \emptyset \amp \{A,B,C\}\\
       \{A\}\amp\{A,B\}\\
       \{B\}\amp\{A,C\}\\
       \{C\}\amp\{B,C\}
       \end{Bmatrix}
-      \end{equation*}
-      \end{tikzpicture}
+      $
     </latex-image>
   </image>
 
@@ -3666,17 +3664,17 @@
 
   <image xml:id="EQ1">
     <latex-image>
-      \underbracket{1\overbracket{0\underbracket{1\overbracket{1 + 1 = 0}0}1}1}
+      $\underbracket{1\overbracket{0\underbracket{1\overbracket{1 + 1 = 0}0}1}1}$
     </latex-image>
   </image>
   <image xml:id="EQ2">
     <latex-image>
-      \underbracket{1\overbracket{1 + 1 = 0}0\underline{1}}
+      $\underbracket{1\overbracket{1 + 1 = 0}0\underline{1}}$
     </latex-image>
   </image>
   <image xml:id="EQ3">
     <latex-image>
-      \underbracket{1\overbracket{0\underbracket{1\overbracket{0 + 1 = 1}1}0}1}
+      $\underbracket{1\overbracket{0\underbracket{1\overbracket{0 + 1 = 1}1}0}1}$
     </latex-image>
   </image>
   <!--TODO:
