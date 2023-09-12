@@ -1621,7 +1621,7 @@
       \fill [black] (4.91,-31.87) -- (4.62,-30.97) -- (3.97,-31.73);
       \draw [black] (10.2,-33.8) -- (71.3,-33.8);
       \fill [black] (71.3,-33.8) -- (70.5,-33.3) -- (70.5,-34.3);
-      \draw (40.75,-34.3) node [below] {$(00+11)^*(01+10)\[11+00+(10+01)(00+11)^*(01+10)\]^*$};
+      \draw (40.75,-34.3) node [below] {$(00+11)^*(01+10)[11+00+(10+01)(00+11)^*(01+10)]^*$};
       \end{tikzpicture}
     </latex-image>
   </image>
@@ -3297,7 +3297,8 @@
   </image>
   <image xml:id="CFGEx8">
     <latex-image>
-      \begin{matrix}
+      $
+      \begin{Bmatrix}
       S \amp \rightarrow \amp \triangle \amp S \amp \triangle \amp | \amp \triangle \amp T \amp
       \square \\
       T \amp \rightarrow \amp \triangle \amp T \amp \square \amp | \amp \triangle \amp U \amp
@@ -3305,8 +3306,8 @@
       U \amp \rightarrow \amp \triangle \amp U \amp \bigcirc \amp | \amp \epsilon \amp \amp \\
       \amp\amp\amp\amp\amp\amp\amp\amp\\
       \Sigma \amp = \amp \{\triangle, \amp \square, \amp \bigcirc\} \amp \amp \amp \\
-      \end{matrix}
-
+      \end{Bmatrix}
+      $
     </latex-image>
 
   </image>
@@ -3357,7 +3358,7 @@
       \fill [black] (37.9,-24.6) -- (37.1,-24.1) -- (37.1,-25.1);
       \draw (33.25,-24.1) node [above] {$cx\epsilon$};
       \draw [black] (22.92,-13.423) arc (-36:-324:2.25);
-      \draw (18.35,-12.1) node [left] {$a\epsilonx$};
+      \draw (18.35,-12.1) node [left] {$a\epsilon x$};
       \fill [black] (22.92,-10.78) -- (22.57,-9.9) -- (21.98,-10.71);
       \draw [black] (53.793,-26.071) arc (-67.07887:-112.92113:13.205);
       \fill [black] (53.79,-26.07) -- (52.86,-25.92) -- (53.25,-26.84);
@@ -3383,9 +3384,9 @@
       \draw [black] (23.3,-6) -- (24.3,-10.96);
       \fill [black] (24.3,-10.96) -- (24.64,-10.08) -- (23.66,-10.27);
       \draw [black] (22.549,-15.745) arc (-24.15178:-312.15178:2.25);
-      \draw (17.55,-15.63) node [left] {$0\epsilonx$};
+      \draw (17.55,-15.63) node [left] {$0\epsilon x$};
       \fill [black] (22.01,-13.16) -- (21.48,-12.37) -- (21.07,-13.28);
-      \draw (17.99,-17.6) node [left] {$1\epsilony$};
+      \draw (17.99,-17.6) node [left] {$1\epsilon y$};
       \draw [black] (24.9,-16.9) -- (24.9,-25.9);
       \fill [black] (24.9,-25.9) -- (25.4,-25.1) -- (24.4,-25.1);
       \draw (24.4,-22.0) node [left] {$\epsilon\epsilon\epsilon$};
@@ -3694,6 +3695,7 @@
     </latex-image>
   </image>
 
+
   <image xml:id="TMD1">
     <latex-image>
       \begin{tikzpicture}[scale=0.2]
@@ -3951,10 +3953,10 @@
   <image xml:id="TMVennDiagram2">
     <latex-image>
       \begin{tikzpicture}
-      \draw (0,-1) circle (3.5) (0,1.75) node [text=black,above]{$Tr$}];
-      \draw (0,-1) circle (2.75) (0,1) node [text=black,above]{$Td$}];
+      \draw (0,-1) circle (3.5) (0,1.75) node [text=black,above] {$Tr$};
+      \draw (0,-1) circle (2.75) (0,1) node [text=black,above] {$Td$};
       \draw (0,-1) circle (2) (0,0.25) node [text=black,above] {$LBAs$};
-      \draw (0,-1) circle (1.25)(0,-0.5) node [text=black,above] {$CFLs$};
+      \draw (0,-1) circle (1.25) (0,-0.5) node [text=black,above] {$CFLs$};
       \draw (0,-1) circle (.5) (0,-1) node [text=black] {$RLs$};
       \draw (-5,-5) rectangle (5,3) node [text=black,above] {$\Omega$};
       \end{tikzpicture}
