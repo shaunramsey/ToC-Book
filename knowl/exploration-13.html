@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Intersection.</span>
+</h4> <div class="para"> <dfn class="terminology">Intersection <span class="process-math">\(\cup\)</span></dfn> of <span class="process-math">\(L_1\cup L_2\)</span> is any string that is accepted in <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{.}\)</span> It is very useful in closure proofs and in crafting NFAs for languages that use the logic of <span class="process-math">\(and\text{.}\)</span> For example look at these two machines:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1(M_1) = \{\mbox{all strings that end with a 1}\}
+\end{equation*}
+</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2.svg" class="contained"></div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_2(M_2) = \{\mbox{all strings with an even number of symbols}\}
+\end{equation*}
+</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2a.svg" class="contained"></div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1\cup L_2 = \{\mbox{is any string that ends in a 1 and that has an even number of symbols.}\}
+\end{equation*}
+</div>
+<div class="para">Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states <span class="process-math">\(Q_1\times Q_2\)</span> and create those machines.</div> <details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para">Here are some examples of the step through thinking.</div> <ul class="disc">
+<li><div class="para">States with <span class="process-math">\(B_2\)</span> occur when the string has even length.</div></li>
+<li><div class="para">
+<span class="process-math">\(A_2\)</span> is when it is odd</div></li>
+<li><div class="para">
+<span class="process-math">\(A_1\)</span> says the last seen symbol was a 0</div></li>
+<li><div class="para">
+<span class="process-math">\(B_1\)</span> is when it was a 1</div></li>
+</ul>
+</div></details> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2b.svg" class="contained"></div> <div class="para">So, it turns out we can use this to build DFAs of challenging languages!</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exploration-13">in-context</a></span>
+</body>
+</html>

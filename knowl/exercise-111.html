@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
+</h4>
+<div class="para">Stacks tend to be useful in arithmetic. You might still be able to find HP calculators that use a stack based input. Let’s prove simply *add 1* can be a context free language under certain specific configurations. To make this work, the result will be in reverse order. Thus, strings in the language might be: <span class="process-math">\(1011+1=0011\)</span> or even <span class="process-math">\(11+1=100\text{.}\)</span>
+</div> <div class="para">It is helpful to treat the latter as a special case.</div> <div class="para logical">
+<div class="para">Write a CFG and PDA for this language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{w+1=z | w \mbox{ is any binary string and } z \mbox{  is } (w+1) \mbox{ in reverse when } w \mbox{ is treated as a binary number}\}
+\end{equation*}
+</div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">+</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+</table></div></td>
+<td class="l m b0 r1 l0 t0 lines"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">+</td>
+<td class="l m b1 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+</table></div></td>
+<td class="l m b0 r0 l0 t0 lines"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">+</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/EQ1.svg" class="contained"></div></td>
+<td class="l m b0 r1 l0 t0 lines"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/EQ2.svg" class="contained"></div></td>
+<td class="l m b0 r0 l0 t0 lines"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/EQ3.svg" class="contained"></div></td>
+</tr>
+</table></div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-context-free.html#exercise-111">in-context</a></span>
+</body>
+</html>

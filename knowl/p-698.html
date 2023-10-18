@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">We will now look at a full example proof. Note that the itallicized language is largely epositiory and set up language.</div>
+<ol class="decimal">
+<li><div class="para">Assume <span class="process-math">\(Regular_{TM}\)</span> is decidable and there is some machine <span class="process-math">\(R\)</span> that decides it. <em class="emphasis"><span class="process-math">\(R\text{,}\)</span> when handed a TM, will tell us if the TM’s langbuage is regular decidably.</em>
+</div></li>
+<li><div class="para">We show <span class="process-math">\(A_{TM}\)</span> reduces to <span class="process-math">\(Regular_{TM}\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">We create a machine, <span class="process-math">\(Q\text{,}\)</span> using the <span class="process-math">\(M\)</span> and <span class="process-math">\(w\)</span> imputs from <span class="process-math">\(A_{TM}\text{.}\)</span> <span class="process-math">\(Q\)</span> takes input <span class="process-math">\(x\text{.}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para">If <span class="process-math">\(x\)</span> is in <span class="process-math">\(0^n1^n\text{,}\)</span> <span class="process-math">\(Q\)</span> accepts.</div></li>
+<li>
+<div class="para">Otherwise, <span class="process-math">\(Q\)</span> runs <span class="process-math">\(M\)</span> on <span class="process-math">\(w\text{.}\)</span> If <span class="process-math">\(M\)</span> accepts, <span class="process-math">\(Q\)</span> accepts.</div>
+<div class="para logical">
+<div class="para"><em class="emphasis">This machine, Q, is special.</em></div>
+<ul class="circle">
+<li><div class="para"><em class="emphasis">If M accepts w, Q accepts all inputs x. This is a regular language.</em></div></li>
+<li><div class="para"><em class="emphasis">If M does not accept w, Q accepts only inputs that match <span class="process-math">\(0^n1^n\text{.}\)</span> This is NOT a regular language.</em></div></li>
+</ul>
+</div>
+</li>
+</ul>
+</div></li>
+<li><div class="para">We now take our machine,<span class="process-math">\(Q\text{,}\)</span> and pass it over to our decider, <span class="process-math">\(R\text{.}\)</span> <span class="process-math">\(R\)</span> will tell us if the language of <span class="process-math">\(Q\)</span> is regular or not. If it is regular, <span class="process-math">\(M\)</span> accepts <span class="process-math">\(w\text{.}\)</span> If it is not, then <span class="process-math">\(M\)</span> does not accept. We’ve built an <span class="process-math">\(A_{TM}\)</span> decider.</div></li>
+<li><div class="para"><em class="emphasis">So, we’ve taken inputs to <span class="process-math">\(A_{TM}\text{,}\)</span> crafted a machine, <span class="process-math">\(Q\text{,}\)</span> passed it to <span class="process-math">\(R\text{,}\)</span> and found that <span class="process-math">\(R\)</span> somehow helps us decide <span class="process-math">\(A_{TM}\text{.}\)</span></em></div></li>
+<li><div class="para">We know <span class="process-math">\(A_{TM}\)</span> is not decidable, so this is a contradition.</div></li>
+<li><div class="para">Therefore, our assumption that <span class="process-math">\(Regular_{TM}\)</span> was decidable must have been incorrect.</div></li>
+</ol>
+</div>
+<span class="incontext"><a class="internal" href="ch-reducibility.html#p-698">in-context</a></span>
+</body>
+</html>

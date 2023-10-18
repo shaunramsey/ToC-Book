@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="title">RLs Closed under Union.</span></h4> <div class="para"> RL closure under <dfn class="terminology">union</dfn> follows the basic progression: if <span class="process-math">\(L_1\)</span> is a RL and <span class="process-math">\(L_2\)</span> is a RL, then <span class="process-math">\(L_1\cup L_2\)</span> is a RL.</div> <div class="para">If <span class="process-math">\(L_1\)</span> is a RL, some DFA describes it. It has a start state and a set of accept states. We also added empty string tranistions from the original accept states to a singluar new accept state.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(M_1) = L_1
+\end{equation*}
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1.svg" class="contained"></div> <div class="para">This is the same for <span class="process-math">\(L_2\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(M_2) = L_2
+\end{equation*}
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1d.svg" class="contained"></div> <div class="para">Using these two machines, we can create the union machine by making a new start state with empty string transitions to the start states for <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(M_3) = L_1 \cup L_2
+\end{equation*}
+</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1a.svg" class="contained"></div> <div class="para">Since this union machine is an NFA, it describes a RL.</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#proof-1">in-context</a></span>
+</body>
+</html>

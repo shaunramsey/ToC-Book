@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+</h4>
+<div class="para">Let us consider a grammar with multiple variables. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_4\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS | T | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT | \epsilon\)</span></td>
+</tr>
+</table></div>
+</div> <div class="para">Can we generate only <span class="process-math">\(a\)</span>s? <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow aaS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaS \rightarrow aa\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div> The resulting string is <span class="process-math">\(aa\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(a\)</span>s.</div> <div class="para">Can we generate only <span class="process-math">\(b\)</span>s? How? <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow T\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(bT \rightarrow bbT\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(bT\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(bbT \rightarrow bb\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div></div></details> The resulting string is <span class="process-math">\(bb\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(b\)</span>s.</div> <div class="para logical">
+<div class="para">What are some other strings that we can generate using <span class="process-math">\(CFG_4\text{?}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle ab\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle aaabb\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle abbbbbb\)</span></div></li>
+</ul>
+<div class="para">The language of this grammar is the empty string or any amount of <span class="process-math">\(a\)</span>s followed by any amount of <span class="process-math">\(b\)</span>s.</div>
+</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exploration-19">in-context</a></span>
+</body>
+</html>

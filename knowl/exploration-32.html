@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">The most difficult part of proving that any CFL is context free using the Pumping Lemma, is finding the best string to use as your example. Consider the following language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_3 = \{a^nb^nc^md^me^m\}
+\end{equation*}
+</div>
+<div class="para">What is a string that we can use to prove <span class="process-math">\(L\)</span> is a CFL using the Pumping Lemma?</div>
+</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(s^{(1)} = c^pd^pe^p\)</span></div></details> <div class="para logical">
+<div class="para">Was that string unexpected? Were you expecting something closer to:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)} = a^pb^pc^pd^pe^p
+\end{equation*}
+</div>
+<div class="para">That string will not work for the Pumping Lemma for CFLs.</div>
+</div> <div class="para logical">
+<div class="para">Another example of this phenomrnon occures when trying to choose a string to pump from the following language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_4 = \{a^ib^jc^k | i=j \mbox{ and } j\leq k\}
+\end{equation*}
+</div>
+<div class="para">The string, <span class="process-math">\(s^{(1)}=a^pb^pc^p\)</span> will not allow us to show that <span class="process-math">\(L_4\)</span> is not CFL as using a singular <span class="process-math">\(c\)</span> as the <span class="process-math">\(y\)</span> portion of the pumpable string would be able to be pumped and stay in the language.</div>
+</div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-context-free.html#exploration-32">in-context</a></span>
+</body>
+</html>

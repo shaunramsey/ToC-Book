@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Determinsitic Finite Automata</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Theory of Computation">
+<meta property="book:author" content="Shaun D. Ramsey, PhD">
+<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="part-re.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="part-re.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-nfas.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-re.html" class="internal"><span class="codenumber">I</span> <span class="title">REX and FAs</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter active">
+<div class="toc-title-box"><a href="ch-dfas.html" class="internal"><span class="codenumber">1</span> <span class="title">Determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#Determinism" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-1" class="internal"><span class="title">Set Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-2" class="internal"><span class="title">Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#FiniteAutomata" class="internal"><span class="codenumber">1.2</span> <span class="title">Finite Automata (FA)</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#DFAs" class="internal"><span class="codenumber">1.3</span> <span class="title">Deterministic Finite Automata (DFA)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-3" class="internal"><span class="title">Deterministic</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-4" class="internal"><span class="codenumber">1.4</span> <span class="title">Strategies for Understanding DFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-5" class="internal"><span class="codenumber">1.5</span> <span class="title">Strategies for Drawing DFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-dfas.html#ch-dfas-exercises" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfas.html" class="internal"><span class="codenumber">2</span> <span class="title">Non-determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#NFAs" class="internal"><span class="codenumber">2.1</span> <span class="title">Non-Deterministic Finite Automata (NFA)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#Parallelism" class="internal"><span class="codenumber">2.2</span> <span class="title">Parallelism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#PowerSet" class="internal"><span class="codenumber">2.3</span> <span class="title">The Power Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#StrengthsofNFAs" class="internal"><span class="codenumber">2.4</span> <span class="title">Strengths of NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfas.html#exercises-2" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfa-to-dfa.html" class="internal"><span class="codenumber">3</span> <span class="title">NFA and DFA relationships</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#sec-FiniteNumberofStates" class="internal"><span class="codenumber">3.1</span> <span class="title">Finite Number of States</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#exercises-3" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex.html" class="internal"><span class="codenumber">4</span> <span class="title">Regular Expressions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-RegularExpressions" class="internal"><span class="codenumber">4.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-REsInNFAs" class="internal"><span class="codenumber">4.2</span> <span class="title">Regular Expressions in NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex.html#exercises-REX" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex-to-nfa.html" class="internal"><span class="codenumber">5</span> <span class="title">Converting REX to NFAs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal"><span class="codenumber">5.1</span> <span class="title">Converting Regular Expressions to NFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal"><span class="codenumber">5.2</span> <span class="title">Building NFAs from REs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#exercises-5" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-to-rex.html" class="internal"><span class="codenumber">6</span> <span class="title">Using Rips to Convert FAs to REX</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-to-rex.html#sec-howtorip" class="internal"><span class="codenumber">6.1</span> <span class="title">Rips</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-to-rex.html#exercises-6" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-closure.html" class="internal"><span class="codenumber">7</span> <span class="title">Closure and Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-closureintro" class="internal"><span class="codenumber">7.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-howtoRLClosureProof" class="internal"><span class="codenumber">7.2</span> <span class="title">How to Write a Closure Proof</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-fa-closure.html#sec-constructionproofs" class="internal"><span class="codenumber">7.3</span> <span class="title">Closure Proven through Construction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-closure.html#exercises-7" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pumping-lemma-regular.html" class="internal"><span class="codenumber">8</span> <span class="title">Pumping Lemma for Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-pumpinglemaintro" class="internal"><span class="codenumber">8.1</span> <span class="title">Introduciton to the Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#section-20" class="internal"><span class="codenumber">8.2</span> <span class="title">Spotting Loops and Repetition in FAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-RLpumpinglemma" class="internal"><span class="codenumber">8.3</span> <span class="title">The Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-PLRLFunLangs" class="internal"><span class="codenumber">8.4</span> <span class="title">Additional Non-Regular Languages for Proving</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#exercises-8" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-cf.html" class="internal"><span class="codenumber">II</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cfgs.html" class="internal"><span class="codenumber">9</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cfgs.html#CFGs" class="internal"><span class="codenumber">9.1</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-RLReview" class="internal"><span class="title">Regular Languages Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-CFGintro" class="internal"><span class="title">Basics of Context Free Grammars</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-rexToCFG" class="internal"><span class="title">Creating CFGs from Regular Expressions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-parsetrees" class="internal"><span class="codenumber">9.2</span> <span class="title">Parse Trees</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#sec-Ambiguity" class="internal"><span class="codenumber">9.3</span> <span class="title">Ambiguity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cfgs.html#ch-cfgs-exercises" class="internal"><span class="codenumber">9.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pdas.html" class="internal"><span class="codenumber">10</span> <span class="title">Pushdown Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pdas.html#sec-PDAintro" class="internal"><span class="codenumber">10.1</span> <span class="title">Introduction to Pushdown Automatas</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pdas.html#exercises-10" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnf.html" class="internal"><span class="codenumber">11</span> <span class="title">Chomsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnf.html#sec-NormalForms" class="internal"><span class="codenumber">11.1</span> <span class="title">Introduction to Normal Forms</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cnf.html#sec-ChompskyNormalForm" class="internal"><span class="codenumber">11.2</span> <span class="title">Chompsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-CNFRules" class="internal"><span class="title">Rules of Chompsky Normal Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-createCNF" class="internal"><span class="title">Steps to Putting a CFG in CNF</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnf.html#exercises-11" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnl.html" class="internal"><span class="codenumber">12</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnl.html#sec-cfls" class="internal"><span class="codenumber">12.1</span> <span class="title">Introduction to Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnl.html#exercises-12" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html" class="internal"><span class="codenumber">13</span> <span class="title">Pumping Lemma for Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-parseTreeRevisit" class="internal"><span class="codenumber">13.1</span> <span class="title">Revisiting Parse Trees and Spotting Loops</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-plForCFLs" class="internal"><span class="codenumber">13.2</span> <span class="title">The Pumping Lemma for Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#exercises-13" class="internal"><span class="codenumber">13.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-tm.html" class="internal"><span class="codenumber">III</span> <span class="title">Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tms.html" class="internal"><span class="codenumber">14</span> <span class="title">Turing Machine Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tms.html#sec-tm-background" class="internal"><span class="codenumber">14.1</span> <span class="title">Introduction to Turing Machines</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tms.html#exercises-14" class="internal"><span class="codenumber">14.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tm-classifications.html" class="internal"><span class="codenumber">15</span> <span class="title">Classifications of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-earlyTMs" class="internal"><span class="codenumber">15.1</span> <span class="title">Early Turing Machines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-goldbach" class="internal"><span class="codenumber">15.2</span> <span class="title">Goldbach’s Conjecture</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-tm-classifications.html#sec-TMVarieties" class="internal"><span class="codenumber">15.3</span> <span class="title">Varieties of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsubsec-TMRecognizable" class="internal"><span class="title">Recognizable Turing Machines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsec-TMDecidable" class="internal"><span class="title">Decideable Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tm-classifications.html#exercises-15" class="internal"><span class="codenumber">15.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-diagonalization.html" class="internal"><span class="codenumber">16</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-hiblertshotel" class="internal"><span class="codenumber">16.1</span> <span class="title">Hilbert’s Hotel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-introtodiagonalization" class="internal"><span class="codenumber">16.2</span> <span class="title">Introduction to Diagonalization</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-diagonalization.html#sec-ExTM" class="internal"><span class="codenumber">16.3</span> <span class="title">Examples of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-ATM" class="internal"><span class="title">Acceptance Turing Machine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-otherTM" class="internal"><span class="title">Other Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-halting" class="internal"><span class="codenumber">16.4</span> <span class="title">The Halting Problem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-diagonalization.html#exercises-16" class="internal"><span class="codenumber">16.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-reducibility.html" class="internal"><span class="codenumber">17</span> <span class="title">Reducibility</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ReducIntro" class="internal"><span class="codenumber">17.1</span> <span class="title">Introduction to Reducibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ProveReduce" class="internal"><span class="codenumber">17.2</span> <span class="title">Proving Reducibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-reducibility.html#exercises-17" class="internal"><span class="codenumber">17.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-glossary"><div class="toc-title-box"><a href="glossary.html" class="internal"><span class="title">Glossary</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-dfas"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Determinsitic Finite Automata</span>
+</h2>
+<section class="introduction" id="introduction-2">This chapter discusses strategies for understanding finite automata, specifically those with a halting accept and halting reject state. While this is a unique approach for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata in an intuitive way. Specifically in this chapter we will tackle:</section><article class="objectives goal-like" id="objectives-1"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ol class="decimal">
+<li id="li-1"><div class="para" id="p-derived-li-1">Deterministic Finite Automata (DFA)</div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2">Strategies for understanding Deterministic Finite Automata</div></li>
+<li id="li-3"><div class="para" id="p-derived-li-3">Strategies for drawing Deterministic Finite Automata</div></li>
+</ol></article><section class="section" id="Determinism"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Sets</span>
+</h3>
+<section class="subsection" id="subsection-1"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Set Review</span>
+</h4>
+<div class="para" id="p-5">Sets are a collection of objects where there is no ordering and elements are not repeated or counted.  Sets can contain other sets or they can be empty. Things get really tricky when you think about a set that contains an empty set, but we will not need to deal with that just yet. Typically we use curly brackets to denote set notation (enumeration notation). Thus <span class="process-math">\(\{a,b,c\}\)</span> is a set that contains elements called <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(c\text{.}\)</span> That is the same set as <span class="process-math">\(\{b,a,c\}\text{.}\)</span> Ordering does not matter. If a <span class="process-math">\(d\)</span> were added to this set, we would have a new set <span class="process-math">\(\{a,b,c,d\}\text{.}\)</span> If an <span class="process-math">\(a\)</span> were added to this set, it would not change the set because the set already contained an <span class="process-math">\(a\text{.}\)</span> We will use enumeration notation right away to start describing important elements for this book.</div>
+<div class="para" id="p-6">However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: <span class="process-math">\(\{w | w\ \text{is a string that contains an}\ a\}\text{.}\)</span> This should be read as the set of all <span class="process-math">\(w\)</span>’s where <span class="process-math">\(w\)</span> is a string that contains an <span class="process-math">\(a\text{.}\)</span> We will see this in again in an example shortly. Importantly here, <span class="process-math">\(| \)</span> is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.</div>
+<div class="para" id="p-7">The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference. Until then, you may keep it handy to remind yourself of these two ways to talk about sets.</div></section><section class="subsection" id="subsection-2"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Machines</span>
+</h4>
+<div class="para" id="p-8">To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let’s look at a few important sets that we will need to discuss our automata.</div>
+<div class="para" id="p-9">The  <dfn class="terminology">alphabet (<span class="process-math">\(\Sigma\)</span>)</dfn> is a finite set of symbols. Characters in the alphabet can be appended together to create strings. So, a  <dfn class="terminology">string</dfn> is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a  <dfn class="terminology">language (<em class="emphasis"><span class="process-math">\(L\)</span></em>)</dfn>.</div>
+<div class="para logical" id="p-10">
+<div class="para">For example, characters <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are all included in alphabet <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \{a, b, c\}
+\end{equation*}
+</div>
+<div class="para">A language will consist of strings created from this alphabet. Order matters. For example <span class="process-math">\(S\)</span> and <span class="process-math">\(Q\)</span> are strings from alphabet <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S = baba
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T = aaaaa
+\end{equation*}
+</div>
+<div class="para">these example strings may be included in language <span class="process-math">\(L_1\text{.}\)</span> You might say:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \in L_1
+\end{equation*}
+</div>
+<div class="para">which means <span class="process-math">\(S\)</span> is in the language <span class="process-math">\(L_1\text{.}\)</span> <span class="process-math">\(L_1\)</span> might have other strings in it as well. We would normally list those in one form of set notation if required. If <span class="process-math">\(L_1\)</span> consisted of just the two strings above, we could fully list them like this:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = \{baba, aaaaa\}
+\end{equation*}
+</div>
+<div class="para">A binary string (like <span class="process-math">\(1010\)</span>) would require a binary alphabet (<span class="process-math">\(\{0,1\}\)</span>). A sample binary language might be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{w | w\ \text{begins with a}\ 1\}
+\end{equation*}
+</div>
+<div class="para">This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).</div>
+</div>
+<div class="para" id="p-11">As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).</div></section></section><section class="section" id="FiniteAutomata"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Finite Automata (FA)</span>
+</h3>
+<div class="para" id="p-12"> <dfn class="terminology">Finite Automata (FA)</dfn> are  <dfn class="terminology">state machines (M)</dfn>. We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize  <dfn class="terminology">states (Q)</dfn> to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with <span class="process-math">\(h_a\)</span> encased in two circles. A halt and reject state (<span class="process-math">\(h_r\)</span>) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help.  Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated-assets/latex-image/FAExM1.svg" class="contained"></div>
+<div class="para" id="p-13">Say there is a string <span class="process-math">\(S = 110\text{.}\)</span> After following the arrows to parse through <span class="process-math">\(S\text{,}\)</span> it would be accepted by <span class="process-math">\(M_1\)</span> as it finished on the accept state. We now know that <span class="process-math">\(S \in L(M_1)\text{,}\)</span> but what is <span class="process-math">\(L(M_1)\text{?}\)</span>
+</div>
+<div class="para logical" id="p-14">
+<div class="para">Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.</div>
+<ul class="disc">
+<li id="li-4"><div class="para" id="p-derived-li-4"><div class="displaymath process-math">
+\begin{equation*}
+L_2 = \mbox{any string that ends with 01}
+\end{equation*}
+</div></div></li>
+<li id="li-5"><div class="para" id="p-derived-li-5"><div class="displaymath process-math">
+\begin{equation*}
+L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}
+\end{equation*}
+</div></div></li>
+<li id="li-6"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM2.svg" class="contained"></div></li>
+</ul>
+</div>
+<div class="para" id="p-15">One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For <span class="process-math">\(M_2\text{,}\)</span> test strings could include 000, 01, 11011, and 100001. By tracing through <span class="process-math">\(M_2\)</span> with each of these four string separately, we see that it accepts  the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers a modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a number divisible by 3". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!</div></section><section class="section" id="DFAs"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Deterministic Finite Automata (DFA)</span>
+</h3>
+<div class="para" id="p-16"> <dfn class="terminology">Determinisitic Finite Automatas (DFA)</dfn> are FAs where the outcome of each possible change of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are accounted for at each state. We can look again at <span class="process-math">\(M_1\)</span>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM1.svg" class="contained"></div>
+<div class="para" id="p-17">The alphabet of <span class="process-math">\(M_1\)</span> includes 0 and 1. When at the start state <span class="process-math">\(A\text{,}\)</span> if a 0 is read, we stay at <span class="process-math">\(A\)</span> and if a 1 is read, we move to <span class="process-math">\(B\text{.}\)</span> Each possibility is accounted for. When in state <span class="process-math">\(B\text{,}\)</span> if a 0 is read, we stay at <span class="process-math">\(B\)</span> and if a 1 is read, we move to <span class="process-math">\(A\text{.}\)</span> Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.</div>
+<div class="para" id="p-18">Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character at each state, the FA is deterministic.</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width top" style="width:100%;"><figure class="table table-like" id="DFADeterminismTable"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b1 r2 l0 t0 lines"></th>
+<th scope="col" class="l m b1 r0 l0 t0 lines">1</th>
+<th scope="col" class="l m b1 r0 l0 t0 lines">0</th>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(A\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(B\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A\)</span></td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1<span class="period">.</span></span><span class="space"> </span>Determinism Chart for <span class="process-math">\(M_1\)</span></figcaption></figure></div></div></div>
+<section class="subsection" id="subsection-3"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Deterministic</span>
+</h4>
+<div class="para" id="p-19"> <dfn class="terminology">Determinisim</dfn> means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to ’make a guess’ as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.</div></section></section><section class="section" id="section-4"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Strategies for Understanding DFAs</span>
+</h3></section><section class="section" id="section-5"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Strategies for Drawing DFAs</span>
+</h3></section><section class="exercises" id="ch-dfas-exercises"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-20">What is the language of <span class="process-math">\(M_3\text{?}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM3.svg" class="contained"></div>
+<div class="solutions">
+<details id="hint-1" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-21">Come up with ten strings in the language of <span class="process-math">\(M_3\text{.}\)</span> <figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">101101</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">010101</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">0000</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">011</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">10010</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">111001</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">1001</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">0110</td>
+</tr>
+</table></div></figure>
+</div> <div class="para" id="p-22">Come up with ten strings NOT in the language of <span class="process-math">\(M_3\text{.}\)</span> <figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">100</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">10001</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">1011</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">11111</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">101</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">1101</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">10110</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">001</td>
+</tr>
+</table></div></figure>
+</div> <div class="para" id="p-23">Do you see any patterns?</div>
+</div></details><details id="answer-1" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-24"><div class="displaymath process-math">
+\begin{equation*}
+L(M_3) = \mbox{the empty string and all binary strings divisible by 3}
+\end{equation*}
+</div></div></div></details><details id="solution-1" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="p-25">It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included. <figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">(0)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">101101</td>
+<td class="l m b0 r0 l0 t0 lines">(45)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">_</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">010101</td>
+<td class="l m b0 r0 l0 t0 lines">(21)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">0000</td>
+<td class="l m b0 r0 l0 t0 lines">(0)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">011</td>
+<td class="l m b0 r0 l0 t0 lines">(3)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">10010</td>
+<td class="l m b0 r0 l0 t0 lines">(18)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">111001</td>
+<td class="l m b0 r0 l0 t0 lines">(57)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">1001</td>
+<td class="l m b0 r0 l0 t0 lines">(9)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">0110</td>
+<td class="l m b0 r0 l0 t0 lines">(6)</td>
+</tr>
+</table></div></figure>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-26">What is the language of <span class="process-math">\(M_4\text{?}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM4.svg" class="contained"></div>
+<div class="solutions">
+<details id="hint-2" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-27">Come up with a few test strings. See any patterns? Focus on the plain language description.</div></div></details><details id="answer-2" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-28"><div class="displaymath process-math">
+\begin{equation*}
+L(M_5) = \mbox{any string that contains 01}
+\end{equation*}
+</div></div></div></details><details id="solution-2" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-29"><ul class="disc">
+<li id="li-7"><div class="para" id="p-derived-li-7">A great first step is to walk through the shortest path to the accept state. This would be 01.</div></li>
+<li id="li-8"><div class="para" id="p-derived-li-8">It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For <span class="process-math">\(M_5\text{,}\)</span> that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for <span class="process-math">\(M_5\)</span> to accept.</div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9">Another note, the string “01” must be included as a 1 must come after a 0 to get to the accept state <span class="process-math">\(C\text{.}\)</span>
+</div></li>
+</ul></div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-30">
+<div class="para">Build a machine for language 5 (<span class="process-math">\(L_5\)</span>).</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_5 = \mbox{any number of }01 \mbox{ repeated}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="answer-3" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM5.svg" class="contained"></div></div></details></div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-31">What is the language of <span class="process-math">\(M_6\text{?}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM6.svg" class="contained"></div>
+<div class="solutions">
+<details id="hint-3" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-32">Machines can have other alphabets. What is the alphabet of this machine’s language?</div></div></details><details id="answer-4" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-33"><div class="displaymath process-math">
+\begin{equation*}
+L(M_7) = \mbox{any string that starts with } ba \mbox{ followed by any amount of } a \mbox{s and } b \mbox{s}
+\end{equation*}
+</div></div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-34">Use the diagram below to create a DFA that can track mod 7 for any binary number. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/DFA-M26.svg" class="contained"></div>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-35">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM27.svg" class="contained"></div>
+<div class="solutions"><details id="answer-5" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-36"><span class="process-math">\(L = \mbox{\{any string that begins with a } b \mbox{ and is followed by one or more } a \mbox{s and no more } b\mbox{s \}}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-37">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM29.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-38">Translate this FA into an English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM32.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-39">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEx38.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-40">Give an English description of the language of the following FA:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM41.svg" class="contained"></div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="part-re.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-nfas.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

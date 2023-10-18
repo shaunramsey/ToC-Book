@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span><span class="space"> </span><span class="title">Logic in Closure.</span>
+</h4> <div class="para logical">
+<div class="para">Here is another binary operator:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{if A and B then C}
+\end{equation*}
+</div>
+</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines">A</td>
+<td class="l m b2 r0 l0 t0 lines">B</td>
+<td class="l m b2 r2 l0 t0 lines">C</td>
+<td class="l m b2 r2 l0 t0 lines">AB</td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(AB \longrightarrow C\)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\bar{AB} + C\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\bar{A} + \bar{B} + C\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+</table></div></figure> <div class="para">Given the above logic table, we now know that <span class="process-math">\(\mbox{if A and B then C} \)</span> is logically equivalent to <span class="process-math">\(\bar{A} + \bar{B} + C\text{.}\)</span>
+</div> <div class="para">Let us say we know <span class="process-math">\(C\)</span> is not true and <span class="process-math">\(B\)</span> is true. What must <span class="process-math">\(A\)</span> be?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Not true.</div></div></details> <div class="para logical">
+<div class="para">That is a form of the contrapositive.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \longrightarrow B \mbox{ means } \bar{A}+B
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{B} \longrightarrow \bar{A} \mbox{ means } \bar{A}+B
+\end{equation*}
+</div>
+<div class="para">For this situation, <span class="process-math">\(AB\longrightarrow C\)</span> means <span class="process-math">\(\bar{AB} + C = \bar{A}+\bar{B}+C\)</span> and <span class="process-math">\(\bar{C} \longrightarrow \bar{AB}\)</span> means <span class="process-math">\(C+\bar{AB} = \bar{A}+\bar{B}+C\text{.}\)</span> So, these statements are the same, but if we know <span class="process-math">\(\bar{C}\text{,}\)</span> then either A or B is untrue.</div>
+</div> <div class="para logical">
+<div class="para">This is telling us that given <span class="process-math">\(x + y = z\text{,}\)</span> the boolean <span class="process-math">\(\bar{A}+\bar{B}+C\)</span> must be true. So,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x \notin \N
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+or
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y \notin \N
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+or
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + y \in \N
+\end{equation*}
+</div>
+<div class="para">These conclusions are very important for understanding closure.</div>
+</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exploration-10">in-context</a></span>
+</body>
+</html>

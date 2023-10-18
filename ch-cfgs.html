@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Context Free Grammars (CFGs)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Theory of Computation">
+<meta property="book:author" content="Shaun D. Ramsey, PhD">
+<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="part-cf.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="part-cf.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-pdas.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-re.html" class="internal"><span class="codenumber">I</span> <span class="title">REX and FAs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dfas.html" class="internal"><span class="codenumber">1</span> <span class="title">Determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#Determinism" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-1" class="internal"><span class="title">Set Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-2" class="internal"><span class="title">Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#FiniteAutomata" class="internal"><span class="codenumber">1.2</span> <span class="title">Finite Automata (FA)</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#DFAs" class="internal"><span class="codenumber">1.3</span> <span class="title">Deterministic Finite Automata (DFA)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-3" class="internal"><span class="title">Deterministic</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-4" class="internal"><span class="codenumber">1.4</span> <span class="title">Strategies for Understanding DFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-5" class="internal"><span class="codenumber">1.5</span> <span class="title">Strategies for Drawing DFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-dfas.html#ch-dfas-exercises" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfas.html" class="internal"><span class="codenumber">2</span> <span class="title">Non-determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#NFAs" class="internal"><span class="codenumber">2.1</span> <span class="title">Non-Deterministic Finite Automata (NFA)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#Parallelism" class="internal"><span class="codenumber">2.2</span> <span class="title">Parallelism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#PowerSet" class="internal"><span class="codenumber">2.3</span> <span class="title">The Power Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#StrengthsofNFAs" class="internal"><span class="codenumber">2.4</span> <span class="title">Strengths of NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfas.html#exercises-2" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfa-to-dfa.html" class="internal"><span class="codenumber">3</span> <span class="title">NFA and DFA relationships</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#sec-FiniteNumberofStates" class="internal"><span class="codenumber">3.1</span> <span class="title">Finite Number of States</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#exercises-3" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex.html" class="internal"><span class="codenumber">4</span> <span class="title">Regular Expressions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-RegularExpressions" class="internal"><span class="codenumber">4.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-REsInNFAs" class="internal"><span class="codenumber">4.2</span> <span class="title">Regular Expressions in NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex.html#exercises-REX" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex-to-nfa.html" class="internal"><span class="codenumber">5</span> <span class="title">Converting REX to NFAs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal"><span class="codenumber">5.1</span> <span class="title">Converting Regular Expressions to NFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal"><span class="codenumber">5.2</span> <span class="title">Building NFAs from REs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#exercises-5" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-to-rex.html" class="internal"><span class="codenumber">6</span> <span class="title">Using Rips to Convert FAs to REX</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-to-rex.html#sec-howtorip" class="internal"><span class="codenumber">6.1</span> <span class="title">Rips</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-to-rex.html#exercises-6" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-closure.html" class="internal"><span class="codenumber">7</span> <span class="title">Closure and Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-closureintro" class="internal"><span class="codenumber">7.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-howtoRLClosureProof" class="internal"><span class="codenumber">7.2</span> <span class="title">How to Write a Closure Proof</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-fa-closure.html#sec-constructionproofs" class="internal"><span class="codenumber">7.3</span> <span class="title">Closure Proven through Construction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-closure.html#exercises-7" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pumping-lemma-regular.html" class="internal"><span class="codenumber">8</span> <span class="title">Pumping Lemma for Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-pumpinglemaintro" class="internal"><span class="codenumber">8.1</span> <span class="title">Introduciton to the Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#section-20" class="internal"><span class="codenumber">8.2</span> <span class="title">Spotting Loops and Repetition in FAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-RLpumpinglemma" class="internal"><span class="codenumber">8.3</span> <span class="title">The Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-PLRLFunLangs" class="internal"><span class="codenumber">8.4</span> <span class="title">Additional Non-Regular Languages for Proving</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#exercises-8" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-cf.html" class="internal"><span class="codenumber">II</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter active">
+<div class="toc-title-box"><a href="ch-cfgs.html" class="internal"><span class="codenumber">9</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cfgs.html#CFGs" class="internal"><span class="codenumber">9.1</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-RLReview" class="internal"><span class="title">Regular Languages Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-CFGintro" class="internal"><span class="title">Basics of Context Free Grammars</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-rexToCFG" class="internal"><span class="title">Creating CFGs from Regular Expressions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-parsetrees" class="internal"><span class="codenumber">9.2</span> <span class="title">Parse Trees</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#sec-Ambiguity" class="internal"><span class="codenumber">9.3</span> <span class="title">Ambiguity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cfgs.html#ch-cfgs-exercises" class="internal"><span class="codenumber">9.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pdas.html" class="internal"><span class="codenumber">10</span> <span class="title">Pushdown Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pdas.html#sec-PDAintro" class="internal"><span class="codenumber">10.1</span> <span class="title">Introduction to Pushdown Automatas</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pdas.html#exercises-10" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnf.html" class="internal"><span class="codenumber">11</span> <span class="title">Chomsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnf.html#sec-NormalForms" class="internal"><span class="codenumber">11.1</span> <span class="title">Introduction to Normal Forms</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cnf.html#sec-ChompskyNormalForm" class="internal"><span class="codenumber">11.2</span> <span class="title">Chompsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-CNFRules" class="internal"><span class="title">Rules of Chompsky Normal Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-createCNF" class="internal"><span class="title">Steps to Putting a CFG in CNF</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnf.html#exercises-11" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnl.html" class="internal"><span class="codenumber">12</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnl.html#sec-cfls" class="internal"><span class="codenumber">12.1</span> <span class="title">Introduction to Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnl.html#exercises-12" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html" class="internal"><span class="codenumber">13</span> <span class="title">Pumping Lemma for Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-parseTreeRevisit" class="internal"><span class="codenumber">13.1</span> <span class="title">Revisiting Parse Trees and Spotting Loops</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-plForCFLs" class="internal"><span class="codenumber">13.2</span> <span class="title">The Pumping Lemma for Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#exercises-13" class="internal"><span class="codenumber">13.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-tm.html" class="internal"><span class="codenumber">III</span> <span class="title">Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tms.html" class="internal"><span class="codenumber">14</span> <span class="title">Turing Machine Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tms.html#sec-tm-background" class="internal"><span class="codenumber">14.1</span> <span class="title">Introduction to Turing Machines</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tms.html#exercises-14" class="internal"><span class="codenumber">14.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tm-classifications.html" class="internal"><span class="codenumber">15</span> <span class="title">Classifications of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-earlyTMs" class="internal"><span class="codenumber">15.1</span> <span class="title">Early Turing Machines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-goldbach" class="internal"><span class="codenumber">15.2</span> <span class="title">Goldbach’s Conjecture</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-tm-classifications.html#sec-TMVarieties" class="internal"><span class="codenumber">15.3</span> <span class="title">Varieties of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsubsec-TMRecognizable" class="internal"><span class="title">Recognizable Turing Machines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsec-TMDecidable" class="internal"><span class="title">Decideable Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tm-classifications.html#exercises-15" class="internal"><span class="codenumber">15.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-diagonalization.html" class="internal"><span class="codenumber">16</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-hiblertshotel" class="internal"><span class="codenumber">16.1</span> <span class="title">Hilbert’s Hotel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-introtodiagonalization" class="internal"><span class="codenumber">16.2</span> <span class="title">Introduction to Diagonalization</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-diagonalization.html#sec-ExTM" class="internal"><span class="codenumber">16.3</span> <span class="title">Examples of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-ATM" class="internal"><span class="title">Acceptance Turing Machine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-otherTM" class="internal"><span class="title">Other Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-halting" class="internal"><span class="codenumber">16.4</span> <span class="title">The Halting Problem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-diagonalization.html#exercises-16" class="internal"><span class="codenumber">16.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-reducibility.html" class="internal"><span class="codenumber">17</span> <span class="title">Reducibility</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ReducIntro" class="internal"><span class="codenumber">17.1</span> <span class="title">Introduction to Reducibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ProveReduce" class="internal"><span class="codenumber">17.2</span> <span class="title">Proving Reducibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-reducibility.html#exercises-17" class="internal"><span class="codenumber">17.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-glossary"><div class="toc-title-box"><a href="glossary.html" class="internal"><span class="title">Glossary</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-cfgs"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">9</span><span class="space"> </span><span class="title">Context Free Grammars (CFGs)</span>
+</h2>
+<article class="objectives goal-like" id="objectives-9"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ol class="decimal">
+<li id="li-145"><div class="para" id="p-derived-li-145">Context Free Grammars</div></li>
+<li id="li-146"><div class="para" id="p-derived-li-146">Terminals</div></li>
+<li id="li-147"><div class="para" id="p-derived-li-147">Parse Trees</div></li>
+<li id="li-148"><div class="para" id="p-derived-li-148">Ambiguous and Inherently Ambiguous</div></li>
+</ol></article><section class="section" id="CFGs"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Context Free Grammars (CFGs)</span>
+</h3>
+<section class="subsection" id="subsec-RLReview"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Regular Languages Review</span>
+</h4>
+<div class="para logical" id="p-327">
+<div class="para">To best understand CFGs, we must understand how they differ from Regular Languages. Regular Languages:</div>
+<ul class="disc">
+<li id="li-149"><div class="para" id="p-328">have no memory - they use states</div></li>
+<li id="li-150"><div class="para" id="p-329">have modular looping - they use state transitions</div></li>
+<li id="li-151"><div class="para" id="p-330">can be expressed in Regular Expressions, Deterministic Finite Automata, and Non-Deterministic Finite Automata</div></li>
+</ul>
+<div class="para">In order to build upon Regular Languages, we move to constructions that allow some limited forms of matching. Context Free Languages come about when Regular Languages have access to stack memory, and they are expressed through Context Free Grammars.</div>
+</div></section><section class="subsection" id="subsec-CFGintro"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Basics of Context Free Grammars</span>
+</h4>
+<div class="para" id="p-331"> <dfn class="terminology">Context Free Grammars (CFGs)</dfn> consist of a series of rules or productions. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSb|T\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow cTd|cd\)</span></td>
+</tr>
+</table></div>
+</div></section><div class="para" id="p-332">Each line of a CFG is called a  <dfn class="terminology">rule</dfn>. The left hand side of a rule is always a  <dfn class="terminology">variable</dfn>. Variables are denoted by uppercase letters. The right hand side of a rule is some combination terminals and variables.  <dfn class="terminology">Terminals</dfn> can be elements of the alphabet of the Context Free Language or the empty string (<span class="process-math">\(\epsilon\)</span>). They are denoted by lower case letters.</div>
+<div class="para" id="p-333">CFGs have a start variable, it is usually on the left hand side of the first rule and is denoted with <span class="process-math">\(S\text{.}\)</span> To produce strings, variables are replaced by one of the options avaliable on the production’s right hand side. In a production rule, <span class="process-math">\(|\)</span> is used to mean OR. The left hand side can be replaced by one of the right hand side.</div>
+<div class="para" id="p-334">Here is a sample derivation from <span class="process-math">\(CFG_1\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSb\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aSb\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aSb \rightarrow aTb\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> in <span class="process-math">\(aSb\)</span> is relapced with <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aTb \rightarrow acTdb\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(T\)</span> in <span class="process-math">\(aTb\)</span> is replaced with <span class="process-math">\(aTd\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(acTdb \rightarrow accddb\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> in <span class="process-math">\(acTdb\)</span> is replaced by <span class="process-math">\(cd\)</span>
+</td>
+</tr>
+</table></div> This makes the final string: <span class="process-math">\(accddb\text{.}\)</span>
+</div>
+<article class="exploration project-like" id="exploration-17"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-335">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS | \epsilon\)</span></td>
+</tr>
+</table></div> What strings can we make from it? <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow \epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow a\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aa\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow aaS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aaS \rightarrow aa\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-336">The language of this grammar is any amount of <span class="process-math">\(a\)</span>s concatenated.</div></article><article class="exploration project-like" id="exploration-18"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-337">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1 | \epsilon\)</span></td>
+</tr>
+</table></div> What strings can we make from it? <details id="answer-39" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow \epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(01\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0S1 \rightarrow 0\epsilon 1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0011\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0S1 \rightarrow 00S11\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(00S11 \rightarrow 00\epsilon 11\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div></div></details> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-338">The language of this grammar is any amount of 0s followed by the same amount of 1s.</div></article><article class="exploration project-like" id="exploration-19"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-339">Let us consider a grammar with multiple variables. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_4\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS | T | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT | \epsilon\)</span></td>
+</tr>
+</table></div>
+</div> <div class="para" id="p-340">Can we generate only <span class="process-math">\(a\)</span>s? <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow aaS\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaS \rightarrow aa\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div> The resulting string is <span class="process-math">\(aa\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(a\)</span>s.</div> <div class="para" id="p-341">Can we generate only <span class="process-math">\(b\)</span>s? How? <details id="answer-40" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow T\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(bT \rightarrow bbT\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(bT\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(bbT \rightarrow bb\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div></div></details> The resulting string is <span class="process-math">\(bb\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(b\)</span>s.</div> <div class="para logical" id="p-342">
+<div class="para">What are some other strings that we can generate using <span class="process-math">\(CFG_4\text{?}\)</span>
+</div>
+<ul class="disc">
+<li id="li-152"><div class="para" id="p-343"><span class="process-math">\(\displaystyle ab\)</span></div></li>
+<li id="li-153"><div class="para" id="p-344"><span class="process-math">\(\displaystyle aaabb\)</span></div></li>
+<li id="li-154"><div class="para" id="p-345"><span class="process-math">\(\displaystyle abbbbbb\)</span></div></li>
+</ul>
+<div class="para">The language of this grammar is the empty string or any amount of <span class="process-math">\(a\)</span>s followed by any amount of <span class="process-math">\(b\)</span>s.</div>
+</div></article><section class="subsection" id="subsec-rexToCFG"><h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Creating CFGs from Regular Expressions</span>
+</h4>
+<div class="para logical" id="p-346">
+<div class="para">Any Regular Expression is a Context Free Language and can easily be implemented into a CFG using the bellow framework:</div>
+<ul class="disc">
+<li id="li-155"><div class="para" id="p-347">union is an <span class="process-math">\(|\text{,}\)</span> another rule</div></li>
+<li id="li-156"><div class="para" id="p-348">concatenation is a <span class="process-math">\(V \rightarrow V_1v_2\)</span> rule</div></li>
+<li id="li-157"><div class="para" id="p-349">* is a <span class="process-math">\(S \rightarrow stringS | \epsilon\)</span> rule</div></li>
+</ul>
+<div class="para">Let us look a little ddeper into matching with another exploration.</div>
+</div>
+<article class="exploration project-like" id="exploration-20"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="p-350">
+<div class="para">Construct a CFG for <span class="process-math">\(L_5\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_5 = \{a^i(bc)^i | i \geq 0 \}
+\end{equation*}
+</div>
+<div class="para">Before looking at the correct grammar, let’s first analyze some common incorrect answers. <span class="process-math">\(CFG_5'\)</span> below demonstrates one common mistake: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5'\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ASB | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A \rightarrow aA | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B \rightarrow bcB | \epsilon\)</span></td>
+</tr>
+</table></div> But, why is <span class="process-math">\(CFG_5'\)</span> incorrect? Construct some strings using this grammar.</div>
+<ul class="disc">
+<li id="li-158"><div class="para" id="p-351">abc</div></li>
+<li id="li-159"><div class="para" id="p-352">aabcbc</div></li>
+<li id="li-160"><div class="para" id="p-353">aabcbc</div></li>
+<li id="li-161"><div class="para" id="p-354">aaaaaaa</div></li>
+</ul>
+<div class="para">But, how did the string <span class="process-math">\(abcbc\)</span> come about from <span class="process-math">\(CFG_5'\text{?}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ASB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(ASB\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(ASB \rightarrow aSB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(A\)</span> is replaced by <span class="process-math">\(a\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aSB \rightarrow aASBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(ASB\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aASBB \rightarrow aaSBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(A\)</span> is replaced by <span class="process-math">\(a\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaSBB \rightarrow aaBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaBB \rightarrow aabcB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(B\)</span> is replaced by <span class="process-math">\(bc\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aabcB \rightarrow aabc\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(B\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div> By not forcing the <span class="process-math">\(a\)</span> and <span class="process-math">\(bc\)</span> to be created at the same time and inculding an epsilon, then it is possible to a string to be created that is not in the language.</div>
+</div> <div class="para" id="p-355">Below is the correct grammar for <span class="process-math">\(L_5\text{.}\)</span>
+</div> <details id="answer-41" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSbc | \epsilon\)</span></td>
+</tr>
+</table></div></div></details> <div class="para" id="p-356">We can see that matched pairs must be contained in the same rule.</div></article><div class="para logical" id="p-357">
+<div class="para">Following our thinking from the exploration, we can see that interleaved matching does not work within Context Free Grammars. An example is this would be a a language where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{ 0^n1^m0^n1^m\}
+\end{equation*}
+</div>
+<div class="para">Matching three groupings also does not work. An example of this would be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{0^n1^n0^n\}
+\end{equation*}
+</div>
+</div>
+<details id="example-1" class="example example-like"><summary><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1</span><span class="period">.</span>
+</h5></summary><article class="example example-like"><div class="para" id="p-358">Here is an example that is applicable to more general computer science. Imagine parsing a computer program. You have run a REX which returns these terminals: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">boolean expressions</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">i</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(if\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">a code statement</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">e</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(else\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">f</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(elif\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">:</td>
+<td class="l m b0 r0 l0 t0 lines">a colon</td>
+</tr>
+</table></div> Write the CFG using <span class="process-math">\(b\text{,}\)</span><span class="process-math">\(i\text{,}\)</span><span class="process-math">\(c\text{,}\)</span><span class="process-math">\(e\text{,}\)</span><span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(:\)</span> for Python <span class="process-math">\(if\)</span> statements. You may ignore returns and tabbing.</div> <details id="answer-42" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow iB:CFE\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B \rightarrow bB | b\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(C \rightarrow cC | c\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(F \rightarrow fB:C | FF | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow e:C | \epsilon\)</span></td>
+</tr>
+</table></div></div></details> <div class="para" id="p-359">The CDFG can also be written as seen below.</div> <details id="answer-43" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ib:U_1U_2U_3 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_1 \rightarrow cU_1 | c\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_2 \rightarrow fB:U_1U_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_3 \rightarrow e:U_1 | \epsilon\)</span></td>
+</tr>
+</table></div></div></details></article></details></section></section><section class="section" id="subsec-parsetrees"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.2</span><span class="space"> </span><span class="title">Parse Trees</span>
+</h3>
+<div class="para" id="p-360">Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <span class="process-math">\(CFG_1\)</span> for this example. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSb|T\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow cTd|cd\)</span></td>
+</tr>
+</table></div> We list the string at the bottom of the tree with the starting variable at the top. For the first example we will follow the derrivation that creates <span class="process-math">\(accddb\text{.}\)</span> It is repeated below and has been numbers for convinence: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1) <span class="process-math">\(S \rightarrow aSb\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">2) <span class="process-math">\(aSb \rightarrow aTb\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aSb\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> in <span class="process-math">\(aSb\)</span> is relapced with <span class="process-math">\(T\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT1a.svg" class="contained"></div></td>
+<td class="l m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT1b.svg" class="contained"></div></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3) <span class="process-math">\(aTb \rightarrow acTdb\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">4) <span class="process-math">\(acTdb \rightarrow accddb\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">The <span class="process-math">\(T\)</span> in <span class="process-math">\(aTb\)</span> is replaced with <span class="process-math">\(aTd\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> in <span class="process-math">\(acTdb\)</span> is replaced by <span class="process-math">\(cd\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/CFExT1c.svg" class="contained"></div></td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/CFExT1d.svg" class="contained"></div></td>
+</tr>
+</table></div>
+</div>
+<div class="para" id="p-361">Here, you can see the <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> matching and the <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> matching a little more clearly.</div>
+<article class="exploration project-like" id="exp-AmbIntro"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-362">Let’s work through another example from <span class="process-math">\(CFG_5\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow E+E | E*E | 0 | 1\)</span></td>
+</tr>
+</table></div>
+</div> <div class="para" id="p-363">We will create the parse tree for the string <span class="process-math">\(1+1*0\text{.}\)</span>
+</div> <div class="para" id="p-364"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">First, we will need <span class="process-math">\(E + E\)</span> to give us <span class="process-math">\(1 + E\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT2a.svg" class="contained"></div></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Second, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(E * E\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/../generated/latex-image/CFExT2b.svg" class="contained"></div></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Third, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(1\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/../generated/latex-image/CFExT2c.svg" class="contained"></div></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Finally, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(0\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT2d.svg" class="contained"></div></td>
+</tr>
+</table></div></div> <div class="para" id="p-365">But, there is another way to arrive at this string using <span class="process-math">\(CFG_5\text{.}\)</span> Try drawing the parse tree for it.</div>
+<div class="solutions"><details id="answer-44" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-366"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT2e.svg" class="contained"></div></div></div></details></div></article></section><section class="section" id="sec-Ambiguity"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.3</span><span class="space"> </span><span class="title">Ambiguity</span>
+</h3>
+<div class="para" id="p-367"> <dfn class="terminology">Abmibuous</dfn> grammars can generate some string in two or more different ways. The grammar as shown in the exploration above is ambiguous as there is more than one way to generate the string, but the language this grammar represents does have a grammar that is not ambiguous.</div>
+<div class="para" id="p-368">If we want to force some matching to have precedence, you simply push the items with higher precedence to be matched by rules further down the grammar. Consider <span class="process-math">\(CFG_5\)</span> once again. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow E+E | E*E | 0 | 1\)</span></td>
+</tr>
+</table></div> Here, <span class="process-math">\(E*E\)</span> is of lower precedence than <span class="process-math">\(E+E\text{,}\)</span> so it can be moved down. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_{5a}:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow E+E | T | 0 | 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow E*E\)</span></td>
+</tr>
+</table></div> The <span class="process-math">\(0 | 1\)</span> also has lower precedence than <span class="process-math">\(E+E\)</span> and <span class="process-math">\(E*E\text{,}\)</span> but there needs to be a way to generate those. They can also be given their own variable. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_{5b}:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow E+E | T\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow E*E | N\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(N \rightarrow 0 | 1\)</span></td>
+</tr>
+</table></div> Using the above grammar, there is now only one way to create the string <span class="process-math">\(1+1*0\text{.}\)</span> This is the parse tree: <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT3.svg" class="contained"></div> This is the only possible way to create the parse tree that generates <span class="process-math">\(1+1*0\)</span> from <span class="process-math">\(CFG_{5b}\)</span> because the "+" must be matched first.</div>
+<div class="para logical" id="p-369">
+<div class="para">Some languages have only ambiguous grammars. These languages are called <dfn class="terminology">interherently ambiguous</dfn>. The language below is an example of an inherently ambiguous language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(CFG_6\)</span> is one possible grammar for <span class="process-math">\(L_6\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_6:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow AU_1 | U_2G\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A \rightarrow aAb | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_1 \rightarrow cU_1 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_2 \rightarrow aU_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(G \rightarrow bGc | \epsilon\)</span></td>
+</tr>
+</table></div> Try to make a parse tree for the string <span class="process-math">\(abc\)</span> as generated by <span class="process-math">\(CFG_6\text{.}\)</span> Below are some examples.</div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel top" style="width:28.5714285714286%;"><img src="external/../generated/latex-image/CFGExT4a.svg" class="contained"></div>
+<div class="sbspanel top" style="width:28.5714285714286%;"><img src="external/../generated/latex-image/CFGExT4b.svg" class="contained"></div>
+</div></div></section><section class="exercises" id="ch-cfgs-exercises"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">9.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-71"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-370">Write a CFG for <span class="process-math">\(L_1 = (1+01)^*\)</span>
+</div>
+<div class="solutions">
+<details id="hint-17" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-371">Consider the OR first. Then consider how to generate the reptition. There are multiple options for a grammar of this language.</div></div></details><details id="answer-45" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-372">
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | 1 |01 | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 1S | 01S | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_1 \rightarrow U_1S_1 | U_2S_1 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_1 \rightarrow 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_2 \rightarrow 01\)</span></td>
+</tr>
+</table></div> Are all grammars that can represent <span class="process-math">\(L_1\text{.}\)</span>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-72"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-373">Write a CFG for <span class="process-math">\(L_2 = (1^*01^*01^*)^*\)</span>
+</div>
+<div class="solutions"><details id="answer-46" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-374">
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow T0T0T0TS_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow 1T | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow S_2S_2 | T0T0T | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow 1T | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow U_30U_30U_3S_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_3 \rightarrow 1U_3 | \epsilon\)</span></td>
+</tr>
+</table></div> Both grammars can represent <span class="process-math">\(L_2\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercise-73"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-375">Write a CFG for <span class="process-math">\(L_1L_2 = (1+01)^*(1^*01^*01^*)^*\)</span>
+</div>
+<div class="solutions">
+<details id="hint-18" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-376">Lean on past exercises.</div></div></details><details id="answer-47" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-377"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_3 \rightarrow S_1S_2\)</span></td>
+</tr>
+</table></div></div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-74"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-378">
+<div class="para">Create a CFG for the language below:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{\mbox{all palindromes with } \sigma=\{0,1\}\}
+\end{equation*}
+</div>
+<div class="para">(Palindromes are strings that the same no matter if read backwards for forwards. <span class="process-math">\(1011101\)</span> is an example.)</div>
+</div>
+<div class="solutions"><details id="answer-48" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-379"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S0 | 1S1 | 0 | 1 | \epsilon\)</span></td>
+</tr>
+</table></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-75"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-380">Write the language of matching open and closed brackets such as: (),[], and {}.</div>
+<div class="solutions">
+<details id="hint-19" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-381">Remember to consider that [(){}] can also take place.</div></div></details><details id="answer-49" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-382"><span class="process-math">\(S \rightarrow (S) | [S] | {S} | \epsilon | SS\)</span></div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-76"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="p-383">
+<div class="para">Give a DPA and a CFG for the language of boolean expressions. Terminals, <span class="process-math">\(\Sigma\)</span> will be:</div>
+<dl class="description-list">
+<dt id="li-162">v</dt>
+<dd><div class="para" id="p-384">a varaible or value in the programming sense</div></dd>
+<dt id="li-163">e</dt>
+<dd><div class="para" id="p-385">a comparison like <span class="process-math">\(==, &gt;, \geq, \leq, !=\)</span>
+</div></dd>
+<dt id="li-164">b</dt>
+<dd><div class="para" id="p-386">boolean operators like <span class="process-math">\(and\)</span> and <span class="process-math">\(or\)</span>
+</div></dd>
+<dt id="li-165">t</dt>
+<dd><div class="para" id="p-387">represents true or false</div></dd>
+</dl>
+</div>
+<div class="solutions"><details id="hint-20" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-388">
+<div class="para">Sample strings in this language include:</div>
+<ul class="disc">
+<li id="li-166"><div class="para" id="p-389">vev</div></li>
+<li id="li-167"><div class="para" id="p-390">vevbvebvev</div></li>
+<li id="li-168"><div class="para" id="p-391">t</div></li>
+<li id="li-169"><div class="para" id="p-392">vevbtbvetbtet</div></li>
+</ul>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercise-77"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="p-393">
+<div class="para">Consider:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = \{ww | w \mbox{ is any binary string}\}
+\end{equation*}
+</div>
+<div class="para">It is known that <span class="process-math">\(L_1\)</span> is not a context free language. <span class="process-math">\(0^*\)</span> is a CFL and a RL. Since RLs are closed under intersection, <span class="process-math">\(L_1\)</span> intersected with <span class="process-math">\(0^*\)</span> must not be a RL.</div>
+</div> <div class="para" id="p-394">Find the error in the proof above and describe it clearly.</div></article><article class="exercise exercise-like" id="exercise-78"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-395">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow bGdE\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(G \rightarrow bGd | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow eE | \epsilon\)</span></td>
+</tr>
+</table></div>
+</div></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="p-396">
+<div class="para">Give a CFG for the language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{w\#w^R | w \mbox{ is a binary string}\}
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(w^R\)</span> consists of <span class="process-math">\(w\)</span> in reverse. So, if <span class="process-math">\(w = 001\text{,}\)</span> then <span class="process-math">\(w^R = 100\text{.}\)</span> Thus <span class="process-math">\(001\#100\)</span> is a string in this language.</div>
+</div></article><article class="exercise exercise-like" id="exercise-80"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-397">Given the grammar below, show the parse tree for the string: <span class="process-math">\(bbdd\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow BSD | BD\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B \rightarrow b | Bc\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(D \rightarrow d | Dc\)</span></td>
+</tr>
+</table></div>
+</div></article><article class="exercise exercise-like" id="exercise-81"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-398">Translate the grammar below into English:</div> <div class="para" id="p-399">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-82"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-400">Create a CFG from the English description of the language below:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \mbox{\{This language consists of strings that have the form of a palindrome using this special alphabet.\}}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \{\triangle, \square, \bigcirc\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-83"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-401">Given the grammar below, show the parse tree for the string:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\triangle \triangle \triangle \bigcirc \square \triangle
+\end{equation*}
+</div>
+<div class="para" id="p-402">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-84"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para logical" id="p-403"><ol class="lower-alpha">
+<li id="li-170"><div class="para" id="p-404">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSc | T\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT | \epsilon\)</span></td>
+</tr>
+</table></div>
+</div></li>
+<li id="li-171"><div class="para" id="p-405">Given that same grammar, show a parse tree for the string: <span class="process-math">\(abbc\)</span>
+</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercise-85"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para logical" id="p-406">
+<div class="para">The language consists of all strings with either:</div>
+<ul class="disc">
+<li id="li-172"><div class="para" id="p-407">an equal number of a’s and b’s with no c’s, or</div></li>
+<li id="li-173"><div class="para" id="p-408">an equal number of a’s and c’s with no b’s</div></li>
+</ul>
+</div> <div class="para" id="p-409">Where, <span class="process-math">\(\Sigma = \{a,b,c\}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-86"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<ol class="lower-alpha">
+<li id="li-174"><div class="para" id="p-410">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | T\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow aSb | \epsilon\)</span></td>
+</tr>
+</table></div>
+</div></li>
+<li id="li-175"><div class="para" id="p-411">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-87"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="p-412">The set of all strings that have an equal number of a’s and d’s, less b’s than c’s, and the symbols appear in alphabetical order.</div></article><article class="exercise exercise-like" id="exercise-88"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<ol class="lower-alpha">
+<li id="li-176"><div class="para" id="p-413">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow TT | Tu\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow aTb | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U \rightarrow cUd | cd\)</span></td>
+</tr>
+</table></div>
+</div></li>
+<li id="li-177"><div class="para" id="p-414">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
+<div class="para" id="p-415">Give a CFG that consists of strings taht either a list of a’s followed by b’s in equal number or a list of b’s followed by c’s in equal number or a list of c’s followed by d’s in equal number. the alphabet of this langage is: <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
+</div>
+<div class="solutions"><details id="hint-21" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-416">Some accepted strings: <span class="process-math">\(aabb\text{,}\)</span> <span class="process-math">\(bbcc\text{,}\)</span> <span class="process-math">\(ccdd\text{,}\)</span> and <span class="process-math">\(ccccdddd\text{.}\)</span>
+</div> <div class="para" id="p-417">Some regjected strings:  <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(abc\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> and <span class="process-math">\(cb\text{.}\)</span>
+</div>
+</div></details></div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="part-cf.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-pdas.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

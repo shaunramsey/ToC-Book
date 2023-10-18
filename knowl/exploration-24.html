@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span>
+</h4>
+<div class="para">To better understand this topic, let’s explore the possibilites associated with CFGs. Consider <span class="process-math">\(CFG_1\)</span> below:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | aS | \epsilon\)</span></td>
+</tr>
+</table></div> <div class="para">What different ways are there to produce the string "a" from <span class="process-math">\(CFG_1\text{?}\)</span>
+</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">Here are two ways to make "a".</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle S \rightarrow SS \rightarrow aSS \rightarrow aS \rightarrow a\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S \rightarrow aS \rightarrow a\)</span></div></li>
+</ul>
+</div></div></details> <div class="para logical">
+<div class="para">But, it is also possible for <span class="process-math">\(CFG_1\)</span> to produce:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S \rightarrow SS \rightarrow SSS \rightarrow SSS \rightarrow SSSS \rightarrow ...
+\end{equation*}
+</div>
+<div class="para">So, when would a construction like this quit? Could it produce simply an <span class="process-math">\(\epsilon\text{?}\)</span>
+</div>
+</div> <div class="para">As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.</div></article><span class="incontext"><a class="internal" href="ch-cnf.html#exploration-24">in-context</a></span>
+</body>
+</html>

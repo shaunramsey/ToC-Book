@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1</span><span class="period">.</span>
+</h5>
+<div class="para">Here is an example that is applicable to more general computer science. Imagine parsing a computer program. You have run a REX which returns these terminals: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">boolean expressions</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">i</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(if\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">a code statement</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">e</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(else\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">f</td>
+<td class="l m b0 r0 l0 t0 lines">an <span class="process-math">\(elif\)</span> keyword</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">:</td>
+<td class="l m b0 r0 l0 t0 lines">a colon</td>
+</tr>
+</table></div> Write the CFG using <span class="process-math">\(b\text{,}\)</span><span class="process-math">\(i\text{,}\)</span><span class="process-math">\(c\text{,}\)</span><span class="process-math">\(e\text{,}\)</span><span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(:\)</span> for Python <span class="process-math">\(if\)</span> statements. You may ignore returns and tabbing.</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow iB:CFE\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B \rightarrow bB | b\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(C \rightarrow cC | c\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(F \rightarrow fB:C | FF | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow e:C | \epsilon\)</span></td>
+</tr>
+</table></div></div></details> <div class="para">The CDFG can also be written as seen below.</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ib:U_1U_2U_3 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_1 \rightarrow cU_1 | c\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_2 \rightarrow fB:U_1U_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_3 \rightarrow e:U_1 | \epsilon\)</span></td>
+</tr>
+</table></div></div></details></article><span class="incontext"><a class="internal" href="ch-cfgs.html#example-1">in-context</a></span>
+</body>
+</html>

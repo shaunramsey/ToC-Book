@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">15</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Consider the following language:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_2 = \{a^ib^jc^k | \mbox{ where } i = j \mbox{ and } j \mbox{ less than } k \}
+\end{equation*}
+</div>
+<div class="para">We will now prove that <span class="process-math">\(L_2\)</span> is not context free.</div>
+</div> <div class="para">Proof.</div> <div class="para logical">
+<div class="para">Assume that <span class="process-math">\(L_2\)</span> is a CFL. <span class="process-math">\(L_2\)</span> can be rewritten as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_2 = \{a^ib^ic^k | \mbox{ where } i \mbox{ less than } k \}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li><div class="para">Consider <span class="process-math">\(s^{(1)} = a^Pb^Pc^{P+1}\)</span> where <span class="process-math">\(s^{(1)} \in L_2\text{.}\)</span>
+</div></li>
+<li><div class="para">Since <span class="process-math">\(s^{(1)}\)</span> is of length at least <span class="process-math">\(p\text{,}\)</span> it should obey the Pumping Lemma for Context Free Languages.</div></li>
+<li><div class="para"><ul class="disc">
+<li><div class="para">Consider a section of <span class="process-math">\(s^{(1)}\text{,}\)</span> a section made up of the last <span class="process-math">\(a\)</span> and the first two <span class="process-math">\(b\)</span>’s. By pumping this section up by one, a new string, <span class="process-math">\(s^{(2)} = a^{P+1}b^{P+1}c^{P+1}\)</span> is created, but this string is no longer a part of <span class="process-math">\(L_2\text{.}\)</span>
+</div></li>
+<li><div class="para">Consider another section of <span class="process-math">\(s^{(1)}\text{,}\)</span> one that is made up of the last <span class="process-math">\(b\)</span> and first two <span class="process-math">\(c\)</span>’s. Pumping this string down by one creates the new string, <span class="process-math">\(s^{(0)} = a^Pb^{P-1}c^P\text{,}\)</span> but this string is no longer in <span class="process-math">\(L_2\text{.}\)</span>
+</div></li>
+</ul></div></li>
+<li><div class="para">Therefore, by contradiction, <span class="process-math">\(L_2\)</span> is not a CFL.</div></li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-context-free.html#exploration-31">in-context</a></span>
+</body>
+</html>

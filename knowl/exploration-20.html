@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h5>
+<div class="para logical">
+<div class="para">Construct a CFG for <span class="process-math">\(L_5\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_5 = \{a^i(bc)^i | i \geq 0 \}
+\end{equation*}
+</div>
+<div class="para">Before looking at the correct grammar, let’s first analyze some common incorrect answers. <span class="process-math">\(CFG_5'\)</span> below demonstrates one common mistake: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5'\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ASB | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A \rightarrow aA | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B \rightarrow bcB | \epsilon\)</span></td>
+</tr>
+</table></div> But, why is <span class="process-math">\(CFG_5'\)</span> incorrect? Construct some strings using this grammar.</div>
+<ul class="disc">
+<li><div class="para">abc</div></li>
+<li><div class="para">aabcbc</div></li>
+<li><div class="para">aabcbc</div></li>
+<li><div class="para">aaaaaaa</div></li>
+</ul>
+<div class="para">But, how did the string <span class="process-math">\(abcbc\)</span> come about from <span class="process-math">\(CFG_5'\text{?}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow ASB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(ASB\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(ASB \rightarrow aSB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(A\)</span> is replaced by <span class="process-math">\(a\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aSB \rightarrow aASBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(ASB\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aASBB \rightarrow aaSBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(A\)</span> is replaced by <span class="process-math">\(a\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaSBB \rightarrow aaBB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aaBB \rightarrow aabcB\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(B\)</span> is replaced by <span class="process-math">\(bc\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aabcB \rightarrow aabc\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">The <span class="process-math">\(B\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div> By not forcing the <span class="process-math">\(a\)</span> and <span class="process-math">\(bc\)</span> to be created at the same time and inculding an epsilon, then it is possible to a string to be created that is not in the language.</div>
+</div> <div class="para">Below is the correct grammar for <span class="process-math">\(L_5\text{.}\)</span>
+</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSbc | \epsilon\)</span></td>
+</tr>
+</table></div></div></details> <div class="para">We can see that matched pairs must be contained in the same rule.</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exploration-20">in-context</a></span>
+</body>
+</html>

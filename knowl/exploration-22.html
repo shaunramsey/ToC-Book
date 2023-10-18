@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">We will walk through how to create a PDA from a CFL. Consider <span class="process-math">\(L_1\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = 0^n1^n
+\end{equation*}
+</div>
+<div class="para">The idea here is to push <span class="process-math">\(0\)</span>s onto the stack until there are no more <span class="process-math">\(0\)</span>s. We will then pop one <span class="process-math">\(0\)</span> off of the stack for each <span class="process-math">\(1\)</span> we read.</div>
+</div> <div class="para logical">
+<div class="para">Let’s consider this line of thinking in terms of steps and putting those steps into the read-pop-push notation from above.</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(0\epsilon0\)</span> - Read 0s, do not pop anything from stack, push a 0 to the stack</div></li>
+<li><div class="para">
+<span class="process-math">\(10\epsilon\)</span> - Read first 1, pop top 0 off of stack, do not push anything onto stack</div></li>
+<li><div class="para">
+<span class="process-math">\(10\epsilon\)</span> - Read rest of the 1s, pop top 0 off of stack, do not push anything onto stack</div></li>
+<li><div class="para">
+<span class="process-math">\(\Delta\Delta\epsilon\)</span> - Read in a <span class="process-math">\(\Delta\text{,}\)</span> pop that <span class="process-math">\(\Delta\)</span> off of stack, do not push anything onto stack</div></li>
+</ol>
+<div class="para">We can then put these steps into a state diagram.</div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEXP1.svg" class="contained"></div></article><span class="incontext"><a class="internal" href="ch-pdas.html#exploration-22">in-context</a></span>
+</body>
+</html>

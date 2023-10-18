@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Consider:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{TM} \leq H_{TM}
+\end{equation*}
+</div>
+<div class="para">In other words, does the Acceptance Turing Machine reduce to the Halting Turing Machine?</div>
+</div> <div class="para logical">
+<div class="para">I can "solve" (decide) <span class="process-math">\(A_{TM}\)</span> in the presence of a decider for <span class="process-math">\(H_{TM}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_{TM} = \{ \langle M,w \rangle | M \mbox{ halts on } w\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{TM} = \{\langle M,w \rangle | M \mbox{ accepts } w \}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li><div class="para">Assume we have a decider, <span class="process-math">\(R\text{,}\)</span> for <span class="process-math">\(H_{TM}\text{.}\)</span>
+</div></li>
+<li><div class="para">Given <span class="process-math">\(R\text{,}\)</span> I can decide <span class="process-math">\(A_{TM}\text{,}\)</span> which is a contradiction because <span class="process-math">\(A_{TM}\)</span> is undecidable.</div></li>
+</ol>
+</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/TM-ATM3.svg" class="contained"></div> <div class="para">Solving <span class="process-math">\(H_{TM}\)</span> allows us to solve <span class="process-math">\(A_{TM}\text{.}\)</span> So, <span class="process-math">\(H_{TM}\)</span> is at least as complex as <span class="process-math">\(A_{TM}\text{,}\)</span> because if it were easier, <span class="process-math">\(A_{TM}\)</span> would be too. Thus, <span class="process-math">\(H_{TM}\)</span> is undecidable.</div></article><span class="incontext"><a class="internal" href="ch-reducibility.html#exploration-36">in-context</a></span>
+</body>
+</html>

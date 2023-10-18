@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let’s walk through the creation of an NFA that combines some of the structures from <a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal" title="Section 5.1: Converting Regular Expressions to NFAs">Section 5.1</a>. Consider</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-ConvREsToNFAs.html">
+\begin{equation*}
+REX_5 = (aa)^*+bb
+\end{equation*}
+</div>
+<div class="para">First, we will focus on the <span class="process-math">\(aa\text{.}\)</span> This can be accomplished using the structure for concatantaion.</div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13a.svg" class="contained"></div> <div class="para">Second, we will add in the repeating element of <span class="process-math">\((aa)^*\text{.}\)</span> As a way to account for multiple characters repeating, we can lean on NFA’s paralleism to add an empty string transition.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13b.svg" class="contained"></div> <div class="para">Now that the <span class="process-math">\((aa)^*\)</span> term has been taken care of, the <span class="process-math">\(+\)</span> needs to be considered. We will introduce another empty string transition as shown above.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13c.svg" class="contained"></div> <div class="para">The final part of <span class="process-math">\(REX_5\)</span> is <span class="process-math">\(bb\text{,}\)</span> this is just another instance of concatenation! Which makes this the final NFA for <span class="process-math">\(REX_5\text{.}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13.svg" class="contained"></div></article><span class="incontext"><a class="internal" href="ch-rex-to-nfa.html#exploration-4">in-context</a></span>
+</body>
+</html>

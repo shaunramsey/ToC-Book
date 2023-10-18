@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pumping Lemma for Regular Languages</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Theory of Computation">
+<meta property="book:author" content="Shaun D. Ramsey, PhD">
+<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-fa-closure.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="part-re.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="part-cf.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-re.html" class="internal"><span class="codenumber">I</span> <span class="title">REX and FAs</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dfas.html" class="internal"><span class="codenumber">1</span> <span class="title">Determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#Determinism" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-1" class="internal"><span class="title">Set Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-2" class="internal"><span class="title">Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#FiniteAutomata" class="internal"><span class="codenumber">1.2</span> <span class="title">Finite Automata (FA)</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-dfas.html#DFAs" class="internal"><span class="codenumber">1.3</span> <span class="title">Deterministic Finite Automata (DFA)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-3" class="internal"><span class="title">Deterministic</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-4" class="internal"><span class="codenumber">1.4</span> <span class="title">Strategies for Understanding DFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-5" class="internal"><span class="codenumber">1.5</span> <span class="title">Strategies for Drawing DFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-dfas.html#ch-dfas-exercises" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfas.html" class="internal"><span class="codenumber">2</span> <span class="title">Non-determinsitic Finite Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#NFAs" class="internal"><span class="codenumber">2.1</span> <span class="title">Non-Deterministic Finite Automata (NFA)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#Parallelism" class="internal"><span class="codenumber">2.2</span> <span class="title">Parallelism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#PowerSet" class="internal"><span class="codenumber">2.3</span> <span class="title">The Power Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#StrengthsofNFAs" class="internal"><span class="codenumber">2.4</span> <span class="title">Strengths of NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfas.html#exercises-2" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-nfa-to-dfa.html" class="internal"><span class="codenumber">3</span> <span class="title">NFA and DFA relationships</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#sec-FiniteNumberofStates" class="internal"><span class="codenumber">3.1</span> <span class="title">Finite Number of States</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#exercises-3" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex.html" class="internal"><span class="codenumber">4</span> <span class="title">Regular Expressions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-RegularExpressions" class="internal"><span class="codenumber">4.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-REsInNFAs" class="internal"><span class="codenumber">4.2</span> <span class="title">Regular Expressions in NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex.html#exercises-REX" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rex-to-nfa.html" class="internal"><span class="codenumber">5</span> <span class="title">Converting REX to NFAs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal"><span class="codenumber">5.1</span> <span class="title">Converting Regular Expressions to NFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal"><span class="codenumber">5.2</span> <span class="title">Building NFAs from REs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#exercises-5" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-to-rex.html" class="internal"><span class="codenumber">6</span> <span class="title">Using Rips to Convert FAs to REX</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-to-rex.html#sec-howtorip" class="internal"><span class="codenumber">6.1</span> <span class="title">Rips</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-to-rex.html#exercises-6" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fa-closure.html" class="internal"><span class="codenumber">7</span> <span class="title">Closure and Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-closureintro" class="internal"><span class="codenumber">7.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-howtoRLClosureProof" class="internal"><span class="codenumber">7.2</span> <span class="title">How to Write a Closure Proof</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-fa-closure.html#sec-constructionproofs" class="internal"><span class="codenumber">7.3</span> <span class="title">Closure Proven through Construction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-closure.html#exercises-7" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter active">
+<div class="toc-title-box"><a href="ch-pumping-lemma-regular.html" class="internal"><span class="codenumber">8</span> <span class="title">Pumping Lemma for Regular Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-pumpinglemaintro" class="internal"><span class="codenumber">8.1</span> <span class="title">Introduciton to the Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#section-20" class="internal"><span class="codenumber">8.2</span> <span class="title">Spotting Loops and Repetition in FAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-RLpumpinglemma" class="internal"><span class="codenumber">8.3</span> <span class="title">The Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-PLRLFunLangs" class="internal"><span class="codenumber">8.4</span> <span class="title">Additional Non-Regular Languages for Proving</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#exercises-8" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-cf.html" class="internal"><span class="codenumber">II</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cfgs.html" class="internal"><span class="codenumber">9</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cfgs.html#CFGs" class="internal"><span class="codenumber">9.1</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-RLReview" class="internal"><span class="title">Regular Languages Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-CFGintro" class="internal"><span class="title">Basics of Context Free Grammars</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-rexToCFG" class="internal"><span class="title">Creating CFGs from Regular Expressions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-parsetrees" class="internal"><span class="codenumber">9.2</span> <span class="title">Parse Trees</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#sec-Ambiguity" class="internal"><span class="codenumber">9.3</span> <span class="title">Ambiguity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cfgs.html#ch-cfgs-exercises" class="internal"><span class="codenumber">9.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pdas.html" class="internal"><span class="codenumber">10</span> <span class="title">Pushdown Automata</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pdas.html#sec-PDAintro" class="internal"><span class="codenumber">10.1</span> <span class="title">Introduction to Pushdown Automatas</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pdas.html#exercises-10" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnf.html" class="internal"><span class="codenumber">11</span> <span class="title">Chomsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnf.html#sec-NormalForms" class="internal"><span class="codenumber">11.1</span> <span class="title">Introduction to Normal Forms</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-cnf.html#sec-ChompskyNormalForm" class="internal"><span class="codenumber">11.2</span> <span class="title">Chompsky Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-CNFRules" class="internal"><span class="title">Rules of Chompsky Normal Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-createCNF" class="internal"><span class="title">Steps to Putting a CFG in CNF</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnf.html#exercises-11" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cnl.html" class="internal"><span class="codenumber">12</span> <span class="title">Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnl.html#sec-cfls" class="internal"><span class="codenumber">12.1</span> <span class="title">Introduction to Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnl.html#exercises-12" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html" class="internal"><span class="codenumber">13</span> <span class="title">Pumping Lemma for Context Free Languages</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-parseTreeRevisit" class="internal"><span class="codenumber">13.1</span> <span class="title">Revisiting Parse Trees and Spotting Loops</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-plForCFLs" class="internal"><span class="codenumber">13.2</span> <span class="title">The Pumping Lemma for Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#exercises-13" class="internal"><span class="codenumber">13.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-tm.html" class="internal"><span class="codenumber">III</span> <span class="title">Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tms.html" class="internal"><span class="codenumber">14</span> <span class="title">Turing Machine Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tms.html#sec-tm-background" class="internal"><span class="codenumber">14.1</span> <span class="title">Introduction to Turing Machines</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tms.html#exercises-14" class="internal"><span class="codenumber">14.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-tm-classifications.html" class="internal"><span class="codenumber">15</span> <span class="title">Classifications of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-earlyTMs" class="internal"><span class="codenumber">15.1</span> <span class="title">Early Turing Machines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-goldbach" class="internal"><span class="codenumber">15.2</span> <span class="title">Goldbach’s Conjecture</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-tm-classifications.html#sec-TMVarieties" class="internal"><span class="codenumber">15.3</span> <span class="title">Varieties of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsubsec-TMRecognizable" class="internal"><span class="title">Recognizable Turing Machines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsec-TMDecidable" class="internal"><span class="title">Decideable Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tm-classifications.html#exercises-15" class="internal"><span class="codenumber">15.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-diagonalization.html" class="internal"><span class="codenumber">16</span> <span class="title">Diagonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-hiblertshotel" class="internal"><span class="codenumber">16.1</span> <span class="title">Hilbert’s Hotel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-introtodiagonalization" class="internal"><span class="codenumber">16.2</span> <span class="title">Introduction to Diagonalization</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-diagonalization.html#sec-ExTM" class="internal"><span class="codenumber">16.3</span> <span class="title">Examples of Turing Machines</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-ATM" class="internal"><span class="title">Acceptance Turing Machine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-otherTM" class="internal"><span class="title">Other Turing Machines</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-halting" class="internal"><span class="codenumber">16.4</span> <span class="title">The Halting Problem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-diagonalization.html#exercises-16" class="internal"><span class="codenumber">16.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-reducibility.html" class="internal"><span class="codenumber">17</span> <span class="title">Reducibility</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ReducIntro" class="internal"><span class="codenumber">17.1</span> <span class="title">Introduction to Reducibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ProveReduce" class="internal"><span class="codenumber">17.2</span> <span class="title">Proving Reducibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-reducibility.html#exercises-17" class="internal"><span class="codenumber">17.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-glossary"><div class="toc-title-box"><a href="glossary.html" class="internal"><span class="title">Glossary</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-pumping-lemma-regular"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">8</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languages</span>
+</h2>
+<article class="objectives goal-like" id="objectives-8"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ol class="decimal">
+<li id="li-96"><div class="para" id="p-derived-li-96">Introduction to the Pumping Lemma for Regular Languages</div></li>
+<li id="li-97"><div class="para" id="p-derived-li-97">Spotting Loops and Repetition in FAs</div></li>
+<li id="li-98"><div class="para" id="p-derived-li-98">The Pumping Lemma for Regular Languages</div></li>
+<li id="li-99"><div class="para" id="p-derived-li-99">Additional Non-Regular Languages for Proving</div></li>
+</ol></article><section class="section" id="sec-pumpinglemaintro"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.1</span><span class="space"> </span><span class="title">Introduciton to the Pumping Lemma for Regular Languages</span>
+</h3>
+<article class="exploration project-like" id="exploration-14"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span><span class="space"> </span><span class="title">Revisiting the Properties of DFAs.</span>
+</h4> <div class="para" id="p-256">Consider <span class="process-math">\(M_1\)</span> below.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM25.svg" class="contained"></div> <div class="para" id="p-257">How many states are in this machine?</div> <details id="answer-36" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-258">4. There are 4 states represented by circles.</div></div></details> <div class="para" id="p-259">Come up with some strings that exist in the languge of this machince. For the sake of example, we will use <span class="process-math">\(10110110011\text{,}\)</span> <span class="process-math">\(01011\text{,}\)</span> and <span class="process-math">\(011\text{.}\)</span>
+</div> <div class="para" id="p-260">Next, make a list of the states visited to parce throgh each of those strings. like this:</div> <figure class="table table-like" id="RLPLParceTablea"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.1<span class="period">.</span></span><span class="space"> </span>Parce Tables for 110101111011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure> <figure class="table table-like" id="RLPLParceTableb"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.2<span class="period">.</span></span><span class="space"> </span>Parce Tables for 01011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure> <figure class="table table-like" id="RLPLParceTablec"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.3<span class="period">.</span></span><span class="space"> </span>Parce Tables for 011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure> <div class="para" id="p-261">So, if our DFA has <span class="process-math">\(n\)</span> states, then any string with length at least <span class="process-math">\(n\)</span> will revisit some state that the DFA has been in before. This is an application of the  <dfn class="terminology">Pigeon Hole Principle</dfn>. A string with <span class="process-math">\(n\)</span> symbols needs <span class="process-math">\(n+1\)</span> states if it does not want to revisit a state.</div> <div class="para" id="p-262">Writing out these tables can make looping patterns more apparent. In <span class="process-math">\(M_1\text{,}\)</span> the transition among <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> and <span class="process-math">\(C\)</span> to <span class="process-math">\(B\)</span> could be repeated by a string. Another loop that can be repeated is <span class="process-math">\(A\)</span> to <span class="process-math">\(A\text{.}\)</span> Loops can be removed and still have a string in the language.</div> <div class="para logical" id="p-263">
+<div class="para">We can see this using the first string,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)} = 110101111011\text{.}
+\end{equation*}
+</div>
+<div class="para">The repeating <span class="process-math">\(1\)</span>s at the beginning can be removed and the string is still in the languge, so the condensed string is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)'} = 0101111011
+\end{equation*}
+</div>
+<div class="para">The repeating <span class="process-math">\(10\)</span>s resulting from <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> transitions can also be taken out.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)''} = 011111
+\end{equation*}
+</div>
+<div class="para">This string is also in the language.</div>
+</div> <div class="para" id="p-264">Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?</div> <div class="para" id="p-265">Loops can be taken out, or they can be taken many times.</div></article><div class="para" id="p-266">The Pigeon Hole Principle can be seen in all DFAs. And since it can be, we can build it into a mechanism to help us understand when languages are regular. That brings us to the Pumping Lemma.</div></section><section class="section" id="section-20"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.2</span><span class="space"> </span><span class="title">Spotting Loops and Repetition in FAs</span>
+</h3>
+<div class="para" id="p-267">Consider <span class="process-math">\(M_2\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(M_2) = L_2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = {0,1}
+\end{equation*}
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM26a.svg" class="contained"></div>
+<div class="para logical" id="p-268">
+<div class="para">Consider the following strings as given to <span class="process-math">\(M_2\text{.}\)</span>
+</div>
+<ul class="disc">
+<li id="li-100">
+<span class="process-math">\(s^{(0)} = 01:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+<li id="li-101">
+<span class="process-math">\(s^{(1)} = 0111:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+<li id="li-102">
+<span class="process-math">\(s^{(2)} = 01001001:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+</ul>
+<div class="para">After writing out these parce tables, it is clear to see that any combination of characters after an initial <span class="process-math">\(01\)</span> can be repeated without affecting if the string is accepted. This not only allows us to determine that <span class="process-math">\(L_2 = \{\mbox{any string that begins with 01}\}\)</span> but also helps us understand that any concatenation of characters <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(01\text{,}\)</span> etc. can be reapeated any amount of times. Even <span class="process-math">\(P\)</span> number of times.</div>
+</div></section><section class="section" id="sec-RLpumpinglemma"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.3</span><span class="space"> </span><span class="title">The Pumping Lemma for Regular Languages</span>
+</h3>
+<div class="para" id="p-269"> The <dfn class="terminology">Pumping Lemma for Regular Languages</dfn> can be used to prove that languages are regular. It follows the general form outlined below.</div>
+<div class="para" id="p-270">If <span class="process-math">\(L\)</span> is regular, then it has a pumping length <span class="process-math">\(p\text{.}\)</span> Every string in <span class="process-math">\(L\)</span> of length at least <span class="process-math">\(p\)</span> will be pumpable.</div>
+<div class="para logical" id="p-271">
+<div class="para">Given this string, call it <span class="process-math">\(s\)</span> (<span class="process-math">\(S^{(1)}\)</span>). It has three parts:</div>
+<ul class="disc">
+<li id="li-103"><div class="para" id="p-272">A beginning that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(x\)</span>
+</div></li>
+<li id="li-104"><div class="para" id="p-273">A pumpable part that cannot be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(y\)</span>
+</div></li>
+<li id="li-105"><div class="para" id="p-274">An end that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(z\)</span>
+</div></li>
+</ul>
+<div class="para">The key here is that we can make new strings in the language by removing <span class="process-math">\(y(s^{(1)})\)</span> or adding <span class="process-math">\(y\)</span> as many times as we’d like. Such as: <span class="process-math">\(s^{(2)}\text{,}\)</span> <span class="process-math">\(s^{(3)}\text{,}\)</span> <span class="process-math">\(s^{(4)}\text{,}\)</span> etc.</div>
+</div>
+<div class="para" id="p-275">This works for any string that is long enough, and it happens within the first <span class="process-math">\(p\)</span> symbols of the input string.</div>
+<div class="para logical" id="p-276">
+<div class="para">In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. This also means that there is some non-empty <span class="process-math">\(y\)</span> loop, but this will typically be written more formally and closer to:</div>
+<ol class="decimal">
+<li id="li-106"><div class="para" id="p-277">If a language is a Regular Language then</div></li>
+<li id="li-107"><div class="para" id="p-278">
+<span class="process-math">\(\exists p \geq 1\)</span> such that <span class="process-math">\(\forall x \in L\)</span> with <span class="process-math">\(|s|\geq p\)</span>
+</div></li>
+<li id="li-108"><div class="para logical" id="p-279">
+<div class="para">Then <span class="process-math">\(s^{(1)} = xyz\)</span> where:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|y| &gt; 0
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|xy| \leq p \mbox{, and }
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall i \geq 0, xy^iz\in L
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mbox{also known as: }) s^{(i)}\in L
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div>
+<article class="theorem theorem-like" id="thm-plRL"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-280">Take a languge we want to prove is not regular.</div> <ol class="decimal">
+<li id="li-109"><div class="para" id="p-281">Assume it is regular.</div></li>
+<li id="li-110"><div class="para" id="p-282">Pick a string that is at least of length <span class="process-math">\(p\)</span> in the language</div></li>
+<li id="li-111"><div class="para" id="p-283">Show that every possible choice for <span class="process-math">\(y\)</span> cannot work</div></li>
+<li id="li-112"><div class="para" id="p-284">Thus the assumption is wrong and by contradition, the language is not regular.</div></li>
+</ol></article><article class="exploration project-like" id="exploration-15"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">15</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languages without a Machine.</span>
+</h4> <div class="para logical" id="p-285">
+<div class="para">Say <span class="process-math">\(L_1\text{:}\)</span> has a number of 0s divisible by 3 and an even number of 1s.</div>
+<ul class="disc"><li id="li-113"><div class="para" id="p-286">
+<span class="process-math">\(L_1\)</span> is a Regular Language.</div></li></ul>
+<div class="para">Let’s say we don’t know <span class="process-math">\(p\text{,}\)</span> just that it exists. Let’s pick a string that’s <span class="process-math">\(p\)</span> long.</div>
+<ul class="disc"><li id="li-114"><div class="para" id="p-287">This staisfies <span class="process-math">\(s\in L\)</span> and <span class="process-math">\(|s|\geq p\)</span>
+</div></li></ul>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)} = (00011)^p
+\end{equation*}
+</div>
+<div class="para">Some piece of <span class="process-math">\(s^{(1)}\)</span> in the first <span class="process-math">\(p\)</span> symbols is pumpable.</div>
+<ul class="disc"><li id="li-115"><div class="para" id="p-288">There is some <span class="process-math">\(y\)</span> that we can extract or insert as many times as we want</div></li></ul>
+</div></article><article class="exploration project-like" id="exploration-16"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languges with Defined Language.</span>
+</h4> <div class="para" id="p-289">Consider <span class="process-math">\(L_{01}=\{0^n1^n|n\leq 0 \}\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="li-116"><div class="para" id="p-290">Assume <span class="process-math">\(L_{01}\)</span> is regular thus obeying the Pumping Lemma for Regular Languages.</div></li>
+<li id="li-117"><div class="para" id="p-291">Let us choose <span class="process-math">\(s^{(1)} = 0^p1^p\)</span> since <span class="process-math">\(L_{01}\)</span> is a Regular Language, any string that is long enough should be pumpable.</div></li>
+<li id="li-118">
+<div class="para" id="p-292">A pumpable part (<span class="process-math">\(y\)</span>) must occur in the first <span class="process-math">\(p\)</span> symbols. So, <span class="process-math">\(y\)</span> must contain one or more 0s and no 1s since the first <span class="process-math">\(p\)</span> symbols are 0s.</div>
+<div class="para" id="p-293">If we pump down to <span class="process-math">\(s^{(0)}\text{,}\)</span> we will thus remove some 0s without removing any 1s. <span class="process-math">\(s^{(0)}\)</span> cannot possibly be in <span class="process-math">\(L_{01}\text{,}\)</span> no matter the choice for <span class="process-math">\(y\text{.}\)</span>
+</div>
+</li>
+<li id="li-119"><div class="para" id="p-294">Thus the assumption is wrong and by contradiction, the language is not regular.</div></li>
+</ol></article></section><section class="section" id="sec-PLRLFunLangs"><h3 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.4</span><span class="space"> </span><span class="title">Additional Non-Regular Languages for Proving</span>
+</h3>
+<div class="para logical" id="p-295">
+<div class="para">Here are some additional, fun, non-regular languages to try to prove (in increasing complexity):</div>
+<ul class="disc">
+<li id="li-120"><div class="para" id="p-derived-li-120"><span class="process-math">\(\displaystyle \{0^i1^j|i&gt;j\}\)</span></div></li>
+<li id="li-121"><div class="para" id="p-derived-li-121"><span class="process-math">\(\displaystyle \{0^i1^j|i\geq j\}\)</span></div></li>
+<li id="li-122"><div class="para" id="p-derived-li-122"><span class="process-math">\(\displaystyle \{0^i1^j|i \lt j\}\)</span></div></li>
+<li id="li-123"><div class="para" id="p-derived-li-123"><span class="process-math">\(\displaystyle \{0^i1^j|i \leq j\}\)</span></div></li>
+<li id="li-124"><div class="para" id="p-derived-li-124"><span class="process-math">\(\displaystyle \{0^n1^m0^n\}\)</span></div></li>
+<li id="li-125"><div class="para" id="p-derived-li-125"><span class="process-math">\(\displaystyle \{a^ib^jc^k|i=j \mbox{ when } k=1\}\)</span></div></li>
+<li id="li-126"><div class="para" id="p-derived-li-126"><span class="process-math">\(\displaystyle \{ww^R|w \mbox{ is a binary string}\}\)</span></div></li>
+<li id="li-127"><div class="para" id="p-derived-li-127"><span class="process-math">\(\displaystyle \{w|w \mbox{ is a palindrome}\}\)</span></div></li>
+<li id="li-128"><div class="para" id="p-derived-li-128"><span class="process-math">\(\displaystyle \{ab^nc^n\}\)</span></div></li>
+<li id="li-129"><div class="para" id="p-derived-li-129"><span class="process-math">\(\displaystyle \{a^ib^jc^k| j = k \mbox{ when } i = 1 \}\)</span></div></li>
+</ul>
+<div class="para">Unless stated otherwise, <span class="process-math">\(i,j,k,m,n \geq 0\text{.}\)</span> You can try <span class="process-math">\(&gt;0\)</span> or <span class="process-math">\(&gt;2\)</span> for additional practice.</div>
+</div></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.5</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-56"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-296">Consider the machine below. What is the language of the machine? What are some state loops present within it?</div>
+<div class="solutions">
+<details id="hint-13" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-297">Come up with some test strings and their parce paths. Are there any patterns of repetition?</div> <ul class="disc">
+<li id="li-130">
+<span class="process-math">\(s^{(0)} = 01:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+<li id="li-131">
+<span class="process-math">\(s^{(1)} = 01001:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+<li id="li-132">
+<span class="process-math">\(s^{(2)} = 01001111:\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</li>
+</ul>
+</div></details><details id="answer-37" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-298">A pattern of state repition is: <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> to <span class="process-math">\(C\text{.}\)</span>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-57"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-299">
+<div class="para">Identify patterns of state repetition from a written language.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_2 = \{\mbox{any string with an odd number of 0s, starts with 1, ends with 111, and has at least two 0s}\}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<details id="hint-14" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-300">
+<div class="para">Some test strings inlcude:</div>
+<ul class="disc">
+<li id="li-133"><div class="para" id="p-derived-li-133"><span class="process-math">\(\displaystyle s^(0) = 1000111\)</span></div></li>
+<li id="li-134"><div class="para" id="p-derived-li-134"><span class="process-math">\(\displaystyle s^(1) = 10100111\)</span></div></li>
+<li id="li-135"><div class="para" id="p-derived-li-135"><span class="process-math">\(\displaystyle s^(2) = 1000000011111\)</span></div></li>
+</ul>
+</div></div></details><details id="answer-38" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-301">
+<div class="para">Character repetitions can exist in these two places:</div>
+<ul class="disc">
+<li id="li-136"><div class="para" id="p-derived-li-136"><span class="process-math">\(\displaystyle 10(00)^*111\)</span></div></li>
+<li id="li-137"><div class="para" id="p-derived-li-137"><span class="process-math">\(\displaystyle 10(1)^*00111\)</span></div></li>
+</ul>
+<div class="para">They can also be combined.</div>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-302">Prove <span class="process-math">\(L_{xx}\)</span> is regular or not.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{xx}=\{w\#w | w \mbox{ is any binary string}\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \{0,1,\#\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-59"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-303">Prove <span class="process-math">\(L_{ab}\)</span> is regular or not.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{ab}=\{(ab)^n|n \geq 100\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \{a,b\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-304">Prove <span class="process-math">\(L_{a}\)</span> is regular or not.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{a}=\{a^{2^n}|n \geq 0\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \{a\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="p-305">
+<div class="para">Prove the following language is regular.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{(01)^n(01)^n(01)^n|n\geq 0 \}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="p-306">
+<div class="para">Use the pumping lemma for regular languages to prove the following language is not regular.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{a^ib^jc^k | i = j + k\}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exercise-63"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="p-307">
+<div class="para">The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma = \{ (, ), [, ], \{, \} \}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="hint-15" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-308">
+<div class="para">Sample strings include:</div>
+<ul class="disc">
+<li id="li-138"><div class="para" id="p-309">[(){}]</div></li>
+<li id="li-139"><div class="para" id="p-310">[[[()]]]{}{}{{}}</div></li>
+<li id="li-140"><div class="para" id="p-311">{}</div></li>
+<li id="li-141"><div class="para" id="p-312"><span class="process-math">\(\displaystyle \epsilon\)</span></div></li>
+</ul>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercise-64"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-313">Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)</div> <div class="para logical" id="p-314">
+<div class="para">You have been given that:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{a^n\#a^n | n \geq 0\}
+\end{equation*}
+</div>
+<div class="para">is not regular.</div>
+</div>
+<div class="solutions"><details id="hint-16" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-315">
+<div class="para">Sample strings include:</div>
+<ul class="disc">
+<li id="li-142"><div class="para" id="p-316">thethe#thethe</div></li>
+<li id="li-143"><div class="para" id="p-317">same#same</div></li>
+<li id="li-144"><div class="para" id="p-318">atimeto#atimeto</div></li>
+</ul>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercise-65"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-319">According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.</div></article><article class="exercise exercise-like" id="exercise-66"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-320">Prove that the language with binary strings that have more 0s than 1s is not regular.</div></article><article class="exercise exercise-like" id="exercise-67"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-321">Prove that the language with strings with any number of a’s, b’s, and c’s, but with an equal number of d’s and e’s is not regular.</div></article><article class="exercise exercise-like" id="exercise-68"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-322">Apply the pumping lemma for regular languages. Prove the language below is not regular.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{\triangle ^i \square^j | i \ngeq j\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-69"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="p-323">Using the pumping lemma for regular languages, prove the language below is not regular.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{\star ^i \triangle ^j \square ^i | i \ngeq j\}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-70"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="p-324">Prove the following language, L, with <span class="process-math">\(\Sigma =\{a,b,c,d\}\)</span>is not regular using the pumping lemma for regular languages.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{a^nb^mc^nd^m | n,m \geq 0\}
+\end{equation*}
+</div>
+<div class="para" id="p-325">Some sample strings in the language are: <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> <span class="process-math">\(abcd\text{,}\)</span> and <span class="process-math">\(aabccd\)</span>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-fa-closure.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="part-cf.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
