@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Acknowledgements",
   "number": "",
   "title": "Acknowledgements",
-  "body": " We would like to thank Washington College and the Douglass Cater Society of Junior Fellows for supporting this work.  "
+  "body": " We would like to thank Washington College and the Douglass Cater Society of Junior Fellows at Washington College for supporting this work. We would like to thank all the students who tackled this material over the years. It created this unique method of introducing, using and interacting with the material.  "
 },
 {
   "id": "preface",
