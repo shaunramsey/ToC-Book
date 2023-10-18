@@ -11,8 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para"> <dfn class="terminology">Determinisim</dfn> means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to ’make a guess’ as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">The alphabet of <span class="process-math">\(M_1\)</span> includes 0 and 1. When at the start state <span class="process-math">\(A\text{,}\)</span> if a 0 is read, we stay at <span class="process-math">\(A\)</span> and if a 1 is read, we move to <span class="process-math">\(B\text{.}\)</span> Each possibility is accounted for. When in state <span class="process-math">\(B\text{,}\)</span> if a 0 is read, we stay at <span class="process-math">\(B\)</span> and if a 1 is read, we move to <span class="process-math">\(A\text{.}\)</span> Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.</div>
 <span class="incontext"><a class="internal" href="ch-dfas.html#p-19">in-context</a></span>
 </body>
 </html>

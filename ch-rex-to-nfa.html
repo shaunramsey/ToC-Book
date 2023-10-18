@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -345,37 +344,37 @@ window.MathJax = {
 </ol></article><section class="section" id="sec-ConvREsToNFAs"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Converting Regular Expressions to NFAs</span>
 </h3>
-<div class="para" id="p-105">Different structures of characters can be included in Regular expressions as covered in <a href="ch-rex.html#sec-RegularExpressions" class="internal" title="Section 4.1: Regular Expressions">Section 4.1</a>. Displaying these structures in NFAs can follow these simple constructions:</div>
+<div class="para" id="p-109">Different structures of characters can be included in Regular expressions as covered in <a href="ch-rex.html#sec-RegularExpressions" class="internal" title="Section 4.1: Regular Expressions">Section 4.1</a>. Displaying these structures in NFAs can follow these simple constructions:</div>
 <ul class="disc">
 <li id="li-34">
-<div class="para" id="p-106">Terminals: <span class="process-math">\(a\)</span>
+<div class="para" id="p-110">Terminals: <span class="process-math">\(a\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXMterm.svg" class="contained"></div>
 </li>
 <li id="li-35">
-<div class="para" id="p-107">Concatenation: <span class="process-math">\(aa\)</span>
+<div class="para" id="p-111">Concatenation: <span class="process-math">\(aa\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXMconcat.svg" class="contained"></div>
 </li>
 <li id="li-36">
-<div class="para" id="p-108">Or: <span class="process-math">\(aa + bb\)</span>
+<div class="para" id="p-112">Or: <span class="process-math">\(aa + bb\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXMor.svg" class="contained"></div>
 </li>
 <li id="li-37">
-<div class="para" id="p-109">Repeats: <span class="process-math">\(10^*\)</span>
+<div class="para" id="p-113">Repeats: <span class="process-math">\(10^*\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXMrep.svg" class="contained"></div>
 </li>
 </ul>
-<div class="para" id="p-110">Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined.</div></section><section class="section" id="sec-makingNFAs"><h3 class="heading hide-type">
+<div class="para" id="p-114">Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined.</div></section><section class="section" id="sec-makingNFAs"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Building NFAs from REs</span>
 </h3>
-<div class="para" id="p-111">The best way to approach creating NFAs from REs is to go one character or section at a time. The Explorations below were created with that approach.</div>
+<div class="para" id="p-115">The best way to approach creating NFAs from REs is to go one character or section at a time. The Explorations below were created with that approach.</div>
 <article class="exploration project-like" id="exploration-4"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-112">
+<div class="para logical" id="p-116">
 <div class="para">Let’s walk through the creation of an NFA that combines some of the structures from <a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal" title="Section 5.1: Converting Regular Expressions to NFAs">Section 5.1</a>. Consider</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-ConvREsToNFAs.html">
 \begin{equation*}
@@ -383,11 +382,11 @@ REX_5 = (aa)^*+bb
 \end{equation*}
 </div>
 <div class="para">First, we will focus on the <span class="process-math">\(aa\text{.}\)</span> This can be accomplished using the structure for concatantaion.</div>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13a.svg" class="contained"></div> <div class="para" id="p-113">Second, we will add in the repeating element of <span class="process-math">\((aa)^*\text{.}\)</span> As a way to account for multiple characters repeating, we can lean on NFA’s paralleism to add an empty string transition.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13b.svg" class="contained"></div> <div class="para" id="p-114">Now that the <span class="process-math">\((aa)^*\)</span> term has been taken care of, the <span class="process-math">\(+\)</span> needs to be considered. We will introduce another empty string transition as shown above.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13c.svg" class="contained"></div> <div class="para" id="p-115">The final part of <span class="process-math">\(REX_5\)</span> is <span class="process-math">\(bb\text{,}\)</span> this is just another instance of concatenation! Which makes this the final NFA for <span class="process-math">\(REX_5\text{.}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13a.svg" class="contained"></div> <div class="para" id="p-117">Second, we will add in the repeating element of <span class="process-math">\((aa)^*\text{.}\)</span> As a way to account for multiple characters repeating, we can lean on NFA’s paralleism to add an empty string transition.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13b.svg" class="contained"></div> <div class="para" id="p-118">Now that the <span class="process-math">\((aa)^*\)</span> term has been taken care of, the <span class="process-math">\(+\)</span> needs to be considered. We will introduce another empty string transition as shown above.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13c.svg" class="contained"></div> <div class="para" id="p-119">The final part of <span class="process-math">\(REX_5\)</span> is <span class="process-math">\(bb\text{,}\)</span> this is just another instance of concatenation! Which makes this the final NFA for <span class="process-math">\(REX_5\text{.}\)</span>
 </div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM13.svg" class="contained"></div></article><article class="exploration project-like" id="exploration-5"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-116">
+<div class="para logical" id="p-120">
 <div class="para">Consider</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -395,11 +394,11 @@ REX_6 = (0+10^*1)^*
 \end{equation*}
 </div>
 <div class="para">First, we look at <span class="process-math">\(0\text{.}\)</span> This is a terminal structure.</div>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14a.svg" class="contained"></div> <div class="para" id="p-117">Second, we will add in the OR element.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14b.svg" class="contained"></div> <div class="para" id="p-118">We now need to turn our attention to the <span class="process-math">\(10^*\text{,}\)</span> which is a terminal followed by a repeating structure.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14c.svg" class="contained"></div> <div class="para" id="p-119">There is a 1 that follows the <span class="process-math">\(10^*\text{.}\)</span> Since there is an empty string transition, it’s terminal structure can be added to the state between 1 and 0.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14d.svg" class="contained"></div> <div class="para" id="p-120">Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14.svg" class="contained"></div></article></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14a.svg" class="contained"></div> <div class="para" id="p-121">Second, we will add in the OR element.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14b.svg" class="contained"></div> <div class="para" id="p-122">We now need to turn our attention to the <span class="process-math">\(10^*\text{,}\)</span> which is a terminal followed by a repeating structure.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14c.svg" class="contained"></div> <div class="para" id="p-123">There is a 1 that follows the <span class="process-math">\(10^*\text{.}\)</span> Since there is an empty string transition, it’s terminal structure can be added to the state between 1 and 0.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14d.svg" class="contained"></div> <div class="para" id="p-124">Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14.svg" class="contained"></div></article></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.3</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-35"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="p-121">
+<div class="para logical" id="p-125">
 <div class="para">Convert the following REX into a FA, using the construciton method shown in <a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal" title="Section 5.2: Building NFAs from REs">Section 5.2</a>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-makingNFAs.html">
@@ -408,8 +407,8 @@ REX_7 = (01^*0+10^*1)
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="answer-21" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-122"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM15.svg" class="contained"></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="p-123">
+<div class="solutions"><details id="answer-21" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-126"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM15.svg" class="contained"></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-127">
 <div class="para">Convert the following REX into a FA, using the construciton method.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -417,8 +416,8 @@ REX_8 = 0(0+1)^*0
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="answer-22" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-124"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM16.svg" class="contained"></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="p-125">
+<div class="solutions"><details id="answer-22" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-128"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM16.svg" class="contained"></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-129">
 <div class="para">Create an FA for the following Regular Expression.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -432,9 +431,9 @@ REX_9 = (www.\lambda\lambda^*.edu)(//\lambda\lambda^*)^*
 </div>
 <div class="para">Here, <span class="process-math">\(\lambda\)</span> is used to represent any alphabetic symbol.</div>
 </div>
-<div class="solutions"><details id="answer-23" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-126">There would typically by states between each character, but in the interest of space, the FA has been compressed. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/../generated/latex-image/FAExM17.svg" class="contained"></div>
+<div class="solutions"><details id="answer-23" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-130">There would typically by states between each character, but in the interest of space, the FA has been compressed. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/../generated/latex-image/FAExM17.svg" class="contained"></div>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-38"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="p-127">
+<div class="para logical" id="p-131">
 <div class="para">Create an FA for the following regular expression.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -448,9 +447,9 @@ REX_{10} = dd/dd/(201d+202d)
 </div>
 <div class="para">Here, <span class="process-math">\(d\)</span> is used to represent any decimal digit.</div>
 </div>
-<div class="solutions"><details id="answer-24" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-128">There would typically be states between each character, but in the interest of space, the FA has been compressed. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/../generated/latex-image/FAExM18.svg" class="contained"></div>
+<div class="solutions"><details id="answer-24" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-132">There would typically be states between each character, but in the interest of space, the FA has been compressed. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/../generated/latex-image/FAExM18.svg" class="contained"></div>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-39"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-129">Represent the below REX as a FA.</div>
+<div class="para" id="p-133">Represent the below REX as a FA.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 REX = (0+1)^*(1(01)^*+11)^*

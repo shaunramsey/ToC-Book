@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -342,9 +341,9 @@ window.MathJax = {
 <ol class="decimal"><li id="li-178"><div class="para" id="p-derived-li-178">Introduction to Pushdown Automatas</div></li></ol></article><section class="section" id="sec-PDAintro"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.1</span><span class="space"> </span><span class="title">Introduction to Pushdown Automatas</span>
 </h3>
-<div class="para" id="p-418"> The machines associated with CFLs are called <dfn class="terminology">Pushdown Automata (PDAs)</dfn>. They have memory in the form of an infinite stack.</div>
-<div class="para" id="p-419">Pushing is adding a term to the stack while popping is removing a term from the stack. We use <span class="process-math">\(\Delta\)</span> to indicate the end of input or the result of popping from an empty stack.</div>
-<div class="para" id="p-420">To create PDA diagrams, we will lean on skills learned when drawing state machines. Instead of transitioning on a single character or a single character in a list, we will be introducing a notion that details what needs to read, what needs to be popped, and what needs to be pushed. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-422"> The machines associated with CFLs are called <dfn class="terminology">Pushdown Automata (PDAs)</dfn>. They have memory in the form of an infinite stack.</div>
+<div class="para" id="p-423">Pushing is adding a term to the stack while popping is removing a term from the stack. We use <span class="process-math">\(\Delta\)</span> to indicate the end of input or the result of popping from an empty stack.</div>
+<div class="para" id="p-424">To create PDA diagrams, we will lean on skills learned when drawing state machines. Instead of transitioning on a single character or a single character in a list, we will be introducing a notion that details what needs to read, what needs to be popped, and what needs to be pushed. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines">0</td>
 <td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\)</span></td>
@@ -364,7 +363,7 @@ window.MathJax = {
 <article class="exploration project-like" id="exploration-22"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-421">
+<div class="para logical" id="p-425">
 <div class="para">We will walk through how to create a PDA from a CFL. Consider <span class="process-math">\(L_1\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -372,23 +371,23 @@ L_1 = 0^n1^n
 \end{equation*}
 </div>
 <div class="para">The idea here is to push <span class="process-math">\(0\)</span>s onto the stack until there are no more <span class="process-math">\(0\)</span>s. We will then pop one <span class="process-math">\(0\)</span> off of the stack for each <span class="process-math">\(1\)</span> we read.</div>
-</div> <div class="para logical" id="p-422">
+</div> <div class="para logical" id="p-426">
 <div class="para">Let’s consider this line of thinking in terms of steps and putting those steps into the read-pop-push notation from above.</div>
 <ol class="decimal">
-<li id="li-179"><div class="para" id="p-423">
+<li id="li-179"><div class="para" id="p-427">
 <span class="process-math">\(0\epsilon0\)</span> - Read 0s, do not pop anything from stack, push a 0 to the stack</div></li>
-<li id="li-180"><div class="para" id="p-424">
+<li id="li-180"><div class="para" id="p-428">
 <span class="process-math">\(10\epsilon\)</span> - Read first 1, pop top 0 off of stack, do not push anything onto stack</div></li>
-<li id="li-181"><div class="para" id="p-425">
+<li id="li-181"><div class="para" id="p-429">
 <span class="process-math">\(10\epsilon\)</span> - Read rest of the 1s, pop top 0 off of stack, do not push anything onto stack</div></li>
-<li id="li-182"><div class="para" id="p-426">
+<li id="li-182"><div class="para" id="p-430">
 <span class="process-math">\(\Delta\Delta\epsilon\)</span> - Read in a <span class="process-math">\(\Delta\text{,}\)</span> pop that <span class="process-math">\(\Delta\)</span> off of stack, do not push anything onto stack</div></li>
 </ol>
 <div class="para">We can then put these steps into a state diagram.</div>
 </div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEXP1.svg" class="contained"></div></article><article class="exploration project-like" id="exploration-23"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-427">
+<div class="para logical" id="p-431">
 <div class="para">Now, try to create your own PDA for the following language:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -396,16 +395,16 @@ L_2 = \{a^i(bc)^i | i \geq 0 \}
 \end{equation*}
 </div>
 <div class="para">It is easiest to first write out the necessary steps and then draw the PDA diagram.</div>
-</div> <div class="para logical" id="p-428">
+</div> <div class="para logical" id="p-432">
 <div class="para">Here are the necessary steps:</div>
 <ol class="decimal">
-<li id="li-183"><div class="para" id="p-429">
+<li id="li-183"><div class="para" id="p-433">
 <span class="process-math">\(a\epsilon x\)</span> - Read <span class="process-math">\(a\)</span>s, do not pop anything from stack, push a <span class="process-math">\(x\)</span> to the stack</div></li>
-<li id="li-184"><div class="para" id="p-430">
+<li id="li-184"><div class="para" id="p-434">
 <span class="process-math">\(b\epsilon \epsilon\)</span> - Read first <span class="process-math">\(b\text{,}\)</span> do not pop anything from stack, do not push anything onto stack</div></li>
-<li id="li-185"><div class="para" id="p-431">
+<li id="li-185"><div class="para" id="p-435">
 <span class="process-math">\(cx\epsilon\)</span> - Read first <span class="process-math">\(c\text{,}\)</span> pop first <span class="process-math">\(x\)</span> from stack, do not push anything onto stack</div></li>
-<li id="li-186"><div class="para" id="p-432">
+<li id="li-186"><div class="para" id="p-436">
 <span class="process-math">\(\Delta\Delta\epsilon\)</span> - Read in a <span class="process-math">\(\Delta\text{,}\)</span> pop that <span class="process-math">\(\Delta\)</span> off of stack, do not push anything onto stack</div></li>
 </ol>
 <div class="para">It is important to note that we must loop through checking for both the <span class="process-math">\(b\)</span> and <span class="process-math">\(c\text{.}\)</span>
@@ -414,7 +413,7 @@ L_2 = \{a^i(bc)^i | i \geq 0 \}
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">10.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-90"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="p-433">
+<div class="para logical" id="p-437">
 <div class="para">Create a PDA for the langugage below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -423,30 +422,30 @@ L = \{\mbox{all palindromes with } \Sigma=\{0,1\}\}
 </div>
 </div>
 <div class="solutions">
-<details id="hint-22" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-434">PDAs can consider multiple transitions at once. This allows for varriation.</div></div></details><details id="answer-51" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP3.svg" class="contained"></div></div></details>
+<details id="hint-22" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-438">PDAs can consider multiple transitions at once. This allows for varriation.</div></div></details><details id="answer-51" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP3.svg" class="contained"></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-91"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-435">Create a PDA based on a language that includes any number of <span class="process-math">\(0\)</span>s followed by a number of <span class="process-math">\(1\)</span>s such that there is at least one more 1 than 0s.</div>
+<div class="para" id="p-439">Create a PDA based on a language that includes any number of <span class="process-math">\(0\)</span>s followed by a number of <span class="process-math">\(1\)</span>s such that there is at least one more 1 than 0s.</div>
 <div class="solutions"><details id="answer-52" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP4.svg" class="contained"></div></div></details></div></article><article class="exercise exercise-like" id="exercise-92"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-436">Create a PDA using the alphabet below for the language with any strings with the form: <span class="process-math">\(\square^n \bigcirc ^n \square^k \star^k\)</span>
+<div class="para" id="p-440">Create a PDA using the alphabet below for the language with any strings with the form: <span class="process-math">\(\square^n \bigcirc ^n \square^k \star^k\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 \Sigma = \{\star, \square, \bigcirc\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-93"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-437">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM35.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-94"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-438">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b,c\}\text{,}\)</span> for the language with any strings with the form:</div> <div class="para logical" id="p-439">
+<div class="para" id="p-441">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM35.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-94"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-442">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b,c\}\text{,}\)</span> for the language with any strings with the form:</div> <div class="para logical" id="p-443">
 <div class="para">The language consists of all strings with either:</div>
 <ul class="disc">
-<li id="li-187"><div class="para" id="p-440">an equal number of a’s and b’s with no c’s, or</div></li>
-<li id="li-188"><div class="para" id="p-441">an equal number of a’s and c’s with no b’s</div></li>
+<li id="li-187"><div class="para" id="p-444">an equal number of a’s and b’s with no c’s, or</div></li>
+<li id="li-188"><div class="para" id="p-445">an equal number of a’s and c’s with no b’s</div></li>
 </ul>
 </div></article><article class="exercise exercise-like" id="exercise-95"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-442">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM36.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-96"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-443">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b\}\text{,}\)</span> for the languae with any strings with the form:</div> <div class="para" id="p-444">The language consists of all strings with a’s followed by b’s where either there are more a’s than b’s or more b’s than a’s, but never the same amount.</div></article><article class="exercise exercise-like" id="exercise-97"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-445">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/EAExM37.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-98"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-446">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span> below for the language with any strings with the form:</div> <div class="para" id="p-447">The set of all strings that have an equal number of a’s and d’s, less b’s than c’s, and the symbols appear in alphabetical order.</div></article><article class="exercise exercise-like" id="exercise-99"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-448">Translante the PDA below into an English description. It has the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
+<div class="para" id="p-446">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM36.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-96"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-447">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b\}\text{,}\)</span> for the languae with any strings with the form:</div> <div class="para" id="p-448">The language consists of all strings with a’s followed by b’s where either there are more a’s than b’s or more b’s than a’s, but never the same amount.</div></article><article class="exercise exercise-like" id="exercise-97"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-449">Translate the below PDA into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/EAExM37.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-98"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-450">Craft a PDA using the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span> below for the language with any strings with the form:</div> <div class="para" id="p-451">The set of all strings that have an equal number of a’s and d’s, less b’s than c’s, and the symbols appear in alphabetical order.</div></article><article class="exercise exercise-like" id="exercise-99"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-452">Translante the PDA below into an English description. It has the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
 </div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAEx40.svg" class="contained"></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-cfgs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-cnf.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

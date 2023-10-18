@@ -11,16 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para logical">
-<div class="para">Build a NFA for the following language where <span class="process-math">\(\Sigma(L_{11}) = \{0, 1\}\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{11} = \mbox{any string that contains 01}
-\end{equation*}
-</div>
-</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">
+<span class="process-math">\(M_{10}\)</span> contains an example of an NFA caused by an empty string transition. When processing a string like "bba" we might start by tracking with our fingers. They start in <span class="process-math">\(Q_0\)</span> but quickly we see we exist in <span class="process-math">\(Q_1\)</span> and <span class="process-math">\(Q_6\)</span> as well. When the first "b" is read, we fall off the first two states and move from <span class="process-math">\(Q_6\)</span> to <span class="process-math">\(Q_7\text{.}\)</span> To track this with a computer, given the knowledge we have so far, we would have to use some form of guess and check with backtracking (like a depth-first search) or we could create children processes to handle the different traces to run things in parallel. What a conundrum! Let us see if we can do something about that in the future.</div>
 <span class="incontext"><a class="internal" href="ch-nfas.html#p-53">in-context</a></span>
 </body>
 </html>

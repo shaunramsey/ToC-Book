@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -342,16 +341,16 @@ window.MathJax = {
 <ol class="decimal"><li id="li-234"><div class="para" id="p-derived-li-234">Introduction to Turing Machines</div></li></ol></article><section class="section" id="sec-tm-background"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">14.1</span><span class="space"> </span><span class="title">Introduction to Turing Machines</span>
 </h3>
-<div class="para" id="p-556">As stated in a thesis from Church-Turing, <dfn class="terminology">Turing Machines (TMs)</dfn> are a model for modern computing. They are a structure for how we can think about algorithms and any other processes that computers undertake. If we can prove some things about TMs, we are proving things about the scope of possibility in computer programs!</div>
-<div class="para" id="p-557">There are two different types of languages that can be represented using Turing Machines. They are Turing Recognizable (<span class="process-math">\(T_r\)</span>) and Turing Decidable (<span class="process-math">\(T_d\)</span>) and will be covered later in this chapter. At this time, it is important to know that languages that are <span class="process-math">\(T_r\)</span> are also <span class="process-math">\(T_d\text{,}\)</span> CFLs, and RLs. This phenomenon is outlined in the chart below where <span class="process-math">\(\Omega\)</span> represents all languages.</div>
+<div class="para" id="p-560">As stated in a thesis from Church-Turing, <dfn class="terminology">Turing Machines (TMs)</dfn> are a model for modern computing. They are a structure for how we can think about algorithms and any other processes that computers undertake. If we can prove some things about TMs, we are proving things about the scope of possibility in computer programs!</div>
+<div class="para" id="p-561">There are two different types of languages that can be represented using Turing Machines. They are Turing Recognizable (<span class="process-math">\(T_r\)</span>) and Turing Decidable (<span class="process-math">\(T_d\)</span>) and will be covered later in this chapter. At this time, it is important to know that languages that are <span class="process-math">\(T_r\)</span> are also <span class="process-math">\(T_d\text{,}\)</span> CFLs, and RLs. This phenomenon is outlined in the chart below where <span class="process-math">\(\Omega\)</span> represents all languages.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMVennDiagram.svg" class="contained"></div>
-<div class="para logical" id="p-558">
+<div class="para logical" id="p-562">
 <div class="para"> Turing Machines:</div>
 <ul class="disc">
-<li id="li-235"><div class="para" id="p-559">have an infinite memory that is represented as a tape</div></li>
-<li id="li-236"><div class="para" id="p-560">imput begins on the tape</div></li>
-<li id="li-237"><div class="para" id="p-561">head starts at the first symbole of the imput</div></li>
-<li id="li-238"><div class="para" id="p-562">to start, empty (non-input) cells of the tape contain <span class="process-math">\(\Delta\)</span>s</div></li>
+<li id="li-235"><div class="para" id="p-563">have an infinite memory that is represented as a tape</div></li>
+<li id="li-236"><div class="para" id="p-564">imput begins on the tape</div></li>
+<li id="li-237"><div class="para" id="p-565">head starts at the first symbole of the imput</div></li>
+<li id="li-238"><div class="para" id="p-566">to start, empty (non-input) cells of the tape contain <span class="process-math">\(\Delta\)</span>s</div></li>
 </ul>
 <div class="para">Below is a visual representation of a tape. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -413,8 +412,8 @@ window.MathJax = {
 </table></div>
 </div>
 </div>
-<div class="para" id="p-563">The  <dfn class="terminology">head</dfn> is a pointer that keeps track of where we are on the tape. As depictied above, it always starts at the first input. This input is anything but a <span class="process-math">\(\Delta\text{.}\)</span> The head can move in every transition between states. They are able to move left, right, or stay where they are based on input from the tape.</div>
-<div class="para" id="p-564">Turing Machines accept languages based on "marking off" or reaching the end of input at an expected time. Heads are used to keep track of relevant inputs, and how they recieve their instructions is similar to what we have seen before. Think back to the "read pop push" structure that was introduced for PDAs. Heads move in similar ways on a "read move write" structure. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-567">The  <dfn class="terminology">head</dfn> is a pointer that keeps track of where we are on the tape. As depictied above, it always starts at the first input. This input is anything but a <span class="process-math">\(\Delta\text{.}\)</span> The head can move in every transition between states. They are able to move left, right, or stay where they are based on input from the tape.</div>
+<div class="para" id="p-568">Turing Machines accept languages based on "marking off" or reaching the end of input at an expected time. Heads are used to keep track of relevant inputs, and how they recieve their instructions is similar to what we have seen before. Think back to the "read pop push" structure that was introduced for PDAs. Heads move in similar ways on a "read move write" structure. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines">R</td>
@@ -435,7 +434,7 @@ window.MathJax = {
 <article class="exploration project-like" id="exploration-33"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-565">
+<div class="para logical" id="p-569">
 <div class="para">Let’s look at an example of a Turing Machine to understand its sturcuture and usefulness. Consider <span class="process-math">\(L_1\)</span> and <span class="process-math">\(s \in L_1 \)</span> below.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -497,14 +496,14 @@ s = 0011
 </tr>
 </table></div> In order to check if the language can be represented by a TM, we need to establish a line of thinking. We ultimately need to check if there is a certain number of 0s, followed by the same number of 1s. But how do we check for this when heads of TMs can only move right, left, or stay in place? And how can this be represented with the "read move write" structure? For this language, a potential strategy follows:</div>
 <ol class="decimal">
-<li id="li-239"><div class="para" id="p-566">Mark off an unmarked 0</div></li>
-<li id="li-240"><div class="para" id="p-567">Move to the first unmarked 1 and mark it off</div></li>
-<li id="li-241"><div class="para" id="p-568">Repeat steps 1 and 2 until no more 0s are left, also make sure all 1s are marked off too</div></li>
+<li id="li-239"><div class="para" id="p-570">Mark off an unmarked 0</div></li>
+<li id="li-240"><div class="para" id="p-571">Move to the first unmarked 1 and mark it off</div></li>
+<li id="li-241"><div class="para" id="p-572">Repeat steps 1 and 2 until no more 0s are left, also make sure all 1s are marked off too</div></li>
 </ol>
 <div class="para">This process can be represented in a state diagram like the one below. This diagram was created through following the logical progression above as well as leaning on skills created when creating FAs and PDAs.</div>
 </div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMD1.svg" class="contained"></div> But how does this logic and diagram translate to TMs? <ol class="decimal">
 <li id="li-242">
-<div class="para" id="p-569">The head starts at the first input</div>
+<div class="para" id="p-573">The head starts at the first input</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -556,7 +555,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-243">
-<div class="para" id="p-570">A 0 is read, the head moves right and leaves a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<div class="para" id="p-574">A 0 is read, the head moves right and leaves a <span class="process-math">\(\cancel{0}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -608,7 +607,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-244">
-<div class="para" id="p-571">Read through the remaining 0s until a 1 is read</div>
+<div class="para" id="p-575">Read through the remaining 0s until a 1 is read</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -661,7 +660,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-245">
-<div class="para" id="p-572">Read in a 1, move left and leave a <span class="process-math">\(\cancel{1}\)</span>
+<div class="para" id="p-576">Read in a 1, move left and leave a <span class="process-math">\(\cancel{1}\)</span>
 </div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -715,7 +714,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-246">
-<div class="para" id="p-573">Read in a 0, move left, leaving behind a 0.</div>
+<div class="para" id="p-577">Read in a 0, move left, leaving behind a 0.</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -768,7 +767,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-247">
-<div class="para" id="p-574">Read in a <span class="process-math">\(\cancel{0}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<div class="para" id="p-578">Read in a <span class="process-math">\(\cancel{0}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -820,7 +819,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-248">
-<div class="para" id="p-575">Read in a 0, move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<div class="para" id="p-579">Read in a 0, move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -873,7 +872,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-249">
-<div class="para" id="p-576">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{1}\)</span> behind</div>
+<div class="para" id="p-580">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{1}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -926,7 +925,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-250">
-<div class="para" id="p-577">Read in a 1, move left and leave a <span class="process-math">\(\cancel{1}\)</span>
+<div class="para" id="p-581">Read in a 1, move left and leave a <span class="process-math">\(\cancel{1}\)</span>
 </div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -980,7 +979,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-251">
-<div class="para" id="p-578">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move left leaving a <span class="process-math">\(\cancel{1}\)</span>
+<div class="para" id="p-582">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move left leaving a <span class="process-math">\(\cancel{1}\)</span>
 </div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -1034,7 +1033,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-252">
-<div class="para" id="p-579">Read in a <span class="process-math">\(\cancel{0}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<div class="para" id="p-583">Read in a <span class="process-math">\(\cancel{0}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -1087,7 +1086,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-253">
-<div class="para" id="p-580">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{1}\)</span> behind</div>
+<div class="para" id="p-584">Read in a <span class="process-math">\(\cancel{1}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{1}\)</span> behind</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -1140,7 +1139,7 @@ s = 0011
 </table></div>
 </li>
 <li id="li-254">
-<div class="para" id="p-581">Read in a <span class="process-math">\(\Delta\text{,}\)</span> stay leaving a <span class="process-math">\(\Delta\)</span>
+<div class="para" id="p-585">Read in a <span class="process-math">\(\Delta\text{,}\)</span> stay leaving a <span class="process-math">\(\Delta\)</span>
 </div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -1193,13 +1192,13 @@ s = 0011
 </tr>
 </table></div>
 </li>
-<li id="li-255"><div class="para" id="p-582">As the head ended on the expected <span class="process-math">\(\Delta\text{,}\)</span> even after checking that all inputs were marked off, the string is accepted as a part of <span class="process-math">\(L_1\text{.}\)</span>
+<li id="li-255"><div class="para" id="p-586">As the head ended on the expected <span class="process-math">\(\Delta\text{,}\)</span> even after checking that all inputs were marked off, the string is accepted as a part of <span class="process-math">\(L_1\text{.}\)</span>
 </div></li>
 </ol></article></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">14.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-116"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="p-583">
+<div class="para logical" id="p-587">
 <div class="para">Consider <span class="process-math">\(L_2\)</span> and the string, <span class="process-math">\(s\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1264,7 +1263,7 @@ s = 001122
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 </table></div></div></details></div></article><article class="exercise exercise-like" id="exercise-117"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="p-584">
+<div class="para logical" id="p-588">
 <div class="para">Consider the language, <span class="process-math">\(L_3\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1276,20 +1275,20 @@ L_3 = \{b_0 + 1 = b_1 | \mbox{where } b_0 \mbox{ is any binary string and } b_1 
 <div class="para">An example string would be <span class="process-math">\(10101+1=10110\text{.}\)</span> Create the state diagram that would be use to step through this language and tape’s TM.</div>
 </div>
 <div class="solutions">
-<details id="hint-26" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-585">It is acceptable for a certain value to "fall off" of the state diagram.</div></div></details><details id="answer-66" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMD2.svg" class="contained"></div></div></details>
+<details id="hint-26" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-589">It is acceptable for a certain value to "fall off" of the state diagram.</div></div></details><details id="answer-66" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMD2.svg" class="contained"></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-118"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-586">Translate the TM into English:</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/TMD3.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-119"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-587">Give a TM diagram for the language with an equal number of a’s and b’s, in any order.</div></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-588">Translate the below TM into English, with the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
+<div class="para" id="p-590">Translate the TM into English:</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/TMD3.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-119"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-591">Give a TM diagram for the language with an equal number of a’s and b’s, in any order.</div></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-592">Translate the below TM into English, with the alphabet, <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
 </div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/TMD4.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-121"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-589">Give a TM diagram for the language:</div>
+<div class="para" id="p-593">Give a TM diagram for the language:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{\alpha ^i \beta^j \gamma ^k | i \&gt; j \&gt; k\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-122"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-590">Translate the TM below, with the alphabet,<span class="process-math">\(\Sigma = \{a,b\}\text{,}\)</span> into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/TMD5.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-123"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-591">Give a TM diagram for the language below.</div>
+<div class="para" id="p-594">Translate the TM below, with the alphabet,<span class="process-math">\(\Sigma = \{a,b\}\text{,}\)</span> into English:</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/TMD5.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-123"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-595">Give a TM diagram for the language below.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{\star ^i\triangle^j\square^i | i \ngeq j\}

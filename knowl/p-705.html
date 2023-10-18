@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para"><em class="emphasis">If M accepts w, Q accepts all inputs x. This is a regular language.</em></div>
+<div class="para logical">
+<div class="para">We create a machine, <span class="process-math">\(Q\text{,}\)</span> using the <span class="process-math">\(M\)</span> and <span class="process-math">\(w\)</span> imputs from <span class="process-math">\(A_{TM}\text{.}\)</span> <span class="process-math">\(Q\)</span> takes input <span class="process-math">\(x\text{.}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para">If <span class="process-math">\(x\)</span> is in <span class="process-math">\(0^n1^n\text{,}\)</span> <span class="process-math">\(Q\)</span> accepts.</div></li>
+<li>
+<div class="para">Otherwise, <span class="process-math">\(Q\)</span> runs <span class="process-math">\(M\)</span> on <span class="process-math">\(w\text{.}\)</span> If <span class="process-math">\(M\)</span> accepts, <span class="process-math">\(Q\)</span> accepts.</div>
+<div class="para logical">
+<div class="para"><em class="emphasis">This machine, Q, is special.</em></div>
+<ul class="circle">
+<li><div class="para"><em class="emphasis">If M accepts w, Q accepts all inputs x. This is a regular language.</em></div></li>
+<li><div class="para"><em class="emphasis">If M does not accept w, Q accepts only inputs that match <span class="process-math">\(0^n1^n\text{.}\)</span> This is NOT a regular language.</em></div></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <span class="incontext"><a class="internal" href="ch-reducibility.html#p-705">in-context</a></span>
 </body>
 </html>

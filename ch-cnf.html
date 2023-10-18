@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -347,11 +346,11 @@ window.MathJax = {
 </ol></article><section class="section" id="sec-NormalForms"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.1</span><span class="space"> </span><span class="title">Introduction to Normal Forms</span>
 </h3>
-<div class="para" id="p-449">Different forms of Context Free Grammars can be useful in different situations. Noam Chompsky invented one such form to force derivations to have a certain length. It is easy to see how that might be useful in computaitons.</div>
+<div class="para" id="p-453">Different forms of Context Free Grammars can be useful in different situations. Noam Chompsky invented one such form to force derivations to have a certain length. It is easy to see how that might be useful in computaitons.</div>
 <article class="exploration project-like" id="exploration-24"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-450">To better understand this topic, let’s explore the possibilites associated with CFGs. Consider <span class="process-math">\(CFG_1\)</span> below:</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-454">To better understand this topic, let’s explore the possibilites associated with CFGs. Consider <span class="process-math">\(CFG_1\)</span> below:</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -360,14 +359,14 @@ window.MathJax = {
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | aS | \epsilon\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-451">What different ways are there to produce the string "a" from <span class="process-math">\(CFG_1\text{?}\)</span>
-</div> <details id="answer-53" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-452">
+</table></div> <div class="para" id="p-455">What different ways are there to produce the string "a" from <span class="process-math">\(CFG_1\text{?}\)</span>
+</div> <details id="answer-53" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-456">
 <div class="para">Here are two ways to make "a".</div>
 <ul class="disc">
 <li id="li-193"><div class="para" id="p-derived-li-193"><span class="process-math">\(\displaystyle S \rightarrow SS \rightarrow aSS \rightarrow aS \rightarrow a\)</span></div></li>
 <li id="li-194"><div class="para" id="p-derived-li-194"><span class="process-math">\(\displaystyle S \rightarrow aS \rightarrow a\)</span></div></li>
 </ul>
-</div></div></details> <div class="para logical" id="p-453">
+</div></div></details> <div class="para logical" id="p-457">
 <div class="para">But, it is also possible for <span class="process-math">\(CFG_1\)</span> to produce:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -376,14 +375,14 @@ S \rightarrow SS \rightarrow SSS \rightarrow SSS \rightarrow SSSS \rightarrow ..
 </div>
 <div class="para">So, when would a construction like this quit? Could it produce simply an <span class="process-math">\(\epsilon\text{?}\)</span>
 </div>
-</div> <div class="para" id="p-454">As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.</div></article></section><section class="section" id="sec-ChompskyNormalForm"><h3 class="heading hide-type">
+</div> <div class="para" id="p-458">As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.</div></article></section><section class="section" id="sec-ChompskyNormalForm"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">11.2</span><span class="space"> </span><span class="title">Chompsky Normal Form</span>
 </h3>
-<div class="para" id="p-455"> <dfn class="terminology">Chompsky Normal Form (CNF)</dfn> is one normal form that can be used to make answering some of the above questions less complicated.</div>
+<div class="para" id="p-459"> <dfn class="terminology">Chompsky Normal Form (CNF)</dfn> is one normal form that can be used to make answering some of the above questions less complicated.</div>
 <article class="exploration project-like" id="exploration-25"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-456">Consider the CFG below. It is <span class="process-math">\(CFG_1\)</span> in Chompsky Normal Form.</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-460">Consider the CFG below. It is <span class="process-math">\(CFG_1\)</span> in Chompsky Normal Form.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_{1- CNF}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -400,14 +399,14 @@ S \rightarrow SS \rightarrow SSS \rightarrow SSS \rightarrow SSSS \rightarrow ..
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A \rightarrow a\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-457">Considering <span class="process-math">\(CFG_{1 - CNF}\text{,}\)</span> how many steps are there to produce "a"?</div> <details id="answer-54" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-458">
+</table></div> <div class="para" id="p-461">Considering <span class="process-math">\(CFG_{1 - CNF}\text{,}\)</span> how many steps are there to produce "a"?</div> <details id="answer-54" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-462">
 <div class="para">1.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 S_0 \rightarrow a
 \end{equation*}
 </div>
-</div></div></details> <div class="para" id="p-459">How many steps are there to produce "aa"?</div> <details id="answer-55" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-460">
+</div></div></details> <div class="para" id="p-463">How many steps are there to produce "aa"?</div> <details id="answer-55" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-464">
 <div class="para">3.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -423,34 +422,34 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 </div></div></details></article><section class="subsection" id="subsec-CNFRules"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Rules of Chompsky Normal Form</span>
 </h4>
-<div class="para logical" id="p-461">
+<div class="para logical" id="p-465">
 <div class="para">These are the rules of CNF:</div>
 <ul class="disc">
-<li id="li-195"><div class="para" id="p-462">Only the start state has <span class="process-math">\(\epsilon\)</span>
+<li id="li-195"><div class="para" id="p-466">Only the start state has <span class="process-math">\(\epsilon\)</span>
 </div></li>
-<li id="li-196"><div class="para" id="p-463">The start state is never on the right hand side of any production</div></li>
-<li id="li-197"><div class="para" id="p-464">All rules either replace a variable with two variables or replace a variable with a terminal</div></li>
+<li id="li-196"><div class="para" id="p-467">The start state is never on the right hand side of any production</div></li>
+<li id="li-197"><div class="para" id="p-468">All rules either replace a variable with two variables or replace a variable with a terminal</div></li>
 </ul>
 <div class="para">Because of CNF’s structure, we can quickly answer some questions related to a grammar while avoiding some pitfalls that can occur in automoation.</div>
 </div></section><section class="subsection" id="subsec-createCNF"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Steps to Putting a CFG in CNF</span>
 </h4>
-<div class="para logical" id="p-465">
+<div class="para logical" id="p-469">
 <div class="para">All CFGs can be put into CNF. The steps to do so are outlined below.</div>
 <ol class="decimal">
-<li id="li-198"><div class="para" id="p-466">Add a new start state that is a clone of the old one. This new start state is typically called <span class="process-math">\(S_0\text{,}\)</span> while the original start state remains <span class="process-math">\(S\text{.}\)</span>
+<li id="li-198"><div class="para" id="p-470">Add a new start state that is a clone of the old one. This new start state is typically called <span class="process-math">\(S_0\text{,}\)</span> while the original start state remains <span class="process-math">\(S\text{.}\)</span>
 </div></li>
-<li id="li-199"><div class="para" id="p-467">Remove an <span class="process-math">\(\epsilon\)</span> transition by simulating it. If there are more empty string transitions, repeat this step until no more remain or only the new start state has an empty string rule.</div></li>
-<li id="li-200"><div class="para" id="p-468">Look for  <dfn class="terminology">unit rules</dfn> and replace them by cloning. A unit rule is when a variable goes to the same variable.</div></li>
-<li id="li-201"><div class="para" id="p-469">Look for rules with terminals that are not alone. Make new rules for those teminals.</div></li>
-<li id="li-202"><div class="para" id="p-470">Look for rules with more than two variables. Make new rules to turn them into two seperate rules.</div></li>
+<li id="li-199"><div class="para" id="p-471">Remove an <span class="process-math">\(\epsilon\)</span> transition by simulating it. If there are more empty string transitions, repeat this step until no more remain or only the new start state has an empty string rule.</div></li>
+<li id="li-200"><div class="para" id="p-472">Look for  <dfn class="terminology">unit rules</dfn> and replace them by cloning. A unit rule is when a variable goes to the same variable.</div></li>
+<li id="li-201"><div class="para" id="p-473">Look for rules with terminals that are not alone. Make new rules for those teminals.</div></li>
+<li id="li-202"><div class="para" id="p-474">Look for rules with more than two variables. Make new rules to turn them into two seperate rules.</div></li>
 </ol>
 <div class="para">When you complete this process, every rule will have only two variables on the right hand side or a terminal by itself. The only exception here is the new start state which can have an empty string transition.</div>
 </div>
 <article class="exploration project-like" id="exploration-26"><h5 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span>
 </h5>
-<div class="para" id="p-471">Let’s work an example of putting a CFG into CNF. Consider <span class="process-math">\(CFG_2\)</span> below.</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-475">Let’s work an example of putting a CFG into CNF. Consider <span class="process-math">\(CFG_2\)</span> below.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -463,7 +462,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bTc | \epsilon\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-472">The first step is to make a new start state and clone the old one.</div> <div class="tabular-box natural-width"><table class="tabular">
+</table></div> <div class="para" id="p-476">The first step is to make a new start state and clone the old one.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -480,7 +479,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bTc | \epsilon\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-473">The second step is to simulate <span class="process-math">\(T \rightarrow \epsilon\)</span> to remove the empty string transition.</div> <div class="tabular-box natural-width"><table class="tabular">
+</table></div> <div class="para" id="p-477">The second step is to simulate <span class="process-math">\(T \rightarrow \epsilon\)</span> to remove the empty string transition.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -497,7 +496,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bTc | bc\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-474">But, now the empty string transition in the original start state must be removed by simulation.</div> <div class="tabular-box natural-width"><table class="tabular">
+</table></div> <div class="para" id="p-478">But, now the empty string transition in the original start state must be removed by simulation.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -514,7 +513,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bTc | bc\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-475">Next, we need to clone the unit rules. These are <span class="process-math">\(S_0 \rightarrow T\)</span> and <span class="process-math">\(S \rightarrow T\)</span>
+</table></div> <div class="para" id="p-479">Next, we need to clone the unit rules. These are <span class="process-math">\(S_0 \rightarrow T\)</span> and <span class="process-math">\(S \rightarrow T\)</span>
 </div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
@@ -532,7 +531,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bTc | bc\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-476">
+</table></div> <div class="para" id="p-480">
 <span class="process-math">\(a,b,c,\)</span> and <span class="process-math">\(d\)</span> now need terminal rules</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
@@ -566,7 +565,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_4 \rightarrow d\)</span></td>
 </tr>
-</table></div> <div class="para" id="p-477">Finally, we need to take care of any rules with a length greater than 2. This is <span class="process-math">\(U_1SU_4\)</span> and <span class="process-math">\(U_2TU_3\)</span>
+</table></div> <div class="para" id="p-481">Finally, we need to take care of any rules with a length greater than 2. This is <span class="process-math">\(U_1SU_4\)</span> and <span class="process-math">\(U_2TU_3\)</span>
 </div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
@@ -612,8 +611,8 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">11.3</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-100"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-478">Convert the grammar below into CNF. Show your steps.</div> <div class="para" id="p-479">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-101"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-480">While showing your steps, convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-482">Convert the grammar below into CNF. Show your steps.</div> <div class="para" id="p-483">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-101"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-484">While showing your steps, convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -628,7 +627,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 </tr>
 </table></div>
 </div></article><article class="exercise exercise-like" id="exercise-102"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-481">While showing your steps and with the alpahbet,<span class="process-math">\(\Sigma=\{a,b,c\} \text{,}\)</span> convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-485">While showing your steps and with the alpahbet,<span class="process-math">\(\Sigma=\{a,b,c\} \text{,}\)</span> convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -647,7 +646,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 </tr>
 </table></div>
 </div></article><article class="exercise exercise-like" id="exercise-103"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-482">While showing your steps and with the alpahbet,<span class="process-math">\(\Sigma=\{a,b\} \text{,}\)</span> convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-486">While showing your steps and with the alpahbet,<span class="process-math">\(\Sigma=\{a,b\} \text{,}\)</span> convert this grammar into CNF: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -662,7 +661,7 @@ S_0 \rightarrow AS \rightarrow aS \rightarrow aa
 </tr>
 </table></div>
 </div></article><article class="exercise exercise-like" id="exercise-104"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-483">While showing your steps and with the alphabet,<span class="process-math">\(\Sigma = \{a,b,c,d\}\text{,}\)</span> convert the CFG below into CNF. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-487">While showing your steps and with the alphabet,<span class="process-math">\(\Sigma = \{a,b,c,d\}\text{,}\)</span> convert the CFG below into CNF. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>

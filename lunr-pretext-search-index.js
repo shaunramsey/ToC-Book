@@ -43,7 +43,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "1",
   "title": "Determinsitic Finite Automata",
-  "body": " Determinsitic Finite Automata  This chapter discusses strategies for understanding finite automata, specifically those with a halting accept and halting reject state. While this is a unique approach for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata in an intuitive way. Specifically in this chapter we will tackle:    Deterministic Finite Automata (DFA)  Strategies for understanding Deterministic Finite Automata  Strategies for drawing Deterministic Finite Automata     Sets   Set Review  Sets are a collection of objects where there is no ordering and elements are not repeated or counted. Sets can contain other sets or they can be empty. Things get really tricky when you think about a set that contains an empty set, but we will not need to deal with that just yet. Typically we use curly brackets to denote set notation (enumeration notation). Thus is a set that contains elements called , and . That is the same set as . Ordering does not matter. If a were added to this set, we would have a new set . If an were added to this set, it would not change the set because the set already contained an . We will use enumeration notation right away to start describing important elements for this book.  However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: . This should be read as the set of all 's where is a string that contains an . We will see this in again in an example shortly. Importantly here, is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.  The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference. Until then, you may keep it handy to remind yourself of these two ways to talk about sets.    Machines  To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.  The Alphabet ( )  alphabet ( ) is a finite set of symbols. Characters in the alphabet can be appended together to create strings. So, a string  string is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a Language ( )  language ( ) .  For example, characters , , and are all included in alphabet . A language will consist of strings created from this alphabet. Order matters. For example and are strings from alphabet .  these example strings may be included in language . You might say: which means is in the language . might have other strings in it as well. We would normally list those in one form of set notation if required. If consisted of just the two strings above, we could fully list them like this: A binary string (like ) would require a binary alphabet ( ). A sample binary language might be: This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).  As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).     Finite Automata (FA)  Finite Automata (FA)  Finite Automata (FA) are State Machine (M)  state machines (M) . We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize States (Q)  states (Q) to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with encased in two circles. A halt and reject state ( ) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help. Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book.     Say there is a string . After following the arrows to parse through , it would be accepted by as it finished on the accept state. We now know that , but what is ?  Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.         One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For , test strings could include 000, 01, 11011, and 100001. By tracing through with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like \"have seen a 0 followed by a 1.\" Sometimes it remembers a modulus of sorts like \"seen an even number of 0s\" or \"seen a binary string that represents a number divisible by 3\". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!    Deterministic Finite Automata (DFA)  Deterministic Finitie Automata (DFA)  Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are accounted for at each state. We can look again at      The alphabet of includes 0 and 1. When at the start state , if a 0 is read, we stay at and if a 1 is read, we move to . Each possibility is accounted for. When in state , if a 0 is read, we stay at and if a 1 is read, we move to . Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.  Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character at each state, the FA is deterministic.    Determinism Chart for    1 0         Deterministic   Determinisim  Determinisim means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.     Strategies for Understanding DFAs    Strategies for Drawing DFAs     What is the language of ?     Come up with ten strings in the language of .   1 0  2 101101  3  4 010101  5 0000  6 011  7 10010  8 111001  9 1001  10 0110     Come up with ten strings NOT in the language of .   1 1  2 100  3 10  4 10001  5 1011  6 11111  7 101  8 1101  9 10110  10 001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   1 0 (0)  2 101101 (45)  3 _  4 010101 (21)  5 0000 (0)  6 011 (3)  7 10010 (18)  8 111001 (57)  9 1001 (9)  10 0110 (6)       What is the language of ?     Come up with a few test strings. See any patterns? Focus on the plain language description.         A great first step is to walk through the shortest path to the accept state. This would be 01.  It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For , that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for to accept.  Another note, the string 01 must be included as a 1 must come after a 0 to get to the accept state .      Build a machine for language 5 ( ).         What is the language of ?     Machines can have other alphabets. What is the alphabet of this machine's language?        Use the diagram below to create a DFA that can track mod 7 for any binary number.      Translate this FA into a complete English description.          Translate this FA into a complete English description.      Translate this FA into an English description.      Translate this FA into a complete English description.      Give an English description of the language of the following FA:       "
+  "body": " Determinsitic Finite Automata   This chapter discusses strategies for understanding finite automata, specifically those with a halting accept and halting reject state. While this is a unique approach for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata in an intuitive way. Specifically in this chapter we will tackle:     Deterministic Finite Automata (DFA)  Strategies for understanding Deterministic Finite Automata  Strategies for drawing Deterministic Finite Automata     Sets   Set Review  Sets are a collection of objects where there is no ordering and elements are not repeated or counted. Sets can contain other sets or they can be empty. Things get really tricky when you think about a set that contains an empty set, but we will not need to deal with that just yet. Typically we use curly brackets to denote set notation (enumeration notation). Thus is a set that contains elements called , and . That is the same set as . Ordering does not matter. If a were added to this set, we would have a new set . If an were added to this set, it would not change the set because the set already contained an . We will use enumeration notation right away to start describing important elements for this book.  However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: . This should be read as the set of all 's where is a string that contains an . We will see this in again in an example shortly. Importantly here, is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.  The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference. Keep this section handy as a reference to remind yourself of these two ways to talk about sets, until you do not need them anymore.    Machines  To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.  The Alphabet ( )  alphabet ( ) is a finite set of symbols. Characters in the alphabet can be appended together to create strings. So, a string  string is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a Language (   )  language (   ) .  For example, characters , , and are all included in alphabet . A language will consist of strings created from this alphabet. Order matters. For example and are strings from alphabet .  these example strings may be included in language . You might say: which means is in the language . might have other strings in it as well. We would normally list those in one form of set notation if required. If consisted of just the two strings above, we could fully list them like this: A binary string (like ) would require a binary alphabet ( ). A sample binary language might be: This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).  As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).     Finite Automata (FA)  Finite Automata (FA)  Finite Automata (FA) are State Machine (M)  state machines (M) . We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize States (Q)  states (Q) to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with encased in two circles. A halt and reject state ( ) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help.   Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book.    A simple finite automata      Say there is a string . After following the arrows to parse through , it would be accepted by as it finished on the accept state. We now know that , but what is ?  Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.              One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For , test strings could include 000, 01, 11011, and 100001. By tracing through with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like \"have seen a 0 followed by a 1.\" Sometimes it remembers a modulus of sorts like \"seen an even number of 0s\" or \"seen a binary string that represents a number divisible by 3\". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!    Deterministic Finite Automata (DFA)   Deterministic Finitie Automata (DFA)  Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are accounted for at each state. We can look again at      The alphabet of includes 0 and 1. When at the start state , if a 0 is read, we stay at and if a 1 is read, we move to . Each possibility is accounted for. When in state , if a 0 is read, we stay at and if a 1 is read, we move to . Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.  Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character at each state, the FA is deterministic.    Determinism Chart for      1  0                               Deterministic   Determinisim  Determinisim means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.     Strategies for Understanding DFAs  TODO    Strategies for Drawing DFAs  TODO     What is the language of ?     Come up with ten strings in the language of .   TODO    1  0    2  101101    3       4  010101    5  0000    6  011    7  10010    8  111001    9  1001    10  0110     Come up with ten strings NOT in the language of .   TODO    1  1    2  100    3  10    4  10001    5  1011    6  11111    7  101    8  1101    9  10110    10  001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   TODO    1  0  (0)    2  101101  (45)    3     _    4  010101  (21)    5  0000  (0)    6  011  (3)    7  10010  (18)    8  111001  (57)    9  1001  (9)    10  0110  (6)       What is the language of ?     Come up with a few test strings. See any patterns? Focus on the plain language description.         A great first step is to walk through the shortest path to the accept state. This would be 01.  It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For , that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for to accept.  Another note, the string 01 must be included as a 1 must come after a 0 to get to the accept state .      Build a machine for language 5 ( ).         What is the language of ?     Machines can have other alphabets. What is the alphabet of this machine's language?        Use the diagram below to create a DFA that can track mod 7 for any binary number.      Translate this FA into a complete English description.          Translate this FA into a complete English description.      Translate this FA into an English description.      Translate this FA into a complete English description.      Give an English description of the language of the following FA:       "
 },
 {
   "id": "objectives-1",
@@ -55,27 +55,36 @@ var ptx_lunr_docs = [
   "body": "  Deterministic Finite Automata (DFA)  Strategies for understanding Deterministic Finite Automata  Strategies for drawing Deterministic Finite Automata   "
 },
 {
-  "id": "p-9",
+  "id": "p-10",
   "level": "2",
-  "url": "ch-dfas.html#p-9",
+  "url": "ch-dfas.html#p-10",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "alphabet ( ) string language ( ) "
+  "body": "alphabet ( ) string language (   ) "
 },
 {
-  "id": "p-12",
+  "id": "p-13",
   "level": "2",
-  "url": "ch-dfas.html#p-12",
+  "url": "ch-dfas.html#p-13",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Finite Automata (FA) state machines (M) states (Q) "
 },
 {
-  "id": "p-16",
+  "id": "FAExM1figure",
   "level": "2",
-  "url": "ch-dfas.html#p-16",
+  "url": "ch-dfas.html#FAExM1figure",
+  "type": "Figure",
+  "number": "1.1",
+  "title": "",
+  "body": " A simple finite automata     "
+},
+{
+  "id": "p-18",
+  "level": "2",
+  "url": "ch-dfas.html#p-18",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -86,14 +95,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-dfas.html#DFADeterminismTable",
   "type": "Table",
-  "number": "1.1",
+  "number": "1.2",
   "title": "Determinism Chart for <span class=\"process-math\">\\(M_1\\)<\/span>",
-  "body": " Determinism Chart for    1 0     "
+  "body": " Determinism Chart for      1  0                          "
 },
 {
-  "id": "p-19",
+  "id": "p-21",
   "level": "2",
-  "url": "ch-dfas.html#p-19",
+  "url": "ch-dfas.html#p-21",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -106,7 +115,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.6.1",
   "title": "",
-  "body": " What is the language of ?     Come up with ten strings in the language of .   1 0  2 101101  3  4 010101  5 0000  6 011  7 10010  8 111001  9 1001  10 0110     Come up with ten strings NOT in the language of .   1 1  2 100  3 10  4 10001  5 1011  6 11111  7 101  8 1101  9 10110  10 001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   1 0 (0)  2 101101 (45)  3 _  4 010101 (21)  5 0000 (0)  6 011 (3)  7 10010 (18)  8 111001 (57)  9 1001 (9)  10 0110 (6)     "
+  "body": " What is the language of ?     Come up with ten strings in the language of .   TODO    1  0    2  101101    3       4  010101    5  0000    6  011    7  10010    8  111001    9  1001    10  0110     Come up with ten strings NOT in the language of .   TODO    1  1    2  100    3  10    4  10001    5  1011    6  11111    7  101    8  1101    9  10110    10  001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   TODO    1  0  (0)    2  101101  (45)    3     _    4  010101  (21)    5  0000  (0)    6  011  (3)    7  10010  (18)    8  111001  (57)    9  1001  (9)    10  0110  (6)     "
 },
 {
   "id": "exercise-2",
@@ -208,18 +217,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs   "
 },
 {
-  "id": "p-41",
+  "id": "p-45",
   "level": "2",
-  "url": "ch-nfas.html#p-41",
+  "url": "ch-nfas.html#p-45",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Non-Determinisitic Finite Automatas (DFA) "
 },
 {
-  "id": "p-46",
+  "id": "p-50",
   "level": "2",
-  "url": "ch-nfas.html#p-46",
+  "url": "ch-nfas.html#p-50",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -235,9 +244,9 @@ var ptx_lunr_docs = [
   "body": " Determinism Chart for    1 0        "
 },
 {
-  "id": "p-50",
+  "id": "p-54",
   "level": "2",
-  "url": "ch-nfas.html#p-50",
+  "url": "ch-nfas.html#p-54",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -433,18 +442,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Regular Expressions  Regular Expressions in NFAs   "
 },
 {
-  "id": "p-84",
+  "id": "p-88",
   "level": "2",
-  "url": "ch-rex.html#p-84",
+  "url": "ch-rex.html#p-88",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Regular Expressions (REX) "
 },
 {
-  "id": "p-86",
+  "id": "p-90",
   "level": "2",
-  "url": "ch-rex.html#p-86",
+  "url": "ch-rex.html#p-90",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -631,9 +640,9 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  How to rip   "
 },
 {
-  "id": "p-130",
+  "id": "p-134",
   "level": "2",
-  "url": "ch-fa-to-rex.html#p-130",
+  "url": "ch-fa-to-rex.html#p-134",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -748,9 +757,9 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Discrete Math Review  Closure   "
 },
 {
-  "id": "p-174",
+  "id": "p-178",
   "level": "2",
-  "url": "ch-fa-closure.html#p-174",
+  "url": "ch-fa-closure.html#p-178",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -820,9 +829,9 @@ var ptx_lunr_docs = [
   "body": " RLs Closed under Repitition  Suppose , concatenating L_1 with itself 0 or more times.     Use an empty string transition as a loop.       "
 },
 {
-  "id": "p-226",
+  "id": "p-230",
   "level": "2",
-  "url": "ch-fa-closure.html#p-226",
+  "url": "ch-fa-closure.html#p-230",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -928,9 +937,9 @@ var ptx_lunr_docs = [
   "body": " Revisiting the Properties of DFAs  Consider below.    How many states are in this machine?   4. There are 4 states represented by circles.   Come up with some strings that exist in the languge of this machince. For the sake of example, we will use , , and .  Next, make a list of the states visited to parce throgh each of those strings. like this:   Parce Tables for 110101111011 in    States  A    A    A    B    C    B    C    D    B    C    B    C    D    String    1    1    0    1    0    1    1    1    1    0    1    1        Parce Tables for 01011 in    States  A    B    C    B    C    D    String    0    1    0    1    1        Parce Tables for 011 in    States  A    B    C    D    String    0    1    1       So, if our DFA has states, then any string with length at least will revisit some state that the DFA has been in before. This is an application of the Pigeon Hole Principle  Pigeon Hole Principle . A string with symbols needs states if it does not want to revisit a state.  Writing out these tables can make looping patterns more apparent. In , the transition among to and to could be repeated by a string. Another loop that can be repeated is to . Loops can be removed and still have a string in the language.  We can see this using the first string, . The repeating s at the beginning can be removed and the string is still in the languge, so the condensed string is The repeating s resulting from to transitions can also be taken out. This string is also in the language.  Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?  Loops can be taken out, or they can be taken many times.  "
 },
 {
-  "id": "p-269",
+  "id": "p-273",
   "level": "2",
-  "url": "ch-pumping-lemma-regular.html#p-269",
+  "url": "ch-pumping-lemma-regular.html#p-273",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1117,18 +1126,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Context Free Grammars  Terminals  Parse Trees  Ambiguous and Inherently Ambiguous   "
 },
 {
-  "id": "p-331",
+  "id": "p-335",
   "level": "2",
-  "url": "ch-cfgs.html#p-331",
+  "url": "ch-cfgs.html#p-335",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Context Free Grammars (CFGs) "
 },
 {
-  "id": "p-332",
+  "id": "p-336",
   "level": "2",
-  "url": "ch-cfgs.html#p-332",
+  "url": "ch-cfgs.html#p-336",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1189,18 +1198,18 @@ var ptx_lunr_docs = [
   "body": "  Let's work through another example from :          We will create the parse tree for the string .     First, we will need to give us        Second, we will need to give us        Third, we will need to give us        Finally, we will need to give us         But, there is another way to arrive at this string using . Try drawing the parse tree for it.         "
 },
 {
-  "id": "p-367",
+  "id": "p-371",
   "level": "2",
-  "url": "ch-cfgs.html#p-367",
+  "url": "ch-cfgs.html#p-371",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Abmibuous "
 },
 {
-  "id": "p-369",
+  "id": "p-373",
   "level": "2",
-  "url": "ch-cfgs.html#p-369",
+  "url": "ch-cfgs.html#p-373",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1396,9 +1405,9 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Pushdown Automatas   "
 },
 {
-  "id": "p-418",
+  "id": "p-422",
   "level": "2",
-  "url": "ch-pdas.html#p-418",
+  "url": "ch-pdas.html#p-422",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1540,9 +1549,9 @@ var ptx_lunr_docs = [
   "body": " To better understand this topic, let's explore the possibilites associated with CFGs. Consider below:          What different ways are there to produce the string \"a\" from ?   Here are two ways to make \"a\".           But, it is also possible for to produce: So, when would a construction like this quit? Could it produce simply an ?  As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.  "
 },
 {
-  "id": "p-455",
+  "id": "p-459",
   "level": "2",
-  "url": "ch-cnf.html#p-455",
+  "url": "ch-cnf.html#p-459",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1558,9 +1567,9 @@ var ptx_lunr_docs = [
   "body": " Consider the CFG below. It is in Chompsky Normal Form.                Considering , how many steps are there to produce \"a\"?   1.    How many steps are there to produce \"aa\"?   3. OR    "
 },
 {
-  "id": "p-465",
+  "id": "p-469",
   "level": "2",
-  "url": "ch-cnf.html#p-465",
+  "url": "ch-cnf.html#p-469",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1639,9 +1648,9 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Context Free Languages   "
 },
 {
-  "id": "p-484",
+  "id": "p-488",
   "level": "2",
-  "url": "ch-cnl.html#p-484",
+  "url": "ch-cnl.html#p-488",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1837,18 +1846,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Turing Machines   "
 },
 {
-  "id": "p-556",
+  "id": "p-560",
   "level": "2",
-  "url": "ch-tms.html#p-556",
+  "url": "ch-tms.html#p-560",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Turing Machines (TMs) "
 },
 {
-  "id": "p-563",
+  "id": "p-567",
   "level": "2",
-  "url": "ch-tms.html#p-563",
+  "url": "ch-tms.html#p-567",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1954,27 +1963,27 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Predecessors to Turing Machines  Goldbach's Conjecture  Varieties of Turing Machines   "
 },
 {
-  "id": "p-592",
+  "id": "p-596",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-592",
+  "url": "ch-tm-classifications.html#p-596",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Linear Bounded Automata (LBAs) Muti-Tape 2-Stack PDA Transducer Non-Determinism Printer TM "
 },
 {
-  "id": "p-602",
+  "id": "p-606",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-602",
+  "url": "ch-tm-classifications.html#p-606",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Goldbach's Conjecture "
 },
 {
-  "id": "p-627",
+  "id": "p-631",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-627",
+  "url": "ch-tm-classifications.html#p-631",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1990,9 +1999,9 @@ var ptx_lunr_docs = [
   "body": " This is a thought experiment to look at recognizability and decidablity.  Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?  "
 },
 {
-  "id": "p-631",
+  "id": "p-635",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-631",
+  "url": "ch-tm-classifications.html#p-635",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2044,18 +2053,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Hibert's Hotel  Introduction to Diagonalization  Examples of Turing Machines  The Halting Problem   "
 },
 {
-  "id": "p-641",
+  "id": "p-645",
   "level": "2",
-  "url": "ch-diagonalization.html#p-641",
+  "url": "ch-diagonalization.html#p-645",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Hilbert's Hotel. "
 },
 {
-  "id": "p-649",
+  "id": "p-653",
   "level": "2",
-  "url": "ch-diagonalization.html#p-649",
+  "url": "ch-diagonalization.html#p-653",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2177,15 +2186,6 @@ var ptx_lunr_docs = [
   "number": "17.3.4",
   "title": "",
   "body": " Consider the TM below:     is undecidable and we can prove this with a reduction. Show that .  "
-},
-{
-  "id": "generated-images",
-  "level": "1",
-  "url": "generated-images.html",
-  "type": "Chapter",
-  "number": "18",
-  "title": "Newly Generated Images",
-  "body": " Newly Generated Images  Welcome to Newly Generated Images  "
 },
 {
   "id": "glossary",

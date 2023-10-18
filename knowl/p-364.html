@@ -11,29 +11,57 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para"><div class="tabular-box natural-width"><table class="tabular">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <span class="process-math">\(CFG_1\)</span> for this example. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b0 r0 l0 t0 lines">First, we will need <span class="process-math">\(E + E\)</span> to give us <span class="process-math">\(1 + E\)</span>
-</td>
-<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT2a.svg" class="contained"></div></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Second, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(E * E\)</span>
-</td>
-<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/../generated/latex-image/CFExT2b.svg" class="contained"></div></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSb|T\)</span></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Third, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(1\)</span>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow cTd|cd\)</span></td>
+</tr>
+</table></div> We list the string at the bottom of the tree with the starting variable at the top. For the first example we will follow the derrivation that creates <span class="process-math">\(accddb\text{.}\)</span> It is repeated below and has been numbers for convinence: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1) <span class="process-math">\(S \rightarrow aSb\)</span>
 </td>
-<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/../generated/latex-image/CFExT2c.svg" class="contained"></div></td>
+<td class="c m b0 r0 l0 t0 lines">2) <span class="process-math">\(aSb \rightarrow aTb\)</span>
+</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Finally, we will need <span class="process-math">\(E\)</span> to give us <span class="process-math">\(0\)</span>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aSb\)</span>
 </td>
-<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT2d.svg" class="contained"></div></td>
+<td class="c m b0 r0 l0 t0 lines">The <span class="process-math">\(S\)</span> in <span class="process-math">\(aSb\)</span> is relapced with <span class="process-math">\(T\)</span>
+</td>
 </tr>
-</table></div></div>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT1a.svg" class="contained"></div></td>
+<td class="l m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT1b.svg" class="contained"></div></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3) <span class="process-math">\(aTb \rightarrow acTdb\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">4) <span class="process-math">\(acTdb \rightarrow accddb\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">The <span class="process-math">\(T\)</span> in <span class="process-math">\(aTb\)</span> is replaced with <span class="process-math">\(aTd\)</span>
+</td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(T\)</span> in <span class="process-math">\(acTdb\)</span> is replaced by <span class="process-math">\(cd\)</span>
+</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/CFExT1c.svg" class="contained"></div></td>
+<td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/CFExT1d.svg" class="contained"></div></td>
+</tr>
+</table></div>
+</div>
 <span class="incontext"><a class="internal" href="ch-cfgs.html#p-364">in-context</a></span>
 </body>
 </html>

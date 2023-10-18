@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -345,9 +344,9 @@ window.MathJax = {
 </ol></article><section class="section" id="sec-RegularExpressions"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Regular Expressions</span>
 </h3>
-<div class="para" id="p-84">
+<div class="para" id="p-88">
 <dfn class="terminology">Regular Expressions (REX)</dfn> are often used in a variety of computational areas including: searching, verficiation, and grabbing lexical pieces in a programming language. In this book, they will be used to describe languages as introduced in <a href="ch-dfas.html#Determinism" class="internal" title="Section 1.1: Sets">Section 1.1</a>.</div>
-<div class="para" id="p-85">REs can include: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-89">REs can include: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Symbols from the alphabet</td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Sigma=\{a,b\}\)</span></td>
@@ -371,12 +370,12 @@ window.MathJax = {
 </tr>
 </table></div>
 </div>
-<div class="para" id="p-86"> <dfn class="terminology">Repition (*)</dfn> is when a character, group of characters, or choice of characters is reapeated and concatenated together an undefined number of times.</div>
+<div class="para" id="p-90"> <dfn class="terminology">Repition (*)</dfn> is when a character, group of characters, or choice of characters is reapeated and concatenated together an undefined number of times.</div>
 <article class="exploration project-like" id="exploration-3"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-87">What strings can be made from <span class="process-math">\((aa+b)^*\text{?}\)</span>
-</div> <div class="para logical" id="p-88">
+<div class="para" id="p-91">What strings can be made from <span class="process-math">\((aa+b)^*\text{?}\)</span>
+</div> <div class="para logical" id="p-92">
 <div class="para">Some strings are:</div>
 <ul class="disc">
 <li id="li-23"><div class="para" id="p-derived-li-23"><span class="process-math">\(\displaystyle aabbaa\)</span></div></li>
@@ -385,10 +384,10 @@ window.MathJax = {
 <li id="li-26"><div class="para" id="p-derived-li-26"><span class="process-math">\(\displaystyle baabaa\)</span></div></li>
 <li id="li-27"><div class="para" id="p-derived-li-27"><span class="process-math">\(\displaystyle aabbaaaa\)</span></div></li>
 </ul>
-</div> <div class="para" id="p-89">A wide array of strings can be made from a simple expression declaration.</div></article></section><section class="section" id="sec-REsInNFAs"><h3 class="heading hide-type">
+</div> <div class="para" id="p-93">A wide array of strings can be made from a simple expression declaration.</div></article></section><section class="section" id="sec-REsInNFAs"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Regular Expressions in NFAs</span>
 </h3>
-<div class="para" id="p-90">NFAs can be used to easily represent REs. The best way to approach this is to go one chacter or character grouping at a time.</div>
+<div class="para" id="p-94">NFAs can be used to easily represent REs. The best way to approach this is to go one chacter or character grouping at a time.</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r2 l0 t0 lines"><em class="emphasis">Begins with 01</em></td>
@@ -411,16 +410,16 @@ window.MathJax = {
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-27"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-91">Given <span class="process-math">\(\Sigma=\{0,1,@,.\}\text{,}\)</span> make a Regular Expression for any binary string, followed by an <span class="process-math">\(@\text{,}\)</span> followed by one or more binary strings, and separated by <span class="process-math">\(.\text{.}\)</span>
+<div class="para" id="p-95">Given <span class="process-math">\(\Sigma=\{0,1,@,.\}\text{,}\)</span> make a Regular Expression for any binary string, followed by an <span class="process-math">\(@\text{,}\)</span> followed by one or more binary strings, and separated by <span class="process-math">\(.\text{.}\)</span>
 </div>
 <div class="solutions">
-<details id="hint-6" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-92">An example string is <span class="process-math">\(01@01.01.1\)</span>
-</div></div></details><details id="answer-17" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-93"><span class="process-math">\(REX_1=(0+1)(0+1)^*@(0+1)(0+1)^*(.(0+1)(0+1)^*)^*\)</span></div></div></details>
+<details id="hint-6" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-96">An example string is <span class="process-math">\(01@01.01.1\)</span>
+</div></div></details><details id="answer-17" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-97"><span class="process-math">\(REX_1=(0+1)(0+1)^*@(0+1)(0+1)^*(.(0+1)(0+1)^*)^*\)</span></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-28"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-94">Given <span class="process-math">\(\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}\text{,}\)</span> create a Regular Expression that recognizes phone numbers of the form: <span class="process-math">\([555]555-5555\text{.}\)</span> As a shortcut you may write <span class="process-math">\(0-&gt;2\)</span> to mean <span class="process-math">\(0+1+2...\text{.}\)</span>
+<div class="para" id="p-98">Given <span class="process-math">\(\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}\text{,}\)</span> create a Regular Expression that recognizes phone numbers of the form: <span class="process-math">\([555]555-5555\text{.}\)</span> As a shortcut you may write <span class="process-math">\(0-&gt;2\)</span> to mean <span class="process-math">\(0+1+2...\text{.}\)</span>
 </div>
-<div class="solutions"><details id="answer-18" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-95"><span class="process-math">\(REX_2=[(0-&gt;9)(0-&gt;9)(0-&gt;9)](0-&gt;9)(0-&gt;9)(0-&gt;9)-(0-&gt;9)(0-&gt;9)(0-&gt;9)(0-&gt;9)\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="p-96">
+<div class="solutions"><details id="answer-18" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-99"><span class="process-math">\(REX_2=[(0-&gt;9)(0-&gt;9)(0-&gt;9)](0-&gt;9)(0-&gt;9)(0-&gt;9)-(0-&gt;9)(0-&gt;9)(0-&gt;9)(0-&gt;9)\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-100">
 <div class="para">What is the language of this Regular Expression?</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -429,8 +428,8 @@ REX_3 = 0+1(0+1)^*
 </div>
 <div class="para">Your answer does not need to be in mathematical notation.</div>
 </div>
-<div class="solutions"><details id="answer-19" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-97"><span class="process-math">\(L(REX_3)=\mbox{either 0 or any binary string that begins with 1}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="p-98">
+<div class="solutions"><details id="answer-19" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-101"><span class="process-math">\(L(REX_3)=\mbox{either 0 or any binary string that begins with 1}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-102">
 <div class="para">What is the language of this Regular Expression?</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -440,7 +439,7 @@ REX_4 = (\_+a+b+c+...+Y+Z)(\_+a+b+c+...+Y+Z+0+1+...+8+9)^*
 <div class="para">Your answer does not need to be in mathematical notation.</div>
 </div>
 <div class="solutions">
-<details id="hint-7" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-99">
+<details id="hint-7" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-103">
 <div class="para">Some example strings inlcude:</div>
 <ul class="disc">
 <li id="li-28"><div class="para" id="p-derived-li-28"><span class="process-math">\(\displaystyle al\)</span></div></li>
@@ -448,27 +447,27 @@ REX_4 = (\_+a+b+c+...+Y+Z)(\_+a+b+c+...+Y+Z+0+1+...+8+9)^*
 <li id="li-30"><div class="para" id="p-derived-li-30"><span class="process-math">\(\displaystyle \_012\)</span></div></li>
 <li id="li-31"><div class="para" id="p-derived-li-31"><span class="process-math">\(\displaystyle int\)</span></div></li>
 </ul>
-</div></div></details><details id="answer-20" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-100"><span class="process-math">\(L(REX_4)=\mbox{underscore or any alphabetic character followed by any number of underscores or any alphanumeric characters}\)</span></div></div></details>
+</div></div></details><details id="answer-20" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-104"><span class="process-math">\(L(REX_4)=\mbox{underscore or any alphabetic character followed by any number of underscores or any alphanumeric characters}\)</span></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-101">Create an FA from the Regular Expression.</div>
+<div class="para" id="p-105">Create an FA from the Regular Expression.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 REX = (0+10^*1)^*
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-32"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-102">Translate the REX below into a FA.</div>
+<div class="para" id="p-106">Translate the REX below into a FA.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 REX = (01^*0+10^*1+001)^*
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-33"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-103">Translate the REX below into a FA.</div>
+<div class="para" id="p-107">Translate the REX below into a FA.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 REX = (0+1)^*(00+11)^*(101+111)
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-34"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-104">Give a FA that corresponds to this REX with alphabet, <span class="process-math">\(\Sigma = \{0,1\}\text{:}\)</span>
+<div class="para" id="p-108">Give a FA that corresponds to this REX with alphabet, <span class="process-math">\(\Sigma = \{0,1\}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}

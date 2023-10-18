@@ -12,7 +12,18 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">This works for any string that is long enough, and it happens within the first <span class="process-math">\(p\)</span> symbols of the input string.</div>
+<div class="para logical">
+<div class="para">Given this string, call it <span class="process-math">\(s\)</span> (<span class="process-math">\(S^{(1)}\)</span>). It has three parts:</div>
+<ul class="disc">
+<li><div class="para">A beginning that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(x\)</span>
+</div></li>
+<li><div class="para">A pumpable part that cannot be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(y\)</span>
+</div></li>
+<li><div class="para">An end that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(z\)</span>
+</div></li>
+</ul>
+<div class="para">The key here is that we can make new strings in the language by removing <span class="process-math">\(y(s^{(1)})\)</span> or adding <span class="process-math">\(y\)</span> as many times as we’d like. Such as: <span class="process-math">\(s^{(2)}\text{,}\)</span> <span class="process-math">\(s^{(3)}\text{,}\)</span> <span class="process-math">\(s^{(4)}\text{,}\)</span> etc.</div>
+</div>
 <span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#p-275">in-context</a></span>
 </body>
 </html>

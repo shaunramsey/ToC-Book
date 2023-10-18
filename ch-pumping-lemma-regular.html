@@ -322,7 +322,6 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">18</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -349,8 +348,8 @@ window.MathJax = {
 </h3>
 <article class="exploration project-like" id="exploration-14"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span><span class="space"> </span><span class="title">Revisiting the Properties of DFAs.</span>
-</h4> <div class="para" id="p-256">Consider <span class="process-math">\(M_1\)</span> below.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM25.svg" class="contained"></div> <div class="para" id="p-257">How many states are in this machine?</div> <details id="answer-36" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-258">4. There are 4 states represented by circles.</div></div></details> <div class="para" id="p-259">Come up with some strings that exist in the languge of this machince. For the sake of example, we will use <span class="process-math">\(10110110011\text{,}\)</span> <span class="process-math">\(01011\text{,}\)</span> and <span class="process-math">\(011\text{.}\)</span>
-</div> <div class="para" id="p-260">Next, make a list of the states visited to parce throgh each of those strings. like this:</div> <figure class="table table-like" id="RLPLParceTablea"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.1<span class="period">.</span></span><span class="space"> </span>Parce Tables for 110101111011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h4> <div class="para" id="p-260">Consider <span class="process-math">\(M_1\)</span> below.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM25.svg" class="contained"></div> <div class="para" id="p-261">How many states are in this machine?</div> <details id="answer-36" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-262">4. There are 4 states represented by circles.</div></div></details> <div class="para" id="p-263">Come up with some strings that exist in the languge of this machince. For the sake of example, we will use <span class="process-math">\(10110110011\text{,}\)</span> <span class="process-math">\(01011\text{,}\)</span> and <span class="process-math">\(011\text{.}\)</span>
+</div> <div class="para" id="p-264">Next, make a list of the states visited to parce throgh each of those strings. like this:</div> <figure class="table table-like" id="RLPLParceTablea"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.1<span class="period">.</span></span><span class="space"> </span>Parce Tables for 110101111011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r2 l0 t0 lines">States</td>
 <td class="l m b1 r1 l0 t0 lines">A</td>
@@ -457,7 +456,7 @@ window.MathJax = {
 <td class="l m b0 r1 l0 t0 lines">1</td>
 <td class="l m b0 r1 l0 t0 lines"></td>
 </tr>
-</table></div></figure> <div class="para" id="p-261">So, if our DFA has <span class="process-math">\(n\)</span> states, then any string with length at least <span class="process-math">\(n\)</span> will revisit some state that the DFA has been in before. This is an application of the  <dfn class="terminology">Pigeon Hole Principle</dfn>. A string with <span class="process-math">\(n\)</span> symbols needs <span class="process-math">\(n+1\)</span> states if it does not want to revisit a state.</div> <div class="para" id="p-262">Writing out these tables can make looping patterns more apparent. In <span class="process-math">\(M_1\text{,}\)</span> the transition among <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> and <span class="process-math">\(C\)</span> to <span class="process-math">\(B\)</span> could be repeated by a string. Another loop that can be repeated is <span class="process-math">\(A\)</span> to <span class="process-math">\(A\text{.}\)</span> Loops can be removed and still have a string in the language.</div> <div class="para logical" id="p-263">
+</table></div></figure> <div class="para" id="p-265">So, if our DFA has <span class="process-math">\(n\)</span> states, then any string with length at least <span class="process-math">\(n\)</span> will revisit some state that the DFA has been in before. This is an application of the  <dfn class="terminology">Pigeon Hole Principle</dfn>. A string with <span class="process-math">\(n\)</span> symbols needs <span class="process-math">\(n+1\)</span> states if it does not want to revisit a state.</div> <div class="para" id="p-266">Writing out these tables can make looping patterns more apparent. In <span class="process-math">\(M_1\text{,}\)</span> the transition among <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> and <span class="process-math">\(C\)</span> to <span class="process-math">\(B\)</span> could be repeated by a string. Another loop that can be repeated is <span class="process-math">\(A\)</span> to <span class="process-math">\(A\text{.}\)</span> Loops can be removed and still have a string in the language.</div> <div class="para logical" id="p-267">
 <div class="para">We can see this using the first string,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -477,10 +476,10 @@ s^{(1)''} = 011111
 \end{equation*}
 </div>
 <div class="para">This string is also in the language.</div>
-</div> <div class="para" id="p-264">Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?</div> <div class="para" id="p-265">Loops can be taken out, or they can be taken many times.</div></article><div class="para" id="p-266">The Pigeon Hole Principle can be seen in all DFAs. And since it can be, we can build it into a mechanism to help us understand when languages are regular. That brings us to the Pumping Lemma.</div></section><section class="section" id="section-20"><h3 class="heading hide-type">
+</div> <div class="para" id="p-268">Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?</div> <div class="para" id="p-269">Loops can be taken out, or they can be taken many times.</div></article><div class="para" id="p-270">The Pigeon Hole Principle can be seen in all DFAs. And since it can be, we can build it into a mechanism to help us understand when languages are regular. That brings us to the Pumping Lemma.</div></section><section class="section" id="section-20"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.2</span><span class="space"> </span><span class="title">Spotting Loops and Repetition in FAs</span>
 </h3>
-<div class="para" id="p-267">Consider <span class="process-math">\(M_2\)</span> where</div>
+<div class="para" id="p-271">Consider <span class="process-math">\(M_2\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L(M_2) = L_2
@@ -492,7 +491,7 @@ L(M_2) = L_2
 \end{equation*}
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM26a.svg" class="contained"></div>
-<div class="para logical" id="p-268">
+<div class="para logical" id="p-272">
 <div class="para">Consider the following strings as given to <span class="process-math">\(M_2\text{.}\)</span>
 </div>
 <ul class="disc">
@@ -593,29 +592,29 @@ L(M_2) = L_2
 </div></section><section class="section" id="sec-RLpumpinglemma"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.3</span><span class="space"> </span><span class="title">The Pumping Lemma for Regular Languages</span>
 </h3>
-<div class="para" id="p-269"> The <dfn class="terminology">Pumping Lemma for Regular Languages</dfn> can be used to prove that languages are regular. It follows the general form outlined below.</div>
-<div class="para" id="p-270">If <span class="process-math">\(L\)</span> is regular, then it has a pumping length <span class="process-math">\(p\text{.}\)</span> Every string in <span class="process-math">\(L\)</span> of length at least <span class="process-math">\(p\)</span> will be pumpable.</div>
-<div class="para logical" id="p-271">
+<div class="para" id="p-273"> The <dfn class="terminology">Pumping Lemma for Regular Languages</dfn> can be used to prove that languages are regular. It follows the general form outlined below.</div>
+<div class="para" id="p-274">If <span class="process-math">\(L\)</span> is regular, then it has a pumping length <span class="process-math">\(p\text{.}\)</span> Every string in <span class="process-math">\(L\)</span> of length at least <span class="process-math">\(p\)</span> will be pumpable.</div>
+<div class="para logical" id="p-275">
 <div class="para">Given this string, call it <span class="process-math">\(s\)</span> (<span class="process-math">\(S^{(1)}\)</span>). It has three parts:</div>
 <ul class="disc">
-<li id="li-103"><div class="para" id="p-272">A beginning that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(x\)</span>
+<li id="li-103"><div class="para" id="p-276">A beginning that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(x\)</span>
 </div></li>
-<li id="li-104"><div class="para" id="p-273">A pumpable part that cannot be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(y\)</span>
+<li id="li-104"><div class="para" id="p-277">A pumpable part that cannot be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(y\)</span>
 </div></li>
-<li id="li-105"><div class="para" id="p-274">An end that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(z\)</span>
+<li id="li-105"><div class="para" id="p-278">An end that can be <span class="process-math">\(\epsilon\)</span> - call it <span class="process-math">\(z\)</span>
 </div></li>
 </ul>
 <div class="para">The key here is that we can make new strings in the language by removing <span class="process-math">\(y(s^{(1)})\)</span> or adding <span class="process-math">\(y\)</span> as many times as we’d like. Such as: <span class="process-math">\(s^{(2)}\text{,}\)</span> <span class="process-math">\(s^{(3)}\text{,}\)</span> <span class="process-math">\(s^{(4)}\text{,}\)</span> etc.</div>
 </div>
-<div class="para" id="p-275">This works for any string that is long enough, and it happens within the first <span class="process-math">\(p\)</span> symbols of the input string.</div>
-<div class="para logical" id="p-276">
+<div class="para" id="p-279">This works for any string that is long enough, and it happens within the first <span class="process-math">\(p\)</span> symbols of the input string.</div>
+<div class="para logical" id="p-280">
 <div class="para">In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. This also means that there is some non-empty <span class="process-math">\(y\)</span> loop, but this will typically be written more formally and closer to:</div>
 <ol class="decimal">
-<li id="li-106"><div class="para" id="p-277">If a language is a Regular Language then</div></li>
-<li id="li-107"><div class="para" id="p-278">
+<li id="li-106"><div class="para" id="p-281">If a language is a Regular Language then</div></li>
+<li id="li-107"><div class="para" id="p-282">
 <span class="process-math">\(\exists p \geq 1\)</span> such that <span class="process-math">\(\forall x \in L\)</span> with <span class="process-math">\(|s|\geq p\)</span>
 </div></li>
-<li id="li-108"><div class="para logical" id="p-279">
+<li id="li-108"><div class="para logical" id="p-283">
 <div class="para">Then <span class="process-math">\(s^{(1)} = xyz\)</span> where:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -643,19 +642,19 @@ L(M_2) = L_2
 <article class="theorem theorem-like" id="thm-plRL"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-280">Take a languge we want to prove is not regular.</div> <ol class="decimal">
-<li id="li-109"><div class="para" id="p-281">Assume it is regular.</div></li>
-<li id="li-110"><div class="para" id="p-282">Pick a string that is at least of length <span class="process-math">\(p\)</span> in the language</div></li>
-<li id="li-111"><div class="para" id="p-283">Show that every possible choice for <span class="process-math">\(y\)</span> cannot work</div></li>
-<li id="li-112"><div class="para" id="p-284">Thus the assumption is wrong and by contradition, the language is not regular.</div></li>
+<div class="para" id="p-284">Take a languge we want to prove is not regular.</div> <ol class="decimal">
+<li id="li-109"><div class="para" id="p-285">Assume it is regular.</div></li>
+<li id="li-110"><div class="para" id="p-286">Pick a string that is at least of length <span class="process-math">\(p\)</span> in the language</div></li>
+<li id="li-111"><div class="para" id="p-287">Show that every possible choice for <span class="process-math">\(y\)</span> cannot work</div></li>
+<li id="li-112"><div class="para" id="p-288">Thus the assumption is wrong and by contradition, the language is not regular.</div></li>
 </ol></article><article class="exploration project-like" id="exploration-15"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">15</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languages without a Machine.</span>
-</h4> <div class="para logical" id="p-285">
+</h4> <div class="para logical" id="p-289">
 <div class="para">Say <span class="process-math">\(L_1\text{:}\)</span> has a number of 0s divisible by 3 and an even number of 1s.</div>
-<ul class="disc"><li id="li-113"><div class="para" id="p-286">
+<ul class="disc"><li id="li-113"><div class="para" id="p-290">
 <span class="process-math">\(L_1\)</span> is a Regular Language.</div></li></ul>
 <div class="para">Let’s say we don’t know <span class="process-math">\(p\text{,}\)</span> just that it exists. Let’s pick a string that’s <span class="process-math">\(p\)</span> long.</div>
-<ul class="disc"><li id="li-114"><div class="para" id="p-287">This staisfies <span class="process-math">\(s\in L\)</span> and <span class="process-math">\(|s|\geq p\)</span>
+<ul class="disc"><li id="li-114"><div class="para" id="p-291">This staisfies <span class="process-math">\(s\in L\)</span> and <span class="process-math">\(|s|\geq p\)</span>
 </div></li></ul>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -663,23 +662,23 @@ s^{(1)} = (00011)^p
 \end{equation*}
 </div>
 <div class="para">Some piece of <span class="process-math">\(s^{(1)}\)</span> in the first <span class="process-math">\(p\)</span> symbols is pumpable.</div>
-<ul class="disc"><li id="li-115"><div class="para" id="p-288">There is some <span class="process-math">\(y\)</span> that we can extract or insert as many times as we want</div></li></ul>
+<ul class="disc"><li id="li-115"><div class="para" id="p-292">There is some <span class="process-math">\(y\)</span> that we can extract or insert as many times as we want</div></li></ul>
 </div></article><article class="exploration project-like" id="exploration-16"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languges with Defined Language.</span>
-</h4> <div class="para" id="p-289">Consider <span class="process-math">\(L_{01}=\{0^n1^n|n\leq 0 \}\text{.}\)</span>
+</h4> <div class="para" id="p-293">Consider <span class="process-math">\(L_{01}=\{0^n1^n|n\leq 0 \}\text{.}\)</span>
 </div> <ol class="decimal">
-<li id="li-116"><div class="para" id="p-290">Assume <span class="process-math">\(L_{01}\)</span> is regular thus obeying the Pumping Lemma for Regular Languages.</div></li>
-<li id="li-117"><div class="para" id="p-291">Let us choose <span class="process-math">\(s^{(1)} = 0^p1^p\)</span> since <span class="process-math">\(L_{01}\)</span> is a Regular Language, any string that is long enough should be pumpable.</div></li>
+<li id="li-116"><div class="para" id="p-294">Assume <span class="process-math">\(L_{01}\)</span> is regular thus obeying the Pumping Lemma for Regular Languages.</div></li>
+<li id="li-117"><div class="para" id="p-295">Let us choose <span class="process-math">\(s^{(1)} = 0^p1^p\)</span> since <span class="process-math">\(L_{01}\)</span> is a Regular Language, any string that is long enough should be pumpable.</div></li>
 <li id="li-118">
-<div class="para" id="p-292">A pumpable part (<span class="process-math">\(y\)</span>) must occur in the first <span class="process-math">\(p\)</span> symbols. So, <span class="process-math">\(y\)</span> must contain one or more 0s and no 1s since the first <span class="process-math">\(p\)</span> symbols are 0s.</div>
-<div class="para" id="p-293">If we pump down to <span class="process-math">\(s^{(0)}\text{,}\)</span> we will thus remove some 0s without removing any 1s. <span class="process-math">\(s^{(0)}\)</span> cannot possibly be in <span class="process-math">\(L_{01}\text{,}\)</span> no matter the choice for <span class="process-math">\(y\text{.}\)</span>
+<div class="para" id="p-296">A pumpable part (<span class="process-math">\(y\)</span>) must occur in the first <span class="process-math">\(p\)</span> symbols. So, <span class="process-math">\(y\)</span> must contain one or more 0s and no 1s since the first <span class="process-math">\(p\)</span> symbols are 0s.</div>
+<div class="para" id="p-297">If we pump down to <span class="process-math">\(s^{(0)}\text{,}\)</span> we will thus remove some 0s without removing any 1s. <span class="process-math">\(s^{(0)}\)</span> cannot possibly be in <span class="process-math">\(L_{01}\text{,}\)</span> no matter the choice for <span class="process-math">\(y\text{.}\)</span>
 </div>
 </li>
-<li id="li-119"><div class="para" id="p-294">Thus the assumption is wrong and by contradiction, the language is not regular.</div></li>
+<li id="li-119"><div class="para" id="p-298">Thus the assumption is wrong and by contradiction, the language is not regular.</div></li>
 </ol></article></section><section class="section" id="sec-PLRLFunLangs"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.4</span><span class="space"> </span><span class="title">Additional Non-Regular Languages for Proving</span>
 </h3>
-<div class="para logical" id="p-295">
+<div class="para logical" id="p-299">
 <div class="para">Here are some additional, fun, non-regular languages to try to prove (in increasing complexity):</div>
 <ul class="disc">
 <li id="li-120"><div class="para" id="p-derived-li-120"><span class="process-math">\(\displaystyle \{0^i1^j|i&gt;j\}\)</span></div></li>
@@ -698,10 +697,10 @@ s^{(1)} = (00011)^p
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">8.5</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-56"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-296">Consider the machine below. What is the language of the machine? What are some state loops present within it?</div>
+<div class="para" id="p-300">Consider the machine below. What is the language of the machine? What are some state loops present within it?</div>
 <div class="solutions">
 <details id="hint-13" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-297">Come up with some test strings and their parce paths. Are there any patterns of repetition?</div> <ul class="disc">
+<div class="para" id="p-301">Come up with some test strings and their parce paths. Are there any patterns of repetition?</div> <ul class="disc">
 <li id="li-130">
 <span class="process-math">\(s^{(0)} = 01:\)</span> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -799,10 +798,10 @@ s^{(1)} = (00011)^p
 </table></div>
 </li>
 </ul>
-</div></details><details id="answer-37" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-298">A pattern of state repition is: <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> to <span class="process-math">\(C\text{.}\)</span>
+</div></details><details id="answer-37" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-302">A pattern of state repition is: <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> to <span class="process-math">\(C\text{.}\)</span>
 </div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-57"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="p-299">
+<div class="para logical" id="p-303">
 <div class="para">Identify patterns of state repetition from a written language.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -811,14 +810,14 @@ L_2 = \{\mbox{any string with an odd number of 0s, starts with 1, ends with 111,
 </div>
 </div>
 <div class="solutions">
-<details id="hint-14" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-300">
+<details id="hint-14" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-304">
 <div class="para">Some test strings inlcude:</div>
 <ul class="disc">
 <li id="li-133"><div class="para" id="p-derived-li-133"><span class="process-math">\(\displaystyle s^(0) = 1000111\)</span></div></li>
 <li id="li-134"><div class="para" id="p-derived-li-134"><span class="process-math">\(\displaystyle s^(1) = 10100111\)</span></div></li>
 <li id="li-135"><div class="para" id="p-derived-li-135"><span class="process-math">\(\displaystyle s^(2) = 1000000011111\)</span></div></li>
 </ul>
-</div></div></details><details id="answer-38" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-301">
+</div></div></details><details id="answer-38" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-305">
 <div class="para">Character repetitions can exist in these two places:</div>
 <ul class="disc">
 <li id="li-136"><div class="para" id="p-derived-li-136"><span class="process-math">\(\displaystyle 10(00)^*111\)</span></div></li>
@@ -827,7 +826,7 @@ L_2 = \{\mbox{any string with an odd number of 0s, starts with 1, ends with 111,
 <div class="para">They can also be combined.</div>
 </div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-302">Prove <span class="process-math">\(L_{xx}\)</span> is regular or not.</div>
+<div class="para" id="p-306">Prove <span class="process-math">\(L_{xx}\)</span> is regular or not.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_{xx}=\{w\#w | w \mbox{ is any binary string}\}
@@ -838,7 +837,7 @@ L_{xx}=\{w\#w | w \mbox{ is any binary string}\}
 \Sigma = \{0,1,\#\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-59"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-303">Prove <span class="process-math">\(L_{ab}\)</span> is regular or not.</div>
+<div class="para" id="p-307">Prove <span class="process-math">\(L_{ab}\)</span> is regular or not.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_{ab}=\{(ab)^n|n \geq 100\}
@@ -849,7 +848,7 @@ L_{ab}=\{(ab)^n|n \geq 100\}
 \Sigma = \{a,b\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-304">Prove <span class="process-math">\(L_{a}\)</span> is regular or not.</div>
+<div class="para" id="p-308">Prove <span class="process-math">\(L_{a}\)</span> is regular or not.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_{a}=\{a^{2^n}|n \geq 0\}
@@ -860,7 +859,7 @@ L_{a}=\{a^{2^n}|n \geq 0\}
 \Sigma = \{a\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="p-305">
+<div class="para logical" id="p-309">
 <div class="para">Prove the following language is regular.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -868,7 +867,7 @@ L = \{(01)^n(01)^n(01)^n|n\geq 0 \}
 \end{equation*}
 </div>
 </div></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="p-306">
+<div class="para logical" id="p-310">
 <div class="para">Use the pumping lemma for regular languages to prove the following language is not regular.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -876,7 +875,7 @@ L = \{a^ib^jc^k | i = j + k\}
 \end{equation*}
 </div>
 </div></article><article class="exercise exercise-like" id="exercise-63"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para logical" id="p-307">
+<div class="para logical" id="p-311">
 <div class="para">The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -884,16 +883,16 @@ L = \{a^ib^jc^k | i = j + k\}
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="hint-15" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-308">
+<div class="solutions"><details id="hint-15" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-312">
 <div class="para">Sample strings include:</div>
 <ul class="disc">
-<li id="li-138"><div class="para" id="p-309">[(){}]</div></li>
-<li id="li-139"><div class="para" id="p-310">[[[()]]]{}{}{{}}</div></li>
-<li id="li-140"><div class="para" id="p-311">{}</div></li>
-<li id="li-141"><div class="para" id="p-312"><span class="process-math">\(\displaystyle \epsilon\)</span></div></li>
+<li id="li-138"><div class="para" id="p-313">[(){}]</div></li>
+<li id="li-139"><div class="para" id="p-314">[[[()]]]{}{}{{}}</div></li>
+<li id="li-140"><div class="para" id="p-315">{}</div></li>
+<li id="li-141"><div class="para" id="p-316"><span class="process-math">\(\displaystyle \epsilon\)</span></div></li>
 </ul>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-64"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-313">Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)</div> <div class="para logical" id="p-314">
+<div class="para" id="p-317">Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)</div> <div class="para logical" id="p-318">
 <div class="para">You have been given that:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -902,36 +901,36 @@ L = \{a^ib^jc^k | i = j + k\}
 </div>
 <div class="para">is not regular.</div>
 </div>
-<div class="solutions"><details id="hint-16" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-315">
+<div class="solutions"><details id="hint-16" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-319">
 <div class="para">Sample strings include:</div>
 <ul class="disc">
-<li id="li-142"><div class="para" id="p-316">thethe#thethe</div></li>
-<li id="li-143"><div class="para" id="p-317">same#same</div></li>
-<li id="li-144"><div class="para" id="p-318">atimeto#atimeto</div></li>
+<li id="li-142"><div class="para" id="p-320">thethe#thethe</div></li>
+<li id="li-143"><div class="para" id="p-321">same#same</div></li>
+<li id="li-144"><div class="para" id="p-322">atimeto#atimeto</div></li>
 </ul>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-65"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-319">According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.</div></article><article class="exercise exercise-like" id="exercise-66"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-320">Prove that the language with binary strings that have more 0s than 1s is not regular.</div></article><article class="exercise exercise-like" id="exercise-67"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-321">Prove that the language with strings with any number of a’s, b’s, and c’s, but with an equal number of d’s and e’s is not regular.</div></article><article class="exercise exercise-like" id="exercise-68"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="p-322">Apply the pumping lemma for regular languages. Prove the language below is not regular.</div>
+<div class="para" id="p-323">According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.</div></article><article class="exercise exercise-like" id="exercise-66"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-324">Prove that the language with binary strings that have more 0s than 1s is not regular.</div></article><article class="exercise exercise-like" id="exercise-67"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-325">Prove that the language with strings with any number of a’s, b’s, and c’s, but with an equal number of d’s and e’s is not regular.</div></article><article class="exercise exercise-like" id="exercise-68"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-326">Apply the pumping lemma for regular languages. Prove the language below is not regular.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{\triangle ^i \square^j | i \ngeq j\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-69"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para" id="p-323">Using the pumping lemma for regular languages, prove the language below is not regular.</div>
+<div class="para" id="p-327">Using the pumping lemma for regular languages, prove the language below is not regular.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{\star ^i \triangle ^j \square ^i | i \ngeq j\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-70"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
-<div class="para" id="p-324">Prove the following language, L, with <span class="process-math">\(\Sigma =\{a,b,c,d\}\)</span>is not regular using the pumping lemma for regular languages.</div>
+<div class="para" id="p-328">Prove the following language, L, with <span class="process-math">\(\Sigma =\{a,b,c,d\}\)</span>is not regular using the pumping lemma for regular languages.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{a^nb^mc^nd^m | n,m \geq 0\}
 \end{equation*}
 </div>
-<div class="para" id="p-325">Some sample strings in the language are: <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> <span class="process-math">\(abcd\text{,}\)</span> and <span class="process-math">\(aabccd\)</span>
+<div class="para" id="p-329">Some sample strings in the language are: <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> <span class="process-math">\(abcd\text{,}\)</span> and <span class="process-math">\(aabccd\)</span>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-fa-closure.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="part-cf.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
