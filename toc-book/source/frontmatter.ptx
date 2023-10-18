@@ -12,28 +12,31 @@
       <email>sramsey2@washcoll.edu</email>
     </author>
     <author>
-    <personname>Contributing Author(s): Emilee Daniel</personname>
-          <department>Department of Mathematics and Computer Science</department>
+      <personname>Contributing Author(s): Emilee Daniel</personname>
+      <department>Department of Mathematics and Computer Science</department>
       <institution>Washington College</institution>
     </author>
-    <date><today/></date>
+    <date>
+      <today />
+    </date>
   </titlepage>
 
   <colophon>
     <website>
-      <url href="http://shaunramsey.com" visual="shaunramsey.com"/>
+      <url href="http://shaunramsey.com" visual="shaunramsey.com" />
     </website>
 
     <copyright>
       <!-- In addition to specifying the copyright holder, you should  -->
       <!-- include a license, such as the cc-by-sa license shown below -->
       <!-- so people reading your book know how they can use it.       -->
-      <year>2021<ndash/>2024</year>
+      <year>2021<ndash />2024</year>
       <holder>Shaun D. Ramsey, PhD</holder>
       <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
-      <shortlicense>
-        <!-- <image source="../images/by-sa.png" width="15%"/>  -->
-        <!-- This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</url> -->
+      <shortlicense> r 1 <!-- <image source="../images/by-sa.png" width="15%"/>  -->
+        <!-- This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+        International License. To view a copy of this license, visit <url
+        href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</url> -->
       </shortlicense>
 
     </copyright>
@@ -48,7 +51,8 @@
 
   <acknowledgement>
     <p>
-      We would like to thank Washington College and the Douglass Cater Society of Junior Fellows for supporting this work.
+      We would like to thank Washington College and the Douglass Cater Society of Junior Fellows for
+      supporting this work.
     </p>
 
   </acknowledgement>
