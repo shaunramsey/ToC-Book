@@ -4,196 +4,413 @@
 <chapter xml:id="ch-dfas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Determinsitic Finite Automata</title>
   <introduction>
-      This chapter discusses strategies for understanding finite automata, specifically 
-    those with a halting accept and halting reject state. While this is a unique approach 
-    for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata 
-    in an intuitive way. Specifically in this chapter we will tackle:
-    </introduction>
+    <p>
+      This chapter discusses strategies for understanding finite automata, specifically
+      those with a halting accept and halting reject state. While this is a unique approach
+      for teaching and learning in theory of computation, we find that this is a more natural way
+      for programmers to think about, understand, and ultimately to use finite automata
+      in an intuitive way. Specifically in this chapter we will tackle:
+    </p>
+  </introduction>
   <objectives>
     <ol>
-       <li> Deterministic Finite Automata (DFA) </li>
-       <li> Strategies for understanding Deterministic Finite Automata </li>
-       <li> Strategies for drawing Deterministic Finite Automata </li>
-     </ol>
+      <li> Deterministic Finite Automata (DFA) </li>
+      <li> Strategies for understanding Deterministic Finite Automata </li>
+      <li> Strategies for drawing Deterministic Finite Automata </li>
+    </ol>
   </objectives>
 
 
-   <section xml:id="Determinism">
-      <title> Sets </title>
-      <subsection>
-        <title>Set Review</title>
-        <p>
-        Sets are a collection of objects where there is no ordering and elements are not repeated or counted.  Sets can contain other sets or they can be empty. Things get really tricky when you think about a set that contains an empty set, but we will not need to deal with that just yet. Typically we use curly brackets to denote set notation (enumeration notation). Thus <m>\{a,b,c\}</m> is a set that contains elements called <m>a</m>, <m>b</m> and <m>c</m>. That is the same set as <m>\{b,a,c\}</m>. Ordering does not matter. If a <m>d</m> were added to this set, we would have a new set <m>\{a,b,c,d\}</m>. If an <m>a</m> were added to this set, it would not change the set because the set already contained an <m>a</m>. We will use enumeration notation right away to start describing important elements for this book.
-        </p>
-        <p> However, we will also often use set-builder notation to describes sets. An example of set-builder notation to describe a set is: <m>\{w | w\ \text{is a string that contains an}\ a\}</m>. This should be read as the set of all <m>w</m>'s where <m>w</m> is a string that contains an <m>a</m>. We will see this in again in an example shortly. Importantly here, <m> | </m> is read as where or such that. You can think of it as a declaration or assignment if you like. The left is a set. a collection of things, where all the things follow the rules on the right.
-        </p>
-        <p>The only way to get comfortable with these two types of notations is by using them. So, feel free to think of this section as a brief reference on both enumeration notation and set-builder notation. After you tackle these two types of notations a couple times by yourself, you will not need this section as a reference. Until then, you may keep it handy to remind yourself of these two ways to talk about sets.
-        </p>
-      </subsection>
-      <subsection> 
-        <title> Machines </title>
-        <p>
-        To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.
-        </p>
-        <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is a finite set of symbols. 
-        Characters in the alphabet can be appended together to create strings. So, a <idx>string</idx> <term>string</term> is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a <idx>Language (<em><m>L</m></em>)</idx> <term>language (<em><m>L</m></em>)</term>.
-        </p>
-        <p>
-        For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>. 
-        <me>A = \{a, b, c\}</me>
-        A language will consist of strings created from this alphabet. Order matters. For example <m>S</m> and <m>Q</m> are strings from alphabet <m>A</m>.
-        <me>S = baba</me>
-        <me>T = aaaaa</me>
-        these example strings may be included in language <m>L_1</m>. You might say:
-        <me>S \in L_1</me>
-        which means <m>S</m> is in the language <m>L_1</m>.
-        <m>L_1</m> might have other strings in it as well. We would normally list those in one form of set notation if required. If <m>L_1</m> consisted of just the two strings above, we could fully list them like this:
-        <me>L_1 = \{baba, aaaaa\}</me>
-        A binary string (like <m>1010</m>) would require a binary alphabet (<m>\{0,1\}</m>). A sample binary language might be: 
-        <me>\{w | w\ \text{begins with a}\ 1\}</me>
-        This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more).
-        The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).
-        </p>
-        <p>As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).
-        </p>
-      </subsection>
+  <section xml:id="Determinism">
+    <title> Sets </title>
+    <subsection>
+      <title>Set Review</title>
+      <p> Sets are a collection of objects where there is no ordering and elements are not repeated
+        or counted. Sets can contain other sets or they can be empty. Things get really tricky when
+        you think about a set that contains an empty set, but we will not need to deal with that
+        just yet. Typically we use curly brackets to denote set notation (enumeration notation).
+        Thus <m>\{a,b,c\}</m> is a set that contains elements called <m>a</m>, <m>b</m> and <m>c</m>.
+        That is the same set as <m>\{b,a,c\}</m>. Ordering does not matter. If a <m>d</m> were added
+        to this set, we would have a new set <m>\{a,b,c,d\}</m>. If an <m>a</m> were added to this
+        set, it would not change the set because the set already contained an <m>a</m>. We will use
+        enumeration notation right away to start describing important elements for this book. </p>
+      <p> However, we will also often use set-builder notation to describes sets. An example of
+        set-builder notation to describe a set is: <m>\{w | w\ \text{is a string that contains an}\
+        a\}</m>. This should be read as the set of all <m>w</m>'s where <m>w</m> is a string that
+        contains an <m>a</m>. We will see this in again in an example shortly. Importantly here, <m>
+        | </m> is read as where or such that. You can think of it as a declaration or assignment if
+        you like. The left is a set. a collection of things, where all the things follow the rules
+        on the right. </p>
+      <p>The only way to get comfortable with these two types of notations is by using them.
+        So, feel free to think of this section as a brief reference on both enumeration notation and
+        set-builder notation.
+        After you tackle these two types of notations a couple times by yourself, you will not need
+        this section as a reference.
+        Keep this section handy as a reference to remind yourself of these two ways to talk about
+        sets, until you do not need them anymore.
+      </p>
 
-   </section>
-   <section xml:id="FiniteAutomata">
-      <title>Finite Automata (FA)</title>
-        <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state machines (M)</term>. We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize <idx>States (Q)</idx> <term>states (Q)</term> to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are 
-          represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without
-          a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with <m>h_a</m> encased in two circles. A halt and reject state (<m>h_r</m>) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help. 
-          
-          <!-- TODO make an aside here-->
-          Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book. 
-         </p>
-      <image source="../generated-assets/latex-image/FAExM1.svg" width="50%">
-        </image>
-        <!--TODO: I would like to try and make animations to show this next part instead of writing it out.-->
-         <p>
-          Say there is a string <m>S = 110</m>. After following the arrows to parse through <m>S</m>,
-          it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>S \in L(M_1)</m>,
-          but what is <m>L(M_1)</m>?
-         </p>
-         <p>
-          Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.
-         <ul>
-            <li><me>L_2 = \mbox{any string that ends with 01}</me></li>
-            <li><me>L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}</me></li>
-            <li><image source="../generated/latex-image/FAExM2.svg" width="50%">
-                </image>
-              </li>
-            </ul>
-          </p>
-          <p>
-          One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and
-          checking them using a given machine. For <m>M_2</m>, test strings could include 000, 01, 11011, and 100001. By 
-          tracing through <m>M_2</m> with each of these four string separately, we see that it accepts  the second and fourth strings, the only
-          ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine 
-          the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what 
-          each state is representing. Sometimes it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers 
-          a modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a number divisible by 3". 
-          Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other
-          methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although
-          although those expressions are often more complicated than the machines themselves!
-        </p>
-    </section>
-   <section xml:id="DFAs">
-      <title>Deterministic Finite Automata (DFA)</title>
-        <p><idx>Deterministic Finitie Automata (DFA)</idx> <term> Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
-          of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are
-          accounted for at each state. We can look again at <m>M_1</m>
-       </p>
-        <image source="../generated/latex-image/FAExM1.svg" width="50%">
-        </image>
-          <!--TODO: again I would like to figure out how to make animations for this next part-->
-        <p>
-          The alphabet of <m>M_1</m> includes 0 and 1. When at the start state <m>A</m>, if a 0 is read, we stay at <m>A</m> 
-          and if a 1 is read, we move to <m>B</m>. Each possibility is accounted for. When in state <m>B</m>, if a 0 is read,
-          we stay at <m>B</m> and if a 1 is read, we move to <m>A</m>. Since there is a definied path for each potential character
-          at each state, then the FA is deterministic, or a DFA. 
-        </p>
-        <p>
-          Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character
-          at each state, the FA is deterministic.
-        </p>
-        <sidebyside>
-          <table xml:id="DFADeterminismTable">
-            <title>Determinism Chart for <m>M_1</m></title>
-            <tabular>
-              <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
-              <row header="no"><cell right="medium"><m>A</m></cell><cell><m>A</m></cell><cell><m>B</m></cell></row>
-              <row header="no"><cell right="medium"><m>B</m></cell><cell><m>B</m></cell><cell><m>A</m></cell></row>
-            </tabular>
-          </table>
-        </sidebyside>
+    </subsection>
+    <subsection>
+      <title> Machines </title>
+      <p>
+        To start off thinking about theory of computation, we need a few base terms that we will use
+        in the rest of this book. For the most part, in theory of computation we talk about
+        machines. You can think of these automata or machines like functions. They take input in the
+        form of a string (an ordered sequence of symbols) and they either accept or reject that
+        input. As we continue through the course, we will add more power to the capabilities of
+        these machines in the form of memory. At first, the machines can only switch between a
+        finite set of states. However, as we progress to other sections of this book, we will allow
+        these machines to gain access to different types of infinite memories. Let's look at a few
+        important sets that we will need to discuss our automata.
+      </p>
+      <p>The <idx>Alphabet (<m>\Sigma</m>)</idx> <term>alphabet (<m>\Sigma</m>)</term> is a finite
+        set of symbols. Characters in the alphabet can be appended together to create strings. So, a <idx>
+        string</idx> <term>string</term> is an ordered list of characters from the alphabet. A
+        collection (set) of strings is also known as a <idx>Language (<em>
+            <m>L</m>
+          </em>)</idx> <term>language (<em>
+            <m>L</m>
+          </em>)</term>. </p>
+      <p> For example, characters <m>a</m>, <m>b</m>, and <m>c</m> are all included in alphabet <m>A</m>
+        . <me>A = \{a, b, c\}</me> A language will consist of strings created from this alphabet.
+        Order matters. For example <m>S</m> and <m>Q</m> are strings from alphabet <m>A</m> . <me>S
+          = baba</me>
+        <me>T = aaaaa</me> these example strings may be included in language <m>L_1</m>.
+        You might say: <me>S \in L_1</me> which means <m>S</m> is in the language <m>L_1</m>. <m>L_1</m>
+        might have other strings in it as well. We would normally list those in one form of set
+        notation if required. If <m>L_1</m> consisted of just the two strings above, we could fully
+        list them like this: <me>L_1 = \{baba, aaaaa\}</me> A binary string (like <m>1010</m>) would
+        require a binary alphabet (<m>\{0,1\}</m>). A sample binary language might be: <me>\{w | w\
+        \text{begins with a}\ 1\}</me> This language consists of any binary string that begins with
+        a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001
+        (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010,
+        011, 0100, 0101 (and also infinitely more). </p>
+      <p>As we continue in this book, we will use these terms: alphabet, string, and language quite
+        often. Our alphabets are finite sets, the building blocks of everything. Strings are like
+        words, an ordered list of characters. Languages are sets of strings. Our languages are often
+        infinite (having an unbounded number of strings).
+      </p>
+    </subsection>
 
-              <subsection>
-      <!-- todo: Should determinism come before finite automata and the explinantion of states? I feel like 
+  </section>
+  <section xml:id="FiniteAutomata">
+    <title>Finite Automata (FA)</title>
+    <p><idx>Finite Automata (FA)</idx> <term>Finite Automata (FA) </term> are <idx>State Machine (M)</idx> <term>state
+      machines (M)</term>. We use these machines to describe (recognize) a language. They have no
+      memory storage outside of their finitly many states. They utilize <idx>States (Q)</idx> <term>states
+      (Q)</term> to determine if a given string is accepted or rejected by the machine. You may also
+      say that the FA determines if a string exists in the language of the machine. States do track
+      a kind of finite memory by their position. States are represented using circles and machines
+      are made up of states and arrows connecting them. Finite automata have an entry point - so
+      there is also one arrow without a beginning state. This arrow points to the start state which
+      is where the machine will begin processing its input. In our machines there may also be a halt
+      and accept state. It will be denoted with <m>h_a</m> encased in two circles. A halt and reject
+      state (<m>h_r</m>) may also be present inside a circle within a circle. This is best described
+      alongside diagrams and images. So, the diagrams below will help. </p>
+    <p>
+      <!-- TODO make an aside here--> Unlike the finite automata presented in this book, a traditional finite automata will not
+      have halt states. Traditionally an FA will operate continuously (imagine a red light or a
+      vending machine that takes coins). Such a finite automata will not have halt states, but
+      instead will have states represented by a circle withing a circle. Such states are accept
+      states. When an automata finishes processing an input string, it will accept if it is in an
+      accept state (state with a double circle), otherwise it will reject the input string. The
+      approach presented in this book is beneficial because it operates more closely to how you
+      would program software to operate. For example, a language that only needs to look at the
+      first symbol of an input string, could immediately halt and accept or halt and reject based on
+      that symbol. If your need does not include processing the whole string, then we do not bother
+      in the model presented in this book. </p>
+    <!-- <image source="../generated-assets/latex-image/FAExM1.svg" width="50%">
+        </image>
+        TODO: I would like to try and make animations to show this next part instead of writing it out. -->
+    <figure xml:id="FAExM1figure">
+      <caption>A simple finite automata</caption>
+      <image xml:id="FAExM1" width="50%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.2]
+          \tikzstyle{every node}+=[inner sep=0pt]
+          \draw [black] (27,-15.7) circle (3);
+          \draw (27,-15.7) node {$A$};
+          \draw [black] (47.5,-15.7) circle (3);
+          \draw (47.5,-15.7) node {$B$};
+          \draw [black] (47.5,-15.7) circle (2.4);
+          \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
+          \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
+          \draw (37.25,-12.89) node [above] {$1$};
+          \draw [black] (44.703,-16.781) arc (-72.36319:-107.63681:24.6);
+          \fill [black] (29.8,-16.78) -- (30.41,-17.5) -- (30.71,-16.55);
+          \draw (37.25,-18.44) node [below] {$1$};
+          \draw [black] (49.03,-13.133) arc (176.937:-111.063:2.25);
+          \draw (53.78,-10.71) node [right] {$0$};
+          \fill [black] (50.47,-15.35) -- (51.24,-15.89) -- (51.29,-14.9);
+          \draw [black] (24.885,-17.811) arc (-17.31033:-305.31033:2.25);
+          \draw (19.84,-18.58) node [left] {$0$};
+          \fill [black] (24.04,-15.31) -- (23.42,-14.59) -- (23.13,-15.55);
+          \draw [black] (22.2,-9.2) -- (25.22,-13.29);
+          \draw (20.39,-8.7) node [above] {$M_1$};
+          \fill [black] (25.22,-13.29) -- (25.14,-12.35) -- (24.34,-12.94);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-tikz">
+      <caption>A figure generated with TikZ in <latex /></caption>
+      <image width="15%" xml:id="poset">
+
+        <latex-image>
+          \begin{tikzpicture}
+          \draw (0,0) -- (0,1);
+          \draw (1,0) -- (1,1) -- (1,2) -- (1,3);
+          \draw (0,0) -- (1,2);
+          \draw (0,1) -- (1,0);
+          \draw [fill] (0,0) circle [radius=0.1];
+          \draw [fill] (0,1) circle [radius=0.1];
+          \draw [fill] (1,0) circle [radius=0.1];
+          \draw [fill] (1,1) circle [radius=0.1];
+          \draw [fill] (1,2) circle [radius=0.1];
+          \draw [fill] (1,3) circle [radius=0.1];
+          \node [left] at (0,0) {$x$};
+          \node [left] at (0,1) {$b$};
+          \node [right] at (1,0) {$a$};
+          \node [right] at (1,1) {$y$};
+          \node [right] at (1,2) {$c$};
+          \node [right] at (1,3) {$d$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p> Say there is a string <m>S = 110</m>. After following the arrows to parse through <m>S</m>,
+      it would be accepted by <m>M_1</m> as it finished on the accept state. We now know that <m>S
+      \in L(M_1)</m>, but what is <m>L(M_1)</m>? </p>
+    <p> Lanugages can be described using plain language, expressions, set notation, or FAs. The
+      following all represent the same language. <ul>
+        <li>
+          <me>L_2 = \mbox{any string that ends with 01}</me>
+        </li>
+        <li>
+          <me>L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}</me>
+        </li>
+        <li>
+          <image source="../generated/latex-image/FAExM2.svg" width="50%">
+          </image>
+        </li>
+      </ul>
+    </p>
+    <p> One way to start to understand the language of a FA is by creating test strings from
+      characters in the given alphabet and checking them using a given machine. For <m>M_2</m>, test
+      strings could include 000, 01, 11011, and 100001. By tracing through <m>M_2</m> with each of
+      these four string separately, we see that it accepts the second and fourth strings, the only
+      ones ending in 01. This is a straight-forward example, and many more test strings could be
+      needed to determine the languages of other machines. When wrapping our mind around state
+      machines in this way, it is helpful to think about what each state is representing. Sometimes
+      it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers a
+      modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a
+      number divisible by 3". Practice with these machines and languages will help acquire this
+      skill and insight but later in the book we will see some other methods for translating
+      machines to expressions which might be useful in this endeavor when the machines are
+      complicated, although although those expressions are often more complicated than the machines
+      themselves! </p>
+  </section>
+  <section xml:id="DFAs">
+    <title>Deterministic Finite Automata (DFA)</title>
+    <introduction>
+      <p><idx>Deterministic Finitie Automata (DFA)</idx> <term> Determinisitic Finite Automatas (DFA)</term>
+        are FAs where the outcome of each possible change of state is defined. When trying to
+        categorize a FA as deterministic, we can look to see if all characters in the alphabet are
+        accounted for at each state. We can look again at <m>M_1</m>
+      </p>
+      <image source="../generated/latex-image/FAExM1.svg" width="50%">
+      </image>
+      <!--TODO:
+    again I would like to figure out how to make animations for this next part-->
+      <p> The alphabet of <m>M_1</m> includes 0 and 1. When at the start state <m>A</m>, if a 0 is
+        read, we stay at <m>A</m> and if a 1 is read, we move to <m>B</m>. Each possibility is
+        accounted for. When in state <m>B</m>, if a 0 is read, we stay at <m>B</m> and if a 1 is
+        read, we move to <m>A</m>. Since there is a definied path for each potential character at
+        each state, then the FA is deterministic, or a DFA. </p>
+      <p>
+        Looking at this in chart form is a helpful way to check for determinism. As there is an
+        entry
+        for each potential character
+        at each state, the FA is deterministic.
+      </p>
+      <sidebyside>
+        <table xml:id="DFADeterminismTable">
+          <title>Determinism Chart for <m>M_1</m></title>
+          <tabular>
+            <row header="yes">
+              <cell right="medium" bottom="minor"> </cell>
+              <cell bottom="minor">1</cell>
+              <cell bottom="minor">0</cell>
+            </row>
+            <row header="no">
+              <cell right="medium">
+                <m>A</m>
+              </cell>
+              <cell>
+                <m>A</m>
+              </cell>
+              <cell>
+                <m>B</m>
+              </cell>
+            </row>
+            <row header="no">
+              <cell right="medium">
+                <m>B</m>
+              </cell>
+              <cell>
+                <m>B</m>
+              </cell>
+              <cell>
+                <m>A</m>
+              </cell>
+            </row>
+          </tabular>
+        </table>
+      </sidebyside>
+    </introduction>
+
+    <subsection>
+      <!-- todo: Should determinism come before finite automata and the explinantion of states? I
+      feel like 
       explaining vocabularly, examples of languages in CS terms students would know at this point, and 
       some sort of example of how to think about these concepts could be useful to provide background
-      before going into states and automata and determinism. I am also a little confused as to how to explain
+      before going into states and automata and determinism. I am also a little confused as to how to
+      explain
       determinism at this point. -->
-        <title>Deterministic</title> 
-        <p>
-        <idx>Determinisim</idx> <term>Determinisim</term> means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.
-        </p>
-      </subsection>
-   </section>
-   <section>
-      <title> Strategies for Understanding DFAs</title>
-   </section>
-   <section>
-      <title> Strategies for Drawing DFAs </title>
-   </section>
+      <title>Deterministic</title>
+      <p>
+        <idx>Determinisim</idx> <term>Determinisim</term> means that all transitions of state are
+        unique and completely defined. For example, when we are in a specific state, if there are
+        two possible exits for that state when a character is read, that would not be deterministic
+        because after reading that input symbol, our machine would need to be in two states. Thus,
+        our machine would either need to 'make a guess' as to which state is the one that will lead
+        it to success or it must execute two paths in parallel. Later we will see that we can use
+        empty string transitions to freely jump to another state. </p>
+    </subsection>
+  </section>
+  <section>
+    <title> Strategies for Understanding DFAs</title>
+    <p> TODO </p>
+  </section>
+  <section>
+    <title> Strategies for Drawing DFAs </title>
+    <p> TODO </p>
+  </section>
 
   <exercises xml:id="ch-dfas-exercises">
     <exercise>
       <statement>
-        <p>
-          What is the language of <m>M_3</m>?
-        </p>
-         <image source="../generated/latex-image/FAExM3.svg" width="50%">
+        <p> What is the language of <m>M_3</m>? </p>
+        <image source="../generated/latex-image/FAExM3.svg" width="50%">
         </image>
       </statement>
-      <!--TODO: I choose to include the extra example and such here as it was included in the notes, we may want to shift
-      its placement around at some point. I think it has real value as a chapter example or as a challenge problem.-->
+      <!--TODO:
+      I choose to include the extra example and such here as it was included in the notes, we may
+      want to shift
+      its placement around at some point. I think it has real value as a chapter example or as a
+      challenge problem.-->
       <hint>
-        <p>
-          Come up with ten strings in the language of <m>M_3</m>. 
-          <table>
-            <tabular>
-              <row><cell right="minor">1</cell><cell>0</cell></row>
-              <row><cell right="minor">2</cell><cell>101101</cell></row>
-              <row><cell right="minor">3</cell><cell><m>\epsilon</m></cell></row>
-              <row><cell right="minor">4</cell><cell>010101</cell></row>
-              <row><cell right="minor">5</cell><cell>0000</cell></row>
-              <row><cell right="minor">6</cell><cell>011</cell></row>
-              <row><cell right="minor">7</cell><cell>10010</cell></row>
-              <row><cell right="minor">8</cell><cell>111001</cell></row>
-              <row><cell right="minor">9</cell><cell>1001</cell></row>
-              <row><cell right="minor">10</cell><cell>0110</cell></row>
-            </tabular>
-          </table>
-        </p>
-        <p>
-          Come up with ten strings NOT in the language of <m>M_3</m>. 
-          <table>
-            <tabular>
-              <row><cell right="minor">1</cell><cell>1</cell></row>
-              <row><cell right="minor">2</cell><cell>100</cell></row>
-              <row><cell right="minor">3</cell><cell>10</cell></row>
-              <row><cell right="minor">4</cell><cell>10001</cell></row>
-              <row><cell right="minor">5</cell><cell>1011</cell></row>
-              <row><cell right="minor">6</cell><cell>11111</cell></row>
-              <row><cell right="minor">7</cell><cell>101</cell></row>
-              <row><cell right="minor">8</cell><cell>1101</cell></row>
-              <row><cell right="minor">9</cell><cell>10110</cell></row>
-              <row><cell right="minor">10</cell><cell>001</cell></row>
-            </tabular>
-          </table>
-        </p>
+        <p> Come up with ten strings in the language of <m>M_3</m>.</p>
+        <table>
+          <title>TODO</title>
+
+
+          <tabular>
+            <row>
+              <cell right="minor">1</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell right="minor">2</cell>
+              <cell>101101</cell>
+            </row>
+            <row>
+              <cell right="minor">3</cell>
+              <cell>
+                <m>\epsilon</m>
+              </cell>
+            </row>
+            <row>
+              <cell right="minor">4</cell>
+              <cell>010101</cell>
+            </row>
+            <row>
+              <cell right="minor">5</cell>
+              <cell>0000</cell>
+            </row>
+            <row>
+              <cell right="minor">6</cell>
+              <cell>011</cell>
+            </row>
+            <row>
+              <cell right="minor">7</cell>
+              <cell>10010</cell>
+            </row>
+            <row>
+              <cell right="minor">8</cell>
+              <cell>111001</cell>
+            </row>
+            <row>
+              <cell right="minor">9</cell>
+              <cell>1001</cell>
+            </row>
+            <row>
+              <cell right="minor">10</cell>
+              <cell>0110</cell>
+            </row>
+          </tabular>
+        </table>
+
+        <p> Come up with ten strings NOT in the language of <m>M_3</m>. </p>
+        <table>
+          <title>TODO</title>
+          <tabular>
+            <row>
+              <cell right="minor">1</cell>
+              <cell>1</cell>
+            </row>
+            <row>
+              <cell right="minor">2</cell>
+              <cell>100</cell>
+            </row>
+            <row>
+              <cell right="minor">3</cell>
+              <cell>10</cell>
+            </row>
+            <row>
+              <cell right="minor">4</cell>
+              <cell>10001</cell>
+            </row>
+            <row>
+              <cell right="minor">5</cell>
+              <cell>1011</cell>
+            </row>
+            <row>
+              <cell right="minor">6</cell>
+              <cell>11111</cell>
+            </row>
+            <row>
+              <cell right="minor">7</cell>
+              <cell>101</cell>
+            </row>
+            <row>
+              <cell right="minor">8</cell>
+              <cell>1101</cell>
+            </row>
+            <row>
+              <cell right="minor">9</cell>
+              <cell>10110</cell>
+            </row>
+            <row>
+              <cell right="minor">10</cell>
+              <cell>001</cell>
+            </row>
+          </tabular>
+        </table>
+
         <p>
           Do you see any patterns?
         </p>
@@ -204,38 +421,79 @@
         </p>
       </answer>
       <solution>
-        <p>
-          It is helpful to look at patterns beyond those that are obvious and to consider ones that require 
-          a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal
-          number is included.
-          <table>
-            <tabular>
-              <row><cell>1</cell><cell>0</cell><cell>(0)</cell></row>
-              <row><cell>2</cell><cell>101101</cell><cell>(45)</cell></row>
-              <row><cell>3</cell><cell><m>\epsilon</m></cell><cell>_</cell></row>
-              <row><cell>4</cell><cell>010101</cell><cell>(21)</cell></row>
-              <row><cell>5</cell><cell>0000</cell><cell>(0)</cell></row>
-              <row><cell>6</cell><cell>011</cell><cell>(3)</cell></row>
-              <row><cell>7</cell><cell>10010</cell><cell>(18)</cell></row>
-              <row><cell>8</cell><cell>111001</cell><cell>(57)</cell></row>
-              <row><cell>9</cell><cell>1001</cell><cell>(9)</cell></row>
-              <row><cell>10</cell><cell>0110</cell><cell>(6)</cell></row>
-            </tabular>
-          </table>
-        </p>
+        <p> It is helpful to look at patterns beyond those that are obvious and to consider ones
+          that require a certain level of interpretation. Consider the test string lists from the
+          hint, but this time the decimal number is included.</p>
+        <table>
+          <title> TODO </title>
+          <tabular>
+            <row>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>(0)</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>101101</cell>
+              <cell>(45)</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>
+                <m>\epsilon</m>
+              </cell>
+              <cell>_</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>010101</cell>
+              <cell>(21)</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>0000</cell>
+              <cell>(0)</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>011</cell>
+              <cell>(3)</cell>
+            </row>
+            <row>
+              <cell>7</cell>
+              <cell>10010</cell>
+              <cell>(18)</cell>
+            </row>
+            <row>
+              <cell>8</cell>
+              <cell>111001</cell>
+              <cell>(57)</cell>
+            </row>
+            <row>
+              <cell>9</cell>
+              <cell>1001</cell>
+              <cell>(9)</cell>
+            </row>
+            <row>
+              <cell>10</cell>
+              <cell>0110</cell>
+              <cell>(6)</cell>
+            </row>
+          </tabular>
+        </table>
+
       </solution>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          What is the language of <m>M_4</m>?
-        </p>
-         <image source="../generated/latex-image/FAExM4.svg" width="50%">
+        <p> What is the language of <m>M_4</m>? </p>
+        <image source="../generated/latex-image/FAExM4.svg" width="50%">
         </image>
       </statement>
       <hint>
         <p>
-          Come up with a few test strings. See any patterns? Focus on the plain language description.
+          Come up with a few test strings. See any patterns? Focus on the plain language
+          description.
         </p>
       </hint>
       <answer>
@@ -246,33 +504,35 @@
       <solution>
         <p>
           <ul>
-            <li>A great first step is to walk through the shortest path to the accept state. This would be 01.</li>
-            <li>It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. 
-                For <m>M_5</m>, that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have 
-                any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for <m>M_5</m> to accept.</li>
-            <li>Another note, the string <q>01</q> must be included as a 1 must come after a 0 to get to the accept state <m>C</m>.</li>
+            <li>A great first step is to walk through the shortest path to the accept state. This
+              would be 01.</li>
+            <li>It is also helpful to think about the longest possible path to the accept state or
+              the longest string that would still be accepted. For <m>M_5</m>, that is any number of
+              1s, followed by at least one 0, followed by at least one 1, and can have any amount of
+              0s and 1s after that. At least one 0 and at least one 1 is required for <m>M_5</m> to
+              accept.</li>
+            <li>Another note, the string <q>01</q> must be included as a 1 must come after a 0 to
+              get to the accept state <m>C</m>.</li>
           </ul>
         </p>
       </solution>
     </exercise>
     <exercise>
       <statement>
-        <p>
-        Build a machine for language 5 (<m>L_5</m>).
-        <me>L_5 = \mbox{any number of }01 \mbox{ repeated}</me>
-        <!--TODO: Is it called a drop state? I would like to add in the drop state before this point.-->
+        <p> Build a machine for language 5 (<m>L_5</m>). <me>L_5 = \mbox{any number of }01 \mbox{
+          repeated}</me>
+          <!--TODO:
+          Is it called a drop state? I would like to add in the drop state before this point.-->
         </p>
       </statement>
       <answer>
-          <image source="../generated/latex-image/FAExM5.svg" width="50%">
+        <image source="../generated/latex-image/FAExM5.svg" width="50%">
         </image>
-       </answer>
-      </exercise>
+      </answer>
+    </exercise>
     <exercise>
       <statement>
-      <p>
-        What is the language of <m>M_6</m>?
-      </p>
+        <p> What is the language of <m>M_6</m>? </p>
         <image source="../generated/latex-image/FAExM6.svg" width="50%">
         </image>
       </statement>
@@ -283,17 +543,17 @@
       </hint>
       <answer>
         <p>
-          <me>L(M_7) = \mbox{any string that starts with } ba \mbox{ followed by any amount of } a \mbox{s and } b \mbox{s}</me>
+          <me>L(M_7) = \mbox{any string that starts with } ba \mbox{ followed by any amount of } a
+            \mbox{s and } b \mbox{s}</me>
         </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Use the diagram below to create a DFA that can track mod 7 for any binary number. 
-          <image source="../generated/latex-image/DFA-M26.svg" width="50%">
+        <p> Use the diagram below to create a DFA that can track mod 7 for any binary number. </p>
+        <image
+          source="../generated/latex-image/DFA-M26.svg" width="50%">
         </image>
-        </p>
       </statement>
     </exercise>
     <exercise>
@@ -306,14 +566,15 @@
       </statement>
       <answer>
         <p>
-          <m>L = \mbox{\{any string that begins with a } b \mbox{ and is followed by one or more } a \mbox{s and no more } b\mbox{s \}}</m>
+          <m>L = \mbox{\{any string that begins with a } b \mbox{ and is followed by one or more } a
+            \mbox{s and no more } b\mbox{s \}}</m>
         </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Translate this FA into a complete English description. 
+          Translate this FA into a complete English description.
         </p>
         <image source="../generated/latex-image/FAExM29.svg" width="50%">
         </image>
@@ -326,17 +587,17 @@
         </p>
         <image source="../generated/latex-image/FAExM32.svg" width="50%">
         </image>
-        
+
       </statement>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Translate this FA into a complete English description. 
+          Translate this FA into a complete English description.
         </p>
         <image source="../generated/latex-image/FAEx38.svg" width="50%">
         </image>
-        
+
       </statement>
     </exercise>
     <exercise>
@@ -346,12 +607,12 @@
         </p>
         <image source="../generated/latex-image/FAExM41.svg" width="50%">
         </image>
-        
+
       </statement>
     </exercise>
   </exercises>
 
-    <!--
+  <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
   <xi:include href=".sec-emp-conc.ptx" /> 

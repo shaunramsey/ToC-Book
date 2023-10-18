@@ -2,4 +2,31 @@
 <chapter xml:id="generated-images" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Newly Generated Images </title>
   <p> Welcome to Newly Generated Images </p>
+  <figure xml:id="fig-tikz2">
+    <caption>A figure generated with TikZ in <latex /></caption>
+    <image width="15%" xml:id="poset2">
+
+      <latex-image>
+        \begin{tikzpicture}
+        \draw (0,0) -- (0,1);
+        \draw (1,0) -- (1,1) -- (1,2) -- (1,3);
+        \draw (0,0) -- (1,2);
+        \draw (0,1) -- (1,0);
+        \draw [fill] (0,0) circle [radius=0.1];
+        \draw [fill] (0,1) circle [radius=0.1];
+        \draw [fill] (1,0) circle [radius=0.1];
+        \draw [fill] (1,1) circle [radius=0.1];
+        \draw [fill] (1,2) circle [radius=0.1];
+        \draw [fill] (1,3) circle [radius=0.1];
+        \node [left] at (0,0) {$x$};
+        \node [left] at (0,1) {$b$};
+        \node [right] at (1,0) {$a$};
+        \node [right] at (1,1) {$y$};
+        \node [right] at (1,2) {$c$};
+        \node [right] at (1,3) {$d$};
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+
 </chapter>

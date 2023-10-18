@@ -6,33 +6,7 @@
   part-re -->
   <!--TODO:
   ch-dfas -->
-  <image xml:id="FAExM1" width="50%">
-    <latex-image>
-      \begin{tikzpicture}[scale=0.2]
-      \tikzstyle{every node}+=[inner sep=0pt]
-      \draw [black] (27,-15.7) circle (3);
-      \draw (27,-15.7) node {$A$};
-      \draw [black] (47.5,-15.7) circle (3);
-      \draw (47.5,-15.7) node {$B$};
-      \draw [black] (47.5,-15.7) circle (2.4);
-      \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
-      \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
-      \draw (37.25,-12.89) node [above] {$1$};
-      \draw [black] (44.703,-16.781) arc (-72.36319:-107.63681:24.6);
-      \fill [black] (29.8,-16.78) -- (30.41,-17.5) -- (30.71,-16.55);
-      \draw (37.25,-18.44) node [below] {$1$};
-      \draw [black] (49.03,-13.133) arc (176.937:-111.063:2.25);
-      \draw (53.78,-10.71) node [right] {$0$};
-      \fill [black] (50.47,-15.35) -- (51.24,-15.89) -- (51.29,-14.9);
-      \draw [black] (24.885,-17.811) arc (-17.31033:-305.31033:2.25);
-      \draw (19.84,-18.58) node [left] {$0$};
-      \fill [black] (24.04,-15.31) -- (23.42,-14.59) -- (23.13,-15.55);
-      \draw [black] (22.2,-9.2) -- (25.22,-13.29);
-      \draw (20.39,-8.7) node [above] {$M_1$};
-      \fill [black] (25.22,-13.29) -- (25.14,-12.35) -- (24.34,-12.94);
-      \end{tikzpicture}
-    </latex-image>
-  </image>
+ 
 
   <image xml:id="FAExM2" width="50%">
     <latex-image>
