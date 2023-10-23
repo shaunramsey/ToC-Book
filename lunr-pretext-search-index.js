@@ -2305,15 +2305,6 @@ var ptx_lunr_docs = [
   "body": " Selected Solutions  "
 },
 {
-  "id": "appendix-1",
-  "level": "1",
-  "url": "appendix-1.html",
-  "type": "Appendix",
-  "number": "C",
-  "title": "List of Symbols",
-  "body": " List of Symbols   "
-},
-{
   "id": "index-1",
   "level": "1",
   "url": "index-1.html",
