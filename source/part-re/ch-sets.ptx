@@ -55,8 +55,8 @@
         \{a\}</m> can be a subset of any other set that contains <m>
         a</m>. <m>
         \{a,b\}</m>, and even <m>\{a,b,c\}</m> are all subsets of <m>\{a,b,c\}</m>. In fact, <m>
-      \{a,b,c\}</m> has quite a few subsets. Can you list all 8? So, a set, <m>A</m> is a subset of
-      a set, <m>B</m> when all the elements in <m>A</m> are elements in <m>B</m>. We will write <m>A
+      \{a,b,c\}</m> has quite a few subsets. Can you list all 8? So, a set, <m>A</m>, is a subset of
+      a set, <m>B</m>, when all the elements in <m>A</m> are elements in <m>B</m>. We will write <m>A
       \subseteq B</m> to mean that <m>A</m> is a subset of <m>B</m>. In this case, <m>A</m> can have
       all the things of <m>B</m>, some of the things, or even none of the things of B. In the latter
       case if <m>A \subseteq B</m> and A has no elements of B in it, then A would also be <m>
@@ -78,32 +78,37 @@
       is a set that contains all the subsets of <m>C</m>. Let's list the power set of <m>C</m>,
       denoted <m>
         \mathcal{P}(C)</m>. <me>
-        \mathcal{P}(C) = \{\emptyset,\{0\},\{1\},\{2\},\{0,1\},\{0,2\},\{1,2\},\{0,1,2\}\}</me>
+        \mathcal{P}(C) = \{\emptyset,\{0\},\{1\},\{2\},\{0,1\},\{0,2\},\{1,2\},\{0,1,2\}\}</me> If <m>L
+      = \{k,i,d\}</m>, what is <m>\mathcal{P}(L)</m>? </p>
 
-    </p>
+    <p> The <term>union</term> of two sets <idx>union of sets</idx> is a new set with all the things
+      in the other sets. Tpyically, the symbol <m>\cup</m> is used like a binary operator like <m>A
+      \cup B</m> to denote the union of two sets. Remember that sets do not care about order and an
+      item can only appear once in a set. As an example, let's take <m>A = \{a,b,c\} </m>and <m>B =
+      \{c,d,e\}</m>. Their union would be: <me>A \cup B = \{a,b,c,d,e\}</me>. When would the union
+      of two sets be <m>\emptyset</m>? </p>
+
+
     <p> The <term>intersection</term><idx>intersection of sets</idx> of two sets is a new set that
       contains all the things in common from the two sets. Typically, the symbol <m>\cap</m> is used
       as a binary operator like: <m>A \cap B</m>. If a thing is in both sets, it is in the
       intersection of the two sets. It is possible for the intersection to be empty <m>\emptyset</m>
       or to contain all of one set (when one set is the subset of another). Let's do an example.
-      Let's take set <me>A = \{a,b,y,ab,ba,by,ay,bay,abba,baby\}</me> and set <me> B = \{w
+      Let's take set <me>D = \{a,b,y,ab,ba,by,ay,bay,abba,baby\}</me> and set <me> E = \{w
         | w\
         \text{is any English word}\} </me>. Their intersection would have to be both an English word
-      and one of the words inside the set <m>A</m>. Assuming we know which words are actually
-      English words the interseection would be: <me>A \cdown B = \{a,by,bay,baby\}</me>. </p>
+      and one of the words inside the set <m>D</m>. Assuming we know which words are actually
+      English words the intersection would be: <me>D \cap E = \{a,by,bay,baby\}</me>. As food for
+      thought, when would the intersection of two sets be <m>\emptyset</m>? </p>
 
 
-    <p> The <term>union</term> of two sets <idx>union of sets</idx>
-    </p>
-
-    <p>The only way to get comfortable with these two types of notations and these new terms is by
-      using them. So, feel free to think of this section as a brief reference on both enumeration
-      notation and set-builder notation. Come back to read about power sets, intersection and union
-      when you need them. After you tackle these notations and terms a couple times by yourself, you
-      will not need this section as a reference. Keep this section handy as a reference to remind
-      yourself what these symbols and terms mean, until you do not need them anymore. Anytime you
-      see <m>\{ \}</m> you should be thinking about a collection of things and you can come back
-      here if you need it. </p>
+    <p>The only way to get comfortable with these new terms and operators is by using them. So, feel
+      free to think of this section as a brief reference on notation, definitions and operators.
+      Come back to read about power sets, intersection and union when you need them. Keep this
+      section handy as a reference to remind yourself what these symbols and terms mean, until you
+      do not need them anymore. Anytime you see <m>\{ \}</m> you should be thinking about a
+      collection of things and you can come back here if you need a refresher. We will use them
+      quite readily.</p>
 
   </section>
 
