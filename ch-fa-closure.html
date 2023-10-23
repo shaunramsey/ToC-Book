@@ -70,7 +70,10 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -132,84 +135,88 @@ window.MathJax = {
 <div class="toc-title-box"><a href="part-re.html" class="internal"><span class="codenumber">I</span> <span class="title">REX and FAs</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-dfas.html" class="internal"><span class="codenumber">1</span> <span class="title">Determinsitic Finite Automata</span></a></div>
+<div class="toc-title-box"><a href="ch-sets.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-sets.html#Sets" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-sets.html#ch-sets-exercises" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dfas.html" class="internal"><span class="codenumber">2</span> <span class="title">Determinsitic Finite Automata</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-dfas.html#Determinism" class="internal"><span class="codenumber">1.1</span> <span class="title">Sets</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-1" class="internal"><span class="title">Set Review</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-2" class="internal"><span class="title">Machines</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="ch-dfas.html#Determinism" class="internal"><span class="codenumber">2.1</span> <span class="title">Deterministic Machines</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-1" class="internal"><span class="title">Machines</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#FiniteAutomata" class="internal"><span class="codenumber">1.2</span> <span class="title">Finite Automata (FA)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#FiniteAutomata" class="internal"><span class="codenumber">2.2</span> <span class="title">Finite Automata (FA)</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-dfas.html#DFAs" class="internal"><span class="codenumber">1.3</span> <span class="title">Deterministic Finite Automata (DFA)</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-3" class="internal"><span class="title">Deterministic</span></a></div></li></ul>
+<div class="toc-title-box"><a href="ch-dfas.html#DFAs" class="internal"><span class="codenumber">2.3</span> <span class="title">Deterministic Finite Automata (DFA)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-dfas.html#subsection-2" class="internal"><span class="title">Deterministic</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-4" class="internal"><span class="codenumber">1.4</span> <span class="title">Strategies for Understanding DFAs</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-5" class="internal"><span class="codenumber">1.5</span> <span class="title">Strategies for Drawing DFAs</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-dfas.html#ch-dfas-exercises" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-5" class="internal"><span class="codenumber">2.4</span> <span class="title">Strategies for Understanding DFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-dfas.html#section-6" class="internal"><span class="codenumber">2.5</span> <span class="title">Strategies for Drawing DFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-dfas.html#ch-dfas-exercises" class="internal"><span class="codenumber">2.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-nfas.html" class="internal"><span class="codenumber">2</span> <span class="title">Non-determinsitic Finite Automata</span></a></div>
+<div class="toc-title-box"><a href="ch-nfas.html" class="internal"><span class="codenumber">3</span> <span class="title">Non-determinsitic Finite Automata</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#NFAs" class="internal"><span class="codenumber">2.1</span> <span class="title">Non-Deterministic Finite Automata (NFA)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#Parallelism" class="internal"><span class="codenumber">2.2</span> <span class="title">Parallelism</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#PowerSet" class="internal"><span class="codenumber">2.3</span> <span class="title">The Power Set</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#StrengthsofNFAs" class="internal"><span class="codenumber">2.4</span> <span class="title">Strengths of NFAs</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfas.html#exercises-2" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#NFAs" class="internal"><span class="codenumber">3.1</span> <span class="title">Non-Deterministic Finite Automata (NFA)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#Parallelism" class="internal"><span class="codenumber">3.2</span> <span class="title">Parallelism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#PowerSet" class="internal"><span class="codenumber">3.3</span> <span class="title">The Power Set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfas.html#StrengthsofNFAs" class="internal"><span class="codenumber">3.4</span> <span class="title">Strengths of NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfas.html#exercises-3" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-nfa-to-dfa.html" class="internal"><span class="codenumber">3</span> <span class="title">NFA and DFA relationships</span></a></div>
+<div class="toc-title-box"><a href="ch-nfa-to-dfa.html" class="internal"><span class="codenumber">4</span> <span class="title">NFA and DFA relationships</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#sec-FiniteNumberofStates" class="internal"><span class="codenumber">3.1</span> <span class="title">Finite Number of States</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#exercises-3" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#sec-FiniteNumberofStates" class="internal"><span class="codenumber">4.1</span> <span class="title">Finite Number of States</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-nfa-to-dfa.html#exercises-4" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-rex.html" class="internal"><span class="codenumber">4</span> <span class="title">Regular Expressions</span></a></div>
+<div class="toc-title-box"><a href="ch-rex.html" class="internal"><span class="codenumber">5</span> <span class="title">Regular Expressions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-RegularExpressions" class="internal"><span class="codenumber">4.1</span> <span class="title">Regular Expressions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-REsInNFAs" class="internal"><span class="codenumber">4.2</span> <span class="title">Regular Expressions in NFAs</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex.html#exercises-REX" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-RegularExpressions" class="internal"><span class="codenumber">5.1</span> <span class="title">Regular Expressions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex.html#sec-REsInNFAs" class="internal"><span class="codenumber">5.2</span> <span class="title">Regular Expressions in NFAs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex.html#exercises-REX" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-rex-to-nfa.html" class="internal"><span class="codenumber">5</span> <span class="title">Converting REX to NFAs</span></a></div>
+<div class="toc-title-box"><a href="ch-rex-to-nfa.html" class="internal"><span class="codenumber">6</span> <span class="title">Converting REX to NFAs</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal"><span class="codenumber">5.1</span> <span class="title">Converting Regular Expressions to NFAs</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal"><span class="codenumber">5.2</span> <span class="title">Building NFAs from REs</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#exercises-5" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-ConvREsToNFAs" class="internal"><span class="codenumber">6.1</span> <span class="title">Converting Regular Expressions to NFAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#sec-makingNFAs" class="internal"><span class="codenumber">6.2</span> <span class="title">Building NFAs from REs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-rex-to-nfa.html#exercises-6" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-fa-to-rex.html" class="internal"><span class="codenumber">6</span> <span class="title">Using Rips to Convert FAs to REX</span></a></div>
+<div class="toc-title-box"><a href="ch-fa-to-rex.html" class="internal"><span class="codenumber">7</span> <span class="title">Using Rips to Convert FAs to REX</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-to-rex.html#sec-howtorip" class="internal"><span class="codenumber">6.1</span> <span class="title">Rips</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-to-rex.html#exercises-6" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-to-rex.html#sec-howtorip" class="internal"><span class="codenumber">7.1</span> <span class="title">Rips</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-to-rex.html#exercises-7" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter active">
-<div class="toc-title-box"><a href="ch-fa-closure.html" class="internal"><span class="codenumber">7</span> <span class="title">Closure and Regular Languages</span></a></div>
+<div class="toc-title-box"><a href="ch-fa-closure.html" class="internal"><span class="codenumber">8</span> <span class="title">Closure and Regular Languages</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-closureintro" class="internal"><span class="codenumber">7.1</span> <span class="title">Closure</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-howtoRLClosureProof" class="internal"><span class="codenumber">7.2</span> <span class="title">How to Write a Closure Proof</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-closureintro" class="internal"><span class="codenumber">8.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-fa-closure.html#sec-howtoRLClosureProof" class="internal"><span class="codenumber">8.2</span> <span class="title">How to Write a Closure Proof</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-fa-closure.html#sec-constructionproofs" class="internal"><span class="codenumber">7.3</span> <span class="title">Closure Proven through Construction</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-closure.html#exercises-7" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="ch-fa-closure.html#sec-constructionproofs" class="internal"><span class="codenumber">8.3</span> <span class="title">Closure Proven through Construction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-fa-closure.html#exercises-8" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pumping-lemma-regular.html" class="internal"><span class="codenumber">8</span> <span class="title">Pumping Lemma for Regular Languages</span></a></div>
+<div class="toc-title-box"><a href="ch-pumping-lemma-regular.html" class="internal"><span class="codenumber">9</span> <span class="title">Pumping Lemma for Regular Languages</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-pumpinglemaintro" class="internal"><span class="codenumber">8.1</span> <span class="title">Introduciton to the Pumping Lemma for Regular Languages</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#section-20" class="internal"><span class="codenumber">8.2</span> <span class="title">Spotting Loops and Repetition in FAs</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-RLpumpinglemma" class="internal"><span class="codenumber">8.3</span> <span class="title">The Pumping Lemma for Regular Languages</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-PLRLFunLangs" class="internal"><span class="codenumber">8.4</span> <span class="title">Additional Non-Regular Languages for Proving</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#exercises-8" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-pumpinglemaintro" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduciton to the Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#section-21" class="internal"><span class="codenumber">9.2</span> <span class="title">Spotting Loops and Repetition in FAs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-RLpumpinglemma" class="internal"><span class="codenumber">9.3</span> <span class="title">The Pumping Lemma for Regular Languages</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#sec-PLRLFunLangs" class="internal"><span class="codenumber">9.4</span> <span class="title">Additional Non-Regular Languages for Proving</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-regular.html#exercises-9" class="internal"><span class="codenumber">9.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -218,55 +225,55 @@ window.MathJax = {
 <div class="toc-title-box"><a href="part-cf.html" class="internal"><span class="codenumber">II</span> <span class="title">Context Free Languages</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-cfgs.html" class="internal"><span class="codenumber">9</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<div class="toc-title-box"><a href="ch-cfgs.html" class="internal"><span class="codenumber">10</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-cfgs.html#CFGs" class="internal"><span class="codenumber">9.1</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
+<div class="toc-title-box"><a href="ch-cfgs.html#CFGs" class="internal"><span class="codenumber">10.1</span> <span class="title">Context Free Grammars (CFGs)</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-RLReview" class="internal"><span class="title">Regular Languages Review</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-CFGintro" class="internal"><span class="title">Basics of Context Free Grammars</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-rexToCFG" class="internal"><span class="title">Creating CFGs from Regular Expressions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-parsetrees" class="internal"><span class="codenumber">9.2</span> <span class="title">Parse Trees</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#sec-Ambiguity" class="internal"><span class="codenumber">9.3</span> <span class="title">Ambiguity</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cfgs.html#ch-cfgs-exercises" class="internal"><span class="codenumber">9.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#subsec-parsetrees" class="internal"><span class="codenumber">10.2</span> <span class="title">Parse Trees</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cfgs.html#sec-Ambiguity" class="internal"><span class="codenumber">10.3</span> <span class="title">Ambiguity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cfgs.html#ch-cfgs-exercises" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pdas.html" class="internal"><span class="codenumber">10</span> <span class="title">Pushdown Automata</span></a></div>
+<div class="toc-title-box"><a href="ch-pdas.html" class="internal"><span class="codenumber">11</span> <span class="title">Pushdown Automata</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pdas.html#sec-PDAintro" class="internal"><span class="codenumber">10.1</span> <span class="title">Introduction to Pushdown Automatas</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pdas.html#exercises-10" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pdas.html#sec-PDAintro" class="internal"><span class="codenumber">11.1</span> <span class="title">Introduction to Pushdown Automatas</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pdas.html#exercises-11" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-cnf.html" class="internal"><span class="codenumber">11</span> <span class="title">Chomsky Normal Form</span></a></div>
+<div class="toc-title-box"><a href="ch-cnf.html" class="internal"><span class="codenumber">12</span> <span class="title">Chomsky Normal Form</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnf.html#sec-NormalForms" class="internal"><span class="codenumber">11.1</span> <span class="title">Introduction to Normal Forms</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnf.html#sec-NormalForms" class="internal"><span class="codenumber">12.1</span> <span class="title">Introduction to Normal Forms</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-cnf.html#sec-ChompskyNormalForm" class="internal"><span class="codenumber">11.2</span> <span class="title">Chompsky Normal Form</span></a></div>
+<div class="toc-title-box"><a href="ch-cnf.html#sec-ChompskyNormalForm" class="internal"><span class="codenumber">12.2</span> <span class="title">Chompsky Normal Form</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-CNFRules" class="internal"><span class="title">Rules of Chompsky Normal Form</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-cnf.html#subsec-createCNF" class="internal"><span class="title">Steps to Putting a CFG in CNF</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnf.html#exercises-11" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnf.html#exercises-12" class="internal"><span class="codenumber">12.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-cnl.html" class="internal"><span class="codenumber">12</span> <span class="title">Context Free Languages</span></a></div>
+<div class="toc-title-box"><a href="ch-cnl.html" class="internal"><span class="codenumber">13</span> <span class="title">Context Free Languages</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnl.html#sec-cfls" class="internal"><span class="codenumber">12.1</span> <span class="title">Introduction to Context Free Languages</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnl.html#exercises-12" class="internal"><span class="codenumber">12.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-cnl.html#sec-cfls" class="internal"><span class="codenumber">13.1</span> <span class="title">Introduction to Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-cnl.html#exercises-13" class="internal"><span class="codenumber">13.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html" class="internal"><span class="codenumber">13</span> <span class="title">Pumping Lemma for Context Free Languages</span></a></div>
+<div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html" class="internal"><span class="codenumber">14</span> <span class="title">Pumping Lemma for Context Free Languages</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-parseTreeRevisit" class="internal"><span class="codenumber">13.1</span> <span class="title">Revisiting Parse Trees and Spotting Loops</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-plForCFLs" class="internal"><span class="codenumber">13.2</span> <span class="title">The Pumping Lemma for Context Free Languages</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#exercises-13" class="internal"><span class="codenumber">13.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-parseTreeRevisit" class="internal"><span class="codenumber">14.1</span> <span class="title">Revisiting Parse Trees and Spotting Loops</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#sec-plForCFLs" class="internal"><span class="codenumber">14.2</span> <span class="title">The Pumping Lemma for Context Free Languages</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-pumping-lemma-context-free.html#exercises-14" class="internal"><span class="codenumber">14.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -275,57 +282,57 @@ window.MathJax = {
 <div class="toc-title-box"><a href="part-tm.html" class="internal"><span class="codenumber">III</span> <span class="title">Turing Machines</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-tms.html" class="internal"><span class="codenumber">14</span> <span class="title">Turing Machine Basics</span></a></div>
+<div class="toc-title-box"><a href="ch-tms.html" class="internal"><span class="codenumber">15</span> <span class="title">Turing Machine Basics</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tms.html#sec-tm-background" class="internal"><span class="codenumber">14.1</span> <span class="title">Introduction to Turing Machines</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tms.html#exercises-14" class="internal"><span class="codenumber">14.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tms.html#sec-tm-background" class="internal"><span class="codenumber">15.1</span> <span class="title">Introduction to Turing Machines</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tms.html#exercises-15" class="internal"><span class="codenumber">15.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-tm-classifications.html" class="internal"><span class="codenumber">15</span> <span class="title">Classifications of Turing Machines</span></a></div>
+<div class="toc-title-box"><a href="ch-tm-classifications.html" class="internal"><span class="codenumber">16</span> <span class="title">Classifications of Turing Machines</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-earlyTMs" class="internal"><span class="codenumber">15.1</span> <span class="title">Early Turing Machines</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-goldbach" class="internal"><span class="codenumber">15.2</span> <span class="title">Goldbach’s Conjecture</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-earlyTMs" class="internal"><span class="codenumber">16.1</span> <span class="title">Early Turing Machines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-tm-classifications.html#sec-goldbach" class="internal"><span class="codenumber">16.2</span> <span class="title">Goldbach’s Conjecture</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-tm-classifications.html#sec-TMVarieties" class="internal"><span class="codenumber">15.3</span> <span class="title">Varieties of Turing Machines</span></a></div>
+<div class="toc-title-box"><a href="ch-tm-classifications.html#sec-TMVarieties" class="internal"><span class="codenumber">16.3</span> <span class="title">Varieties of Turing Machines</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsubsec-TMRecognizable" class="internal"><span class="title">Recognizable Turing Machines</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-tm-classifications.html#subsec-TMDecidable" class="internal"><span class="title">Decideable Turing Machines</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tm-classifications.html#exercises-15" class="internal"><span class="codenumber">15.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-tm-classifications.html#exercises-16" class="internal"><span class="codenumber">16.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-diagonalization.html" class="internal"><span class="codenumber">16</span> <span class="title">Diagonalization</span></a></div>
+<div class="toc-title-box"><a href="ch-diagonalization.html" class="internal"><span class="codenumber">17</span> <span class="title">Diagonalization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-hiblertshotel" class="internal"><span class="codenumber">16.1</span> <span class="title">Hilbert’s Hotel</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-introtodiagonalization" class="internal"><span class="codenumber">16.2</span> <span class="title">Introduction to Diagonalization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-hiblertshotel" class="internal"><span class="codenumber">17.1</span> <span class="title">Hilbert’s Hotel</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-introtodiagonalization" class="internal"><span class="codenumber">17.2</span> <span class="title">Introduction to Diagonalization</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ch-diagonalization.html#sec-ExTM" class="internal"><span class="codenumber">16.3</span> <span class="title">Examples of Turing Machines</span></a></div>
+<div class="toc-title-box"><a href="ch-diagonalization.html#sec-ExTM" class="internal"><span class="codenumber">17.3</span> <span class="title">Examples of Turing Machines</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-ATM" class="internal"><span class="title">Acceptance Turing Machine</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-diagonalization.html#subsec-otherTM" class="internal"><span class="title">Other Turing Machines</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-halting" class="internal"><span class="codenumber">16.4</span> <span class="title">The Halting Problem</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-diagonalization.html#exercises-16" class="internal"><span class="codenumber">16.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-diagonalization.html#sec-halting" class="internal"><span class="codenumber">17.4</span> <span class="title">The Halting Problem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-diagonalization.html#exercises-17" class="internal"><span class="codenumber">17.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-reducibility.html" class="internal"><span class="codenumber">17</span> <span class="title">Reducibility</span></a></div>
+<div class="toc-title-box"><a href="ch-reducibility.html" class="internal"><span class="codenumber">18</span> <span class="title">Reducibility</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ReducIntro" class="internal"><span class="codenumber">17.1</span> <span class="title">Introduction to Reducibility</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ProveReduce" class="internal"><span class="codenumber">17.2</span> <span class="title">Proving Reducibility</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-reducibility.html#exercises-17" class="internal"><span class="codenumber">17.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ReducIntro" class="internal"><span class="codenumber">18.1</span> <span class="title">Introduction to Reducibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-reducibility.html#sec-ProveReduce" class="internal"><span class="codenumber">18.2</span> <span class="title">Proving Reducibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-reducibility.html#exercises-18" class="internal"><span class="codenumber">18.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-glossary"><div class="toc-title-box"><a href="glossary.html" class="internal"><span class="title">Glossary</span></a></div></li>
 <li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></div></li>
 <li class="toc-item toc-solutions"><div class="toc-title-box"><a href="solutions-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-1.html" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></div></li>
@@ -335,60 +342,60 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-fa-closure"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">7</span><span class="space"> </span><span class="title">Closure and Regular Languages</span>
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">8</span><span class="space"> </span><span class="title">Closure and Regular Languages</span>
 </h2>
-<article class="objectives goal-like" id="objectives-7"><h3 class="heading"><span class="type">Objectives</span></h3>
+<article class="objectives goal-like" id="objectives-8"><h3 class="heading"><span class="type">Objectives</span></h3>
 <ol class="decimal">
-<li id="li-63"><div class="para" id="p-derived-li-63">Discrete Math Review</div></li>
-<li id="li-64"><div class="para" id="p-derived-li-64">Closure</div></li>
+<li id="li-65"><div class="para" id="p-derived-li-65">Discrete Math Review</div></li>
+<li id="li-66"><div class="para" id="p-derived-li-66">Closure</div></li>
 </ol></article><section class="section" id="sec-closureintro"><h3 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Closure</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.1</span><span class="space"> </span><span class="title">Closure</span>
 </h3>
-<div class="para" id="p-178"> A set is <dfn class="terminology">closed</dfn> under an operation when any application of that operation on an element (or elements) in that set always results in an element in the set.</div>
+<div class="para" id="p-188"> A set is <dfn class="terminology">closed</dfn> under an operation when any application of that operation on an element (or elements) in that set always results in an element in the set.</div>
 <article class="exploration project-like" id="exploration-7"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
 </h4>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAPicSet.svg" class="contained"></div> <div class="para logical" id="p-179">
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAPicSet.svg" class="contained"></div> <div class="para logical" id="p-189">
 <div class="para">Each column is an element of the set.</div>
 <ol class="decimal">
-<li id="li-65"><div class="para" id="p-180">If I take an element and swap its top character with the top character of another element, do I stay in the set?</div></li>
-<li id="li-66"><div class="para" id="p-181">How about swapping bottom characters?</div></li>
-<li id="li-67"><div class="para" id="p-182">What if I change the bottom character to a <span class="process-math">\(\triangle\text{?}\)</span>
+<li id="li-67"><div class="para" id="p-190">If I take an element and swap its top character with the top character of another element, do I stay in the set?</div></li>
+<li id="li-68"><div class="para" id="p-191">How about swapping bottom characters?</div></li>
+<li id="li-69"><div class="para" id="p-192">What if I change the bottom character to a <span class="process-math">\(\triangle\text{?}\)</span>
 </div></li>
-<li id="li-68"><div class="para" id="p-183">How about swapping <span class="process-math">\(\square\)</span>s and <span class="process-math">\(\bigcirc\)</span>s?</div></li>
-<li id="li-69"><div class="para" id="p-184">How about swapping middle characters to <span class="process-math">\(\triangle\)</span>s, <span class="process-math">\(\square\)</span>s, or <span class="process-math">\(\bigcirc\)</span>s?</div></li>
+<li id="li-70"><div class="para" id="p-193">How about swapping <span class="process-math">\(\square\)</span>s and <span class="process-math">\(\bigcirc\)</span>s?</div></li>
+<li id="li-71"><div class="para" id="p-194">How about swapping middle characters to <span class="process-math">\(\triangle\)</span>s, <span class="process-math">\(\square\)</span>s, or <span class="process-math">\(\bigcirc\)</span>s?</div></li>
 </ol>
 </div></article><article class="exploration project-like" id="exploration-8"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span><span class="space"> </span><span class="title">Closure in Natural Numbers.</span>
-</h4> <div class="para" id="p-185">Consider a few simple operations applied to the natural numbers.</div>
+</h4> <div class="para" id="p-195">Consider a few simple operations applied to the natural numbers.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \N = \{1,2,3,4,5,6,7,8...\}
 \end{equation*}
 </div>
-<div class="para logical" id="p-186">
+<div class="para logical" id="p-196">
 <ul class="disc">
-<li id="li-70">
-<div class="para logical" id="p-187">
+<li id="li-72">
+<div class="para logical" id="p-197">
 <div class="para">Addition - take any two <span class="process-math">\(\N\)</span> and add them. Is the result always in <span class="process-math">\(\N\text{?}\)</span>
 </div>
 <ul class="circle">
-<li id="li-71"><div class="para" id="p-188">If yes, <span class="process-math">\(\N\)</span> are closed under addition</div></li>
-<li id="li-72"><div class="para" id="p-189">If no, <span class="process-math">\(\N\)</span> are not closed under addition and a counter-example needs to be provided</div></li>
+<li id="li-73"><div class="para" id="p-198">If yes, <span class="process-math">\(\N\)</span> are closed under addition</div></li>
+<li id="li-74"><div class="para" id="p-199">If no, <span class="process-math">\(\N\)</span> are not closed under addition and a counter-example needs to be provided</div></li>
 </ul>
 </div>
-<details id="answer-28" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-190">Yes.</div></div></details>
+<details id="answer-29" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-200">Yes.</div></div></details>
 </li>
-<li id="li-73">
-<div class="para logical" id="p-191">
+<li id="li-75">
+<div class="para logical" id="p-201">
 <div class="para">Subtraction - take any two <span class="process-math">\(\N\)</span> and subtract one from the other. Is the result always in <span class="process-math">\(\N\text{?}\)</span>
 </div>
 <ul class="circle">
-<li id="li-74"><div class="para" id="p-192">If yes, <span class="process-math">\(\N\)</span> are closed under subtraction</div></li>
-<li id="li-75"><div class="para" id="p-193">If no, <span class="process-math">\(\N\)</span> are not closed under subtraction and a counter-example needs to be provided</div></li>
+<li id="li-76"><div class="para" id="p-202">If yes, <span class="process-math">\(\N\)</span> are closed under subtraction</div></li>
+<li id="li-77"><div class="para" id="p-203">If no, <span class="process-math">\(\N\)</span> are not closed under subtraction and a counter-example needs to be provided</div></li>
 </ul>
 </div>
-<details id="answer-29" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-194">
+<details id="answer-30" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-204">
 <div class="para">No. Negative numbers are not included in the <span class="process-math">\(\N\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -408,27 +415,27 @@ window.MathJax = {
 </div>
 </div></div></details>
 </li>
-<li id="li-76">
-<div class="para logical" id="p-195">
+<li id="li-78">
+<div class="para logical" id="p-205">
 <div class="para">Multiplication - take any two <span class="process-math">\(\N\)</span> and multiply them. Is the result always in <span class="process-math">\(\N\text{?}\)</span>
 </div>
 <ul class="circle">
-<li id="li-77"><div class="para" id="p-196">If yes, <span class="process-math">\(\N\)</span> are closed under multiplication</div></li>
-<li id="li-78"><div class="para" id="p-197">If no, <span class="process-math">\(\N\)</span> are not closed under multiplication and a counter-example needs to be provided</div></li>
+<li id="li-79"><div class="para" id="p-206">If yes, <span class="process-math">\(\N\)</span> are closed under multiplication</div></li>
+<li id="li-80"><div class="para" id="p-207">If no, <span class="process-math">\(\N\)</span> are not closed under multiplication and a counter-example needs to be provided</div></li>
 </ul>
 </div>
-<details id="answer-30" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-198">Yes.</div></div></details>
+<details id="answer-31" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-208">Yes.</div></div></details>
 </li>
-<li id="li-79">
-<div class="para logical" id="p-199">
+<li id="li-81">
+<div class="para logical" id="p-209">
 <div class="para">Division - take any two <span class="process-math">\(\N\)</span> and divide them. Is the result always in <span class="process-math">\(\N\text{?}\)</span>
 </div>
 <ul class="circle">
-<li id="li-80"><div class="para" id="p-200">If yes, <span class="process-math">\(\N\)</span> are closed under division</div></li>
-<li id="li-81"><div class="para" id="p-201">If no, <span class="process-math">\(\N\)</span> are not closed under division and a counter-example needs to be provided</div></li>
+<li id="li-82"><div class="para" id="p-210">If yes, <span class="process-math">\(\N\)</span> are closed under division</div></li>
+<li id="li-83"><div class="para" id="p-211">If no, <span class="process-math">\(\N\)</span> are not closed under division and a counter-example needs to be provided</div></li>
 </ul>
 </div>
-<details id="answer-31" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-202">
+<details id="answer-32" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-212">
 <div class="para">No.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -447,16 +454,16 @@ window.MathJax = {
 </div>
 </div></div></details>
 </li>
-<li id="li-82">
-<div class="para logical" id="p-203">
+<li id="li-84">
+<div class="para logical" id="p-213">
 <div class="para">Negation - take any <span class="process-math">\(\N\)</span> and make it negative. Is the result always in <span class="process-math">\(\N\text{?}\)</span>
 </div>
 <ul class="circle">
-<li id="li-83"><div class="para" id="p-204">If yes, <span class="process-math">\(\N\)</span> are closed under negation</div></li>
-<li id="li-84"><div class="para" id="p-205">If no, <span class="process-math">\(\N\)</span> are not closed under negation and a counter-example needs to be provided</div></li>
+<li id="li-85"><div class="para" id="p-214">If yes, <span class="process-math">\(\N\)</span> are closed under negation</div></li>
+<li id="li-86"><div class="para" id="p-215">If no, <span class="process-math">\(\N\)</span> are not closed under negation and a counter-example needs to be provided</div></li>
 </ul>
 </div>
-<details id="answer-32" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-206">
+<details id="answer-33" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-216">
 <div class="para">No.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -477,11 +484,11 @@ window.MathJax = {
 </li>
 </ul>
 <div class="para">Some additional operations could be: reciprocals, modulus, exponentiation, and factorial.</div>
-</div></article><div class="para" id="p-207">If a set is closed under certain operations is helpful to know for type safety as a developer and in proofs.</div>
+</div></article><div class="para" id="p-217">If a set is closed under certain operations is helpful to know for type safety as a developer and in proofs.</div>
 <article class="exploration project-like" id="exploration-9"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span><span class="space"> </span><span class="title">Implications.</span>
-</h4> <div class="para" id="p-208">We know <span class="process-math">\(\N\)</span> are closed under addition. This means we know that if <span class="process-math">\(x \in \N\)</span> and <span class="process-math">\(y \in \N\)</span> then <span class="process-math">\(x+y \in \N\text{.}\)</span>
-</div> <div class="para logical" id="p-209">
+</h4> <div class="para" id="p-218">We know <span class="process-math">\(\N\)</span> are closed under addition. This means we know that if <span class="process-math">\(x \in \N\)</span> and <span class="process-math">\(y \in \N\)</span> then <span class="process-math">\(x+y \in \N\text{.}\)</span>
+</div> <div class="para logical" id="p-219">
 <div class="para">This is an example of an  <dfn class="terminology">implication</dfn>.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -508,7 +515,7 @@ or
 \mbox{ if A is true, then B is true}
 \end{equation*}
 </div>
-</div> <figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</div> <figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r0 l0 t0 lines">A</td>
 <td class="l m b2 r2 l0 t0 lines">B</td>
@@ -541,14 +548,14 @@ or
 </tr>
 </table></div></figure></article><article class="exploration project-like" id="exploration-10"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">10</span><span class="period">.</span><span class="space"> </span><span class="title">Logic in Closure.</span>
-</h4> <div class="para logical" id="p-210">
+</h4> <div class="para logical" id="p-220">
 <div class="para">Here is another binary operator:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \mbox{if A and B then C}
 \end{equation*}
 </div>
-</div> <figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</div> <figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r0 l0 t0 lines">A</td>
 <td class="l m b2 r0 l0 t0 lines">B</td>
@@ -630,8 +637,8 @@ or
 <td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
 </tr>
-</table></div></figure> <div class="para" id="p-211">Given the above logic table, we now know that <span class="process-math">\(\mbox{if A and B then C} \)</span> is logically equivalent to <span class="process-math">\(\bar{A} + \bar{B} + C\text{.}\)</span>
-</div> <div class="para" id="p-212">Let us say we know <span class="process-math">\(C\)</span> is not true and <span class="process-math">\(B\)</span> is true. What must <span class="process-math">\(A\)</span> be?</div> <details id="answer-33" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-213">Not true.</div></div></details> <div class="para logical" id="p-214">
+</table></div></figure> <div class="para" id="p-221">Given the above logic table, we now know that <span class="process-math">\(\mbox{if A and B then C} \)</span> is logically equivalent to <span class="process-math">\(\bar{A} + \bar{B} + C\text{.}\)</span>
+</div> <div class="para" id="p-222">Let us say we know <span class="process-math">\(C\)</span> is not true and <span class="process-math">\(B\)</span> is true. What must <span class="process-math">\(A\)</span> be?</div> <details id="answer-34" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-223">Not true.</div></div></details> <div class="para logical" id="p-224">
 <div class="para">That is a form of the contrapositive.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -644,7 +651,7 @@ A \longrightarrow B \mbox{ means } \bar{A}+B
 \end{equation*}
 </div>
 <div class="para">For this situation, <span class="process-math">\(AB\longrightarrow C\)</span> means <span class="process-math">\(\bar{AB} + C = \bar{A}+\bar{B}+C\)</span> and <span class="process-math">\(\bar{C} \longrightarrow \bar{AB}\)</span> means <span class="process-math">\(C+\bar{AB} = \bar{A}+\bar{B}+C\text{.}\)</span> So, these statements are the same, but if we know <span class="process-math">\(\bar{C}\text{,}\)</span> then either A or B is untrue.</div>
-</div> <div class="para logical" id="p-215">
+</div> <div class="para logical" id="p-225">
 <div class="para">This is telling us that given <span class="process-math">\(x + y = z\text{,}\)</span> the boolean <span class="process-math">\(\bar{A}+\bar{B}+C\)</span> must be true. So,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -673,9 +680,9 @@ x + y \in \N
 </div>
 <div class="para">These conclusions are very important for understanding closure.</div>
 </div></article></section><section class="section" id="sec-howtoRLClosureProof"><h3 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">How to Write a Closure Proof</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.2</span><span class="space"> </span><span class="title">How to Write a Closure Proof</span>
 </h3>
-<div class="para logical" id="p-216">
+<div class="para logical" id="p-226">
 <div class="para">These three posibilities are the most important things when writing closure proofs:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -704,57 +711,57 @@ x + y \in \N
 </div>
 <div class="para">Let us say we are given <span class="process-math">\(x+y\in \R\text{,}\)</span> <span class="process-math">\(x+y \notin \N\text{,}\)</span> and <span class="process-math">\(y \in \N\text{.}\)</span>
 </div>
-<ul class="disc"><li id="li-85"><div class="para" id="p-217">What do we know about <span class="process-math">\(x\text{?}\)</span>
+<ul class="disc"><li id="li-87"><div class="para" id="p-227">What do we know about <span class="process-math">\(x\text{?}\)</span>
 </div></li></ul>
 <div class="para">What if we know <span class="process-math">\(x+y \in \N\)</span> and <span class="process-math">\(x \in \N\text{?}\)</span>
 </div>
-<ul class="disc"><li id="li-86"><div class="para" id="p-218">What do we know about <span class="process-math">\(y\text{?}\)</span>
+<ul class="disc"><li id="li-88"><div class="para" id="p-228">What do we know about <span class="process-math">\(y\text{?}\)</span>
 </div></li></ul>
 <div class="para">What if we know <span class="process-math">\(x+y \in \R\)</span> and <span class="process-math">\(x \in \N\text{?}\)</span>
 </div>
-<ul class="disc"><li id="li-87"><div class="para" id="p-219">What do we know about <span class="process-math">\(y\text{?}\)</span>
+<ul class="disc"><li id="li-89"><div class="para" id="p-229">What do we know about <span class="process-math">\(y\text{?}\)</span>
 </div></li></ul>
 <div class="para">Within all of the scenarios, the arguments must follow the important possibilities.</div>
 </div></section><section class="section" id="sec-constructionproofs"><h3 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.3</span><span class="space"> </span><span class="title">Closure Proven through Construction</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.3</span><span class="space"> </span><span class="title">Closure Proven through Construction</span>
 </h3>
-<div class="para" id="p-220">Regular Languages are closed under many operations. Closure can be proven using the construction proof technique.</div>
-<details id="proof-1" class="hiddenproof"><summary><h4 class="heading"><span class="title">RLs Closed under Union.</span></h4></summary><article class="hiddenproof"> <div class="para" id="p-221"> RL closure under <dfn class="terminology">union</dfn> follows the basic progression: if <span class="process-math">\(L_1\)</span> is a RL and <span class="process-math">\(L_2\)</span> is a RL, then <span class="process-math">\(L_1\cup L_2\)</span> is a RL.</div> <div class="para" id="p-222">If <span class="process-math">\(L_1\)</span> is a RL, some DFA describes it. It has a start state and a set of accept states. We also added empty string tranistions from the original accept states to a singluar new accept state.</div>
+<div class="para" id="p-230">Regular Languages are closed under many operations. Closure can be proven using the construction proof technique.</div>
+<details id="proof-1" class="hiddenproof"><summary><h4 class="heading"><span class="title">RLs Closed under Union.</span></h4></summary><article class="hiddenproof"> <div class="para" id="p-231"> RL closure under <dfn class="terminology">union</dfn> follows the basic progression: if <span class="process-math">\(L_1\)</span> is a RL and <span class="process-math">\(L_2\)</span> is a RL, then <span class="process-math">\(L_1\cup L_2\)</span> is a RL.</div> <div class="para" id="p-232">If <span class="process-math">\(L_1\)</span> is a RL, some DFA describes it. It has a start state and a set of accept states. We also added empty string tranistions from the original accept states to a singluar new accept state.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L(M_1) = L_1
 \end{equation*}
 </div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1.svg" class="contained"></div> <div class="para" id="p-223">This is the same for <span class="process-math">\(L_2\text{.}\)</span>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1.svg" class="contained"></div> <div class="para" id="p-233">This is the same for <span class="process-math">\(L_2\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 L(M_2) = L_2
 \end{equation*}
 </div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1d.svg" class="contained"></div> <div class="para" id="p-224">Using these two machines, we can create the union machine by making a new start state with empty string transitions to the start states for <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP1d.svg" class="contained"></div> <div class="para" id="p-234">Using these two machines, we can create the union machine by making a new start state with empty string transitions to the start states for <span class="process-math">\(M_1\)</span> and <span class="process-math">\(M_2\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 L(M_3) = L_1 \cup L_2
 \end{equation*}
 </div>
-<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1a.svg" class="contained"></div> <div class="para" id="p-225">Since this union machine is an NFA, it describes a RL.</div></article></details><article class="exploration project-like" id="exploration-11"><h4 class="heading">
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1a.svg" class="contained"></div> <div class="para" id="p-235">Since this union machine is an NFA, it describes a RL.</div></article></details><article class="exploration project-like" id="exploration-11"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Concatenation.</span>
-</h4> <div class="para" id="p-226">If <span class="process-math">\(L_1\)</span> is a RL and <span class="process-math">\(L_2\)</span> is a RL, then <span class="process-math">\(L_1 \cdot L_2\)</span> is a RL. This means all strings created by first choosing a string in <span class="process-math">\(L_1\)</span> and then choosing a string in <span class="process-math">\(L_2\text{.}\)</span> So,</div>
+</h4> <div class="para" id="p-236">If <span class="process-math">\(L_1\)</span> is a RL and <span class="process-math">\(L_2\)</span> is a RL, then <span class="process-math">\(L_1 \cdot L_2\)</span> is a RL. This means all strings created by first choosing a string in <span class="process-math">\(L_1\)</span> and then choosing a string in <span class="process-math">\(L_2\text{.}\)</span> So,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_1 \cdot L_2 = \{{xy \| x\in L_1, y\in L_2}\}
 \end{equation*}
 </div>
-<details id="hint-8" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-227">A good way to approach this is to start where we did last time, by drawing out machines for each language.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1b.svg" class="contained"></div>
+<details id="hint-9" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-237">A good way to approach this is to start where we did last time, by drawing out machines for each language.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1b.svg" class="contained"></div>
 </div></details></article><article class="exploration project-like" id="exploration-12"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Repitition.</span>
-</h4> <div class="para" id="p-228">Suppose <span class="process-math">\(L_1^*\text{,}\)</span> concatenating L_1 with itself 0 or more times.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1.svg" class="contained"></div> <details id="hint-9" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-229">Use an empty string transition as a loop.</div></div></details> <details id="answer-34" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1c.svg" class="contained"></div></div></details></article><div class="para" id="p-230">Closure by  <dfn class="terminology">complementation</dfn> contains an interesting happening. <span class="process-math">\(\bar{L_1}\)</span> is all strings that can be made with the alphabet but are not in <span class="process-math">\(L_1\text{.}\)</span> In a DFA, when we’re done processing a string, we are either in an accept state or not. So, <span class="process-math">\(\bar{L_1}\)</span> can be created by inverting the accept and reject states.</div>
+</h4> <div class="para" id="p-238">Suppose <span class="process-math">\(L_1^*\text{,}\)</span> concatenating L_1 with itself 0 or more times.</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1.svg" class="contained"></div> <details id="hint-10" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-239">Use an empty string transition as a loop.</div></div></details> <details id="answer-35" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP1c.svg" class="contained"></div></div></details></article><div class="para" id="p-240">Closure by  <dfn class="terminology">complementation</dfn> contains an interesting happening. <span class="process-math">\(\bar{L_1}\)</span> is all strings that can be made with the alphabet but are not in <span class="process-math">\(L_1\text{.}\)</span> In a DFA, when we’re done processing a string, we are either in an accept state or not. So, <span class="process-math">\(\bar{L_1}\)</span> can be created by inverting the accept and reject states.</div>
 <article class="exploration project-like" id="exploration-13"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Intersection.</span>
-</h4> <div class="para" id="p-231"> <dfn class="terminology">Intersection <span class="process-math">\(\cup\)</span></dfn> of <span class="process-math">\(L_1\cup L_2\)</span> is any string that is accepted in <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{.}\)</span> It is very useful in closure proofs and in crafting NFAs for languages that use the logic of <span class="process-math">\(and\text{.}\)</span> For example look at these two machines:</div>
+</h4> <div class="para" id="p-241"> <dfn class="terminology">Intersection <span class="process-math">\(\cup\)</span></dfn> of <span class="process-math">\(L_1\cup L_2\)</span> is any string that is accepted in <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{.}\)</span> It is very useful in closure proofs and in crafting NFAs for languages that use the logic of <span class="process-math">\(and\text{.}\)</span> For example look at these two machines:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_1(M_1) = \{\mbox{all strings that end with a 1}\}
@@ -772,22 +779,22 @@ L_2(M_2) = \{\mbox{all strings with an even number of symbols}\}
 L_1\cup L_2 = \{\mbox{is any string that ends in a 1 and that has an even number of symbols.}\}
 \end{equation*}
 </div>
-<div class="para" id="p-232">Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states <span class="process-math">\(Q_1\times Q_2\)</span> and create those machines.</div> <details id="hint-10" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-233">Here are some examples of the step through thinking.</div> <ul class="disc">
-<li id="li-88"><div class="para" id="p-234">States with <span class="process-math">\(B_2\)</span> occur when the string has even length.</div></li>
-<li id="li-89"><div class="para" id="p-235">
+<div class="para" id="p-242">Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states <span class="process-math">\(Q_1\times Q_2\)</span> and create those machines.</div> <details id="hint-11" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-243">Here are some examples of the step through thinking.</div> <ul class="disc">
+<li id="li-90"><div class="para" id="p-244">States with <span class="process-math">\(B_2\)</span> occur when the string has even length.</div></li>
+<li id="li-91"><div class="para" id="p-245">
 <span class="process-math">\(A_2\)</span> is when it is odd</div></li>
-<li id="li-90"><div class="para" id="p-236">
+<li id="li-92"><div class="para" id="p-246">
 <span class="process-math">\(A_1\)</span> says the last seen symbol was a 0</div></li>
-<li id="li-91"><div class="para" id="p-237">
+<li id="li-93"><div class="para" id="p-247">
 <span class="process-math">\(B_1\)</span> is when it was a 1</div></li>
 </ul>
-</div></details> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2b.svg" class="contained"></div> <div class="para" id="p-238">So, it turns out we can use this to build DFAs of challenging languages!</div></article><div class="para" id="p-239">RLs are closed under other operatons too, like reversal. Their closure can be proven using the methods above or through counterexamples.</div>
-<section class="exercises" id="exercises-7"><h4 class="heading hide-type">
+</div></details> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2b.svg" class="contained"></div> <div class="para" id="p-248">So, it turns out we can use this to build DFAs of challenging languages!</div></article><div class="para" id="p-249">RLs are closed under other operatons too, like reversal. Their closure can be proven using the methods above or through counterexamples.</div>
+<section class="exercises" id="exercises-8"><h4 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
 </h4>
-<article class="exercise exercise-like" id="exercise-49"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para logical" id="p-240">
+<article class="exercise exercise-like" id="exercise-50"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para logical" id="p-250">
 <div class="para">Create a DFA from these two languages.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -801,17 +808,17 @@ L_2 = \{\mbox{strings with an even number of 0s}\}
 </div>
 </div>
 <div class="solutions">
-<details id="hint-11" class="hint solution-like"><summary><span class="type">Hint</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-241">Machine for <span class="process-math">\(L_1:\)</span>
+<details id="hint-12" class="hint solution-like"><summary><span class="type">Hint</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-251">Machine for <span class="process-math">\(L_1:\)</span>
 </div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2c.svg" class="contained"></div>
-</div></details><details id="hint-12" class="hint solution-like"><summary><span class="type">Hint</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-242">Machine for <span class="process-math">\(L_2:\)</span>
+</div></details><details id="hint-13" class="hint solution-like"><summary><span class="type">Hint</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-252">Machine for <span class="process-math">\(L_2:\)</span>
 </div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2d.svg" class="contained"></div>
-</div></details><details id="answer-35" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2e.svg" class="contained"></div> <div class="para" id="p-243">The <span class="process-math">\(\emptyset\)</span> state can be used as a shortcut since we’ll never leave it, we do not have to trace what happens if either path leads to it.</div>
+</div></details><details id="answer-36" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2e.svg" class="contained"></div> <div class="para" id="p-253">The <span class="process-math">\(\emptyset\)</span> state can be used as a shortcut since we’ll never leave it, we do not have to trace what happens if either path leads to it.</div>
 </div></details>
-</div></article><article class="exercise exercise-like" id="exercise-50"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-244">Prove that the union of <span class="process-math">\(L_3\)</span> and <span class="process-math">\(L_4\)</span> results in a RL.</div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="p-254">Prove that the union of <span class="process-math">\(L_3\)</span> and <span class="process-math">\(L_4\)</span> results in a RL.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_3 = \{\mbox{strings that end with 01}\}
@@ -821,44 +828,44 @@ L_3 = \{\mbox{strings that end with 01}\}
 \begin{equation*}
 L_4 = \{\mbox{strings that are 0 mod 3}\}
 \end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-51"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-245">It is known that the language of all binary strings with an equal number of 0s and 1s is not regular. Prove that the language below is not regular using closure.</div>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="p-255">It is known that the language of all binary strings with an equal number of 0s and 1s is not regular. Prove that the language below is not regular using closure.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{0^i1^j2^k | i=j \mbox{ or } j=k\}
 \end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-52"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-246">RLs are closed under intersection. Prove that the language of strings with any number of a’s, b’s, and c’s and with an equal number of d’s and e’s is not regular. Use the closure fact above and that <span class="process-math">\(e^nd^n\)</span> is not regular to prove this language is not regular.</div></article><article class="exercise exercise-like" id="exercise-53"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-247">RLs are closed under intersection, union, and a variety of other operations. In each of the following situations state whether <span class="process-math">\(\mathcal{L}_3\)</span> is regular, irregular, or either. Take care to read each carefully as ordering changes.</div> <div class="para logical" id="p-248"><ol class="lower-alpha">
-<li id="li-92">
-<div class="para" id="p-249"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3\)</span></div>
-<div class="para" id="p-250">
-<span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is regular.</div>
-</li>
-<li id="li-93">
-<div class="para" id="p-251"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3\)</span></div>
-<div class="para" id="p-252">
-<span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is irregular.</div>
-</li>
+</div></article><article class="exercise exercise-like" id="exercise-53"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="p-256">RLs are closed under intersection. Prove that the language of strings with any number of a’s, b’s, and c’s and with an equal number of d’s and e’s is not regular. Use the closure fact above and that <span class="process-math">\(e^nd^n\)</span> is not regular to prove this language is not regular.</div></article><article class="exercise exercise-like" id="exercise-54"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="p-257">RLs are closed under intersection, union, and a variety of other operations. In each of the following situations state whether <span class="process-math">\(\mathcal{L}_3\)</span> is regular, irregular, or either. Take care to read each carefully as ordering changes.</div> <div class="para logical" id="p-258"><ol class="lower-alpha">
 <li id="li-94">
-<div class="para" id="p-253"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2\)</span></div>
-<div class="para" id="p-254">
+<div class="para" id="p-259"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3\)</span></div>
+<div class="para" id="p-260">
 <span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is regular.</div>
 </li>
 <li id="li-95">
-<div class="para" id="p-255"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2\)</span></div>
-<div class="para" id="p-256">
+<div class="para" id="p-261"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_2 = \mathcal{L}_3\)</span></div>
+<div class="para" id="p-262">
 <span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is irregular.</div>
 </li>
-</ol></div></article><article class="exercise exercise-like" id="exercise-54"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-257">Given <span class="process-math">\(\mathcal{L}_1\)</span> is not regular. Given <span class="process-math">\(\mathcal{L}_2 \cap 0^*1^*\)</span> is <span class="process-math">\(\mathcal{L}_1\text{.}\)</span> Use closure to explain what is known about <span class="process-math">\(\mathcal{L}_2\)</span> and why.</div></article><article class="exercise exercise-like" id="exercise-55"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-258">Use closure and the givens to prove that the language, L, with <span class="process-math">\(\Sigma = \{(,),[,]\}\text{,}\)</span> is not regular. Be thorough in your explanation.</div>
+<li id="li-96">
+<div class="para" id="p-263"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2\)</span></div>
+<div class="para" id="p-264">
+<span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is regular.</div>
+</li>
+<li id="li-97">
+<div class="para" id="p-265"><span class="process-math">\(\mathcal{L}_1 \cap \mathcal{L}_3 = \mathcal{L}_2\)</span></div>
+<div class="para" id="p-266">
+<span class="process-math">\(\mathcal{L}_1\)</span> is regular and <span class="process-math">\(\mathcal{L}_2\)</span> is irregular.</div>
+</li>
+</ol></div></article><article class="exercise exercise-like" id="exercise-55"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="p-267">Given <span class="process-math">\(\mathcal{L}_1\)</span> is not regular. Given <span class="process-math">\(\mathcal{L}_2 \cap 0^*1^*\)</span> is <span class="process-math">\(\mathcal{L}_1\text{.}\)</span> Use closure to explain what is known about <span class="process-math">\(\mathcal{L}_2\)</span> and why.</div></article><article class="exercise exercise-like" id="exercise-56"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="p-268">Use closure and the givens to prove that the language, L, with <span class="process-math">\(\Sigma = \{(,),[,]\}\text{,}\)</span> is not regular. Be thorough in your explanation.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \{(^n)^n[^m]^m | n,m \geq 0\}
 \end{equation*}
 </div>
-<div class="para" id="p-259">You’ve been given the fact that the language, K, is not a regular language.</div>
+<div class="para" id="p-269">You’ve been given the fact that the language, K, is not a regular language.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 K= \{]^m[^m)^n(^n\}

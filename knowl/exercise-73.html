@@ -12,21 +12,51 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
 </h4>
-<div class="para">Write a CFG for <span class="process-math">\(L_1L_2 = (1+01)^*(1^*01^*01^*)^*\)</span>
+<div class="para">Write a CFG for <span class="process-math">\(L_2 = (1^*01^*01^*)^*\)</span>
 </div>
-<div class="solutions">
-<details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para">Lean on past exercises.</div></div></details><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para"><div class="tabular-box natural-width"><table class="tabular">
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">
+<div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_3 \rightarrow S_1S_2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow T0T0T0TS_2 | \epsilon\)</span></td>
 </tr>
-</table></div></div></div></details>
-</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exercise-73">in-context</a></span>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow 1T | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow S_2S_2 | T0T0T | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow 1T | \epsilon\)</span></td>
+</tr>
+</table></div> OR <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_2 \rightarrow U_30U_30U_3S_2 | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(U_3 \rightarrow 1U_3 | \epsilon\)</span></td>
+</tr>
+</table></div> Both grammars can represent <span class="process-math">\(L_2\text{.}\)</span>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exercise-73">in-context</a></span>
 </body>
 </html>

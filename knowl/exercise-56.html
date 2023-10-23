@@ -11,112 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
-</h4>
-<div class="para">Consider the machine below. What is the language of the machine? What are some state loops present within it?</div>
-<div class="solutions">
-<details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para">Come up with some test strings and their parce paths. Are there any patterns of repetition?</div> <ul class="disc">
-<li>
-<span class="process-math">\(s^{(0)} = 01:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-<li>
-<span class="process-math">\(s^{(1)} = 01001:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-<li>
-<span class="process-math">\(s^{(2)} = 01001111:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-</ul>
-</div></details><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">A pattern of state repition is: <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> to <span class="process-math">\(C\text{.}\)</span>
-</div></div></details>
-</div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#exercise-56">in-context</a></span>
+<article class="exercise exercise-like"><h5 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span>
+</h5>
+<div class="para">Use closure and the givens to prove that the language, L, with <span class="process-math">\(\Sigma = \{(,),[,]\}\text{,}\)</span> is not regular. Be thorough in your explanation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \{(^n)^n[^m]^m | n,m \geq 0\}
+\end{equation*}
+</div>
+<div class="para">You’ve been given the fact that the language, K, is not a regular language.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K= \{]^m[^m)^n(^n\}
+\end{equation*}
+</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exercise-56">in-context</a></span>
 </body>
 </html>

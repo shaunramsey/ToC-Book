@@ -12,23 +12,23 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">9<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span>
 </h4>
-<div class="para">Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)</div> <div class="para logical">
-<div class="para">You have been given that:</div>
+<div class="para logical">
+<div class="para">The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\{a^n\#a^n | n \geq 0\}
+\Sigma = \{ (, ), [, ], \{, \} \}
 \end{equation*}
 </div>
-<div class="para">is not regular.</div>
 </div>
 <div class="solutions"><details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical">
 <div class="para">Sample strings include:</div>
 <ul class="disc">
-<li><div class="para">thethe#thethe</div></li>
-<li><div class="para">same#same</div></li>
-<li><div class="para">atimeto#atimeto</div></li>
+<li><div class="para">[(){}]</div></li>
+<li><div class="para">[[[()]]]{}{}{{}}</div></li>
+<li><div class="para">{}</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \epsilon\)</span></div></li>
 </ul>
 </div></div></details></div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#exercise-64">in-context</a></span>
 </body>

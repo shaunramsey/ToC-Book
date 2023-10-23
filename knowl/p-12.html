@@ -11,8 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).</div>
-<span class="incontext"><a class="internal" href="ch-dfas.html#p-12">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">The <dfn class="terminology">intersection</dfn> of two sets is a new set that contains all the things in common from the two sets. Typically, the symbol <span class="process-math">\(\cap\)</span> is used as a binary operator like: <span class="process-math">\(A \cap B\text{.}\)</span> If a thing is in both sets, it is in the intersection of the two sets. It is possible for the intersection to be empty <span class="process-math">\(\emptyset\)</span> or to contain all of one set (when one set is the subset of another). Let’s do an example. Let’s take set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = \{a,b,y,ab,ba,by,ay,bay,abba,baby\}
+\end{equation*}
+</div>
+<div class="para">and set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E = \{w
+| w\
+\text{is any English word}\} \text{.}
+\end{equation*}
+</div>
+<div class="para">Their intersection would have to be both an English word and one of the words inside the set <span class="process-math">\(D\text{.}\)</span> Assuming we know which words are actually English words the intersection would be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D \cap E = \{a,by,bay,baby\}\text{.}
+\end{equation*}
+</div>
+<div class="para">As food for thought, when would the intersection of two sets be <span class="process-math">\(\emptyset\text{?}\)</span>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="ch-sets.html#p-12">in-context</a></span>
 </body>
 </html>

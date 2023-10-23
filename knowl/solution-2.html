@@ -13,14 +13,60 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.1.1</span><span class="period">.</span>
 </h4>
-<div class="para logical"><ul class="disc">
-<li><div class="para">A great first step is to walk through the shortest path to the accept state. This would be 01.</div></li>
-<li><div class="para">It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For <span class="process-math">\(M_5\text{,}\)</span> that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for <span class="process-math">\(M_5\)</span> to accept.</div></li>
-<li><div class="para">Another note, the string “01” must be included as a 1 must come after a 0 to get to the accept state <span class="process-math">\(C\text{.}\)</span>
-</div></li>
-</ul></div>
+<div class="para">It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5<span class="period">.</span></span><span class="space"> </span>TODO</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">(0)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">101101</td>
+<td class="l m b0 r0 l0 t0 lines">(45)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">_</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">010101</td>
+<td class="l m b0 r0 l0 t0 lines">(21)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">0000</td>
+<td class="l m b0 r0 l0 t0 lines">(0)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">011</td>
+<td class="l m b0 r0 l0 t0 lines">(3)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">10010</td>
+<td class="l m b0 r0 l0 t0 lines">(18)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">111001</td>
+<td class="l m b0 r0 l0 t0 lines">(57)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">1001</td>
+<td class="l m b0 r0 l0 t0 lines">(9)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">0110</td>
+<td class="l m b0 r0 l0 t0 lines">(6)</td>
+</tr>
+</table></div></figure>
 </div>
 <span class="incontext"><a class="internal" href="ch-dfas.html#solution-2">in-context</a></span>
 </body>

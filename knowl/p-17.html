@@ -11,8 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For <span class="process-math">\(M_2\text{,}\)</span> test strings could include 000, 01, 11011, and 100001. By tracing through <span class="process-math">\(M_2\)</span> with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers a modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a number divisible by 3". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!</div>
-<span class="incontext"><a class="internal" href="ch-dfas.html#p-17">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">The question arises sometimes (especially when using set notation for infinite sets), ’when have we provided enough of the pattern.’ The answer is somewhat subjective, and thus, other than illustration, we prefer more concrete forms of describing such sets in mathematics to facilitate a more rigorous definition when required. While patterns may be sufficient for us as programmers, it surprises us how often the more formal notation can be a guide for us as programmers as well. The form <span class="process-math">\(2k\)</span> from the set-builder notation gives us a bigger hint on how to enumerate (list all of) the possible even integers using a for loop. On the other hand, a very clearly defined pattern with only one set of ellipsis or <span class="process-math">\(\ldots\)</span> may have fruit as well. This looks like</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/codeEvenNumbers.html">
+\begin{equation*}
+\{0,-2,2,-4,4,-6,6,\ldots\}\text{.}
+\end{equation*}
+</div>
+<div class="para">It is clear what the next number should be for us (especially since we have seen the previous definitions of this set.) Turning that into code takes a little bit of mental maneuvering. Either way if we look forward a bit, Hilbert’s Hotel (<code class="code-inline tex2jax_ignore">[provisional cross-reference: hilbert]</code>) would be happy with this last listing. You can check out a sample program motivated by this last listing at <a href="" class="xref" data-knowl="./knowl/codeEvenNumbers.html" title="Listing 19.0.1">Listing 19.0.1</a>.</div>
+</div>
+<span class="incontext"><a class="internal" href="ch-sets.html#p-17">in-context</a></span>
 </body>
 </html>

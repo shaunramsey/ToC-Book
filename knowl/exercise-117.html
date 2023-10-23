@@ -12,21 +12,72 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
 </h4>
 <div class="para logical">
-<div class="para">Consider the language, <span class="process-math">\(L_3\text{:}\)</span>
+<div class="para">Consider <span class="process-math">\(L_2\)</span> and the string, <span class="process-math">\(s\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_3 = \{b_0 + 1 = b_1 | \mbox{where } b_0 \mbox{ is any binary string and } b_1 \mbox{ is the binary string acquired when treating } b_0 
-\mbox{ as a number and adding one to it}\}
+L_2 - \{0^n1^n2^n\}
 \end{equation*}
 </div>
-<div class="para">An example string would be <span class="process-math">\(10101+1=10110\text{.}\)</span> Create the state diagram that would be use to step through this language and tape’s TM.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s = 001122
+\end{equation*}
 </div>
-<div class="solutions">
-<details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para">It is acceptable for a certain value to "fall off" of the state diagram.</div></div></details><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMD2.svg" class="contained"></div></div></details>
-</div></article><span class="incontext"><a class="internal" href="ch-tms.html#exercise-117">in-context</a></span>
+<div class="para">Draw the tape that would contain this input, including the head.</div>
+</div>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="c m b1 r1 l0 t0 lines">0</td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\uparrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">head</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></details></div></article><span class="incontext"><a class="internal" href="ch-tms.html#exercise-117">in-context</a></span>
 </body>
 </html>

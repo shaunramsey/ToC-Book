@@ -12,15 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
 </h4>
-<div class="para">The self-denying paradox is an example of a languge that is not Tr because of the paradox. The machine built for this language cannot halt when running with itself as input.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L = \{\langle M, w \rangle | M \mbox{ is a Tm that moves the head on input } w\}
-\end{equation*}
-</div>
-<div class="para">Assume the language above is decidable and use the chart below. Use diagonalization. Describe the language of this new machine and it’s paradox.</div> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para">The self-denying paradox is an example of a language that is not Tr because of the paradox. The machine built for this language cannot halt when running with itself as input. The complement of this paradox would be th set of machines that accept themselves as input. To craft this language, we could take our list of TMs and TMs as input and make a TM that does what that machine does on its own input (making a trace along the diagonal).</div> <div class="para">Would this new machine accept itself when receiving itself as input? Explain. Is it possible for this machine to have already appeared? Explain.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r1 l0 t0 lines"></td>

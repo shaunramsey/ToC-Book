@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># at an even index, just print this number.
+# at an odd index, use int division to figure out which
+# negative even number we're at then make the negative
+# even number out of it by multiplying by -2. Offset -2
+# to skip 0
+i = 0
+while True:
+  if i%2 == 0:
+    print(i)
+  else:
+    print(-2*(i//2)-2)
+  i = i + 1
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">19.0.1<span class="period">.</span></span><span class="space"> </span>Print all even numbers in this order: <span class="process-math">\(\{0,-2,2,-4,4,-6,6,\ldots\}\)</span></figcaption></figure><span class="incontext"><a class="internal" href="code-examples.html#codeEvenNumbers">in-context</a></span>
+</body>
+</html>

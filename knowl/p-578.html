@@ -11,8 +11,25 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Read in a <span class="process-math">\(\cancel{0}\text{,}\)</span> move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">Turing Machines accept languages based on "marking off" or reaching the end of input at an expected time. Heads are used to keep track of relevant inputs, and how they recieve their instructions is similar to what we have seen before. Think back to the "read pop push" structure that was introduced for PDAs. Heads move in similar ways on a "read move write" structure. <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">R</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\cancel{0}\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\uparrow\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\uparrow\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\uparrow\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">read</td>
+<td class="c m b0 r0 l0 t0 lines">move</td>
+<td class="c m b0 r0 l0 t0 lines">write</td>
+</tr>
+</table></div> If a head was given the instruction above, if it read in a 1 then it would move right but write over the 1 with a <span class="process-math">\(\cancel{0}\text{.}\)</span>
+</div>
 <span class="incontext"><a class="internal" href="ch-tms.html#p-578">in-context</a></span>
 </body>
 </html>

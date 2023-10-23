@@ -12,31 +12,34 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
 </h4>
-<div class="para">Consider <span class="process-math">\(M_{17}\text{.}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24.svg" class="contained"></div> <div class="para">What do expect the language of this machine to be? Rip <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(A\text{,}\)</span> and then <span class="process-math">\(D\text{.}\)</span>
+<div class="para">Consider <span class="process-math">\(M_{16}\text{.}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23.svg" class="contained"></div> <div class="para">What do expect the language of this machine to be? Rip <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(B\text{,}\)</span> and then <span class="process-math">\(A\text{.}\)</span>
 </div>
 <div class="solutions">
 <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
-<div class="para"><span class="process-math">\(L(M_{17})=\mbox{all strings with an odd number of 0s and an odd number of 1s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24a.svg" class="contained"></div>
+<div class="para"><span class="process-math">\(L(M_{16})=\mbox{exactly three 1s with any amount of 0s or any amount of 0s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23a.svg" class="contained"></div>
 </div></details><details class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha">
 <li>
 <div class="para">Start.</div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24b.svg" class="contained"></div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23b.svg" class="contained"></div>
 </li>
 <li>
-<div class="para">B: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 4 new arrows</div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24c.svg" class="contained"></div>
+<div class="para">D: 2 transitions in, 1 transition out, <span class="process-math">\(2*1 = 2\text{,}\)</span> so 2 new arrows</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23c.svg" class="contained"></div>
 </li>
 <li>
-<div class="para">C: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 2 new <span class="process-math">\(+\)</span>
-</div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24d.svg" class="contained"></div>
+<div class="para">C: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 1\text{,}\)</span> so 1 new arrow</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23d.svg" class="contained"></div>
 </li>
 <li>
-<div class="para">A: 2 transitions in and 1 transition out, <span class="process-math">\(2*1=2\text{,}\)</span> so 2 new arrows</div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24e.svg" class="contained"></div>
+<div class="para">B: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new addition</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23e.svg" class="contained"></div>
+</li>
+<li>
+<div class="para">A: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new arrow</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23f.svg" class="contained"></div>
 </li>
 </ol></div></div></details>
 </div></article><span class="incontext"><a class="internal" href="ch-fa-to-rex.html#exercise-42">in-context</a></span>

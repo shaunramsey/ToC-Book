@@ -11,22 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Here are some additional, fun, non-regular languages to try to prove (in increasing complexity):</div>
-<ul class="disc">
-<li><div class="para"><span class="process-math">\(\displaystyle \{0^i1^j|i&gt;j\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{0^i1^j|i\geq j\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{0^i1^j|i \lt j\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{0^i1^j|i \leq j\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{0^n1^m0^n\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{a^ib^jc^k|i=j \mbox{ when } k=1\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{ww^R|w \mbox{ is a binary string}\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{w|w \mbox{ is a palindrome}\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{ab^nc^n\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \{a^ib^jc^k| j = k \mbox{ when } i = 1 \}\)</span></div></li>
-</ul>
-<div class="para">Unless stated otherwise, <span class="process-math">\(i,j,k,m,n \geq 0\text{.}\)</span> You can try <span class="process-math">\(&gt;0\)</span> or <span class="process-math">\(&gt;2\)</span> for additional practice.</div>
+<div class="para">Say <span class="process-math">\(L_1\text{:}\)</span> has a number of 0s divisible by 3 and an even number of 1s.</div>
+<ul class="disc"><li><div class="para">
+<span class="process-math">\(L_1\)</span> is a Regular Language.</div></li></ul>
+<div class="para">Let’s say we don’t know <span class="process-math">\(p\text{,}\)</span> just that it exists. Let’s pick a string that’s <span class="process-math">\(p\)</span> long.</div>
+<ul class="disc"><li><div class="para">This staisfies <span class="process-math">\(s\in L\)</span> and <span class="process-math">\(|s|\geq p\)</span>
+</div></li></ul>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)} = (00011)^p
+\end{equation*}
+</div>
+<div class="para">Some piece of <span class="process-math">\(s^{(1)}\)</span> in the first <span class="process-math">\(p\)</span> symbols is pumpable.</div>
+<ul class="disc"><li><div class="para">There is some <span class="process-math">\(y\)</span> that we can extract or insert as many times as we want</div></li></ul>
 </div>
 <span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#p-299">in-context</a></span>
 </body>

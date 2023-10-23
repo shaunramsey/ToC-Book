@@ -13,61 +13,18 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.1.1</span><span class="period">.</span>
 </h4>
-<div class="para">It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span>TODO</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">(0)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines">101101</td>
-<td class="l m b0 r0 l0 t0 lines">(45)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">_</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">4</td>
-<td class="l m b0 r0 l0 t0 lines">010101</td>
-<td class="l m b0 r0 l0 t0 lines">(21)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-<td class="l m b0 r0 l0 t0 lines">0000</td>
-<td class="l m b0 r0 l0 t0 lines">(0)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">011</td>
-<td class="l m b0 r0 l0 t0 lines">(3)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">10010</td>
-<td class="l m b0 r0 l0 t0 lines">(18)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">8</td>
-<td class="l m b0 r0 l0 t0 lines">111001</td>
-<td class="l m b0 r0 l0 t0 lines">(57)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">9</td>
-<td class="l m b0 r0 l0 t0 lines">1001</td>
-<td class="l m b0 r0 l0 t0 lines">(9)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">10</td>
-<td class="l m b0 r0 l0 t0 lines">0110</td>
-<td class="l m b0 r0 l0 t0 lines">(6)</td>
-</tr>
-</table></div></figure>
+<div class="para logical">
+<div class="para">The question arises sometimes (especially when using set notation for infinite sets), ’when have we provided enough of the pattern.’ The answer is somewhat subjective, and thus, other than illustration, we prefer more concrete forms of describing such sets in mathematics to facilitate a more rigorous definition when required. While patterns may be sufficient for us as programmers, it surprises us how often the more formal notation can be a guide for us as programmers as well. The form <span class="process-math">\(2k\)</span> from the set-builder notation gives us a bigger hint on how to enumerate (list all of) the possible even integers using a for loop. On the other hand, a very clearly defined pattern with only one set of ellipsis or <span class="process-math">\(\ldots\)</span> may have fruit as well. This looks like</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/codeEvenNumbers.html">
+\begin{equation*}
+\{0,-2,2,-4,4,-6,6,\ldots\}\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a class="internal" href="ch-dfas.html#solution-1">in-context</a></span>
+<div class="para">It is clear what the next number should be for us (especially since we have seen the previous definitions of this set.) Turning that into code takes a little bit of mental maneuvering. Either way if we look forward a bit, Hilbert’s Hotel (<code class="code-inline tex2jax_ignore">[provisional cross-reference: hilbert]</code>) would be happy with this last listing. You can check out a sample program motivated by this last listing at <a href="" class="xref" data-knowl="./knowl/codeEvenNumbers.html" title="Listing 19.0.1">Listing 19.0.1</a>.</div>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="ch-sets.html#solution-1">in-context</a></span>
 </body>
 </html>

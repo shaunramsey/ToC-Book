@@ -12,7 +12,74 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Read in a 0, move right leaving a <span class="process-math">\(\cancel{0}\)</span> behind</div>
+<div class="para logical">
+<div class="para">Let’s look at an example of a Turing Machine to understand its sturcuture and usefulness. Consider <span class="process-math">\(L_1\)</span> and <span class="process-math">\(s \in L_1 \)</span> below.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = \{0^n1^n\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s = 0011
+\end{equation*}
+</div>
+<div class="para">This string would be represented on a tape as: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="c m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\uparrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">head</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div> In order to check if the language can be represented by a TM, we need to establish a line of thinking. We ultimately need to check if there is a certain number of 0s, followed by the same number of 1s. But how do we check for this when heads of TMs can only move right, left, or stay in place? And how can this be represented with the "read move write" structure? For this language, a potential strategy follows:</div>
+<ol class="decimal">
+<li><div class="para">Mark off an unmarked 0</div></li>
+<li><div class="para">Move to the first unmarked 1 and mark it off</div></li>
+<li><div class="para">Repeat steps 1 and 2 until no more 0s are left, also make sure all 1s are marked off too</div></li>
+</ol>
+<div class="para">This process can be represented in a state diagram like the one below. This diagram was created through following the logical progression above as well as leaning on skills created when creating FAs and PDAs.</div>
+</div>
 <span class="incontext"><a class="internal" href="ch-tms.html#p-579">in-context</a></span>
 </body>
 </html>

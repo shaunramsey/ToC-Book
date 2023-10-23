@@ -12,18 +12,32 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
 </h4>
-<div class="para">Prove <span class="process-math">\(L_{xx}\)</span> is regular or not.</div>
+<div class="para logical">
+<div class="para">Identify patterns of state repetition from a written language.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_{xx}=\{w\#w | w \mbox{ is any binary string}\}
+L_2 = \{\mbox{any string with an odd number of 0s, starts with 1, ends with 111, and has at least two 0s}\}
 \end{equation*}
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-\Sigma = \{0,1,\#\}
-\end{equation*}
+</div>
+<div class="solutions">
+<details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical">
+<div class="para">Some test strings inlcude:</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle s^(0) = 1000111\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle s^(1) = 10100111\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle s^(2) = 1000000011111\)</span></div></li>
+</ul>
+</div></div></details><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">Character repetitions can exist in these two places:</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle 10(00)^*111\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle 10(1)^*00111\)</span></div></li>
+</ul>
+<div class="para">They can also be combined.</div>
+</div></div></details>
 </div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#exercise-58">in-context</a></span>
 </body>
 </html>

@@ -12,31 +12,11 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
 </h4>
-<div class="para logical">
-<div class="para">Give a DPA and a CFG for the language of boolean expressions. Terminals, <span class="process-math">\(\Sigma\)</span> will be:</div>
-<dl class="description-list">
-<dt>v</dt>
-<dd><div class="para">a varaible or value in the programming sense</div></dd>
-<dt>e</dt>
-<dd><div class="para">a comparison like <span class="process-math">\(==, &gt;, \geq, \leq, !=\)</span>
-</div></dd>
-<dt>b</dt>
-<dd><div class="para">boolean operators like <span class="process-math">\(and\)</span> and <span class="process-math">\(or\)</span>
-</div></dd>
-<dt>t</dt>
-<dd><div class="para">represents true or false</div></dd>
-</dl>
-</div>
-<div class="solutions"><details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical">
-<div class="para">Sample strings in this language include:</div>
-<ul class="disc">
-<li><div class="para">vev</div></li>
-<li><div class="para">vevbvebvev</div></li>
-<li><div class="para">t</div></li>
-<li><div class="para">vevbtbvetbtet</div></li>
-</ul>
-</div></div></details></div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exercise-76">in-context</a></span>
+<div class="para">Write the language of matching open and closed brackets such as: (),[], and {}.</div>
+<div class="solutions">
+<details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para">Remember to consider that [(){}] can also take place.</div></div></details><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para"><span class="process-math">\(S \rightarrow (S) | [S] | {S} | \epsilon | SS\)</span></div></div></details>
+</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exercise-76">in-context</a></span>
 </body>
 </html>
