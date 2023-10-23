@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="code-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Code Examples Throughout The Text</title>
+  <p> Code Examples Throughout the Text </p>
+  <listing xml:id="codeEvenNumbers">
+    <!-- ctrl-k ctrl-shift-s to save without formatting -->
+    <caption>Print all even numbers in this order: <m>\{0,-2,2,-4,4,-6,6,\ldots\}</m></caption>
+    <program language="python">
+      <input>
+        # at an even index, just print this number.
+        # at an odd index, use int division to figure out which
+        # negative even number we're at then make the negative
+        # even number out of it by multiplying by -2. Offset -2
+        # to skip 0
+        i = 0
+        while True:
+          if i%2 == 0:
+            print(i)
+          else:
+            print(-2*(i//2)-2)
+          i = i + 1
+      </input>
+    </program>
+  </listing>
+</chapter>

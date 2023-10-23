@@ -7,36 +7,34 @@
 <!-- with all notation generated, and finally the index.  -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
   <title>Backmatter</title>
-  
-  <glossary xml:id="glossary">
+
+  <!-- <glossary xml:id="glossary">
     <gi><title>DFA</title> Deterministic Finite Automata </gi>
     <gi><title>FA</title> Finite Automata </gi>
     <gi><title>NFA</title> Non-deterministic Finite Automata </gi>
     <gi><title>TM</title> Turing Machines</gi>
-  </glossary>
+  </glossary> -->
 
   <solutions divisional="hint">
     <title>Selected Hints</title>
   </solutions>
-  
+
   <solutions divisional="solution">
     <title>Selected Solutions</title>
   </solutions>
-  
+
   <appendix>
     <title>List of Symbols</title>
-    <notation-list/>
+    <notation-list />
   </appendix>
 
   <index>
     <title>Index</title>
-    <index-list/>
+    <index-list />
   </index>
 
   <colophon>
-    <p>
-      This book was authored in <pretext />.
-    </p>
+    <p> This book was authored in <pretext />. </p>
   </colophon>
 </backmatter>
 

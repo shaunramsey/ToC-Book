@@ -40,6 +40,7 @@
     <xi:include href="./part-re/part-re-index.ptx" />
     <xi:include href="./part-cf/part-cf-index.ptx" />
     <xi:include href="./part-tm/part-tm-index.ptx" />
+    <xi:include href="code-examples.ptx" />
     <!-- we create generated imagees by commenting out the following -->
     <!-- <xi:include href="./generated-images.ptx" /> -->
     <!-- <xi:include href="./newly-generated-images.ptx" /> -->

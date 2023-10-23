@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+
+<chapter xml:id="ch-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sets</title>
+  <introduction>
+    <p>
+      This chapter is meant to be a quick introduction to sets. It is placed here so that it may be
+      easily referenced.
+    </p>
+  </introduction>
+  <objectives>
+    <ol>
+      <li> A Set Introduction and Review</li>
+    </ol>
+  </objectives>
+
+  <section xml:id="Sets">
+    <title> Sets </title>
+    <p> Sets are a collection of objects where there is no ordering and elements are not repeated or
+      counted. Sets can contain other sets or they can be empty. <idx>empty set</idx>The <term>empty
+      set</term> is generally referred to as <m>\emptyset</m>, the null set. It may also be written
+      as <m>
+        \{\}</m> Typically we use curly brackets to denote set notation. <idx>set notation</idx><idx>enumeration
+      notation</idx>. Thus a set described in <term>enumeration notation</term> as <m>
+        \{a,b,c\}</m> is a set that contains elements <m>a</m> , <m>b</m> and <m>c</m>. That is the
+      same set as <m>\{b,a,c\}</m>. Ordering does not matter. If a <m>d</m> were added to this set,
+      we would have a new set <m>\{a,b,c,d\}</m>. If an <m>a</m> were added to this set, it would
+      not change the set because the set already contains <m>a</m>. We will use enumeration notation
+      right away to start describing important elements for this book. Enumeration notation is most
+      often used when all items in a set can be described or a pattern can easily be inferred by the
+      notation. Since "easily inferred" is subjective, we find it best to be explicit in our
+      descriptions and notations. </p>
+
+    <p> Sets may be an object and thus a set may contain other sets. So, the set containing a <m>
+      \{a\}</m> is different than the set that contains the set that contains a <m>\{ \{a\} \}</m>.
+      In cases such as these, we find it is easier to use set notation than the English description
+      to describe the sets. Since a set is simply a collection of objects, and a set can be an
+      object, sets may contain other sets. Let us not get bogged down in this at first. </p>
+
+    <p> As some sets are infinite, we will often use <term>set-builder notation</term> <idx>set-builder
+      notation</idx> to describe sets. An example of set-builder notation to describe a set is: <me>\{w
+      | w\
+        \text{is a list of
+        letters that contains an}\ a\}</me>. This should be read as the set of all <m>w</m>'s where <m>
+      w</m> is a string (list of letters) that contains an <m>a</m>. We will see this in again in an
+      example shortly. This symbol <m>|</m> is often called a pipe or line. Some programmers may
+      think of it as the 'or' symbol. However, in this notation, the pipe, <m> | </m>, is read as
+      where or such that. You can think of it as a declaration or assignment if you like. This is a
+      collection of things defined on the left, where all the things follow the rules on the right. </p>
+
+    <p> A <term>subset</term> <idx>subset</idx> is simply a collection of things where those things
+      are items that belong in another set. It is often denoted with the symbol <m>\subseteq</m>.
+      Thus, <m>
+        \{a\}</m> can be a subset of any other set that contains <m>
+        a</m>. <m>
+        \{a,b\}</m>, and even <m>\{a,b,c\}</m> are all subsets of <m>\{a,b,c\}</m>. In fact, <m>
+      \{a,b,c\}</m> has quite a few subsets. Can you list all 8? So, a set, <m>A</m> is a subset of
+      a set, <m>B</m> when all the elements in <m>A</m> are elements in <m>B</m>. We will write <m>A
+      \subseteq B</m> to mean that <m>A</m> is a subset of <m>B</m>. In this case, <m>A</m> can have
+      all the things of <m>B</m>, some of the things, or even none of the things of B. In the latter
+      case if <m>A \subseteq B</m> and A has no elements of B in it, then A would also be <m>
+      \emptyset</m>. Convince yourself that this is true. </p>
+
+    <p> If you are new to sets, you may find this new vocabulary and usage overwhelming. It is fine
+      to skim
+      the remainder of this chapter and continue to the rest of the book. We will remind you to come
+      back to read the following sections after you have grappled with sets in the ways that we care
+      about. It will not be long before we need to understand the following terms though, so let us
+      read through them with the understanding that we will come back here to digest this
+      information again.
+    </p>
+    <p> The <term>power set</term><idx>power
+        set</idx> of a set is the set of all subsets. It is often denoted as <m>
+        \mathcal{P}()</m>. As in our example from above, if you were able to list all 8 subsets and
+      then placed those in a set, you would have the power set of that original set. Let us do a
+      concrete example. Let the set <m>C</m> be comprised of <m>\{0,1,2\}</m>. The power set of <m>C</m>
+      is a set that contains all the subsets of <m>C</m>. Let's list the power set of <m>C</m>,
+      denoted <m>
+        \mathcal{P}(C)</m>. <me>
+        \mathcal{P}(C) = \{\emptyset,\{0\},\{1\},\{2\},\{0,1\},\{0,2\},\{1,2\},\{0,1,2\}\}</me>
+
+    </p>
+    <p> The <term>intersection</term><idx>intersection of sets</idx> of two sets is a new set that
+      contains all the things in common from the two sets. Typically, the symbol <m>\cap</m> is used
+      as a binary operator like: <m>A \cap B</m>. If a thing is in both sets, it is in the
+      intersection of the two sets. It is possible for the intersection to be empty <m>\emptyset</m>
+      or to contain all of one set (when one set is the subset of another). Let's do an example.
+      Let's take set <me>A = \{a,b,y,ab,ba,by,ay,bay,abba,baby\}</me> and set <me> B = \{w
+        | w\
+        \text{is any English word}\} </me>. Their intersection would have to be both an English word
+      and one of the words inside the set <m>A</m>. Assuming we know which words are actually
+      English words the interseection would be: <me>A \cdown B = \{a,by,bay,baby\}</me>. </p>
+
+
+    <p> The <term>union</term> of two sets <idx>union of sets</idx>
+    </p>
+
+    <p>The only way to get comfortable with these two types of notations and these new terms is by
+      using them. So, feel free to think of this section as a brief reference on both enumeration
+      notation and set-builder notation. Come back to read about power sets, intersection and union
+      when you need them. After you tackle these notations and terms a couple times by yourself, you
+      will not need this section as a reference. Keep this section handy as a reference to remind
+      yourself what these symbols and terms mean, until you do not need them anymore. Anytime you
+      see <m>\{ \}</m> you should be thinking about a collection of things and you can come back
+      here if you need it. </p>
+
+  </section>
+
+
+  <exercises xml:id="ch-sets-exercises">
+    <exercise>
+      <statement>
+        <p>Write a set of all even integers in set notation and set-builder notation. You will need
+          to use ellipsis in set notation. For example, counting numbers, <m>\N</m> might be written
+          as: <me> \{1,2,3,\ldots\}</me>
+        </p>
+      </statement>
+      <hint>
+        <p>Odd numbers might be written as: <me>\{\ldots,-5,-3,1,3,5,\ldots\}</me> or <me>\{n|n\
+          \text{can be
+            written as}\ 2k+1\ \text{for any integer}\ k\}</me></p>
+      </hint>
+      <answer>
+        <p>
+          <me>\{\ldots,-4,-2,0,2,4,\ldots\}</me> or <me>\{n|n\
+            \text{can be
+            written as}\ 2k\ \text{for any integer}\ k\}</me>
+        </p>
+      </answer>
+      <solution>
+        <p> The question arises sometimes (especially when using set notation for infinite sets),
+          'when have we provided enough of the pattern.' The answer is somewhat subjective, and
+          thus, other than illustration, we prefer more concrete forms of describing such sets in
+          mathematics to facilitate a more rigorous definition when required. While patterns may be
+          sufficient for us as programmers, it surprises us how often the more formal notation can
+          be a guide for us as programmers as well. The form <m>2k</m> from the set-builder notation
+          gives us a bigger hint on how to enumerate (list all of) the possible even integers using
+          a for loop. On the other hand, a very clearly defined pattern with only one set of
+          ellipsis or <m>\ldots</m> may have fruit as well. This looks like <me>
+          \{0,-2,2,-4,4,-6,6,\ldots\}</me>. It is clear what the next number should be for us
+          (especially since we have seen the previous definitions of this set.) Turning that into
+          code takes a little bit of mental maneuvering. Either way if we look forward a bit,
+          Hilbert's Hotel (<xref
+            provisional="hilbert" />) would be happy with this last listing. You can check out a
+          sample program motivated by this last listing at <xref ref="codeEvenNumbers" />. </p>
+
+
+      </solution>
+    </exercise>
+  </exercises>
+
+  <!--
+  <xi:include href=".sec-emp-intro.ptx" />
+  <xi:include href=".sec-emp-next.ptx" />
+  <xi:include href=".sec-emp-conc.ptx" /> 
+  -->
+
+</chapter>

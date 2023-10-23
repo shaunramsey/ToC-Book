@@ -3,14 +3,15 @@
 <part xml:id="part-re" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> REX and FAs </title>
 
-  <xi:include href="./ch-dfas/ch-dfas.ptx" />
-  <xi:include href="./ch-nfas/ch-nfas.ptx" />
-  <xi:include href="./ch-nfa-to-dfa/ch-nfa-to-dfa.ptx" />
-  <xi:include href="./ch-rex/ch-rex.ptx" />
-  <xi:include href="./ch-rex-to-nfa/ch-rex-to-nfa.ptx" />
-  <xi:include href="./ch-fa-to-rex/ch-fa-to-rex.ptx" />
-  <xi:include href="./ch-fa-closure/ch-fa-closure.ptx" />
-  <xi:include href="./ch-pumping-lemma-regular/ch-pumping-lemma-regular.ptx" />
+  <xi:include href="ch-sets.ptx" />
+  <xi:include href="ch-dfas.ptx" />
+  <xi:include href="ch-nfas.ptx" />
+  <xi:include href="ch-nfa-to-dfa.ptx" />
+  <xi:include href="ch-rex.ptx" />
+  <xi:include href="ch-rex-to-nfa.ptx" />
+  <xi:include href="ch-fa-to-rex.ptx" />
+  <xi:include href="ch-fa-closure.ptx" />
+  <xi:include href="ch-pumping-lemma-regular.ptx" />
 
 
 </part>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="generated-images" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="newly-generated-images" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Newly Generated Images </title>
   <p> Welcome to Newly Generated Images </p>
   <figure xml:id="fig-tikz2">
@@ -29,4 +29,22 @@
     </image>
   </figure>
 
+  <exercises>
+    <exercise>
+      <statement>
+        <p> TODO </p>
+      </statement>
+      <hint>
+        <p> TODO</p>
+      </hint>
+      <answer>
+        <p>
+          STUFF
+        </p>
+      </answer>
+      <solution>
+        <p> STUFF </p>
+      </solution>
+    </exercise>
+  </exercises>
 </chapter>
