@@ -96,38 +96,31 @@
     out. -->
     <figure xml:id="FAExM1figure">
       <caption>A simple finite automata</caption>
-      <image xml:id="RFAxM1" width="50%">
+      <image xml:id="FAExM1" width="50%">
         <latex-image>
-
           \begin{tikzpicture}[scale=0.2]
           \tikzstyle{every node}+=[inner sep=0pt]
-          \draw [black] (15.1,-15.9) circle (3);
-          \draw (15.1,-15.9) node {$A$};
-          \draw [black] (31.8,-15.9) circle (3);
-          \draw (31.8,-15.9) node {$B$};
-          \draw [black] (40.4,-24.1) circle (3);
-          \draw (40.4,-24.1) node {$ha$};
-          \draw [black] (40.4,-24.1) circle (2.4);
-          \draw [black] (17.098,-13.677) arc (129.44953:50.55047:9.997);
-          \fill [black] (29.8,-13.68) -- (29.5,-12.78) -- (28.87,-13.56);
-          \draw (23.45,-10.9) node [above] {$1$};
-          \draw [black] (29.707,-18.035) arc (-52.74395:-127.25605:10.336);
-          \fill [black] (17.19,-18.03) -- (17.53,-18.92) -- (18.13,-18.12);
-          \draw (23.45,-20.64) node [below] {$1$};
-          \draw [black] (33.712,-13.603) arc (167.96249:-120.03751:2.25);
-          \draw (38.69,-12.17) node [right] {$0$};
-          \fill [black] (34.79,-16.02) -- (35.46,-16.68) -- (35.67,-15.7);
-          \draw [black] (13.231,-18.232) arc (-10.98311:-298.98311:2.25);
-          \draw (8.27,-19.79) node [left] {$0$};
-          \fill [black] (12.11,-15.83) -- (11.42,-15.19) -- (11.23,-16.17);
-          \draw [black] (8.8,-7.8) -- (13.26,-13.53);
-          \draw (7.11,-7.3) node [above] {$M_1$};
-          \fill [black] (13.26,-13.53) -- (13.16,-12.59) -- (12.37,-13.21);
-          \draw [black] (33.97,-17.97) -- (38.23,-22.03);
-          \fill [black] (38.23,-22.03) -- (37.99,-21.12) -- (37.3,-21.84);
-          \draw (35.04,-20.48) node [below] {$~$};
+          \draw [black] (27,-15.7) circle (3);
+          \draw (27,-15.7) node {$A$};
+          \draw [black] (47.5,-15.7) circle (3);
+          \draw (47.5,-15.7) node {$B$};
+          \draw [black] (47.5,-15.7) circle (2.4);
+          \draw [black] (29.784,-14.587) arc (108.19534:71.80466:23.91);
+          \fill [black] (44.72,-14.59) -- (44.11,-13.86) -- (43.8,-14.81);
+          \draw (37.25,-12.89) node [above] {$1$};
+          \draw [black] (44.703,-16.781) arc (-72.36319:-107.63681:24.6);
+          \fill [black] (29.8,-16.78) -- (30.41,-17.5) -- (30.71,-16.55);
+          \draw (37.25,-18.44) node [below] {$1$};
+          \draw [black] (49.03,-13.133) arc (176.937:-111.063:2.25);
+          \draw (53.78,-10.71) node [right] {$0$};
+          \fill [black] (50.47,-15.35) -- (51.24,-15.89) -- (51.29,-14.9);
+          \draw [black] (24.885,-17.811) arc (-17.31033:-305.31033:2.25);
+          \draw (19.84,-18.58) node [left] {$0$};
+          \fill [black] (24.04,-15.31) -- (23.42,-14.59) -- (23.13,-15.55);
+          \draw [black] (22.2,-9.2) -- (25.22,-13.29);
+          \draw (20.39,-8.7) node [above] {$M_1$};
+          \fill [black] (25.22,-13.29) -- (25.14,-12.35) -- (24.34,-12.94);
           \end{tikzpicture}
-
         </latex-image>
       </image>
     </figure>
