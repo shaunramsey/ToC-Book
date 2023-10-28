@@ -42,7 +42,7 @@
     <xi:include href="./part-tm/part-tm-index.ptx" />
     <xi:include href="code-examples.ptx" />
     <!-- we create generated imagees by commenting out the following -->
-    <!-- <xi:include href="./generated-images.ptx" /> -->
+    <xi:include href="./generated-images.ptx" />
     <!-- <xi:include href="./newly-generated-images.ptx" /> -->
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
