@@ -2287,6 +2287,15 @@ var ptx_lunr_docs = [
   "body": "  Print all even numbers in this order:   # at an even index, just print this number. # at an odd index, use int division to figure out which # negative even number we're at then make the negative # even number out of it by multiplying by -2. Offset -2 # to skip 0 i = 0 while True: if i%2 == 0: print(i) else: print(-2*(i\/\/2)-2) i = i + 1   "
 },
 {
+  "id": "generated-images",
+  "level": "1",
+  "url": "generated-images.html",
+  "type": "Chapter",
+  "number": "20",
+  "title": "Generated Images",
+  "body": " Generated Images                                                                                                                                                                                                                                                                                                                                                                                                                                 "
+},
+{
   "id": "solutions-1",
   "level": "1",
   "url": "solutions-1.html",
