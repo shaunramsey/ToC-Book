@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "2",
   "title": "Determinsitic Finite Automata",
-  "body": " Determinsitic Finite Automata   This chapter discusses strategies for understanding finite automata, specifically those with a halting accept and halting reject state. While this is a unique approach for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata in an intuitive way. Specifically in this chapter we will tackle:     Sets and a Set Review  Deterministic Finite Automata (DFA)  Strategies for understanding Deterministic Finite Automata  Strategies for drawing Deterministic Finite Automata     Deterministic Machines   Machines  To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.  The Alphabet ( )  alphabet ( ) is a finite set of symbols. Characters in the alphabet can be appended together to create strings. So, a string  string is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a Language (   )  language (   ) .  For example, characters , , and are all included in alphabet . A language will consist of strings created from this alphabet. Order matters. For example and are strings from alphabet .  these example strings may be included in language . You might say: which means is in the language . might have other strings in it as well. We would normally list those in one form of set notation if required. If consisted of just the two strings above, we could fully list them like this: A binary string (like ) would require a binary alphabet ( ). A sample binary language might be: This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).  As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).     Finite Automata (FA)  Finite Automata (FA)  Finite Automata (FA) are State Machine (M)  state machines (M) . We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize States (Q)  states (Q) to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with encased in two circles. A halt and reject state ( ) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help.   Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book.    A simple finite automata      Say there is a string . After following the arrows to parse through , it would be accepted by as it finished on the accept state. We now know that , but what is ?  Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.               One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For , test strings could include 000, 01, 11011, and 100001. By tracing through with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like \"have seen a 0 followed by a 1.\" Sometimes it remembers a modulus of sorts like \"seen an even number of 0s\" or \"seen a binary string that represents a number divisible by 3\". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!    Deterministic Finite Automata (DFA)   Deterministic Finitie Automata (DFA)  Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are accounted for at each state. We can look again at shown in     The alphabet of includes 0 and 1. When at the start state , if a 0 is read, we stay at and if a 1 is read, we move to . Each possibility is accounted for. When in state , if a 0 is read, we stay at and if a 1 is read, we move to . Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.  Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character at each state, the FA is deterministic.    Determinism Chart for      1  0                               Deterministic   Determinisim  Determinisim means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.     Strategies for Understanding DFAs  TODO    Strategies for Drawing DFAs  TODO     What is the language of ?      Come up with ten strings in the language of .   TODO    1  0    2  101101    3       4  010101    5  0000    6  011    7  10010    8  111001    9  1001    10  0110     Come up with ten strings NOT in the language of .   TODO    1  1    2  100    3  10    4  10001    5  1011    6  11111    7  101    8  1101    9  10110    10  001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   TODO    1  0  (0)    2  101101  (45)    3     _    4  010101  (21)    5  0000  (0)    6  011  (3)    7  10010  (18)    8  111001  (57)    9  1001  (9)    10  0110  (6)       What is the language of ?      Come up with a few test strings. See any patterns? Focus on the plain language description.         A great first step is to walk through the shortest path to the accept state. This would be 01.  It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For , that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for to accept.  Another note, the string 01 must be included as a 1 must come after a 0 to get to the accept state .      Build a machine for language 5 ( ).          What is the language of ?      Machines can have other alphabets. What is the alphabet of this machine's language?        Use the diagram below to create a DFA that can track mod 7 for any binary number.       Translate this FA into a complete English description.           Translate this FA into a complete English description.       Translate this FA into an English description.       Translate this FA into a complete English description.       Give an English description of the language of the following FA:        "
+  "body": " Determinsitic Finite Automata   This chapter discusses strategies for understanding finite automata, specifically those with a halting accept and halting reject state. While this is a unique approach for teaching and learning in theory of computation, we find that this is a more natural way for programmers to think about, understand, and ultimately to use finite automata in an intuitive way. Specifically in this chapter we will tackle:     Sets and a Set Review  Deterministic Finite Automata (DFA)  Strategies for understanding Deterministic Finite Automata  Strategies for drawing Deterministic Finite Automata     Deterministic Machines   Machines  To start off thinking about theory of computation, we need a few base terms that we will use in the rest of this book. For the most part, in theory of computation we talk about machines. You can think of these automata or machines like functions. They take input in the form of a string (an ordered sequence of symbols) and they either accept or reject that input. As we continue through the course, we will add more power to the capabilities of these machines in the form of memory. At first, the machines can only switch between a finite set of states. However, as we progress to other sections of this book, we will allow these machines to gain access to different types of infinite memories. Let's look at a few important sets that we will need to discuss our automata.  The Alphabet ( )  alphabet ( ) is a finite set of symbols. Characters in the alphabet can be appended together to create strings. So, a string  string is an ordered list of characters from the alphabet. A collection (set) of strings is also known as a Language (   )  language (   ) .  For example, characters , , and are all included in alphabet . A language will consist of strings created from this alphabet. Order matters. For example and are strings from alphabet .  these example strings may be included in language . You might say: which means is in the language . might have other strings in it as well. We would normally list those in one form of set notation if required. If consisted of just the two strings above, we could fully list them like this: A binary string (like ) would require a binary alphabet ( ). A sample binary language might be: This language consists of any binary string that begins with a 1. So some sample strings in the language are: 1, 10, 11, 100, 101, 110, 111, 1000, 1001 (and infinitely more). The following strings would not be in the language: 0, 01, 001, 010, 011, 0100, 0101 (and also infinitely more).  As we continue in this book, we will use these terms: alphabet, string, and language quite often. Our alphabets are finite sets, the building blocks of everything. Strings are like words, an ordered list of characters. Languages are sets of strings. Our languages are often infinite (having an unbounded number of strings).     Finite Automata (FA)  Finite Automata (FA)  Finite Automata (FA) are State Machine (M)  state machines (M) . We use these machines to describe (recognize) a language. They have no memory storage outside of their finitly many states. They utilize States (Q)  states (Q) to determine if a given string is accepted or rejected by the machine. You may also say that the FA determines if a string exists in the language of the machine. States do track a kind of finite memory by their position. States are represented using circles and machines are made up of states and arrows connecting them. Finite automata have an entry point - so there is also one arrow without a beginning state. This arrow points to the start state which is where the machine will begin processing its input. In our machines there may also be a halt and accept state. It will be denoted with encased in two circles. A halt and reject state ( ) may also be present inside a circle within a circle. This is best described alongside diagrams and images. So, the diagrams below will help.   Unlike the finite automata presented in this book, a traditional finite automata will not have halt states. Traditionally an FA will operate continuously (imagine a red light or a vending machine that takes coins). Such a finite automata will not have halt states, but instead will have states represented by a circle withing a circle. Such states are accept states. When an automata finishes processing an input string, it will accept if it is in an accept state (state with a double circle), otherwise it will reject the input string. The approach presented in this book is beneficial because it operates more closely to how you would program software to operate. For example, a language that only needs to look at the first symbol of an input string, could immediately halt and accept or halt and reject based on that symbol. If your need does not include processing the whole string, then we do not bother in the model presented in this book.    A simple finite automata      Say there is a string . After following the arrows to parse through , it would be accepted by as it finished on the accept state. We now know that , but what is ?  Lanugages can be described using plain language, expressions, set notation, or FAs. The following all represent the same language.               One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For , test strings could include 000, 01, 11011, and 100001. By tracing through with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like \"have seen a 0 followed by a 1.\" Sometimes it remembers a modulus of sorts like \"seen an even number of 0s\" or \"seen a binary string that represents a number divisible by 3\". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!    Deterministic Finite Automata (DFA)   Deterministic Finitie Automata (DFA)  Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is defined. When trying to categorize a FA as deterministic, we can look to see if all characters in the alphabet are accounted for at each state. We can look again at shown in     The alphabet of includes 0 and 1. When at the start state , if a 0 is read, we stay at and if a 1 is read, we move to . Each possibility is accounted for. When in state , if a 0 is read, we stay at and if a 1 is read, we move to . Since there is a definied path for each potential character at each state, then the FA is deterministic, or a DFA.  Looking at this in chart form is a helpful way to check for determinism. As there is an entry for each potential character at each state, the FA is deterministic.    Determinism Chart for      1  0                               Deterministic   Determinisim  Determinisim means that all transitions of state are unique and completely defined. For example, when we are in a specific state, if there are two possible exits for that state when a character is read, that would not be deterministic because after reading that input symbol, our machine would need to be in two states. Thus, our machine would either need to 'make a guess' as to which state is the one that will lead it to success or it must execute two paths in parallel. Later we will see that we can use empty string transitions to freely jump to another state.     Strategies for Understanding DFAs  TODO    Strategies for Drawing DFAs  TODO     What is the language of ?      Come up with ten strings in the language of .   TODO    1  0    2  101101    3       4  010101    5  0000    6  011    7  10010    8  111001    9  1001    10  0110     Come up with ten strings NOT in the language of .   TODO    1  1    2  100    3  10    4  10001    5  1011    6  11111    7  101    8  1101    9  10110    10  001     Do you see any patterns?       It is helpful to look at patterns beyond those that are obvious and to consider ones that require a certain level of interpretation. Consider the test string lists from the hint, but this time the decimal number is included.   TODO    1  0  (0)    2  101101  (45)    3     _    4  010101  (21)    5  0000  (0)    6  011  (3)    7  10010  (18)    8  111001  (57)    9  1001  (9)    10  0110  (6)       What is the language of ?      Come up with a few test strings. See any patterns? Focus on the plain language description.         A great first step is to walk through the shortest path to the accept state. This would be 01.  It is also helpful to think about the longest possible path to the accept state or the longest string that would still be accepted. For , that is any number of 1s, followed by at least one 0, followed by at least one 1, and can have any amount of 0s and 1s after that. At least one 0 and at least one 1 is required for to accept.  Another note, the string 01 must be included as a 1 must come after a 0 to get to the accept state .      Build a machine for language 5 ( ).          What is the language of ?      Machines can have other alphabets. What is the alphabet of this machine's language?        Use the diagram below to create a DFA that can track mod 7 for any binary number.       Translate this FA into a complete English description.           Translate this FA into a complete English description.       Translate this FA into an English description.       Translate this FA into a complete English description.       Find the missing elements of the following Finite Automata. Then, give an English description of the language of the following FA:        "
 },
 {
   "id": "objectives-2",
@@ -277,7 +277,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2.6.10",
   "title": "",
-  "body": " Give an English description of the language of the following FA:     "
+  "body": " Find the missing elements of the following Finite Automata. Then, give an English description of the language of the following FA:     "
 },
 {
   "id": "ch-nfas",
@@ -286,7 +286,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "3",
   "title": "Non-determinsitic Finite Automata",
-  "body": " Non-determinsitic Finite Automata  In this chapter you will learn:  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs     Non-Deterministic Finite Automata (NFA)  Non-Deterministic Finitie Automata (NFA)  Non-Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is not completely determined (see the root words at work here). Some quick examples include, a state that transitions to two other states on an input, thus leaving you in multiple states. A state where a transition is not defined, thus ejecting you from the machine. We will even allow free jumps to new states.  Consider .    What is the language of ( )?  Despite being in the alphabet, does not appear in the FA. What could this mean for the language?     any string with two or more s and no s.        Parallelism  NFAs make it possible to exist in two states at once. You might think of this as Parallelism  parallelism . Parallelism can occur because a state has multiple paths for the same character. It can also happen because of an Empty String Transition  empty string transition . Empty string transitions are free jumps to another state. Sometimes these multiple paths and free jumps are called guesses when discussing FAs. Only one execution path must lead to an accept, to accept a string in these conditions.   is an example of parallelism caused by a character having two defined paths from the same state. Both states and would be active if the first character of the given string was 1.    There are two strategies for tracking which states you are in. The first is quite simple, track them with your fingers. The second, is to create a transition table similar to that in .   Determinism Chart for    1 0          contains an example of an NFA caused by an empty string transition. When processing a string like \"bba\" we might start by tracking with our fingers. They start in but quickly we see we exist in and as well. When the first \"b\" is read, we fall off the first two states and move from to . To track this with a computer, given the knowledge we have so far, we would have to use some form of guess and check with backtracking (like a depth-first search) or we could create children processes to handle the different traces to run things in parallel. What a conundrum! Let us see if we can do something about that in the future.      The Power Set  The Power Set (P)  power set (P) is the set of all subsets of the given states. It also includes .  The power set will have as many sets in it as with being the number of states in the machine. The power set for a generic machice with states , , and . Would look like this:   Since we might think about NFAs as the ability to exist in multiple states, the power set is a useful tool. If we trace our way through an NFA, we'll end up in some set of states. That will correspond to one of the entries in the power set. That's a useful idea that we'll use in just a moment.   Strengths of NFAs  NFAs are often pretty easy to generate for languages that include a certain set of characters. Such as:  Begins with 01  Contains 01  Ends with 01   Some of these are not so hard for DFAs but, as we work with things we find that the shortcuts of NFAs allow us to write the machines for such languages more quickly. When your language includes an \"or\" in its description, it turns out that's also perfect for an NFA. Since we can make guesses, we can build a machine for each side of the \"or\" and push them together with empty string transitions. Looking back at , we might describe this language with an \"or\". We take either the top path or the bottom path. The language then must be all strings that are \"aab\" or that begin with \"bb\" followed by any number of a's.    Build a NFA for the following language where :        The maximum size of the power set is where is the number of states in the machine. Where does this come from?   There is always a choice to be in a state or not.   There are two choices with each state, whether to be in it or to not be in it. This means that there are two options for each state, making the maximum size of the power set .    Create a power set for a FA with the following states: , , , and .         Craft a FA from this English description.  All strings that begin with a 0, end with a 0, and may contain any number of other s and s. Assume .       Craft a FA from this English description:     Construct a FA from this English description. Assume .     The language that consists of all strings that contain 101.    Give a FA of the following English description of a language with the alphabet, :  The language consists of all strings that contain 1337.     "
+  "body": " Non-determinsitic Finite Automata   In this chapter we will discuss how to allow our finite automata to be non-deterministic. TODO     Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs     Non-Deterministic Finite Automata (NFA)  Non-Deterministic Finitie Automata (NFA)  Non-Determinisitic Finite Automatas (DFA) are FAs where the outcome of each possible change of state is not completely determined (see the root words at work here). Some quick examples include, a state that transitions to two other states on an input, thus leaving you in multiple states. A state where a transition is not defined, thus ejecting you from the machine. We will even allow free jumps to new states.    Consider with      What is the language of ? This may be written as .    Despite being in the alphabet, does not appear in the FA. What could this mean for the language?     any string with two or more 's and no 's.    How would this change if the every is placed with an ?       Parallelism  NFAs make it possible to exist in two states at once. You might think of this as Parallelism  parallelism . Parallelism can occur because a state has multiple paths for the same character. It can also happen because of an Empty String Transition  empty string transition . Empty string transitions are free jumps to another state. Sometimes these multiple paths and free jumps are called guesses when discussing FAs. Only one execution path must lead to an accept, to accept a string in these conditions.   is an example of parallelism caused by a character having two defined paths from the same state. Both states and would be active if the first character of the given string was 1.     There are two strategies for tracking which states you are in. The first is quite simple, track them with your fingers. The second, is to create a transition table similar to that in the previous chapter but including nondeterminism.   Determinism Chart for      1  0                                                             contains an example of an NFA caused by an empty string transition. When processing a string like \"bba\" we might start by tracking with our fingers. They start in but quickly we see we exist in and as well. When the first \"b\" is read, we fall off the first two states and move from to . To track this with a computer, given the knowledge we have so far, we would have to use some form of guess and check with backtracking (like a depth-first search) or we could create children processes to handle the different traces to run things in parallel. What a conundrum! Let us see if we can do something about that in the future.       The Power Set  The Power Set (P)  power set (P) is the set of all subsets of the given states. It also includes .  The power set will have as many sets in it as with being the number of states in the machine. The power set for a generic machice with states , , and . Would look like this:   Since we might think about NFAs as the ability to exist in multiple states, the power set is a useful tool. If we trace our way through an NFA, we'll end up in some set of states. That will correspond to one of the entries in the power set. That's a useful idea that we'll use in just a moment.    Strengths of NFAs  NFAs are often pretty easy to generate for languages that include a certain set of characters. Such as:  Begins with 01  Contains 01  Ends with 01    Some of these are not so hard for DFAs but, as we work with things we find that the shortcuts of NFAs allow us to write the machines for such languages more quickly. When your language includes an \"or\" in its description, it turns out that's also perfect for an NFA. Since we can make guesses, we can build a machine for each side of the \"or\" and push them together with empty string transitions. Looking back at , we might describe this language with an \"or\". We take either the top path or the bottom path. The language then must be all strings that are \"aab\" or that begin with \"bb\" followed by any number of a's.     Build a NFA for the following language where :    TODO replace with new method      The maximum size of the power set is where is the number of states in the machine. Where does this come from?   There is always a choice to be in a state or not.   There are two choices with each state, whether to be in it or to not be in it. This means that there are two options for each state, making the maximum size of the power set .    Create a power set for a FA with the following states: , , , and .        Craft a FA from this English description.  All strings that begin with a 0, end with a 0, and may contain any number of other s and s. Assume .   TODO replace with new method      Craft a FA from this English description:       Construct a FA from this English description. Assume .     The language that consists of all strings that contain 101.    Give a FA of the following English description of a language with the alphabet, :  The language consists of all strings that contain 1337.     "
 },
 {
   "id": "objectives-3",
@@ -295,21 +295,30 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "3",
   "title": "",
-  "body": "In this chapter you will learn:  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs   "
+  "body": "  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs   "
 },
 {
-  "id": "p-55",
+  "id": "p-56",
   "level": "2",
-  "url": "ch-nfas.html#p-55",
+  "url": "ch-nfas.html#p-56",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Non-Determinisitic Finite Automatas (DFA) "
 },
 {
-  "id": "p-60",
+  "id": "exploration-1",
   "level": "2",
-  "url": "ch-nfas.html#p-60",
+  "url": "ch-nfas.html#exploration-1",
+  "type": "Exploration",
+  "number": "1",
+  "title": "",
+  "body": "  Consider with      What is the language of ? This may be written as .    Despite being in the alphabet, does not appear in the FA. What could this mean for the language?     any string with two or more 's and no 's.   "
+},
+{
+  "id": "p-62",
+  "level": "2",
+  "url": "ch-nfas.html#p-62",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -322,12 +331,12 @@ var ptx_lunr_docs = [
   "type": "Table",
   "number": "3.1",
   "title": "Determinism Chart for <span class=\"process-math\">\\(M_1\\)<\/span>",
-  "body": " Determinism Chart for    1 0        "
+  "body": " Determinism Chart for      1  0                                                           "
 },
 {
-  "id": "p-64",
+  "id": "p-66",
   "level": "2",
-  "url": "ch-nfas.html#p-64",
+  "url": "ch-nfas.html#p-66",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -340,7 +349,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.5.1",
   "title": "",
-  "body": " Build a NFA for the following language where :      "
+  "body": " Build a NFA for the following language where :    TODO replace with new method    "
 },
 {
   "id": "exercise-13",
@@ -358,7 +367,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.5.3",
   "title": "",
-  "body": " Create a power set for a FA with the following states: , , , and .       "
+  "body": " Create a power set for a FA with the following states: , , , and .      "
 },
 {
   "id": "exercise-15",
@@ -367,7 +376,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.5.4",
   "title": "",
-  "body": " Craft a FA from this English description.  All strings that begin with a 0, end with a 0, and may contain any number of other s and s. Assume .     "
+  "body": " Craft a FA from this English description.  All strings that begin with a 0, end with a 0, and may contain any number of other s and s. Assume .   TODO replace with new method    "
 },
 {
   "id": "exercise-16",
@@ -376,7 +385,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.5.5",
   "title": "",
-  "body": " Craft a FA from this English description:   "
+  "body": " Craft a FA from this English description:     "
 },
 {
   "id": "exercise-17",
@@ -412,7 +421,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "4",
   "title": "NFA and DFA relationships",
-  "body": " NFA and DFA relationships  In this chapter you will learn:  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs     Finite Number of States  As introduced in , there is a limit to the amount of states that a NFA can have. This means that all NFAs can become DFAs as the transitions on each character can be determined for each state. The length of the power set is also the greatest amount of states that a DFA made from a NFA can have.   Getting from a NFA to a DFA  For this, consider .     is a NFA. An at will lead to both and . This is an example of parallelism. What is the maximum number of states a DFA created from could have?    . A DFA made from can have up to states as has states and .   How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character from each state. In , a at could go to or . A at would go to an state.    Try to create the states that would lead to. There is a posibility that each state in a set is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept state.        When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would an a go after ?, where would a 1 go after ?, and where would a 0 go after . Try to complete the next step of the diagram.      It is important to note, that if the outcoming state set of a chaacter already exists that state sholuld be linked to instead of another created. Try creating the final FA with this in mind.            What is the maximum number of states in a DFA made from ?        Create a DFA based on .       This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its language.      Convert the below NFA to a DFA using the subset construction.      Convert the below NFA into a DFA.      Convert the below NFA into a DFA, using our subset construction.      Convert the NFA below into a DFA.      Convert the following NFA into a DFA:       "
+  "body": " NFA and DFA relationships   In this chapter you will learn:     Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs     Finite Number of States  As introduced in , there is a limit to the amount of states that a NFA can have. This means that all NFAs can become DFAs as all the new states and the transitions on each character can be determined for each state. The length of the power set is also the greatest amount of states that a DFA made from a NFA can have.   Getting from a NFA to a DFA   For this, consider This is the same machine as       is a NFA. An at will lead to both and . This is an example of parallelism. What is the maximum number of states a DFA created from could have?     . A DFA made from can have up to states as has states and .      How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character from each state. In , a at could go to or . A at would go to an state.     Try to create the states that would lead to. There is a posibility that each state in a set is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept state.          When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would an a go after ?, where would a 1 go after ?, and where would a 0 go after . Try to complete the next step of the diagram.          It is important to note, that if the outcoming state set of a character already exists that state sholuld be linked to instead of another created. Try creating the final FA with this in mind.              What is the maximum number of states in a DFA made from ?   How many states are there? 6.   Since there are 6 states and each can be in a subset (or not). We have that choice times. Thus possible states.    Create a DFA based on . TODO: generate new image for answer       This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its language.       Convert the below NFA to a DFA using the subset construction.       Convert the below NFA into a DFA.       Convert the below NFA into a DFA, using our subset construction.       Convert the NFA below into a DFA.       Convert the following NFA into a DFA:        "
 },
 {
   "id": "objectives-4",
@@ -421,7 +430,7 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "4",
   "title": "",
-  "body": "In this chapter you will learn:  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs   "
+  "body": "  Non-Deterministic Finite Automata (NFA)  Parallelism  The Power Set  Strengths of NFAs   "
 },
 {
   "id": "assemblage-NFADFAConversion",
@@ -430,7 +439,34 @@ var ptx_lunr_docs = [
   "type": "Exploration",
   "number": "2",
   "title": "Getting from a NFA to a DFA.",
-  "body": " Getting from a NFA to a DFA  For this, consider .     is a NFA. An at will lead to both and . This is an example of parallelism. What is the maximum number of states a DFA created from could have?    . A DFA made from can have up to states as has states and .   How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character from each state. In , a at could go to or . A at would go to an state.    Try to create the states that would lead to. There is a posibility that each state in a set is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept state.        When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would an a go after ?, where would a 1 go after ?, and where would a 0 go after . Try to complete the next step of the diagram.      It is important to note, that if the outcoming state set of a chaacter already exists that state sholuld be linked to instead of another created. Try creating the final FA with this in mind.      "
+  "body": " Getting from a NFA to a DFA   For this, consider This is the same machine as       is a NFA. An at will lead to both and . This is an example of parallelism. What is the maximum number of states a DFA created from could have?     . A DFA made from can have up to states as has states and .   "
+},
+{
+  "id": "exploration-3",
+  "level": "2",
+  "url": "ch-nfa-to-dfa.html#exploration-3",
+  "type": "Exploration",
+  "number": "3",
+  "title": "",
+  "body": "  How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character from each state. In , a at could go to or . A at would go to an state.     Try to create the states that would lead to. There is a posibility that each state in a set is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept state.       "
+},
+{
+  "id": "exploration-4",
+  "level": "2",
+  "url": "ch-nfa-to-dfa.html#exploration-4",
+  "type": "Exploration",
+  "number": "4",
+  "title": "",
+  "body": "  When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would an a go after ?, where would a 1 go after ?, and where would a 0 go after . Try to complete the next step of the diagram.       "
+},
+{
+  "id": "exploration-5",
+  "level": "2",
+  "url": "ch-nfa-to-dfa.html#exploration-5",
+  "type": "Exploration",
+  "number": "5",
+  "title": "",
+  "body": "  It is important to note, that if the outcoming state set of a character already exists that state sholuld be linked to instead of another created. Try creating the final FA with this in mind.       "
 },
 {
   "id": "exercise-20",
@@ -439,7 +475,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.1",
   "title": "",
-  "body": "   What is the maximum number of states in a DFA made from ?      "
+  "body": "    What is the maximum number of states in a DFA made from ?   How many states are there? 6.   Since there are 6 states and each can be in a subset (or not). We have that choice times. Thus possible states.  "
 },
 {
   "id": "exercise-21",
@@ -448,7 +484,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.2",
   "title": "",
-  "body": " Create a DFA based on .     "
+  "body": " Create a DFA based on . TODO: generate new image for answer     "
 },
 {
   "id": "exercise-22",
@@ -457,7 +493,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.3",
   "title": "",
-  "body": " This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its language.    "
+  "body": " This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its language.     "
 },
 {
   "id": "exercise-23",
@@ -466,7 +502,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.4",
   "title": "",
-  "body": " Convert the below NFA to a DFA using the subset construction.    "
+  "body": " Convert the below NFA to a DFA using the subset construction.     "
 },
 {
   "id": "exercise-24",
@@ -475,7 +511,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.5",
   "title": "",
-  "body": " Convert the below NFA into a DFA.    "
+  "body": " Convert the below NFA into a DFA.     "
 },
 {
   "id": "exercise-25",
@@ -484,7 +520,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.6",
   "title": "",
-  "body": " Convert the below NFA into a DFA, using our subset construction.    "
+  "body": " Convert the below NFA into a DFA, using our subset construction.     "
 },
 {
   "id": "exercise-26",
@@ -493,7 +529,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.7",
   "title": "",
-  "body": " Convert the NFA below into a DFA.    "
+  "body": " Convert the NFA below into a DFA.     "
 },
 {
   "id": "exercise-27",
@@ -502,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.2.8",
   "title": "",
-  "body": " Convert the following NFA into a DFA:    "
+  "body": " Convert the following NFA into a DFA:     "
 },
 {
   "id": "ch-rex",
@@ -523,29 +559,29 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Regular Expressions  Regular Expressions in NFAs   "
 },
 {
-  "id": "p-98",
+  "id": "p-106",
   "level": "2",
-  "url": "ch-rex.html#p-98",
+  "url": "ch-rex.html#p-106",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Regular Expressions (REX) "
 },
 {
-  "id": "p-100",
+  "id": "p-108",
   "level": "2",
-  "url": "ch-rex.html#p-100",
+  "url": "ch-rex.html#p-108",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Repition (*) "
 },
 {
-  "id": "exploration-3",
+  "id": "exploration-6",
   "level": "2",
-  "url": "ch-rex.html#exploration-3",
+  "url": "ch-rex.html#exploration-6",
   "type": "Exploration",
-  "number": "3",
+  "number": "6",
   "title": "",
   "body": " What strings can be made from ?  Some strings are:         A wide array of strings can be made from a simple expression declaration.  "
 },
@@ -628,7 +664,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "6",
   "title": "Converting REX to NFAs",
-  "body": " Converting REX to NFAs  In this chapter you will learn:  Regular Expressions  Regular Expressions in NFAs     Converting Regular Expressions to NFAs  Different structures of characters can be included in Regular expressions as covered in . Displaying these structures in NFAs can follow these simple constructions:    Terminals:       Concatenation:       Or:       Repeats:       Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined.    Building NFAs from REs  The best way to approach creating NFAs from REs is to go one character or section at a time. The Explorations below were created with that approach.   Let's walk through the creation of an NFA that combines some of the structures from . Consider First, we will focus on the . This can be accomplished using the structure for concatantaion.    Second, we will add in the repeating element of . As a way to account for multiple characters repeating, we can lean on NFA's paralleism to add an empty string transition.    Now that the term has been taken care of, the needs to be considered. We will introduce another empty string transition as shown above.    The final part of is , this is just another instance of concatenation! Which makes this the final NFA for .      Consider First, we look at . This is a terminal structure.    Second, we will add in the OR element.    We now need to turn our attention to the , which is a terminal followed by a repeating structure.    There is a 1 that follows the . Since there is an empty string transition, it's terminal structure can be added to the state between 1 and 0.    Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.        Convert the following REX into a FA, using the construciton method shown in           Convert the following REX into a FA, using the construciton method.          Create an FA for the following Regular Expression.  Here, is used to represent any alphabetic symbol.   There would typically by states between each character, but in the interest of space, the FA has been compressed.      Create an FA for the following regular expression.  Here, is used to represent any decimal digit.   There would typically be states between each character, but in the interest of space, the FA has been compressed.      Represent the below REX as a FA.      "
+  "body": " Converting REX to NFAs   In this chapter you will learn: TODO expand     Regular Expressions  Regular Expressions in NFAs     Converting Regular Expressions to NFAs  Different structures of characters can be included in Regular expressions as covered in . Displaying these structures in NFAs can follow these simple constructions:     Terminals:       Concatenation:       Or:       Repeats:        Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined.    Building NFAs from REs  The best way to approach creating NFAs from REs is to go one character or section at a time. The Explorations below were created with that approach.   Let's walk through the creation of an NFA that combines some of the structures from . Consider First, we will focus on the . This can be accomplished using the structure for concatantaion.    Second, we will add in the repeating element of . As a way to account for multiple characters repeating, we can lean on NFA's paralleism to add an empty string transition.    Now that the term has been taken care of, the needs to be considered. We will introduce another empty string transition as shown above.    The final part of is , this is just another instance of concatenation! Which makes this the final NFA for .      Consider First, we look at . This is a terminal structure.    Second, we will add in the OR element.    We now need to turn our attention to the , which is a terminal followed by a repeating structure.    There is a 1 that follows the . Since there is an empty string transition, it's terminal structure can be added to the state between 1 and 0.    Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.        Convert the following REX into a FA, using the construction method shown in         Convert the following REX into a FA, using the construciton method.        Create an FA for the following Regular Expression.  Here, is used to represent any alphabetic symbol.   There would typically by states between each character, but in the interest of space, the FA has been compressed.      Create an FA for the following regular expression.  Here, is used to represent any decimal digit.   There would typically be states between each character, but in the interest of space, the FA has been compressed.      Represent the below REX as a FA.      "
 },
 {
   "id": "objectives-6",
@@ -637,23 +673,23 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "6",
   "title": "",
-  "body": "In this chapter you will learn:  Regular Expressions  Regular Expressions in NFAs   "
+  "body": "  Regular Expressions  Regular Expressions in NFAs   "
 },
 {
-  "id": "exploration-4",
+  "id": "exploration-7",
   "level": "2",
-  "url": "ch-rex-to-nfa.html#exploration-4",
+  "url": "ch-rex-to-nfa.html#exploration-7",
   "type": "Exploration",
-  "number": "4",
+  "number": "7",
   "title": "",
   "body": " Let's walk through the creation of an NFA that combines some of the structures from . Consider First, we will focus on the . This can be accomplished using the structure for concatantaion.    Second, we will add in the repeating element of . As a way to account for multiple characters repeating, we can lean on NFA's paralleism to add an empty string transition.    Now that the term has been taken care of, the needs to be considered. We will introduce another empty string transition as shown above.    The final part of is , this is just another instance of concatenation! Which makes this the final NFA for .    "
 },
 {
-  "id": "exploration-5",
+  "id": "exploration-8",
   "level": "2",
-  "url": "ch-rex-to-nfa.html#exploration-5",
+  "url": "ch-rex-to-nfa.html#exploration-8",
   "type": "Exploration",
-  "number": "5",
+  "number": "8",
   "title": "",
   "body": " Consider First, we look at . This is a terminal structure.    Second, we will add in the OR element.    We now need to turn our attention to the , which is a terminal followed by a repeating structure.    There is a 1 that follows the . Since there is an empty string transition, it's terminal structure can be added to the state between 1 and 0.    Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.    "
 },
@@ -664,7 +700,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.1",
   "title": "",
-  "body": " Convert the following REX into a FA, using the construciton method shown in         "
+  "body": " Convert the following REX into a FA, using the construction method shown in       "
 },
 {
   "id": "exercise-37",
@@ -673,7 +709,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.3.2",
   "title": "",
-  "body": " Convert the following REX into a FA, using the construciton method.        "
+  "body": " Convert the following REX into a FA, using the construciton method.      "
 },
 {
   "id": "exercise-38",
@@ -721,20 +757,20 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  How to rip   "
 },
 {
-  "id": "p-144",
+  "id": "p-152",
   "level": "2",
-  "url": "ch-fa-to-rex.html#p-144",
+  "url": "ch-fa-to-rex.html#p-152",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Ripping Generalized Non-Finite Automata (GNFA) "
 },
 {
-  "id": "exploration-6",
+  "id": "exploration-9",
   "level": "2",
-  "url": "ch-fa-to-rex.html#exploration-6",
+  "url": "ch-fa-to-rex.html#exploration-9",
   "type": "Exploration",
-  "number": "6",
+  "number": "9",
   "title": "",
   "body": " Consider :     Add a new start state with an empty string transition to the old start state.      Add a new accept state with empty string transition(s) from the old accept state(s)      Rip :      Rip :       "
 },
@@ -838,40 +874,13 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Discrete Math Review  Closure   "
 },
 {
-  "id": "p-188",
+  "id": "p-196",
   "level": "2",
-  "url": "ch-fa-closure.html#p-188",
+  "url": "ch-fa-closure.html#p-196",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "closed "
-},
-{
-  "id": "exploration-7",
-  "level": "2",
-  "url": "ch-fa-closure.html#exploration-7",
-  "type": "Exploration",
-  "number": "7",
-  "title": "",
-  "body": "   Each column is an element of the set.   If I take an element and swap its top character with the top character of another element, do I stay in the set?    How about swapping bottom characters?    What if I change the bottom character to a ?    How about swapping s and s?    How about swapping middle characters to s, s, or s?     "
-},
-{
-  "id": "exploration-8",
-  "level": "2",
-  "url": "ch-fa-closure.html#exploration-8",
-  "type": "Exploration",
-  "number": "8",
-  "title": "Closure in Natural Numbers.",
-  "body": " Closure in Natural Numbers  Consider a few simple operations applied to the natural numbers.      Addition - take any two and add them. Is the result always in ?   If yes, are closed under addition    If no, are not closed under addition and a counter-example needs to be provided      Yes.     Subtraction - take any two and subtract one from the other. Is the result always in ?   If yes, are closed under subtraction    If no, are not closed under subtraction and a counter-example needs to be provided      No. Negative numbers are not included in the .        Multiplication - take any two and multiply them. Is the result always in ?   If yes, are closed under multiplication    If no, are not closed under multiplication and a counter-example needs to be provided      Yes.     Division - take any two and divide them. Is the result always in ?   If yes, are closed under division    If no, are not closed under division and a counter-example needs to be provided      No.        Negation - take any and make it negative. Is the result always in ?   If yes, are closed under negation    If no, are not closed under negation and a counter-example needs to be provided      No.       Some additional operations could be: reciprocals, modulus, exponentiation, and factorial.  "
-},
-{
-  "id": "exploration-9",
-  "level": "2",
-  "url": "ch-fa-closure.html#exploration-9",
-  "type": "Exploration",
-  "number": "9",
-  "title": "Implications.",
-  "body": " Implications  We know are closed under addition. This means we know that if and then .  This is an example of an Implication  implication .          A B    1 1    1 0    0 1    0 0     "
 },
 {
   "id": "exploration-10",
@@ -879,6 +888,33 @@ var ptx_lunr_docs = [
   "url": "ch-fa-closure.html#exploration-10",
   "type": "Exploration",
   "number": "10",
+  "title": "",
+  "body": "   Each column is an element of the set.   If I take an element and swap its top character with the top character of another element, do I stay in the set?    How about swapping bottom characters?    What if I change the bottom character to a ?    How about swapping s and s?    How about swapping middle characters to s, s, or s?     "
+},
+{
+  "id": "exploration-11",
+  "level": "2",
+  "url": "ch-fa-closure.html#exploration-11",
+  "type": "Exploration",
+  "number": "11",
+  "title": "Closure in Natural Numbers.",
+  "body": " Closure in Natural Numbers  Consider a few simple operations applied to the natural numbers.      Addition - take any two and add them. Is the result always in ?   If yes, are closed under addition    If no, are not closed under addition and a counter-example needs to be provided      Yes.     Subtraction - take any two and subtract one from the other. Is the result always in ?   If yes, are closed under subtraction    If no, are not closed under subtraction and a counter-example needs to be provided      No. Negative numbers are not included in the .        Multiplication - take any two and multiply them. Is the result always in ?   If yes, are closed under multiplication    If no, are not closed under multiplication and a counter-example needs to be provided      Yes.     Division - take any two and divide them. Is the result always in ?   If yes, are closed under division    If no, are not closed under division and a counter-example needs to be provided      No.        Negation - take any and make it negative. Is the result always in ?   If yes, are closed under negation    If no, are not closed under negation and a counter-example needs to be provided      No.       Some additional operations could be: reciprocals, modulus, exponentiation, and factorial.  "
+},
+{
+  "id": "exploration-12",
+  "level": "2",
+  "url": "ch-fa-closure.html#exploration-12",
+  "type": "Exploration",
+  "number": "12",
+  "title": "Implications.",
+  "body": " Implications  We know are closed under addition. This means we know that if and then .  This is an example of an Implication  implication .          A B    1 1    1 0    0 1    0 0     "
+},
+{
+  "id": "exploration-13",
+  "level": "2",
+  "url": "ch-fa-closure.html#exploration-13",
+  "type": "Exploration",
+  "number": "13",
   "title": "Logic in Closure.",
   "body": " Logic in Closure  Here is another binary operator:      A B C AB      0 0 0 0     0 0 1 0     0 1 0 0     0 1 1 0     1 0 0 0     1 0 1 0     1 1 0 1     1 1 1 1      Given the above logic table, we now know that is logically equivalent to .  Let us say we know is not true and is true. What must be?   Not true.   That is a form of the contrapositive.  For this situation, means and means . So, these statements are the same, but if we know , then either A or B is untrue.  This is telling us that given , the boolean must be true. So,     These conclusions are very important for understanding closure.  "
 },
@@ -892,38 +928,38 @@ var ptx_lunr_docs = [
   "body": " RLs Closed under Union   Union RL closure under union follows the basic progression: if is a RL and is a RL, then is a RL.  If is a RL, some DFA describes it. It has a start state and a set of accept states. We also added empty string tranistions from the original accept states to a singluar new accept state.     This is the same for .     Using these two machines, we can create the union machine by making a new start state with empty string transitions to the start states for and .     Since this union machine is an NFA, it describes a RL.  "
 },
 {
-  "id": "exploration-11",
+  "id": "exploration-14",
   "level": "2",
-  "url": "ch-fa-closure.html#exploration-11",
+  "url": "ch-fa-closure.html#exploration-14",
   "type": "Exploration",
-  "number": "11",
+  "number": "14",
   "title": "RLs Closed under Concatenation.",
   "body": " RLs Closed under Concatenation  If is a RL and is a RL, then is a RL. This means all strings created by first choosing a string in and then choosing a string in . So,    A good way to approach this is to start where we did last time, by drawing out machines for each language.     "
 },
 {
-  "id": "exploration-12",
+  "id": "exploration-15",
   "level": "2",
-  "url": "ch-fa-closure.html#exploration-12",
+  "url": "ch-fa-closure.html#exploration-15",
   "type": "Exploration",
-  "number": "12",
+  "number": "15",
   "title": "RLs Closed under Repitition.",
   "body": " RLs Closed under Repitition  Suppose , concatenating L_1 with itself 0 or more times.     Use an empty string transition as a loop.       "
 },
 {
-  "id": "p-240",
+  "id": "p-248",
   "level": "2",
-  "url": "ch-fa-closure.html#p-240",
+  "url": "ch-fa-closure.html#p-248",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "complementation "
 },
 {
-  "id": "exploration-13",
+  "id": "exploration-16",
   "level": "2",
-  "url": "ch-fa-closure.html#exploration-13",
+  "url": "ch-fa-closure.html#exploration-16",
   "type": "Exploration",
-  "number": "13",
+  "number": "16",
   "title": "RLs Closed under Intersection.",
   "body": " RLs Closed under Intersection   Intersection  Intersection of is any string that is accepted in and . It is very useful in closure proofs and in crafting NFAs for languages that use the logic of . For example look at these two machines:         Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states and create those machines.   Here are some examples of the step through thinking.    States with occur when the string has even length.     is when it is odd     says the last seen symbol was a 0     is when it was a 1       So, it turns out we can use this to build DFAs of challenging languages!  "
 },
@@ -997,7 +1033,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "9",
   "title": "Pumping Lemma for Regular Languages",
-  "body": " Pumping Lemma for Regular Languages  In this chapter you will learn:  Introduction to the Pumping Lemma for Regular Languages  Spotting Loops and Repetition in FAs  The Pumping Lemma for Regular Languages  Additional Non-Regular Languages for Proving     Introduciton to the Pumping Lemma for Regular Languages   Revisiting the Properties of DFAs  Consider below.    How many states are in this machine?   4. There are 4 states represented by circles.   Come up with some strings that exist in the languge of this machince. For the sake of example, we will use , , and .  Next, make a list of the states visited to parce throgh each of those strings. like this:   Parce Tables for 110101111011 in    States  A    A    A    B    C    B    C    D    B    C    B    C    D    String    1    1    0    1    0    1    1    1    1    0    1    1        Parce Tables for 01011 in    States  A    B    C    B    C    D    String    0    1    0    1    1        Parce Tables for 011 in    States  A    B    C    D    String    0    1    1       So, if our DFA has states, then any string with length at least will revisit some state that the DFA has been in before. This is an application of the Pigeon Hole Principle  Pigeon Hole Principle . A string with symbols needs states if it does not want to revisit a state.  Writing out these tables can make looping patterns more apparent. In , the transition among to and to could be repeated by a string. Another loop that can be repeated is to . Loops can be removed and still have a string in the language.  We can see this using the first string, . The repeating s at the beginning can be removed and the string is still in the languge, so the condensed string is The repeating s resulting from to transitions can also be taken out. This string is also in the language.  Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?  Loops can be taken out, or they can be taken many times.   The Pigeon Hole Principle can be seen in all DFAs. And since it can be, we can build it into a mechanism to help us understand when languages are regular. That brings us to the Pumping Lemma.    Spotting Loops and Repetition in FAs  Consider where      Consider the following strings as given to .      States  A    B    C    String    0    1           States  A    B    C    C    C    String    0    1    1    1           States  A    B    C    C    C    C    C    C    C    String    0    1    0    0    1    0    0    1       After writing out these parce tables, it is clear to see that any combination of characters after an initial can be repeated without affecting if the string is accepted. This not only allows us to determine that but also helps us understand that any concatenation of characters , , , etc. can be reapeated any amount of times. Even number of times.    The Pumping Lemma for Regular Languages   Pumping Lemma for Regular Languages The Pumping Lemma for Regular Languages can be used to prove that languages are regular. It follows the general form outlined below.  If is regular, then it has a pumping length . Every string in of length at least will be pumpable.  Given this string, call it ( ). It has three parts:   A beginning that can be - call it     A pumpable part that cannot be - call it     An end that can be - call it    The key here is that we can make new strings in the language by removing or adding as many times as we'd like. Such as: , , , etc.  This works for any string that is long enough, and it happens within the first symbols of the input string.  In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. This also means that there is some non-empty loop, but this will typically be written more formally and closer to:   If a language is a Regular Language then     such that with     Then where:           Take a languge we want to prove is not regular.    Assume it is regular.    Pick a string that is at least of length in the language    Show that every possible choice for cannot work    Thus the assumption is wrong and by contradition, the language is not regular.       Pumping Lemma for Regular Languages without a Machine  Say : has a number of 0s divisible by 3 and an even number of 1s.    is a Regular Language.   Let's say we don't know , just that it exists. Let's pick a string that's long.   This staisfies and     Some piece of in the first symbols is pumpable.   There is some that we can extract or insert as many times as we want        Pumping Lemma for Regular Languges with Defined Language  Consider .    Assume is regular thus obeying the Pumping Lemma for Regular Languages.    Let us choose since is a Regular Language, any string that is long enough should be pumpable.    A pumpable part ( ) must occur in the first symbols. So, must contain one or more 0s and no 1s since the first symbols are 0s.  If we pump down to , we will thus remove some 0s without removing any 1s. cannot possibly be in , no matter the choice for .    Thus the assumption is wrong and by contradiction, the language is not regular.       Additional Non-Regular Languages for Proving  Here are some additional, fun, non-regular languages to try to prove (in increasing complexity):                                Unless stated otherwise, . You can try or for additional practice.     Consider the machine below. What is the language of the machine? What are some state loops present within it?    Come up with some test strings and their parce paths. Are there any patterns of repetition?       States  A    B    C    String    0    1           States  A    B    C    A    B    C    String    0    1    0    0    1           States  A    B    C    A    B    C    C    C    C    String    0    1    0    0    1    1    1    1         A pattern of state repition is: to to .    Identify patterns of state repetition from a written language.    Some test strings inlcude:              Character repetitions can exist in these two places:        They can also be combined.    Prove is regular or not.      Prove is regular or not.      Prove is regular or not.      Prove the following language is regular.     Use the pumping lemma for regular languages to prove the following language is not regular.     The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.    Sample strings include:   [(){}]    [[[()]]]{}{}{{}}    {}            Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)  You have been given that: is not regular.   Sample strings include:   thethe#thethe    same#same    atimeto#atimeto       According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.    Prove that the language with binary strings that have more 0s than 1s is not regular.    Prove that the language with strings with any number of a's, b's, and c's, but with an equal number of d's and e's is not regular.    Apply the pumping lemma for regular languages. Prove the language below is not regular.     Using the pumping lemma for regular languages, prove the language below is not regular.     Prove the following language, L, with is not regular using the pumping lemma for regular languages.   Some sample strings in the language are: , , , and      "
+  "body": " Pumping Lemma for Regular Languages   In this chapter you will learn:     Introduction to the Pumping Lemma for Regular Languages  Spotting Loops and Repetition in FAs  The Pumping Lemma for Regular Languages  Additional Non-Regular Languages for Proving     Introduciton to the Pumping Lemma for Regular Languages   Revisiting the Properties of DFAs  Consider below.    How many states are in this machine?   4. There are 4 states represented by circles.   Come up with some strings that exist in the languge of this machince. For the sake of example, we will use , , and .  Next, make a list of the states visited to parce throgh each of those strings. like this:   Parce Tables for 110101111011 in    States  A    A    A    B    C    B    C    D    B    C    B    C    D    String    1    1    0    1    0    1    1    1    1    0    1    1        Parce Tables for 01011 in    States  A    B    C    B    C    D    String    0    1    0    1    1        Parce Tables for 011 in    States  A    B    C    D    String    0    1    1       So, if our DFA has states, then any string with length at least will revisit some state that the DFA has been in before. This is an application of the Pigeon Hole Principle  Pigeon Hole Principle . A string with symbols needs states if it does not want to revisit a state.  Writing out these tables can make looping patterns more apparent. In , the transition among to and to could be repeated by a string. Another loop that can be repeated is to . Loops can be removed and still have a string in the language.  We can see this using the first string, . The repeating s at the beginning can be removed and the string is still in the languge, so the condensed string is The repeating s resulting from to transitions can also be taken out. This string is also in the language.  Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?  Loops can be taken out, or they can be taken many times.   The Pigeon Hole Principle can be seen in all DFAs. And since it can be, we can build it into a mechanism to help us understand when languages are regular. That brings us to the Pumping Lemma.    Spotting Loops and Repetition in FAs  Consider where      Consider the following strings as given to .      States  A    B    C    String    0    1           States  A    B    C    C    C    String    0    1    1    1           States  A    B    C    C    C    C    C    C    C    String    0    1    0    0    1    0    0    1       After writing out these parce tables, it is clear to see that any combination of characters after an initial can be repeated without affecting if the string is accepted. This not only allows us to determine that but also helps us understand that any concatenation of characters , , , etc. can be reapeated any amount of times. Even number of times.    The Pumping Lemma for Regular Languages   Pumping Lemma for Regular Languages The Pumping Lemma for Regular Languages can be used to prove that languages are regular. It follows the general form outlined below.  If is regular, then it has a pumping length . Every string in of length at least will be pumpable.  Given this string, call it ( ). It has three parts:   A beginning that can be - call it     A pumpable part that cannot be - call it     An end that can be - call it    The key here is that we can make new strings in the language by removing or adding as many times as we'd like. Such as: , , , etc.  This works for any string that is long enough, and it happens within the first symbols of the input string.  In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. This also means that there is some non-empty loop, but this will typically be written more formally and closer to:   If a language is a Regular Language then     such that with     Then where:           Take a languge we want to prove is not regular.    Assume it is regular.    Pick a string that is at least of length in the language    Show that every possible choice for cannot work    Thus the assumption is wrong and by contradition, the language is not regular.       Pumping Lemma for Regular Languages without a Machine  Say : has a number of 0s divisible by 3 and an even number of 1s.    is a Regular Language.   Let's say we don't know , just that it exists. Let's pick a string that's long.   This staisfies and     Some piece of in the first symbols is pumpable.   There is some that we can extract or insert as many times as we want        Pumping Lemma for Regular Languges with Defined Language  Consider .    Assume is regular thus obeying the Pumping Lemma for Regular Languages.    Let us choose since is a Regular Language, any string that is long enough should be pumpable.    A pumpable part ( ) must occur in the first symbols. So, must contain one or more 0s and no 1s since the first symbols are 0s.  If we pump down to , we will thus remove some 0s without removing any 1s. cannot possibly be in , no matter the choice for .    Thus the assumption is wrong and by contradiction, the language is not regular.       Additional Non-Regular Languages for Proving  Here are some additional, fun, non-regular languages to try to prove (in increasing complexity):                                Unless stated otherwise, . You can try or for additional practice.     Consider the machine below. What is the language of the machine? What are some state loops present within it?    Come up with some test strings and their parce paths. Are there any patterns of repetition?       States  A    B    C    String    0    1           States  A    B    C    A    B    C    String    0    1    0    0    1           States  A    B    C    A    B    C    C    C    C    String    0    1    0    0    1    1    1    1         A pattern of state repition is: to to .    Identify patterns of state repetition from a written language.    Some test strings inlcude:              Character repetitions can exist in these two places:        They can also be combined.    Prove is regular or not.      Prove is regular or not.      Prove is regular or not.      Prove the following language is regular.     Use the pumping lemma for regular languages to prove the following language is not regular.     The languages of brackets consists of all strings with nesting and matching parenthesis, brackets, and braces. Is this language regular or not? Prove it.    Sample strings include:   [(){}]    [[[()]]]{}{}{{}}    {}            Use the fact that regular languages are closed under intersection to prove that the language of any concatenation of English words, followed by #, followed by the exact same concatenation of English words is not regular. This language can be written as (w#w | w is any concatenation of English words)  You have been given that: is not regular.   Sample strings include:   thethe#thethe    same#same    atimeto#atimeto       According to Webster, the English langugae consists of approximately 470,000 words. Describe why (w#w | w is an English word) is a regular language.    Prove that the language with binary strings that have more 0s than 1s is not regular.    Prove that the language with strings with any number of a's, b's, and c's, but with an equal number of d's and e's is not regular.    Apply the pumping lemma for regular languages. Prove the language below is not regular.     Using the pumping lemma for regular languages, prove the language below is not regular.     Prove the following language, L, with is not regular using the pumping lemma for regular languages.   Some sample strings in the language are: , , , and      "
 },
 {
   "id": "objectives-9",
@@ -1006,21 +1042,21 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "9",
   "title": "",
-  "body": "In this chapter you will learn:  Introduction to the Pumping Lemma for Regular Languages  Spotting Loops and Repetition in FAs  The Pumping Lemma for Regular Languages  Additional Non-Regular Languages for Proving   "
+  "body": "  Introduction to the Pumping Lemma for Regular Languages  Spotting Loops and Repetition in FAs  The Pumping Lemma for Regular Languages  Additional Non-Regular Languages for Proving   "
 },
 {
-  "id": "exploration-14",
+  "id": "exploration-17",
   "level": "2",
-  "url": "ch-pumping-lemma-regular.html#exploration-14",
+  "url": "ch-pumping-lemma-regular.html#exploration-17",
   "type": "Exploration",
-  "number": "14",
+  "number": "17",
   "title": "Revisiting the Properties of DFAs.",
   "body": " Revisiting the Properties of DFAs  Consider below.    How many states are in this machine?   4. There are 4 states represented by circles.   Come up with some strings that exist in the languge of this machince. For the sake of example, we will use , , and .  Next, make a list of the states visited to parce throgh each of those strings. like this:   Parce Tables for 110101111011 in    States  A    A    A    B    C    B    C    D    B    C    B    C    D    String    1    1    0    1    0    1    1    1    1    0    1    1        Parce Tables for 01011 in    States  A    B    C    B    C    D    String    0    1    0    1    1        Parce Tables for 011 in    States  A    B    C    D    String    0    1    1       So, if our DFA has states, then any string with length at least will revisit some state that the DFA has been in before. This is an application of the Pigeon Hole Principle  Pigeon Hole Principle . A string with symbols needs states if it does not want to revisit a state.  Writing out these tables can make looping patterns more apparent. In , the transition among to and to could be repeated by a string. Another loop that can be repeated is to . Loops can be removed and still have a string in the language.  We can see this using the first string, . The repeating s at the beginning can be removed and the string is still in the languge, so the condensed string is The repeating s resulting from to transitions can also be taken out. This string is also in the language.  Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?  Loops can be taken out, or they can be taken many times.  "
 },
 {
-  "id": "p-283",
+  "id": "p-292",
   "level": "2",
-  "url": "ch-pumping-lemma-regular.html#p-283",
+  "url": "ch-pumping-lemma-regular.html#p-292",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1036,20 +1072,20 @@ var ptx_lunr_docs = [
   "body": "  Take a languge we want to prove is not regular.    Assume it is regular.    Pick a string that is at least of length in the language    Show that every possible choice for cannot work    Thus the assumption is wrong and by contradition, the language is not regular.     "
 },
 {
-  "id": "exploration-15",
+  "id": "exploration-18",
   "level": "2",
-  "url": "ch-pumping-lemma-regular.html#exploration-15",
+  "url": "ch-pumping-lemma-regular.html#exploration-18",
   "type": "Exploration",
-  "number": "15",
+  "number": "18",
   "title": "Pumping Lemma for Regular Languages without a Machine.",
   "body": " Pumping Lemma for Regular Languages without a Machine  Say : has a number of 0s divisible by 3 and an even number of 1s.    is a Regular Language.   Let's say we don't know , just that it exists. Let's pick a string that's long.   This staisfies and     Some piece of in the first symbols is pumpable.   There is some that we can extract or insert as many times as we want     "
 },
 {
-  "id": "exploration-16",
+  "id": "exploration-19",
   "level": "2",
-  "url": "ch-pumping-lemma-regular.html#exploration-16",
+  "url": "ch-pumping-lemma-regular.html#exploration-19",
   "type": "Exploration",
-  "number": "16",
+  "number": "19",
   "title": "Pumping Lemma for Regular Languges with Defined Language.",
   "body": " Pumping Lemma for Regular Languges with Defined Language  Consider .    Assume is regular thus obeying the Pumping Lemma for Regular Languages.    Let us choose since is a Regular Language, any string that is long enough should be pumpable.    A pumpable part ( ) must occur in the first symbols. So, must contain one or more 0s and no 1s since the first symbols are 0s.  If we pump down to , we will thus remove some 0s without removing any 1s. cannot possibly be in , no matter the choice for .    Thus the assumption is wrong and by contradiction, the language is not regular.    "
 },
@@ -1207,54 +1243,54 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Context Free Grammars  Terminals  Parse Trees  Ambiguous and Inherently Ambiguous   "
 },
 {
-  "id": "p-345",
+  "id": "p-354",
   "level": "2",
-  "url": "ch-cfgs.html#p-345",
+  "url": "ch-cfgs.html#p-354",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Context Free Grammars (CFGs) "
 },
 {
-  "id": "p-346",
+  "id": "p-355",
   "level": "2",
-  "url": "ch-cfgs.html#p-346",
+  "url": "ch-cfgs.html#p-355",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "rule variable Terminals "
 },
 {
-  "id": "exploration-17",
+  "id": "exploration-20",
   "level": "2",
-  "url": "ch-cfgs.html#exploration-17",
+  "url": "ch-cfgs.html#exploration-20",
   "type": "Exploration",
   "number": "1",
   "title": "",
   "body": " Consider the following grammar:   :      What strings can we make from it?   :    is replaced by       :    is replaced by    is replaced by    :    is replaced by    is replaced by    is replaced by   And many more strings can be made! But, what languge is this?  The language of this grammar is any amount of s concatenated.  "
 },
 {
-  "id": "exploration-18",
+  "id": "exploration-21",
   "level": "2",
-  "url": "ch-cfgs.html#exploration-18",
+  "url": "ch-cfgs.html#exploration-21",
   "type": "Exploration",
   "number": "2",
   "title": "",
   "body": " Consider the following grammar:   :      What strings can we make from it?    :    is replaced by       :    is replaced by    is replaced by    :    is replaced by    is replaced by    is replaced by    And many more strings can be made! But, what languge is this?  The language of this grammar is any amount of 0s followed by the same amount of 1s.  "
 },
 {
-  "id": "exploration-19",
+  "id": "exploration-22",
   "level": "2",
-  "url": "ch-cfgs.html#exploration-19",
+  "url": "ch-cfgs.html#exploration-22",
   "type": "Exploration",
   "number": "3",
   "title": "",
   "body": " Let us consider a grammar with multiple variables.   :           Can we generate only s?   is replaced by    is replaced by    is replaced by   The resulting string is . Therefore, can generate only s.  Can we generate only s? How?    is replaced by    is replaced by    is replaced by    is replaced by    The resulting string is . Therefore, can generate only s.  What are some other strings that we can generate using ?                 The language of this grammar is the empty string or any amount of s followed by any amount of s.  "
 },
 {
-  "id": "exploration-20",
+  "id": "exploration-23",
   "level": "2",
-  "url": "ch-cfgs.html#exploration-20",
+  "url": "ch-cfgs.html#exploration-23",
   "type": "Exploration",
   "number": "4",
   "title": "",
@@ -1279,18 +1315,18 @@ var ptx_lunr_docs = [
   "body": "  Let's work through another example from :          We will create the parse tree for the string .     First, we will need to give us        Second, we will need to give us        Third, we will need to give us        Finally, we will need to give us         But, there is another way to arrive at this string using . Try drawing the parse tree for it.         "
 },
 {
-  "id": "p-381",
+  "id": "p-390",
   "level": "2",
-  "url": "ch-cfgs.html#p-381",
+  "url": "ch-cfgs.html#p-390",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Abmibuous "
 },
 {
-  "id": "p-383",
+  "id": "p-392",
   "level": "2",
-  "url": "ch-cfgs.html#p-383",
+  "url": "ch-cfgs.html#p-392",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1486,27 +1522,27 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Pushdown Automatas   "
 },
 {
-  "id": "p-432",
+  "id": "p-441",
   "level": "2",
-  "url": "ch-pdas.html#p-432",
+  "url": "ch-pdas.html#p-441",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Pushdown Automata (PDAs) "
 },
 {
-  "id": "exploration-22",
+  "id": "exploration-25",
   "level": "2",
-  "url": "ch-pdas.html#exploration-22",
+  "url": "ch-pdas.html#exploration-25",
   "type": "Exploration",
   "number": "6",
   "title": "",
   "body": " We will walk through how to create a PDA from a CFL. Consider where The idea here is to push s onto the stack until there are no more s. We will then pop one off of the stack for each we read.  Let's consider this line of thinking in terms of steps and putting those steps into the read-pop-push notation from above.    - Read 0s, do not pop anything from stack, push a 0 to the stack     - Read first 1, pop top 0 off of stack, do not push anything onto stack     - Read rest of the 1s, pop top 0 off of stack, do not push anything onto stack     - Read in a , pop that off of stack, do not push anything onto stack   We can then put these steps into a state diagram.    "
 },
 {
-  "id": "exploration-23",
+  "id": "exploration-26",
   "level": "2",
-  "url": "ch-pdas.html#exploration-23",
+  "url": "ch-pdas.html#exploration-26",
   "type": "Exploration",
   "number": "7",
   "title": "",
@@ -1621,45 +1657,45 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Chompsky's Normal Form  Chompsky Normal Form  Rules of Chompsky Normal Form  Steps to Putting a CFG in CNF   "
 },
 {
-  "id": "exploration-24",
+  "id": "exploration-27",
   "level": "2",
-  "url": "ch-cnf.html#exploration-24",
+  "url": "ch-cnf.html#exploration-27",
   "type": "Exploration",
   "number": "8",
   "title": "",
   "body": " To better understand this topic, let's explore the possibilites associated with CFGs. Consider below:          What different ways are there to produce the string \"a\" from ?   Here are two ways to make \"a\".           But, it is also possible for to produce: So, when would a construction like this quit? Could it produce simply an ?  As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.  "
 },
 {
-  "id": "p-469",
+  "id": "p-478",
   "level": "2",
-  "url": "ch-cnf.html#p-469",
+  "url": "ch-cnf.html#p-478",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Chompsky Normal Form (CNF) "
 },
 {
-  "id": "exploration-25",
+  "id": "exploration-28",
   "level": "2",
-  "url": "ch-cnf.html#exploration-25",
+  "url": "ch-cnf.html#exploration-28",
   "type": "Exploration",
   "number": "9",
   "title": "",
   "body": " Consider the CFG below. It is in Chompsky Normal Form.                Considering , how many steps are there to produce \"a\"?   1.    How many steps are there to produce \"aa\"?   3. OR    "
 },
 {
-  "id": "p-479",
+  "id": "p-488",
   "level": "2",
-  "url": "ch-cnf.html#p-479",
+  "url": "ch-cnf.html#p-488",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "unit rules "
 },
 {
-  "id": "exploration-26",
+  "id": "exploration-29",
   "level": "2",
-  "url": "ch-cnf.html#exploration-26",
+  "url": "ch-cnf.html#exploration-29",
   "type": "Exploration",
   "number": "10",
   "title": "",
@@ -1729,27 +1765,27 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Context Free Languages   "
 },
 {
-  "id": "p-498",
+  "id": "p-507",
   "level": "2",
-  "url": "ch-cnl.html#p-498",
+  "url": "ch-cnl.html#p-507",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Context Free Languages (CFLs) "
 },
 {
-  "id": "exploration-27",
+  "id": "exploration-30",
   "level": "2",
-  "url": "ch-cnl.html#exploration-27",
+  "url": "ch-cnl.html#exploration-30",
   "type": "Exploration",
   "number": "11",
   "title": "",
   "body": " Let's look at an example of trying to classify a language as a RL, CFL, or neither. Consider the language below: First, write a PDA for the language. Can we do it?   Yes we can!     Second, write a CFG that recognizes . Can we do it?   Yes we can!           So, is a RL, CFL, or both?   Since can be expressed as both a PDA and a CFG, it is both a RL and a CFL.   "
 },
 {
-  "id": "exploration-28",
+  "id": "exploration-31",
   "level": "2",
-  "url": "ch-cnl.html#exploration-28",
+  "url": "ch-cnl.html#exploration-31",
   "type": "Exploration",
   "number": "12",
   "title": "",
@@ -1792,36 +1828,36 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Revisiting Parse Trees and Spotting Loops  The Pumping Lemma for Context Free Languages   "
 },
 {
-  "id": "exploration-29",
+  "id": "exploration-32",
   "level": "2",
-  "url": "ch-pumping-lemma-context-free.html#exploration-29",
+  "url": "ch-pumping-lemma-context-free.html#exploration-32",
   "type": "Exploration",
   "number": "13",
   "title": "",
   "body": " Consider this CFL below:        Try creating the parse tree for producing the string from this grammar.      That string was able to be generated by a relatively simple parse tree, but the grammar is not in CNF. Try putting the grammar in CNF.                        Considering the grammar in CNF, re-make the parse tree that would produce the string .      Can you see how the same inner and exists in both parse trees? If that is removed from the middle of the trees, then an loop remains. This loop works from . This loop can be removed, or it can be taken as many times as we like.  Here is an example of a string whose loop has been removed:    Here is an example of a string whose loop has been taken many times:    As it is a loop, the loop can be taken an infinite amount of times.  "
 },
 {
-  "id": "exploration-30",
+  "id": "exploration-33",
   "level": "2",
-  "url": "ch-pumping-lemma-context-free.html#exploration-30",
+  "url": "ch-pumping-lemma-context-free.html#exploration-33",
   "type": "Exploration",
   "number": "14",
   "title": "",
   "body": " The outline of the proof that is not a CFL where is below:   Assume the language, , is a CFL and it obeys the Pumping Lemma for Context Free Languages.    A string of length at least will obey the Pumping Lemma for Context Free Languages. Choose to consider , where and     When pumping up, , , and must each increase to stay in . But, because the pumpable part has to be within symbols, there is no way to include all three. (The 's are too far away from the 's)    Thus, our assumpiton was wrong, must not be a CFL by contradiction.     "
 },
 {
-  "id": "exploration-31",
+  "id": "exploration-34",
   "level": "2",
-  "url": "ch-pumping-lemma-context-free.html#exploration-31",
+  "url": "ch-pumping-lemma-context-free.html#exploration-34",
   "type": "Exploration",
   "number": "15",
   "title": "",
   "body": " Consider the following language: We will now prove that is not context free.  Proof.  Assume that is a CFL. can be rewritten as:    Consider where .    Since is of length at least , it should obey the Pumping Lemma for Context Free Languages.      Consider a section of , a section made up of the last and the first two 's. By pumping this section up by one, a new string, is created, but this string is no longer a part of .    Consider another section of , one that is made up of the last and first two 's. Pumping this string down by one creates the new string, , but this string is no longer in .      Therefore, by contradiction, is not a CFL.     "
 },
 {
-  "id": "exploration-32",
+  "id": "exploration-35",
   "level": "2",
-  "url": "ch-pumping-lemma-context-free.html#exploration-32",
+  "url": "ch-pumping-lemma-context-free.html#exploration-35",
   "type": "Exploration",
   "number": "16",
   "title": "",
@@ -1927,27 +1963,27 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Introduction to Turing Machines   "
 },
 {
-  "id": "p-570",
+  "id": "p-579",
   "level": "2",
-  "url": "ch-tms.html#p-570",
+  "url": "ch-tms.html#p-579",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Turing Machines (TMs) "
 },
 {
-  "id": "p-577",
+  "id": "p-586",
   "level": "2",
-  "url": "ch-tms.html#p-577",
+  "url": "ch-tms.html#p-586",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "head "
 },
 {
-  "id": "exploration-33",
+  "id": "exploration-36",
   "level": "2",
-  "url": "ch-tms.html#exploration-33",
+  "url": "ch-tms.html#exploration-36",
   "type": "Exploration",
   "number": "1",
   "title": "",
@@ -2044,45 +2080,45 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Predecessors to Turing Machines  Goldbach's Conjecture  Varieties of Turing Machines   "
 },
 {
-  "id": "p-606",
+  "id": "p-615",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-606",
+  "url": "ch-tm-classifications.html#p-615",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Linear Bounded Automata (LBAs) Muti-Tape 2-Stack PDA Transducer Non-Determinism Printer TM "
 },
 {
-  "id": "p-616",
+  "id": "p-625",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-616",
+  "url": "ch-tm-classifications.html#p-625",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Goldbach's Conjecture "
 },
 {
-  "id": "p-641",
+  "id": "p-650",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-641",
+  "url": "ch-tm-classifications.html#p-650",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "recognizable "
 },
 {
-  "id": "exploration-34",
+  "id": "exploration-37",
   "level": "2",
-  "url": "ch-tm-classifications.html#exploration-34",
+  "url": "ch-tm-classifications.html#exploration-37",
   "type": "Exploration",
   "number": "2",
   "title": "",
   "body": " This is a thought experiment to look at recognizability and decidablity.  Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?  "
 },
 {
-  "id": "p-645",
+  "id": "p-654",
   "level": "2",
-  "url": "ch-tm-classifications.html#p-645",
+  "url": "ch-tm-classifications.html#p-654",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2134,18 +2170,18 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Hibert's Hotel  Introduction to Diagonalization  Examples of Turing Machines  The Halting Problem   "
 },
 {
-  "id": "p-655",
+  "id": "p-664",
   "level": "2",
-  "url": "ch-diagonalization.html#p-655",
+  "url": "ch-diagonalization.html#p-664",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Hilbert's Hotel. "
 },
 {
-  "id": "p-663",
+  "id": "p-672",
   "level": "2",
-  "url": "ch-diagonalization.html#p-663",
+  "url": "ch-diagonalization.html#p-672",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2206,27 +2242,27 @@ var ptx_lunr_docs = [
   "body": "In this chapter you will learn:  Reducibility  Provung Reducibility   "
 },
 {
-  "id": "exploration-35",
+  "id": "exploration-38",
   "level": "2",
-  "url": "ch-reducibility.html#exploration-35",
+  "url": "ch-reducibility.html#exploration-38",
   "type": "Exploration",
   "number": "3",
   "title": "",
   "body": " Consider the following problem: Find the areas of a square.  What is one way to solve this problem?   Length times width! We could solve the problem by finding the width and squaring it.   What is another way to solve this problem?   Don't put too much thought into this.    Another option is to find an Oracle! They would be able to tell us the area of the square.   There is obviously one of these solutions that is much easier to reasonably accomplish than the other one. That is our goal, to find an easier way to reduce a given problem to the easiest, quickest problem to solve.  "
 },
 {
-  "id": "exploration-36",
+  "id": "exploration-39",
   "level": "2",
-  "url": "ch-reducibility.html#exploration-36",
+  "url": "ch-reducibility.html#exploration-39",
   "type": "Exploration",
   "number": "4",
   "title": "",
   "body": " Consider: In other words, does the Acceptance Turing Machine reduce to the Halting Turing Machine?  I can \"solve\" (decide) in the presence of a decider for .     Assume we have a decider, , for .    Given , I can decide , which is a contradiction because is undecidable.       Solving allows us to solve . So, is at least as complex as , because if it were easier, would be too. Thus, is undecidable.  "
 },
 {
-  "id": "exploration-37",
+  "id": "exploration-40",
   "level": "2",
-  "url": "ch-reducibility.html#exploration-37",
+  "url": "ch-reducibility.html#exploration-40",
   "type": "Exploration",
   "number": "5",
   "title": "",
@@ -2294,6 +2330,15 @@ var ptx_lunr_docs = [
   "number": "20",
   "title": "Generated Images",
   "body": " Generated Images                                                                                                                                                                                                                                                                                                                                                                                                                                 "
+},
+{
+  "id": "newly-generated-images",
+  "level": "1",
+  "url": "newly-generated-images.html",
+  "type": "Chapter",
+  "number": "21",
+  "title": "Newly Generated Images",
+  "body": " Newly Generated Images  Welcome to Newly Generated Images                                                                                                  "
 },
 {
   "id": "solutions-1",

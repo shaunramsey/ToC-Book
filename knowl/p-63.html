@@ -13,7 +13,7 @@
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para">
-<span class="process-math">\(M_{10}\)</span> contains an example of an NFA caused by an empty string transition. When processing a string like "bba" we might start by tracking with our fingers. They start in <span class="process-math">\(Q_0\)</span> but quickly we see we exist in <span class="process-math">\(Q_1\)</span> and <span class="process-math">\(Q_6\)</span> as well. When the first "b" is read, we fall off the first two states and move from <span class="process-math">\(Q_6\)</span> to <span class="process-math">\(Q_7\text{.}\)</span> To track this with a computer, given the knowledge we have so far, we would have to use some form of guess and check with backtracking (like a depth-first search) or we could create children processes to handle the different traces to run things in parallel. What a conundrum! Let us see if we can do something about that in the future.</div>
+<span class="process-math">\(M_9\)</span> is an example of parallelism caused by a character having two defined paths from the same state. Both states <span class="process-math">\(B\)</span> and <span class="process-math">\(D\)</span> would be active if the first character of the given string was 1.</div>
 <span class="incontext"><a class="internal" href="ch-nfas.html#p-63">in-context</a></span>
 </body>
 </html>

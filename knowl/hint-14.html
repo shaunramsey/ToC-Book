@@ -12,108 +12,12 @@
 </head>
 <body class="ignore-math">
 <div class="hint solution-like">
-<h4 class="heading">
-<span class="type">Hint</span><span class="space"> </span><span class="codenumber">9.5.1.1</span><span class="period">.</span>
-</h4>
-<div class="para">Come up with some test strings and their parce paths. Are there any patterns of repetition?</div> <ul class="disc">
-<li>
-<span class="process-math">\(s^{(0)} = 01:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-<li>
-<span class="process-math">\(s^{(1)} = 01001:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-<li>
-<span class="process-math">\(s^{(2)} = 01001111:\)</span> <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r2 l0 t0 lines">States</td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">B</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">C</td>
-</tr>
-<tr>
-<td class="l m b0 r2 l0 t0 lines">String</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">0</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-<td class="l m b0 r1 l0 t0 lines">1</td>
-<td class="l m b0 r1 l0 t0 lines"></td>
-</tr>
-</table></div>
-</li>
-</ul>
+<h5 class="heading">
+<span class="type">Hint</span><span class="space"> </span><span class="codenumber">8.3.1.2</span><span class="period">.</span>
+</h5>
+<div class="para">Machine for <span class="process-math">\(L_2:\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2d.svg" class="contained"></div>
 </div>
-<span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#hint-14">in-context</a></span>
+<span class="incontext"><a class="internal" href="ch-fa-closure.html#hint-14">in-context</a></span>
 </body>
 </html>

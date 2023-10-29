@@ -12,27 +12,33 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Let’s look at an example of trying to classify a language as a RL, CFL, or neither. Consider the language below:</div>
+<div class="para">To better understand this topic, let’s explore the possibilites associated with CFGs. Consider <span class="process-math">\(CFG_1\)</span> below:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | aS | \epsilon\)</span></td>
+</tr>
+</table></div> <div class="para">What different ways are there to produce the string "a" from <span class="process-math">\(CFG_1\text{?}\)</span>
+</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">Here are two ways to make "a".</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle S \rightarrow SS \rightarrow aSS \rightarrow aS \rightarrow a\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S \rightarrow aS \rightarrow a\)</span></div></li>
+</ul>
+</div></div></details> <div class="para logical">
+<div class="para">But, it is also possible for <span class="process-math">\(CFG_1\)</span> to produce:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_1 = \{a^n \# a^n\}
+S \rightarrow SS \rightarrow SSS \rightarrow SSS \rightarrow SSSS \rightarrow ...
 \end{equation*}
 </div>
-<div class="para">First, write a PDA for the language. Can we do it?</div>
-</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Yes we can! <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP5.svg" class="contained"></div>
-</div></div></details> <div class="para">Second, write a CFG that recognizes <span class="process-math">\(L_1\text{.}\)</span> Can we do it?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Yes we can! <div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSa | \#\)</span></td>
-</tr>
-</table></div>
-</div></div></details> <div class="para">So, is <span class="process-math">\(L_1\)</span> a RL, CFL, or both?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Since <span class="process-math">\(L_1\)</span> can be expressed as both a PDA and a CFG, it is both a RL and a CFL.</div></div></details></article><span class="incontext"><a class="internal" href="ch-cnl.html#exploration-27">in-context</a></span>
+<div class="para">So, when would a construction like this quit? Could it produce simply an <span class="process-math">\(\epsilon\text{?}\)</span>
+</div>
+</div> <div class="para">As humans, we can look at this simply example and give answers. This gets more complicated when considering more complex grammars and especially automation.</div></article><span class="incontext"><a class="internal" href="ch-cnf.html#exploration-27">in-context</a></span>
 </body>
 </html>

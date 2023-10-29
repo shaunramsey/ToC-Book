@@ -14,7 +14,8 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Theory of Computation">
 <meta property="book:author" content="Shaun D. Ramsey, PhD">
-<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<meta property="book:author" content="Contributing Author: Emilee Daniel">
+<meta property="book:author" content="Contributor: Shaun D. Ramsey, Jr.">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -97,7 +98,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
-<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author: Emilee Daniel, Contributor: Shaun D. Ramsey, Jr.</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -331,6 +332,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">20</span> <span class="title">Generated Images</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="newly-generated-images.html" class="internal"><span class="codenumber">21</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -352,112 +354,112 @@ window.MathJax = {
 </ol></article><section class="section" id="sec-earlyTMs"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.1</span><span class="space"> </span><span class="title">Early Turing Machines</span>
 </h3>
-<div class="para logical" id="p-606">
+<div class="para logical" id="p-615">
 <div class="para">Before Turing Machines, there were a few different automatas that existed that laid the ground work for Turing’s thesis, but they had differing amounts of power and capabilities.</div>
 <dl class="description-list">
 <dt id="li-261"><dfn class="terminology">Linear Bounded Automata (LBAs)</dfn></dt>
-<dd><div class="para" id="p-607">A class of context seensitive languages, more powerful than CFLs, but nto as powerful as a TM</div></dd>
+<dd><div class="para" id="p-616">A class of context seensitive languages, more powerful than CFLs, but nto as powerful as a TM</div></dd>
 <dt id="li-262"><dfn class="terminology">Muti-Tape</dfn></dt>
-<dd><div class="para" id="p-608">Same power as a TM</div></dd>
+<dd><div class="para" id="p-617">Same power as a TM</div></dd>
 <dt id="li-263"><dfn class="terminology">2-Stack PDA</dfn></dt>
-<dd><div class="para" id="p-609">Same power as a TM</div></dd>
+<dd><div class="para" id="p-618">Same power as a TM</div></dd>
 <dt id="li-264"><dfn class="terminology">Transducer</dfn></dt>
-<dd><div class="para" id="p-610">A TM who’s job is to modify the tape</div></dd>
+<dd><div class="para" id="p-619">A TM who’s job is to modify the tape</div></dd>
 <dt id="li-265"><dfn class="terminology">Non-Determinism</dfn></dt>
-<dd><div class="para" id="p-611">Same power as a TM</div></dd>
+<dd><div class="para" id="p-620">Same power as a TM</div></dd>
 <dt id="li-266"><dfn class="terminology">Printer TM</dfn></dt>
-<dd><div class="para" id="p-612">Ennumerates/ prints all strings in its language</div></dd>
+<dd><div class="para" id="p-621">Ennumerates/ prints all strings in its language</div></dd>
 </dl>
 </div>
-<div class="para" id="p-613">Here is a diagram to help illustrate how LBAs fit into the classification of languages:</div>
+<div class="para" id="p-622">Here is a diagram to help illustrate how LBAs fit into the classification of languages:</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/TMVennDiagram2.svg" class="contained"></div>
-<div class="para" id="p-614">The most interesting part of TMs happens when we start passing them in as input.</div></section><section class="section" id="sec-goldbach"><h3 class="heading hide-type">
+<div class="para" id="p-623">The most interesting part of TMs happens when we start passing them in as input.</div></section><section class="section" id="sec-goldbach"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.2</span><span class="space"> </span><span class="title">Goldbach’s Conjecture</span>
 </h3>
-<div class="para" id="p-615">Before we get to using TMs as input, let’s look at Goldbach’s Conjecture.</div>
-<div class="para logical" id="p-616">
+<div class="para" id="p-624">Before we get to using TMs as input, let’s look at Goldbach’s Conjecture.</div>
+<div class="para logical" id="p-625">
 <div class="para"> <dfn class="terminology">Goldbach’s Conjecture</dfn> proposes that every even county number <span class="process-math">\(n\text{,}\)</span> where <span class="process-math">\(n &gt; 2\text{,}\)</span> is equal to the sum of two primes. Here are some examples:</div>
 <ul class="disc">
-<li id="li-267"><div class="para" id="p-617">4 = 2 + 2</div></li>
-<li id="li-268"><div class="para" id="p-618">6 = 3 + 3</div></li>
-<li id="li-269"><div class="para" id="p-619">8 = 3 + 5</div></li>
-<li id="li-270"><div class="para" id="p-620">10 = 3 + 7</div></li>
-<li id="li-271"><div class="para" id="p-621">12 = 5 + 7</div></li>
-<li id="li-272"><div class="para" id="p-622">14 = 7 + 7</div></li>
-<li id="li-273"><div class="para" id="p-623">16 = 3 + 13</div></li>
-<li id="li-274"><div class="para" id="p-624">...</div></li>
+<li id="li-267"><div class="para" id="p-626">4 = 2 + 2</div></li>
+<li id="li-268"><div class="para" id="p-627">6 = 3 + 3</div></li>
+<li id="li-269"><div class="para" id="p-628">8 = 3 + 5</div></li>
+<li id="li-270"><div class="para" id="p-629">10 = 3 + 7</div></li>
+<li id="li-271"><div class="para" id="p-630">12 = 5 + 7</div></li>
+<li id="li-272"><div class="para" id="p-631">14 = 7 + 7</div></li>
+<li id="li-273"><div class="para" id="p-632">16 = 3 + 13</div></li>
+<li id="li-274"><div class="para" id="p-633">...</div></li>
 </ul>
 <div class="para">This conjecture has never been proven, but no counter example has ever been found.</div>
 </div>
-<div class="para logical" id="p-625">
+<div class="para logical" id="p-634">
 <div class="para">Now, think about how you might write a computer program to:</div>
 <ol class="decimal">
-<li id="li-275"><div class="para logical" id="p-626">
+<li id="li-275"><div class="para logical" id="p-635">
 <div class="para">Exaustively print the answers like we did above</div>
 <ul class="disc">
-<li id="li-276"><div class="para" id="p-627"><span class="process-math">\(\displaystyle n &gt; 2\)</span></div></li>
-<li id="li-277"><div class="para" id="p-628"><span class="process-math">\(\displaystyle primes = [2,3]\)</span></div></li>
-<li id="li-278"><div class="para logical" id="p-629">
+<li id="li-276"><div class="para" id="p-636"><span class="process-math">\(\displaystyle n &gt; 2\)</span></div></li>
+<li id="li-277"><div class="para" id="p-637"><span class="process-math">\(\displaystyle primes = [2,3]\)</span></div></li>
+<li id="li-278"><div class="para logical" id="p-638">
 <div class="para"><span class="process-math">\(n = n + 2\)</span></div>
 <ul class="circle">
-<li id="li-279"><div class="para" id="p-630">Walk through a list of primes up to <span class="process-math">\(n\text{.}\)</span> For each, walk through the list again. If their sum is <span class="process-math">\(n\text{,}\)</span> print them.</div></li>
-<li id="li-280"><div class="para" id="p-631">If it didn’t print, then it would have shown a counter-example.</div></li>
+<li id="li-279"><div class="para" id="p-639">Walk through a list of primes up to <span class="process-math">\(n\text{.}\)</span> For each, walk through the list again. If their sum is <span class="process-math">\(n\text{,}\)</span> print them.</div></li>
+<li id="li-280"><div class="para" id="p-640">If it didn’t print, then it would have shown a counter-example.</div></li>
 </ul>
 </div></li>
-<li id="li-281"><div class="para" id="p-632">Check if <span class="process-math">\(n + 1\)</span> should be added to primes.</div></li>
-<li id="li-282"><div class="para" id="p-633">Continue to loop.</div></li>
+<li id="li-281"><div class="para" id="p-641">Check if <span class="process-math">\(n + 1\)</span> should be added to primes.</div></li>
+<li id="li-282"><div class="para" id="p-642">Continue to loop.</div></li>
 </ul>
 </div></li>
-<li id="li-283"><div class="para logical" id="p-634">
+<li id="li-283"><div class="para logical" id="p-643">
 <div class="para">What if we wanted to look for a counter-example?</div>
 <ul class="disc">
-<li id="li-284"><div class="para" id="p-635">If such an example exists, this TM will eventually halt when it finds in.</div></li>
-<li id="li-285"><div class="para logical" id="p-636">
+<li id="li-284"><div class="para" id="p-644">If such an example exists, this TM will eventually halt when it finds in.</div></li>
+<li id="li-285"><div class="para logical" id="p-645">
 <div class="para">What happens to this TM if no such counter-example exists?</div>
-<ul class="circle"><li id="li-286"><div class="para" id="p-637">It never halts! It must loop forever, forever hunting.</div></li></ul>
+<ul class="circle"><li id="li-286"><div class="para" id="p-646">It never halts! It must loop forever, forever hunting.</div></li></ul>
 </div></li>
 </ul>
 </div></li>
 </ol>
 <div class="para">But why does all of this matter?</div>
 <ul class="disc">
-<li id="li-287"><div class="para" id="p-638">If Goldbach’s Conjecture is true, then the primter TM algorithm truly prints every string in the conjecture.</div></li>
-<li id="li-288"><div class="para" id="p-639">If it is not true, then that printer will miss some even numbers, or the counter-example hunter will never halt.</div></li>
+<li id="li-287"><div class="para" id="p-647">If Goldbach’s Conjecture is true, then the primter TM algorithm truly prints every string in the conjecture.</div></li>
+<li id="li-288"><div class="para" id="p-648">If it is not true, then that printer will miss some even numbers, or the counter-example hunter will never halt.</div></li>
 </ul>
 <div class="para">The counter-example hunter never halts and we have no way to know if it will. This leads us to an interesting distinguishing characteristic of some TMs.</div>
 </div></section><section class="section" id="sec-TMVarieties"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.3</span><span class="space"> </span><span class="title">Varieties of Turing Machines</span>
 </h3>
-<div class="para" id="p-640">There are two different categories of languages that TMs can recognize.</div>
+<div class="para" id="p-649">There are two different categories of languages that TMs can recognize.</div>
 <section class="subsubsection" id="subsubsec-TMRecognizable"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Recognizable Turing Machines</span>
 </h4>
-<div class="para" id="p-641">A TM is <dfn class="terminology">recognizable</dfn>  if it can accept on its input. It may halt and reject some strongs but it might loop forever on others. These languages are Turing-recognizable.</div>
-<div class="para" id="p-642">Printer TMs fall into this category because we accept by looking to see if the string is printed, but we must wait forever to see if it will never be printed.</div></section><article class="exploration project-like" id="exploration-34"><h4 class="heading">
+<div class="para" id="p-650">A TM is <dfn class="terminology">recognizable</dfn>  if it can accept on its input. It may halt and reject some strongs but it might loop forever on others. These languages are Turing-recognizable.</div>
+<div class="para" id="p-651">Printer TMs fall into this category because we accept by looking to see if the string is printed, but we must wait forever to see if it will never be printed.</div></section><article class="exploration project-like" id="exploration-37"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-643">This is a thought experiment to look at recognizability and decidablity.</div> <div class="para" id="p-644">Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?</div></article><section class="subsection" id="subsec-TMDecidable"><h4 class="heading hide-type">
+<div class="para" id="p-652">This is a thought experiment to look at recognizability and decidablity.</div> <div class="para" id="p-653">Consider a book that lists books in the library that do not reference themselves. Add this book to the library. Does this book reference itself?</div></article><section class="subsection" id="subsec-TMDecidable"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Decideable Turing Machines</span>
 </h4>
-<div class="para" id="p-645">A TM is <dfn class="terminology">decidable</dfn>  if it can halt, either via accept or reject, for any input given to it. These languages are Turing-decidable.</div></section></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<div class="para" id="p-654">A TM is <dfn class="terminology">decidable</dfn>  if it can halt, either via accept or reject, for any input given to it. These languages are Turing-decidable.</div></section></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">16.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-125"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-646">
+<div class="para" id="p-655">
 <span class="process-math">\(L(TM)\)</span> is the language of the diagram of the TM below. The diagram in the TM shows a recognizer of <span class="process-math">\(L(TM)\text{.}\)</span> What does this mean about the classification of <span class="process-math">\(L(TM)\text{?}\)</span>
-</div> <div class="para" id="p-647">Be sure to discuss: Td, Tr, both, neither. What about the classification of the complement of the <span class="process-math">\(L(TM)\text{?}\)</span>
+</div> <div class="para" id="p-656">Be sure to discuss: Td, Tr, both, neither. What about the classification of the complement of the <span class="process-math">\(L(TM)\text{?}\)</span>
 </div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/TMD4.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-126"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-648">Explain and describe in detail the error in the following proof.</div> <div class="para logical" id="p-649">
+<div class="para" id="p-657">Explain and describe in detail the error in the following proof.</div> <div class="para logical" id="p-658">
 <div class="para">
 <span class="process-math">\(A_{TM}\)</span> is Tr but its complement is not.</div>
 <ul class="disc">
-<li id="li-289"><div class="para" id="p-650">This means Tr are not closed under complementation.</div></li>
-<li id="li-290"><div class="para" id="p-651">Recognizing a language like <span class="process-math">\(\{d^*o^*n^*e^*\}\)</span> is Tr.</div></li>
-<li id="li-291"><div class="para" id="p-652">Thus, its complement must not be Tr.</div></li>
+<li id="li-289"><div class="para" id="p-659">This means Tr are not closed under complementation.</div></li>
+<li id="li-290"><div class="para" id="p-660">Recognizing a language like <span class="process-math">\(\{d^*o^*n^*e^*\}\)</span> is Tr.</div></li>
+<li id="li-291"><div class="para" id="p-661">Thus, its complement must not be Tr.</div></li>
 </ul>
 </div></article><article class="exercise exercise-like" id="exercise-127"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-653">Given a program’s source code \(use your favorite language\), give a decidable alogrithm that determines if that code contains a control statement (like if, for, while, ...).</div>
-<div class="solutions"><details id="hint-28" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-654">Rice’s Theorem states the fact that checking if that program actually runs that code is undecidable.</div></div></details></div></article></section></section></div>
+<div class="para" id="p-662">Given a program’s source code \(use your favorite language\), give a decidable alogrithm that determines if that code contains a control statement (like if, for, while, ...).</div>
+<div class="solutions"><details id="hint-29" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-663">Rice’s Theorem states the fact that checking if that program actually runs that code is undecidable.</div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-tms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-diagonalization.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

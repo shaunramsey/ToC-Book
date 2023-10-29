@@ -12,76 +12,135 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
-</h4>
-<div class="para">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">17</span><span class="period">.</span><span class="space"> </span><span class="title">Revisiting the Properties of DFAs.</span>
+</h4> <div class="para">Consider <span class="process-math">\(M_1\)</span> below.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXM25.svg" class="contained"></div> <div class="para">How many states are in this machine?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">4. There are 4 states represented by circles.</div></div></details> <div class="para">Come up with some strings that exist in the languge of this machince. For the sake of example, we will use <span class="process-math">\(10110110011\text{,}\)</span> <span class="process-math">\(01011\text{,}\)</span> and <span class="process-math">\(011\text{.}\)</span>
+</div> <div class="para">Next, make a list of the states visited to parce throgh each of those strings. like this:</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1<span class="period">.</span></span><span class="space"> </span>Parce Tables for 110101111011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2\text{:}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS | \epsilon\)</span></td>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
 </tr>
-</table></div> What strings can we make from it? <div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.2<span class="period">.</span></span><span class="space"> </span>Parce Tables for 01011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\text{:}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow \epsilon\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
-</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a\text{:}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
-</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow a\epsilon\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
-</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(aa\text{:}\)</span></td>
-<td class="l m b0 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
-</td>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aS \rightarrow aaS\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(aS\)</span>
-</td>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.3<span class="period">.</span></span><span class="space"> </span>Parce Tables for 011 in <span class="process-math">\(M_1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l0 t0 lines">States</td>
+<td class="l m b1 r1 l0 t0 lines">A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">B</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">C</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">D</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(aaS \rightarrow aa\)</span></td>
-<td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
-</td>
+<td class="l m b0 r2 l0 t0 lines">String</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">0</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
 </tr>
-</table></div> And many more strings can be made! But, what languge is this?</div> <div class="para">The language of this grammar is any amount of <span class="process-math">\(a\)</span>s concatenated.</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exploration-17">in-context</a></span>
+</table></div></figure> <div class="para">So, if our DFA has <span class="process-math">\(n\)</span> states, then any string with length at least <span class="process-math">\(n\)</span> will revisit some state that the DFA has been in before. This is an application of the  <dfn class="terminology">Pigeon Hole Principle</dfn>. A string with <span class="process-math">\(n\)</span> symbols needs <span class="process-math">\(n+1\)</span> states if it does not want to revisit a state.</div> <div class="para">Writing out these tables can make looping patterns more apparent. In <span class="process-math">\(M_1\text{,}\)</span> the transition among <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> and <span class="process-math">\(C\)</span> to <span class="process-math">\(B\)</span> could be repeated by a string. Another loop that can be repeated is <span class="process-math">\(A\)</span> to <span class="process-math">\(A\text{.}\)</span> Loops can be removed and still have a string in the language.</div> <div class="para logical">
+<div class="para">We can see this using the first string,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)} = 110101111011\text{.}
+\end{equation*}
+</div>
+<div class="para">The repeating <span class="process-math">\(1\)</span>s at the beginning can be removed and the string is still in the languge, so the condensed string is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)'} = 0101111011
+\end{equation*}
+</div>
+<div class="para">The repeating <span class="process-math">\(10\)</span>s resulting from <span class="process-math">\(B\)</span> to <span class="process-math">\(C\)</span> transitions can also be taken out.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^{(1)''} = 011111
+\end{equation*}
+</div>
+<div class="para">This string is also in the language.</div>
+</div> <div class="para">Try a couple more strings to identify patterns. Are there any similarly deduced strings that you can find?</div> <div class="para">Loops can be taken out, or they can be taken many times.</div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#exploration-17">in-context</a></span>
 </body>
 </html>

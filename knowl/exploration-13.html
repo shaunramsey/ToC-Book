@@ -12,35 +12,138 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Intersection.</span>
-</h4> <div class="para"> <dfn class="terminology">Intersection <span class="process-math">\(\cup\)</span></dfn> of <span class="process-math">\(L_1\cup L_2\)</span> is any string that is accepted in <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{.}\)</span> It is very useful in closure proofs and in crafting NFAs for languages that use the logic of <span class="process-math">\(and\text{.}\)</span> For example look at these two machines:</div>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">13</span><span class="period">.</span><span class="space"> </span><span class="title">Logic in Closure.</span>
+</h4> <div class="para logical">
+<div class="para">Here is another binary operator:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_1(M_1) = \{\mbox{all strings that end with a 1}\}
+\mbox{if A and B then C}
 \end{equation*}
 </div>
-<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2.svg" class="contained"></div>
+</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines">A</td>
+<td class="l m b2 r0 l0 t0 lines">B</td>
+<td class="l m b2 r2 l0 t0 lines">C</td>
+<td class="l m b2 r2 l0 t0 lines">AB</td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(AB \longrightarrow C\)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\bar{AB} + C\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\bar{A} + \bar{B} + C\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">0</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+</table></div></figure> <div class="para">Given the above logic table, we now know that <span class="process-math">\(\mbox{if A and B then C} \)</span> is logically equivalent to <span class="process-math">\(\bar{A} + \bar{B} + C\text{.}\)</span>
+</div> <div class="para">Let us say we know <span class="process-math">\(C\)</span> is not true and <span class="process-math">\(B\)</span> is true. What must <span class="process-math">\(A\)</span> be?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Not true.</div></div></details> <div class="para logical">
+<div class="para">That is a form of the contrapositive.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_2(M_2) = \{\mbox{all strings with an even number of symbols}\}
+A \longrightarrow B \mbox{ means } \bar{A}+B
 \end{equation*}
 </div>
-<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2a.svg" class="contained"></div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_1\cup L_2 = \{\mbox{is any string that ends in a 1 and that has an even number of symbols.}\}
+\bar{B} \longrightarrow \bar{A} \mbox{ means } \bar{A}+B
 \end{equation*}
 </div>
-<div class="para">Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states <span class="process-math">\(Q_1\times Q_2\)</span> and create those machines.</div> <details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para">Here are some examples of the step through thinking.</div> <ul class="disc">
-<li><div class="para">States with <span class="process-math">\(B_2\)</span> occur when the string has even length.</div></li>
-<li><div class="para">
-<span class="process-math">\(A_2\)</span> is when it is odd</div></li>
-<li><div class="para">
-<span class="process-math">\(A_1\)</span> says the last seen symbol was a 0</div></li>
-<li><div class="para">
-<span class="process-math">\(B_1\)</span> is when it was a 1</div></li>
-</ul>
-</div></details> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2b.svg" class="contained"></div> <div class="para">So, it turns out we can use this to build DFAs of challenging languages!</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exploration-13">in-context</a></span>
+<div class="para">For this situation, <span class="process-math">\(AB\longrightarrow C\)</span> means <span class="process-math">\(\bar{AB} + C = \bar{A}+\bar{B}+C\)</span> and <span class="process-math">\(\bar{C} \longrightarrow \bar{AB}\)</span> means <span class="process-math">\(C+\bar{AB} = \bar{A}+\bar{B}+C\text{.}\)</span> So, these statements are the same, but if we know <span class="process-math">\(\bar{C}\text{,}\)</span> then either A or B is untrue.</div>
+</div> <div class="para logical">
+<div class="para">This is telling us that given <span class="process-math">\(x + y = z\text{,}\)</span> the boolean <span class="process-math">\(\bar{A}+\bar{B}+C\)</span> must be true. So,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x \notin \N
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+or
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y \notin \N
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+or
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + y \in \N
+\end{equation*}
+</div>
+<div class="para">These conclusions are very important for understanding closure.</div>
+</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exploration-13">in-context</a></span>
 </body>
 </html>

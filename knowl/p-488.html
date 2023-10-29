@@ -11,8 +11,19 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">But, now the empty string transition in the original start state must be removed by simulation.</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">All CFGs can be put into CNF. The steps to do so are outlined below.</div>
+<ol class="decimal">
+<li><div class="para">Add a new start state that is a clone of the old one. This new start state is typically called <span class="process-math">\(S_0\text{,}\)</span> while the original start state remains <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+<li><div class="para">Remove an <span class="process-math">\(\epsilon\)</span> transition by simulating it. If there are more empty string transitions, repeat this step until no more remain or only the new start state has an empty string rule.</div></li>
+<li><div class="para">Look for  <dfn class="terminology">unit rules</dfn> and replace them by cloning. A unit rule is when a variable goes to the same variable.</div></li>
+<li><div class="para">Look for rules with terminals that are not alone. Make new rules for those teminals.</div></li>
+<li><div class="para">Look for rules with more than two variables. Make new rules to turn them into two seperate rules.</div></li>
+</ol>
+<div class="para">When you complete this process, every rule will have only two variables on the right hand side or a terminal by itself. The only exception here is the new start state which can have an empty string transition.</div>
+</div>
 <span class="incontext"><a class="internal" href="ch-cnf.html#p-488">in-context</a></span>
 </body>
 </html>

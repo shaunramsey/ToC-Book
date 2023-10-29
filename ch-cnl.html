@@ -14,7 +14,8 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Theory of Computation">
 <meta property="book:author" content="Shaun D. Ramsey, PhD">
-<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<meta property="book:author" content="Contributing Author: Emilee Daniel">
+<meta property="book:author" content="Contributor: Shaun D. Ramsey, Jr.">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -97,7 +98,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
-<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author: Emilee Daniel, Contributor: Shaun D. Ramsey, Jr.</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -331,6 +332,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">20</span> <span class="title">Generated Images</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="newly-generated-images.html" class="internal"><span class="codenumber">21</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -348,17 +350,17 @@ window.MathJax = {
 <ol class="decimal"><li id="li-205"><div class="para" id="p-derived-li-205">Introduction to Context Free Languages</div></li></ol></article><section class="section" id="sec-cfls"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">13.1</span><span class="space"> </span><span class="title">Introduction to Context Free Languages</span>
 </h3>
-<div class="para" id="p-498"> <dfn class="terminology">Context Free Languages (CFLs)</dfn> are good at unbounded inner to outer matching with some concatenation. CFLs and PDAs have the ability to recognize the same class of languages. <span class="process-math">\(\Omega\)</span> is all languages.</div>
+<div class="para" id="p-507"> <dfn class="terminology">Context Free Languages (CFLs)</dfn> are good at unbounded inner to outer matching with some concatenation. CFLs and PDAs have the ability to recognize the same class of languages. <span class="process-math">\(\Omega\)</span> is all languages.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExLangDiagram.svg" class="contained"></div>
-<div class="para logical" id="p-499"><ul class="disc">
-<li id="li-206"><div class="para" id="p-500">RLs can be expressed using Regular Expressions and Finite Automatas. They can be proven to be regular using the Pumping Lemma for Regular Languages.</div></li>
-<li id="li-207"><div class="para" id="p-501">Both RLs and CFLs can be espressed by CFGs and PDAs. They can be proven using the Pumping Lemma for CFLs.</div></li>
-<li id="li-208"><div class="para" id="p-502">CFLs that are not RLs, might not obey the Pumping Lemma for Regular Languages, might be able to use closure properties of RLs to prove it is not regular, and must have some sort of unbounded matching.</div></li>
+<div class="para logical" id="p-508"><ul class="disc">
+<li id="li-206"><div class="para" id="p-509">RLs can be expressed using Regular Expressions and Finite Automatas. They can be proven to be regular using the Pumping Lemma for Regular Languages.</div></li>
+<li id="li-207"><div class="para" id="p-510">Both RLs and CFLs can be espressed by CFGs and PDAs. They can be proven using the Pumping Lemma for CFLs.</div></li>
+<li id="li-208"><div class="para" id="p-511">CFLs that are not RLs, might not obey the Pumping Lemma for Regular Languages, might be able to use closure properties of RLs to prove it is not regular, and must have some sort of unbounded matching.</div></li>
 </ul></div>
-<article class="exploration project-like" id="exploration-27"><h4 class="heading">
+<article class="exploration project-like" id="exploration-30"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-503">
+<div class="para logical" id="p-512">
 <div class="para">Let’s look at an example of trying to classify a language as a RL, CFL, or neither. Consider the language below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -366,8 +368,8 @@ L_1 = \{a^n \# a^n\}
 \end{equation*}
 </div>
 <div class="para">First, write a PDA for the language. Can we do it?</div>
-</div> <details id="answer-57" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-504">Yes we can! <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP5.svg" class="contained"></div>
-</div></div></details> <div class="para" id="p-505">Second, write a CFG that recognizes <span class="process-math">\(L_1\text{.}\)</span> Can we do it?</div> <details id="answer-58" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-506">Yes we can! <div class="tabular-box natural-width"><table class="tabular">
+</div> <details id="answer-57" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-513">Yes we can! <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP5.svg" class="contained"></div>
+</div></div></details> <div class="para" id="p-514">Second, write a CFG that recognizes <span class="process-math">\(L_1\text{.}\)</span> Can we do it?</div> <details id="answer-58" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-515">Yes we can! <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -377,16 +379,16 @@ L_1 = \{a^n \# a^n\}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSa | \#\)</span></td>
 </tr>
 </table></div>
-</div></div></details> <div class="para" id="p-507">So, is <span class="process-math">\(L_1\)</span> a RL, CFL, or both?</div> <details id="answer-59" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-508">Since <span class="process-math">\(L_1\)</span> can be expressed as both a PDA and a CFG, it is both a RL and a CFL.</div></div></details></article><article class="exploration project-like" id="exploration-28"><h4 class="heading">
+</div></div></details> <div class="para" id="p-516">So, is <span class="process-math">\(L_1\)</span> a RL, CFL, or both?</div> <details id="answer-59" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-517">Since <span class="process-math">\(L_1\)</span> can be expressed as both a PDA and a CFG, it is both a RL and a CFL.</div></div></details></article><article class="exploration project-like" id="exploration-31"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-509">What language does this PDA recognize? <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/CFGExP6.svg" class="contained"></div>
-</div> <details id="answer-60" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-510">The language is any string with the same number of 0s and 1s.</div></div></details></article></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<div class="para" id="p-518">What language does this PDA recognize? <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/CFGExP6.svg" class="contained"></div>
+</div> <details id="answer-60" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-519">The language is any string with the same number of 0s and 1s.</div></div></details></article></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">13.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-106"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-511">CFLs are not closed under intersection. Provide a counter example that proves this.</div></article><article class="exercise exercise-like" id="exercise-107"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-512">Give an English description of the following CFL. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-520">CFLs are not closed under intersection. Provide a counter example that proves this.</div></article><article class="exercise exercise-like" id="exercise-107"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-521">Give an English description of the following CFL. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow B | C | \epsilon\)</span></td>

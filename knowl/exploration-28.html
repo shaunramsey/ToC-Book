@@ -12,9 +12,45 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">12</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span>
 </h4>
-<div class="para">What language does this PDA recognize? <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/CFGExP6.svg" class="contained"></div>
-</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">The language is any string with the same number of 0s and 1s.</div></div></details></article><span class="incontext"><a class="internal" href="ch-cnl.html#exploration-28">in-context</a></span>
+<div class="para">Consider the CFG below. It is <span class="process-math">\(CFG_1\)</span> in Chompsky Normal Form.</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_{1- CNF}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S_0 \rightarrow SS | AS | a | \epsilon\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow SS | AS | a\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A \rightarrow a\)</span></td>
+</tr>
+</table></div> <div class="para">Considering <span class="process-math">\(CFG_{1 - CNF}\text{,}\)</span> how many steps are there to produce "a"?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">1.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_0 \rightarrow a
+\end{equation*}
+</div>
+</div></div></details> <div class="para">How many steps are there to produce "aa"?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical">
+<div class="para">3.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_0 \rightarrow SS \rightarrow aS \rightarrow aa
+\end{equation*}
+</div>
+<div class="para">OR</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_0 \rightarrow AS \rightarrow aS \rightarrow aa
+\end{equation*}
+</div>
+</div></div></details></article><span class="incontext"><a class="internal" href="ch-cnf.html#exploration-28">in-context</a></span>
 </body>
 </html>

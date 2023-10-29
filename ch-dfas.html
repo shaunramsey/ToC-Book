@@ -14,7 +14,8 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Theory of Computation">
 <meta property="book:author" content="Shaun D. Ramsey, PhD">
-<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<meta property="book:author" content="Contributing Author: Emilee Daniel">
+<meta property="book:author" content="Contributor: Shaun D. Ramsey, Jr.">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -97,7 +98,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
-<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author: Emilee Daniel, Contributor: Shaun D. Ramsey, Jr.</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -331,6 +332,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">20</span> <span class="title">Generated Images</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="newly-generated-images.html" class="internal"><span class="codenumber">21</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -420,7 +422,7 @@ L_2 = \mbox{any string that ends with 01}
 L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}
 \end{equation*}
 </div></div></li>
-<li id="li-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM2.svg" role="img" class="contained"></div></li>
+<li id="li-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM2.svg" role="img" class="contained"></div></li>
 </ul>
 </div>
 <div class="para" id="p-27">One way to start to understand the language of a FA is by creating test strings from characters in the given alphabet and checking them using a given machine. For <span class="process-math">\(M_2\text{,}\)</span> test strings could include 000, 01, 11011, and 100001. By tracing through <span class="process-math">\(M_2\)</span> with each of these four string separately, we see that it accepts the second and fourth strings, the only ones ending in 01. This is a straight-forward example, and many more test strings could be needed to determine the languages of other machines. When wrapping our mind around state machines in this way, it is helpful to think about what each state is representing. Sometimes it is acquired by a sequence like "have seen a 0 followed by a 1." Sometimes it remembers a modulus of sorts like "seen an even number of 0s" or "seen a binary string that represents a number divisible by 3". Practice with these machines and languages will help acquire this skill and insight but later in the book we will see some other methods for translating machines to expressions which might be useful in this endeavor when the machines are complicated, although although those expressions are often more complicated than the machines themselves!</div></section><section class="section" id="DFAs"><h3 class="heading hide-type">
@@ -458,7 +460,7 @@ L_2 = {s01 | \mbox{where s is a string made of any number of 0s and 1s}}
 </h3>
 <article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="p-34">What is the language of <span class="process-math">\(M_3\text{?}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM3.svg" role="img" class="contained"></div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM3.svg" role="img" class="contained"></div>
 <div class="solutions">
 <details id="hint-2" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
 <div class="para" id="p-35">Come up with ten strings in the language of <span class="process-math">\(M_3\text{.}\)</span>
@@ -606,7 +608,7 @@ L(M_3) = \mbox{the empty string and all binary strings divisible by 3}
 </div></details>
 </div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para" id="p-40">What is the language of <span class="process-math">\(M_4\text{?}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM4.svg" role="img" class="contained"></div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM4.svg" role="img" class="contained"></div>
 <div class="solutions">
 <details id="hint-3" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-41">Come up with a few test strings. See any patterns? Focus on the plain language description.</div></div></details><details id="answer-3" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-42"><div class="displaymath process-math">
 \begin{equation*}
@@ -628,9 +630,9 @@ repeated}
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="answer-4" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM5.svg" role="img" class="contained"></div></div></details></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="solutions"><details id="answer-4" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM5.svg" role="img" class="contained"></div></div></details></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="p-45">What is the language of <span class="process-math">\(M_6\text{?}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM6.svg" role="img" class="contained"></div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM6.svg" role="img" class="contained"></div>
 <div class="solutions">
 <details id="hint-4" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-46">Machines can have other alphabets. What is the alphabet of this machine’s language?</div></div></details><details id="answer-5" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="p-47"><div class="displaymath process-math">
 \begin{equation*}
@@ -640,13 +642,13 @@ L(M_7) = \mbox{any string that starts with } ba \mbox{ followed by any amount of
 </div></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="p-48">Use the diagram below to create a DFA that can track mod 7 for any binary number.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/DFA-M26.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-49">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/FAExM27.svg" role="img" class="contained"></div>
+<div class="para" id="p-49">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM7.svg" role="img" class="contained"></div>
 <div class="solutions"><details id="answer-6" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-50"><span class="process-math">\(L = \mbox{\{any string that begins with a } b \mbox{ and is followed by one or more } a
 \mbox{s and no more } b\mbox{s \}}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-51">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/FAExM29.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-52">Translate this FA into an English description.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/FAExM32.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-53">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAEx38.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-54">Give an English description of the language of the following FA:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/FAExM41.svg" role="img" class="contained"></div></article></section></section></div>
+<div class="para" id="p-51">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM8.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-52">Translate this FA into an English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM9.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-53">Translate this FA into a complete English description.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM10.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-54">Find the missing elements of the following Finite Automata. Then, give an English description of the language of the following FA:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/RFAxM11.svg" role="img" class="contained"></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-sets.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-nfas.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

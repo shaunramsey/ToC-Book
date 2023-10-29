@@ -14,14 +14,7 @@
 <article class="exploration project-like"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Consider</div>
-<div class="displaymath process-math">
-\begin{equation*}
-REX_6 = (0+10^*1)^*
-\end{equation*}
-</div>
-<div class="para">First, we look at <span class="process-math">\(0\text{.}\)</span> This is a terminal structure.</div>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14a.svg" class="contained"></div> <div class="para">Second, we will add in the OR element.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14b.svg" class="contained"></div> <div class="para">We now need to turn our attention to the <span class="process-math">\(10^*\text{,}\)</span> which is a terminal followed by a repeating structure.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14c.svg" class="contained"></div> <div class="para">There is a 1 that follows the <span class="process-math">\(10^*\text{.}\)</span> Since there is an empty string transition, it’s terminal structure can be added to the state between 1 and 0.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14d.svg" class="contained"></div> <div class="para">Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM14.svg" class="contained"></div></article><span class="incontext"><a class="internal" href="ch-rex-to-nfa.html#exploration-5">in-context</a></span>
+<div class="para">It is important to note, that if the outcoming state set of a character already exists that state sholuld be linked to instead of another created. Try creating the final FA with this in mind.</div>
+<div class="solutions"><details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM12_4.svg" class="contained"></div></div></details></div></article><span class="incontext"><a class="internal" href="ch-nfa-to-dfa.html#exploration-5">in-context</a></span>
 </body>
 </html>

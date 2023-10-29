@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
+</h4>
+<div class="para">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1 | \epsilon\)</span></td>
+</tr>
+</table></div> What strings can we make from it? <details class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\epsilon\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow \epsilon\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(01\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0S1 \rightarrow 0\epsilon 1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0011\text{:}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0S1 \rightarrow 00S11\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(0S1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(00S11 \rightarrow 00\epsilon 11\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
+</td>
+</tr>
+</table></div></div></details> And many more strings can be made! But, what languge is this?</div> <div class="para">The language of this grammar is any amount of 0s followed by the same amount of 1s.</div></article><span class="incontext"><a class="internal" href="ch-cfgs.html#exploration-21">in-context</a></span>
+</body>
+</html>

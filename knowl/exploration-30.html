@@ -12,23 +12,27 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">14</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">The outline of the proof that <span class="process-math">\(L_1\)</span> is not a CFL where</div>
+<div class="para">Let’s look at an example of trying to classify a language as a RL, CFL, or neither. Consider the language below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L_1 = a^nb^nc^n
+L_1 = \{a^n \# a^n\}
 \end{equation*}
 </div>
-<div class="para">is below:</div>
-<ol class="decimal">
-<li><div class="para">Assume the language, <span class="process-math">\(L\text{,}\)</span> is a CFL and it obeys the Pumping Lemma for Context Free Languages.</div></li>
-<li><div class="para">A string of length at least <span class="process-math">\(p\)</span> will obey the Pumping Lemma for Context Free Languages. Choose to consider <span class="process-math">\(s^{(1)}\text{,}\)</span> where <span class="process-math">\(s^{(1)} = a^pb^pc^p\)</span> and <span class="process-math">\(s^{(1)} \in L\)</span>
-</div></li>
-<li><div class="para">When pumping up, <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> must each increase to stay in <span class="process-math">\(L\text{.}\)</span> But, because the pumpable part has to be within <span class="process-math">\(p\)</span> symbols, there is no way to include all three. (The <span class="process-math">\(c\)</span>’s are too far away from the <span class="process-math">\(a\)</span>’s)</div></li>
-<li><div class="para">Thus, our assumpiton was wrong, <span class="process-math">\(L\)</span> must not be a CFL by contradiction.</div></li>
-</ol>
-</div></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-context-free.html#exploration-30">in-context</a></span>
+<div class="para">First, write a PDA for the language. Can we do it?</div>
+</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Yes we can! <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGExP5.svg" class="contained"></div>
+</div></div></details> <div class="para">Second, write a CFG that recognizes <span class="process-math">\(L_1\text{.}\)</span> Can we do it?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Yes we can! <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSa | \#\)</span></td>
+</tr>
+</table></div>
+</div></div></details> <div class="para">So, is <span class="process-math">\(L_1\)</span> a RL, CFL, or both?</div> <details class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Since <span class="process-math">\(L_1\)</span> can be expressed as both a PDA and a CFG, it is both a RL and a CFL.</div></div></details></article><span class="incontext"><a class="internal" href="ch-cnl.html#exploration-30">in-context</a></span>
 </body>
 </html>

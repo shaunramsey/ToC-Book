@@ -14,7 +14,8 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Theory of Computation">
 <meta property="book:author" content="Shaun D. Ramsey, PhD">
-<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<meta property="book:author" content="Contributing Author: Emilee Daniel">
+<meta property="book:author" content="Contributor: Shaun D. Ramsey, Jr.">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -97,7 +98,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
-<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author: Emilee Daniel, Contributor: Shaun D. Ramsey, Jr.</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -331,6 +332,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">20</span> <span class="title">Generated Images</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="newly-generated-images.html" class="internal"><span class="codenumber">21</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -356,18 +358,18 @@ window.MathJax = {
 <section class="subsection" id="subsec-RLReview"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Regular Languages Review</span>
 </h4>
-<div class="para logical" id="p-341">
+<div class="para logical" id="p-350">
 <div class="para">To best understand CFGs, we must understand how they differ from Regular Languages. Regular Languages:</div>
 <ul class="disc">
-<li id="li-151"><div class="para" id="p-342">have no memory - they use states</div></li>
-<li id="li-152"><div class="para" id="p-343">have modular looping - they use state transitions</div></li>
-<li id="li-153"><div class="para" id="p-344">can be expressed in Regular Expressions, Deterministic Finite Automata, and Non-Deterministic Finite Automata</div></li>
+<li id="li-151"><div class="para" id="p-351">have no memory - they use states</div></li>
+<li id="li-152"><div class="para" id="p-352">have modular looping - they use state transitions</div></li>
+<li id="li-153"><div class="para" id="p-353">can be expressed in Regular Expressions, Deterministic Finite Automata, and Non-Deterministic Finite Automata</div></li>
 </ul>
 <div class="para">In order to build upon Regular Languages, we move to constructions that allow some limited forms of matching. Context Free Languages come about when Regular Languages have access to stack memory, and they are expressed through Context Free Grammars.</div>
 </div></section><section class="subsection" id="subsec-CFGintro"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Basics of Context Free Grammars</span>
 </h4>
-<div class="para" id="p-345"> <dfn class="terminology">Context Free Grammars (CFGs)</dfn> consist of a series of rules or productions. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-354"> <dfn class="terminology">Context Free Grammars (CFGs)</dfn> consist of a series of rules or productions. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -381,9 +383,9 @@ window.MathJax = {
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow cTd|cd\)</span></td>
 </tr>
 </table></div>
-</div></section><div class="para" id="p-346">Each line of a CFG is called a  <dfn class="terminology">rule</dfn>. The left hand side of a rule is always a  <dfn class="terminology">variable</dfn>. Variables are denoted by uppercase letters. The right hand side of a rule is some combination terminals and variables.  <dfn class="terminology">Terminals</dfn> can be elements of the alphabet of the Context Free Language or the empty string (<span class="process-math">\(\epsilon\)</span>). They are denoted by lower case letters.</div>
-<div class="para" id="p-347">CFGs have a start variable, it is usually on the left hand side of the first rule and is denoted with <span class="process-math">\(S\text{.}\)</span> To produce strings, variables are replaced by one of the options avaliable on the production’s right hand side. In a production rule, <span class="process-math">\(|\)</span> is used to mean OR. The left hand side can be replaced by one of the right hand side.</div>
-<div class="para" id="p-348">Here is a sample derivation from <span class="process-math">\(CFG_1\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+</div></section><div class="para" id="p-355">Each line of a CFG is called a  <dfn class="terminology">rule</dfn>. The left hand side of a rule is always a  <dfn class="terminology">variable</dfn>. Variables are denoted by uppercase letters. The right hand side of a rule is some combination terminals and variables.  <dfn class="terminology">Terminals</dfn> can be elements of the alphabet of the Context Free Language or the empty string (<span class="process-math">\(\epsilon\)</span>). They are denoted by lower case letters.</div>
+<div class="para" id="p-356">CFGs have a start variable, it is usually on the left hand side of the first rule and is denoted with <span class="process-math">\(S\text{.}\)</span> To produce strings, variables are replaced by one of the options avaliable on the production’s right hand side. In a production rule, <span class="process-math">\(|\)</span> is used to mean OR. The left hand side can be replaced by one of the right hand side.</div>
+<div class="para" id="p-357">Here is a sample derivation from <span class="process-math">\(CFG_1\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSb\)</span></td>
 <td class="l m b0 r0 l0 t0 lines">
@@ -408,10 +410,10 @@ window.MathJax = {
 </tr>
 </table></div> This makes the final string: <span class="process-math">\(accddb\text{.}\)</span>
 </div>
-<article class="exploration project-like" id="exploration-17"><h4 class="heading">
+<article class="exploration project-like" id="exploration-20"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-349">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-358">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2\text{:}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -479,10 +481,10 @@ window.MathJax = {
 <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
 </td>
 </tr>
-</table></div> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-350">The language of this grammar is any amount of <span class="process-math">\(a\)</span>s concatenated.</div></article><article class="exploration project-like" id="exploration-18"><h4 class="heading">
+</table></div> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-359">The language of this grammar is any amount of <span class="process-math">\(a\)</span>s concatenated.</div></article><article class="exploration project-like" id="exploration-21"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-351">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-360">Consider the following grammar: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3\text{:}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -550,10 +552,10 @@ window.MathJax = {
 <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
 </td>
 </tr>
-</table></div></div></details> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-352">The language of this grammar is any amount of 0s followed by the same amount of 1s.</div></article><article class="exploration project-like" id="exploration-19"><h4 class="heading">
+</table></div></div></details> And many more strings can be made! But, what languge is this?</div> <div class="para" id="p-361">The language of this grammar is any amount of 0s followed by the same amount of 1s.</div></article><article class="exploration project-like" id="exploration-22"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-353">Let us consider a grammar with multiple variables. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-362">Let us consider a grammar with multiple variables. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_4\text{:}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -567,7 +569,7 @@ window.MathJax = {
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(T \rightarrow bT | \epsilon\)</span></td>
 </tr>
 </table></div>
-</div> <div class="para" id="p-354">Can we generate only <span class="process-math">\(a\)</span>s? <div class="tabular-box natural-width"><table class="tabular">
+</div> <div class="para" id="p-363">Can we generate only <span class="process-math">\(a\)</span>s? <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aS\)</span></td>
 <td class="l m b0 r0 l0 t0 lines">
@@ -586,7 +588,7 @@ window.MathJax = {
 <span class="process-math">\(S\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
 </td>
 </tr>
-</table></div> The resulting string is <span class="process-math">\(aa\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(a\)</span>s.</div> <div class="para" id="p-355">Can we generate only <span class="process-math">\(b\)</span>s? How? <details id="answer-41" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+</table></div> The resulting string is <span class="process-math">\(aa\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(a\)</span>s.</div> <div class="para" id="p-364">Can we generate only <span class="process-math">\(b\)</span>s? How? <details id="answer-41" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow T\)</span></td>
 <td class="l m b0 r0 l0 t0 lines">
@@ -611,31 +613,31 @@ window.MathJax = {
 <span class="process-math">\(T\)</span> is replaced by <span class="process-math">\(\epsilon\)</span>
 </td>
 </tr>
-</table></div></div></details> The resulting string is <span class="process-math">\(bb\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(b\)</span>s.</div> <div class="para logical" id="p-356">
+</table></div></div></details> The resulting string is <span class="process-math">\(bb\text{.}\)</span> Therefore, <span class="process-math">\(CFG_4\)</span> can generate only <span class="process-math">\(b\)</span>s.</div> <div class="para logical" id="p-365">
 <div class="para">What are some other strings that we can generate using <span class="process-math">\(CFG_4\text{?}\)</span>
 </div>
 <ul class="disc">
-<li id="li-154"><div class="para" id="p-357"><span class="process-math">\(\displaystyle ab\)</span></div></li>
-<li id="li-155"><div class="para" id="p-358"><span class="process-math">\(\displaystyle aaabb\)</span></div></li>
-<li id="li-156"><div class="para" id="p-359"><span class="process-math">\(\displaystyle abbbbbb\)</span></div></li>
+<li id="li-154"><div class="para" id="p-366"><span class="process-math">\(\displaystyle ab\)</span></div></li>
+<li id="li-155"><div class="para" id="p-367"><span class="process-math">\(\displaystyle aaabb\)</span></div></li>
+<li id="li-156"><div class="para" id="p-368"><span class="process-math">\(\displaystyle abbbbbb\)</span></div></li>
 </ul>
 <div class="para">The language of this grammar is the empty string or any amount of <span class="process-math">\(a\)</span>s followed by any amount of <span class="process-math">\(b\)</span>s.</div>
 </div></article><section class="subsection" id="subsec-rexToCFG"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Creating CFGs from Regular Expressions</span>
 </h4>
-<div class="para logical" id="p-360">
+<div class="para logical" id="p-369">
 <div class="para">Any Regular Expression is a Context Free Language and can easily be implemented into a CFG using the bellow framework:</div>
 <ul class="disc">
-<li id="li-157"><div class="para" id="p-361">union is an <span class="process-math">\(|\text{,}\)</span> another rule</div></li>
-<li id="li-158"><div class="para" id="p-362">concatenation is a <span class="process-math">\(V \rightarrow V_1v_2\)</span> rule</div></li>
-<li id="li-159"><div class="para" id="p-363">* is a <span class="process-math">\(S \rightarrow stringS | \epsilon\)</span> rule</div></li>
+<li id="li-157"><div class="para" id="p-370">union is an <span class="process-math">\(|\text{,}\)</span> another rule</div></li>
+<li id="li-158"><div class="para" id="p-371">concatenation is a <span class="process-math">\(V \rightarrow V_1v_2\)</span> rule</div></li>
+<li id="li-159"><div class="para" id="p-372">* is a <span class="process-math">\(S \rightarrow stringS | \epsilon\)</span> rule</div></li>
 </ul>
 <div class="para">Let us look a little ddeper into matching with another exploration.</div>
 </div>
-<article class="exploration project-like" id="exploration-20"><h5 class="heading">
+<article class="exploration project-like" id="exploration-23"><h5 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
 </h5>
-<div class="para logical" id="p-364">
+<div class="para logical" id="p-373">
 <div class="para">Construct a CFG for <span class="process-math">\(L_5\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -661,10 +663,10 @@ L_5 = \{a^i(bc)^i | i \geq 0 \}
 </tr>
 </table></div> But, why is <span class="process-math">\(CFG_5'\)</span> incorrect? Construct some strings using this grammar.</div>
 <ul class="disc">
-<li id="li-160"><div class="para" id="p-365">abc</div></li>
-<li id="li-161"><div class="para" id="p-366">aabcbc</div></li>
-<li id="li-162"><div class="para" id="p-367">aabcbc</div></li>
-<li id="li-163"><div class="para" id="p-368">aaaaaaa</div></li>
+<li id="li-160"><div class="para" id="p-374">abc</div></li>
+<li id="li-161"><div class="para" id="p-375">aabcbc</div></li>
+<li id="li-162"><div class="para" id="p-376">aabcbc</div></li>
+<li id="li-163"><div class="para" id="p-377">aaaaaaa</div></li>
 </ul>
 <div class="para">But, how did the string <span class="process-math">\(abcbc\)</span> come about from <span class="process-math">\(CFG_5'\text{?}\)</span> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -704,7 +706,7 @@ L_5 = \{a^i(bc)^i | i \geq 0 \}
 </td>
 </tr>
 </table></div> By not forcing the <span class="process-math">\(a\)</span> and <span class="process-math">\(bc\)</span> to be created at the same time and inculding an epsilon, then it is possible to a string to be created that is not in the language.</div>
-</div> <div class="para" id="p-369">Below is the correct grammar for <span class="process-math">\(L_5\text{.}\)</span>
+</div> <div class="para" id="p-378">Below is the correct grammar for <span class="process-math">\(L_5\text{.}\)</span>
 </div> <details id="answer-42" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5\text{:}\)</span></td>
@@ -714,7 +716,7 @@ L_5 = \{a^i(bc)^i | i \geq 0 \}
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow aSbc | \epsilon\)</span></td>
 </tr>
-</table></div></div></details> <div class="para" id="p-370">We can see that matched pairs must be contained in the same rule.</div></article><div class="para logical" id="p-371">
+</table></div></div></details> <div class="para" id="p-379">We can see that matched pairs must be contained in the same rule.</div></article><div class="para logical" id="p-380">
 <div class="para">Following our thinking from the exploration, we can see that interleaved matching does not work within Context Free Grammars. An example is this would be a a language where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -730,7 +732,7 @@ L = \{0^n1^n0^n\}
 </div>
 <details id="example-1" class="example example-like"><summary><h5 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1</span><span class="period">.</span>
-</h5></summary><article class="example example-like"><div class="para" id="p-372">Here is an example that is applicable to more general computer science. Imagine parsing a computer program. You have run a REX which returns these terminals: <div class="tabular-box natural-width"><table class="tabular">
+</h5></summary><article class="example example-like"><div class="para" id="p-381">Here is an example that is applicable to more general computer science. Imagine parsing a computer program. You have run a REX which returns these terminals: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">boolean expressions</td>
@@ -780,7 +782,7 @@ L = \{0^n1^n0^n\}
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow e:C | \epsilon\)</span></td>
 </tr>
-</table></div></div></details> <div class="para" id="p-373">The CDFG can also be written as seen below.</div> <details id="answer-44" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
+</table></div></div></details> <div class="para" id="p-382">The CDFG can also be written as seen below.</div> <details id="answer-44" class="answer solution-like"><summary><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG\text{:}\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -804,7 +806,7 @@ L = \{0^n1^n0^n\}
 </table></div></div></details></article></details></section></section><section class="section" id="subsec-parsetrees"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.2</span><span class="space"> </span><span class="title">Parse Trees</span>
 </h3>
-<div class="para" id="p-374">Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <span class="process-math">\(CFG_1\)</span> for this example. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-383">Derivations are often drawn as a tree so that precedence and matching is clean. We will consider <span class="process-math">\(CFG_1\)</span> for this example. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -854,11 +856,11 @@ L = \{0^n1^n0^n\}
 </tr>
 </table></div>
 </div>
-<div class="para" id="p-375">Here, you can see the <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> matching and the <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> matching a little more clearly.</div>
+<div class="para" id="p-384">Here, you can see the <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> matching and the <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> matching a little more clearly.</div>
 <article class="exploration project-like" id="exp-AmbIntro"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-376">Let’s work through another example from <span class="process-math">\(CFG_5\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-385">Let’s work through another example from <span class="process-math">\(CFG_5\text{:}\)</span> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -868,8 +870,8 @@ L = \{0^n1^n0^n\}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(E \rightarrow E+E | E*E | 0 | 1\)</span></td>
 </tr>
 </table></div>
-</div> <div class="para" id="p-377">We will create the parse tree for the string <span class="process-math">\(1+1*0\text{.}\)</span>
-</div> <div class="para" id="p-378"><div class="tabular-box natural-width"><table class="tabular">
+</div> <div class="para" id="p-386">We will create the parse tree for the string <span class="process-math">\(1+1*0\text{.}\)</span>
+</div> <div class="para" id="p-387"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">First, we will need <span class="process-math">\(E + E\)</span> to give us <span class="process-math">\(1 + E\)</span>
 </td>
@@ -890,12 +892,12 @@ L = \{0^n1^n0^n\}
 </td>
 <td class="c m b0 r0 l0 t0 lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFExT2d.svg" class="contained"></div></td>
 </tr>
-</table></div></div> <div class="para" id="p-379">But, there is another way to arrive at this string using <span class="process-math">\(CFG_5\text{.}\)</span> Try drawing the parse tree for it.</div>
-<div class="solutions"><details id="answer-45" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-380"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT2e.svg" class="contained"></div></div></div></details></div></article></section><section class="section" id="sec-Ambiguity"><h3 class="heading hide-type">
+</table></div></div> <div class="para" id="p-388">But, there is another way to arrive at this string using <span class="process-math">\(CFG_5\text{.}\)</span> Try drawing the parse tree for it.</div>
+<div class="solutions"><details id="answer-45" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-389"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT2e.svg" class="contained"></div></div></div></details></div></article></section><section class="section" id="sec-Ambiguity"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.3</span><span class="space"> </span><span class="title">Ambiguity</span>
 </h3>
-<div class="para" id="p-381"> <dfn class="terminology">Abmibuous</dfn> grammars can generate some string in two or more different ways. The grammar as shown in the exploration above is ambiguous as there is more than one way to generate the string, but the language this grammar represents does have a grammar that is not ambiguous.</div>
-<div class="para" id="p-382">If we want to force some matching to have precedence, you simply push the items with higher precedence to be matched by rules further down the grammar. Consider <span class="process-math">\(CFG_5\)</span> once again. <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-390"> <dfn class="terminology">Abmibuous</dfn> grammars can generate some string in two or more different ways. The grammar as shown in the exploration above is ambiguous as there is more than one way to generate the string, but the language this grammar represents does have a grammar that is not ambiguous.</div>
+<div class="para" id="p-391">If we want to force some matching to have precedence, you simply push the items with higher precedence to be matched by rules further down the grammar. Consider <span class="process-math">\(CFG_5\)</span> once again. <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_5:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -935,7 +937,7 @@ L = \{0^n1^n0^n\}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(N \rightarrow 0 | 1\)</span></td>
 </tr>
 </table></div> Using the above grammar, there is now only one way to create the string <span class="process-math">\(1+1*0\text{.}\)</span> This is the parse tree: <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/../generated/latex-image/CFExT3.svg" class="contained"></div> This is the only possible way to create the parse tree that generates <span class="process-math">\(1+1*0\)</span> from <span class="process-math">\(CFG_{5b}\)</span> because the "+" must be matched first.</div>
-<div class="para logical" id="p-383">
+<div class="para logical" id="p-392">
 <div class="para">Some languages have only ambiguous grammars. These languages are called <dfn class="terminology">interherently ambiguous</dfn>. The language below is an example of an inherently ambiguous language:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -977,10 +979,10 @@ L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">10.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-72"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-384">Write a CFG for <span class="process-math">\(L_1 = (1+01)^*\)</span>
+<div class="para" id="p-393">Write a CFG for <span class="process-math">\(L_1 = (1+01)^*\)</span>
 </div>
 <div class="solutions">
-<details id="hint-18" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-385">Consider the OR first. Then consider how to generate the reptition. There are multiple options for a grammar of this language.</div></div></details><details id="answer-46" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-386">
+<details id="hint-19" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-394">Consider the OR first. Then consider how to generate the reptition. There are multiple options for a grammar of this language.</div></div></details><details id="answer-46" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-395">
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_1:\)</span></td>
@@ -1019,9 +1021,9 @@ L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
 </table></div> Are all grammars that can represent <span class="process-math">\(L_1\text{.}\)</span>
 </div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-73"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-387">Write a CFG for <span class="process-math">\(L_2 = (1^*01^*01^*)^*\)</span>
+<div class="para" id="p-396">Write a CFG for <span class="process-math">\(L_2 = (1^*01^*01^*)^*\)</span>
 </div>
-<div class="solutions"><details id="answer-47" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-388">
+<div class="solutions"><details id="answer-47" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-397">
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_2:\)</span></td>
@@ -1063,10 +1065,10 @@ L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
 </tr>
 </table></div> Both grammars can represent <span class="process-math">\(L_2\text{.}\)</span>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-74"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-389">Write a CFG for <span class="process-math">\(L_1L_2 = (1+01)^*(1^*01^*01^*)^*\)</span>
+<div class="para" id="p-398">Write a CFG for <span class="process-math">\(L_1L_2 = (1+01)^*(1^*01^*01^*)^*\)</span>
 </div>
 <div class="solutions">
-<details id="hint-19" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-390">Lean on past exercises.</div></div></details><details id="answer-48" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-391"><div class="tabular-box natural-width"><table class="tabular">
+<details id="hint-20" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-399">Lean on past exercises.</div></div></details><details id="answer-48" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-400"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG_3:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1077,7 +1079,7 @@ L_6 = \{a^ib^jc^k | i=j \mbox{ or } j=k\}
 </tr>
 </table></div></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-75"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="p-392">
+<div class="para logical" id="p-401">
 <div class="para">Create a CFG for the language below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1086,7 +1088,7 @@ L = \{\mbox{all palindromes with } \sigma=\{0,1\}\}
 </div>
 <div class="para">(Palindromes are strings that the same no matter if read backwards for forwards. <span class="process-math">\(1011101\)</span> is an example.)</div>
 </div>
-<div class="solutions"><details id="answer-49" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-393"><div class="tabular-box natural-width"><table class="tabular">
+<div class="solutions"><details id="answer-49" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-402"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1096,35 +1098,35 @@ L = \{\mbox{all palindromes with } \sigma=\{0,1\}\}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(S \rightarrow 0S0 | 1S1 | 0 | 1 | \epsilon\)</span></td>
 </tr>
 </table></div></div></div></details></div></article><article class="exercise exercise-like" id="exercise-76"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-394">Write the language of matching open and closed brackets such as: (),[], and {}.</div>
+<div class="para" id="p-403">Write the language of matching open and closed brackets such as: (),[], and {}.</div>
 <div class="solutions">
-<details id="hint-20" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-395">Remember to consider that [(){}] can also take place.</div></div></details><details id="answer-50" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-396"><span class="process-math">\(S \rightarrow (S) | [S] | {S} | \epsilon | SS\)</span></div></div></details>
+<details id="hint-21" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-404">Remember to consider that [(){}] can also take place.</div></div></details><details id="answer-50" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-405"><span class="process-math">\(S \rightarrow (S) | [S] | {S} | \epsilon | SS\)</span></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-77"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="p-397">
+<div class="para logical" id="p-406">
 <div class="para">Give a DPA and a CFG for the language of boolean expressions. Terminals, <span class="process-math">\(\Sigma\)</span> will be:</div>
 <dl class="description-list">
 <dt id="li-164">v</dt>
-<dd><div class="para" id="p-398">a varaible or value in the programming sense</div></dd>
+<dd><div class="para" id="p-407">a varaible or value in the programming sense</div></dd>
 <dt id="li-165">e</dt>
-<dd><div class="para" id="p-399">a comparison like <span class="process-math">\(==, &gt;, \geq, \leq, !=\)</span>
+<dd><div class="para" id="p-408">a comparison like <span class="process-math">\(==, &gt;, \geq, \leq, !=\)</span>
 </div></dd>
 <dt id="li-166">b</dt>
-<dd><div class="para" id="p-400">boolean operators like <span class="process-math">\(and\)</span> and <span class="process-math">\(or\)</span>
+<dd><div class="para" id="p-409">boolean operators like <span class="process-math">\(and\)</span> and <span class="process-math">\(or\)</span>
 </div></dd>
 <dt id="li-167">t</dt>
-<dd><div class="para" id="p-401">represents true or false</div></dd>
+<dd><div class="para" id="p-410">represents true or false</div></dd>
 </dl>
 </div>
-<div class="solutions"><details id="hint-21" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-402">
+<div class="solutions"><details id="hint-22" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para logical" id="p-411">
 <div class="para">Sample strings in this language include:</div>
 <ul class="disc">
-<li id="li-168"><div class="para" id="p-403">vev</div></li>
-<li id="li-169"><div class="para" id="p-404">vevbvebvev</div></li>
-<li id="li-170"><div class="para" id="p-405">t</div></li>
-<li id="li-171"><div class="para" id="p-406">vevbtbvetbtet</div></li>
+<li id="li-168"><div class="para" id="p-412">vev</div></li>
+<li id="li-169"><div class="para" id="p-413">vevbvebvev</div></li>
+<li id="li-170"><div class="para" id="p-414">t</div></li>
+<li id="li-171"><div class="para" id="p-415">vevbtbvetbtet</div></li>
 </ul>
 </div></div></details></div></article><article class="exercise exercise-like" id="exercise-78"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para logical" id="p-407">
+<div class="para logical" id="p-416">
 <div class="para">Consider:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1132,8 +1134,8 @@ L_1 = \{ww | w \mbox{ is any binary string}\}
 \end{equation*}
 </div>
 <div class="para">It is known that <span class="process-math">\(L_1\)</span> is not a context free language. <span class="process-math">\(0^*\)</span> is a CFL and a RL. Since RLs are closed under intersection, <span class="process-math">\(L_1\)</span> intersected with <span class="process-math">\(0^*\)</span> must not be a RL.</div>
-</div> <div class="para" id="p-408">Find the error in the proof above and describe it clearly.</div></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-409">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+</div> <div class="para" id="p-417">Find the error in the proof above and describe it clearly.</div></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-418">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1152,7 +1154,7 @@ L_1 = \{ww | w \mbox{ is any binary string}\}
 </tr>
 </table></div>
 </div></article><article class="exercise exercise-like" id="exercise-80"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para logical" id="p-410">
+<div class="para logical" id="p-419">
 <div class="para">Give a CFG for the language:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1162,7 +1164,7 @@ L = \{w\#w^R | w \mbox{ is a binary string}\}
 <div class="para">
 <span class="process-math">\(w^R\)</span> consists of <span class="process-math">\(w\)</span> in reverse. So, if <span class="process-math">\(w = 001\text{,}\)</span> then <span class="process-math">\(w^R = 100\text{.}\)</span> Thus <span class="process-math">\(001\#100\)</span> is a string in this language.</div>
 </div></article><article class="exercise exercise-like" id="exercise-81"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-411">Given the grammar below, show the parse tree for the string: <span class="process-math">\(bbdd\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-420">Given the grammar below, show the parse tree for the string: <span class="process-math">\(bbdd\)</span> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1181,8 +1183,8 @@ L = \{w\#w^R | w \mbox{ is a binary string}\}
 </tr>
 </table></div>
 </div></article><article class="exercise exercise-like" id="exercise-82"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-412">Translate the grammar below into English:</div> <div class="para" id="p-413">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-83"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-414">Create a CFG from the English description of the language below:</div>
+<div class="para" id="p-421">Translate the grammar below into English:</div> <div class="para" id="p-422">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-83"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-423">Create a CFG from the English description of the language below:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L = \mbox{\{This language consists of strings that have the form of a palindrome using this special alphabet.\}}
@@ -1193,15 +1195,15 @@ L = \mbox{\{This language consists of strings that have the form of a palindrome
 \Sigma = \{\triangle, \square, \bigcirc\}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-84"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="p-415">Given the grammar below, show the parse tree for the string:</div>
+<div class="para" id="p-424">Given the grammar below, show the parse tree for the string:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \triangle \triangle \triangle \bigcirc \square \triangle
 \end{equation*}
 </div>
-<div class="para" id="p-416">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-85"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para logical" id="p-417"><ol class="lower-alpha">
-<li id="li-172"><div class="para" id="p-418">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="p-425">CFG:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/CFGEx8.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-85"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para logical" id="p-426"><ol class="lower-alpha">
+<li id="li-172"><div class="para" id="p-427">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1216,19 +1218,19 @@ L = \mbox{\{This language consists of strings that have the form of a palindrome
 </tr>
 </table></div>
 </div></li>
-<li id="li-173"><div class="para" id="p-419">Given that same grammar, show a parse tree for the string: <span class="process-math">\(abbc\)</span>
+<li id="li-173"><div class="para" id="p-428">Given that same grammar, show a parse tree for the string: <span class="process-math">\(abbc\)</span>
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="exercise-86"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
-<div class="para logical" id="p-420">
+<div class="para logical" id="p-429">
 <div class="para">The language consists of all strings with either:</div>
 <ul class="disc">
-<li id="li-174"><div class="para" id="p-421">an equal number of a’s and b’s with no c’s, or</div></li>
-<li id="li-175"><div class="para" id="p-422">an equal number of a’s and c’s with no b’s</div></li>
+<li id="li-174"><div class="para" id="p-430">an equal number of a’s and b’s with no c’s, or</div></li>
+<li id="li-175"><div class="para" id="p-431">an equal number of a’s and c’s with no b’s</div></li>
 </ul>
-</div> <div class="para" id="p-423">Where, <span class="process-math">\(\Sigma = \{a,b,c\}\)</span>
+</div> <div class="para" id="p-432">Where, <span class="process-math">\(\Sigma = \{a,b,c\}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-87"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
 <ol class="lower-alpha">
-<li id="li-176"><div class="para" id="p-424">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<li id="li-176"><div class="para" id="p-433">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1243,11 +1245,11 @@ L = \mbox{\{This language consists of strings that have the form of a palindrome
 </tr>
 </table></div>
 </div></li>
-<li id="li-177"><div class="para" id="p-425">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
+<li id="li-177"><div class="para" id="p-434">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-88"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
-<div class="para" id="p-426">The set of all strings that have an equal number of a’s and d’s, less b’s than c’s, and the symbols appear in alphabetical order.</div></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="p-435">The set of all strings that have an equal number of a’s and d’s, less b’s than c’s, and the symbols appear in alphabetical order.</div></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
 <ol class="lower-alpha">
-<li id="li-178"><div class="para" id="p-427">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
+<li id="li-178"><div class="para" id="p-436">Translate the below CFG into English: <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(CFG:\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -1266,13 +1268,13 @@ L = \mbox{\{This language consists of strings that have the form of a palindrome
 </tr>
 </table></div>
 </div></li>
-<li id="li-179"><div class="para" id="p-428">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
+<li id="li-179"><div class="para" id="p-437">Also generate a parse tree, using the grammar above, for the string: aabbab</div></li>
 </ol></article><article class="exercise exercise-like" id="exercise-90"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
-<div class="para" id="p-429">Give a CFG that consists of strings taht either a list of a’s followed by b’s in equal number or a list of b’s followed by c’s in equal number or a list of c’s followed by d’s in equal number. the alphabet of this langage is: <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
+<div class="para" id="p-438">Give a CFG that consists of strings taht either a list of a’s followed by b’s in equal number or a list of b’s followed by c’s in equal number or a list of c’s followed by d’s in equal number. the alphabet of this langage is: <span class="process-math">\(\Sigma = \{a,b,c,d\}\)</span>
 </div>
-<div class="solutions"><details id="hint-22" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="p-430">Some accepted strings: <span class="process-math">\(aabb\text{,}\)</span> <span class="process-math">\(bbcc\text{,}\)</span> <span class="process-math">\(ccdd\text{,}\)</span> and <span class="process-math">\(ccccdddd\text{.}\)</span>
-</div> <div class="para" id="p-431">Some regjected strings:  <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(abc\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> and <span class="process-math">\(cb\text{.}\)</span>
+<div class="solutions"><details id="hint-23" class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para" id="p-439">Some accepted strings: <span class="process-math">\(aabb\text{,}\)</span> <span class="process-math">\(bbcc\text{,}\)</span> <span class="process-math">\(ccdd\text{,}\)</span> and <span class="process-math">\(ccccdddd\text{.}\)</span>
+</div> <div class="para" id="p-440">Some regjected strings:  <span class="process-math">\(ac\text{,}\)</span> <span class="process-math">\(abc\text{,}\)</span> <span class="process-math">\(bd\text{,}\)</span> and <span class="process-math">\(cb\text{.}\)</span>
 </div>
 </div></details></div></article></section></section></div>
 <div class="ptx-content-footer">

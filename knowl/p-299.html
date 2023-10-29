@@ -11,21 +11,38 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">Say <span class="process-math">\(L_1\text{:}\)</span> has a number of 0s divisible by 3 and an even number of 1s.</div>
-<ul class="disc"><li><div class="para">
-<span class="process-math">\(L_1\)</span> is a Regular Language.</div></li></ul>
-<div class="para">Let’s say we don’t know <span class="process-math">\(p\text{,}\)</span> just that it exists. Let’s pick a string that’s <span class="process-math">\(p\)</span> long.</div>
-<ul class="disc"><li><div class="para">This staisfies <span class="process-math">\(s\in L\)</span> and <span class="process-math">\(|s|\geq p\)</span>
-</div></li></ul>
+<div class="para">In general, if the language of a machine is regular and the test string has length of at least p, then it is pumpable. This also means that there is some non-empty <span class="process-math">\(y\)</span> loop, but this will typically be written more formally and closer to:</div>
+<ol class="decimal">
+<li><div class="para">If a language is a Regular Language then</div></li>
+<li><div class="para">
+<span class="process-math">\(\exists p \geq 1\)</span> such that <span class="process-math">\(\forall x \in L\)</span> with <span class="process-math">\(|s|\geq p\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">Then <span class="process-math">\(s^{(1)} = xyz\)</span> where:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-s^{(1)} = (00011)^p
+|y| &gt; 0
 \end{equation*}
 </div>
-<div class="para">Some piece of <span class="process-math">\(s^{(1)}\)</span> in the first <span class="process-math">\(p\)</span> symbols is pumpable.</div>
-<ul class="disc"><li><div class="para">There is some <span class="process-math">\(y\)</span> that we can extract or insert as many times as we want</div></li></ul>
+<div class="displaymath process-math">
+\begin{equation*}
+|xy| \leq p \mbox{, and }
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall i \geq 0, xy^iz\in L
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mbox{also known as: }) s^{(i)}\in L
+\end{equation*}
+</div>
+</div></li>
+</ol>
 </div>
 <span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#p-299">in-context</a></span>
 </body>

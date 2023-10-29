@@ -12,8 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">
-<span class="process-math">\(b\epsilon \epsilon\)</span> - Read first <span class="process-math">\(b\text{,}\)</span> do not pop anything from stack, do not push anything onto stack</div>
+<div class="para logical">
+<div class="para">We will walk through how to create a PDA from a CFL. Consider <span class="process-math">\(L_1\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = 0^n1^n
+\end{equation*}
+</div>
+<div class="para">The idea here is to push <span class="process-math">\(0\)</span>s onto the stack until there are no more <span class="process-math">\(0\)</span>s. We will then pop one <span class="process-math">\(0\)</span> off of the stack for each <span class="process-math">\(1\)</span> we read.</div>
+</div>
 <span class="incontext"><a class="internal" href="ch-pdas.html#p-444">in-context</a></span>
 </body>
 </html>

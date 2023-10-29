@@ -14,7 +14,8 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Theory of Computation">
 <meta property="book:author" content="Shaun D. Ramsey, PhD">
-<meta property="book:author" content="Contributing Author(s): Emilee Daniel">
+<meta property="book:author" content="Contributing Author: Emilee Daniel">
+<meta property="book:author" content="Contributor: Shaun D. Ramsey, Jr.">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -97,7 +98,7 @@ window.MathJax = {
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="theory-of-computation.html"><span class="title">Theory of Computation:</span> <span class="subtitle">an introduction for programmers</span></a></h1>
-<p class="byline">Shaun D. Ramsey, PhD, Contributing Author(s): Emilee Daniel</p>
+<p class="byline">Shaun D. Ramsey, PhD, Contributing Author: Emilee Daniel, Contributor: Shaun D. Ramsey, Jr.</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -331,6 +332,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="code-examples.html" class="internal"><span class="codenumber">19</span> <span class="title">Code Examples Throughout The Text</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="generated-images.html" class="internal"><span class="codenumber">20</span> <span class="title">Generated Images</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="newly-generated-images.html" class="internal"><span class="codenumber">21</span> <span class="title">Newly Generated Images</span></a></div></li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural toc-item-list">
@@ -348,51 +350,51 @@ window.MathJax = {
 <ol class="decimal"><li id="li-40"><div class="para" id="p-derived-li-40">How to rip</div></li></ol></article><section class="section" id="sec-howtorip"><h3 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Rips</span>
 </h3>
-<div class="para" id="p-144"> <dfn class="terminology">Ripping</dfn> is the process of removing states from an FA to determine the REX of the machine. The outcome of this process is a  <dfn class="terminology">Generalized Non-Finite Automata (GNFA)</dfn>.</div>
-<div class="para logical" id="p-145">
+<div class="para" id="p-152"> <dfn class="terminology">Ripping</dfn> is the process of removing states from an FA to determine the REX of the machine. The outcome of this process is a  <dfn class="terminology">Generalized Non-Finite Automata (GNFA)</dfn>.</div>
+<div class="para logical" id="p-153">
 <div class="para">How to rip:</div>
 <ol class="decimal">
-<li id="li-41"><div class="para" id="p-146">Add a new start state with an empty string transition to the old start state.</div></li>
-<li id="li-42"><div class="para" id="p-147">Add a new accept state with empty string transition(s) from the old accept state(s).</div></li>
-<li id="li-43"><div class="para logical" id="p-148">
+<li id="li-41"><div class="para" id="p-154">Add a new start state with an empty string transition to the old start state.</div></li>
+<li id="li-42"><div class="para" id="p-155">Add a new accept state with empty string transition(s) from the old accept state(s).</div></li>
+<li id="li-43"><div class="para logical" id="p-156">
 <div class="para">Begin ripping states by considering one at a time:</div>
 <ol class="lower-alpha">
-<li id="li-44"><div class="para" id="p-149">Consider all states with a transition to or away from the ripped state.</div></li>
+<li id="li-44"><div class="para" id="p-157">Consider all states with a transition to or away from the ripped state.</div></li>
 <li id="li-45">
-<div class="para" id="p-150">For every pair of those states, you must update the REX on those tranitions.</div>
+<div class="para" id="p-158">For every pair of those states, you must update the REX on those tranitions.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM21.svg" class="contained"></div>
 </li>
-<li id="li-46"><div class="para" id="p-151">With <span class="process-math">\(Ripped\)</span> removed, we have: <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM21a.svg" class="contained"></div>
+<li id="li-46"><div class="para" id="p-159">With <span class="process-math">\(Ripped\)</span> removed, we have: <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM21a.svg" class="contained"></div>
 </div></li>
-<li id="li-47"><div class="para" id="p-152">
+<li id="li-47"><div class="para" id="p-160">
 <span class="process-math">\(R_i\)</span> and <span class="process-math">\(R_j\)</span> may be the same state, this will especially occur when ripping the last state.</div></li>
 </ol>
 </div></li>
-<li id="li-48"><div class="para" id="p-153">Repeat the process until all states besides the start and accept states have been ripped.</div></li>
+<li id="li-48"><div class="para" id="p-161">Repeat the process until all states besides the start and accept states have been ripped.</div></li>
 </ol>
 </div>
-<article class="exploration project-like" id="exploration-6"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
+<article class="exploration project-like" id="exploration-9"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">9</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-154">
+<div class="para logical" id="p-162">
 <div class="para">Consider <span class="process-math">\(M_{14}\text{:}\)</span> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM20.svg" class="contained"></div>
 </div>
 <ol class="decimal">
 <li id="li-49">
-<div class="para" id="p-155">Add a new start state with an empty string transition to the old start state.</div>
+<div class="para" id="p-163">Add a new start state with an empty string transition to the old start state.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM20a.svg" class="contained"></div>
 </li>
 <li id="li-50">
-<div class="para" id="p-156">Add a new accept state with empty string transition(s) from the old accept state(s)</div>
+<div class="para" id="p-164">Add a new accept state with empty string transition(s) from the old accept state(s)</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM20b.svg" class="contained"></div>
 </li>
 <li id="li-51">
-<div class="para" id="p-157">Rip <span class="process-math">\(B\text{:}\)</span>
+<div class="para" id="p-165">Rip <span class="process-math">\(B\text{:}\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM20c.svg" class="contained"></div>
 </li>
 <li id="li-52">
-<div class="para" id="p-158">Rip <span class="process-math">\(A\text{:}\)</span>
+<div class="para" id="p-166">Rip <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM20d.svg" class="contained"></div>
 </li>
@@ -401,77 +403,77 @@ window.MathJax = {
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-159">Create a GNFA from <span class="process-math">\(M_{15}\)</span> using rips.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22.svg" class="contained"></div> <div class="para" id="p-160">Rip <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(C\text{.}\)</span>
+<div class="para" id="p-167">Create a GNFA from <span class="process-math">\(M_{15}\)</span> using rips.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22.svg" class="contained"></div> <div class="para" id="p-168">Rip <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(C\text{.}\)</span>
 </div>
 <div class="solutions">
-<details id="answer-26" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22a.svg" class="contained"></div></div></details><details id="solution-4" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-161"><ol class="lower-alpha">
+<details id="answer-26" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22a.svg" class="contained"></div></div></details><details id="solution-4" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-169"><ol class="lower-alpha">
 <li id="li-53"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22b.svg" class="contained"></div></li>
 <li id="li-54"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22c.svg" class="contained"></div></li>
 <li id="li-55"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM22d.svg" class="contained"></div></li>
 </ol></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-162">Consider <span class="process-math">\(M_{16}\text{.}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23.svg" class="contained"></div> <div class="para" id="p-163">What do expect the language of this machine to be? Rip <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(B\text{,}\)</span> and then <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="p-170">Consider <span class="process-math">\(M_{16}\text{.}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23.svg" class="contained"></div> <div class="para" id="p-171">What do expect the language of this machine to be? Rip <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(B\text{,}\)</span> and then <span class="process-math">\(A\text{.}\)</span>
 </div>
 <div class="solutions">
 <details id="answer-27" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
-<div class="para" id="p-164"><span class="process-math">\(L(M_{16})=\mbox{exactly three 1s with any amount of 0s or any amount of 0s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23a.svg" class="contained"></div>
-</div></details><details id="solution-5" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-165"><ol class="lower-alpha">
+<div class="para" id="p-172"><span class="process-math">\(L(M_{16})=\mbox{exactly three 1s with any amount of 0s or any amount of 0s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23a.svg" class="contained"></div>
+</div></details><details id="solution-5" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-173"><ol class="lower-alpha">
 <li id="li-56">
-<div class="para" id="p-166">Start.</div>
+<div class="para" id="p-174">Start.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23b.svg" class="contained"></div>
 </li>
 <li id="li-57">
-<div class="para" id="p-167">D: 2 transitions in, 1 transition out, <span class="process-math">\(2*1 = 2\text{,}\)</span> so 2 new arrows</div>
+<div class="para" id="p-175">D: 2 transitions in, 1 transition out, <span class="process-math">\(2*1 = 2\text{,}\)</span> so 2 new arrows</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23c.svg" class="contained"></div>
 </li>
 <li id="li-58">
-<div class="para" id="p-168">C: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 1\text{,}\)</span> so 1 new arrow</div>
+<div class="para" id="p-176">C: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 1\text{,}\)</span> so 1 new arrow</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23d.svg" class="contained"></div>
 </li>
 <li id="li-59">
-<div class="para" id="p-169">B: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new addition</div>
+<div class="para" id="p-177">B: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new addition</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23e.svg" class="contained"></div>
 </li>
 <li id="li-60">
-<div class="para" id="p-170">A: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new arrow</div>
+<div class="para" id="p-178">A: 1 transition in, 1 transition out, <span class="process-math">\(1*1 = 2\text{,}\)</span> so 1 new arrow</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM23f.svg" class="contained"></div>
 </li>
 </ol></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-171">Consider <span class="process-math">\(M_{17}\text{.}\)</span>
-</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24.svg" class="contained"></div> <div class="para" id="p-172">What do expect the language of this machine to be? Rip <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(A\text{,}\)</span> and then <span class="process-math">\(D\text{.}\)</span>
+<div class="para" id="p-179">Consider <span class="process-math">\(M_{17}\text{.}\)</span>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24.svg" class="contained"></div> <div class="para" id="p-180">What do expect the language of this machine to be? Rip <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(A\text{,}\)</span> and then <span class="process-math">\(D\text{.}\)</span>
 </div>
 <div class="solutions">
 <details id="answer-28" class="answer solution-like"><summary><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like">
-<div class="para" id="p-173"><span class="process-math">\(L(M_{17})=\mbox{all strings with an odd number of 0s and an odd number of 1s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24a.svg" class="contained"></div>
-</div></details><details id="solution-6" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-174"><ol class="lower-alpha">
+<div class="para" id="p-181"><span class="process-math">\(L(M_{17})=\mbox{all strings with an odd number of 0s and an odd number of 1s}\)</span></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24a.svg" class="contained"></div>
+</div></details><details id="solution-6" class="solution solution-like"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-182"><ol class="lower-alpha">
 <li id="li-61">
-<div class="para" id="p-175">Start.</div>
+<div class="para" id="p-183">Start.</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24b.svg" class="contained"></div>
 </li>
 <li id="li-62">
-<div class="para" id="p-176">B: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 4 new arrows</div>
+<div class="para" id="p-184">B: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 4 new arrows</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24c.svg" class="contained"></div>
 </li>
 <li id="li-63">
-<div class="para" id="p-177">C: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 2 new <span class="process-math">\(+\)</span>
+<div class="para" id="p-185">C: 2 transitions in and 2 transitions out, <span class="process-math">\(2*2=4\text{,}\)</span> so 2 new <span class="process-math">\(+\)</span>
 </div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24d.svg" class="contained"></div>
 </li>
 <li id="li-64">
-<div class="para" id="p-178">A: 2 transitions in and 1 transition out, <span class="process-math">\(2*1=2\text{,}\)</span> so 2 new arrows</div>
+<div class="para" id="p-186">A: 2 transitions in and 1 transition out, <span class="process-math">\(2*1=2\text{,}\)</span> so 2 new arrows</div>
 <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAExM24e.svg" class="contained"></div>
 </li>
 </ol></div></div></details>
 </div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-179">Take the mod 3 DFA shown below and find an REX for it by ripping states. Rip in this order: 2, 1, 0. Show your steps. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/DFA-M28.svg" class="contained"></div>
+<div class="para" id="p-187">Take the mod 3 DFA shown below and find an REX for it by ripping states. Rip in this order: 2, 1, 0. Show your steps. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/DFA-M28.svg" class="contained"></div>
 </div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-180">Translate the following FA into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM31.svg" class="contained"></div> <div class="para" id="p-181">The recommended order of rips is: <span class="process-math">\(\emptyset\text{,}\)</span> A, B, C</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-182">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM33.svg" class="contained"></div> <div class="para" id="p-183">The recommended order of rips is: D, C, B, A</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-184">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM34.svg" class="contained"></div> <div class="para" id="p-185">The recommended order of rips is: D, C, B, A</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-186">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM39.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-187">Use rips to convert the following FA into a REX. Show each step and every rip.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM42.svg" class="contained"></div></article></section></section></div>
+<div class="para" id="p-188">Translate the following FA into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM31.svg" class="contained"></div> <div class="para" id="p-189">The recommended order of rips is: <span class="process-math">\(\emptyset\text{,}\)</span> A, B, C</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-190">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM33.svg" class="contained"></div> <div class="para" id="p-191">The recommended order of rips is: D, C, B, A</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-192">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM34.svg" class="contained"></div> <div class="para" id="p-193">The recommended order of rips is: D, C, B, A</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-194">Translate the FA below into a REX using rips.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM39.svg" class="contained"></div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-195">Use rips to convert the following FA into a REX. Show each step and every rip.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/../generated/latex-image/FAExM42.svg" class="contained"></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-rex-to-nfa.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-fa-closure.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

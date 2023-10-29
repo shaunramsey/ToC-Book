@@ -12,17 +12,35 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span><span class="space"> </span><span class="title">Pumping Lemma for Regular Languges with Defined Language.</span>
-</h4> <div class="para">Consider <span class="process-math">\(L_{01}=\{0^n1^n|n\leq 0 \}\text{.}\)</span>
-</div> <ol class="decimal">
-<li><div class="para">Assume <span class="process-math">\(L_{01}\)</span> is regular thus obeying the Pumping Lemma for Regular Languages.</div></li>
-<li><div class="para">Let us choose <span class="process-math">\(s^{(1)} = 0^p1^p\)</span> since <span class="process-math">\(L_{01}\)</span> is a Regular Language, any string that is long enough should be pumpable.</div></li>
-<li>
-<div class="para">A pumpable part (<span class="process-math">\(y\)</span>) must occur in the first <span class="process-math">\(p\)</span> symbols. So, <span class="process-math">\(y\)</span> must contain one or more 0s and no 1s since the first <span class="process-math">\(p\)</span> symbols are 0s.</div>
-<div class="para">If we pump down to <span class="process-math">\(s^{(0)}\text{,}\)</span> we will thus remove some 0s without removing any 1s. <span class="process-math">\(s^{(0)}\)</span> cannot possibly be in <span class="process-math">\(L_{01}\text{,}\)</span> no matter the choice for <span class="process-math">\(y\text{.}\)</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">16</span><span class="period">.</span><span class="space"> </span><span class="title">RLs Closed under Intersection.</span>
+</h4> <div class="para"> <dfn class="terminology">Intersection <span class="process-math">\(\cup\)</span></dfn> of <span class="process-math">\(L_1\cup L_2\)</span> is any string that is accepted in <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{.}\)</span> It is very useful in closure proofs and in crafting NFAs for languages that use the logic of <span class="process-math">\(and\text{.}\)</span> For example look at these two machines:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1(M_1) = \{\mbox{all strings that end with a 1}\}
+\end{equation*}
 </div>
-</li>
-<li><div class="para">Thus the assumption is wrong and by contradiction, the language is not regular.</div></li>
-</ol></article><span class="incontext"><a class="internal" href="ch-pumping-lemma-regular.html#exploration-16">in-context</a></span>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2.svg" class="contained"></div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_2(M_2) = \{\mbox{all strings with an even number of symbols}\}
+\end{equation*}
+</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/../generated/latex-image/FAEXP2a.svg" class="contained"></div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1\cup L_2 = \{\mbox{is any string that ends in a 1 and that has an even number of symbols.}\}
+\end{equation*}
+</div>
+<div class="para">Try traceing the path through both machines and only accept if both machines accept. In a more systematic way, consider the states <span class="process-math">\(Q_1\times Q_2\)</span> and create those machines.</div> <details class="hint solution-like"><summary><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like">
+<div class="para">Here are some examples of the step through thinking.</div> <ul class="disc">
+<li><div class="para">States with <span class="process-math">\(B_2\)</span> occur when the string has even length.</div></li>
+<li><div class="para">
+<span class="process-math">\(A_2\)</span> is when it is odd</div></li>
+<li><div class="para">
+<span class="process-math">\(A_1\)</span> says the last seen symbol was a 0</div></li>
+<li><div class="para">
+<span class="process-math">\(B_1\)</span> is when it was a 1</div></li>
+</ul>
+</div></details> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/../generated/latex-image/FAEXP2b.svg" class="contained"></div> <div class="para">So, it turns out we can use this to build DFAs of challenging languages!</div></article><span class="incontext"><a class="internal" href="ch-fa-closure.html#exploration-16">in-context</a></span>
 </body>
 </html>
