@@ -2,113 +2,103 @@
 
 <chapter xml:id="ch-rex" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Regular Expressions</title>
+  <introduction>
+    <p>In this chapter you will learn: TODO EXPAND</p>
+  </introduction>
   <objectives>
-    In this chapter you will learn:
-     <ol>
-       <li> Regular Expressions </li>
-       <li> Regular Expressions in NFAs </li>
-     </ol>
+
+    <ol>
+      <li> Regular Expressions </li>
+      <li> Regular Expressions in NFAs </li>
+    </ol>
   </objectives>
   <section xml:id="sec-RegularExpressions">
     <title>Regular Expressions</title>
-      <p>
-        <idx>Regular Expressions (REX)</idx><term>Regular Expressions (REX)</term> are often used in a variety of computational areas
-        including: searching, verficiation, and grabbing lexical pieces in a programming language. In this book, they will be used 
-        to describe languages as introduced in <xref ref="Determinism"/>.
+    <p>
+      <idx>Regular Expressions (REX)</idx><term>Regular Expressions (REX)</term> are often used in a
+      variety of computational areas including: searching, verficiation, and grabbing lexical pieces
+      in a programming language. In this book, they will be used to describe languages as introduced
+      in <xref ref="Determinism" />. </p>
+    <p> REs can include:</p>
+    <tabular>
+      <row>
+        <cell>Symbols from the alphabet</cell>
+        <cell>
+          <m>\Sigma=\{a,b\}</m>
+        </cell>
+      </row>
+      <row>
+        <cell>Concatenations - one followed by another</cell>
+        <cell>
+          <m>baaaaa</m>
+        </cell>
+      </row>
+      <row>
+        <cell>Parenthesis</cell>
+        <cell>
+          <m>(ba)aa</m>
+        </cell>
+      </row>
+      <row>
+        <cell>Choices like <m>and</m> and <m>or</m></cell>
+        <cell>
+          <m>aa + (bb)aa</m>
+        </cell>
+      </row>
+      <row>
+        <cell>Repeat any number of times</cell>
+        <cell>
+          <m>(aa)^* + (ba)aa</m>
+        </cell>
+      </row>
+    </tabular>
+    <p>
+      <idx>Repeating <m>(*)</m></idx> <term>Repition (*)</term> is when a character, group of
+      characters, or choice of characters is reapeated and concatenated together an undefined number
+      of times. </p>
+    <exploration>
+      <p> What strings can be made from <m>(aa+b)^*</m>? </p>
+      <p> Some strings are: <ul>
+          <li>
+            <m>aabbaa</m>
+          </li>
+          <li>
+            <m>(aa)^n</m>
+          </li>
+          <li>
+            <m>b^n</m>
+          </li>
+          <li>
+            <m>baabaa</m>
+          </li>
+          <li>
+            <m>aabbaaaa</m>
+          </li>
+        </ul>
       </p>
       <p>
-        REs can include: 
-        <tabular>
-          <row>
-            <cell>Symbols from the alphabet</cell><cell><m>\Sigma=\{a,b\}</m></cell>
-          </row>
-          <row>
-            <cell>Concatenations - one followed by another</cell><cell><m>baaaaa</m></cell>
-          </row>
-          <row>
-            <cell>Parenthesis</cell><cell><m>(ba)aa</m></cell>
-          </row>
-          <row>
-            <cell>Choices like <m>and</m> and <m>or</m></cell><cell><m>aa + (bb)aa</m></cell>
-          </row>
-          <row>
-            <cell>Repeat any number of times</cell><cell><m>(aa)^* + (ba)aa</m></cell>
-          </row>
-        </tabular>
+        A wide array of strings can be made from a simple expression declaration.
       </p>
-      <p>
-        <idx>Repeating <m>(*)</m></idx> <term>Repition (*)</term> is when a character, group of characters, or choice of characters
-        is reapeated and concatenated together an undefined number of times.
-      </p>
-      <exploration>
-        <p>
-          What strings can be made from <m>(aa+b)^*</m>?
-        </p>
-        <p>
-          Some strings are:
-          <ul>
-            <li><m>aabbaa</m></li>
-            <li><m>(aa)^n</m></li>
-            <li><m>b^n</m></li>
-            <li><m>baabaa</m></li>
-            <li><m>aabbaaaa</m></li>
-          </ul>
-        </p>
-        <p>
-          A wide array of strings can be made from a simple expression declaration.
-        </p>
-      </exploration>
+    </exploration>
   </section>
   <section xml:id="sec-REsInNFAs">
     <title>Regular Expressions in NFAs</title>
-      <p>
-        NFAs can be used to easily represent REs. The best way to approach this is to go one chacter or character grouping 
-        at a time.
-      </p>
-      <tabular>
-      <row>
-        <cell right="medium" halign="center"><em>Begins with 01</em></cell><cell  halign="center"><em>Contains 01</em></cell>
-      </row>
-      <row>
-        <cell right="medium" halign="center"><m>01(0+1)^*</m></cell><cell  halign="center"><m>(0+1)^*01(0+1)^*</m></cell>
-      </row>
-      <row>
-        <cell right="medium" halign="center">
-          <image source="../generated/latex-image/FAEXMa.svg" width="80%">
-	        </image>
-        </cell>
-        <cell  halign="center">
-          <image source="../generated/latex-image/FAEXMb.svg" width="80%">
-	        </image>
-        </cell>
-      </row>
-      </tabular>
-      <tabular>
-      <row>
-        <cell halign="center"><em>Ends with 01</em></cell>
-      </row>
-      <row>
-        <cell halign="center"><m>(0+1)^*01</m></cell>
-      </row>
-      <row>
-        <cell halign="center">
-          <image source="../generated/latex-image/FAEXMb.svg" width="80%">
-	        </image>
-        </cell>
-      </row>
-      </tabular>
+    <p>
+      NFAs can be used to easily represent REs. The best way to approach this is to go one character
+      or character grouping
+      at a time.
+    </p>
+
   </section>
   <exercises xml:id="exercises-REX">
     <exercise>
       <statement>
-        <p>
-          Given <m>\Sigma=\{0,1,@,.\}</m>, make a Regular Expression for any binary string, followed by an <m>@</m>,
-          followed by one or more binary strings, and separated by <m>.</m>.
-        </p>
+        <p> Given <m>\Sigma=\{0,1,@,.\}</m>, make a Regular Expression for any binary string,
+          followed by an <m>@</m>, followed by one or more binary strings, and separated by <m>.</m>
+          . </p>
       </statement>
       <hint>
-        <p>
-          An example string is <m>01@01.01.1</m>
+        <p> An example string is <m>01@01.01.1</m>
         </p>
       </hint>
       <answer>
@@ -119,10 +109,9 @@
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Given <m>\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}</m>, create a Regular Expression that recognizes phone numbers of
-          the form: <m>[555]555-5555</m>. As a shortcut you may write <m>0->2</m> to mean <m>0+1+2...</m>.
-        </p>
+        <p> Given <m>\Sigma=\{0,1,2,3,4,5,6,7,8,9,-,[,]\}</m>, create a Regular Expression that
+          recognizes phone numbers of the form: <m>[555]555-5555</m>. As a shortcut you may write <m>
+          0->2</m> to mean <m>0+1+2...</m>. </p>
       </statement>
       <answer>
         <p>
@@ -132,13 +121,10 @@
     </exercise>
     <exercise>
       <statement>
-        <p>
-          What is the language of this Regular Expression?
-          <me>
+        <p> What is the language of this Regular Expression? <me>
             REX_3 = 0+1(0+1)^*
-          </me>
-          Your answer does not need to be in mathematical notation.
-        </p>
+          </me> Your answer does not need to be in
+          mathematical notation. </p>
       </statement>
       <answer>
         <p>
@@ -148,77 +134,69 @@
     </exercise>
     <exercise>
       <statement>
-        <p>
-          What is the language of this Regular Expression?
-          <me>
+        <p> What is the language of this Regular Expression? <me>
             REX_4 = (\_+a+b+c+...+Y+Z)(\_+a+b+c+...+Y+Z+0+1+...+8+9)^*
           </me>
-          Your answer does not need to be in mathematical notation.
-        </p>
+          Your answer does not need to be in mathematical notation. </p>
       </statement>
       <hint>
-        <p>
-          Some example strings inlcude: 
-          <ul>
-            <li><m>al</m></li>
-            <li><m>abba\_1</m></li>
-            <li><m>\_012</m></li>
-            <li><m>int</m></li>
+        <p> Some example strings inlcude: <ul>
+            <li>
+              <m>al</m>
+            </li>
+            <li>
+              <m>abba\_1</m>
+            </li>
+            <li>
+              <m>\_012</m>
+            </li>
+            <li>
+              <m>int</m>
+            </li>
           </ul>
         </p>
       </hint>
       <answer>
         <p>
-          <m>L(REX_4)=\mbox{underscore or any alphabetic character followed by any number of underscores or any alphanumeric characters}</m>
+          <m>L(REX_4)=\mbox{underscore or any alphabetic character followed by any number of
+            underscores or any alphanumeric characters}</m>
         </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Create an FA from the Regular Expression.
+        <p> Create an FA from the Regular Expression. <me>
+            REX = (0+10^*1)^*
+          </me>
         </p>
-        <me>
-          REX = (0+10^*1)^*
-        </me>
       </statement>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Translate the REX below into a FA.
+        <p> Translate the REX below into a FA. <me>
+            REX = (01^*0+10^*1+001)^*
+          </me>
         </p>
-        <me>
-          REX = (01^*0+10^*1+001)^*
-        </me>
-        
       </statement>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Translate the REX below into a FA. 
+        <p> Translate the REX below into a FA. <me>
+            REX = (0+1)^*(00+11)^*(101+111)
+          </me>
         </p>
-        <me>
-          REX = (0+1)^*(00+11)^*(101+111)
-        </me>
-        
       </statement>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Give a FA that corresponds to this REX with alphabet, <m>\Sigma = \{0,1\}</m>: 
-
+        <p> Give a FA that corresponds to this REX with alphabet, <m>\Sigma = \{0,1\}</m>: <me>
+            REX = 1(0+1)^*1(0+1)^*1
+          </me>
         </p>
-        <me>
-          REX = 1(0+1)^*1(0+1)^*1
-        </me>
-        
       </statement>
     </exercise>
   </exercises>
-    <!--
+  <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
   <xi:include href=".sec-emp-conc.ptx" /> 

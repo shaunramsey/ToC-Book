@@ -28,6 +28,52 @@
       </latex-image>
     </image>
   </figure>
+  <tabular>
+    <row>
+      <cell right="medium" halign="center">
+        <em>Begins with 01</em>
+      </cell>
+      <cell halign="center">
+        <em>Contains 01</em>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium" halign="center">
+        <m>01(0+1)^*</m>
+      </cell>
+      <cell halign="center">
+        <m>(0+1)^*01(0+1)^*</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium" halign="center">
+        <image source="../generated/latex-image/FAEXMa.svg" width="80%">
+        </image>
+      </cell>
+      <cell halign="center">
+        <image source="../generated/latex-image/FAEXMb.svg" width="80%">
+        </image>
+      </cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell halign="center">
+        <em>Ends with 01</em>
+      </cell>
+    </row>
+    <row>
+      <cell halign="center">
+        <m>(0+1)^*01</m>
+      </cell>
+    </row>
+    <row>
+      <cell halign="center">
+        <image source="../generated/latex-image/FAEXMb.svg" width="80%">
+        </image>
+      </cell>
+    </row>
+  </tabular>
 
   <exercises>
     <exercise>
