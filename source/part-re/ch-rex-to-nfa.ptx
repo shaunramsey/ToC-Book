@@ -2,205 +2,191 @@
 
 <chapter xml:id="ch-rex-to-nfa" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Converting REX to NFAs</title>
+  <introduction>
+    <p>
+      In this chapter you will learn: TODO expand
+    </p>
+  </introduction>
   <objectives>
-    In this chapter you will learn:
-     <ol>
-       <li> Regular Expressions </li>
-       <li> Regular Expressions in NFAs </li>
-     </ol>
+    <ol>
+      <li> Regular Expressions </li>
+      <li> Regular Expressions in NFAs </li>
+    </ol>
   </objectives>
   <section xml:id="sec-ConvREsToNFAs">
     <title>Converting Regular Expressions to NFAs</title>
+    <p> Different structures of characters can be included in Regular expressions as covered in <xref
+        ref="sec-RegularExpressions" />. Displaying these structures in NFAs can follow these simple
+      constructions: </p>
     <p>
-      Different structures of characters can be included in Regular expressions as covered in <xref ref="sec-RegularExpressions"/>. 
-      Displaying these structures in NFAs can follow these simple constructions:
+      <ul>
+        <li>
+          <p> Terminals: <m>a</m>
+          </p>
+          <image source="../generated/latex-image/FAEXMterm.svg" width="50%">
+          </image>
+        </li>
+        <li>
+          <p> Concatenation: <m>aa</m>
+          </p>
+          <image source="../generated/latex-image/FAEXMconcat.svg" width="50%">
+          </image>
+        </li>
+        <li>
+          <p> Or: <m>aa + bb</m>
+          </p>
+          <image source="../generated/latex-image/FAEXMor.svg" width="50%">
+          </image>
+        </li>
+        <li>
+          <p> Repeats: <m>10^*</m>
+          </p>
+          <image source="../generated/latex-image/FAEXMrep.svg" width="50%">
+          </image>
+        </li>
+      </ul>
     </p>
-    <ul>
-      <li>
-        <p>
-          Terminals: <m>a</m>
-        </p>
-        <image source="../generated/latex-image/FAEXMterm.svg" width="50%">
-	      </image>
-      </li>
-      <li>
-        <p>
-          Concatenation: <m>aa</m>
-        </p>
-        <image source="../generated/latex-image/FAEXMconcat.svg" width="50%">
-	      </image>
-      </li>
-      <li>
-        <p>
-          Or: <m>aa + bb</m>
-        </p>
-        <image source="../generated/latex-image/FAEXMor.svg" width="50%">
-	      </image>
-      </li>
-      <li>
-        <p>
-          Repeats: <m>10^*</m>
-        </p>
-        <image source="../generated/latex-image/FAEXMrep.svg" width="50%">
-	      </image>
-      </li>
-    </ul>
-   <p>
-      Ultimately, most REs will feature mulitple of the structures above, so they will need to be combined. 
-   </p>
+    <p>
+      Ultimately, most REs will feature mulitple of the structures above, so they will need to be
+      combined.
+    </p>
   </section>
   <section xml:id="sec-makingNFAs">
     <title>Building NFAs from REs</title>
     <p>
-      The best way to approach creating NFAs from REs is to go one character or section at a time. The Explorations 
+      The best way to approach creating NFAs from REs is to go one character or section at a time.
+      The Explorations
       below were created with that approach.
     </p>
     <exploration>
-    <p>
-     Let's walk through the creation of an NFA that combines some of the structures from <xref ref="sec-ConvREsToNFAs"/>. Consider <me>
-       REX_5 = (aa)^*+bb
-     </me>
-     First, we will focus on the <m>aa</m>. This can be accomplished using the structure for concatantaion.
-    </p>
-     <image source="../generated/latex-image/FAExM13a.svg" width="50%">
-	    </image>
-     <p>
-       Second, we will add in the repeating element of <m>(aa)^*</m>. As a way to account for multiple characters repeating, we can lean on NFA's paralleism
-       to add an empty string transition.
-     </p>
-     <image source="../generated/latex-image/FAExM13b.svg" width="50%">
-	    </image>
-      <p>
-        Now that the <m>(aa)^*</m> term has been taken care of, the <m>+</m> needs to be considered. We will introduce another empty string 
-      transition as shown above.
-      </p>
+      <p> Let's walk through the creation of an NFA that combines some of the structures from <xref
+          ref="sec-ConvREsToNFAs" />. Consider <me>
+          REX_5 = (aa)^*+bb
+        </me> First, we will focus on the <m>aa</m>. This can
+        be accomplished using the structure for concatantaion. </p>
+      <image source="../generated/latex-image/FAExM13a.svg" width="50%">
+      </image>
+      <p> Second, we will add in the repeating element of <m>(aa)^*</m>. As a way to account for
+        multiple characters repeating, we can lean on NFA's paralleism to add an empty string
+        transition. </p>
+      <image source="../generated/latex-image/FAExM13b.svg" width="50%">
+      </image>
+      <p> Now that the <m>(aa)^*</m> term has been taken care of, the <m>+</m> needs to be
+        considered. We will introduce another empty string transition as shown above. </p>
       <image source="../generated/latex-image/FAExM13c.svg" width="50%">
-	    </image>
-    <p>
-      The final part of <m>REX_5</m> is <m>bb</m>, this is just another instance of concatenation! Which makes this the final NFA for <m>REX_5</m>.
-    </p>
-    <image source="../generated/latex-image/FAExM13.svg" width="50%">
-	  </image>
-   </exploration>
-   <exploration>
-    <p>
-     Consider <me>
-       REX_6 = (0+10^*1)^*
-     </me>
-     First, we look at <m>0</m>. This is a terminal structure.
-    </p>
-     <image source="../generated/latex-image/FAExM14a.svg" width="50%">
-	    </image>
-     <p>
-       Second, we will add in the OR element.
-     </p>
-     <image source="../generated/latex-image/FAExM14b.svg" width="50%">
-	    </image>
+      </image>
+      <p> The final part of <m>REX_5</m> is <m>bb</m>, this is just another instance of
+        concatenation! Which makes this the final NFA for <m>REX_5</m>. </p>
+      <image source="../generated/latex-image/FAExM13.svg" width="50%">
+      </image>
+    </exploration>
+    <exploration>
+      <p> Consider <me>
+          REX_6 = (0+10^*1)^*
+        </me> First, we look at <m>0</m>. This is a
+        terminal structure. </p>
+      <image source="../generated/latex-image/FAExM14a.svg" width="50%">
+      </image>
       <p>
-        We now need to turn our attention to the <m>10^*</m>, which is a terminal followed by a repeating structure.
+        Second, we will add in the OR element.
       </p>
+      <image source="../generated/latex-image/FAExM14b.svg" width="50%">
+      </image>
+      <p> We now need to turn our attention to the <m>10^*</m>, which is a terminal followed by a
+        repeating structure. </p>
       <image source="../generated/latex-image/FAExM14c.svg" width="50%">
-	    </image>
-    <p>
-      There is a 1 that follows the <m>10^*</m>. Since there is an empty string transition, it's terminal structure can be added to the state between
-      1 and 0.
-    </p>
-    <image source="../generated/latex-image/FAExM14d.svg" width="50%">
-	  </image>
-    <p>
-      Finally, two more empty string transitions must be added at the entire REX is repeatable. It also moves the accept state to the first one in the machine.
-    </p>
-    <image source="../generated/latex-image/FAExM14.svg" width="50%">
-	  </image>
-   </exploration>
+      </image>
+      <p> There is a 1 that follows the <m>10^*</m>. Since there is an empty string transition, it's
+        terminal structure can be added to the state between 1 and 0. </p>
+      <image source="../generated/latex-image/FAExM14d.svg" width="50%">
+      </image>
+      <p>
+        Finally, two more empty string transitions must be added at the entire REX is repeatable. It
+        also moves the accept state to the first one in the machine.
+      </p>
+      <image source="../generated/latex-image/FAExM14.svg" width="50%">
+      </image>
+    </exploration>
   </section>
   <exercises>
     <exercise>
       <statement>
-        <p>
-          Convert the following REX into a FA, using the construciton method shown in <xref ref="sec-makingNFAs"/>
+        <p> Convert the following REX into a FA, using the construction method shown in <xref
+            ref="sec-makingNFAs" />
           <me>
             REX_7 = (01^*0+10^*1)
           </me>
         </p>
       </statement>
       <answer>
-        <p>
-          <image source="../generated/latex-image/FAEXM15.svg" width="50%">
-	        </image>
-        </p>
+
+        <image source="../generated/latex-image/FAEXM15.svg" width="50%">
+        </image>
+
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Convert the following REX into a FA, using the construciton method.
-          <me>
+        <p> Convert the following REX into a FA, using the construciton method. <me>
             REX_8 = 0(0+1)^*0
           </me>
         </p>
       </statement>
       <answer>
-        <p>
-          <image source="../generated/latex-image/FAEXM16.svg" width="50%">
-	        </image>
-        </p>
+
+        <image source="../generated/latex-image/FAEXM16.svg" width="50%">
+        </image>
+
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Create an FA for the following Regular Expression.
-          <me>
+        <p> Create an FA for the following Regular Expression. <me>
             REX_9 = (www.\lambda\lambda^*.edu)(//\lambda\lambda^*)^*
           </me>
           <me>
-            \Sigma(REX_9)=\{\lambda,.,//\}
-          </me>
-          Here, <m>\lambda</m> is used to represent any alphabetic symbol.
-        </p>
+          \Sigma(REX_9)=\{\lambda,.,//\}
+          </me> Here, <m>\lambda</m> is used
+          to represent any alphabetic symbol. </p>
       </statement>
       <answer>
-        <p>
-        There would typically by states between each character, but in the interest of space, the FA has been compressed.
-          <image source="../generated/latex-image/FAExM17.svg" width="80%">
-	        </image>
-        </p>
+        <p> There would typically by states between each character, but in the interest of space,
+          the FA has been compressed.</p>
+        <image source="../generated/latex-image/FAExM17.svg"
+          width="80%">
+        </image>
+
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Create an FA for the following regular expression.
-          <me>
+        <p> Create an FA for the following regular expression. <me>
             REX_{10} = dd/dd/(201d+202d)
           </me>
           <me>
             \Sigma(REX_{10})=\{d,/\}
-          </me>
-          Here, <m>d</m> is used to represent any decimal digit.
-        </p>
+          </me> Here, <m>d</m> is used to
+          represent any decimal digit. </p>
       </statement>
       <answer>
-        <p>
-        There would typically be states between each character, but in the interest of space, the FA has been compressed.
-          <image source="../generated/latex-image/FAExM18.svg" width="80%">
-	        </image>
-        </p>
+        <p> There would typically be states between each character, but in the interest of space,
+          the FA has been compressed. </p>
+        <image source="../generated/latex-image/FAExM18.svg"
+          width="80%">
+        </image>
+
       </answer>
     </exercise>
-     <exercise>
+    <exercise>
       <statement>
-        <p>
-          Represent the below REX as a FA. 
+        <p> Represent the below REX as a FA. <me>
+            REX = (0+1)^*(1(01)^*+11)^*
+          </me>
         </p>
-        <me>
-          REX = (0+1)^*(1(01)^*+11)^*
-        </me>
       </statement>
     </exercise>
   </exercises>
-    <!--
+  <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
   <xi:include href=".sec-emp-conc.ptx" /> 

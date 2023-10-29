@@ -2,111 +2,273 @@
 
 <chapter xml:id="ch-nfa-to-dfa" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>NFA and DFA relationships</title>
+  <introduction>
+    <p>
+      In this chapter you will learn:
+    </p>
+  </introduction>
   <objectives>
-    In this chapter you will learn:
-     <ol>
-       <li> Non-Deterministic Finite Automata (NFA) </li>
-       <li> Parallelism </li>
-       <li> The Power Set </li>
-       <li> Strengths of NFAs </li>
-     </ol>
+
+    <ol>
+      <li> Non-Deterministic Finite Automata (NFA) </li>
+      <li> Parallelism </li>
+      <li> The Power Set </li>
+      <li> Strengths of NFAs </li>
+    </ol>
   </objectives>
   <section xml:id="sec-FiniteNumberofStates">
     <title>Finite Number of States</title>
-      <p>
-        As introduced in <xref ref="PowerSet"/>, there is a limit to the amount of states that a NFA can have.
-        This means that all NFAs can become DFAs as the transitions on each character can be determined for each state.
-        The length of the power set is also the greatest amount of states that a DFA made from a NFA can have.
-      </p>
-      <exploration xml:id="assemblage-NFADFAConversion">
-        <title>Getting from a NFA to a DFA</title>
-        <p>
-          For this, consider <m>M_{12}</m>.
+    <p> As introduced in <xref ref="PowerSet" />, there is a limit to the amount of states that a
+      NFA can have. This means that all NFAs can become DFAs as all the new states and the
+      transitions on each character can be determined for each state. The length of the power set is
+      also the greatest amount of states that a DFA made from a NFA can have. </p>
+    <exploration xml:id="assemblage-NFADFAConversion">
+      <title>Getting from a NFA to a DFA</title>
+      <statement>
+        <p> For this, consider <m>M_{12}</m> This is the same machine as <m>M_9</m>
         </p>
-        <image source="../generated/latex-image/FAEXM12.svg" width="50%">
-	      </image>
+        <image
+          xml:id="RFAxM14b" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (45.1,-21.7) circle (3);
+            \draw (45.1,-21.7) node {$h_a$};
+            \draw [black] (45.1,-21.7) circle (2.4);
+            \draw [black] (16.1,-21.7) circle (3);
+            \draw (16.1,-21.7) node {$A$};
+            \draw [black] (26.4,-14.2) circle (3);
+            \draw (26.4,-14.2) node {$B$};
+            \draw [black] (26.4,-28.9) circle (3);
+            \draw (26.4,-28.9) node {$D$};
+            \draw [black] (39.9,-14.2) circle (3);
+            \draw (39.9,-14.2) node {$C$};
+            \draw [black] (39.9,-28.9) circle (3);
+            \draw (39.9,-28.9) node {$E$};
+            \draw [black] (41.66,-26.47) -- (43.34,-24.13);
+            \fill [black] (43.34,-24.13) -- (42.47,-24.49) -- (43.28,-25.07);
+            \draw (43.09,-26.68) node [right] {$'\backslash 0'$};
+            \draw [black] (41.61,-16.67) -- (43.39,-19.23);
+            \fill [black] (43.39,-19.23) -- (43.35,-18.29) -- (42.52,-18.86);
+            \draw (43.1,-16.59) node [right] {$'\backslash 0'$};
+            \draw [black] (29.4,-28.9) -- (36.9,-28.9);
+            \fill [black] (36.9,-28.9) -- (36.1,-28.4) -- (36.1,-29.4);
+            \draw (33.15,-29.4) node [below] {$1$};
+            \draw [black] (18.53,-19.93) -- (23.97,-15.97);
+            \fill [black] (23.97,-15.97) -- (23.03,-16.03) -- (23.62,-16.84);
+            \draw (22.25,-18.45) node [below] {$1$};
+            \draw [black] (29.4,-14.2) -- (36.9,-14.2);
+            \fill [black] (36.9,-14.2) -- (36.1,-13.7) -- (36.1,-14.7);
+            \draw (33.15,-14.7) node [below] {$0$};
+            \draw [black] (18.56,-23.42) -- (23.94,-27.18);
+            \fill [black] (23.94,-27.18) -- (23.57,-26.31) -- (23,-27.13);
+            \draw (20.25,-25.8) node [below] {$1$};
+            \draw [black] (26.384,-31.888) arc (27.43495:-260.56505:2.25);
+            \draw (22.39,-35.44) node [below] {$0$};
+            \fill [black] (24.02,-30.71) -- (23.08,-30.63) -- (23.54,-31.52);
+            \draw [black] (25.077,-11.52) arc (234:-54:2.25);
+            \draw (26.4,-6.95) node [above] {$1$};
+            \fill [black] (27.72,-11.52) -- (28.6,-11.17) -- (27.79,-10.58);
+            \draw [black] (11.1,-12.8) -- (14.63,-19.08);
+            \draw (9.42,-12.3) node [above] {$M_{12}$};
+            \fill [black] (14.63,-19.08) -- (14.67,-18.14) -- (13.8,-18.63);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
         <p>
-          <m>M_{12}</m> is a NFA. An <m>1</m> at <m>A</m> will lead to both <m>B</m> and <m>D</m>. 
-          This is an example of parallelism. 
-            What is the maximum number of states a DFA created from <m>M_{12}</m> could have?
-          </p>
-        <answer>
-          <p>
-            <m>32</m>. A DFA made from <m>M_{12}</m> can have up to <m>32</m> states as <m>M_{12}</m> has <m>5</m> 
-            states and <m>2^5 = 32</m>.
-          </p>
-        </answer>
+          <m>M_{12}</m> is a NFA. An <m>1</m> at <m>A</m> will lead to both <m>B</m> and <m>D</m>.
+          This is an example of parallelism. What is the maximum number of states a DFA created from <m>
+          M_{12}</m> could have? </p>
+      </statement>
+      <answer>
         <p>
-          How is a NFA made into a DFA? The goal is to make a set of all posible destination states for each character 
-          from each state. In <m>M_{12}</m>, a <m>1</m> at <m>A</m> could go to <m>B</m> or <m>D</m>. A <m>0</m>
-          at <m>A</m> would go to an <m>\emptyset</m> state. 
-        </p>
-        <image source="../generated/latex-image/FAEXM12_1.svg" width="50%">
-	      </image>
+          <m>32</m>. A DFA made from <m>M_{12}</m> can have up to <m>32</m> states as <m>M_{12}</m>
+          has <m>5</m> states and <m>2^5 = 32</m>. </p>
+      </answer>
+    </exploration>
+    <exploration>
+      <statement>
+        <p> How is a NFA made into a DFA? The goal is to make a set of all posible destination
+          states for each character from each state. In <m>M_{12}</m>, a <m>1</m> at <m>A</m> could
+          go to <m>
+            B</m> or <m>D</m>. A <m>0</m> at <m>A</m> would go to an <m>\emptyset</m> state. </p>
+        <image
+          xml:id="RFAxM16" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (21.5,-14.2) circle (3);
+            \draw (21.5,-14.2) node {${A}$};
+            \draw [black] (31.3,-25.4) circle (3);
+            \draw (31.3,-25.4) node {$h_r$};
+            \draw [black] (37.1,-14.2) circle (3);
+            \draw (37.1,-14.2) node {${B,D}$};
+            \draw [black] (24.313,-13.166) arc (105.55536:74.44464:18.597);
+            \fill [black] (34.29,-13.17) -- (33.65,-12.47) -- (33.38,-13.43);
+            \draw (29.3,-11.99) node [above] {$1$};
+            \draw [black] (28.559,-24.195) arc (-119.68733:-157.94082:14.432);
+            \fill [black] (28.56,-24.19) -- (28.11,-23.36) -- (27.62,-24.23);
+            \draw (24.3,-22.61) node [left] {$0$};
+            \draw [black] (13.6,-9) -- (18.99,-12.55);
+            \fill [black] (18.99,-12.55) -- (18.6,-11.69) -- (18.05,-12.53);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        <p> Try to create the states that <m>{B,D}</m> would lead to. There is a posibility that
+          each state in a set is active. If one state in a set is an accept state, then the state
+          that includes it in its set is also an accept state. </p>
+      </statement>
+      <answer>
+        <image source="../generated/latex-image/FAEXM12_2.svg" width="50%">
+        </image>
+      </answer>
+    </exploration>
+    <exploration>
+      <statement>
+        <p> When there is a set including multiple states, track the destiation states for all
+          characters in the language. Ask yourself questions such as: where would an <m> a </m> a go
+          after <m>C</m>?, where would a 1 go after <m>D</m>?, and where would a 0 go after <m>E</m>.
+          Try to complete the next step of the diagram. </p>
+      </statement>
+      <answer>
+        <image source="../generated/latex-image/FAExM12_3.svg" width="50%">
+        </image>
+      </answer>
+    </exploration>
+    <exploration>
+      <statement>
         <p>
-          Try to create the states that <m>{B,D}</m> would lead to. There is a posibility that each state in a set 
-          is active. If one state in a set is an accept state, then the state that includes it in its set is also an accept 
-          state.
-        </p>
-        <answer>
-          <p>
-            <image source="../generated/latex-image/FAEXM12_2.svg" width="50%">
-	          </image>
-          </p>
-        </answer>
-        <p>
-          When there is a set including multiple states, track the destiation states for all characters in the language. Ask yourself questions such as: where would an 
-          <m> a </m> a go after <m>C</m>?, where would a 1 go after <m>D</m>?, and where would a 0 go after <m>E</m>. Try to complete the next step of the diagram.
-        </p>
-        <answer>
-          <image source="../generated/latex-image/FAExM12_3.svg" width="50%">
-	        </image>
-        </answer>
-        <p>
-          It is important to note, that if the outcoming state set of a chaacter already exists that state sholuld be linked to instead of another created. 
+          It is important to note, that if the outcoming state set of a character already exists
+          that
+          state sholuld be linked to instead of another created.
           Try creating the final FA with this in mind.
         </p>
-        <answer>
-          <image source="../generated/latex-image/FAExM12_4.svg" width="50%">
-	        </image>
-        </answer>
-      </exploration>
+      </statement>
+      <answer>
+        <image source="../generated/latex-image/FAExM12_4.svg" width="50%">
+        </image>
+      </answer>
+    </exploration>
   </section>
   <exercises>
     <exercise>
       <statement>
-        <image source="../generated/latex-image/FAExM19.svg" width="50%">
-	      </image>
-        <p>
-          What is the maximum number of states in a DFA made from <m>M_{13}</m>?
-        </p>
+
+
+        <image
+          xml:id="RFAxM17" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (18,-18.5) circle (3);
+            \draw (18,-18.5) node {$A$};
+            \draw [black] (32.3,-18.5) circle (3);
+            \draw (32.3,-18.5) node {$B$};
+            \draw [black] (47,-18.5) circle (3);
+            \draw (47,-18.5) node {$C$};
+            \draw [black] (61.6,-18.5) circle (3);
+            \draw (61.6,-18.5) node {$D$};
+            \draw [black] (32.3,-33.4) circle (3);
+            \draw (32.3,-33.4) node {$E$};
+            \draw [black] (47,-33.4) circle (3);
+            \draw (47,-33.4) node {$F$};
+            \draw [black] (28.2,-25.8) circle (3);
+            \draw (28.2,-25.8) node {$h_a$};
+            \draw [black] (28.2,-25.8) circle (2.4);
+            \draw [black] (10.8,-11.4) -- (15.86,-16.39);
+            \draw (10.27,-9.93) node [left] {$M_{13}$};
+            \fill [black] (15.86,-16.39) -- (15.65,-15.48) -- (14.94,-16.19);
+            \draw [black] (34.608,-31.502) arc (120.722:59.278:9.869);
+            \fill [black] (44.69,-31.5) -- (44.26,-30.66) -- (43.75,-31.52);
+            \draw (39.65,-29.62) node [above] {$a,\mbox{ }b$};
+            \draw [black] (44.416,-34.909) arc (-66.81046:-113.18954:12.104);
+            \fill [black] (34.88,-34.91) -- (35.42,-35.68) -- (35.82,-34.76);
+            \draw (39.65,-36.39) node [below] {$'\backslash 0'$};
+            \draw [black] (29.604,-32.088) arc (-119.28297:-153.07132:25.851);
+            \fill [black] (29.6,-32.09) -- (29.15,-31.26) -- (28.66,-32.13);
+            \draw (23.07,-28.91) node [left] {$a$};
+            \draw [black] (20.797,-17.427) arc (105.66511:74.33489:16.122);
+            \fill [black] (29.5,-17.43) -- (28.87,-16.73) -- (28.6,-17.69);
+            \draw (25.15,-16.33) node [above] {$a$};
+            \draw [black] (35.146,-17.562) arc (103.7205:76.2795:18.989);
+            \fill [black] (44.15,-17.56) -- (43.5,-16.89) -- (43.26,-17.86);
+            \draw (39.65,-16.52) node [above] {$a$};
+            \draw [black] (49.742,-17.295) arc (107.91718:72.08282:14.816);
+            \fill [black] (58.86,-17.3) -- (58.25,-16.57) -- (57.94,-17.52);
+            \draw (54.3,-16.08) node [above] {$b$};
+            \draw [black] (59.371,-20.503) arc (-52.28944:-127.71056:20.306);
+            \fill [black] (34.53,-20.5) -- (34.86,-21.39) -- (35.47,-20.6);
+            \draw (46.95,-25.25) node [below] {$'\backslash 0'$};
+            \draw [black] (30.83,-21.12) -- (29.67,-23.18);
+            \fill [black] (29.67,-23.18) -- (30.5,-22.73) -- (29.62,-22.24);
+            \draw (30.91,-23.36) node [right] {$'\backslash 0'$};
+            \draw [black] (30.88,-30.76) -- (29.62,-28.44);
+            \fill [black] (29.62,-28.44) -- (29.56,-29.38) -- (30.44,-28.91);
+            \draw (30.92,-28.42) node [right] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+        <p> What is the maximum number of states in a DFA made from <m>M_{13}</m>? </p>
       </statement>
+      <hint>
+        <p> How many states are there? 6. </p>
+      </hint>
       <answer>
-        <p>
-          <m>64.</m>
-        </p>
+        <p> Since there are 6 states and each can be in a subset (or not). We have that choice <m>
+          2^6</m> times. Thus <m>64</m> possible states. </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Create a DFA based on <m>M_{13}</m>.
-        </p>
+        <p> Create a DFA based on <m>M_{13}</m>. TODO: generate new image for answer </p>
       </statement>
       <answer>
         <image source="../generated/latex-image/FAExM19a.svg" width="50%">
-	      </image>
+        </image>
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          This small NFA appears to be challenging when trying to decipher its language. Use subset construction to converst it into a DFA and then decipher its 
-          language.
-          <image source="../generated/latex-image/DFA-M27.svg" width="50%">
-	      </image>
-          
-        </p>
+        <p> This small NFA appears to be challenging when trying to decipher its language. Use
+          subset construction to converst it into a DFA and then decipher its language.</p>
+        <image
+          xml:id="RFAxM18" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (43.4,-30) circle (3);
+            \draw (43.4,-30) node {$h_a$};
+            \draw [black] (43.4,-30) circle (2.4);
+            \draw [black] (20,-17.8) circle (3);
+            \draw (20,-17.8) node {$A$};
+            \draw [black] (37.5,-17.8) circle (3);
+            \draw (37.5,-17.8) node {$B$};
+            \draw [black] (29.1,-27.6) circle (3);
+            \draw (29.1,-27.6) node {$C$};
+            \draw [black] (14.1,-12) -- (17.86,-15.7);
+            \fill [black] (17.86,-15.7) -- (17.64,-14.78) -- (16.94,-15.49);
+            \draw [black] (38.81,-20.5) -- (42.09,-27.3);
+            \fill [black] (42.09,-27.3) -- (42.2,-26.36) -- (41.3,-26.8);
+            \draw (41.16,-22.83) node [right] {$'\backslash 0'$};
+            \draw [black] (32.06,-28.1) -- (40.44,-29.5);
+            \fill [black] (40.44,-29.5) -- (39.74,-28.88) -- (39.57,-29.86);
+            \draw (35.79,-29.4) node [below] {$'\backslash 0'$};
+            \draw [black] (29.886,-24.713) arc (157.60416:121.19325:12.003);
+            \fill [black] (34.77,-19.02) -- (33.82,-19.01) -- (34.34,-19.86);
+            \draw (31.32,-20.03) node [left] {$1$};
+            \draw [black] (36.963,-20.741) arc (-18.64304:-62.55955:10.353);
+            \fill [black] (31.92,-26.62) -- (32.86,-26.69) -- (32.4,-25.81);
+            \draw (35.56,-25.61) node [right] {$1,\thicksim$};
+            \draw [black] (22.559,-16.245) arc (115.34454:64.65546:14.463);
+            \fill [black] (34.94,-16.24) -- (34.43,-15.45) -- (34,-16.35);
+            \draw (28.75,-14.35) node [above] {$0$};
+            \draw [black] (26.14,-27.215) arc (-107.18797:-167.05423:8.797);
+            \fill [black] (20.17,-20.78) -- (19.86,-21.67) -- (20.83,-21.45);
+            \draw (21.76,-26.26) node [left] {$0$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
       </statement>
     </exercise>
     <exercise>
@@ -114,8 +276,39 @@
         <p>
           Convert the below NFA to a DFA using the subset construction.
         </p>
-        <image source="../generated/latex-image/FAExM30.svg" width="60%">
-	      </image>
+
+
+        <image
+          xml:id="RFAxM19" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (42.2,-31.9) circle (3);
+            \draw (42.2,-31.9) node {$h_a$};
+            \draw [black] (42.2,-31.9) circle (2.4);
+            \draw [black] (14.7,-20.3) circle (3);
+            \draw (14.7,-20.3) node {$A$};
+            \draw [black] (28.7,-27.1) circle (3);
+            \draw (28.7,-27.1) node {$B$};
+            \draw [black] (42.2,-20.3) circle (3);
+            \draw (42.2,-20.3) node {$C$};
+            \draw [black] (30.395,-24.633) arc (138.93613:94.533:13.059);
+            \fill [black] (39.21,-20.19) -- (38.37,-19.76) -- (38.45,-20.75);
+            \draw (33.37,-21.04) node [above] {$q$};
+            \draw [black] (17.691,-20.474) arc (81.53344:46.65354:16.735);
+            \fill [black] (26.71,-24.86) -- (26.48,-23.94) -- (25.79,-24.67);
+            \draw (23.47,-21.47) node [above] {$a$};
+            \draw [black] (26.472,-29.091) arc (-20.47589:-308.47589:2.25);
+            \draw (21.43,-29.45) node [left] {$a,\mbox{ }q$};
+            \fill [black] (25.76,-26.54) -- (25.19,-25.79) -- (24.84,-26.73);
+            \draw [black] (9.1,-15.2) -- (12.48,-18.28);
+            \fill [black] (12.48,-18.28) -- (12.23,-17.37) -- (11.55,-18.11);
+            \draw [black] (42.2,-23.3) -- (42.2,-28.9);
+            \fill [black] (42.2,-28.9) -- (42.7,-28.1) -- (41.7,-28.1);
+            \draw (41.7,-26.1) node [left] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
       </statement>
     </exercise>
     <exercise>
@@ -123,8 +316,47 @@
         <p>
           Convert the below NFA into a DFA.
         </p>
-        <image source="../generated/latex-image/FAExM33.svg" width="60%">
-	      </image>
+
+
+        <image
+          xml:id="RFAxM20" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (28.8,-30.5) circle (3);
+            \draw (28.8,-30.5) node {$h_a$};
+            \draw [black] (28.8,-30.5) circle (2.4);
+            \draw [black] (17.8,-22.4) circle (3);
+            \draw (17.8,-22.4) node {$A$};
+            \draw [black] (33,-22.4) circle (3);
+            \draw (33,-22.4) node {$B$};
+            \draw [black] (48.7,-22.4) circle (3);
+            \draw (48.7,-22.4) node {$C$};
+            \draw [black] (38.7,-30.5) circle (3);
+            \draw (38.7,-30.5) node {$D$};
+            \draw [black] (20.464,-21.034) arc (110.9217:69.0783:13.822);
+            \fill [black] (30.34,-21.03) -- (29.77,-20.28) -- (29.41,-21.22);
+            \draw (25.4,-19.62) node [above] {$b$};
+            \draw [black] (35.497,-20.751) arc (116.33083:63.66917:12.069);
+            \fill [black] (46.2,-20.75) -- (45.71,-19.95) -- (45.26,-20.84);
+            \draw (40.85,-19) node [above] {$b$};
+            \draw [black] (30.289,-23.673) arc (-70.66932:-109.33068:14.77);
+            \fill [black] (20.51,-23.67) -- (21.1,-24.41) -- (21.43,-23.47);
+            \draw (25.4,-25.01) node [below] {$\thicksim$};
+            \draw [black] (19.488,-24.866) arc (62.1301:-225.8699:2.25);
+            \draw (19.54,-29.8) node [below] {$b,\mbox{ }m$};
+            \fill [black] (16.87,-25.24) -- (16.05,-25.71) -- (16.94,-26.18);
+            \draw [black] (47.771,-25.24) arc (-27.01807:-74.96699:9.659);
+            \fill [black] (41.67,-30.18) -- (42.57,-30.46) -- (42.31,-29.49);
+            \draw (46.25,-28.85) node [below] {$b$};
+            \draw [black] (35.7,-30.5) -- (31.8,-30.5);
+            \fill [black] (31.8,-30.5) -- (32.6,-31) -- (32.6,-30);
+            \draw (33.75,-31) node [below] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+
       </statement>
     </exercise>
     <exercise>
@@ -132,19 +364,98 @@
         <p>
           Convert the below NFA into a DFA, using our subset construction.
         </p>
-        <image source="../generated/latex-image/FAExM34.svg" width="60%">
-	      </image>
-        
+
+        <image
+          xml:id="RFAxM21" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (48.7,-28.4) circle (3);
+            \draw (48.7,-28.4) node {$h_a$};
+            \draw [black] (48.7,-28.4) circle (2.4);
+            \draw [black] (18.9,-14.5) circle (3);
+            \draw (18.9,-14.5) node {$A$};
+            \draw [black] (15,-10) -- (16.76,-12.4);
+            \fill [black] (16.76,-12.4) -- (16.54,-11.4) -- (15.7,-11.9);
+            \draw [black] (33.4,-11.1) circle (3);
+            \draw (33.4,-11.1) node {$B$};
+            \draw [black] (37.9,-22.5) circle (3);
+            \draw (37.9,-22.5) node {$C$};
+            \draw [black] (46.5,-15.7) circle (3);
+            \draw (46.5,-15.7) node {$D$};
+            \draw [black] (35.655,-9.139) arc (158.74356:-129.25644:2.25);
+            \draw (40.69,-8.89) node [right] {$1$};
+            \fill [black] (36.33,-11.7) -- (36.89,-12.45) -- (37.25,-11.52);
+            \draw [black] (21.361,-12.792) arc (119.56268:86.83025:16.539);
+            \fill [black] (30.44,-10.66) -- (29.66,-10.12) -- (29.61,-11.12);
+            \draw (25.07,-10.5) node [above] {$0$};
+            \draw [black] (35.579,-13.149) arc (39.1548:3.92716:11.308);
+            \fill [black] (38.09,-19.51) -- (38.54,-18.68) -- (37.54,-18.75);
+            \draw (38.08,-15.27) node [right] {$1$};
+            \draw [black] (34.951,-23.031) arc (-84.94802:-140.71929:16.669);
+            \fill [black] (20.58,-16.98) -- (20.7,-17.92) -- (21.47,-17.28);
+            \draw (25.04,-22.32) node [below] {$0,\thicksim$};
+            \draw [black] (45.071,-18.327) arc (-36.67864:-66.65468:10.564);
+            \fill [black] (45.07,-18.33) -- (44.19,-18.67) -- (44.99,-19.27);
+            \draw (44.16,-20.8) node [below] {$0$};
+            \draw [black] (47.543,-18.511) arc (17.20352:2.45193:27.237);
+            \fill [black] (48.74,-25.4) -- (49.2,-24.58) -- (48.2,-24.62);
+            \draw (49.08,-21.67) node [right] {$'\backslash 0'$};
+            \draw [black] (45.86,-27.437) arc (-111.89144:-125.4038:27.197);
+            \fill [black] (45.86,-27.44) -- (45.3,-26.67) -- (44.93,-27.6);
+            \draw (41.92,-26.57) node [below] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
       </statement>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Convert the NFA below into a DFA. 
+          Convert the NFA below into a DFA.
         </p>
-        <image source="../generated/latex-image/FAExM39.svg" width="60%">
-	      </image>
-        
+
+        <image
+          xml:id="RFAxM22" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (54.4,-25.7) circle (3);
+            \draw (54.4,-25.7) node {$h_a$};
+            \draw [black] (54.4,-25.7) circle (2.4);
+            \draw [black] (16.8,-15.8) circle (3);
+            \draw (16.8,-15.8) node {$A$};
+            \draw [black] (31,-14) circle (3);
+            \draw (31,-14) node {$B$};
+            \draw [black] (47.6,-15.8) circle (3);
+            \draw (47.6,-15.8) node {$C$};
+            \draw [black] (36.6,-27.4) circle (3);
+            \draw (36.6,-27.4) node {$E$};
+            \draw [black] (47.063,-18.744) arc (-17.25646:-69.702:12.419);
+            \fill [black] (39.51,-26.71) -- (40.44,-26.9) -- (40.09,-25.96);
+            \draw (44.74,-25.07) node [right] {$\thicksim$};
+            \draw [black] (33.789,-12.909) arc (105.73218:61.89059:15.25);
+            \fill [black] (45.11,-14.14) -- (44.64,-13.32) -- (44.17,-14.2);
+            \draw (39.79,-11.84) node [above] {$1$};
+            \draw [black] (49.968,-13.978) arc (155.30993:-132.69007:2.25);
+            \draw (54.96,-14.16) node [right] {$1$};
+            \fill [black] (50.49,-16.57) -- (51.01,-17.36) -- (51.42,-16.45);
+            \draw [black] (33.934,-26.051) arc (-125.83437:-188.80451:9.553);
+            \fill [black] (30.09,-16.84) -- (29.47,-17.56) -- (30.46,-17.71);
+            \draw (29.97,-22.92) node [left] {$0$};
+            \draw [black] (19.355,-14.239) arc (115.37969:79.06894:14.203);
+            \fill [black] (28.14,-13.13) -- (27.45,-12.48) -- (27.26,-13.46);
+            \draw (23.09,-12.3) node [above] {$0,\mbox{ }1$};
+            \draw [black] (10.3,-12.4) -- (14.14,-14.41);
+            \fill [black] (14.14,-14.41) -- (13.66,-13.6) -- (13.2,-14.48);
+            \draw [black] (49.3,-18.27) -- (52.7,-23.23);
+            \fill [black] (52.7,-23.23) -- (52.66,-22.28) -- (51.84,-22.85);
+            \draw (51.6,-19.4) node [right] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
       </statement>
     </exercise>
     <exercise>
@@ -152,13 +463,51 @@
         <p>
           Convert the following NFA into a DFA:
         </p>
-        <image source="../generated/latex-image/FAExM42.svg" width="60%">
-	      </image>
-        
+
+
+        <image
+          xml:id="RFAxM23" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (32.4,-7.7) circle (3);
+            \draw (32.4,-7.7) node {$h_a$};
+            \draw [black] (32.4,-7.7) circle (2.4);
+            \draw [black] (16.8,-15.8) circle (3);
+            \draw (16.8,-15.8) node {$A$};
+            \draw [black] (32.4,-15.8) circle (3);
+            \draw (32.4,-15.8) node {$B$};
+            \draw [black] (47.9,-15.8) circle (3);
+            \draw (47.9,-15.8) node {$C$};
+            \draw [black] (10.3,-12.4) -- (14.14,-14.41);
+            \fill [black] (14.14,-14.41) -- (13.66,-13.6) -- (13.2,-14.48);
+            \draw [black] (17.038,-12.821) arc (203.16302:-84.83698:2.25);
+            \draw (21.26,-9.5) node [above] {$0$};
+            \fill [black] (19.31,-14.18) -- (20.24,-14.32) -- (19.85,-13.4);
+            \draw [black] (19.753,-15.276) arc (97.69075:82.30925:36.219);
+            \fill [black] (29.45,-15.28) -- (28.72,-14.67) -- (28.59,-15.66);
+            \draw (24.6,-14.45) node [above] {$1$};
+            \draw [black] (35.044,-14.396) arc (111.73955:68.26045:13.785);
+            \fill [black] (45.26,-14.4) -- (44.7,-13.63) -- (44.33,-14.56);
+            \draw (40.15,-12.92) node [above] {$1$};
+            \draw [black] (45.205,-17.107) arc (-69.95052:-110.04948:14.746);
+            \fill [black] (35.09,-17.11) -- (35.67,-17.85) -- (36.02,-16.91);
+            \draw (40.15,-18.5) node [below] {$\thicksim$};
+            \draw [black] (46.129,-18.217) arc (-40.94688:-139.05312:18.242);
+            \fill [black] (18.57,-18.22) -- (18.72,-19.15) -- (19.47,-18.49);
+            \draw (32.35,-25) node [below] {$1,\mbox{ }0$};
+            \draw [black] (32.4,-12.8) -- (32.4,-10.7);
+            \fill [black] (32.4,-10.7) -- (31.9,-11.5) -- (32.9,-11.5);
+            \draw (32.9,-11.75) node [right] {$'\backslash 0'$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+
+
       </statement>
     </exercise>
   </exercises>
-    <!--
+  <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
   <xi:include href=".sec-emp-conc.ptx" /> 

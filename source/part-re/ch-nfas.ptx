@@ -2,131 +2,357 @@
 
 <chapter xml:id="ch-nfas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Non-determinsitic Finite Automata</title>
+  <introduction>
+    <p>
+      In this chapter we will discuss how to allow our finite automata to be non-deterministic. TODO
+    </p>
+  </introduction>
   <objectives>
-    In this chapter you will learn:
-     <ol>
-       <li> Non-Deterministic Finite Automata (NFA) </li>
-       <li> Parallelism </li>
-       <li> The Power Set </li>
-       <li> Strengths of NFAs </li>
-     </ol>
+    <ol>
+      <li> Non-Deterministic Finite Automata (NFA) </li>
+      <li> Parallelism </li>
+      <li> The Power Set </li>
+      <li> Strengths of NFAs </li>
+    </ol>
   </objectives>
   <section xml:id="NFAs">
-      <title>Non-Deterministic Finite Automata (NFA)</title>
-        <p><idx>Non-Deterministic Finitie Automata (NFA)</idx> <term> Non-Determinisitic Finite Automatas (DFA)</term> are FAs where the outcome of each possible change 
-          of state is not completely determined (see the root words at work here). Some quick examples include, a state that transitions to two other states on 
-          an input, thus leaving you in multiple states. A state where a transition is not defined, thus ejecting you from the machine. We will even allow
-          free jumps to new states.
-        <exploration>
-          <p>
-            Consider <m>M_8</m>. <m>\Sigma(M_8)=\{x, y\}</m>
-            </p>
-            <p>
-            <image source="../generated/latex-image/FAExM8.svg" width="50%"></image>
-            What is the language of <m>M_8</m> (<m>L(M_8)</m>)?
-            <hint>
-              <p>
-                Despite being in the alphabet, <m>y</m> does not appear in the FA. What could this mean for the language?
-              </p>
-            </hint>
-            <answer>
-              <p>
-                <m>L(M_8) =</m> any string with two or more <m>x</m>s and no <m>y</m>s.
-              </p>
-            </answer>
-          </p>
-        </exploration>
-       </p>
-       
-   </section>
-   
-   <section xml:id="Parallelism">
+    <title>Non-Deterministic Finite Automata (NFA)</title>
+    <p><idx>Non-Deterministic Finitie Automata
+        (NFA)</idx> <term> Non-Determinisitic Finite Automatas
+        (DFA)</term> are FAs where the outcome of each possible change of state is not completely
+      determined (see the root words at work here). Some quick examples include, a state that
+      transitions to two other states on an input, thus leaving you in multiple states. A state
+      where a transition is not defined, thus ejecting you from the machine. We will even allow free
+      jumps to new states. </p>
+    <exploration>
+      <statement>
+        <p> Consider <m>M_8</m> with <m>\Sigma(M_8)=\{x, y\}</m>
+        </p>
+
+        <image
+          xml:id="RFAxM12" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (59.7,-11.7) circle (3);
+            \draw (59.7,-11.7) node {$h_a$};
+            \draw [black] (59.7,-11.7) circle (2.4);
+            \draw [black] (15.7,-11.7) circle (3);
+            \draw [black] (32.3,-11.7) circle (3);
+            \draw [black] (49.6,-11.7) circle (3);
+            \draw [black] (52.6,-11.7) -- (56.7,-11.7);
+            \fill [black] (56.7,-11.7) -- (55.9,-11.2) -- (55.9,-12.2);
+            \draw (54.65,-11.2) node [above] {$'\backslash 0'$};
+            \draw [black] (52.237,-13.106) arc (89.66263:-198.33737:2.25);
+            \draw (55.54,-17.68) node [below] {$0,\mbox{ }1$};
+            \fill [black] (50.09,-14.65) -- (49.58,-15.45) -- (50.58,-15.45);
+            \draw [black] (35.026,-10.455) arc (109.66242:70.33758:17.607);
+            \fill [black] (46.87,-10.46) -- (46.29,-9.72) -- (45.95,-10.66);
+            \draw (40.95,-8.93) node [above] {$1$};
+            \draw [black] (18.35,-10.304) arc (112.0743:67.9257:15.035);
+            \fill [black] (29.65,-10.3) -- (29.1,-9.54) -- (28.72,-10.47);
+            \draw (24,-8.7) node [above] {$1$};
+            \draw [black] (8.7,-6.4) -- (13.31,-9.89);
+            \fill [black] (13.31,-9.89) -- (12.97,-9.01) -- (12.37,-9.8);
+            \draw [black] (33.623,-14.38) arc (54:-234:2.25);
+            \draw (32.3,-18.95) node [below] {$0,\mbox{ }1$};
+            \fill [black] (30.98,-14.38) -- (30.1,-14.73) -- (30.91,-15.32);
+            \draw (9.8,-4.91) node [above] {$M_8$};
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+        <p> What is the language of <m>M_8</m>? This may be written as <m>L(M_8)</m>. </p>
+      </statement>
+      <hint>
+        <p> Despite being in the alphabet, <m>y</m> does not appear in the FA. What could this mean
+          for the language? </p>
+      </hint>
+      <answer>
+        <p>
+          <m>L(M_8) =</m> any string with two or more <m>0</m>'s and no <m>1</m>'s. </p>
+      </answer>
+    </exploration>
+    <p> How would this change if the every <m>1</m> is placed with an <m>x</m>? </p>
+
+    <image
+      xml:id="RFAxM13" width="50%">
+      <latex-image>
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (49.6,-22.5) circle (3);
+        \draw (49.6,-22.5) node {$h_a$};
+        \draw [black] (49.6,-22.5) circle (2.4);
+        \draw [black] (32.3,-11.7) circle (3);
+        \draw (32.3,-11.7) node {$B$};
+        \draw [black] (49.6,-11.7) circle (3);
+        \draw (49.6,-11.7) node {$C$};
+        \draw [black] (17.2,-11.7) circle (3);
+        \draw (17.2,-11.7) node {$A$};
+        \draw [black] (49.6,-14.7) -- (49.6,-19.5);
+        \fill [black] (49.6,-19.5) -- (50.1,-18.7) -- (49.1,-18.7);
+        \draw (50.1,-17.1) node [right] {$'\backslash 0'$};
+        \draw [black] (51.137,-9.137) arc (176.78225:-111.21775:2.25);
+        \draw (55.9,-6.73) node [right] {$x, 0$};
+        \fill [black] (52.57,-11.36) -- (53.34,-11.91) -- (53.4,-10.91);
+        \draw [black] (35.233,-11.076) arc (99.52881:80.47119:34.533);
+        \fill [black] (46.67,-11.08) -- (45.96,-10.45) -- (45.79,-11.44);
+        \draw (40.95,-10.1) node [above] {$x$};
+        \draw [black] (33.623,-14.38) arc (54:-234:2.25);
+        \draw (32.3,-18.95) node [below] {$0,\mbox{ }x$};
+        \fill [black] (30.98,-14.38) -- (30.1,-14.73) -- (30.91,-15.32);
+        \draw [black] (20.122,-11.027) arc (99.80733:80.19267:27.17);
+        \fill [black] (29.38,-11.03) -- (28.67,-10.4) -- (28.5,-11.38);
+        \draw (24.75,-10.13) node [above] {$x$};
+        \draw [black] (11.5,-5.4) -- (15.19,-9.48);
+        \draw (9.8,-4.91) node [above] {$M_{8b}$};
+        \fill [black] (15.19,-9.48) -- (15.02,-8.55) -- (14.28,-9.22);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+
+  </section>
+
+  <section xml:id="Parallelism">
     <title>Parallelism</title>
-      <p>
-        NFAs make it possible to exist in two states at once. You might think of this as <idx>Parallelism</idx> <term>parallelism</term>.
-        Parallelism can occur because a state has multiple paths for the same character. It can also happen because of an <idx>Empty String Transition</idx>
-        <term>empty string transition</term>. Empty string transitions are free jumps to another state. Sometimes these multiple paths and free jumps are called guesses
-        when discussing FAs. Only one execution path must lead to an accept, to accept a string in these conditions.
-      </p>
-      <p>
-        <m>M_9</m> is an example of parallelism caused by a character having two defined paths from the same state. Both states <m>B</m> and 
-        <m>D</m> would be active if the first character of the given string was 1. 
-      </p>
-      <image source="../generated/latex-image/FAExM9.svg" width="50%">
-	  </image>
-      <p>
-        There are two strategies for tracking which states you are in. The first is quite simple, track them with your fingers. The second,
-        is to create a transition table similar to that in <xref ref="DFADeterminismTable"></xref>.
-      </p> 
-        <table xml:id="NFADeterminismTable">
-          <title>Determinism Chart for <m>M_1</m></title>
-            <tabular>
-              <row header="yes"><cell right="medium" bottom ="minor"> </cell><cell bottom ="minor">1</cell><cell bottom ="minor">0</cell></row>
-              <row header="no"><cell right="medium"><m>Q_0</m></cell><cell><m>\{Q_1,Q_3\}</m></cell><cell><m>\emptyset</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_1</m></cell><cell><m>\{Q_1\}</m></cell><cell><m>\{C\}</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_2</m></cell><cell><m>\emptyset</m></cell><cell><m>\emptyset</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_3</m></cell><cell><m>\{Q_4\}</m></cell><cell><m>\{Q_3\}</m></cell></row>
-              <row header="no"><cell right="medium"><m>Q_4</m></cell><cell><m>\{Q_4\}</m></cell><cell><m>\{Q_4\}</m></cell></row>
-            </tabular>
-        </table>
-      <p>
-        <m>M_{10}</m> contains an example of an NFA caused by an empty string transition. When processing a string like "bba" we might start by tracking with our fingers. 
-        They start in <m>Q_0</m> but quickly we see we exist in <m>Q_1</m> and <m>Q_6</m> as well. When the first "b" is read, we fall off the first two states and move from 
-        <m>Q_6</m> to <m>Q_7</m>. To track this with a computer, given the knowledge we have so far, we would have to use some form of guess and check with backtracking (like a depth-first search) 
-        or we could create children processes to handle the different traces to run things in parallel. What a conundrum! Let us see if we can do something about that in the future.
-      </p>
-      <image source="../generated/latex-image/FAExM10.svg" width="50%">
-	    </image>
-   </section>
-   <section xml:id="PowerSet">
-    <title>The Power Set</title>
-      <p>
-        The <idx>Power Set (P)</idx> <term>power set (P)</term> is the set of all subsets of the given states. It also includes <m>\emptyset</m>. 
-      </p>
-      <p>
-        The power set will have as many sets in it as <m>2^n</m> with <m>n</m> being the number of states in the machine. The power set for a generic 
-        machice with states <m>Q_0</m>, <m>Q_1</m>, and <m>Q_2</m>. Would look like this:
-      </p>
-      <image source="../generated/latex-image/PowerSetMatx.svg" width="50%">
-	    </image>
-      Since we might think about NFAs as the ability to exist in multiple states, the power set is a useful tool. If we trace our way through an NFA, we'll end up in some set of states. That will correspond to one of the entries in the power set. That's a useful idea that we'll use in just a moment.
-      
-   </section>
-   <section xml:id="StrengthsofNFAs">
-    <title>Strengths of NFAs</title>
+    <p> NFAs make it possible to exist in two states at once. You might think of this as <idx>
+      Parallelism</idx> <term>parallelism</term>. Parallelism can occur because a state has multiple
+      paths for the same character. It can also happen because of an <idx>Empty String Transition</idx>
+        <term>empty
+      string transition</term>. Empty string transitions are free jumps to another state. Sometimes
+      these multiple paths and free jumps are called guesses when discussing FAs. Only one execution
+      path must lead to an accept, to accept a string in these conditions. </p>
     <p>
-      NFAs are often pretty easy to generate for languages that include a certain set of characters. Such as:
-      <ul>
+      <m>M_9</m> is an example of parallelism caused by a character having two defined paths from
+      the same state. Both states <m>B</m> and <m>D</m> would be active if the first character of
+      the given string was 1. </p>
+
+    <image
+      xml:id="RFAxM14" width="50%">
+      <latex-image>
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (45.1,-21.7) circle (3);
+        \draw (45.1,-21.7) node {$h_a$};
+        \draw [black] (45.1,-21.7) circle (2.4);
+        \draw [black] (16.1,-21.7) circle (3);
+        \draw (16.1,-21.7) node {$A$};
+        \draw [black] (26.4,-14.2) circle (3);
+        \draw (26.4,-14.2) node {$B$};
+        \draw [black] (26.4,-28.9) circle (3);
+        \draw (26.4,-28.9) node {$D$};
+        \draw [black] (39.9,-14.2) circle (3);
+        \draw (39.9,-14.2) node {$C$};
+        \draw [black] (39.9,-28.9) circle (3);
+        \draw (39.9,-28.9) node {$E$};
+        \draw [black] (41.66,-26.47) -- (43.34,-24.13);
+        \fill [black] (43.34,-24.13) -- (42.47,-24.49) -- (43.28,-25.07);
+        \draw (43.09,-26.68) node [right] {$'\backslash 0'$};
+        \draw [black] (41.61,-16.67) -- (43.39,-19.23);
+        \fill [black] (43.39,-19.23) -- (43.35,-18.29) -- (42.52,-18.86);
+        \draw (43.1,-16.59) node [right] {$'\backslash 0'$};
+        \draw [black] (29.4,-28.9) -- (36.9,-28.9);
+        \fill [black] (36.9,-28.9) -- (36.1,-28.4) -- (36.1,-29.4);
+        \draw (33.15,-29.4) node [below] {$1$};
+        \draw [black] (18.53,-19.93) -- (23.97,-15.97);
+        \fill [black] (23.97,-15.97) -- (23.03,-16.03) -- (23.62,-16.84);
+        \draw (22.25,-18.45) node [below] {$1$};
+        \draw [black] (29.4,-14.2) -- (36.9,-14.2);
+        \fill [black] (36.9,-14.2) -- (36.1,-13.7) -- (36.1,-14.7);
+        \draw (33.15,-14.7) node [below] {$0$};
+        \draw [black] (18.56,-23.42) -- (23.94,-27.18);
+        \fill [black] (23.94,-27.18) -- (23.57,-26.31) -- (23,-27.13);
+        \draw (20.25,-25.8) node [below] {$1$};
+        \draw [black] (26.384,-31.888) arc (27.43495:-260.56505:2.25);
+        \draw (22.39,-35.44) node [below] {$0$};
+        \fill [black] (24.02,-30.71) -- (23.08,-30.63) -- (23.54,-31.52);
+        \draw [black] (25.077,-11.52) arc (234:-54:2.25);
+        \draw (26.4,-6.95) node [above] {$1$};
+        \fill [black] (27.72,-11.52) -- (28.6,-11.17) -- (27.79,-10.58);
+        \draw [black] (11.1,-12.8) -- (14.63,-19.08);
+        \draw (9.42,-12.3) node [above] {$M_9$};
+        \fill [black] (14.63,-19.08) -- (14.67,-18.14) -- (13.8,-18.63);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+    <p> There are two strategies for tracking which states you are in. The first is quite simple,
+      track them with your fingers. The second, is to create a transition table similar to that in
+      the previous chapter <xref ref="DFADeterminismTable"></xref> but including nondeterminism. </p>
+    <table xml:id="NFADeterminismTable">
+      <title>Determinism Chart for <m>M_1</m></title>
+      <tabular>
+        <row header="yes">
+          <cell right="medium" bottom="minor"> </cell>
+          <cell bottom="minor">1</cell>
+          <cell bottom="minor">0</cell>
+        </row>
+        <row header="no">
+          <cell right="medium">
+            <m>Q_0</m>
+          </cell>
+          <cell>
+            <m>\{Q_1,Q_3\}</m>
+          </cell>
+          <cell>
+            <m>\emptyset</m>
+          </cell>
+        </row>
+        <row header="no">
+          <cell right="medium">
+            <m>Q_1</m>
+          </cell>
+          <cell>
+            <m>\{Q_1\}</m>
+          </cell>
+          <cell>
+            <m>\{C\}</m>
+          </cell>
+        </row>
+        <row header="no">
+          <cell right="medium">
+            <m>Q_2</m>
+          </cell>
+          <cell>
+            <m>\emptyset</m>
+          </cell>
+          <cell>
+            <m>\emptyset</m>
+          </cell>
+        </row>
+        <row header="no">
+          <cell right="medium">
+            <m>Q_3</m>
+          </cell>
+          <cell>
+            <m>\{Q_4\}</m>
+          </cell>
+          <cell>
+            <m>\{Q_3\}</m>
+          </cell>
+        </row>
+        <row header="no">
+          <cell right="medium">
+            <m>Q_4</m>
+          </cell>
+          <cell>
+            <m>\{Q_4\}</m>
+          </cell>
+          <cell>
+            <m>\{Q_4\}</m>
+          </cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      <m>M_{10}</m> contains an example of an NFA caused by an empty string transition. When
+      processing a string like "bba" we might start by tracking with our fingers. They start in <m>
+      Q_0</m> but quickly we see we exist in <m>Q_1</m> and <m>Q_6</m> as well. When the first "b"
+      is read, we fall off the first two states and move from <m>Q_6</m> to <m>Q_7</m>. To track
+      this with a computer, given the knowledge we have so far, we would have to use some form of
+      guess and check with backtracking (like a depth-first search) or we could create children
+      processes to handle the different traces to run things in parallel. What a conundrum! Let us
+      see if we can do something about that in the future. </p>
+
+
+    <image
+      xml:id="RFAxM15" width="50%">
+      <latex-image>
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (50.1,-21.7) circle (3);
+        \draw (50.1,-21.7) node {$h_a$};
+        \draw [black] (50.1,-21.7) circle (2.4);
+        \draw [black] (18.5,-21.7) circle (3);
+        \draw (18.5,-21.7) node {$A$};
+        \draw [black] (26.3,-13.4) circle (3);
+        \draw (26.3,-13.4) node {$B$};
+        \draw [black] (42,-13.4) circle (3);
+        \draw (42,-13.4) node {$C$};
+        \draw [black] (26.3,-29.1) circle (3);
+        \draw (26.3,-29.1) node {$D$};
+        \draw [black] (42,-29.1) circle (3);
+        \draw (42,-29.1) node {$E$};
+        \draw [black] (29.3,-13.4) -- (39,-13.4);
+        \fill [black] (39,-13.4) -- (38.2,-12.9) -- (38.2,-13.9);
+        \draw (34.15,-13.9) node [below] {$0$};
+        \draw [black] (29.3,-29.1) -- (39,-29.1);
+        \fill [black] (39,-29.1) -- (38.2,-28.6) -- (38.2,-29.6);
+        \draw (34.15,-29.6) node [below] {$1$};
+        \draw [black] (20.68,-23.76) -- (24.12,-27.04);
+        \fill [black] (24.12,-27.04) -- (23.89,-26.12) -- (23.2,-26.85);
+        \draw (21.38,-25.88) node [below] {$1$};
+        \draw [black] (20.55,-19.51) -- (24.25,-15.59);
+        \fill [black] (24.25,-15.59) -- (23.33,-15.83) -- (24.06,-16.51);
+        \draw (22.93,-19.02) node [right] {$1$};
+        \draw [black] (23.654,-12.011) arc (270.02737:-17.97263:2.25);
+        \draw (21.33,-7.44) node [above] {$1$};
+        \fill [black] (25.79,-10.45) -- (26.29,-9.65) -- (25.29,-9.66);
+        \draw [black] (28.735,-30.832) arc (82.30076:-205.69924:2.25);
+        \draw (30.5,-35.55) node [below] {$0$};
+        \fill [black] (26.41,-32.09) -- (25.8,-32.81) -- (26.79,-32.95);
+        \draw [black] (44.21,-27.08) -- (47.89,-23.72);
+        \fill [black] (47.89,-23.72) -- (46.96,-23.89) -- (47.63,-24.63);
+        \draw (44.99,-24.91) node [above] {$'\backslash 0'$};
+        \draw [black] (44.1,-15.55) -- (48,-19.55);
+        \fill [black] (48,-19.55) -- (47.8,-18.63) -- (47.09,-19.33);
+        \draw (45.52,-19.02) node [left] {$'\backslash 0'$};
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+  </section>
+  <section xml:id="PowerSet">
+    <title>The Power Set</title>
+    <p> The <idx>Power Set (P)</idx> <term>power set (P)</term> is the set of all subsets of the
+      given states. It also includes <m>\emptyset</m>. </p>
+    <p> The power set will have as many sets in it as <m>2^n</m> with <m>n</m> being the number of
+      states in the machine. The power set for a generic machice with states <m>Q_0</m>, <m>Q_1</m>,
+      and <m>Q_2</m>. Would look like this: <me>
+        \{ \emptyset, \{A\}, \{B\}, \{C\}, \{A,B\}, \{A,C\}, \{B,C\}, \{A,B,C\} \}
+      </me>
+    </p>
+    <p>Since we might think about NFAs as the ability to exist in multiple states, the
+      power set is a useful tool. If we trace our way through an NFA, we'll end up in some set of
+      states. That will correspond to one of the entries in the power set. That's a useful idea that
+      we'll use in just a moment.
+    </p>
+  </section>
+  <section xml:id="StrengthsofNFAs">
+    <title>Strengths of NFAs</title>
+    <p> NFAs are often pretty easy to generate for languages that include a certain set of
+      characters. Such as: <ul>
         <li><em>Begins with </em> 01</li>
         <li><em>Contains </em> 01 </li>
         <li><em>Ends with </em> 01 </li>
       </ul>
     </p>
-     Some of these are not so hard for DFAs but, as we work with things we find that the shortcuts of NFAs allow us to write the machines for such languages more quickly.
-     When your language includes an "or" in its description, it turns out that's also perfect for an NFA. Since we can make guesses, we can build a machine for each side of the "or"
-     and push them together with empty string transitions. Looking back at <m>M_{10}</m>, we might describe this language with an "or". We take
-     either the top path or the bottom path. The language then must be all strings that are "aab" or that begin with "bb" followed by any number of a's. 
-   </section>
+    <p> Some of these are not so hard for DFAs but, as we work with things we find that the
+      shortcuts of NFAs allow us to write the machines for such languages more quickly. When your
+      language includes an "or" in its description, it turns out that's also perfect for an NFA.
+      Since we can make guesses, we can build a machine for each side of the "or" and push them
+      together with empty string transitions. Looking back at <m>
+        M_{10}</m>, we might describe this language with an "or". We take either the top path or the
+      bottom path. The language then must be all strings that are "aab" or that begin with "bb"
+      followed by any number of a's. </p>
+  </section>
 
   <exercises>
     <exercise>
       <statement>
-        <p>
-          Build a NFA for the following language where <m>\Sigma(L_{11}) = \{0, 1\}</m>:
-          <me>L_{11} = \mbox{any string that contains 01}</me>
+        <p> Build a NFA for the following language where <m>\Sigma(L_{11}) = \{0, 1\}</m>: <me>L_{11}
+          = \mbox{any string that contains 01}</me>
         </p>
       </statement>
       <answer>
+        <p> TODO replace with new method </p>
         <image source="../generated/latex-image/FAExM11.svg" width="50%">
-	      </image>
+        </image>
       </answer>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          The maximum size of the power set is <m>2^n</m> where <m>n</m> is the number of 
-          states in the machine. Where does this come from?
-        </p>
+        <p> The maximum size of the power set is <m>2^n</m> where <m>n</m> is the number of states
+          in the machine. Where does this come from? </p>
       </statement>
       <hint>
         <p>
@@ -134,35 +360,40 @@
         </p>
       </hint>
       <answer>
+        <p> There are two choices with each state, whether to be in it or to not be in it. This
+          means that there are two options for each state, making the maximum size of the power set <m>
+          2^n</m>. </p>
+      </answer>
+    </exercise>
+    <exercise>
+      <statement>
+        <p> Create a power set for a FA with the following states: <m>A</m>, <m>B</m>, <m>C</m>, and <m>
+          D</m>. </p>
+      </statement>
+      <answer>
         <p>
-          There are two choices with each state, whether to be in it or to not be in it. This means that there 
-          are two options for each state, making the maximum size of the power set <m>2^n</m>. 
+          <md>
+            <mrow> \{ \amp \emptyset, </mrow>
+            <mrow> \amp \{A\}, \{B\}, \{C\}, \{D\}, </mrow>
+            <mrow> \amp \{A,B\}, \{A,C\}, \{A,D\}, \{B,C\}, \{B,D\}, \{C,D\}, </mrow>
+            <mrow> \amp
+              \{A,B,C\}, \{A,B,D\}, \{A,C,D\}, \{B,C,D\}, </mrow>
+            <mrow> \amp \{A,B,C,D\} \}
+            </mrow>
+          </md>
         </p>
       </answer>
     </exercise>
     <exercise>
       <statement>
         <p>
-          Create a power set for a FA with the following states: <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m>.
+          Craft a FA from this English description.
         </p>
+        <p> All strings that begin with a 0, end with a 0, and may contain any number of other <m>0</m>s
+          and <m>1</m>s. Assume <m>\Sigma=\{0,1\}</m>. </p>
       </statement>
       <answer>
-        <p>
-          <image source="../generated/latex-image/PowerSetMatx2.svg" width="50%">
-	        </image>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Craft a FA from this English description. 
-        </p>
-        <p>
-          All strings that begin with a 0, end with a 0, and may contain any number of other <m>0</m>s and <m>1</m>s. Assume <m>\Sigma=\{0,1\}</m>.
-        </p>
-      </statement>
-      <answer>
+        <p> TODO replace with new method </p>
         <image source="../generated/latex-image/FAExM28.svg" width="50%">
         </image>
       </answer>
@@ -172,18 +403,20 @@
         <p>
           Craft a FA from this English description:
         </p>
-        <m>L = \mbox{\{The language that begins with either } 001 \mbox{ or } 10 \mbox{. It may contain any other number of } 0\mbox{s and }1\mbox{s.\}}</m>
+        <p>
+          <m>L = \mbox{\{The language that begins with either } 001 \mbox{ or } 10 \mbox{. It may
+            contain any other number of } 0\mbox{s and }1\mbox{s.\}}</m>
+        </p>
       </statement>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Construct a FA from this English description. Assume <m>\Sigma=\{0,1\}</m>.
+        <p> Construct a FA from this English description. Assume <m>\Sigma=\{0,1\}</m>. <me>
+            L = \mbox{\{The language has an even number of }0\mbox{s and ends in }11\mbox{. It may
+          contain any other number of }0\mbox{s and }1\mbox{s.\}}
+          </me>
         </p>
-        <me>
-          L = \mbox{\{The language has an even number of }0\mbox{s and ends in }11\mbox{. It may contain any other number of }0\mbox{s and }1\mbox{s.\}}
-        </me>
-        
+
       </statement>
     </exercise>
     <exercise>
@@ -195,17 +428,15 @@
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Give a FA of the following English description of a language with the alphabet, <m>\Sigma = \{1,3,7\}</m>: 
-
-        </p>
+        <p> Give a FA of the following English description of a language with the alphabet, <m>\Sigma
+          = \{1,3,7\}</m>: </p>
         <p>
           The language consists of all strings that contain 1337.
         </p>
       </statement>
     </exercise>
   </exercises>
-    <!--
+  <!--
   <xi:include href=".sec-emp-intro.ptx" />
   <xi:include href=".sec-emp-next.ptx" />
   <xi:include href=".sec-emp-conc.ptx" /> 

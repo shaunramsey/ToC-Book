@@ -2,49 +2,1209 @@
 <chapter xml:id="newly-generated-images" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Newly Generated Images </title>
   <p> Welcome to Newly Generated Images </p>
-  <figure xml:id="fig-tikz2">
-    <caption>A figure generated with TikZ in <latex /></caption>
-    <image width="15%" xml:id="poset2">
 
-      <latex-image>
-        \begin{tikzpicture}
-        \draw (0,0) -- (0,1);
-        \draw (1,0) -- (1,1) -- (1,2) -- (1,3);
-        \draw (0,0) -- (1,2);
-        \draw (0,1) -- (1,0);
-        \draw [fill] (0,0) circle [radius=0.1];
-        \draw [fill] (0,1) circle [radius=0.1];
-        \draw [fill] (1,0) circle [radius=0.1];
-        \draw [fill] (1,1) circle [radius=0.1];
-        \draw [fill] (1,2) circle [radius=0.1];
-        \draw [fill] (1,3) circle [radius=0.1];
-        \node [left] at (0,0) {$x$};
-        \node [left] at (0,1) {$b$};
-        \node [right] at (1,0) {$a$};
-        \node [right] at (1,1) {$y$};
-        \node [right] at (1,2) {$c$};
-        \node [right] at (1,3) {$d$};
-        \end{tikzpicture}
-      </latex-image>
-    </image>
-  </figure>
 
-  <exercises>
-    <exercise>
-      <statement>
-        <p> TODO </p>
-      </statement>
-      <hint>
-        <p> TODO</p>
-      </hint>
-      <answer>
-        <p>
-          STUFF
-        </p>
-      </answer>
-      <solution>
-        <p> STUFF </p>
-      </solution>
-    </exercise>
-  </exercises>
+  <image
+    xml:id="RFAxM24" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (42.2,-26.6) circle (3);
+      \draw (42.2,-26.6) node {$h_a$};
+      \draw [black] (42.2,-26.6) circle (2.4);
+      \draw [black] (14.4,-18.3) circle (3);
+      \draw (14.4,-18.3) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (42.2,-18.3) circle (3);
+      \draw (42.2,-18.3) node {$C$};
+      \draw [black] (42.2,-21.3) -- (42.2,-23.6);
+      \fill [black] (42.2,-23.6) -- (42.7,-22.8) -- (41.7,-22.8);
+      \draw (41.7,-22.45) node [left] {$'\backslash 0'$};
+      \draw [black] (43.589,-15.654) arc (180.02737:-107.97263:2.25);
+      \draw (48.24,-12.95) node [right] {$0,\mbox{ }1$};
+      \fill [black] (45.15,-17.79) -- (45.95,-18.29) -- (45.94,-17.29);
+      \draw [black] (17.323,-17.633) arc (99.49317:80.50683:25.628);
+      \fill [black] (25.78,-17.63) -- (25.07,-17.01) -- (24.91,-17.99);
+      \draw (21.55,-16.78) node [above] {$0$};
+      \draw [black] (31.572,-17.445) arc (101.9723:78.0277:18.693);
+      \fill [black] (39.33,-17.45) -- (38.65,-16.79) -- (38.44,-17.77);
+      \draw (35.45,-16.54) node [above] {$1$};
+      \draw [black] (7.8,-12.7) -- (12.11,-16.36);
+      \fill [black] (12.11,-16.36) -- (11.83,-15.46) -- (11.18,-16.22);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM25" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (42.2,-26.6) circle (3);
+      \draw (42.2,-26.6) node {$h_a$};
+      \draw [black] (42.2,-26.6) circle (2.4);
+      \draw [black] (14.6,-18.3) circle (3);
+      \draw (14.6,-18.3) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (42.2,-18.3) circle (3);
+      \draw (42.2,-18.3) node {$C$};
+      \draw [black] (42.2,-21.3) -- (42.2,-23.6);
+      \fill [black] (42.2,-23.6) -- (42.7,-22.8) -- (41.7,-22.8);
+      \draw (41.7,-22.45) node [left] {$'\backslash 0'$};
+      \draw [black] (43.589,-15.654) arc (180.02737:-107.97263:2.25);
+      \draw (48.24,-12.95) node [right] {$0,\mbox{ }1$};
+      \fill [black] (45.15,-17.79) -- (45.95,-18.29) -- (45.94,-17.29);
+      \draw [black] (17.522,-17.627) arc (99.53205:80.46795:24.93);
+      \fill [black] (25.78,-17.63) -- (25.07,-17) -- (24.91,-17.99);
+      \draw (21.65,-16.78) node [above] {$0$};
+      \draw [black] (31.572,-17.445) arc (101.9723:78.0277:18.693);
+      \fill [black] (39.33,-17.45) -- (38.65,-16.79) -- (38.44,-17.77);
+      \draw (35.45,-16.54) node [above] {$1$};
+      \draw [black] (8,-12.7) -- (12.31,-16.36);
+      \fill [black] (12.31,-16.36) -- (12.03,-15.46) -- (11.38,-16.22);
+      \draw [black] (13.764,-21.169) arc (11.48955:-276.51045:2.25);
+      \draw (8.02,-23.76) node [below] {$0,\mbox{ }1$};
+      \fill [black] (11.81,-19.38) -- (10.93,-19.05) -- (11.13,-20.03);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM26" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (42.2,-26.6) circle (3);
+      \draw (42.2,-26.6) node {$h_a$};
+      \draw [black] (42.2,-26.6) circle (2.4);
+      \draw [black] (14.6,-18.3) circle (3);
+      \draw (14.6,-18.3) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (42.2,-18.3) circle (3);
+      \draw (42.2,-18.3) node {$C$};
+      \draw [black] (42.2,-21.3) -- (42.2,-23.6);
+      \fill [black] (42.2,-23.6) -- (42.7,-22.8) -- (41.7,-22.8);
+      \draw (41.7,-22.45) node [left] {$'\backslash 0'$};
+      \draw [black] (43.589,-15.654) arc (180.02737:-107.97263:2.25);
+      \draw (48.24,-12.95) node [right] {$0,\mbox{ }1$};
+      \fill [black] (45.15,-17.79) -- (45.95,-18.29) -- (45.94,-17.29);
+      \draw [black] (17.522,-17.627) arc (99.53205:80.46795:24.93);
+      \fill [black] (25.78,-17.63) -- (25.07,-17) -- (24.91,-17.99);
+      \draw (21.65,-16.78) node [above] {$0$};
+      \draw [black] (31.572,-17.445) arc (101.9723:78.0277:18.693);
+      \fill [black] (39.33,-17.45) -- (38.65,-16.79) -- (38.44,-17.77);
+      \draw (35.45,-16.54) node [above] {$1$};
+      \draw [black] (8,-12.7) -- (12.31,-16.36);
+      \fill [black] (12.31,-16.36) -- (12.03,-15.46) -- (11.38,-16.22);
+      \draw [black] (13.764,-21.169) arc (11.48955:-276.51045:2.25);
+      \draw (8.02,-23.76) node [below] {$0,\mbox{ }1$};
+      \fill [black] (11.81,-19.38) -- (10.93,-19.05) -- (11.13,-20.03);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM27" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (28.7,-26.3) circle (3);
+      \draw (28.7,-26.3) node {$h_a$};
+      \draw [black] (28.7,-26.3) circle (2.4);
+      \draw [black] (14.6,-18.3) circle (3);
+      \draw (14.6,-18.3) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (17.522,-17.627) arc (99.53205:80.46795:24.93);
+      \fill [black] (25.78,-17.63) -- (25.07,-17) -- (24.91,-17.99);
+      \draw (21.65,-16.78) node [above] {$a$};
+      \draw [black] (8,-12.7) -- (12.31,-16.36);
+      \fill [black] (12.31,-16.36) -- (12.03,-15.46) -- (11.38,-16.22);
+      \draw [black] (28.7,-21.3) -- (28.7,-23.3);
+      \fill [black] (28.7,-23.3) -- (29.2,-22.5) -- (28.2,-22.5);
+      \draw (28.2,-22.3) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM28" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (44.2,-26.2) circle (3);
+      \draw (44.2,-26.2) node {$h_a$};
+      \draw [black] (44.2,-26.2) circle (2.4);
+      \draw [black] (14.6,-18.3) circle (3);
+      \draw (14.6,-18.3) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (44.2,-18.3) circle (3);
+      \draw (44.2,-18.3) node {$C$};
+      \draw [black] (17.522,-17.627) arc (99.53205:80.46795:24.93);
+      \fill [black] (25.78,-17.63) -- (25.07,-17) -- (24.91,-17.99);
+      \draw (21.65,-16.78) node [above] {$a$};
+      \draw [black] (8,-12.7) -- (12.31,-16.36);
+      \fill [black] (12.31,-16.36) -- (12.03,-15.46) -- (11.38,-16.22);
+      \draw [black] (44.2,-21.3) -- (44.2,-23.2);
+      \fill [black] (44.2,-23.2) -- (44.7,-22.4) -- (43.7,-22.4);
+      \draw (43.7,-22.25) node [left] {$'\backslash 0'$};
+      \draw [black] (31.645,-17.735) arc (98.28952:81.71048:33.326);
+      \fill [black] (41.25,-17.73) -- (40.54,-17.12) -- (40.39,-18.11);
+      \draw (36.45,-16.89) node [above] {$a$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM29" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (55.6,-26.5) circle (3);
+      \draw (55.6,-26.5) node {$h_a$};
+      \draw [black] (55.6,-26.5) circle (2.4);
+      \draw [black] (14.4,-24.2) circle (3);
+      \draw (14.4,-24.2) node {$A$};
+      \draw [black] (28.7,-18.3) circle (3);
+      \draw (28.7,-18.3) node {$B$};
+      \draw [black] (42.5,-18.3) circle (3);
+      \draw (42.5,-18.3) node {$C$};
+      \draw [black] (28.7,-34.6) circle (3);
+      \draw (28.7,-34.6) node {$E$};
+      \draw [black] (42.5,-34.6) circle (3);
+      \draw (42.5,-34.6) node {$F$};
+      \draw [black] (55.6,-34.6) circle (3);
+      \draw (55.6,-34.6) node {$G$};
+      \draw [black] (55.6,-18.3) circle (3);
+      \draw (55.6,-18.3) node {$D$};
+      \draw [black] (16.675,-22.248) arc (126.38194:98.45891:20.257);
+      \fill [black] (25.71,-18.52) -- (24.85,-18.14) -- (24.99,-19.13);
+      \draw (19.96,-19.32) node [above] {$'\backslash 0'$};
+      \draw [black] (7.8,-18.6) -- (12.11,-22.26);
+      \fill [black] (12.11,-22.26) -- (11.83,-21.36) -- (11.18,-22.12);
+      \draw [black] (31.635,-17.685) arc (98.59841:81.40159:26.523);
+      \fill [black] (39.57,-17.68) -- (38.85,-17.07) -- (38.7,-18.06);
+      \draw (35.6,-16.89) node [above] {$a$};
+      \draw [black] (45.451,-17.767) arc (97.22681:82.77319:28.61);
+      \fill [black] (52.65,-17.77) -- (51.92,-17.17) -- (51.79,-18.16);
+      \draw (49.05,-17.04) node [above] {$a$};
+      \draw [black] (25.777,-33.94) arc (-107.26654:-144.78821:18.931);
+      \fill [black] (25.78,-33.94) -- (25.16,-33.22) -- (24.86,-34.18);
+      \draw (19.22,-31.67) node [below] {$'\backslash 0'$};
+      \draw [black] (31.585,-33.787) arc (101.47579:78.52421:20.181);
+      \fill [black] (39.62,-33.79) -- (38.93,-33.14) -- (38.73,-34.12);
+      \draw (35.6,-32.88) node [above] {$b$};
+      \draw [black] (45.411,-33.886) arc (99.77066:80.22934:21.441);
+      \fill [black] (52.69,-33.89) -- (51.99,-33.26) -- (51.82,-34.24);
+      \draw (49.05,-33.08) node [above] {$b$};
+      \draw [black] (55.6,-31.6) -- (55.6,-29.5);
+      \fill [black] (55.6,-29.5) -- (55.1,-30.3) -- (56.1,-30.3);
+      \draw (55.1,-30.55) node [left] {$'\backslash 0'$};
+      \draw [black] (55.6,-21.3) -- (55.6,-23.5);
+      \fill [black] (55.6,-23.5) -- (56.1,-22.7) -- (55.1,-22.7);
+      \draw (55.1,-22.4) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM30" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (14.4,-24.2) circle (3);
+      \draw (14.4,-24.2) node {$A$};
+      \draw [black] (27.4,-24.2) circle (3);
+      \draw (27.4,-24.2) node {$B$};
+      \draw [black] (27.4,-32.2) circle (3);
+      \draw (27.4,-32.2) node {$h_a$};
+      \draw [black] (27.4,-32.2) circle (2.4);
+      \draw [black] (17.202,-23.144) arc (104.74213:75.25787:14.532);
+      \fill [black] (24.6,-23.14) -- (23.95,-22.46) -- (23.7,-23.42);
+      \draw (20.9,-22.17) node [above] {$1$};
+      \draw [black] (7.8,-18.6) -- (12.11,-22.26);
+      \fill [black] (12.11,-22.26) -- (11.83,-21.36) -- (11.18,-22.12);
+      \draw [black] (28.75,-21.534) arc (180.8699:-107.1301:2.25);
+      \draw (33.38,-18.75) node [right] {$0$};
+      \fill [black] (30.34,-23.65) -- (31.14,-24.14) -- (31.13,-23.14);
+      \draw [black] (27.4,-27.2) -- (27.4,-29.2);
+      \fill [black] (27.4,-29.2) -- (27.9,-28.4) -- (26.9,-28.4);
+      \draw (26.9,-28.2) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM31" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (20.4,-24.2) circle (3);
+      \draw [black] (33.1,-24.2) circle (3);
+      \draw [black] (46.1,-24.2) circle (3);
+      \draw [black] (46.1,-33.8) circle (3);
+      \draw (46.1,-33.8) node {$h_a$};
+      \draw [black] (46.1,-33.8) circle (2.4);
+      \draw [black] (46.1,-27.2) -- (46.1,-30.8);
+      \fill [black] (46.1,-30.8) -- (46.6,-30) -- (45.6,-30);
+      \draw (45.6,-29) node [left] {$'\backslash 0'$};
+      \draw [black] (35.992,-23.414) arc (100.75686:79.24314:19.331);
+      \fill [black] (43.21,-23.41) -- (42.52,-22.77) -- (42.33,-23.76);
+      \draw (39.6,-22.57) node [above] {$a$};
+      \draw [black] (23.269,-23.337) arc (101.72775:78.27225:17.125);
+      \fill [black] (30.23,-23.34) -- (29.55,-22.68) -- (29.35,-23.66);
+      \draw (26.75,-22.48) node [above] {$a$};
+      \draw [black] (14,-19.4) -- (18,-22.4);
+      \fill [black] (18,-22.4) -- (17.66,-21.52) -- (17.06,-22.32);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM32" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (20.4,-24.2) circle (3);
+      \draw [black] (33.1,-24.2) circle (3);
+      \draw [black] (46.1,-24.2) circle (3);
+      \draw [black] (20.4,-32.8) circle (3);
+      \draw (20.4,-32.8) node {$h_a$};
+      \draw [black] (20.4,-32.8) circle (2.4);
+      \draw [black] (35.992,-23.414) arc (100.75686:79.24314:19.331);
+      \fill [black] (43.21,-23.41) -- (42.52,-22.77) -- (42.33,-23.76);
+      \draw (39.6,-22.57) node [above] {$a$};
+      \draw [black] (23.269,-23.337) arc (101.72775:78.27225:17.125);
+      \fill [black] (30.23,-23.34) -- (29.55,-22.68) -- (29.35,-23.66);
+      \draw (26.75,-22.48) node [above] {$a$};
+      \draw [black] (14,-19.4) -- (18,-22.4);
+      \fill [black] (18,-22.4) -- (17.66,-21.52) -- (17.06,-22.32);
+      \draw [black] (21.566,-21.443) arc (150.66134:29.33866:13.403);
+      \fill [black] (21.57,-21.44) -- (22.39,-20.99) -- (21.52,-20.5);
+      \draw (33.25,-14.11) node [above] {$'\backslash 0'$};
+      \draw [black] (20.4,-27.2) -- (20.4,-29.8);
+      \fill [black] (20.4,-29.8) -- (20.9,-29) -- (19.9,-29);
+      \draw (19.9,-28.5) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM33" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (20.4,-24.2) circle (3);
+      \draw [black] (33.1,-24.2) circle (3);
+      \draw [black] (46.1,-24.2) circle (3);
+      \draw [black] (20.4,-32.8) circle (3);
+      \draw (20.4,-32.8) node {$h_a$};
+      \draw [black] (20.4,-32.8) circle (2.4);
+      \draw [black] (8.3,-32.8) circle (3);
+      \draw [black] (20.4,-41.5) circle (3);
+      \draw [black] (35.992,-23.414) arc (100.75686:79.24314:19.331);
+      \fill [black] (43.21,-23.41) -- (42.52,-22.77) -- (42.33,-23.76);
+      \draw (39.6,-22.57) node [above] {$a$};
+      \draw [black] (23.269,-23.337) arc (101.72775:78.27225:17.125);
+      \fill [black] (30.23,-23.34) -- (29.55,-22.68) -- (29.35,-23.66);
+      \draw (26.75,-22.48) node [above] {$a$};
+      \draw [black] (21.566,-21.443) arc (150.66134:29.33866:13.403);
+      \fill [black] (21.57,-21.44) -- (22.39,-20.99) -- (21.52,-20.5);
+      \draw (33.25,-14.11) node [above] {$'\backslash 0'$};
+      \draw [black] (20.4,-27.2) -- (20.4,-29.8);
+      \fill [black] (20.4,-29.8) -- (20.9,-29) -- (19.9,-29);
+      \draw (19.9,-28.5) node [left] {$'\backslash 0'$};
+      \draw [black] (2.6,-26) -- (6.37,-30.5);
+      \fill [black] (6.37,-30.5) -- (6.24,-29.57) -- (5.48,-30.21);
+      \draw [black] (9.856,-30.241) arc (143.11082:107.69533:15.359);
+      \fill [black] (17.47,-24.83) -- (16.56,-24.59) -- (16.86,-25.55);
+      \draw (12.2,-26.44) node [above] {$'\backslash 0'$};
+      \draw [black] (17.517,-40.685) arc (-110.6146:-140.81829:17.789);
+      \fill [black] (17.52,-40.68) -- (16.94,-39.94) -- (16.59,-40.87);
+      \draw (12.35,-38.98) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM34" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (20.4,-24.2) circle (3);
+      \draw [black] (33.1,-24.2) circle (3);
+      \draw [black] (46.1,-24.2) circle (3);
+      \draw [black] (32.4,-32.8) circle (3);
+      \draw (32.4,-32.8) node {$h_a$};
+      \draw [black] (32.4,-32.8) circle (2.4);
+      \draw [black] (8.3,-32.8) circle (3);
+      \draw [black] (20.4,-41.5) circle (3);
+      \draw [black] (33.1,-41.5) circle (3);
+      \draw [black] (46.1,-41.5) circle (3);
+      \draw [black] (35.992,-23.414) arc (100.75686:79.24314:19.331);
+      \fill [black] (43.21,-23.41) -- (42.52,-22.77) -- (42.33,-23.76);
+      \draw (39.6,-22.57) node [above] {$a$};
+      \draw [black] (23.269,-23.337) arc (101.72775:78.27225:17.125);
+      \fill [black] (30.23,-23.34) -- (29.55,-22.68) -- (29.35,-23.66);
+      \draw (26.75,-22.48) node [above] {$a$};
+      \draw [black] (21.566,-21.443) arc (150.66134:29.33866:13.403);
+      \fill [black] (21.57,-21.44) -- (22.39,-20.99) -- (21.52,-20.5);
+      \draw (33.25,-14.11) node [above] {$'\backslash 0'$};
+      \draw [black] (22.84,-25.95) -- (29.96,-31.05);
+      \fill [black] (29.96,-31.05) -- (29.6,-30.18) -- (29.02,-30.99);
+      \draw (27.44,-28) node [above] {$'\backslash 0'$};
+      \draw [black] (2.6,-26) -- (6.37,-30.5);
+      \fill [black] (6.37,-30.5) -- (6.24,-29.57) -- (5.48,-30.21);
+      \draw [black] (9.856,-30.241) arc (143.11082:107.69533:15.359);
+      \fill [black] (17.47,-24.83) -- (16.56,-24.59) -- (16.86,-25.55);
+      \draw (12.2,-26.44) node [above] {$'\backslash 0'$};
+      \draw [black] (17.517,-40.685) arc (-110.6146:-140.81829:17.789);
+      \fill [black] (17.52,-40.68) -- (16.94,-39.94) -- (16.59,-40.87);
+      \draw (12.35,-38.98) node [below] {$'\backslash 0'$};
+      \draw [black] (23.214,-40.475) arc (104.10335:75.89665:14.513);
+      \fill [black] (30.29,-40.47) -- (29.63,-39.79) -- (29.39,-40.76);
+      \draw (26.75,-39.54) node [above] {$b$};
+      \draw [black] (35.984,-40.685) arc (101.16892:78.83108:18.668);
+      \fill [black] (43.22,-40.69) -- (42.53,-40.04) -- (42.33,-41.02);
+      \draw (39.6,-39.83) node [above] {$b$};
+      \draw [black] (35.372,-32.466) arc (88.72196:26.44396:11.186);
+      \fill [black] (35.37,-32.47) -- (36.16,-32.98) -- (36.18,-31.98);
+      \draw (42.16,-33.71) node [above] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM35" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (23.2,-40.2) circle (3);
+      \draw (23.2,-40.2) node {$h_a$};
+      \draw [black] (23.2,-40.2) circle (2.4);
+      \draw [black] (8.3,-32.8) circle (3);
+      \draw [black] (23.2,-32.8) circle (3);
+      \draw [black] (2.6,-26) -- (6.37,-30.5);
+      \fill [black] (6.37,-30.5) -- (6.24,-29.57) -- (5.48,-30.21);
+      \draw [black] (11.204,-32.055) arc (100.83891:79.16109:24.175);
+      \fill [black] (20.3,-32.05) -- (19.6,-31.41) -- (19.42,-32.4);
+      \draw (15.75,-31.12) node [above] {$0$};
+      \draw [black] (23.2,-35.8) -- (23.2,-37.2);
+      \fill [black] (23.2,-37.2) -- (23.7,-36.4) -- (22.7,-36.4);
+      \draw (22.7,-36.5) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM36" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (43.3,-35.3) circle (3);
+      \draw (43.3,-35.3) node {$h_a$};
+      \draw [black] (43.3,-35.3) circle (2.4);
+      \draw [black] (27.8,-26.5) circle (3);
+      \draw [black] (43.3,-26.5) circle (3);
+      \draw [black] (16.9,-33.6) circle (3);
+      \draw [black] (27.8,-42) circle (3);
+      \draw [black] (30.71,-25.776) arc (100.68372:79.31628:26.11);
+      \fill [black] (40.39,-25.78) -- (39.7,-25.14) -- (39.51,-26.12);
+      \draw (35.55,-24.82) node [above] {$0$};
+      \draw [black] (43.3,-29.5) -- (43.3,-32.3);
+      \fill [black] (43.3,-32.3) -- (43.8,-31.5) -- (42.8,-31.5);
+      \draw (42.8,-30.9) node [left] {$'\backslash 0'$};
+      \draw [black] (18.418,-31.022) arc (142.15759:104.00093:11.702);
+      \fill [black] (24.83,-26.85) -- (23.93,-26.56) -- (24.17,-27.53);
+      \draw (20.23,-27.9) node [above] {$'\backslash 0'$};
+      \draw [black] (24.874,-41.369) arc (-108.80028:-146.43845:12.951);
+      \fill [black] (24.87,-41.37) -- (24.28,-40.64) -- (23.96,-41.58);
+      \draw (20.1,-39.86) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM37" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (43.3,-33.6) circle (3);
+      \draw (43.3,-33.6) node {$h_a$};
+      \draw [black] (43.3,-33.6) circle (2.4);
+      \draw [black] (27.8,-26.5) circle (3);
+      \draw [black] (43.3,-26.5) circle (3);
+      \draw [black] (16.9,-33.6) circle (3);
+      \draw [black] (27.8,-42) circle (3);
+      \draw [black] (43.3,-42) circle (3);
+      \draw [black] (59,-42) circle (3);
+      \draw [black] (59,-26.5) circle (3);
+      \draw [black] (30.71,-25.776) arc (100.68372:79.31628:26.11);
+      \fill [black] (40.39,-25.78) -- (39.7,-25.14) -- (39.51,-26.12);
+      \draw (35.55,-24.82) node [above] {$a$};
+      \draw [black] (18.418,-31.022) arc (142.15759:104.00093:11.702);
+      \fill [black] (24.83,-26.85) -- (23.93,-26.56) -- (24.17,-27.53);
+      \draw (20.23,-27.9) node [above] {$'\backslash 0'$};
+      \draw [black] (24.874,-41.369) arc (-108.80028:-146.43845:12.951);
+      \fill [black] (24.87,-41.37) -- (24.28,-40.64) -- (23.96,-41.58);
+      \draw (20.1,-39.86) node [below] {$'\backslash 0'$};
+      \draw [black] (46.115,-40.971) arc (105.51997:74.48003:18.819);
+      \fill [black] (56.19,-40.97) -- (55.55,-40.27) -- (55.28,-41.24);
+      \draw (51.15,-39.78) node [above] {$b$};
+      \draw [black] (30.608,-40.953) arc (105.7302:74.2698:18.229);
+      \fill [black] (40.49,-40.95) -- (39.86,-40.26) -- (39.59,-41.22);
+      \draw (35.55,-39.77) node [above] {$b$};
+      \draw [black] (29.915,-24.376) arc (130.95591:49.04409:20.574);
+      \fill [black] (29.91,-24.38) -- (30.85,-24.23) -- (30.19,-23.47);
+      \draw (43.4,-18.84) node [above] {$'\backslash 0'$};
+      \draw [black] (46.196,-25.724) arc (101.53275:78.46725:24.779);
+      \fill [black] (56.1,-25.72) -- (55.42,-25.07) -- (55.22,-26.05);
+      \draw (51.15,-24.72) node [above] {$a$};
+      \draw [black] (30.53,-27.75) -- (40.57,-32.35);
+      \fill [black] (40.57,-32.35) -- (40.05,-31.56) -- (39.64,-32.47);
+      \draw (36.57,-29.54) node [above] {$'\backslash 0'$};
+      \draw [black] (46.204,-32.881) arc (96.58206:27.12154:11.728);
+      \fill [black] (46.2,-32.88) -- (47.06,-33.29) -- (46.94,-32.29);
+      \draw (54.12,-33.69) node [above] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+  <image xml:id="RFAxM38" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (27.8,-34.2) circle (3);
+      \draw (27.8,-34.2) node {$h_a$};
+      \draw [black] (27.8,-34.2) circle (2.4);
+      \draw [black] (27.8,-26.5) circle (3);
+      \draw [black] (43.3,-26.5) circle (3);
+      \draw [black] (16.9,-33.6) circle (3);
+      \draw [black] (27.8,-42) circle (3);
+      \draw [black] (43.3,-42) circle (3);
+      \draw [black] (59,-42) circle (3);
+      \draw [black] (51.4,-51.6) circle (3);
+      \draw [black] (30.71,-25.776) arc (100.68372:79.31628:26.11);
+      \fill [black] (40.39,-25.78) -- (39.7,-25.14) -- (39.51,-26.12);
+      \draw (35.55,-24.82) node [above] {$0$};
+      \draw [black] (18.418,-31.022) arc (142.15759:104.00093:11.702);
+      \fill [black] (24.83,-26.85) -- (23.93,-26.56) -- (24.17,-27.53);
+      \draw (20.23,-27.9) node [above] {$'\backslash 0'$};
+      \draw [black] (24.874,-41.369) arc (-108.80028:-146.43845:12.951);
+      \fill [black] (24.87,-41.37) -- (24.28,-40.64) -- (23.96,-41.58);
+      \draw (20.1,-39.86) node [below] {$'\backslash 0'$};
+      \draw [black] (46.115,-40.971) arc (105.51997:74.48003:18.819);
+      \fill [black] (56.19,-40.97) -- (55.55,-40.27) -- (55.28,-41.24);
+      \draw (51.15,-39.78) node [above] {$0$};
+      \draw [black] (30.608,-40.953) arc (105.7302:74.2698:18.229);
+      \fill [black] (40.49,-40.95) -- (39.86,-40.26) -- (39.59,-41.22);
+      \draw (35.55,-39.77) node [above] {$1$};
+      \draw [black] (16.584,-30.623) arc (-180.2303:-329.66386:13.684);
+      \fill [black] (16.58,-30.62) -- (17.09,-29.82) -- (16.09,-29.82);
+      \draw (25.91,-16.9) node [above] {$'\backslash 0'$};
+      \draw [black] (48.82,-53.126) arc (-63.29936:-171.80626:22.024);
+      \fill [black] (17.12,-36.59) -- (16.74,-37.45) -- (17.73,-37.31);
+      \draw (27.7,-53.48) node [below] {$'\backslash 0'$};
+      \draw [black] (48.571,-50.636) arc (-117.5704:-162.1176:9.814);
+      \fill [black] (48.57,-50.64) -- (48.09,-49.82) -- (47.63,-50.71);
+      \draw (45.06,-49.71) node [left] {$1$};
+      \draw [black] (44.113,-39.131) arc (153.26941:26.73059:7.879);
+      \fill [black] (44.11,-39.13) -- (44.92,-38.64) -- (44.03,-38.19);
+      \draw (51.15,-34.3) node [above] {$'\backslash 0'$};
+      \draw [black] (19.9,-33.76) -- (24.8,-34.04);
+      \fill [black] (24.8,-34.04) -- (24.03,-33.49) -- (23.98,-34.49);
+      \draw (22.41,-33.35) node [above] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM39" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (27.2,-34.4) circle (3);
+      \draw (27.2,-34.4) node {$h_a$};
+      \draw [black] (27.2,-34.4) circle (2.4);
+      \draw [black] (27.2,-26.3) circle (3);
+      \draw (27.2,-26.3) node {$A$};
+      \draw [black] (47.8,-26.3) circle (3);
+      \draw (47.8,-26.3) node {$B$};
+      \draw [black] (29.885,-24.969) arc (112.12274:67.87726:20.22);
+      \fill [black] (45.11,-24.97) -- (44.56,-24.2) -- (44.19,-25.13);
+      \draw (37.5,-22.98) node [above] {$1$};
+      \draw [black] (45.099,-27.601) arc (-68.44057:-111.55943:20.681);
+      \fill [black] (29.9,-27.6) -- (30.46,-28.36) -- (30.83,-27.43);
+      \draw (37.5,-29.55) node [below] {$1$};
+      \draw [black] (49.359,-23.751) arc (176.27564:-111.72436:2.25);
+      \draw (54.13,-21.4) node [right] {$0$};
+      \fill [black] (50.77,-25.99) -- (51.54,-26.54) -- (51.6,-25.54);
+      \draw [black] (19.6,-18.4) -- (25.12,-24.14);
+      \draw (17.59,-17.92) node [above] {$M_{14}$};
+      \fill [black] (25.12,-24.14) -- (24.93,-23.21) -- (24.21,-23.91);
+      \draw [black] (25.395,-28.681) arc (-9.43495:-297.43495:2.25);
+      \draw (20.47,-30.43) node [left] {$0$};
+      \fill [black] (24.21,-26.32) -- (23.5,-25.69) -- (23.34,-26.68);
+      \draw [black] (27.2,-29.3) -- (27.2,-31.4);
+      \fill [black] (27.2,-31.4) -- (27.7,-30.6) -- (26.7,-30.6);
+      \draw (26.7,-30.35) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM40" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (27.2,-34.4) circle (3);
+      \draw (27.2,-34.4) node {$h_a$};
+      \draw [black] (27.2,-34.4) circle (2.4);
+      \draw [black] (27.2,-26.3) circle (3);
+      \draw (27.2,-26.3) node {$A$};
+      \draw [black] (47.8,-26.3) circle (3);
+      \draw (47.8,-26.3) node {$B$};
+      \draw [black] (13,-22.4) circle (3);
+      \draw (13,-22.4) node {$S$};
+      \draw [black] (29.885,-24.969) arc (112.12274:67.87726:20.22);
+      \fill [black] (45.11,-24.97) -- (44.56,-24.2) -- (44.19,-25.13);
+      \draw (37.5,-22.98) node [above] {$1$};
+      \draw [black] (45.099,-27.601) arc (-68.44057:-111.55943:20.681);
+      \fill [black] (29.9,-27.6) -- (30.46,-28.36) -- (30.83,-27.43);
+      \draw (37.5,-29.55) node [below] {$1$};
+      \draw [black] (49.359,-23.751) arc (176.27564:-111.72436:2.25);
+      \draw (54.13,-21.4) node [right] {$0$};
+      \fill [black] (50.77,-25.99) -- (51.54,-26.54) -- (51.6,-25.54);
+      \draw [black] (25.395,-28.681) arc (-9.43495:-297.43495:2.25);
+      \draw (20.47,-30.43) node [left] {$0$};
+      \fill [black] (24.21,-26.32) -- (23.5,-25.69) -- (23.34,-26.68);
+      \draw [black] (27.2,-29.3) -- (27.2,-31.4);
+      \fill [black] (27.2,-31.4) -- (27.7,-30.6) -- (26.7,-30.6);
+      \draw (26.7,-30.35) node [left] {$'\backslash 0'$};
+      \draw [black] (6.7,-16.3) -- (10.84,-20.31);
+      \fill [black] (10.84,-20.31) -- (10.62,-19.4) -- (9.92,-20.12);
+      \draw [black] (15.988,-22.173) arc (89.4888:59.79621:17.726);
+      \fill [black] (24.75,-24.58) -- (24.31,-23.74) -- (23.8,-24.61);
+      \draw (21.34,-22.24) node [above] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM41" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (47.8,-13.7) circle (3);
+      \draw (47.8,-13.7) node {$h_a$};
+      \draw [black] (47.8,-13.7) circle (2.4);
+      \draw [black] (27.2,-26.3) circle (3);
+      \draw (27.2,-26.3) node {$A$};
+      \draw [black] (47.8,-26.3) circle (3);
+      \draw (47.8,-26.3) node {$B$};
+      \draw [black] (13,-22.4) circle (3);
+      \draw (13,-22.4) node {$S$};
+      \draw [black] (37.6,-13.7) circle (3);
+      \draw (37.6,-13.7) node {$E$};
+      \draw [black] (29.885,-24.969) arc (112.12274:67.87726:20.22);
+      \fill [black] (45.11,-24.97) -- (44.56,-24.2) -- (44.19,-25.13);
+      \draw (37.5,-22.98) node [above] {$1$};
+      \draw [black] (45.099,-27.601) arc (-68.44057:-111.55943:20.681);
+      \fill [black] (29.9,-27.6) -- (30.46,-28.36) -- (30.83,-27.43);
+      \draw (37.5,-29.55) node [below] {$1$};
+      \draw [black] (49.359,-23.751) arc (176.27564:-111.72436:2.25);
+      \draw (54.13,-21.4) node [right] {$0$};
+      \fill [black] (50.77,-25.99) -- (51.54,-26.54) -- (51.6,-25.54);
+      \draw [black] (25.395,-28.681) arc (-9.43495:-297.43495:2.25);
+      \draw (20.47,-30.43) node [left] {$0$};
+      \fill [black] (24.21,-26.32) -- (23.5,-25.69) -- (23.34,-26.68);
+      \draw [black] (6.7,-16.3) -- (10.84,-20.31);
+      \fill [black] (10.84,-20.31) -- (10.62,-19.4) -- (9.92,-20.12);
+      \draw [black] (15.988,-22.173) arc (89.4888:59.79621:17.726);
+      \fill [black] (24.75,-24.58) -- (24.31,-23.74) -- (23.8,-24.61);
+      \draw (21.34,-22.24) node [above] {$'\backslash 0'$};
+      \draw [black] (27.685,-23.345) arc (164.43199:116.49569:13.74);
+      \fill [black] (34.79,-14.74) -- (33.85,-14.65) -- (34.3,-15.54);
+      \draw (29.77,-16.85) node [left] {$'\backslash 0'$};
+      \draw [black] (40.6,-13.7) -- (44.8,-13.7);
+      \fill [black] (44.8,-13.7) -- (44,-13.2) -- (44,-14.2);
+      \draw (42.7,-14.2) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM42" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (42.3,-34.5) circle (3);
+      \draw (42.3,-34.5) node {$h_a$};
+      \draw [black] (42.3,-34.5) circle (2.4);
+      \draw [black] (27.2,-26.3) circle (3);
+      \draw (27.2,-26.3) node {$A$};
+      \draw [black] (12.2,-26.3) circle (3);
+      \draw (12.2,-26.3) node {$S$};
+      \draw [black] (42.3,-26.3) circle (3);
+      \draw (42.3,-26.3) node {$E$};
+      \draw [black] (28.523,-28.98) arc (54:-234:2.25);
+      \draw (27.2,-33.55) node [below] {$0+10*1$};
+      \fill [black] (25.88,-28.98) -- (25,-29.33) -- (25.81,-29.92);
+      \draw [black] (5.9,-20.2) -- (10.04,-24.21);
+      \fill [black] (10.04,-24.21) -- (9.82,-23.3) -- (9.12,-24.02);
+      \draw [black] (15.2,-26.3) -- (24.2,-26.3);
+      \fill [black] (24.2,-26.3) -- (23.4,-25.8) -- (23.4,-26.8);
+      \draw (19.7,-25.8) node [above] {$'\backslash 0'$};
+      \draw [black] (30.2,-26.3) -- (39.3,-26.3);
+      \fill [black] (39.3,-26.3) -- (38.5,-25.8) -- (38.5,-26.8);
+      \draw (34.75,-25.8) node [above] {$'\backslash 0'$};
+      \draw [black] (42.3,-29.3) -- (42.3,-31.5);
+      \fill [black] (42.3,-31.5) -- (42.8,-30.7) -- (41.8,-30.7);
+      \draw (41.8,-30.4) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM43" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (35.3,-34.1) circle (3);
+      \draw (35.3,-34.1) node {$h_a$};
+      \draw [black] (35.3,-34.1) circle (2.4);
+      \draw [black] (12.2,-26.3) circle (3);
+      \draw (12.2,-26.3) node {$S$};
+      \draw [black] (35.3,-26.3) circle (3);
+      \draw (35.3,-26.3) node {$E$};
+      \draw [black] (5.9,-20.2) -- (10.04,-24.21);
+      \fill [black] (10.04,-24.21) -- (9.82,-23.3) -- (9.12,-24.02);
+      \draw [black] (35.3,-29.3) -- (35.3,-31.1);
+      \fill [black] (35.3,-31.1) -- (35.8,-30.3) -- (34.8,-30.3);
+      \draw (34.8,-30.2) node [left] {$'\backslash 0'$};
+      \draw [black] (15.2,-26.3) -- (32.3,-26.3);
+      \fill [black] (32.3,-26.3) -- (31.5,-25.8) -- (31.5,-26.8);
+      \draw (23.75,-26.8) node [below] {$(0+10*1)$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM44" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (39.7,-33.9) circle (3);
+      \draw (39.7,-33.9) node {$h_a$};
+      \draw [black] (39.7,-33.9) circle (2.4);
+      \draw [black] (12.2,-26.3) circle (3);
+      \draw (12.2,-26.3) node {$S$};
+      \draw [black] (39.7,-26.3) circle (3);
+      \draw (39.7,-26.3) node {$C$};
+      \draw [black] (25.8,-26.3) circle (3);
+      \draw (25.8,-26.3) node {$B$};
+      \draw [black] (6.4,-21) -- (9.99,-24.28);
+      \draw (5.86,-19.54) node [left] {$M_{15}$};
+      \fill [black] (9.99,-24.28) -- (9.73,-23.37) -- (9.06,-24.11);
+      \draw [black] (39.7,-29.3) -- (39.7,-30.9);
+      \fill [black] (39.7,-30.9) -- (40.2,-30.1) -- (39.2,-30.1);
+      \draw (39.2,-30.1) node [left] {$'\backslash 0'$};
+      \draw [black] (42.38,-24.977) arc (144:-144:2.25);
+      \draw (46.95,-26.3) node [right] {$0,\mbox{ }1$};
+      \fill [black] (42.38,-27.62) -- (42.73,-28.5) -- (43.32,-27.69);
+      \draw [black] (15.094,-25.52) arc (100.91127:79.08873:20.634);
+      \fill [black] (22.91,-25.52) -- (22.21,-24.88) -- (22.03,-25.86);
+      \draw (19,-24.65) node [above] {$0$};
+      \draw [black] (28.609,-25.259) arc (104.96874:75.03126:16.032);
+      \fill [black] (36.89,-25.26) -- (36.25,-24.57) -- (35.99,-25.54);
+      \draw (32.75,-24.22) node [above] {$1$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM45" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (60.9,-35.2) circle (3);
+      \draw (60.9,-35.2) node {$h_a$};
+      \draw [black] (60.9,-35.2) circle (2.4);
+      \draw [black] (21.6,-26.7) circle (3);
+      \draw (21.6,-26.7) node {$A$};
+      \draw [black] (34.4,-26.7) circle (3);
+      \draw (34.4,-26.7) node {$B$};
+      \draw [black] (47.5,-26.7) circle (3);
+      \draw (47.5,-26.7) node {$C$};
+      \draw [black] (60.9,-26.7) circle (3);
+      \draw (60.9,-26.7) node {$D$};
+      \draw [black] (60.9,-29.7) -- (60.9,-32.2);
+      \fill [black] (60.9,-32.2) -- (61.4,-31.4) -- (60.4,-31.4);
+      \draw (60.4,-30.95) node [left] {$'\backslash 0'$};
+      \draw [black] (50.5,-26.7) -- (57.9,-26.7);
+      \fill [black] (57.9,-26.7) -- (57.1,-26.2) -- (57.1,-27.2);
+      \draw (54.2,-27.2) node [below] {$1$};
+      \draw [black] (37.4,-26.7) -- (44.5,-26.7);
+      \fill [black] (44.5,-26.7) -- (43.7,-26.2) -- (43.7,-27.2);
+      \draw (40.95,-27.2) node [below] {$1$};
+      \draw [black] (24.6,-26.7) -- (31.4,-26.7);
+      \fill [black] (31.4,-26.7) -- (30.6,-26.2) -- (30.6,-27.2);
+      \draw (28,-27.2) node [below] {$1$};
+      \draw [black] (15.3,-20) -- (19.54,-24.51);
+      \draw (13.29,-19.52) node [above] {$M_{16}$};
+      \fill [black] (19.54,-24.51) -- (19.36,-23.59) -- (18.63,-24.27);
+      \draw [black] (22.65,-23.902) arc (187.15881:-100.84119:2.25);
+      \draw (27.06,-20.62) node [right] {$0$};
+      \fill [black] (24.46,-25.83) -- (25.32,-26.23) -- (25.19,-25.24);
+      \draw [black] (35.703,-24.011) arc (181.87498:-106.12502:2.25);
+      \draw (40.3,-21.14) node [right] {$0$};
+      \fill [black] (37.33,-26.1) -- (38.14,-26.57) -- (38.11,-25.57);
+      \draw [black] (48.54,-23.899) arc (187.36342:-100.63658:2.25);
+      \draw (52.94,-20.6) node [right] {$0$};
+      \fill [black] (50.36,-25.82) -- (51.21,-26.21) -- (51.09,-25.22);
+      \draw [black] (62.203,-24.011) arc (181.87498:-106.12502:2.25);
+      \draw (66.8,-21.14) node [right] {$0$};
+      \fill [black] (63.83,-26.1) -- (64.64,-26.57) -- (64.61,-25.57);
+      \draw [black] (58.468,-28.455) arc (-56.90518:-123.09482:31.534);
+      \fill [black] (24.03,-28.46) -- (24.43,-29.31) -- (24.97,-28.47);
+      \draw (41.25,-34.07) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM46" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (48.1,-37.9) circle (3);
+      \draw (48.1,-37.9) node {$h_a$};
+      \draw [black] (48.1,-37.9) circle (2.4);
+      \draw [black] (21.8,-22) circle (3);
+      \draw (21.8,-22) node {$A$};
+      \draw [black] (38.1,-22) circle (3);
+      \draw (38.1,-22) node {$B$};
+      \draw [black] (21.8,-37.9) circle (3);
+      \draw (21.8,-37.9) node {$C$};
+      \draw [black] (38.1,-37.9) circle (3);
+      \draw (38.1,-37.9) node {$D$};
+      \draw [black] (23.293,-24.595) arc (23.51277:-23.51277:13.423);
+      \fill [black] (23.29,-24.59) -- (23.15,-25.53) -- (24.07,-25.13);
+      \draw (24.91,-29.95) node [right] {$1$};
+      \draw [black] (20.072,-35.458) arc (-152.02997:-207.97003:11.744);
+      \fill [black] (20.07,-35.46) -- (20.14,-34.52) -- (19.25,-34.99);
+      \draw (18.2,-29.95) node [left] {$1$};
+      \draw [black] (24.483,-36.568) arc (110.82622:69.17378:15.378);
+      \fill [black] (35.42,-36.57) -- (34.85,-35.82) -- (34.49,-36.75);
+      \draw (29.95,-35.06) node [above] {$0$};
+      \draw [black] (35.465,-39.322) arc (-67.58899:-112.41101:14.465);
+      \fill [black] (24.44,-39.32) -- (24.98,-40.09) -- (25.37,-39.16);
+      \draw (29.95,-40.91) node [below] {$0$};
+      \draw [black] (39.734,-24.507) arc (26.13892:-26.13892:12.355);
+      \fill [black] (39.73,-24.51) -- (39.64,-25.45) -- (40.54,-25.01);
+      \draw (41.5,-29.95) node [right] {$1$};
+      \draw [black] (36.507,-35.366) arc (-154.63621:-205.36379:12.644);
+      \fill [black] (36.51,-35.37) -- (36.62,-34.43) -- (35.71,-34.86);
+      \draw (34.79,-29.95) node [left] {$1$};
+      \draw [black] (35.411,-23.319) arc (-69.41:-110.59:15.527);
+      \fill [black] (24.49,-23.32) -- (25.06,-24.07) -- (25.41,-23.13);
+      \draw (29.95,-24.81) node [below] {$0$};
+      \draw [black] (24.45,-20.606) arc (111.91638:68.08362:14.734);
+      \fill [black] (35.45,-20.61) -- (34.89,-19.84) -- (34.52,-20.77);
+      \draw (29.95,-19.04) node [above] {$0$};
+      \draw [black] (41.1,-37.9) -- (45.1,-37.9);
+      \fill [black] (45.1,-37.9) -- (44.3,-37.4) -- (44.3,-38.4);
+      \draw (43.1,-37.4) node [above] {$'\backslash 0'$};
+      \draw [black] (16,-15.5) -- (19.8,-19.76);
+      \draw (14,-15.01) node [above] {$M_{17}$};
+      \fill [black] (19.8,-19.76) -- (19.64,-18.83) -- (18.9,-19.5);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM47" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (21,-35.3) circle (3);
+      \draw (21,-35.3) node {$h_a$};
+      \draw [black] (21,-35.3) circle (2.4);
+      \draw [black] (21,-26.2) circle (3);
+      \draw (21,-26.2) node {$0$};
+      \draw [black] (35.9,-26.2) circle (3);
+      \draw (35.9,-26.2) node {$1$};
+      \draw [black] (49.5,-26.2) circle (3);
+      \draw (49.5,-26.2) node {$2$};
+      \draw [black] (21.868,-29.062) arc (8.95448:-8.95448:10.847);
+      \fill [black] (21.87,-32.44) -- (22.49,-31.73) -- (21.5,-31.57);
+      \draw (22.5,-30.75) node [right] {$'\backslash 0'$};
+      \draw [black] (19.854,-28.96) arc (5.18593:-282.81407:2.25);
+      \draw (15.38,-32.1) node [left] {$0$};
+      \fill [black] (18.11,-26.97) -- (17.27,-26.54) -- (17.36,-27.54);
+      \draw [black] (23.629,-24.769) arc (111.90384:68.09616:12.923);
+      \fill [black] (33.27,-24.77) -- (32.72,-24.01) -- (32.34,-24.93);
+      \draw (28.45,-23.34) node [above] {$1$};
+      \draw [black] (33.319,-27.715) arc (-66.60149:-113.39851:12.261);
+      \fill [black] (23.58,-27.71) -- (24.12,-28.49) -- (24.51,-27.57);
+      \draw (28.45,-29.22) node [below] {$1$};
+      \draw [black] (38.317,-24.444) arc (117.0728:62.9272:9.63);
+      \fill [black] (47.08,-24.44) -- (46.6,-23.63) -- (46.14,-24.52);
+      \draw (42.7,-22.89) node [above] {$0$};
+      \draw [black] (47.209,-28.116) arc (-59.70828:-120.29172:8.94);
+      \fill [black] (38.19,-28.12) -- (38.63,-28.95) -- (39.13,-28.09);
+      \draw (42.7,-29.84) node [below] {$0$};
+      \draw [black] (16.9,-20.1) -- (19.33,-23.71);
+      \fill [black] (19.33,-23.71) -- (19.3,-22.77) -- (18.47,-23.33);
+      \draw [black] (52.405,-26.9) arc (104.19443:-183.80557:2.25);
+      \draw (55.24,-31.96) node [right] {$1$};
+      \fill [black] (50.71,-28.93) -- (50.42,-29.83) -- (51.39,-29.58);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM48" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (16.8,-23.1) circle (3);
+      \draw (16.8,-23.1) node {$A$};
+      \draw [black] (31.3,-23.1) circle (3);
+      \draw (31.3,-23.1) node {$B$};
+      \draw [black] (44.9,-23.1) circle (3);
+      \draw (44.9,-23.1) node {$C$};
+      \draw [black] (23.1,-36.7) circle (3);
+      \draw (23.1,-36.7) node {$h_r$};
+      \draw [black] (44.9,-31.3) circle (3);
+      \draw (44.9,-31.3) node {$h_a$};
+      \draw [black] (47.58,-21.777) arc (144:-144:2.25);
+      \draw (52.15,-23.1) node [right] {$a$};
+      \fill [black] (47.58,-24.42) -- (47.93,-25.3) -- (48.52,-24.49);
+      \draw [black] (33.929,-21.672) arc (111.08762:68.91238:11.593);
+      \fill [black] (42.27,-21.67) -- (41.7,-20.92) -- (41.34,-21.85);
+      \draw (38.1,-20.4) node [above] {$a$};
+      \draw [black] (42.474,-24.844) arc (-63.15572:-116.84428:9.686);
+      \fill [black] (33.73,-24.84) -- (34.21,-25.65) -- (34.67,-24.76);
+      \draw (38.1,-26.39) node [below] {$q$};
+      \draw [black] (19.341,-21.522) arc (114.31745:65.68255:11.434);
+      \fill [black] (28.76,-21.52) -- (28.24,-20.74) -- (27.82,-21.65);
+      \draw (24.05,-20.01) node [above] {$q$};
+      \draw [black] (29.683,-25.613) arc (-5.03624:-293.03624:2.25);
+      \draw (24.87,-27.84) node [left] {$q$};
+      \fill [black] (28.32,-23.34) -- (27.57,-22.78) -- (27.48,-23.77);
+      \draw [black] (20.482,-35.256) arc (-126.88369:-183.40583:10.736);
+      \fill [black] (20.48,-35.26) -- (20.14,-34.38) -- (19.54,-35.18);
+      \draw (16.47,-32.21) node [left] {$a$};
+      \draw [black] (25.581,-35.035) arc (151.59464:-136.40536:2.25);
+      \draw (30.47,-35.66) node [right] {$a,\mbox{ }q$};
+      \fill [black] (25.93,-37.66) -- (26.4,-38.48) -- (26.87,-37.6);
+      \draw [black] (44.9,-26.1) -- (44.9,-28.3);
+      \fill [black] (44.9,-28.3) -- (45.4,-27.5) -- (44.4,-27.5);
+      \draw (44.4,-27.2) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM49" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (16.8,-23.1) circle (3);
+      \draw (16.8,-23.1) node {$A$};
+      \draw [black] (31.3,-23.1) circle (3);
+      \draw (31.3,-23.1) node {$B$};
+      \draw [black] (44.9,-23.1) circle (3);
+      \draw (44.9,-23.1) node {$C$};
+      \draw [black] (34.9,-38.5) circle (3);
+      \draw (34.9,-38.5) node {$h_a$};
+      \draw [black] (34.9,-30.8) circle (3);
+      \draw (34.9,-30.8) node {$D$};
+      \draw [black] (33.929,-21.672) arc (111.08762:68.91238:11.593);
+      \fill [black] (42.27,-21.67) -- (41.7,-20.92) -- (41.34,-21.85);
+      \draw (38.1,-20.4) node [above] {$b$};
+      \draw [black] (19.341,-21.522) arc (114.31745:65.68255:11.434);
+      \fill [black] (28.76,-21.52) -- (28.24,-20.74) -- (27.82,-21.65);
+      \draw (24.05,-20.01) node [above] {$b$};
+      \draw [black] (28.739,-24.646) arc (-66.2662:-113.7338:11.649);
+      \fill [black] (19.36,-24.65) -- (19.89,-25.43) -- (20.29,-24.51);
+      \draw (24.05,-26.13) node [below] {$'\backslash 0'$};
+      \draw [black] (18.622,-25.468) arc (65.30993:-222.69007:2.25);
+      \draw (19.4,-30.42) node [below] {$b,\mbox{ }m$};
+      \fill [black] (16.03,-25.99) -- (15.24,-26.51) -- (16.15,-26.92);
+      \draw [black] (43.357,-25.666) arc (-37.35703:-67.45043:13.569);
+      \fill [black] (37.77,-29.96) -- (38.71,-30.12) -- (38.32,-29.2);
+      \draw (41.85,-28.68) node [below] {$b$};
+      \draw [black] (34.9,-33.8) -- (34.9,-35.5);
+      \fill [black] (34.9,-35.5) -- (35.4,-34.7) -- (34.4,-34.7);
+      \draw (34.4,-34.65) node [left] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM50" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (50.5,-39.7) circle (3);
+      \draw (50.5,-39.7) node {$h_a$};
+      \draw [black] (21.1,-24.9) circle (3);
+      \draw (21.1,-24.9) node {$A$};
+      \draw [black] (34.9,-22.2) circle (3);
+      \draw (34.9,-22.2) node {$B$};
+      \draw [black] (39.6,-33.3) circle (3);
+      \draw (39.6,-33.3) node {$C$};
+      \draw [black] (48.5,-27.4) circle (3);
+      \draw (48.5,-27.4) node {$D$};
+      \draw [black] (36.603,-33.217) arc (-95.38324:-133.45799:22.674);
+      \fill [black] (23.13,-27.1) -- (23.37,-28.01) -- (24.06,-27.29);
+      \draw (27.36,-31.81) node [below] {$0,\mbox{ }'\backslash 0'$};
+      \draw [black] (23.651,-23.33) arc (116.28012:85.86028:16.107);
+      \fill [black] (31.95,-21.71) -- (31.18,-21.15) -- (31.11,-22.15);
+      \draw (27.14,-21.38) node [above] {$0$};
+      \draw [black] (37.58,-20.877) arc (144:-144:2.25);
+      \draw (42.15,-22.2) node [right] {$1$};
+      \fill [black] (37.58,-23.52) -- (37.93,-24.4) -- (38.52,-23.59);
+      \draw [black] (36.805,-24.512) arc (34.1738:11.72407:16.208);
+      \fill [black] (39.26,-30.32) -- (39.59,-29.44) -- (38.61,-29.64);
+      \draw (39.06,-26.35) node [right] {$1$};
+      \draw [black] (47.464,-30.192) arc (-32.32991:-80.58759:7.175);
+      \fill [black] (47.46,-30.19) -- (46.61,-30.6) -- (47.46,-31.14);
+      \draw (46.37,-32.83) node [below] {$0$};
+      \draw [black] (48.98,-30.36) -- (50.02,-36.74);
+      \fill [black] (50.02,-36.74) -- (50.38,-35.87) -- (49.4,-36.03);
+      \draw (50.21,-33.33) node [right] {$'\backslash 0'$};
+      \draw [black] (42.19,-34.82) -- (47.91,-38.18);
+      \fill [black] (47.91,-38.18) -- (47.48,-37.34) -- (46.97,-38.21);
+      \draw (44.01,-37) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM51" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (55.9,-27) circle (3);
+      \draw (55.9,-27) node {$h_a$};
+      \draw [black] (21,-30.8) circle (3);
+      \draw (21,-30.8) node {$A$};
+      \draw [black] (32.3,-26) circle (3);
+      \draw (32.3,-26) node {$B$};
+      \draw [black] (47.5,-27) circle (3);
+      \draw (47.5,-27) node {$C$};
+      \draw [black] (36.9,-38) circle (3);
+      \draw (36.9,-38) node {$E$};
+      \draw [black] (50.5,-27) -- (52.9,-27);
+      \fill [black] (52.9,-27) -- (52.1,-26.5) -- (52.1,-27.5);
+      \draw (51.7,-27.5) node [below] {$'\backslash 0'$};
+      \draw [black] (46.644,-29.869) arc (-22.83566:-65.04251:13.826);
+      \fill [black] (39.74,-37.04) -- (40.67,-37.15) -- (40.25,-36.25);
+      \draw (44.39,-35.57) node [right] {$'\backslash 0'$};
+      \draw [black] (47.823,-24.029) arc (201.52881:-86.47119:2.25);
+      \draw (52.12,-20.81) node [above] {$1$};
+      \fill [black] (50.05,-25.45) -- (50.98,-25.62) -- (50.62,-24.69);
+      \draw [black] (30.977,-23.32) arc (234:-54:2.25);
+      \draw (32.3,-18.75) node [above] {$0$};
+      \fill [black] (33.62,-23.32) -- (34.5,-22.97) -- (33.69,-22.38);
+      \draw [black] (23.219,-28.789) arc (126.23466:99.79485:14.473);
+      \fill [black] (29.31,-26.2) -- (28.44,-25.84) -- (28.61,-26.83);
+      \draw (24.18,-26.62) node [above] {$0,\mbox{ }1$};
+      \draw [black] (14.3,-26.4) -- (18.49,-29.15);
+      \fill [black] (18.49,-29.15) -- (18.1,-28.3) -- (17.55,-29.13);
+      \draw [black] (35.028,-24.767) arc (107.94062:64.53131:13.453);
+      \fill [black] (44.96,-25.42) -- (44.45,-24.62) -- (44.02,-25.53);
+      \draw (40.14,-23.58) node [above] {$1$};
+      \draw [black] (34.699,-35.974) arc (-140.07253:-177.98048:11.534);
+      \fill [black] (32.02,-28.98) -- (31.55,-29.8) -- (32.54,-29.76);
+      \draw (32.02,-33.54) node [left] {$0$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM52" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (40.5,-33.2) circle (3);
+      \draw (40.5,-33.2) node {$h_a$};
+      \draw [black] (19.2,-25.2) circle (3);
+      \draw (19.2,-25.2) node {$A$};
+      \draw [black] (40.5,-25.2) circle (3);
+      \draw (40.5,-25.2) node {$B$};
+      \draw [black] (60.9,-25.2) circle (3);
+      \draw (60.9,-25.2) node {$C$};
+      \draw [black] (12.5,-20.8) -- (16.69,-23.55);
+      \fill [black] (16.69,-23.55) -- (16.3,-22.7) -- (15.75,-23.53);
+      \draw [black] (19.04,-22.216) arc (210.80141:-77.19859:2.25);
+      \draw (22.83,-18.48) node [above] {$0$};
+      \fill [black] (21.47,-23.26) -- (22.41,-23.28) -- (21.9,-22.42);
+      \draw [black] (40.5,-28.2) -- (40.5,-30.2);
+      \fill [black] (40.5,-30.2) -- (41,-29.4) -- (40,-29.4);
+      \draw (40,-29.2) node [left] {$'\backslash 0'$};
+      \draw [black] (59.255,-27.706) arc (-36.86399:-143.13601:24.004);
+      \fill [black] (20.85,-27.71) -- (20.93,-28.65) -- (21.73,-28.05);
+      \draw (40.05,-37.81) node [below] {$1,\mbox{ }0$};
+      \draw [black] (22.095,-24.416) arc (102.71185:77.28815:35.243);
+      \fill [black] (37.61,-24.42) -- (36.93,-23.75) -- (36.71,-24.73);
+      \draw (29.85,-23.05) node [above] {$1$};
+      \draw [black] (43.303,-24.137) arc (107.30784:72.69216:24.862);
+      \fill [black] (58.1,-24.14) -- (57.48,-23.42) -- (57.18,-24.38);
+      \draw (50.7,-22.51) node [above] {$1$};
+      \draw [black] (58.12,-26.323) arc (-71.64875:-108.35125:23.568);
+      \fill [black] (43.28,-26.32) -- (43.88,-27.05) -- (44.2,-26.1);
+      \draw (50.7,-28.02) node [below] {$'\backslash 0'$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM53" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (36,-24.5) circle (3);
+      \draw (36,-24.5) node {$h_a$};
+      \draw [black] (36,-24.5) circle (2.4);
+      \draw [black] (17.5,-16.6) circle (3);
+      \draw (17.5,-16.6) node {$A_1$};
+      \draw [black] (36,-16.6) circle (3);
+      \draw (36,-16.6) node {$B_1$};
+      \draw [black] (36,-19.6) -- (36,-21.5);
+      \fill [black] (36,-21.5) -- (36.5,-20.7) -- (35.5,-20.7);
+      \draw (35.5,-20.55) node [left] {$'\backslash 0'$};
+      \draw [black] (20.095,-15.104) arc (114.58606:65.41394:15.995);
+      \fill [black] (33.4,-15.1) -- (32.89,-14.32) -- (32.47,-15.23);
+      \draw (26.75,-13.15) node [above] {$1$};
+      \draw [black] (33.198,-17.665) arc (-73.06952:-106.93048:22.142);
+      \fill [black] (20.3,-17.67) -- (20.92,-18.38) -- (21.21,-17.42);
+      \draw (26.75,-19.12) node [below] {$0$};
+      \draw [black] (37.303,-13.911) arc (181.87498:-106.12502:2.25);
+      \draw (41.9,-11.04) node [right] {$1$};
+      \fill [black] (38.93,-16) -- (39.74,-16.47) -- (39.71,-15.47);
+      \draw [black] (16.096,-19.238) arc (-0.30142:-288.30142:2.25);
+      \draw (11.43,-21.92) node [left] {$0$};
+      \fill [black] (14.55,-17.09) -- (13.75,-16.59) -- (13.75,-17.59);
+      \draw [black] (13.1,-11.7) -- (15.5,-14.37);
+      \draw (11.4,-11.21) node [above] {$M_1$};
+      \fill [black] (15.5,-14.37) -- (15.33,-13.44) -- (14.59,-14.11);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM54" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (17,-24) circle (3);
+      \draw (17,-24) node {$h_a$};
+      \draw [black] (17,-24) circle (2.4);
+      \draw [black] (17,-16.1) circle (3);
+      \draw (17,-16.1) node {$A_2$};
+      \draw [black] (36,-16.1) circle (3);
+      \draw (36,-16.1) node {$B_2$};
+      \draw [black] (19.579,-14.576) arc (115.27968:64.72032:16.207);
+      \fill [black] (33.42,-14.58) -- (32.91,-13.78) -- (32.48,-14.69);
+      \draw (26.5,-12.52) node [above] {$0,\mbox{ }1$};
+      \draw [black] (33.377,-17.548) arc (-66.15494:-113.84506:17.011);
+      \fill [black] (19.62,-17.55) -- (20.15,-18.33) -- (20.56,-17.41);
+      \draw (26.5,-19.5) node [below] {$0,\mbox{ }1$};
+      \draw [black] (17,-19.1) -- (17,-21);
+      \fill [black] (17,-21) -- (17.5,-20.2) -- (16.5,-20.2);
+      \draw (16.5,-20.05) node [left] {$'\backslash 0'$};
+      \draw [black] (12.1,-10.7) -- (14.98,-13.88);
+      \draw (10.4,-10.21) node [above] {$M_2$};
+      \fill [black] (14.98,-13.88) -- (14.82,-12.95) -- (14.08,-13.62);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
+  <image
+    xml:id="RFAxM55" width="50%">
+    <latex-image>
+      \begin{tikzpicture}[scale=0.2]
+      \tikzstyle{every node}+=[inner sep=0pt]
+      \draw [black] (32.9,-45.3) circle (3);
+      \draw (32.9,-45.3) node {$h_a$};
+      \draw [black] (32.9,-45.3) circle (2.4);
+      \draw [black] (16,-22) circle (3);
+      \draw (16,-22) node {\footnotesize $(A_1,A_2)$};
+      \draw [black] (32.9,-22) circle (3);
+      \draw (32.9,-22) node {\footnotesize $(A_1,B_1)$};
+      \draw [black] (32.9,-37.2) circle (3);
+      \draw (32.9,-37.2) node {\footnotesize $(B_1,A_2)$};
+      \draw [black] (16,-37.2) circle (3);
+      \draw (16,-37.2) node {\footnotesize $(B_1,B_2)$};
+      \draw [black] (32.9,-40.2) -- (32.9,-42.3);
+      \fill [black] (32.9,-42.3) -- (33.4,-41.5) -- (32.4,-41.5);
+      \draw (32.4,-41.25) node [left] {$'\backslash 0'$};
+      \draw [black] (34.56,-24.489) arc (26.26399:-26.26399:11.551);
+      \fill [black] (34.56,-34.71) -- (35.36,-34.22) -- (34.47,-33.77);
+      \draw (36.25,-29.6) node [right] {$1$};
+      \draw [black] (18.699,-20.699) arc (110.50561:69.49439:16.419);
+      \fill [black] (30.2,-20.7) -- (29.63,-19.95) -- (29.28,-20.89);
+      \draw (24.45,-19.16) node [above] {$0$};
+      \draw [black] (30.414,-38.867) arc (-62.76104:-117.23896:13.029);
+      \fill [black] (18.49,-38.87) -- (18.97,-39.68) -- (19.43,-38.79);
+      \draw (24.45,-40.81) node [below] {$1$};
+      \draw [black] (18.489,-35.536) arc (117.17888:62.82112:13.051);
+      \fill [black] (30.41,-35.54) -- (29.93,-34.73) -- (29.47,-35.62);
+      \draw (24.45,-33.6) node [above] {$1$};
+      \draw [black] (18.762,-23.169) arc (64.25012:31.81293:30.541);
+      \fill [black] (18.76,-23.17) -- (19.27,-23.97) -- (19.7,-23.07);
+      \draw (26.93,-27.48) node [above] {$0$};
+      \draw [black] (29.958,-22.583) arc (-81.1812:-98.8188:35.928);
+      \fill [black] (18.94,-22.58) -- (19.66,-23.2) -- (19.81,-22.21);
+      \draw (24.45,-23.51) node [below] {$0$};
+      \draw [black] (17.106,-24.784) arc (16.57187:-16.57187:16.884);
+      \fill [black] (17.11,-24.78) -- (16.85,-25.69) -- (17.81,-25.41);
+      \draw (18.31,-29.6) node [right] {$0$};
+      \draw [black] (14.724,-34.491) arc (-160.60625:-199.39375:14.729);
+      \fill [black] (14.72,-34.49) -- (14.93,-33.57) -- (13.99,-33.9);
+      \draw (13.39,-29.6) node [left] {$1$};
+      \draw [black] (11.9,-16.9) -- (14.12,-19.66);
+      \fill [black] (14.12,-19.66) -- (14.01,-18.73) -- (13.23,-19.35);
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+
+
 </chapter>
